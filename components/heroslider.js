@@ -1,7 +1,7 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,50 +12,56 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function SliderComponent() {
     return (
-        <>
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
+        < >
+            
+                <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
 
 
-                modules={[Autoplay]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <Player
-                        autoplay
-                        loop
-                        src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                        style={{ height: '400px', width: '400px' }}
-                    >
+                    modules={[Autoplay]}
+                    className="mySwiper "
+                >
+                    <SwiperSlide className="cim">
+                        <Player
+                            autoplay
+                            loop
+                            src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
+                            style={{ height: '400px', width: '400px' }}
+                            className="cim"
+                        >
 
-                    </Player>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Player
-                        autoplay
-                        loop
-                        src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                        style={{ height: '400px', width: '400px' }}
-                    >
+                        </Player>
+                    </SwiperSlide>
+                    <SwiperSlide className="cim">
+                        <Player
+                            autoplay
+                            loop
+                            src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
+                            style={{ height: '400px', width: '400px' }}
+                            className="cim"
+                        >
 
-                    </Player>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Player
-                        autoplay
-                        loop
-                        src="https://assets5.lottiefiles.com/packages/lf20_ihwqyxn5.json"
-                        style={{ height: '400px', width: '400px' }}
-                    >
+                        </Player>
+                    </SwiperSlide>
+                    <SwiperSlide className="cim">
+                        <Player
+                            autoplay
+                            loop
+                            src="https://assets5.lottiefiles.com/packages/lf20_ihwqyxn5.json"
+                            style={{ height: '400px', width: '400px' }}
 
-                    </Player>
-                </SwiperSlide>
-            </Swiper>
+                            className="cim"
+                        >
+
+                        </Player>
+                    </SwiperSlide>
+                </Swiper>
+            
         </>
     );
 }

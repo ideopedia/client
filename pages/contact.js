@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from "../components/navbar"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import contact from "../public/Rectangle_1223.svg"
+import Image from "next/image"
 function Contact() {
     const FormHeader = props => (
         <h2 id="headerTitle">{props.title}</h2>
@@ -11,19 +13,15 @@ function Contact() {
             <section class="h-screen new">
                 <div class="px-6 h-full text-gray-800">
                     <div
-                        class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
+                        class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6 "
                     >
                         <div
-                            class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0 new1"
+                            class="grow-0 shrink-1 md:shrink-0 basis-auto py-8 xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0 new1 cim"
                         >
-                            <Player
-                                autoplay
-                                loop
-                                src="https://assets4.lottiefiles.com/packages/lf20_xlmz9xwm.json"
-                                style={{ height: '400px', width: '400px' }}
-                            >
+                          
+                                <Image src={contact} />
+                           
 
-                            </Player>
                         </div>
                         <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 new">
                             <FormHeader title="Contact us" className="bd1" />

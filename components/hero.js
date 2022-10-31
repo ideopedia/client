@@ -5,12 +5,14 @@ import Link from 'next/link'
 import SliderComponent from "../components/heroslider"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Navbar from "../components/navbar"
+import Influencer from "../pages/new"
 
 function Hero() {
 
     return (
         <div>
             <Navbar />
+
             <div className='body'>
                 <div className='bg-white'>
                     <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
@@ -29,9 +31,11 @@ function Hero() {
                             </div>
                         </div>
                         <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
-                            
+
+                           
                                 <SliderComponent />
                             
+
 
                         </div>
                     </div>
