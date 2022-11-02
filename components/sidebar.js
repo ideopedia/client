@@ -13,6 +13,9 @@ import { CgProfile } from "react-icons/cg";
 import { FaRegComments } from "react-icons/fa";
 import { BiMessageSquareDots } from "react-icons/bi";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+//import {useHistory} from "react-router-dom"
+import Axios from "axios";
 import question from "../public/question.svg";
 import feed from "../public/feed.svg";
 import dash from "../public/dash.svg";
@@ -30,6 +33,21 @@ import {
 } from "react-circular-progressbar";
 import edit from "../public/Edit.svg";
 function SideNavbar() {
+  const [data, setData] = useState([]);
+  
+
+  useEffect(() => {
+    Axios.post("https://ideopedia-books.herokuapp.com/listBooks", {
+      Password: "Ideopedia@001",
+    })
+      
+      .then((data) => {
+        setData(data.data);
+        
+      });
+      console.log(data);
+  }, []);
+
   return (
     <div>
       <Disclosure as="nav" className="h-10">
@@ -46,7 +64,9 @@ function SideNavbar() {
                 <Image src={dashc} />
               </div>
               <div class=" flex items-center justify-start w-20 h-12">
-                <Link href="/" className="cursor-pointer"><Image src={logo} /></Link>
+                <Link href="/" className="cursor-pointer">
+                  <Image src={logo} />
+                </Link>
               </div>
             </div>
             <br />
@@ -69,26 +89,30 @@ function SideNavbar() {
                   </div>
                 </CircularProgressbarWithChildren>
               </div>
-
+                <br />
               <div className="flex  mb-2 ml-2  justify-center items-center gap-4 pl-5  group cursor-pointer m-auto">
                 <h3 className="text-sm font-semibold">65%</h3>
               </div>
+              <br />
               <div className="flex  mb-2 ml-2  justify-center items-center gap-4 pl-5  group cursor-pointer m-auto">
                 <Image src={edit} />
                 <h3 className="text-sm foottext font-semibold ">
                   Edit Profile
                 </h3>
               </div>
+              <br />
               <div className="flex  mb-2 ml-2 justify-center items-center  pl-5 group cursor-pointer m-auto">
                 <h3 className=" pl-2 text-base  justify-center items-center text-gray-800 group-hover:text-green-700 font-semibold ">
                   Good Morning ,
                 </h3>
               </div>
+              <br />
               <div className="flex  mb-2 ml-2 justify-center items-center  pl-5 group cursor-pointer m-auto">
                 <h3 className=" pl-2 text-base  justify-center items-center text-gray-800 group-hover:text-green-700 font-semibold ">
                   Shri . Suresh Prabhu
                 </h3>
               </div>
+              <br />
               <br />
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer  hover:border hover:border-purple-900">
@@ -102,7 +126,7 @@ function SideNavbar() {
                   </Link>
                 </div>
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
-                  <Link href="mylib">
+                  <Link href="/mylib">
                     <Image src={lib} />
                   </Link>
                 </div>
@@ -122,6 +146,7 @@ function SideNavbar() {
                   Help Center
                 </h3>
               </div>
+              <br />
               <div className="flex mb-2 justify-start items-center gap-4 pl-5  cursor-pointer  m-auto">
                 <Image src={feed} />
                 <h3 className="text-base dashtext font-semibold ">
@@ -130,7 +155,7 @@ function SideNavbar() {
               </div>
             </div>
             {/* logout */}
-            <div className=" my-4" >
+            <div className=" my-4">
               <div className="flex mb-2 justify-center items-center gap-4 pl-4 bg-green-700  hover:bg-green-750 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                 <h3 className="text-base text-white group-hover:text-white font-semibold ">
                   <Link href="/">Logout</Link>

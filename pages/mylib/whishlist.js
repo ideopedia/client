@@ -12,7 +12,10 @@ import bmark from "../../public/bmark.svg";
 import Image from "next/image";
 import wtf from "../../public/wtf.svg";
 import dmmt from "../../public/dmmt.svg";
+
 const Whishlist = () => {
+  
+  
   return (
     <div>
       <div className="lg:flex">

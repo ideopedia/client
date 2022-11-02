@@ -33,10 +33,10 @@ export default function Home() {
         <div class="p-6 bg-white-300">
 
 
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-1">
             <div class=" rounded-md flex items-center justify-center"><InfluencerSliderleft className="slide" /></div>
-            <div class="p-4  rounded-md flex items-center justify-center"><InfluencerSlider className="slide" /></div>
-            <div class="p-4  rounded-md flex items-center justify-center"><InfluencerSliderright className="slide" /></div>
+            <div class="  rounded-md flex items-center justify-center"><InfluencerSlider className="slide" /></div>
+            <div class="  rounded-md flex items-center justify-center"><InfluencerSliderright className="slide" /></div>
 
 
           </div>

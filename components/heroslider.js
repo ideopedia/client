@@ -26,17 +26,7 @@ export default function SliderComponent() {
                     modules={[Autoplay]}
                     className="mySwiper "
                 >
-                    <SwiperSlide className="cim">
-                        <Player
-                            autoplay
-                            loop
-                            src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                            style={{ height: '400px', width: '400px' }}
-                            className="cim"
-                        >
-
-                        </Player>
-                    </SwiperSlide>
+                   
                     <SwiperSlide className="cim">
                         <Player
                             autoplay

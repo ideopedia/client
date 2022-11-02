@@ -1,4 +1,5 @@
 import React from "react";
+
 import SideNavbar from "../../components/sidebar";
 import Card from "../../components/card";
 import Link from "next/link";
@@ -13,6 +14,9 @@ import bmark from "../../public/bmark.svg";
 
 import Image from "next/image";
 const New = () => {
+  
+  
+
   return (
     <div>
       <div className="lg:flex">
@@ -56,12 +60,22 @@ const New = () => {
           </div>
           <br />
           <div className="flex drop-shadow-md bg-white pl-5 cls">
-            <Link href="#"><span className="pr-4 cursor-pointer">Books</span></Link>
+            <Link href="#">
+              <span className="pr-4 cursor-pointer">Books</span>
+            </Link>
             <Image src={arr} />
           </div>
-          <Card image={wtf} name="What's The Future And Why It's Up To Us" author="Tim O'Reilly"/>
-          <Card image={dmmt} name="Don't Make me think" author="Steve Krug"/>
-          <Card image={wtf} name="What's The Future And Why It's Up To Us" author="Tim O'Reilly"/>
+          <Card
+            image={wtf}
+            name="What's The Future And Why It's Up To Us"
+            author="Tim O'Reilly"
+          />
+          <Card image={dmmt} name="Don't Make me think" author="Steve Krug" />
+          <Card
+            image={wtf}
+            name="What's The Future And Why It's Up To Us"
+            author="Tim O'Reilly"
+          />
         </div>
       </div>
     </div>
