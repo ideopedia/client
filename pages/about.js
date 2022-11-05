@@ -51,7 +51,7 @@ const About = () => {
               Ideas that can catalyse India,s path to unprecedented innovation
               and growth.
             </div>
-            <div>wfojcwefncfmcwk</div>
+            
           </div>
         </div>
       </div>
