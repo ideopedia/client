@@ -20,7 +20,7 @@ function Hero() {
                             <div className="max-w-lg">
                                 <h1 className="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">Set your
                                     Title</h1>
-                                <p className="mt-4 text-gray-300 text-gray-600">Lorem ipsum, dolor sit amet consectetur
+                                <p className="mt-4  text-black">Lorem ipsum, dolor sit amet consectetur
                                     adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
                                     laudantium quod rem voluptatem eos accusantium cumque.</p>
                                 <div className="mt-6">
