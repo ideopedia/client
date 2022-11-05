@@ -12,7 +12,7 @@ import Hero from '../components/hero'
 import InfluencerSliderleft from '../components/infuslide'
 import InfluencerSliderright from '../components/infuslideright'
 
-import Influencer from "../pages/new"
+
 export default function Home() {
   return (
     <div>

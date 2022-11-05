@@ -5,7 +5,7 @@ import Link from 'next/link'
 import SliderComponent from "../components/heroslider"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Navbar from "../components/navbar"
-import Influencer from "../pages/new"
+
 
 function Hero() {
 

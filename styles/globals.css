@@ -416,3 +416,15 @@
 .pointc{
   color: #7F5AF0
 }
+
+.verticalscroll::-webkit-scrollbar {
+  display: none;
+}
+.dot{
+  font-size: 4rem;
+  color: #111010;
+}
+.authimg{
+  border-radius: 50%;
+}
+

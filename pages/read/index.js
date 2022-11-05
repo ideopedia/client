@@ -20,7 +20,7 @@ const Read = () => {
   const [inpt, setInpt] = useState("");
 
   useEffect(() => {
-    Axios.post("https://ideo-books.herokuapp.com/listBooks").then((data) => {
+    Axios.post("https://ideopedia-books.herokuapp.com/listBookCards",{Password: "Ideopedia@001"}).then((data) => {
       setData(data.data);
     });
     console.log(data);

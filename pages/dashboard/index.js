@@ -22,7 +22,7 @@ import readp from "../../public/readp.svg";
 import Image from "next/image";
 const Dashboard = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 verticalscroll">
       <div className="lg:flex">
         <SideNavbar />
         <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/1">
