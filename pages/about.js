@@ -71,6 +71,7 @@ const About = () => {
                 all its citizens.
               </div>
             </div>
+            
           </div>
           <div class=" rounded-md flex items-center justify-center">
             <Image src={vission} />
