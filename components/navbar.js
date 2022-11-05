@@ -22,7 +22,7 @@ function MobileNav({ open, setOpen }) {
       <div className=" flex flex-col z-100 ml-4 ">
         <Link
           className="text-xl font-medium my-4"
-          href="/about"
+          href="/ourReaders"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -33,7 +33,7 @@ function MobileNav({ open, setOpen }) {
         </Link>
         <Link
           className="text-xl font-medium my-4"
-          href="/contact"
+          href="/about"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -44,7 +44,7 @@ function MobileNav({ open, setOpen }) {
         </Link>
         <Link
           className="text-xl font-medium my-4"
-          href="/contact"
+          href="/teams"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -134,9 +134,9 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex">
-          <NavLink to="/contact">Our Readers</NavLink>
+          <NavLink to="/ourReaders">Our Readers</NavLink>
           <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/about">Team</NavLink>
+          <NavLink to="/teams">Team</NavLink>
           <NavLink to="/contact">Contact us</NavLink>
           <NavLink to="/login">
             <div className="log">
