@@ -1,21 +1,55 @@
-import React from 'react'
-import { useState } from 'react'
-import Image from "next/image"
-import Link from 'next/link'
-import SliderComponent from "../components/heroslider"
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import Navbar from "../components/navbar"
+import React from "react";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import SliderComponent from "../components/heroslider";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
+import Navbar from "../components/navbar";
 
 function Hero() {
+  return (
+    <div>
+      <Navbar />
 
-    return (
-        <div>
-            <Navbar />
+      <div className="body">
+        <div className="bg-white">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+            <div class=" rounded-md flex items-center justify-center">
+              <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="text-2xl  text-black text-bold">INFORMING INSPIRING IMPACTING</span>
+                </div>
+                <div class="  rounded-md flex items-center justify-center">
+                  <span className="md:text-xl text-2xl text-green-700 text-bold">INDIA’S TOP LEADERS</span>
+                </div>
+                <div class=" rounded-md flex items-center justify-center">
+                  <span>One idea at a time</span>
+                </div>
+                <div class=" rounded-md flex items-center justify-center">
+                  <Link href="/login">
+                    <div className="log ">
+                      <button className="text-xl">Get Started</button>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div class=" rounded-md flex items-center justify-center">
+              <SliderComponent />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-            <div className='body'>
-                <div className='bg-white'>
-                    <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
+export default Hero;
+
+{
+  /*
+<div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
                         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
                             <div className="max-w-lg">
                                 <h1 className="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">Set your
@@ -39,11 +73,5 @@ function Hero() {
 
                         </div>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    )
+*/
 }
-
-export default Hero

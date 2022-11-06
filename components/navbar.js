@@ -106,7 +106,7 @@ export default function Navbar() {
       <MobileNav open={open} setOpen={setOpen} />
       <div className="w-3/12 flex items-center">
         <Link href="/" className="text-2xl font-semibold cursor-pointer">
-          <Image src={log} />
+          <Image src={log} className="cursor-pointer" />
         </Link>
       </div>
       <div className="w-9/12 flex justify-end items-center">

@@ -428,3 +428,8 @@
   border-radius: 50%;
 }
 
+
+.high{
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
