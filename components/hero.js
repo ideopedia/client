@@ -27,7 +27,7 @@ function Hero() {
                   <span>One idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
-                  <Link href="/login">
+                  <Link href="/signup">
                     <div className="log ">
                       <button className="text-xl">Get Started</button>
                     </div>
