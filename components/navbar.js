@@ -22,7 +22,7 @@ function MobileNav({ open, setOpen }) {
       <div className=" flex flex-col z-100 ml-4 ">
         <Link
           className="text-xl font-medium my-4"
-          href="/ourReaders"
+          href="/testimonials"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -134,7 +134,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex">
-          <NavLink to="/ourReaders">Our Readers</NavLink>
+          <NavLink to="/testimonials">Our Readers</NavLink>
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/teams">Team</NavLink>
           <NavLink to="/contact">Contact us</NavLink>
