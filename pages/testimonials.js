@@ -7,6 +7,7 @@ import testwinner from "../public/testwinner.svg";
 import startquotes from "../public/startquotes.svg";
 import endquotes from "../public/endquotes.svg";
 import testimage1 from "../public/testimage1.svg";
+import SliderComponent from "../components/testimonialSlider";
 import Footer from "../components/footer";
 import TestSlides from "../components/testSlides";
 
@@ -95,18 +96,11 @@ const OurReaders = () => {
         <div className="flex justify-center items-center p-4">
           <span className="text-3xl text-bold text-black">TESTIMONIALS</span>
         </div>
-        <TestSlides
-          image={testimage1}
-          quotes="Selfless service at its best so that our country benefits"
-          content="Month after month, year after year, Ideopedia has been mailing
-              thousands of printed copies of its synopses to its readers with
-              the goal to increase the awareness of the people at the helm of
-              the country, so they uplift India further. What do you call such
-              an effort? Selfless service at its best so that our country
-              benefits."
-          name="MR SURESH PRABHU"
-          post="FORMER MINISTER OF COMMERCE & INDUSTRY"
-        />
+        <div className="pt-2 pl-9 pr-9" id="readers">
+            <SliderComponent />
+        </div>
+        
+        
       </div>
       <br />
       <br />

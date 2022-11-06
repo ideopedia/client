@@ -44,7 +44,7 @@ export default function Home() {
             </span>
           </div>
           <div class="rounded-md flex items-center justify-center ">
-            <div className="w-auto h-9 bg-green-700 flex justify-center items-center high">
+            <div className="w-auto h-12 bg-green-700 flex justify-center items-center high">
               <span className="p-5 text-white ">
                 THE TOP 5000 INFLUENCERS IN INDIA
               </span>
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <br />
         <br />
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-8">
           <div class=" p-4 rounded-md flex items-center justify-center">
             <Image src={influencer1} />
           </div>
@@ -69,13 +69,13 @@ export default function Home() {
           <div class="p-4  rounded-md flex items-center justify-center">
             <Image src={influencer5} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
+          <div class="p-4 rounded-md flex items-end justify-end">
             <Image src={influencer6} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
+          <div class="p-4  rounded-md flex items-end justify-end">
             <Image src={influencer7} />
           </div>
-          <div class="p-4 rounded-md flex items-center justify-center">
+          <div class="p-4  rounded-md flex items-end justify-end">
             <Image src={influencer8} />
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
               <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-gray-300 text-gray-600">
+              <p className="mt-4 text-black text-xl">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -137,7 +137,7 @@ export default function Home() {
               <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-gray-300 text-gray-600">
+              <p className="mt-4  text-black text-xl">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -282,11 +282,8 @@ export default function Home() {
         </div>
       </div>
       <div className="p-4 flex justify-end items-end ">
-        <div
-          className="border border-green-600 cursor-pointer"
-          
-        >
-          <Link href="/ourReaders">
+        <div className="border border-green-600 cursor-pointer">
+          <Link href="/testimonials">
             <div className="p-1 flex justify-center items-center border-green-600">
               <div className="text-green-700 text-2xl">Read more </div>
               <div className="pl-2 pt-1">

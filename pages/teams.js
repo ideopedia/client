@@ -36,7 +36,7 @@ const Teams = () => {
     <div>
       <Navbar />
       <div className="p-5">
-        <div class="pt-5 pb-4 rounded-md flex items-center justify-center">
+        <div class="pt-5 pb-4 rounded-md flex items-center justify-center" id="bod">
           <span>The Team</span>
         </div>
         <div class=" rounded-md flex items-center justify-center">

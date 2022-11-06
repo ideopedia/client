@@ -2,12 +2,11 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestSlides from "./testSlides";
-import testimage1 from "../public/testimage1.svg"; // Import Swiper styles
+import testslide1 from "../public/testslide1.svg"; // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Image from "next/image";
-import sliderimagetest from "../public/sliderimagetest.png";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -30,13 +29,19 @@ export default function SliderComponent() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Image src={sliderimagetest} />
+          <div className="w-full">
+            <Image src={testslide1} />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={sliderimagetest} />
+          <div className="w-full">
+            <Image src={testslide1} />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={sliderimagetest} />
+          <div className="w-full">
+            <Image src={testslide1} />
+          </div>
         </SwiperSlide>
       </Swiper>
     </>

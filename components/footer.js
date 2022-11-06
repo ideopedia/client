@@ -26,21 +26,21 @@ function Footer() {
                         <span className='heading'>About</span>
                         <br />
                         <ul>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">What is Ideopedia ?</Link></li>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">Mission</Link></li>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">Vision</Link></li>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">What we do</Link></li>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">Our Goal</Link></li>
-                            <li className='py-2 foottext hover:text-green-700'><Link href="/login">Contact us</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#about_hero">What is Ideopedia ?</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#mission">Mission</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#vission">Vision</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#what">What we do</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#goal">Our Goal</Link></li>
+                            <li className='py-2 foottext hover:text-green-700'><Link href="/about#contact">Contact us</Link></li>
                         </ul>
                     </div></div>
                     <div class="p-2  rounded-md flex  mb-5"><div>
                         <span className=' heading tm'>Team</span>
                         <br />
                         <ul>
-                            <li className='py-1 foottext hover:text-green-700'><Link href="/login">Board of Directors</Link></li>
-                            <li className='py-1 foottext hover:text-green-700'><Link href="/login">Founders</Link></li>
-                            <li className='py-1 foottext hover:text-green-700'><Link href="/login">Advisors</Link></li>
+                            <li className='py-1 foottext hover:text-green-700'><Link href="/teams#bod">Board of Directors</Link></li>
+                            <li className='py-1 foottext hover:text-green-700'><Link href="/teams#bod">Founders</Link></li>
+                            <li className='py-1 foottext hover:text-green-700'><Link href="/teams#bod">Advisors</Link></li>
                             <li className='py-2 foottext hover:text-green-700'>
 
                             </li>
@@ -52,7 +52,7 @@ function Footer() {
                         <span className=' heading tm'>Our Readers</span>
                         <br />
                         <ul>
-                            <li className='py-1 foottext hover:text-green-700'><Link href="/login">Testimonials</Link></li>
+                            <li className='py-1 foottext hover:text-green-700'><Link href="/testimonials#readers">Testimonials</Link></li>
                             <li className='py-3 foottext'></li>
                             <li className='py-3 foottext'></li>
                             <li className='py-3 foottext'>
@@ -66,9 +66,9 @@ function Footer() {
                         <span className=' heading tm'>Social Media</span>
                         <br />
                         <div className=' py-3'>
-                            <span className='mr-3 hover:text-green-700'><Link href="/login"><Image src={facebook} /></Link></span>
-                            <span className='mr-3 hover:text-green-700'><Link href="/login"><Image src={twitter} /></Link></span>
-                            <span className='mr-3 hover:text-green-700'><Link href="/login"><Image src={telegram} /></Link></span></div>
+                            <span className='mr-3 hover:text-green-700 cursor-pointer'><Link href="/login"><Image src={facebook} /></Link></span>
+                            <span className='mr-3 hover:text-green-700 cursor-pointer'><Link href="/login"><Image src={twitter} /></Link></span>
+                            <span className='mr-3 hover:text-green-700 cursor-pointer'><Link href="/login"><Image src={telegram} /></Link></span></div>
 
                     </div></div>
 

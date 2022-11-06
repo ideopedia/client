@@ -12,9 +12,9 @@ function Hero() {
     <div>
       <Navbar />
 
-      <div className="body">
+      <div className="body ">
         <div className="bg-white">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:h-screen">
             <div class=" rounded-md flex items-center justify-center">
               <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">

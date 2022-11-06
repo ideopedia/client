@@ -5,6 +5,9 @@
 * {
   font-family: "Poppins";
 }
+.body{
+  min-height: 100vh;
+}
 .log {
   width: 100px;
   height: 35px;
@@ -277,7 +280,6 @@
   border-radius: 50%;
   max-width: 50px;
   max-height: 50px;
-  
 }
 .ne {
   min-width: 130px;
@@ -367,7 +369,6 @@
 }
 .int {
   max-width: 100%;
-  
 }
 
 .int {
@@ -375,7 +376,7 @@
   box-sizing: border-box;
   border: none;
   font-size: 1.3rem;
-  
+
   box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
   transition: box-shadow 0.2s ease-in;
 }
@@ -392,17 +393,16 @@
   opacity: 1;
   transition: opacity 0.25s ease-out;
 }
-.larr{
+.larr {
   height: 20px;
   width: 20px;
 }
-.new2{
+.new2 {
   font-weight: 600;
 }
-.cont{
+.cont {
   width: 100px;
   height: 35px;
-  
 
   text-align: center;
   align-items: center;
@@ -413,23 +413,48 @@
   background-color: #2cb67d;
   color: #ffff;
 }
-.pointc{
-  color: #7F5AF0
+.pointc {
+  color: #7f5af0;
 }
 
 .verticalscroll::-webkit-scrollbar {
   display: none;
 }
-.dot{
+.dot {
   font-size: 4rem;
   color: #111010;
 }
-.authimg{
+.authimg {
   border-radius: 50%;
 }
 
-
-.high{
+.high {
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+.swiper-pagination-bullet-active {
+  background-color: #2cb67d !important;
+}
+.swiper-button-next {
+  background-image: url(../public/nextswipe.svg);
+  background-repeat: no-repeat;
+  padding-right: 20px !important;
+  background-size: 150% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev {
+  background-image: url(../public/prevswipe.svg);
+  background-repeat: no-repeat;
+ 
+  background-size: 150% auto;
+  background-position: center;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+

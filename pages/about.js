@@ -19,7 +19,7 @@ const About = () => {
     <div>
       <Navbar />
       <div className="p-9">
-        <div className="about_hero">
+        <div className="about_hero" id="about_hero">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
             <div class=" rounded-md flex items-center justify-center">
               <Image src={about} />
@@ -48,7 +48,10 @@ const About = () => {
         </div>
         <br />
         <br />
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-5 ">
+        <div
+          class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-5 "
+          id="mission"
+        >
           <div class=" rounded-md flex items-center justify-center">
             <Image src={mission} />
           </div>
@@ -65,7 +68,10 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-9">
+        <div
+          class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-9"
+          id="vission"
+        >
           <div class=" rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
               <div class=" rounded-md flex items-start justify-center">
@@ -89,7 +95,7 @@ const About = () => {
           <Image src={leafend} />
         </div>
 
-        <div className="pb-9">
+        <div className="pb-9" id="what">
           <div class=" rounded-md flex items-center justify-center">
             <h1 className="text-3xl text-bold text-black pb-3">WHAT WE DO</h1>
           </div>
@@ -161,7 +167,7 @@ const About = () => {
             </span>
           </div>
         </div>
-        <div className="pt-9 pb-9">
+        <div className="pt-9 pb-9" id="goal">
           <div className="flex justify-center items-center p-2">
             <span className="text-black-700 text-3xl text-bold">
               INDIA’S ABUNDANT RESOURCES
@@ -180,7 +186,9 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </div>
   );
 };
