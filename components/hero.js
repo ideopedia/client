@@ -29,7 +29,7 @@ function Hero() {
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
                     <div className="log ">
-                      <button className="text-xl">Get Started</button>
+                      <button className="">Get Started</button>
                     </div>
                   </Link>
                 </div>
