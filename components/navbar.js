@@ -110,6 +110,9 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="w-9/12 flex justify-end items-center">
+
+
+        
         <div
           className=" flex relative w-8 h-8 flex-col justify-between items-center lg:hidden"
           onClick={() => {
