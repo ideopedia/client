@@ -43,7 +43,9 @@ const Book = () => {
   return (
     <div>
       {data ? (
+        
         <div className="p-9">
+          {console.log(data)}
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2">
             <div class=" rounded-md flex items-center justify-center">
               <div>
