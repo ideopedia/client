@@ -38,7 +38,7 @@ function Login() {
                 </div>
 
                 <div className="rw">
-                  <div className="grp">
+                  <div className="grp" style={{display:"flex",justifyContent:"space-between"}}>
                     <label>
                       <input
                         class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-green-700 checked:border-green-700 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -47,8 +47,8 @@ function Login() {
                         id="flexCheckDefault"
                       ></input>
                       Remember Me
-                    </label>{" "}
-                    <span>Forgot Password</span>
+                    </label>
+                    <span style={{marginRight:"10rem"}}>Forgot Password</span>
                   </div>
                 </div>
 
@@ -61,8 +61,8 @@ function Login() {
               </form>
               <div className="row">
                 <p>
-                  Don't have an account? <span>signup</span>
-                </p>
+                  Don't have an account?<span>signup</span>
+                  </p>
               </div>
             </div>
           </div>
