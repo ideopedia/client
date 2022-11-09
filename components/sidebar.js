@@ -1,6 +1,7 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Disclosure } from "@headlessui/react";
+import Profile from "../pages/dashboard/profile";
 import {
   MdOutlineSpaceDashboard,
   MdOutlineAnalytics,
@@ -164,7 +165,9 @@ function SideNavbar() {
             </div>
           </div>
         </div>
+        
       </Disclosure>
+      
     </div>
   );
 }
