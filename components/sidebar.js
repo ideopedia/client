@@ -57,7 +57,7 @@ function SideNavbar() {
             aria-hidden="true"
           />
         </Disclosure.Button>
-        <div className="p-6 w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <div className="p-7 w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start item-center">
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
               <div class=" rounded-md flex items-center justify-start w-12 h-12">

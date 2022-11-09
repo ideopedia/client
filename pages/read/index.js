@@ -6,6 +6,7 @@ import Link from "next/link";
 import task from "../../public/task.svg";
 import create from "../../public/create.svg";
 import fav from "../../public/fav.svg";
+import recomend from "../../public/recomend.svg";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import wtf from "../../public/wtf.svg";
@@ -18,9 +19,12 @@ import Image from "next/image";
 const Read = () => {
   const [data, setData] = useState(false);
   const [inpt, setInpt] = useState("");
+  const [Recommended, setRecommended] = useState(false);
 
   useEffect(() => {
-    Axios.post("https://ideopedia-books.herokuapp.com/listBookCards",{Password: "Ideopedia@001"}).then((data) => {
+    Axios.post("https://ideopedia-books.herokuapp.com/listBookCards", {
+      Password: "Ideopedia@001",
+    }).then((data) => {
       setData(data.data);
     });
     console.log(data);
@@ -30,19 +34,11 @@ const Read = () => {
       {data ? (
         <div className="lg:flex">
           <SideNavbar />
-          
+
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
-            <br />
-            
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">
-              <div class="p-4 rounded-md flex items-center justify-start">
-                <div className="flex">
-                  <Link href="#">
-                    <span className="pr-3 text-xl cursor-pointer">Sort By</span>
-                  </Link>
-                  <Image src={arr} />
-                </div>
-              </div>
+            <div>
+              <br />
+
               <div class="p-4  rounded-md flex items-center justify-end">
                 <div className="flex">
                   <Image src={srch} />
@@ -55,46 +51,87 @@ const Read = () => {
                   />
                 </div>
               </div>
-            </div>
 
-            <br />
-            <div class="scrollmenu flex pt-9 ml-9">
-              <div className="pr-9 flex">
-                <Link href="/mylib/whishlist" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
-                    Author
-                  </span>
-                </Link>
-              </div>
-              <div className="pr-9 flex">
-                <Link href="/mylib/completed" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
-                    Tittle
-                  </span>
-                </Link>
-              </div>
-              <div className="pr-9 flex">
-                <Link href="/mylib/favourites" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
-                    Date
-                  </span>
-                </Link>
-              </div>
+              <br />
+              {data.map((val) =>
+                val.Book_Name.match(inpt) ? (
+                  <ReadCard
+                    image={val.Cover_image}
+                    name={val.Book_Name.toUpperCase()}
+                    author={val.Book_Author}
+                    read={val.read_time}
+                    listen={val.listen_time}
+                  />
+                ) : (
+                  <div>
+                    <div className="p-4">
+                      <span className="text-xl text-black text-bold">
+                        Launch of the Month
+                      </span>
+                    </div>
+                    <br />
+                    <ReadCard
+                      image={data[0].Cover_image}
+                      name={data[0].Book_Name.toUpperCase()}
+                      author={data[0].Book_Author}
+                      read={data[0].read_time}
+                      listen={data[0].listen_time}
+                    />
+
+                    <br />
+                    <br />
+                    <div className="p-4">
+                      <span className="text-xl text-black text-bold">
+                        Recent Books
+                      </span>
+                    </div>
+                    <br />
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
+                      {data.map((val) => (
+                        <div class="rounded-md flex items-start justify-start">
+                          <ReadCard
+                            image={val.Cover_image}
+                            name={val.Book_Name.toUpperCase()}
+                            author={val.Book_Author}
+                            read={val.read_time}
+                            listen={val.listen_time}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="p-4">
+                      <span className="text-xl text-black text-bold">
+                        Recommended For You
+                      </span>
+                    </div>
+                    <div>
+                      {Recommended ? (
+                        <ReadCard
+                          image={data[0].Cover_image}
+                          name={data[0].Book_Name.toUpperCase()}
+                          author={data[0].Book_Author}
+                          read={data[0].read_time}
+                          listen={data[0].listen_time}
+                        />
+                      ) : (
+                        <div>
+                          <div className="flex justify-center items-center">
+                            <Image src={recomend} />
+                          </div>
+                          <br />
+                          <div className="flex justify-center items-center">
+                            <span className="text-md">
+                              Complete Reading A Book To Get Personalized
+                              Recommendations{" "}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )
+              )}
             </div>
-            <br />
-            {data.map((val) =>
-              val.Book_Name.match(inpt) ? (
-                <ReadCard
-                  image={val.Cover_image}
-                  name={val.Book_Name.toUpperCase()}
-                  author={val.Book_Author}
-                  read={val.read_time}
-                  listen={val.listen_time}
-                />
-              ) : (
-                console.log("update")
-              )
-            )}
           </div>
         </div>
       ) : (

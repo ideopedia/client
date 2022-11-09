@@ -6,14 +6,19 @@ import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import bookicn from "../../public/bookicn.svg";
 import arrow from "../../public/arrow.svg";
+import cards from "../../public/cards.svg";
 import downarr from "../../public/downarr.svg";
 import ben1 from "../../public/ben1.svg";
 import uparr from "../../public/uparrow.svg";
 import ok from "../../public/ok.svg";
 import before from "../../public/before.svg";
-import after from "../../public/after.svg";
+import beforetime from "../../public/timebefore.svg";
+import time from "../../public/time.svg";
+import arrowone from "../../public/arrowone.svg";
+import arrowtwo from "../../public/arrowtwo.svg";
+import aftertime from "../../public/timeafter.svg";
 import airpods from "../../public/airpods.svg";
-
+import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
@@ -21,9 +26,7 @@ const Book = () => {
   const [arr, setArr] = useState(false);
   const [benarr, setBenarr] = useState(false);
   const [tick, setTick] = useState(false);
-  function handleBenifits() {
-    setBenarr(!benarr);
-  }
+
   function handleClick() {
     setArr(!arr);
   }
@@ -43,7 +46,6 @@ const Book = () => {
   return (
     <div>
       {data ? (
-        
         <div className="p-9">
           {console.log(data)}
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2">
@@ -66,7 +68,7 @@ const Book = () => {
               <span className="text-base text-black">{data.Book_Author}</span>
             </div>
             <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
+              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
                 <div class=" rounded-md flex items-center justify-start">
                   <div className="cont flex">
                     <Image src={bookicn} />
@@ -83,10 +85,18 @@ const Book = () => {
                     </Link>
                   </div>
                 </div>
+                <div class="  rounded-md flex items-center justify-end">
+                  <div className="cont flex">
+                    <Image src={cards} />
+                    <Link className="" href="/read/book">
+                      Cards
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
             <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
+              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
                 <div class=" rounded-md flex items-center justify-start">
                   <span className="text-base text-black">
                     {data.read_time} Minutes
@@ -97,6 +107,9 @@ const Book = () => {
                     {data.listen_time} Minutes
                   </span>
                 </div>
+                <div class="  rounded-md flex items-center justify-end">
+                  <span className="text-base text-black"></span>
+                </div>
               </div>
             </div>
             <div class="p-4  rounded-md flex items-center justify-center"></div>
@@ -104,98 +117,108 @@ const Book = () => {
 
           <div className="desc">
             <h1 className="text-xl new2 pl-2">Description</h1>
-            <div className="p-4 text-xl text-gray-700 indent-12">
-              {data.Book_Description}
+            <div className="flex justify-center">
+              <div className="p-4 text-xl text-gray-700 indent-12 lg:pr-9 pr-0">
+                <Image src={before} height={200} width={200} />
+                {data.Book_Description}
+              </div>
             </div>
           </div>
-          <div className="benifits">
-            <h1 className="text-xl new2 pl-2">Benifits</h1>
-            {data.benifits.map((val, n) => (
-              <div className="p-3 bg-white ">
-                <br />
-                <div
-                  className="text-base p-2 bg-white filter drop-shadow-md  text-green-700 cursor-pointer"
-                  onClick={handleBenifits}
-                >
-                  {n + 1} . {val.name}
-                </div>
-                {benarr ? (
-                  <div className="ben-con  bg-white filter drop-shadow-md">
-                    <div class="p-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-2">
-                      <div class=" rounded-md flex items-center justify-center lg:justify-start">
-                        <Image src={ben1} />
-                      </div>
-                      {val.benifits.map((dat) => (
-                        <div class=" rounded-md flex items-center justify-start">
-                          {dat} 
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  console.log("Error")
-                )}
+          <br />
+          <div className="desc">
+            <h1 className="text-xl new2 pl-2">Description</h1>
+            <div className="flex justify-center">
+              <div className="p-4 text-xl text-gray-700 indent-12 lg:pr-9 pr-0">
+                <Image
+                  src={data.Author_image}
+                  width={100}
+                  height={100}
+                  className="authimg"
+                />
+                {data.About_Author}
               </div>
-            ))}
+            </div>
           </div>
+          <br />
           <div>
             <h1 className="text-xl new2 pt-4 pb-4 ">Time Saved</h1>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-4">
               <div class=" rounded-md flex items-center justify-center">
-                <div className="w-6/12">
-                  <Image src={before} />
-                  <h1>What’s the Future</h1>
-                  <div className="text-green-700">
-                    {data.book_page} pages - {data.original_read_time} Hours
+                <div className="w-11/12">
+                  <Image src={beforetime} />
+
+                  <div className="bg-green-700 high">
+                    <div className="text-white p-2">
+                      Read {data.book_page} pages in {data.original_read_time}{" "}
+                      Hours
+                    </div>
                   </div>
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="w-6/12">
-                  <Image src={arrow} />
+                  <Image src={arrowone} />
+                </div>
+              </div>
+              <div class=" rounded-md flex items-center justify-center">
+                <div className="w-11/12">
+                  <h1 className="pl-9">SAVE OVER </h1>
+                  <Image src={time} />
                   <br />
-                  <h1>
-                    SAVE OVER{" "}
-                    {(data.original_read_time * 60 - data.read_time) / 60} HOURS
-                  </h1>
+                  <h1 className="pl-9">HOURS</h1>
+                </div>
+              </div>
+              <div class=" rounded-md flex items-center justify-center">
+                <div className="w-6/12">
+                  <Image src={arrowtwo} />
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">
-                <div className="w-6/12">
-                  <Image src={after} />
-                  <h1>IDEOS of What’s the Future</h1>
-                  <div className="text-green-700">
-                    {" "}
-                    Key points finely distilled – {data.read_time} min
+                <div className="w-full">
+                  <Image src={aftertime} />
+
+                  <div className="bg-green-700 high">
+                    <div className="text-white p-2">
+                      Read finely distilled Ideos in {data.read_time} min
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <br />
-            <div>
-              <h1 className="text-xl new2 pl-2">About Author</h1>
-              <div class="pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-0">
-                <div class="pb-5 rounded-md flex items-center lg:justify-center justify-center">
-                  <Image
-                    src={data.Author_image}
-                    width={100}
-                    height={100}
-                    className="authimg"
-                  />
-                </div>
-                <div class="p-0 rounded-md flex items-center justify-start">
-                  <div>{data.About_Author}</div>
-                </div>
-              </div>
-            </div>
           </div>
+
+          <div className="benifits">
+            <h1 className="text-xl new2 pl-2">Benifits</h1>
+            {data.benifits.map((val, n) => (
+              <div className="pt-6 pb-6">
+                <DropdownComponent
+                  name={n + 1 + ". " + val.name}
+                  image={val.image}
+                  content={
+                    val.benifits[0] +
+                    "." +
+                    val.benifits[1] +
+                    "." +
+                    val.benifits[1]
+                  }
+                />
+                <br />
+              </div>
+            ))}
+          </div>
+          <br />
+          <br />
 
           <div>
             <br />
             <br />
             <hr />
             <div class="pt-5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
-              <div class=" rounded-md flex items-center justify-start">
+              <div
+                class=" rounded-md flex items-center justify-start"
+                onClick={handleClick}
+              >
                 <h1 className="text-xl new2">Contents</h1>
               </div>
               <div class="rounded-md flex items-center justify-end">
@@ -216,10 +239,10 @@ const Book = () => {
             </div>
             <br />
             {arr ? (
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 pb-9">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2 pb-9">
                 {data.Ideos.map((idea, n) => (
                   <div
-                    class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8 cursor-pointer"
+                    class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white drop-shadow-md"
                     onClick={handleTick}
                   >
                     <div class="p-4 rounded-md flex items-center justify-center">
@@ -244,6 +267,24 @@ const Book = () => {
             ) : (
               console.log("Error")
             )}
+          </div>
+          <br />
+          <br />
+          <br />
+          <div>
+            <div className="flex justify-center items-center">
+              <span className="text-xl">
+                {"The Book  " + data.Book_Name + "has been Acclaimed  by"}{" "}
+              </span>
+            </div>
+            <br />
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
+              {data.Aclaimed.map((val) => (
+                <div class="p-4 rounded-md flex items-center justify-center">
+                  <Image src={val} width={300} height={300} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ) : (

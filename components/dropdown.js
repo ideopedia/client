@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
-import timebrfore from "../public/timebefore.svg";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -44,7 +44,7 @@ export default function DropdownComponent(props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute  w-full mt-2 origin-top-right bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="  w-full mt-2 origin-top-right bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
@@ -56,12 +56,17 @@ export default function DropdownComponent(props) {
                 >
                   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
                     <div class="rounded-md flex items-center justify-start">
-                      <Image src={props.image} />
+                      <Image src={props.image} width={300} height={300} />
                     </div>
                     <div class="rounded-md flex items-center justify-start">
                       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 ">
+                        <div class="rounded-md flex items-start justify-start pb-5 ">
+                          <span className="text-xl text-green-700 ">{props.name}</span>
+                          
+                        </div>
                         <div class="rounded-md flex items-start justify-start">
-                        <span className="text-3xl text-green-700 pr-5">*</span> <span className="text-2xl pb-1"> {props.content}</span>
+                          <span className="text-xl text-green-700 ">*</span>{" "}
+                          <span className="text-xl pb-1"> {props.content}</span>
                         </div>
                       </div>
                     </div>

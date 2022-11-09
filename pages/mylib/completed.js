@@ -21,14 +21,7 @@ const Completed = () => {
         <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
           <br />
           <div class="scrollmenu flex pt-9 ml-9">
-            <div className="pr-9 flex">
-              <Image src={bmark} />
-              <Link href="/mylib/whishlist" className="navtxt">
-                <span className="text-xl hover:text-green-700 cursor-pointer">
-                  Whishlist
-                </span>
-              </Link>
-            </div>
+            
             <div className="pr-9 flex">
               <Image src={task} />
               <Link href="/mylib/completed" className="navtxt">

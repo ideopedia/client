@@ -35,7 +35,7 @@ function Hero() {
                 </div>
               </div>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
+            <div class="rounded-md flex items-center justify-center">
               <SliderComponent />
             </div>
           </div>

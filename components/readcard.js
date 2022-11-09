@@ -15,8 +15,8 @@ import del from "../public/del.svg";
 const ReadCard = (props) => {
   const percentage = 66;
   return (
-    <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-      <div class=" rounded-md flex items-center lg:12 sm:w-12 md:w-9/12 justify-start drop-shadow-md bg-white">
+    <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
+      <div class=" rounded-md flex items-center w-screen justify-start drop-shadow-md bg-white">
         <div className="flex cover_image  p-2">
           <Image src={props.image} width={100} height={100} />
         </div>

@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import login from "../public/login.svg"
 import Image from "next/image";
+import Link from "next/link";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 function Login() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
@@ -55,7 +56,7 @@ function Login() {
                   id="button"
                   className="row flex justify-center items-center"
                 >
-                  <button type="submit">Login</button>
+                  <button type="submit"  >Login</button>
                 </div>
               </form>
               <div className="row">

@@ -4,9 +4,10 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Link from "next/link";
-import contactfacebook from "../public/contactfacebook.svg";
-import contacttwitter from "../public/contacttwitter.svg";
-import contacttelegram from "../public/contacttelegram.svg";
+import facebook from "../public/facebook.svg";
+import twitter from "../public/twitter.svg";
+import telegram from "../public/telegram.svg";
+
 import map from "../public/map.svg";
 import mail from "../public/mail.svg";
 
@@ -56,14 +57,14 @@ const New = () => {
                 </Link>
               </div>
               <div class="pt-9 rounded-md flex items-end justify-center">
-                <div className="pl-3 ">
-                  <Image src={contactfacebook} />
+                <div className="pl-3 pb-1 ">
+                  <Image src={facebook} />
                 </div>
                 <div className="pl-3 pb-1">
-                  <Image src={contacttwitter} />
+                  <Image src={telegram} />
                 </div>
                 <div className="pl-3 pb-1">
-                  <Image src={contacttelegram} />
+                  <Image src={twitter} />
                 </div>
               </div>
             </div>

@@ -32,24 +32,13 @@ export default function SliderComponent() {
                             autoplay
                             loop
                             src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                            style={{ height: '400px', width: '400px' }}
+                            style={{ height: '380px', width: '380px' }}
                             className="cim"
                         >
 
                         </Player>
                     </SwiperSlide>
-                    <SwiperSlide className="cim">
-                        <Player
-                            autoplay
-                            loop
-                            src="https://assets5.lottiefiles.com/packages/lf20_ihwqyxn5.json"
-                            style={{ height: '400px', width: '400px' }}
-
-                            className="cim"
-                        >
-
-                        </Player>
-                    </SwiperSlide>
+                    
                 </Swiper>
             
         </>
