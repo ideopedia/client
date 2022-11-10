@@ -5,14 +5,23 @@ import Axios from "axios";
 const Ideo = () => {
   const router = useRouter();
   const { ideo } = router.query;
+
   const [data, setData] = useState(false);
   useEffect(() => {
-    Axios.post("https://ideopedia-books.herokuapp.com/findpreBook", {
-      id: Number(ideo),
-    }).then((data) => {
-      setData(data.data);
-    });
-    console.log(data);
+    fetch("/api/bookSummary/findSummary", {
+      method: "POST",
+
+      body: JSON.stringify({ Ideo_id: Number(ideo) }),
+
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        //console.log(data)
+      });
   }, []);
 
   return (

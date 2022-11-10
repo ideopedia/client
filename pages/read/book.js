@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
 import Loader from "../../components/loader";
@@ -26,22 +27,27 @@ const Book = () => {
   const [arr, setArr] = useState(false);
   const [benarr, setBenarr] = useState(false);
   const [tick, setTick] = useState(false);
-
+  const router = useRouter();
   function handleClick() {
     setArr(!arr);
   }
-  function handleTick() {
-    setTick(!tick);
-  }
-
   useEffect(() => {
-    Axios.post("https://ideopedia-books.herokuapp.com/findpreBook", {
-      id: 1,
-    }).then((data) => {
-      setData(data.data);
-    });
-    console.log(data);
+    fetch("/api/prebook/findPrebook", {
+      method: "POST",
+
+      body: JSON.stringify({ id: 1 }),
+
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        //console.log(data)
+      });
   }, []);
+
   console.log(arr);
   return (
     <div>
@@ -243,7 +249,9 @@ const Book = () => {
                 {data.Ideos.map((idea, n) => (
                   <div
                     class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white drop-shadow-md"
-                    onClick={handleTick}
+                    onClick={function handleTick() {
+                      router.push(`/read/${idea.Ideo_id}`);
+                    }}
                   >
                     <div class="p-4 rounded-md flex items-center justify-center">
                       <h1 className="text-sm lg:text-xl  ">
@@ -251,7 +259,7 @@ const Book = () => {
                       </h1>
                     </div>
                     <div class="p-4 rounded-md flex items-center justify-start">
-                      <span className="text-sm lg:text-xl">{idea}</span>
+                      <span className="text-sm lg:text-xl">{idea.name}</span>
                     </div>
 
                     {tick ? (
