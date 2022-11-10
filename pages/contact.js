@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 import facebook from "../public/facebook.svg";
 import twitter from "../public/twitter.svg";
 import telegram from "../public/telegram.svg";
@@ -14,6 +15,26 @@ import mail from "../public/mail.svg";
 import location from "../public/location.svg";
 
 const New = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   return (
     <div>
@@ -73,11 +94,12 @@ const New = () => {
             <div>
               <FormHeader title="Contact us" className="bd1" />
               <div>
-                <form>
+                <form ref={form} onSubmit={sendEmail}>
                   <div className="row">
                     <label>Name</label>
                     <input
                       type="email"
+                      name="name"
                       placeholder="Enter your name"
                       onChange={(e) => setEmail_Id(e.target.value)}
                     />
@@ -85,7 +107,8 @@ const New = () => {
                   <div className="row">
                     <label>Email</label>
                     <input
-                      type="text"
+                      type="email"
+                      name="email"
                       placeholder="Enter your email"
                       onChange={(e) => setComponent_available(e.target.value)}
                     />
@@ -94,13 +117,14 @@ const New = () => {
                     <label>Message</label>
                     <textarea
                       type="text"
+                      name="message"
                       placeholder="write your message"
                       onChange={(e) => setComponent_available(e.target.value)}
                     ></textarea>
                   </div>
 
                   <div id="button" className="row">
-                    <button type="submit">Send Message</button>
+                    <button type="submit" value="send">Send Message</button>
                   </div>
                 </form>
               </div>

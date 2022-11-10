@@ -36,7 +36,7 @@ const Book = () => {
 
   useEffect(() => {
     Axios.post("https://ideopedia-books.herokuapp.com/findpreBook", {
-      Book_Name: "What’s The Future (WTF) And Why It’s Up to Us",
+      id: 1,
     }).then((data) => {
       setData(data.data);
     });
