@@ -2,40 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-.FormSec{
+
+.FormSec {
   margin-top: 1.5rem;
 }
-.FormSec form label{
+
+.FormSec form label {
   margin-top: 1rem;
 }
-.FormSec form input{
+
+.FormSec form input {
   margin: 0.5rem 0 2.5rem;
   padding-left: 3rem;
 
 }
-.desc{
+
+.desc {
   width: 100%;
   height: 100vh;
   padding: 2.3rem;
 }
-.desc h1{
+
+.desc h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
-.profImg{
+
+.profImg {
   margin-top: 5rem;
 }
-.ipSvg{
-  position:absolute;
-  margin:1.2rem ;
+
+.ipSvg {
+  position: absolute;
+  margin: 1.2rem;
 }
+
+.descIdeo {
+  margin-top: 1rem;
+}
+.greenBtn div{
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 410px) {
+  .greenBtn div span{
+    margin: 0.6rem;
+  }
+}
+
+.greenBtn{
+  font-weight: bold;
+}
+@media screen and (min-width: 600px) {
+  .greenBtn {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1.2px
+  }
+  .greenBtn div{
+    padding-top: 6.5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .descIdeo .cutEdg{
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    font-weight:bold
+  }
+}
+
+
+/* md'ss */
 * {
   font-family: 'Poppins', sans-serif;
   /* box-sizing: border-box; */
 }
-.body{
+
+.body {
   min-height: 100vh;
 }
+
 .log {
   width: 100px;
   height: 35px;
@@ -290,33 +336,41 @@
   position: sticky !important;
   z-index: -9999 !important;
 }
+
 .foottext {
   color: rgba(0, 0, 0, 0.4);
   font-size: 15px;
   font-weight: 500;
 }
+
 .footer {
   background: #f9f9f9;
 }
+
 .heading {
   font-size: 1.5rem;
   font-weight: 500;
 }
+
 .hru {
   background-color: rgb(2, 2, 2);
   height: 2px;
 }
+
 .dashtext {
   color: rgba(1, 3, 3, 0.3);
 }
+
 .imgr {
   border-radius: 50%;
 }
+
 .imgr2 {
   border-radius: 50%;
   max-width: 50px;
   max-height: 50px;
 }
+
 .ne {
   min-width: 130px;
   min-height: 130px;
@@ -324,27 +378,32 @@
 
   border: 2px solid #7f5af0;
 }
+
 .inne {
   max-width: 100px;
   max-height: 100px;
   border-radius: 50%;
 }
+
 .rrt {
   width: 900px;
 }
+
 .cover_image {
   width: 150px;
   height: 200px;
 }
+
 .book_con {
   height: 200px;
 }
+
 .b_name {
   font-size: 1rem;
   font-weight: 600;
 }
-.b_auth {
-}
+
+.b_auth {}
 
 .svg {
   max-width: 100%;
@@ -354,7 +413,8 @@
 .svg-pi {
   width: 50px;
   height: 50px;
-  transform: rotate(-90deg); /* Fix the orientation */
+  transform: rotate(-90deg);
+  /* Fix the orientation */
 }
 
 .svg-pi-track {
@@ -363,7 +423,8 @@
 
 .svg-pi-indicator {
   stroke: #07c;
-  stroke-dasharray: 151.2px; /* DashArray = Track's or indicator's Circumference */
+  stroke-dasharray: 151.2px;
+  /* DashArray = Track's or indicator's Circumference */
   stroke-linecap: round;
 }
 
@@ -384,6 +445,7 @@
   overflow: auto;
   white-space: nowrap;
 }
+
 .scrollmenu::-webkit-scrollbar {
   display: none;
 }
@@ -391,18 +453,23 @@
 .scrollmenu a {
   display: inline-block;
 }
+
 .navtxt {
   color: rgba(1, 3, 3, 0.3);
 }
+
 .cls {
   width: 150px;
 }
+
 .nod {
   font-size: 1.5rem;
 }
+
 .subt {
   font-size: 1.2rem;
 }
+
 .int {
   max-width: 100%;
 }
@@ -429,13 +496,16 @@
   opacity: 1;
   transition: opacity 0.25s ease-out;
 }
+
 .larr {
   height: 20px;
   width: 20px;
 }
+
 .new2 {
   font-weight: 600;
 }
+
 .cont {
   width: 100px;
   height: 35px;
@@ -449,6 +519,7 @@
   background-color: #2cb67d;
   color: #ffff;
 }
+
 .pointc {
   color: #7f5af0;
 }
@@ -456,10 +527,12 @@
 .verticalscroll::-webkit-scrollbar {
   display: none;
 }
+
 .dot {
   font-size: 4rem;
   color: #111010;
 }
+
 .authimg {
   border-radius: 50%;
 }
@@ -468,9 +541,11 @@
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #2cb67d !important;
 }
+
 .swiper-button-next {
   background-image: url(../public/nextswipe.svg);
   background-repeat: no-repeat;
@@ -482,10 +557,11 @@
 .swiper-button-next::after {
   display: none;
 }
+
 .swiper-button-prev {
   background-image: url(../public/prevswipe.svg);
   background-repeat: no-repeat;
- 
+
   background-size: 150% auto;
   background-position: center;
 }
@@ -493,3 +569,4 @@
 .swiper-button-prev::after {
   display: none;
 }
+
