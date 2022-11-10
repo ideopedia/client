@@ -85,12 +85,65 @@
   .heroTop{
     margin-top:5rem;
   }
+  .iii{
+    font-size: 20px;
+  }
 } 
-@media screen and (max-width:330px) {
+@media screen and (max-width:442px){
+  .iii{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:362px) {
   .iii{
     font-size: 17px;
   }
 }
+.loginImg{
+  width:650px;
+}
+@media screen and (max-width:625px){
+        .loginImg{
+          visibility: none;
+        }
+}
+.loginContainer{
+  display: flex;
+  justify-content: space-evenly
+}
+.newloginContainer{
+  width: 100%;
+}
+@media screen and (min-width:1024px){
+     .newloginContainer{
+      width: 30rem;
+     }
+}
+@media screen and (max-width:1024px){
+  .loginContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.newLoginForm{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.newLoginForm input{
+  margin:5px 0 1rem;
+  padding-left: 1.2rem;
+}
+.formBottom{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 0;
+}
+
+
+
+
 
 /* md'ss */
 * {
@@ -193,7 +246,7 @@
 .row {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 2rem;
   max-width: 100%;
 }
@@ -235,10 +288,10 @@
 }
 .loginput
 {
-  width: 80%;
+  width: 24rem;
 }
 .row label {
-  align-self: start;
+  align-self:flex-start;
   padding-left: 4rem;
   font-weight: 500;
   padding-bottom: 0.5rem;

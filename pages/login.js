@@ -3,81 +3,20 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import login from "../public/login.svg";
 import Image from "next/image";
-import Link from "next/link";
+
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import NewLogin from "./newLogin";
 function Login() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   return (
     <div>
       <Navbar />
-      <section class="h-screen new">
-        <div class="px-6 h-full text-gray-800">
-          <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-            <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0 new1">
-              <Image src={login} />
-            </div>
-            <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
-              <FormHeader title="Login" />
-              <div>
-                <form>
-                  <div className="row">
-                    <label>Email</label>
-                    <input
-                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 loginput"
-                      type="email"
-                      placeholder="Enter your email"
-                      onChange={(e) => setEmail_Id(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
-                  <label>Password</label>
-                    <input
-                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 loginput"
-                      type="password"
-                      placeholder="Enter your password"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    />
-                  </div>
-
-                  <div className="rw">
-                    <div
-                      className="grp"
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        marginLeft:"1rem"
-                      }}
-                    >
-                      <label>
-                        <input
-                          class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckDefault"
-                        ></input>
-                        Remember Me
-                      </label>
-                      <span style={{ marginRight: "9rem" }}>
-                      <Link href="/">Forgot Password</Link>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div
-                    id="button"
-                    className="row flex justify-center items-center"
-                  >
-                    <button type="submit">LOGIN</button>
-                  </div>
-                </form>
-                <div className="row">
-                  <p>
-                    Don't have an account?<span><Link href="/"> Signup here</Link></span>
-                  </p>
-                </div>
-              </div>
-            </div>
+      <section class="h-screen new" style={{ padding: "0 2rem 0 0rem" }}>
+        <div className="loginContainer">
+          <div  className="loginImg">
+            <Image src={login} />
           </div>
+          <NewLogin />
         </div>
       </section>
     </div>

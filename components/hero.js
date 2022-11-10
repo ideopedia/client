@@ -18,7 +18,7 @@ function Hero() {
             <div class=" rounded-md flex items-center justify-center">
               <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-2xl  text-black text-bold iii" style={{}}>INFORMING INSPIRING IMPACTING</span>
+                  <span className="text-2xl  text-black text-bold iii">INFORMING INSPIRING IMPACTING</span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
                   <span className="md:text-xl text-2xl text-green-700 text-bold">INDIA’S TOP LEADERS</span>
