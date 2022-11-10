@@ -5,7 +5,7 @@ import about from "../../public/About.svg"
 import Link from "next/link";
 const profile = () => {
     return (
-        <div className="profile lg:flex">
+        <div className="profile md:flex">
             <SideNavbar />
             <div className="desc md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/1">
                 <div className="top">
