@@ -12,13 +12,13 @@ function Hero() {
     <div>
       <Navbar />
 
-      <div className="body ">
-        <div className="bg-white">
+      <div className="h-auto">
+        <div className="bg-white heroTop">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:h-screen">
             <div class=" rounded-md flex items-center justify-center">
               <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-2xl  text-black text-bold">INFORMING INSPIRING IMPACTING</span>
+                  <span className="text-2xl  text-black text-bold iii" style={{}}>INFORMING INSPIRING IMPACTING</span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
                   <span className="md:text-xl text-2xl text-green-700 text-bold">INDIA’S TOP LEADERS</span>

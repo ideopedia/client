@@ -70,7 +70,27 @@
     font-weight:bold
   }
 }
-
+@media screen and (max-width: 325px) {
+  .descIdeo .cutEdg{
+    font-size: 14.5px;
+  }
+  .greenBtn{
+    font-size: 14px;
+  }
+  .greenBtn div{
+    padding-top: 13px;
+  }
+}
+@media screen and (max-width: 780px){
+  .heroTop{
+    margin-top:5rem;
+  }
+} 
+@media screen and (max-width:330px) {
+  .iii{
+    font-size: 17px;
+  }
+}
 
 /* md'ss */
 * {
@@ -78,9 +98,9 @@
   /* box-sizing: border-box; */
 }
 
-.body {
+/* .body {
   min-height: 100vh;
-}
+} */
 
 .log {
   width: 100px;
