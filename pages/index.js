@@ -34,18 +34,18 @@ export default function Home() {
       </Head>
       <Hero />
       <div>
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo">
           <div class="rounded-md flex items-center justify-center">
             <span className="text-xl">An Invitation-only platform</span>
           </div>
-          <div class=" rounded-md flex items-center justify-center">
-            <span className="text-xl text-black text-bold">
+          <div class="rounded-md flex items-center justify-center cutEdg">
+            <span className="text-xl text-black text-bold cutEdg">
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
-          <div class="rounded-md flex items-center justify-center ">
-            <div className="w-auto h-12 bg-green-700 flex justify-center items-center high">
-              <span className="p-5 text-white ">
+          <div class="rounded-md flex items-center justify-center greenBtn" >
+            <div className=" h-12 bg-green-700  justify-center items-center high">
+              <span className="p-5 text-white">
                 THE TOP 5000 INFLUENCERS IN INDIA
               </span>
             </div>
@@ -159,7 +159,7 @@ export default function Home() {
           <Image src={homeimage} />
         </div>
         <div class=" rounded-md flex items-center justify-center">
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2" style={{padding:"1.2rem"}}>
             <div class=" rounded-md flex items-center justify-start">
               <span className="text-2xl text-bold text-black-700">
                 Ideopedia is trusted and loved by India’s leading influencers
