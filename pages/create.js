@@ -36,10 +36,10 @@ const Read = () => {
   return (
     <>
       {data ? (
-        <div className="p-4 pb-9">
+        <div className=" pb-9">
           <ProgressBar />
           {console.log(data)}
-          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 ">
+          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 " style={{padding:"0 1.7rem"}}>
             <div class=" rounded-md flex items-center justify-start">
               <div>
                 <Image src={forward} width={30} height={30} />
@@ -64,7 +64,7 @@ const Read = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center text-3xl text-green-700 text-bold p-4">
+          <div className="flex justify-center items-center text-3xl text-green-700 text-bold p-4" style={{ position: "relative", bottom: "4.2rem" }}>
             {data.Ideo}
           </div>
           <div className="pb-4">
@@ -100,10 +100,10 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
-              <div>
+              <div style={{padding:"0 3rem"}}>
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
-                    <div className="text-xl text-black  p-4 flex justify-center items-center">
+                    <div className="text-xl text-black  p-4 flex justify-center items-center" style={{ lineHeight: "1.7" }}>
                       {val}
                     </div>
                   ))}
@@ -115,14 +115,14 @@ const Read = () => {
                     />
                   </div>
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                    <div>
-                      <div className="flex justify-start items-start">
+                    <div className="bg-red">
+                      <div>
                         <Image src={startq} />
                       </div>
-                      <div className="text-xl text-green-700 p-4 flex justify-center items-center">
+                      <div className="text-[5px] sm:text-xl text-green-700">
                         {data.Book_Summary[0].Quotes[n]}
                       </div>
-                      <div className="flex justify-end items-end">
+                      <div>
                         <Image src={endq} />
                       </div>
                     </div>
@@ -133,14 +133,14 @@ const Read = () => {
               </div>
             </div>
           ))}
-          <div className="bg-green-100">
+          <div className="bg-green-100 " style={{padding:"0 20rem"}} >
             <div className="p-4 ">
               {data.Ideo_Peaks.map((val) => (
                 <div className="flex justify-start items-center p-4">
                   <div className="pr-4">
                     <Image src={bullet} width={40} height={40} />
                   </div>
-                  <div className="text-xl">{val}</div>
+                  <div className="text-xl">{val.name}</div>
                 </div>
               ))}
             </div>
