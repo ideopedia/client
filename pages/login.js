@@ -11,7 +11,7 @@ function Login() {
   return (
     <div>
       <Navbar />
-      <section class="h-screen new" style={{ padding: "0 2rem 0 0rem" }}>
+      <section class="h-screen new" style={{ padding: "0 2rem 0 0" }}>
         <div className="loginContainer">
           <div  className="loginImg">
             <Image src={login} />

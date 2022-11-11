@@ -94,7 +94,7 @@
     font-size: 20px;
   }
 }
-@media screen and (max-width:362px) {
+@media screen and (max-width:420px) {
   .iii{
     font-size: 17px;
   }
@@ -114,7 +114,7 @@
 .newloginContainer{
   width: 100%;
 }
-@media screen and (min-width:1024px){
+@media screen and (min-width:1025px){
      .newloginContainer{
       width: 30rem;
      }
@@ -139,6 +139,13 @@
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 0;
+}
+.bulletPoints{
+  margin: 5px;
+  display:inline;
+  font-size:8px;
+  position:relative;
+  bottom:5px;
 }
 
 
