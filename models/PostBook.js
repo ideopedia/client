@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
+//import { Schema, model, models } from "mongoose";
 //datas and their data type which are stored our monoose database
-const postbookSchema = new Schema({
+var postbookSchema = new Schema({
   id: { type: Number },
   Ideo_id: { type: Number },
   Book_Name: { type: String },
@@ -25,6 +26,7 @@ const postbookSchema = new Schema({
     },
   ],
 });
-const postBooks = models.postBooks || model("postbooks", postbookSchema);
+
+var postBooks = models.postBooks || model("PostBooks", postbookSchema);
 
 export default postBooks;

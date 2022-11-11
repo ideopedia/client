@@ -1,5 +1,5 @@
 import connectMongo from "../../../utils/connectMongo";
-import postBooks from "../../../models/postbook.model";
+import postBooks from "../../../models/PostBook";
 /**
  *
  * @param {import('next').NextApiRequest} req

@@ -1,6 +1,8 @@
+//const mongoose = require("mongoose");
 import { Schema, model, models } from "mongoose";
+//import { Schema, model, models } from "mongoose";
 //datas and their data type which are stored our monoose database
-const prebookSchema = new Schema({
+var prebookSchema = new Schema({
   id: { type: Number },
   Cover_image: { type: String },
   Book_Name: { type: String },
@@ -23,6 +25,7 @@ const prebookSchema = new Schema({
   Aclaimed: [{ type: String }],
   Ideos: [{ name: { type: String }, Ideo_id: { type: Number } }],
 });
-const preBooks = models.preBooks || model("prebooks", prebookSchema);
+
+var preBooks = models.preBooks || model("PreBooks", prebookSchema);
 
 export default preBooks;

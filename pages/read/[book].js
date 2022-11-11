@@ -28,25 +28,35 @@ const Book = () => {
   const [benarr, setBenarr] = useState(false);
   const [tick, setTick] = useState(false);
   const router = useRouter();
+  const { book } = router.query;
+  var num = Number(book);
   function handleClick() {
     setArr(!arr);
   }
   useEffect(() => {
-    fetch("/api/prebook/findPrebook", {
-      method: "POST",
-
-      body: JSON.stringify({ id: 1 }),
-
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        //console.log(data)
-      });
+    Axios.post("http://localhost:3000/api/prebook/findPrebook", {
+      id: num,
+    }).then((data) => {
+      setData(data.data);
+    });
+    console.log(data);
   }, []);
+  // useEffect(() => {
+  //   fetch("/api/prebook/findPrebook", {
+  //     method: "POST",
+
+  //     body: JSON.stringify({ id: 1 }),
+
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       console.log(data);
+  //     });
+  // }, []);
 
   console.log(arr);
   return (
@@ -250,7 +260,7 @@ const Book = () => {
                   <div
                     class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
-                      router.push(`/read/${idea.Ideo_id}`);
+                      router.push(`/read/summary/${idea.Ideo_id}`);
                     }}
                   >
                     <div class="p-4 rounded-md flex items-center justify-center">

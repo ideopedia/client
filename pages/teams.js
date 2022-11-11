@@ -49,6 +49,7 @@ const Teams = () => {
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard1}
+            
           >
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
               <div class="flex items-center justify-center">
