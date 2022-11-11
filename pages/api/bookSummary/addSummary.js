@@ -10,6 +10,7 @@ export default async function addSummary(req, res) {
     id,
     Book_Name,
     Ideo,
+    Ideo_image,
     Ideo_id,
     Book_Author,
 
@@ -23,6 +24,7 @@ export default async function addSummary(req, res) {
       id,
       Book_Name,
       Ideo,
+      Ideo_image,
       Ideo_id,
       Book_Author,
 

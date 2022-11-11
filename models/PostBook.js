@@ -6,6 +6,7 @@ var postbookSchema = new Schema({
   Ideo_id: { type: Number },
   Book_Name: { type: String },
   Notable_Quotes: [{ type: String }],
+  Ideo_image: { type: String },
   Thankyou: {
     content: [{ type: String }],
     highlightes: { type: String },
