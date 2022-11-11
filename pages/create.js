@@ -93,9 +93,13 @@ const Read = () => {
           </div>
           {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
             <div>
-              <div className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white ">
-                {dat}
-              </div>
+              {dat.length > 2 ? (
+                <div className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white ">
+                  {dat}
+                </div>
+              ) : (
+                console.log("")
+              )}
               <div>
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
