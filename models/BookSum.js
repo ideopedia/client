@@ -9,7 +9,7 @@ var bookSchema = new Schema({
   Ideo: { type: String },
   Book_Author: { type: String },
 
-  Ideo_Peaks: [{ type: String }],
+  Ideo_Peaks: [{ name: { type: String }, quote: { type: String } }],
 
   Book_Summary: [
     {
