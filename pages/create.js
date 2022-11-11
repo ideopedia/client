@@ -140,7 +140,7 @@ const Read = () => {
                   <div className="pr-4">
                     <Image src={bullet} width={40} height={40} />
                   </div>
-                  <div className="text-xl">{val}</div>
+                  <div className="text-xl">{val.name}</div>
                 </div>
               ))}
             </div>
