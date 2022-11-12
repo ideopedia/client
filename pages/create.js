@@ -36,10 +36,10 @@ const Read = () => {
   return (
     <>
       {data ? (
-        <div className=" pb-9">
+        <div className="p-4 pb-9">
           <ProgressBar />
           {console.log(data)}
-          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 " style={{padding:"0 1.7rem"}}>
+          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
             <div class=" rounded-md flex items-center justify-start">
               <div>
                 <Image src={forward} width={30} height={30} />
@@ -47,7 +47,7 @@ const Read = () => {
             </div>
             <div class=" rounded-md flex items-center justify-center">
               <div>
-                <div className="text-3xl text-black text-bold">IDEO II</div>
+                <div className="text-3xl text-black text-bold ideoHead">IDEO II</div>
               </div>
             </div>
             <div class="rounded-md flex items-center justify-end">
@@ -64,19 +64,19 @@ const Read = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center text-3xl text-green-700 text-bold p-4" style={{ position: "relative", bottom: "4.2rem" }}>
+          <div className="flex justify-center items-center text-3xl text-green-700 text-bold pl-4 ideoData">
             {data.Ideo}
           </div>
           <div className="pb-4">
             <Image src={ideo2} />
           </div>
           <div>
-            <div className="bg-white drop-shadow rounded-lg -mb-9">
+            <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
               <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                 <div class=" rounded-md flex items-center justify-start">
                   <Image src={forward} />
                 </div>
-                <div class="rounded-md flex items-center justify-center">
+                <div class="rounded-md flex items-center justify-center ">
                   <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                     <div
                       class="bg-green-600 h-1.5 rounded-full dark:bg-green-500"
@@ -94,16 +94,16 @@ const Read = () => {
           {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
             <div>
               {dat.length > 2 ? (
-                <div className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white ">
+                <div className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white greyContent" style={{textAlign:"center"}}>
                   {dat}
                 </div>
               ) : (
                 console.log("")
               )}
-              <div style={{padding:"0 3rem"}}>
+              <div className="px-1">
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
-                    <div className="text-xl text-black  p-4 flex justify-center items-center" style={{ lineHeight: "1.7" }}>
+                    <div className="text-xl text-black  p-4 flex justify-center items-center" style={{ lineHeight: "1.5" }}>
                       {val}
                     </div>
                   ))}
@@ -115,15 +115,17 @@ const Read = () => {
                     />
                   </div>
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                    <div className="bg-red">
-                      <div>
-                        <Image src={startq} />
-                      </div>
-                      <div className="text-[5px] sm:text-xl text-green-700">
-                        {data.Book_Summary[0].Quotes[n]}
-                      </div>
-                      <div>
-                        <Image src={endq} />
+                    <div className="flex justify-center items-center">
+                      <div className="mx-[auto]" >
+                        <div className="text-left">
+                          <Image src={startq} />
+                        </div>
+                        <div className="lg:text-2xl text-base text-green-700 mx-[2rem]">
+                          {data.Book_Summary[0].Quotes[n]}
+                        </div>
+                        <div className="text-right">
+                          <Image src={endq} />
+                        </div>
                       </div>
                     </div>
                   ) : (
@@ -133,8 +135,8 @@ const Read = () => {
               </div>
             </div>
           ))}
-          <div className="bg-green-100 " style={{padding:"0 20rem"}} >
-            <div className="p-4 ">
+          <div className="bg-green-100 " >
+            <div className="p-4 flex-column justify-center items-center">
               {data.Ideo_Peaks.map((val) => (
                 <div className="flex justify-start items-center p-4">
                   <div className="pr-4">

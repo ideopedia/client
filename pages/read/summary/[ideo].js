@@ -44,7 +44,7 @@ const Read = () => {
         <div className="p-4 pb-9">
           <ProgressBar />
           {console.log(data)}
-          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 ">
+          <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
             <div
               class=" rounded-md flex items-center justify-start"
               onClick={function handleClick() {
@@ -124,7 +124,7 @@ const Read = () => {
               <div>
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
-                    <div className="text-xl text-black  p-4 flex justify-center items-center">
+                    <div className="text-xl text-black  p-4 flex justify-center items-center " style={{ lineHeight: "1.5" }}>
                       {val}
                     </div>
                   ))}
@@ -136,15 +136,17 @@ const Read = () => {
                     />
                   </div>
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                    <div>
-                      <div className="flex justify-start items-start">
-                        <Image src={startq} />
-                      </div>
-                      <div className="text-xl text-green-700 p-4 flex justify-center items-center">
-                        {data.Book_Summary[0].Quotes[n]}
-                      </div>
-                      <div className="flex justify-end items-end">
-                        <Image src={endq} />
+                    <div className="flex justify-center items-center">
+                      <div className="mx-[auto]" >
+                        <div className="text-left">
+                          <Image src={startq} />
+                        </div>
+                        <div className="lg:text-2xl text-base text-green-700 mx-[2rem]">
+                          {data.Book_Summary[0].Quotes[n]}
+                        </div>
+                        <div className="text-right">
+                          <Image src={endq} />
+                        </div>
                       </div>
                     </div>
                   ) : (

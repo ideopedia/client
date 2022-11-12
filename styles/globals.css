@@ -81,12 +81,18 @@
     padding-top: 13px;
   }
 }
-@media screen and (max-width: 780px){
+
+@media screen and (max-width: 915px){
+  .iii{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 782px){
   .heroTop{
     margin-top:5rem;
   }
   .iii{
-    font-size: 20px;
+    font-size: 18px;
   }
 } 
 @media screen and (max-width:442px){
@@ -146,6 +152,23 @@
   font-size:8px;
   position:relative;
   bottom:5px;
+}
+
+.ideoData{
+  font-size: 1.6rem;
+}
+@media screen and (max-width:470px){
+  .ideoData{
+    font-size: 1.25rem;
+  }
+  .ideoHead{
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width:715px){
+  .greyContent{
+    font-size: 20px;
+  }
 }
 
 
