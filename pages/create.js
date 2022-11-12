@@ -22,7 +22,7 @@ const Read = () => {
       const result = await Axios.post(
         "http://localhost:3000/api/bookSummary/findSummary",
         {
-          Ideo_id: 11,
+          Ideo_id: 13,
         }
       );
 
@@ -41,24 +41,26 @@ const Read = () => {
           {console.log(data)}
           <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
             <div class=" rounded-md flex items-center justify-start">
-              <div>
+              <div className="ideoIcons">
                 <Image src={forward} width={30} height={30} />
               </div>
             </div>
             <div class=" rounded-md flex items-center justify-center">
               <div>
-                <div className="text-3xl text-black text-bold ideoHead">IDEO II</div>
+                <div className="text-3xl text-black text-bold ideoHead">
+                  IDEO II
+                </div>
               </div>
             </div>
             <div class="rounded-md flex items-center justify-end">
               <div>
-                <div className="p-2">
+                <div className="p-2 RightIcons">
                   <Image src={content} />
                 </div>
-                <div className="p-2">
+                <div className="p-2   RightIcons">
                   <Image src={font} />
                 </div>
-                <div className="p-2">
+                <div className="p-2 RightIcons">
                   <Image src={sound} />
                 </div>
               </div>
@@ -73,19 +75,19 @@ const Read = () => {
           <div>
             <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
               <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                <div class=" rounded-md flex items-center justify-start">
+                <div class=" rounded-md flex items-center justify-start ideoIcons">
                   <Image src={forward} />
                 </div>
-                <div class="rounded-md flex items-center justify-center ">
+                <div class="rounded-md flex items-center justify-center progBar">
                   <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                     <div
-                      class="bg-green-600 h-1.5 rounded-full dark:bg-green-500"
+                      class="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
                       style={{ width: "45%" }}
                     ></div>
                   </div>
-                  <div className="text-base pl-4 pb-3">45%</div>
+                  <div className="text-base pl-4 pb-3 perc">45%</div>
                 </div>
-                <div class="rounded-md flex items-center justify-end">
+                <div class="rounded-md flex  justify-end ">
                   <Image src={backward} />
                 </div>
               </div>
@@ -94,7 +96,10 @@ const Read = () => {
           {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
             <div>
               {dat.length > 2 ? (
-                <div className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white greyContent" style={{textAlign:"center"}}>
+                <div
+                  className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white greyContent"
+                  style={{ textAlign: "center" }}
+                >
                   {dat}
                 </div>
               ) : (
@@ -103,7 +108,10 @@ const Read = () => {
               <div className="px-1">
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
-                    <div className="text-xl text-black  p-4 flex justify-center items-center" style={{ lineHeight: "1.5" }}>
+                    <div
+                      className="text-xl text-black  p-4 flex justify-center items-center"
+                      style={{ lineHeight: "1.5" }}
+                    >
                       {val}
                     </div>
                   ))}
@@ -116,14 +124,20 @@ const Read = () => {
                   </div>
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
                     <div className="flex justify-center items-center">
-                      <div className="mx-[auto]" >
-                        <div className="text-left">
+                      <div className="mx-[auto]">
+                        <div className="text-left leftQuote">
                           <Image src={startq} />
                         </div>
                         <div className="lg:text-2xl text-base text-green-700 mx-[2rem]">
                           {data.Book_Summary[0].Quotes[n]}
                         </div>
-                        <div className="text-right">
+                        <div
+                          className="rightQuote"
+                          style={{
+                            display: "flex",
+                            justifyContent: "flex-end",
+                          }}
+                        >
                           <Image src={endq} />
                         </div>
                       </div>
@@ -135,14 +149,19 @@ const Read = () => {
               </div>
             </div>
           ))}
-          <div className="bg-green-100 " >
-            <div className="p-4 flex-column justify-center items-center">
+          <div className="bg-green-100 p-6">
+            <div className="p-4">
               {data.Ideo_Peaks.map((val) => (
-                <div className="flex justify-start items-center p-4">
-                  <div className="pr-4">
-                    <Image src={bullet} width={40} height={40} />
+                <div>
+                  <div style={{position:"absolute",marginTop:"0.7rem"}}>
+                  <Image src={bullet} width={40} height={40} />
                   </div>
-                  <div className="text-xl">{val.name}</div>
+                  <div className=" p-4 ml-8" >
+                      <div className="pr-4">
+                        <div className="text-xl">{val.name}</div>
+                        <div className="text-base text-green-700">{val.quote}</div>
+                      </div>
+                  </div>
                 </div>
               ))}
             </div>

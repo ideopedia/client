@@ -159,6 +159,7 @@
 
 .ideoData{
   font-size: 1.6rem;
+  text-align: center;
 }
 @media screen and (max-width:470px){
   .ideoData{
@@ -173,8 +174,60 @@
     font-size: 20px;
   }
 }
+@media screen and (max-width:1065px){
+  .rightQuote{
+    height: 1.8rem;
+  }
+  .leftQuote{
+    width: 2rem;
+  }
+}
+@media screen and (max-width:750px){
+  .RightIcons{
+    width: 2.3rem;
+  }
+}
+@media screen and (max-width:750px){
+  .ideoIcons{
+    width: 1.5rem;
+  }
+  /* .progRight{
+    padding: 0 3rem;
+  } */
+  .perc{
+    font-size: 10px;
+  }
+}
+.progBar{
+  position: relative;
+  top:8px;
+}
 
-
+.infPics>*{
+  display: inline;
+}
+@media screen and (max-width:720px){
+  .readContent{
+    font-size: 18px;
+  }
+  .readHead{
+    font-size: 25px;
+  }
+}
+.logo{
+  position:relative;
+  bottom:5rem;
+}
+@media screen and (max-width:1464px){
+  .logo{
+    bottom:4.5rem;
+  }
+}
+@media screen and (max-width:1110px){
+  .logo{
+    bottom:3.8rem;
+  }
+}
 
 
 
