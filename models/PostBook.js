@@ -28,6 +28,6 @@ var postbookSchema = new Schema({
   ],
 });
 
-var postBooks = models.postBooks || model("PostBooks", postbookSchema);
+var postBooks = models.PostBooks || model("PostBooks", postbookSchema);
 
 export default postBooks;

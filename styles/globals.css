@@ -6,7 +6,10 @@
 .FormSec {
   margin-top: 1.5rem;
 }
-
+/* .blt{
+  position:sticky;
+  z-index: -9 !important;
+} */
 .FormSec form label {
   margin-top: 1rem;
 }
