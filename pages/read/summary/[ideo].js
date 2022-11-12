@@ -128,13 +128,18 @@ const Read = () => {
                       {val}
                     </div>
                   ))}
-                  <div className="flex justify-center items-center p-4">
-                    <Image
-                      src={data.Book_Summary[0].images[n][0]}
-                      width={300}
-                      height={300}
-                    />
-                  </div>
+                  {data.Book_Summary[0].images[n][0].length > 2 ? (
+                    <div className="flex justify-center items-center p-4">
+                      <Image
+                        src={data.Book_Summary[0].images[n][0]}
+                        width={300}
+                        height={300}
+                      />
+                    </div>
+                  ) : (
+                    console.log(" ")
+                  )}
+
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
                     <div>
                       <div className="flex justify-start items-start">
@@ -162,8 +167,8 @@ const Read = () => {
                     <div className="pr-4">
                       <Image src={bullet} width={40} height={40} />
                     </div>
-                    <div className="text-xl">
-                      <div>{val.name}</div>
+                    <div>
+                      <div className="text-xl">{val.name}</div>
                       <div className="text-green-700">{val.quote}</div>
                     </div>
                   </div>
