@@ -215,9 +215,14 @@
   position:relative;
   bottom:5rem;
 }
-@media screen and (max-width:1463px){
+@media screen and (max-width:1464px){
   .logo{
-    bottom:3.5rem;
+    bottom:4.5rem;
+  }
+}
+@media screen and (max-width:1110px){
+  .logo{
+    bottom:3.8rem;
   }
 }
 
