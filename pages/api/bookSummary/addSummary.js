@@ -1,5 +1,5 @@
 import connectMongo from "../../../utils/connectMongo";
-import Books from "../../../models/books.model";
+import Books from "../../../models/BookSum";
 /**
  *
  * @param {import('next').NextApiRequest} req
@@ -10,6 +10,7 @@ export default async function addSummary(req, res) {
     id,
     Book_Name,
     Ideo,
+    Ideo_image,
     Ideo_id,
     Book_Author,
 
@@ -23,6 +24,7 @@ export default async function addSummary(req, res) {
       id,
       Book_Name,
       Ideo,
+      Ideo_image,
       Ideo_id,
       Book_Author,
 

@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
+//import { Schema, model, models } from "mongoose";
 //datas and their data type which are stored our monoose database
-const bookCardSchema = new Schema({
+var bookCardSchema = new Schema({
   Cover_image: { type: String },
   id: { type: Number },
   Book_Name: { type: String },
@@ -16,6 +17,6 @@ const bookCardSchema = new Schema({
     Launch_date: { type: Date },
   },
 });
-const BookCards = models.BookCards || model("bookcards", bookCardSchema);
+var BookCards = models.BookCards || model("BookCards", bookCardSchema);
 
 export default BookCards;

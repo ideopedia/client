@@ -1,5 +1,5 @@
 import connectMongo from "../../../utils/connectMongo";
-import postBooks from "../../../models/postbook.model";
+import postBooks from "../../../models/PostBook";
 /**
  *
  * @param {import('next').NextApiRequest} req
@@ -11,6 +11,7 @@ export default async function updatepostBook(req, res) {
     Ideo_id,
     Notable_Quotes,
     Book_Name,
+    Ideo_image,
     Thankyou,
     Book_Affliate,
     Youtube_url,
@@ -30,6 +31,7 @@ export default async function updatepostBook(req, res) {
           Ideo_id: Ideo_id,
           Notable_Quotes: Notable_Quotes,
           Book_Name: Book_Name,
+          Ideo_image: Ideo_image,
           Thankyou: Thankyou,
           Book_Affliate: Book_Affliate,
           Youtube_url: Youtube_url,

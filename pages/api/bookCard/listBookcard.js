@@ -1,5 +1,5 @@
 import connectMongo from "../../../utils/connectMongo";
-import BookCards from "../../../models/bookcard.model";
+import BookCards from "../../../models/BookCard";
 /**
  *
  * @param {import('next').NextApiRequest} req
@@ -8,12 +8,9 @@ import BookCards from "../../../models/bookcard.model";
 export default async function listBookcard(req, res) {
   try {
     await connectMongo();
-    if (req.body.Password === "Ideopedia@001") {
-      var bookCard = await BookCards.find(req);
-      res.json(bookCard);
-    } else {
-      console.log("Paswsword Doesnot match :");
-    }
+
+    var bookCard = await BookCards.find(req);
+    res.json(bookCard);
   } catch (err) {
     res.json({ err });
   }

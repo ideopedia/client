@@ -3,6 +3,7 @@ import SideNavbar from "../../components/sidebar";
 import Card from "../../components/card";
 import ReadCard from "../../components/readcard";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import task from "../../public/task.svg";
 import create from "../../public/create.svg";
 import fav from "../../public/fav.svg";
@@ -20,21 +21,38 @@ const Read = () => {
   const [data, setData] = useState(false);
   const [inpt, setInpt] = useState("");
   const [Recommended, setRecommended] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    Axios.post("https://ideopedia-books.herokuapp.com/listBookCards", {
-      Password: "Ideopedia@001",
-    }).then((data) => {
-      setData(data.data);
-    });
+    
+    const fetchData = async () => {
+      const result = await Axios(
+        "http://localhost:3000/api/bookCard/listBookcard",
+        {
+          Password: "Ideopedia@001",
+        }
+      );
+
+      setData(result.data);
+    };
+
+    fetchData();
     console.log(data);
   }, []);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/bookCard/listBookcard", {
+  //     Password: "Ideopedia@001",
+  //   }).then((data) => {
+  //     setData(data.data);
+  //   });
+  //   console.log(data);
+  // }, []);
   return (
     <div>
       {data ? (
         <div className="lg:flex">
           <SideNavbar />
-
+          {console.log(data)}
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <div>
               <br />
@@ -55,13 +73,20 @@ const Read = () => {
               <br />
               {data.map((val) =>
                 val.Book_Name.match(inpt) ? (
-                  <ReadCard
-                    image={val.Cover_image}
-                    name={val.Book_Name.toUpperCase()}
-                    author={val.Book_Author}
-                    read={val.read_time}
-                    listen={val.listen_time}
-                  />
+                  <div
+                    onClick={function handleCick() {
+                      router.push(`/read/${val.id}`);
+                    }}
+                  >
+                    {console.log(val.id)}
+                    <ReadCard
+                      image={val.Cover_image}
+                      name={val.Book_Name.toUpperCase()}
+                      author={val.Book_Author}
+                      read={val.read_time}
+                      listen={val.listen_time}
+                    />
+                  </div>
                 ) : (
                   <div>
                     <div className="p-4">
