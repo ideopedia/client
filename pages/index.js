@@ -23,8 +23,29 @@ import influencer8 from "../public/influencer8.svg";
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
-
+import { useState, useEffect } from "react";
 export default function Home() {
+  const [width, setWidth] = useState(250);
+  const useWidth = () => {
+    const [screenWidth, setScreenWidth] = useState(0);
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    useEffect(() => {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [handleResize]);
+    return screenWidth;
+  };
+  const screen = useWidth();
+  useEffect(() => {
+    console.log(screen);
+    if(screen<565){
+      setWidth(155)
+    }
+    else{
+      setWidth(250)
+    }
+  }, [screen]);
+
   return (
     <div>
       <Head>
@@ -43,7 +64,7 @@ export default function Home() {
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
-          <div class="rounded-md flex items-center justify-center greenBtn" >
+          <div class="rounded-md flex items-center justify-center greenBtn">
             <div className=" h-12 bg-green-700  justify-center items-center high">
               <span className="p-5 text-white">
                 THE TOP 5000 INFLUENCERS IN INDIA
@@ -53,30 +74,30 @@ export default function Home() {
         </div>
         <br />
         <br />
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-8">
-          <div class=" p-4 rounded-md flex items-center justify-center">
-            <Image src={influencer1} />
+        <div class="infPics" style={{ textAlign: "center" }}>
+          <div class="p-4 rounded-md">
+            <Image src={influencer1} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
-            <Image src={influencer2} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer2} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
-            <Image src={influencer3} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer3} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
-            <Image src={influencer4} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer4} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-center justify-center">
-            <Image src={influencer5} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer5} width={width} />
           </div>
-          <div class="p-4 rounded-md flex items-end justify-end">
-            <Image src={influencer6} />
+          <div class="p-4 rounded-md ">
+            <Image src={influencer6} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-end justify-end">
-            <Image src={influencer7} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer7} width={width} />
           </div>
-          <div class="p-4  rounded-md flex items-end justify-end">
-            <Image src={influencer8} />
+          <div class="p-4  rounded-md">
+            <Image src={influencer8} width={width} />
           </div>
         </div>
       </div>
@@ -159,7 +180,10 @@ export default function Home() {
           <Image src={homeimage} />
         </div>
         <div class=" rounded-md flex items-center justify-center">
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2" style={{padding:"1.2rem"}}>
+          <div
+            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2"
+            style={{ padding: "1.2rem" }}
+          >
             <div class=" rounded-md flex items-center justify-start">
               <span className="text-2xl text-bold text-black-700">
                 Ideopedia is trusted and loved by India’s leading influencers

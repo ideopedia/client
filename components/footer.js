@@ -10,7 +10,7 @@ function Footer() {
     <div>
       <div class="p-3 footer">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 ">
-          <div class="p-2 rounded-md flex items-center justify-center ">
+          <div class="p-2 rounded-md flex items-center justify-center logo">
             <div className="py-9 ">
               <Image src={logo} />
               <br />
@@ -20,10 +20,10 @@ function Footer() {
               </label>
             </div>
           </div>
-          <div class="p-2  rounded-md flex  ">
+          <div class="p-2  rounded-md flex">
             <div>
               <span className="heading">About</span>
-              <br />
+              <br/>
               <ul>
                 <li className="py-2 foottext hover:text-green-700">
                   <Link href="/about#about_hero">What is Ideopedia ?</Link>
