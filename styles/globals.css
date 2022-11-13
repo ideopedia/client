@@ -177,7 +177,7 @@
 @media screen and (max-width:1065px){
   .rightQuote{
     height: 1.8rem;
-  }
+  }read
   .leftQuote{
     width: 2rem;
   }
@@ -539,8 +539,7 @@
 }
 
 .inne {
-  max-width: 100px;
-  max-height: 100px;
+    
   border-radius: 50%;
 }
 

@@ -35,18 +35,14 @@ import {
 import edit from "../public/Edit.svg";
 function SideNavbar() {
   const [data, setData] = useState([]);
-  
 
   useEffect(() => {
     Axios.post("https://ideopedia-books.herokuapp.com/listBooks", {
       Password: "Ideopedia@001",
-    })
-      
-      .then((data) => {
-        setData(data.data);
-        
-      });
-      console.log(data);
+    }).then((data) => {
+      setData(data.data);
+    });
+    console.log(data);
   }, []);
 
   return (
@@ -58,31 +54,32 @@ function SideNavbar() {
             aria-hidden="true"
           />
         </Disclosure.Button>
-        <div className="p-7 w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <div className="w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start item-center">
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
-              <div class=" rounded-md flex items-center justify-start w-12 h-12">
+            <div className="flex">
+              <div class=" rounded-md flex items-center justify-start lg:hidden ">
                 <Image src={dashc} />
               </div>
-              <div class=" flex items-center justify-start w-20 h-12">
+              <div class=" flex items-center justify- w-auto h-auto pl-4 pr-4 pb-4">
                 <Link href="/" className="cursor-pointer">
-                  <Image src={logo} />
+                  <Image src={logo} width={200} height={100} />
                 </Link>
               </div>
             </div>
-            <br />
-            <br />
-            <div className=" my-4 border-b border-gray-100 pb-4">
-              <div className="flex  mb-2 ml-2  justify-center items-center gap-4 pl-5  group cursor-pointer m-auto">
+
+            
+
+            <div className="p-4  border-b border-gray-100 pb-4">
+              <div className="flex  justify-center items-center pl-5  group cursor-pointer m-auto ">
                 <CircularProgressbarWithChildren
-                  value={66}
+                  value={80}
                   styles={buildStyles({
-                    pathColor: "#7F5AF0",
+                    pathColor: "#2CB67D",
                     trailColor: "#fff",
                   })}
                 >
                   {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
-                  <div className="m-2 inne ">
+                  <div className="mr-2 inne ml-2 mt-3 mb-1">
                     <Image
                       src={prime}
                       className="justify-center items-center  imgr"
@@ -90,13 +87,16 @@ function SideNavbar() {
                   </div>
                 </CircularProgressbarWithChildren>
               </div>
-                <br />
-              <div className="flex  mb-2 ml-2  justify-center items-center gap-4 pl-5  group cursor-pointer m-auto">
-                <h3 className="text-sm font-semibold">65%</h3>
+
+              <div className="flex justify-center items-center z-10 -mt-1 ml-3 ">
+                <div className="flex justify-center items-center  group cursor-pointer pb-2 bg-[#2CB67D] w-3/12 h-5 rounded-md  ">
+                  <h3 className="flex text-[12px] font-semibold pt-2 text-white">
+                    80%
+                  </h3>
+                </div>
               </div>
-              <br />
-              <div className="flex  mb-2 ml-2  justify-center items-center gap-4 pl-5  group cursor-pointer m-auto">
-                <Image src={edit} />
+
+              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4">
                 <h3 className="text-sm foottext font-semibold ">
                   Edit Profile
                 </h3>
@@ -165,9 +165,7 @@ function SideNavbar() {
             </div>
           </div>
         </div>
-        
       </Disclosure>
-      
     </div>
   );
 }

@@ -26,6 +26,7 @@ import InfluencerSliderright from "../components/infuslideright";
 import { useState, useEffect } from "react";
 export default function Home() {
   const [width, setWidth] = useState(250);
+
   const useWidth = () => {
     const [screenWidth, setScreenWidth] = useState(0);
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -38,11 +39,10 @@ export default function Home() {
   const screen = useWidth();
   useEffect(() => {
     console.log(screen);
-    if(screen<565){
-      setWidth(155)
-    }
-    else{
-      setWidth(250)
+    if (screen < 565) {
+      setWidth(155);
+    } else {
+      setWidth(250);
     }
   }, [screen]);
 
