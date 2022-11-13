@@ -26,7 +26,7 @@ const OurReaders = () => {
                 <h1 className="text-3xl text-black-700 readHead">OUR READERS</h1>
               </div>
               <div class="p-9 rounded-md flex items-center justify-center">
-                <span className="text-2xl  text-gray-600 readContent">
+                <span className="text-2xl  text-gray-600 readContent text-center">
                   Ideopedia’s Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
@@ -44,12 +44,12 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-start justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="text-3xl text-black-700 readHead" style={{textAlign:"center"}}>
+                <h1 className="text-3xl text-black-700 readHead text-center">
                   TRUSTED AND LOVED BY INDIA’S LEADING INFLUENCERS
                 </h1>
               </div>
               <div class="rounded-md flex items-center justify-center p-9">
-                <span className="pt-9 text-2xl  text-gray-600 readContent">
+                <span className="pt-9 text-2xl  text-gray-600 readContent text-center">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its
@@ -76,7 +76,7 @@ const OurReaders = () => {
               </div>
               <br />
               <div className="flex justify-center items-center">
-                <span className=" p-7 text-black text-3xl ">
+                <span className=" p-7 text-black text-3xl text-center">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>

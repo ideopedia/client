@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DropdownComponent(props) {
+export default function  DropdownComponent(props) {
   return (
     <Menu as="div" className="relative inline-block text-center">
       <div>
