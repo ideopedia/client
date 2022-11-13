@@ -26,6 +26,6 @@ var prebookSchema = new Schema({
   Ideos: [{ name: { type: String }, Ideo_id: { type: Number } }],
 });
 
-var preBooks = models.preBooks || model("PreBooks", prebookSchema);
+var preBooks = models.PreBooks || model("PreBooks", prebookSchema);
 
 export default preBooks;
