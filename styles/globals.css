@@ -10,6 +10,7 @@
   position:sticky;
   z-index: -9 !important;
 } */
+
 .FormSec form label {
   margin-top: 1rem;
 }
@@ -153,6 +154,12 @@
   font-size: 8px;
   position: relative;
   bottom: 5px;
+}
+.bulletPoint {
+  margin: 5px;
+  display: inline;
+  position: relative;
+  bottom: 3px;
 }
 
 .ideoData {
