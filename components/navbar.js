@@ -6,9 +6,8 @@ import log from "../public/logo.svg";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div>
       <nav className="bg-white drop-shadow">
-        <div className="justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="justify-between px-4 md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-1   md:py-1 md:block">
               <Link href="/" className="cursor-pointer">
@@ -63,22 +62,22 @@ export default function Navbar() {
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ">
                 <li className="text-black flex justify-center">
                   <Link href="/testimonials">
-                    <a>Our Readers</a>
+                    <a className="nava">Our Readers</a>
                   </Link>
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/about">
-                    <a>About Us</a>
+                    <a className="nava">About Us</a>
                   </Link>
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/teams">
-                    <a>Team</a>
+                    <a className="nava">Team</a>
                   </Link>
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/contact">
-                    <a>Contact US</a>
+                    <a className="nava">Contact US</a>
                   </Link>
                 </li>
                 <li className="text-white flex justify-center">
@@ -100,6 +99,5 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
   );
 }

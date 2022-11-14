@@ -333,6 +333,16 @@
   }
  
 }
+@media screen and (max-width:769px){
+  .nava{
+    font-size: 13.3px;
+  }
+}
+@media screen and (max-width:766px){
+  .nava{
+    font-size: 17px;
+  }
+}
 
 
 /* md'ss */
