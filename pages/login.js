@@ -5,18 +5,39 @@ import login from "../public/login.svg";
 import Image from "next/image";
 
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import NewLogin from "./newLogin";
+import Login from "./Auth";
 function Login() {
-  const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+  const emailList = [
+    {
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email",
+      change: (e) => setEmail_Id(e.target.value),
+    },
+    {
+      label: "Password",
+      type: "password",
+      placeholder: "Enter your password",
+      change: (e) => setComponent_available(e.target.value),
+    },
+  ];
   return (
     <div>
       <Navbar />
       <section class="h-screen new" style={{ padding: "0 2rem 0 0" }}>
         <div className="loginContainer">
-          <div  className="loginImg">
+          <div className="loginImg">
             <Image src={login} />
           </div>
-          <NewLogin />
+          <Login
+            title="Login"
+            box={emailList}
+            isLogin={true}
+            button="Login"
+            isAuth={true}
+            desc1="Did'nt have an account?"
+            desc2="Sign up"
+          />
         </div>
       </section>
     </div>
