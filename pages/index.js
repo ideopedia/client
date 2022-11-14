@@ -22,6 +22,7 @@ import influencer5 from "../public/influencer5.svg";
 import influencer6 from "../public/influencer6.svg";
 import influencer7 from "../public/influencer7.svg";
 import influencer8 from "../public/influencer8.svg";
+import wavebg from "../public/waves1.svg"
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
@@ -65,6 +66,9 @@ export default function Home() {
       </Head>
       <Hero />
       <div>
+        {/* <div className="wavebgr">
+        <Image src={wavebg}/>
+        </div> */}
         {console.log(data)}
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo">
           <div class="rounded-md flex items-center justify-center">
