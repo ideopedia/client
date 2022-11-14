@@ -17,12 +17,35 @@ import beforetime from "../../public/timebefore.svg";
 import time from "../../public/time.svg";
 import arrowone from "../../public/arrowone.svg";
 import arrowtwo from "../../public/arrowtwo.svg";
+import arrowthree from "../../public/Arrow16.svg";
+import arrowfour from "../../public/Arrow17.svg";
 import aftertime from "../../public/timeafter.svg";
 import airpods from "../../public/airpods.svg";
 import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
+  const init={ one: arrowone, two: arrowtwo }
+  const useWidth = () => {
+    const [screenWidth, setScreenWidth] = useState(0);
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    useEffect(() => {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [handleResize]);
+    return screenWidth;
+  };
+  const screen = useWidth();
+  useEffect(() => {
+    return () => {
+      if (screen < 1025) {
+        setImages({one:arrowthree,two:arrowfour});
+      } else {
+        setImages(init);
+      }
+    };
+  }, [screen]);
+  const [images, setImages] = useState(init);
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(false);
   const [benarr, setBenarr] = useState(false);
@@ -62,9 +85,9 @@ const Book = () => {
   return (
     <div>
       {data ? (
-        <div className="p-9">
+        <div className="py-8">
           {console.log(data)}
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
             <div class=" rounded-md flex items-center justify-center">
               <div>
                 <Image src={data.Cover_image} width={400} height={350} />
@@ -76,34 +99,48 @@ const Book = () => {
               </span>
             </div>
             <div class=" rounded-md flex items-center justify-center">
-              <span className="lg:text-xl sm:text-base text-black">
+              <span className="lg:text-xl sm:text-base text-black text-center">
                 {data.Book_Name}
               </span>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
+            <div class=" rounded-md flex items-center justify-center mb-4">
               <span className="text-base text-black">{data.Book_Author}</span>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
+            <div class=" rounded-md flex items-center justify-center mb-[5rem]">
               <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
-                <div class=" rounded-md flex items-center justify-start">
-                  <div className="cont flex">
-                    <Image src={bookicn} />
+                <div className="text-center">
+                  <div className="cont flex py-6">
+                    <div className="mr-1.5 mt-1">
+                      <Image src={bookicn} />
+                    </div>
                     <Link className="" href="/read/book">
                       Read
                     </Link>
                   </div>
+
+                  <div className="text-base text-black mt-3">
+                    {data.read_time} Minutes
+                  </div>
                 </div>
-                <div class="  rounded-md flex items-center justify-end">
-                  <div className="cont flex">
-                    <Image src={airpods} />
+
+                <div class="text-center">
+                  <div className="cont flex py-6">
+                    <div className="mr-1.5 mt-1">
+                      <Image src={airpods} />
+                    </div>
                     <Link className="" href="/read/book">
                       Listen
                     </Link>
                   </div>
+                  <div className="text-base text-black mt-3">
+                    {data.listen_time} Minutes
+                  </div>
                 </div>
-                <div class="  rounded-md flex items-center justify-end">
-                  <div className="cont flex">
-                    <Image src={cards} />
+                <div class="text-center">
+                  <div className="cont flex py-6">
+                    <div className="mr-1.5 w-5 mt-1">
+                      <Image src={cards} />
+                    </div>
                     <Link className="" href="/read/book">
                       Cards
                     </Link>
@@ -111,93 +148,101 @@ const Book = () => {
                 </div>
               </div>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
-                <div class=" rounded-md flex items-center justify-start">
-                  <span className="text-base text-black">
-                    {data.read_time} Minutes
-                  </span>
-                </div>
-                <div class="  rounded-md flex items-center justify-end">
-                  <span className="text-base text-black">
-                    {data.listen_time} Minutes
-                  </span>
-                </div>
-                <div class="  rounded-md flex items-center justify-end">
-                  <span className="text-base text-black"></span>
-                </div>
-              </div>
-            </div>
-            <div class="p-4  rounded-md flex items-center justify-center"></div>
           </div>
 
-          <div className="desc">
-            <h1 className="text-xl new2 pl-2">Description</h1>
-            <p>
-              <Image
-                src={before}
-                height={200}
-                width={100}
-                className="bookImg"
-              />
-              {data.Book_Description}
-            </p>
+          <div className="readDesc px-[3rem]">
+            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+            <div className="flex justify-center items-center picAndDesc">
+              <div
+                style={{ marginRight: "2rem", textAlign: "center" }}
+                class="bkimg"
+              >
+                <Image
+                  src={before}
+                  width={300}
+                  height={300}
+                  className="bookImg"
+                />
+              </div>
+              <div style={{ lineHeight: "1.8" }}>{data.Book_Description}</div>
+            </div>
           </div>
           <br />
-          <div className="desc">
-            <h1 className="text-xl new2 pl-2">Description</h1>
-            <div className="flex justify-center">
-              <div className="p-4 text-xl text-gray-700 indent-12 lg:pr-9 pr-0">
+          <div className="readDesc p-[3rem]">
+            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+            <div className="flex justify-between items-center picAndDesc">
+              <div
+                style={{ marginRight: "2rem", width: "10rem" }}
+                class="authImg"
+              >
                 <Image
                   src={data.Author_image}
-                  width={100}
-                  height={100}
+                  width={170}
+                  height={170}
                   className="authimg"
                 />
-                {data.About_Author}
               </div>
+              <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
             </div>
+            <h1
+              className="text-xl new2 pt-4 pb-4"
+              style={{ position: "relative", top: "4rem" }}
+            >
+              Time Saved
+            </h1>
           </div>
           <br />
-          <div>
-            <h1 className="text-xl new2 pt-4 pb-4 ">Time Saved</h1>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-4">
-              <div class=" rounded-md flex items-center justify-center">
-                <div className="w-11/12">
-                  <Image src={beforetime} />
 
-                  <div className="bg-green-700 high">
-                    <div className="text-white p-2">
-                      Read {data.book_page} pages in {data.original_read_time}{" "}
+          <div class="py-[3rem] timeSaved px-[1.5rem]">
+            <div class="flex items-center justify-around flexTime">
+              <div class=" rounded-md flex items-center justify-center">
+                <div>
+                  <div className="wtf">
+                    <Image src={beforetime} />
+                  </div>
+
+                  <div className="bg-green-700 high mt-[2rem]">
+                    <div
+                      className="text-white p-2 px-[2rem]"
+                      style={{ width: "max-content" }}
+                    >
+                      Read {data.book_page} pages in {data.original_read_time}
+                      {"  "}
                       Hours
                     </div>
                   </div>
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
-                <div className="w-6/12">
-                  <Image src={arrowone} />
+                <div className="arrowOne">
+                  <Image src={images.one} />
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
-                <div className="w-11/12">
-                  <h1 className="pl-9">SAVE OVER </h1>
-                  <Image src={time} />
-                  <br />
-                  <h1 className="pl-9">HOURS</h1>
+                <div>
+                  <h1 className="pl-9 text-center mr-[1.5rem]">SAVE OVER </h1>
+                  <div className="timeClock">
+                    <Image src={time} />
+                  </div>
+                  <h1 className="pl-9 text-center mr-[1.5rem]">HOURS</h1>
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
-                <div className="w-6/12">
-                  <Image src={arrowtwo} />
+                <div className="arrowTwo">
+                  <Image src={images.two} />
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">
-                <div className="w-full">
-                  <Image src={aftertime} />
+                <div>
+                  <div className="wtf">
+                    <Image src={aftertime} />
+                  </div>
 
-                  <div className="bg-green-700 high">
-                    <div className="text-white p-2">
+                  <div className="bg-green-700 high mt-[2rem]">
+                    <div
+                      className="text-white p-2 px-[1rem] text-center"
+                      style={{ width: "max-content" }}
+                    >
                       Read finely distilled Ideos in {data.read_time} min
                     </div>
                   </div>
@@ -207,10 +252,10 @@ const Book = () => {
             <br />
           </div>
 
-          <div className="benifits">
-            <h1 className="text-xl new2 pl-2">Benifits</h1>
+          <div className="benifits my-[2rem] px-[2rem]">
+            <h1 className="text-xl new2 ">Benifits</h1>
             {data.benifits.map((val, n) => (
-              <div className="pt-6 pb-6">
+              <div className="pt-6 pb-6 " style={{width:"100%"}}>
                 <DropdownComponent
                   name={n + 1 + ". " + val.name}
                   image={val.image}

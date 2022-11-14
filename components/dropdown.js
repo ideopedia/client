@@ -8,14 +8,14 @@ function classNames(...classes) {
 
 export default function  DropdownComponent(props) {
   return (
-    <Menu as="div" className="relative inline-block text-center">
+    <Menu as="div" className="relative inline-block whiteBox">
       <div>
-        <Menu.Button className="w-screen px-4 py-2 text-xl drop-shadow-md text-green-700 bg-white    focus:outline-none  ">
-          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 ">
-            <div class="rounded-md flex items-start justify-start">
-              <span>{props.name}</span>
+        <Menu.Button className=" px-4 py-2 text-xl drop-shadow-md text-green-700 bg-white    focus:outline-none  whiteBox">
+          <div className="flex items-center justify-between py-[1rem]">
+            <div class="rounded-md text-left">
+              <span className="benifitsTopics">{props.name}</span>
             </div>
-            <div class="rounded-md flex items-center justify-end">
+            <div class="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5 ml-2 -mr-1"
@@ -65,8 +65,8 @@ export default function  DropdownComponent(props) {
                           
                         </div>
                         <div class="rounded-md flex items-start justify-start">
-                          <span className="text-xl text-green-700 ">*</span>{" "}
-                          <span className="text-xl pb-1"> {props.content}</span>
+                          {" "}
+                          <span className="text-xl pb-1 text-left"> {props.content}</span>
                         </div>
                       </div>
                     </div>

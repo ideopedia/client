@@ -230,9 +230,87 @@
     bottom:3.6rem;
   }
 }
-.bookImg{
-  float: left;
+
+@media screen and (max-width:1024px){
+  .picAndDesc{
+    flex-direction: column;
+  }
+  .authImg{
+        margin-left: 25px;
+        margin-bottom: 2rem;
+  }
+  .bkimg{
+    margin-left: 10px;
+  }
 }
+@media screen and (min-width:1024px){
+  .bkimg{
+    width: 50rem;
+  }
+}
+@media screen and (max-width:768px){
+  .descTopic{
+    text-align: center;
+  }
+  .wtf{
+    width:10rem
+  }
+}
+@media screen and (min-width:769px){
+  .timeClock{
+    margin: 0 20px;
+  }
+  .timeSaved{
+    padding:0 20%
+  }
+}
+@media screen and (max-width:1025px){
+  .flexTime{
+    flex-direction: column;
+  }
+  .wtf{
+    margin-left:3rem
+  }
+  .timeSaved>*{
+    margin:1rem auto
+  }
+  .arrowOne{
+    margin-left: 17rem;
+    margin-top: 1.5rem;
+  }
+  .arrowTwo{
+    margin-right: 15rem;
+  }
+}
+ @media screen and (max-width:580px){
+  .benifitsTopics{
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width:443px){
+  .benifitsTopics{
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width:550px){
+  .benifitsTopics{
+    font-size: 12px;
+  }
+  .benifits{
+    padding:0 1rem
+  }
+}
+@media screen and (max-width:411px){
+  .benifitsTopics{
+    font-size: 10.5px;
+  }
+}
+.whiteBox{
+  width: 100%;
+}
+
 
 
 
