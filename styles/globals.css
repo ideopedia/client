@@ -83,10 +83,6 @@
     padding-top: 13px;
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 @media screen and (max-width: 915px) {
   .iii {
     font-size: 20px;
@@ -235,12 +231,6 @@
     bottom: 3.6rem;
   }
 }
-<<<<<<< HEAD
-.bookImg {
-  float: left;
-}
-
-=======
 
 @media screen and (max-width:1024px){
   .picAndDesc{
@@ -344,7 +334,6 @@
 }
 
 
->>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 /* md'ss */
 * {
   font-family: "Poppins", sans-serif;
@@ -397,13 +386,7 @@
   text-align: center;
   border-radius: 5px;
   background-color: #2cb67d;
-<<<<<<< HEAD
-  color: #ffff;
-  cursor: pointer;
-  transition: 0.2s;
-=======
   color: #fff;
->>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 }
 
 .getstarted:hover
@@ -845,8 +828,6 @@
 .swiper-button-prev::after {
   display: none;
 }
-<<<<<<< HEAD
-=======
 
 .opp {
   opacity: 0.7;
@@ -871,4 +852,3 @@
 #card6 {
   background: linear-gradient(rgba(159, 233, 95, 1), rgba(107, 151, 69, 1));
 }
->>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
