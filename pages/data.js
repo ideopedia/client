@@ -1,36 +1,41 @@
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
+import log from "../public/logo.svg"
+// const Data = () => {
+//   function handleHover(){
+//     return (
+//       <Image src={log} width={100} height={70}className="absolute" />
+//     )
+//   }
+//   return (
+//     <div >
+//       <span className='flex justify-center items-center' onMouseOver={handleHover}>hover</span>
+//     </div>
+//   );
+// }
 
-import Loader from "../components/loader";
-import { useState, useEffect } from "react";
-const Data = () => {
-  const [data, setData] = useState(false);
-  useEffect(() => {
-    fetch("/api/bookCard/listBookcard", {
-      method: "POST",
-
-      body: JSON.stringify({ Password: "Ideopedia@001" }),
-
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        //console.log(data)
-      });
-  }, []);
-  return (
-    <div>
-      {data ? (
-        <div>{console.log(data)}</div>
-      ) : (
-        <div>
-          <Loader />
+// export default Data;
+export default class App extends React.Component{
+  state={
+    likeList:''
+  }
+  renderLikeList = () =>{
+    return <div className="likes__list" ><Image src={log} /></div>
+  }
+  handleLeave=()=>{
+    return this.setState({likeList:''})
+  }
+  handleHover=()=>{
+    return this.setState({likeList:this.renderLikeList()})
+  }
+  render(){
+    return(
+      <div className="likes__wrapper" >
+        <div className="likes__relavance" onMouseOver={this.handleHover} onMouseLeave={this.handleLeave}>
+          Hover me
+          {this.state.likeList}
         </div>
-      )}
-    </div>
-  );
-};
-
-export default Data;
+      </div>
+    )
+  }
+}

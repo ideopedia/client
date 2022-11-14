@@ -20,10 +20,10 @@ function Hero() {
                 <div class=" rounded-md flex items-center justify-center">
                   <span className="text-2xl  text-black text-bold iii">INFORMING
                     <div className="bulletPoints" >
-                      <Image src={bpoints} width={5} height={5} />
+                      <Image src={bpoints} width={5} height={5} className="blt"/>
                     </div>
                     INSPIRING<div className="bulletPoints">
-                      <Image src={bpoints} width={5} height={5}  />
+                      <Image src={bpoints} width={5} height={5}  className="blt"/>
                     </div>
                     IMPACTING
                   </span>

@@ -13,6 +13,7 @@ const newLogin = () => {
         <input
           className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
           type="email"
+          
           placeholder="Enter your email"
           onChange={(e) => setEmail_Id(e.target.value)}
         />

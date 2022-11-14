@@ -47,7 +47,7 @@ const Book = () => {
   }, [screen]);
   const [images, setImages] = useState(init);
   const [data, setData] = useState(false);
-  const [arr, setArr] = useState(false);
+  const [arr, setArr] = useState(true);
   const [benarr, setBenarr] = useState(false);
   const [tick, setTick] = useState(false);
   const router = useRouter();

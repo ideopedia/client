@@ -7,6 +7,7 @@ import bullet from "../../../public/bullet.svg";
 import Image from "next/image";
 import font from "../../../public/font.svg";
 import sound from "../../../public/sound.svg";
+import Link from "next/link";
 import ProgressBar from "../../../components/progress";
 import forward from "../../../public/forward.svg";
 import backward from "../../../public/backward.svg";
@@ -20,8 +21,8 @@ const Read = () => {
   const router = useRouter();
   const { ideo } = router.query;
   var num = Number(ideo);
-  var num2 = Number(ideo.charAt(0));
-  var num3 = Number(ideo.charAt(1));
+  var num2 = Number(ideo[0]);
+  var num3 = Number(ideo[1]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
@@ -87,6 +88,7 @@ const Read = () => {
                   class=" rounded-md flex items-center justify-start"
                   onClick={function handleForward() {
                     router.push(`/read/summary/${num2}${num3 - 1}`);
+                    
                   }}
                 >
                   <Image src={forward} />
@@ -103,7 +105,9 @@ const Read = () => {
                 <div
                   class="rounded-md flex items-center justify-end"
                   onClick={function handleBackward() {
-                    router.push(`/read/summary/${num2}${num3 + 1}`);
+                    router.push(
+                      `/read/summary/${String(num2)}${String(num3 + 1)}`
+                    );
                   }}
                 >
                   <Image src={backward} />
@@ -124,7 +128,10 @@ const Read = () => {
               <div>
                 <div className="p-4">
                   {data.Book_Summary[0].Content[n].map((val) => (
-                    <div className="text-xl text-black  p-4 flex justify-center items-center " style={{ lineHeight: "1.5" }}>
+                    <div
+                      className="text-xl text-black  p-4 flex justify-center items-center "
+                      style={{ lineHeight: "1.5" }}
+                    >
                       {val}
                     </div>
                   ))}
@@ -142,7 +149,7 @@ const Read = () => {
 
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
                     <div className="flex justify-center items-center">
-                      <div className="mx-[auto]" >
+                      <div className="mx-[auto]">
                         <div className="text-left">
                           <Image src={startq} />
                         </div>
