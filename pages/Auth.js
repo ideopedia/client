@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 const Auth = (props) => {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   const router = useRouter();
+  const classes="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
   return (
     <div className="newloginContainer">
       <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
@@ -14,7 +15,7 @@ const Auth = (props) => {
             <>
               <label>{arr.label}</label>
               <input
-                className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
+                className={!arr.message?classes:classes+props.className}
                 type={arr.type}
                 placeholder={arr.placeholder}
                 onChange={props.change}

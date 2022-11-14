@@ -31,6 +31,7 @@ const New = () => {
     type: "text",
     placeholder: "write your message",
     change: (e) => setEmail_Id(e.target.value),
+    message:true,
   }
 ]
   const form = useRef();
@@ -151,6 +152,7 @@ const New = () => {
               title="Contact"
               box={contactList}
               button="Send message"
+              className="pb-[4rem]"
               />
           </div>
         </div>
