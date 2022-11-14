@@ -48,21 +48,11 @@ export default function Home() {
 
   const screen = useWidth();
   useEffect(() => {
-<<<<<<< HEAD
-    return ()=>{
-      if(screen<565){
-        setWidth(155)
-      }
-      else{
-        setWidth(250)
-      }
-=======
     console.log(screen);
     if (screen < 565) {
       setWidth(155);
     } else {
       setWidth(250);
->>>>>>> 9f94fd7da7402414d135ddf2e2f9fbbb85e8d9b3
     }
   }, [screen]);
 
