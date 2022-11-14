@@ -19,7 +19,7 @@ function Login() {
       type: "password",
       placeholder: "Enter your password",
       change: (e) => setComponent_available(e.target.value),
-    },
+    }
   ];
   return (
     <div>
@@ -35,8 +35,8 @@ function Login() {
             isLogin={true}
             button="Login"
             isAuth={true}
-            desc1="Did'nt have an account?"
-            desc2="Sign up"
+            desc1="Alredy have an account?"
+            desc2="Log in here"
           />
         </div>
       </section>

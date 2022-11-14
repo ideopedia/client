@@ -8,13 +8,13 @@ import emailjs from "@emailjs/browser";
 import facebook from "../public/facebook.svg";
 import twitter from "../public/twitter.svg";
 import telegram from "../public/telegram.svg";
-
 import map from "../public/map.svg";
 import mail from "../public/mail.svg";
-
+import contactUs from "./Auth"
 import location from "../public/location.svg";
 
 const New = () => {
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
