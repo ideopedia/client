@@ -20,7 +20,7 @@ const ProgressBar = () => {
       className="
         fixed top-0 left-0
         z-50 h-2
-        w-full bg-gradient-to-r p-0 ring-green-400 ring-opacity-75 dark:ring-palevioletred dark:ring-opacity-75 
+        w-full bg-gradient-to-r p-0 ring-green-500 ring-opacity-90 dark:ring-palevioletred dark:ring-opacity-75 
       "
     />
   );

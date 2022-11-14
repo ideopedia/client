@@ -22,7 +22,7 @@ const Read = () => {
       const result = await Axios.post(
         "http://localhost:3000/api/bookSummary/findSummary",
         {
-          Ideo_id: 13,
+          Ideo_id: 14,
         }
       );
 

@@ -83,6 +83,10 @@
     padding-top: 13px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 @media screen and (max-width: 915px) {
   .iii {
     font-size: 20px;
@@ -231,10 +235,116 @@
     bottom: 3.6rem;
   }
 }
+<<<<<<< HEAD
 .bookImg {
   float: left;
 }
 
+=======
+
+@media screen and (max-width:1024px){
+  .picAndDesc{
+    flex-direction: column;
+  }
+  .authImg{
+        margin-left: 25px;
+        margin-bottom: 2rem;
+  }
+  .bkimg{
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width:1024px){
+  .bkimg{
+    width: 50rem;
+  }
+}
+@media screen and (max-width:768px){
+  .descTopic{
+    text-align: center;
+  }
+  .wtf{
+    width:10rem
+  }
+}
+@media screen and (min-width:769px){
+  .timeClock{
+    margin: 0 20px;
+  }
+  .timeSaved{
+    padding:0 20%
+  }
+}
+@media screen and (max-width:1025px){
+  .flexTime{
+    flex-direction: column;
+  }
+  .wtf{
+    margin-left:3rem
+  }
+  .timeSaved>*{
+    margin:1rem auto
+  }
+  .arrowOne{
+    margin-left: 17rem;
+    margin-top: 1.5rem;
+  }
+  .arrowTwo{
+    margin-right: 15rem;
+  }
+}
+ @media screen and (max-width:580px){
+  .benifitsTopics{
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width:443px){
+  .benifitsTopics{
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width:550px){
+  .benifitsTopics{
+    font-size: 12px;
+  }
+  .benifits{
+    padding:0 1rem
+  }
+}
+@media screen and (max-width:411px){
+  .benifitsTopics{
+    font-size: 10.5px;
+  }
+}
+.whiteBox{
+  width: 100%;
+}
+
+@media screen and (max-width:1025px){
+  .bandf{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width:770px){
+  .bandf{
+    font-size: 19px;
+    margin: 0 5rem;
+  }
+}
+
+@media screen and (max-width:450px){
+  .bandf{
+    margin: 0;
+    font-size: 20px;
+  }
+ 
+}
+
+
+>>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 /* md'ss */
 * {
   font-family: "Poppins", sans-serif;
@@ -287,9 +397,13 @@
   text-align: center;
   border-radius: 5px;
   background-color: #2cb67d;
+<<<<<<< HEAD
   color: #ffff;
   cursor: pointer;
   transition: 0.2s;
+=======
+  color: #fff;
+>>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
 }
 
 .getstarted:hover
@@ -731,3 +845,30 @@
 .swiper-button-prev::after {
   display: none;
 }
+<<<<<<< HEAD
+=======
+
+.opp {
+  opacity: 0.7;
+}
+
+#card1 {
+  background: linear-gradient(rgba(33, 147, 176, 1), rgba(109, 213, 237, 1));
+}
+#card2 {
+  background: linear-gradient(rgba(233, 162, 100, 1), rgba(157, 93, 40, 1));
+}
+#card3 {
+  background: linear-gradient(rgba(76, 29, 81, 1), rgba(60, 12, 60, 1));
+}
+
+#card4 {
+  background: linear-gradient(rgba(162, 24, 109, 1), rgba(132, 35, 89, 1));
+}
+#card5 {
+  background: linear-gradient(rgba(94, 71, 137, 1), rgba(110, 89, 202, 1));
+}
+#card6 {
+  background: linear-gradient(rgba(159, 233, 95, 1), rgba(107, 151, 69, 1));
+}
+>>>>>>> fb7f2b51b28e6f711fc133c12af373f899d0567f
