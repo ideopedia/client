@@ -38,7 +38,9 @@
     "react-toastify": "^9.1.1",
     "react-use": "^17.4.0",
     "reactstrap": "^9.1.4",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.4",
+    "text-selection-react": "^1.1.8",
+    "use-text-selection": "^1.1.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",

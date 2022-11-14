@@ -24,7 +24,6 @@ const Read = () => {
   const router = useRouter();
 
   useEffect(() => {
-    
     const fetchData = async () => {
       const result = await Axios(
         "http://localhost:3000/api/bookCard/listBookcard",
@@ -50,10 +49,10 @@ const Read = () => {
   return (
     <div>
       {data ? (
-        <div className="lg:flex">
+        <div className="md:flex">
           <SideNavbar />
           {console.log(data)}
-          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12 h-screen">
             <div>
               <br />
 
@@ -70,12 +69,13 @@ const Read = () => {
                 </div>
               </div>
 
-              <br />
+              
               {data.map((val) =>
                 val.Book_Name.match(inpt) ? (
-                  <div
+                  <div className="flex justify-center items-center mt-9"
                     onClick={function handleCick() {
                       router.push(`/read/${val.id}`);
+
                     }}
                   >
                     {console.log(val.id)}
@@ -88,32 +88,27 @@ const Read = () => {
                     />
                   </div>
                 ) : (
-                  <div>
-                    <div className="p-4">
-                      <span className="text-xl text-black text-bold">
-                        Launch of the Month
-                      </span>
-                    </div>
-                    <br />
-                    <ReadCard
-                      image={data[0].Cover_image}
-                      name={data[0].Book_Name.toUpperCase()}
-                      author={data[0].Book_Author}
-                      read={data[0].read_time}
-                      listen={data[0].listen_time}
-                    />
-
-                    <br />
-                    <br />
-                    <div className="p-4">
-                      <span className="text-xl text-black text-bold">
-                        Recent Books
-                      </span>
-                    </div>
-                    <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
-                      {data.map((val) => (
-                        <div class="rounded-md flex items-start justify-start">
+                  <div className="flex justify-center items-center mt-9">
+                    {data.map((val) => (
+                      <div className="flex-column justify-center items-center">
+                        <div className="text-xl font-semibold text-black">
+                          Showing results for{" "}
+                          <span className="text-green-700">
+                            {val.Book_Name.toUpperCase()}
+                          </span>
+                        </div>
+                        <div className="text-xl font-semibold text-black">
+                          <i>
+                            {" "}
+                            Search instaed for{" "}
+                            <span className="text-green-700">{inpt}</span>
+                          </i>
+                        </div>
+                        <div
+                          onClick={function handleCick() {
+                            router.push(`/read/${val.id}`);
+                          }}
+                        >
                           <ReadCard
                             image={val.Cover_image}
                             name={val.Book_Name.toUpperCase()}
@@ -122,37 +117,8 @@ const Read = () => {
                             listen={val.listen_time}
                           />
                         </div>
-                      ))}
-                    </div>
-                    <div className="p-4">
-                      <span className="text-xl text-black text-bold">
-                        Recommended For You
-                      </span>
-                    </div>
-                    <div>
-                      {Recommended ? (
-                        <ReadCard
-                          image={data[0].Cover_image}
-                          name={data[0].Book_Name.toUpperCase()}
-                          author={data[0].Book_Author}
-                          read={data[0].read_time}
-                          listen={data[0].listen_time}
-                        />
-                      ) : (
-                        <div>
-                          <div className="flex justify-center items-center">
-                            <Image src={recomend} />
-                          </div>
-                          <br />
-                          <div className="flex justify-center items-center">
-                            <span className="text-md">
-                              Complete Reading A Book To Get Personalized
-                              Recommendations{" "}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 )
               )}

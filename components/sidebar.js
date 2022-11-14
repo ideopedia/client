@@ -54,7 +54,7 @@ function SideNavbar() {
             aria-hidden="true"
           />
         </Disclosure.Button>
-        <div className="w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <div className=" p-2 w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start item-center">
             <div className="flex">
               <div class=" rounded-md flex items-center justify-start lg:hidden ">
@@ -62,15 +62,13 @@ function SideNavbar() {
               </div>
               <div class=" flex items-center justify- w-auto h-auto pl-4 pr-4 pb-4">
                 <Link href="/" className="cursor-pointer">
-                  <Image src={logo} width={200} height={100} />
+                  <Image src={logo} width={150} height={100} />
                 </Link>
               </div>
             </div>
 
-            
-
             <div className="p-4  border-b border-gray-100 pb-4">
-              <div className="flex  justify-center items-center pl-5  group cursor-pointer m-auto ">
+              <div className="flex  justify-center items-center pl-8 pr-8  group cursor-pointer m-auto ">
                 <CircularProgressbarWithChildren
                   value={80}
                   styles={buildStyles({
@@ -96,25 +94,18 @@ function SideNavbar() {
                 </div>
               </div>
 
-              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4">
+              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4 pb-4">
                 <h3 className="text-sm foottext font-semibold ">
-                  Edit Profile
+                  Complete your Profile
                 </h3>
               </div>
-              <br />
-              <div className="flex  mb-2 ml-2 justify-center items-center  pl-5 group cursor-pointer m-auto">
-                <h3 className=" pl-2 text-base  justify-center items-center text-gray-800 group-hover:text-green-700 font-semibold ">
-                  Good Morning ,
+              <div className="flex   justify-center items-center gap-1 group cursor-pointer pb-4">
+                <h3 className="text-sm  font-semibold ">
+                  Good Morning,Mr.Suresh Prabhu
                 </h3>
               </div>
-              <br />
-              <div className="flex  mb-2 ml-2 justify-center items-center  pl-5 group cursor-pointer m-auto">
-                <h3 className=" pl-2 text-base  justify-center items-center text-gray-800 group-hover:text-green-700 font-semibold ">
-                  Shri . Suresh Prabhu
-                </h3>
-              </div>
-              <br />
-              <br />
+
+              
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer  hover:border hover:border-purple-900">
                   <Link href="/dashboard">

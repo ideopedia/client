@@ -20,7 +20,7 @@ import Image from "next/image";
 const Points = () => {
   return (
     <div>
-      <div className="lg:flex">
+      <div className="md:flex">
         <SideNavbar />
 
         <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
