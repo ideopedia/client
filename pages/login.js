@@ -5,7 +5,7 @@ import login from "../public/login.svg";
 import Image from "next/image";
 
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import Login from "./Auth";
+import MyLogin from "./Auth";
 function Login() {
   const emailList = [
     {
@@ -29,7 +29,7 @@ function Login() {
           <div className="loginImg">
             <Image src={login} />
           </div>
-          <Login
+          <MyLogin
             title="Login"
             box={emailList}
             isLogin={true}

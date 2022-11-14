@@ -12,7 +12,6 @@ import map from "../public/map.svg";
 import mail from "../public/mail.svg";
 import ContactUs from "./Auth"
 import location from "../public/location.svg";
-
 const New = () => {
   const contactList=[ {
     label: "Name",

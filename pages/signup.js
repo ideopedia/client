@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import signupvector from "../public/signupvector.svg";
 import Image from "next/image";
 import Link from "next/link";
-
+import SignUp from "./Auth"
 function Signup() {
   const signUpList = [
     {
