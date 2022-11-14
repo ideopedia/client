@@ -70,21 +70,22 @@ export default function Home() {
         {console.log(data)}
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo">
           <div class="rounded-md flex items-center justify-center">
-            <span className="text-xl">An Invitation-only platform</span>
+            <span className="lg:text-2xl">An Invitation-only platform</span>
           </div>
           <div class="rounded-md flex items-center justify-center cutEdg">
-            <span className="text-xl text-black text-bold cutEdg">
+            <span className="lg:text-2xl text-black text-bold cutEdg font-semibold">
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
           <div class="rounded-md flex items-center justify-center greenBtn">
-            <div className=" h-12 bg-green-700  justify-center items-center high">
-              <span className="p-5 text-white">
+            <div className=" h-12 bg-green-500  justify-center items-center high">
+              <span className="px-4 py-8 text-white">
                 THE TOP 5000 INFLUENCERS IN INDIA
               </span>
             </div>
           </div>
         </div>
+        <br />
         <br />
         <br />
         <div class="infPics" style={{ textAlign: "center" }}>
@@ -120,7 +121,7 @@ export default function Home() {
       <br />
       <div>
         <div id="feat">
-          <span>Features</span>
+          <span>FEATURES</span>
         </div>
 
         <div class="p-6 bg-white-300">
@@ -153,7 +154,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
+              <h1 className="text-xl text-green-500 uppercase font-semibold">
                 Available in audio & text formats.
               </h1>
               <p className="mt-4 text-black text-xl">
@@ -169,7 +170,7 @@ export default function Home() {
         <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
+              <h1 className="text-xl text-green-500 uppercase font-semibold">
                 Available in audio & text formats.
               </h1>
               <p className="mt-4  text-black text-xl">
@@ -199,8 +200,8 @@ export default function Home() {
             style={{ padding: "1.2rem" }}
           >
             <div class=" rounded-md flex items-center justify-start">
-              <span className="text-2xl text-bold text-black-700">
-                Ideopedia is trusted and loved by India’s leading influencers
+              <span className="text-2xl font-semibold text-green-500 uppercase">
+                Ideopedia is trusted and loved by India's leading influencers
               </span>
             </div>
             <div class=" rounded-md flex items-center justify-center">
@@ -213,7 +214,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-2xl text-bold">
+      <div className="flex justify-center items-center text-2xl font-semibold text-green-500">
         <span>TESTIMONALS</span>
       </div>
       <div>
@@ -222,7 +223,7 @@ export default function Home() {
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                  <span className="p-2 text-white text-xl text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
@@ -255,7 +256,7 @@ export default function Home() {
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                  <span className="p-2 text-white text-xl text-center ">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
@@ -288,7 +289,7 @@ export default function Home() {
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                  <span className="p-2 text-white text-xl text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
@@ -320,12 +321,12 @@ export default function Home() {
         </div>
       </div>
       <div className="p-4 flex justify-end items-end ">
-        <div className="border border-green-600 cursor-pointer">
+        <div className="border-[2px] border-green-500 rounded cursor-pointer px-2 py-1">
           <Link href="/testimonials">
-            <div className="p-1 flex justify-center items-center border-green-600">
-              <div className="text-green-700 text-2xl">Read more </div>
-              <div className="pl-2 pt-1">
-                <Image src={rightarr} />
+            <div className="flex justify-center items-center">
+              <div className="text-green-500 text-[16px]">Read more </div>
+              <div className="pt-2 pl-2">
+                <Image src={rightarr} width={20}/>
               </div>
             </div>
           </Link>
