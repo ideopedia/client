@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import signupvector from "../public/signupvector.svg";
 import Image from "next/image";
 import Link from "next/link";
+import SignUp from "./Auth"
 
 function Signup() {
   const signUpList = [
@@ -39,8 +40,8 @@ function Signup() {
               box={signUpList}
               button="Login"
               isAuth={true}
-              desc1="Did'nt have an account?"
-              desc2="Sign up"
+              desc1="Didn't have an account?"
+              desc2="Signup here"
             />
             {/* <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
               <FormHeader title="Sign up" className="bd1" />

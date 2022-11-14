@@ -5,7 +5,7 @@ import login from "../public/login.svg";
 import Image from "next/image";
 
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import Login from "./Auth";
+import MyLogin from "./Auth";
 function Login() {
   const emailList = [
     {
@@ -24,19 +24,19 @@ function Login() {
   return (
     <div>
       <Navbar />
-      <section class="h-screen new" style={{ padding: "0 2rem 0 0" }}>
+      <section class="h-screen new" style={{ padding: "7rem 2rem 0 0" }}>
         <div className="loginContainer">
           <div className="loginImg">
             <Image src={login} />
           </div>
-          <Login
+          <MyLogin
             title="Login"
             box={emailList}
             isLogin={true}
             button="Login"
             isAuth={true}
-            desc1="Alredy have an account?"
-            desc2="Log in here"
+            desc1="Already have an account?"
+            desc2="Login here"
           />
         </div>
       </section>

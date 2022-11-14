@@ -30,11 +30,11 @@ const Auth = (props) => {
           placeholder="Enter your password"
           onChange={(e) => setComponent_available(e.target.value)}
         /> */}
-        {props.islogin && <div className="formBottom">
+        {props.isLogin && <div className="formBottom">
           <label>
             <input
               style={{ marginRight: "6px" }}
-              class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+              class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
               className={props.className}
               type="checkbox"
               value=""
@@ -42,7 +42,7 @@ const Auth = (props) => {
             ></input>
             Remember Me
           </label>
-          <label>password</label>
+          <label className="text-gray-500">Forget password</label>
         </div>}
         <div id="button" className="row flex justify-center items-center">
           <button
@@ -57,8 +57,8 @@ const Auth = (props) => {
         </div>
         {props.isAuth && <div className="signDesc" style={{ margin: "1.5rem auto" }}>
           <p>
-            {props.desc1}
-            <span>
+            {props.desc1}{"    "}
+            <span className="text-green-500">
               <Link href="/">{props.desc2}</Link>
             </span>
           </p>
