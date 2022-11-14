@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import log from "../public/logo.svg";
 
-function NavLink({ to, children }) {
+function NavLink({ to, children, classes }) {
   return (
-    <a href={to} className={`mx-4`}>
+    <a href={to} className={`mx-4 ${classes}`}>
       {children}
     </a>
   );
@@ -29,7 +29,7 @@ function MobileNav({ open, setOpen }) {
             }, 100)
           }
         >
-          <div className="mob">Our Readers</div>
+          <div className="mob ">Our Readers</div>
         </Link>
         <Link
           className="text-xl font-medium my-4"
@@ -137,10 +137,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex">
-          <NavLink to="/testimonials">Our Readers</NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/teams">Team</NavLink>
-          <NavLink to="/contact">Contact us</NavLink>
+          <NavLink to="/testimonials" classes="mt-[7px]">Our Readers</NavLink>
+          <NavLink to="/about" classes="mt-[7px]">About Us</NavLink>
+          <NavLink to="/teams" classes="mt-[7px]">Team</NavLink>
+          <NavLink to="/contact" classes="mt-[7px]">Contact us</NavLink>
           <NavLink to="/login">
             <div className="log">
               <button>Login</button>

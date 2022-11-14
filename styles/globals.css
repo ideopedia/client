@@ -311,6 +311,27 @@
   width: 100%;
 }
 
+@media screen and (max-width:1025px){
+  .bandf{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width:770px){
+  .bandf{
+    font-size: 19px;
+    margin: 0 5rem;
+  }
+}
+
+@media screen and (max-width:450px){
+  .bandf{
+    margin: 0;
+    font-size: 20px;
+  }
+ 
+}
+
 
 
 
