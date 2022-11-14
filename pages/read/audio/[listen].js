@@ -1,8 +1,11 @@
-import React from "react";
-import { useRef, useState } from "react";
+import React from 'react';
 
-import Image from "next/image";
-
-export default function App() {
-  return <></>;
+const Listen = () => {
+    return (
+        <div>
+            
+        </div>
+    );
 }
+
+export default Listen;

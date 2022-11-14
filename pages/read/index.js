@@ -105,6 +105,7 @@ const Read = () => {
                           </i>
                         </div>
                         <div
+                          className="cursor-pointer"
                           onClick={function handleCick() {
                             router.push(`/read/${val.id}`);
                           }}
