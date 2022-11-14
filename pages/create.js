@@ -17,12 +17,17 @@ import startq from "../public/startq.svg";
 import endq from "../public/endq.svg";
 const Read = () => {
   const [data, setData] = useState(false);
+  const router = useRouter();
+  const { ideo } = router.query;
+  // var num = Number(ideo);
+  // var num2 = Number(ideo[0]);
+  // var num3 = Number(ideo[1]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
         "http://localhost:3000/api/bookSummary/findSummary",
         {
-          Ideo_id: 14,
+          Ideo_id: 11,
         }
       );
 
@@ -75,7 +80,12 @@ const Read = () => {
           <div>
             <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
               <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                <div class=" rounded-md flex items-center justify-start ideoIcons">
+                <div
+                  class=" rounded-md flex items-center justify-start ideoIcons"
+                  onClick={function handleForward() {
+                    router.push(`/read/summary/${num2}${num3 - 1}`);
+                  }}
+                >
                   <Image src={forward} />
                 </div>
                 <div class="rounded-md flex items-center justify-center progBar">
@@ -87,7 +97,14 @@ const Read = () => {
                   </div>
                   <div className="text-base pl-4 pb-3 perc">45%</div>
                 </div>
-                <div class="rounded-md flex  justify-end ">
+                <div
+                  class="rounded-md flex  justify-end "
+                  onClick={function handleBackward() {
+                    router.push(
+                      `/read/summary/${String(num2)}${String(num3 + 1)}`
+                    );
+                  }}
+                >
                   <Image src={backward} />
                 </div>
               </div>
@@ -115,13 +132,18 @@ const Read = () => {
                       {val}
                     </div>
                   ))}
-                  <div className="flex justify-center items-center p-4">
-                    <Image
-                      src={data.Book_Summary[0].images[n][0]}
-                      width={300}
-                      height={300}
-                    />
-                  </div>
+                  {data.Book_Summary[0].images[n][0].length > 2 ? (
+                    <div className="flex justify-center items-center p-4">
+                      <Image
+                        src={data.Book_Summary[0].images[n][0]}
+                        width={300}
+                        height={300}
+                      />
+                    </div>
+                  ) : (
+                    console.log(" ")
+                  )}
+
                   {data.Book_Summary[0].Quotes[n].length > 1 ? (
                     <div className="flex justify-center items-center">
                       <div className="mx-[auto]">
@@ -149,23 +171,29 @@ const Read = () => {
               </div>
             </div>
           ))}
-          <div className="bg-green-100 p-6">
-            <div className="p-4">
-              {data.Ideo_Peaks.map((val) => (
-                <div>
-                  <div style={{position:"absolute",marginTop:"0.7rem"}}>
-                  <Image src={bullet} width={40} height={40} />
-                  </div>
-                  <div className=" p-4 ml-8" >
+          {data.Ideo_Peaks.length > 1 ? (
+            <div className="bg-green-100 p-6">
+              <div className="p-4">
+                {data.Ideo_Peaks.map((val) => (
+                  <div>
+                    <div style={{ position: "absolute", marginTop: "0.7rem" }}>
+                      <Image src={bullet} width={40} height={40} />
+                    </div>
+                    <div className=" p-4 ml-8">
                       <div className="pr-4">
                         <div className="text-xl">{val.name}</div>
-                        <div className="text-base text-green-700">{val.quote}</div>
+                        <div className="text-base text-green-700">
+                          {val.quote}
+                        </div>
                       </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          ) : (
+            console.log("")
+          )}
         </div>
       ) : (
         <div>

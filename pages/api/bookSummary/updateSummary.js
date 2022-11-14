@@ -10,6 +10,7 @@ export default async function updateSummary(req, res) {
     id,
     Book_Name,
     Ideo,
+    Ideo_title,
     Ideo_image,
     Ideo_id,
     Book_Author,
@@ -29,6 +30,7 @@ export default async function updateSummary(req, res) {
           Ideo_id: Ideo_id,
           Book_Name: Book_Name,
           Ideo: Ideo,
+          Ideo_title: Ideo_title,
           Ideo_image: Ideo_image,
           Book_Author: Book_Author,
 

@@ -5,25 +5,33 @@ import twitter from "../public/twitter.svg";
 import Image from "next/image";
 import telegram from "../public/telegram.svg";
 import logo from "../public/logo.svg";
+import bpoint from "../public/circle2.svg"
 function Footer() {
   return (
     <div>
       <div class="p-3 footer">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 focenter">
           <div class="p-2 rounded-md flex items-center justify-center logo">
             <div className="py-9 ">
               <Image src={logo} />
               <br />
               <label className="foottext ">
-                We Inform, Inspire, Influence, & Impact The Leading Influencers
-                In India.
+                INFORMING
+                <div className="bulletPoint">
+                  <Image src={bpoint} />
+                </div>
+                INSPIRING
+                <div className="bulletPoint">
+                  <Image src={bpoint} />
+                </div>
+                IMPACTING INDIA'S TOP LEADERS ONE IDEA AT A TIME
               </label>
             </div>
           </div>
           <div class="p-2  rounded-md flex">
             <div>
               <span className="heading">About</span>
-              <br/>
+              <br />
               <ul>
                 <li className="py-2 foottext hover:text-green-700">
                   <Link href="/about#about_hero">What is Ideopedia ?</Link>
@@ -106,7 +114,9 @@ function Footer() {
 
         <hr className="hru" />
         <br />
-        <span className="foottext"><Link href="/about">©️ Ideopedia - 2022</Link></span>
+        <span className="foottext">
+          <Link href="/about">©️ Ideopedia - 2022</Link>
+        </span>
         <br></br>
       </div>
     </div>

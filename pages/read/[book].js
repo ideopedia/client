@@ -25,7 +25,7 @@ import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
-  const init={ one: arrowone, two: arrowtwo }
+  const init = { one: arrowone, two: arrowtwo };
   const useWidth = () => {
     const [screenWidth, setScreenWidth] = useState(0);
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -39,7 +39,7 @@ const Book = () => {
   useEffect(() => {
     return () => {
       if (screen < 1025) {
-        setImages({one:arrowthree,two:arrowfour});
+        setImages({ one: arrowthree, two: arrowfour });
       } else {
         setImages(init);
       }
@@ -141,7 +141,7 @@ const Book = () => {
                     <div className="mr-1.5 w-5 mt-1">
                       <Image src={cards} />
                     </div>
-                    <Link className="" href="/read/book">
+                    <Link className="" href={`/read/cards/${1}`}>
                       Cards
                     </Link>
                   </div>
@@ -255,7 +255,7 @@ const Book = () => {
           <div className="benifits my-[2rem] px-[2rem]">
             <h1 className="text-xl new2 ">Benifits</h1>
             {data.benifits.map((val, n) => (
-              <div className="pt-6 pb-6 " style={{width:"100%"}}>
+              <div className="pt-6 pb-6 " style={{ width: "100%" }}>
                 <DropdownComponent
                   name={n + 1 + ". " + val.name}
                   image={val.image}
