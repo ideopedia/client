@@ -15,13 +15,12 @@ import dmmt from "../../public/dmmt.svg";
 const Favourites = () => {
   return (
     <div>
-      <div className="lg:flex">
+      <div className="md:flex">
         <SideNavbar />
 
         <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
           <br />
           <div class="scrollmenu flex pt-9 ml-9">
-            
             <div className="pr-9 flex">
               <Image src={task} />
               <Link href="/mylib/completed" className="navtxt">
@@ -33,9 +32,12 @@ const Favourites = () => {
             <div className="pr-9 flex">
               <Image src={fav} />
               <Link href="/mylib/favourites" className="navtxt">
-                <span className="text-xl text-green-700 cursor-pointer">
-                  Favourites
-                </span>
+                <div>
+                  <span className="text-xl text-green-700 cursor-pointer">
+                    Favourites
+                  </span>
+                  <hr className="w-6/12 nhr" />
+                </div>
               </Link>
             </div>
             <div className="pr-9 flex">
@@ -55,11 +57,18 @@ const Favourites = () => {
             </Link>
             <Image src={arr} />
           </div>
-          <Card image={wtf} name="What's The Future And Why It's Up To Us" author="Tim O'Reilly"/>
-          <Card image={wtf} name="What's The Future And Why It's Up To Us" author="Tim O'Reilly"/>
-          
-          
-          <Card image={dmmt} name="Don't Make me think" author="Steve Krug"/>
+          <Card
+            image={wtf}
+            name="What's The Future And Why It's Up To Us"
+            author="Tim O'Reilly"
+          />
+          <Card
+            image={wtf}
+            name="What's The Future And Why It's Up To Us"
+            author="Tim O'Reilly"
+          />
+
+          <Card image={dmmt} name="Don't Make me think" author="Steve Krug" />
         </div>
       </div>
     </div>

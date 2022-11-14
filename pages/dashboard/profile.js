@@ -11,7 +11,7 @@ const profile = () => {
                 <div className="top">
                     <h1>Profile</h1>
                 </div>
-                <div className="profImg m-4 inne">
+                <div className="profImg m-4 inner">
                     <Image src={prime} className="imgr" />
                 </div>
                 <div className="FormSec" >
