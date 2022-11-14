@@ -5,7 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Signup() {
-  const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+  const signUpList = [
+    {
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email",
+      change: (e) => setEmail_Id(e.target.value),
+    },
+    {
+      label: "Password",
+      type: "password",
+      placeholder: "Enter your password",
+      change: (e) => setComponent_available(e.target.value),
+    },
+    {
+      label: "Invite code",
+      type: "text",
+      placeholder: "Enter your Invite Code",
+      change: (e) => setComponent_available(e.target.value),
+    },
+  ];
   return (
     <div>
       <Navbar />
@@ -15,7 +34,15 @@ function Signup() {
             <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0 new1">
               <Image src={signupvector} />
             </div>
-            <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
+            <SignUp
+              title="Sign Up"
+              box={signUpList}
+              button="Login"
+              isAuth={true}
+              desc1="Did'nt have an account?"
+              desc2="Sign up"
+            />
+            {/* <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
               <FormHeader title="Sign up" className="bd1" />
               <div>
                 <form>
@@ -57,7 +84,7 @@ function Signup() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
