@@ -75,7 +75,7 @@ const About = () => {
           <div class=" rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
               <div class=" rounded-md flex items-start justify-center">
-                <h1 className="text-3xl text-green-700 pb-3">VISSION</h1>
+                <h1 className="text-3xl text-green-700 pb-3">VISION</h1>
               </div>
               <div class=" rounded-md flex items-center justify-center text-2xl  text-gray-600 ">
                 An India where the power of ideas and their successful

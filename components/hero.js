@@ -18,25 +18,25 @@ function Hero() {
             <div class=" rounded-md flex items-center justify-center">
               <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-2xl  text-black text-bold iii">INFORMING
+                  <span className="text-[28px]  text-black font-semibold iii">INFORMING
                     <div className="bulletPoints" >
-                      <Image src={bpoints} width={5} height={5} className="blt"/>
+                      <Image src={bpoints} width={8} height={8} className="blt"/>
                     </div>
                     INSPIRING<div className="bulletPoints">
-                      <Image src={bpoints} width={5} height={5}  className="blt"/>
+                      <Image src={bpoints} width={8} height={8}  className="blt"/>
                     </div>
                     IMPACTING
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="md:text-xl text-2xl text-green-700 text-bold">INDIA’S TOP LEADERS</span>
+                  <span className="lg:text-[28px] text-xl text-green-500 font-semibold">INDIA’S TOP LEADERS</span>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div class="lg:text-[28px] rounded-md flex items-center justify-center font-semibold">
                   <span>One idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
-                    <div className="log ">
+                    <div className="getstarted lg:text-xl">
                       <button className="">Get Started</button>
                     </div>
                   </Link>
