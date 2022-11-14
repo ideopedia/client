@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { Dropdown } from "flowbite-react";
 import { useState } from "react";
 import Image from "next/image";
 import log from "../public/logo.svg";
@@ -8,9 +9,9 @@ export default function Navbar() {
   return (
     <div>
       <nav className="w-full bg-white drop-shadow">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
-            <div className="flex items-center justify-between py-1   md:py-1 md:block">
+            <div className="flex items-center justify-between py-1 md:py-1 md:block">
               <Link href="/" className="cursor-pointer">
                 <Image src={log} className="cursor-pointer" />
               </Link>
@@ -60,23 +61,27 @@ export default function Navbar() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-black flex justify-center">
-                  <Link href="/testimonials">
-                    <a>Our Readers</a>
-                  </Link>
+                  <Dropdown label="About Us" inline={true}>
+                    <Dropdown.Item><Link href="/about#hero">What is Ideopedia ?</Link></Dropdown.Item>
+                    <Dropdown.Item><Link href="/about#mission">Mission</Link></Dropdown.Item>
+                    <Dropdown.Item><Link href="/about#vission">Vision</Link></Dropdown.Item>
+                    <Dropdown.Item><Link href="/about#what">What we do</Link></Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
-                  <Link href="/about">
-                    <a>About Us</a>
-                  </Link>
+                <Dropdown label="Our Readers" inline={true}>
+                    <Dropdown.Item><Link href="/testimonials#readers">Testimonials</Link></Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
-                  <Link href="/teams">
-                    <a>Team</a>
-                  </Link>
+                <Dropdown label="Team" inline={true}>
+                    <Dropdown.Item> <Link href="/teams#bod">Board of directors</Link></Dropdown.Item>
+                    <Dropdown.Item><Link href="/teams#bod">Founders</Link></Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/contact">
-                    <a>Contact US</a>
+                    <a>Contact Us</a>
                   </Link>
                 </li>
                 <li className="text-white flex justify-center">
@@ -101,3 +106,20 @@ export default function Navbar() {
     </div>
   );
 }
+
+{/* <Dropdown label="About Us" inline={true}>
+  <Dropdown.Item>What is Ideopedia ?</Dropdown.Item>
+  <Dropdown.Item>Mission</Dropdown.Item>
+  <Dropdown.Item>Vision</Dropdown.Item>
+  <Dropdown.Item>What we do</Dropdown.Item>
+</Dropdown>;
+
+<Dropdown label="Our Readers" inline={true}>
+  <Dropdown.Item>Testimonials</Dropdown.Item>
+</Dropdown>;
+
+<Dropdown label="Teams" inline={true}>
+  <Dropdown.Item>Board of directors</Dropdown.Item>
+  <Dropdown.Item>Founders</Dropdown.Item>
+  <Dropdown.Item>Advisors</Dropdown.Item>
+</Dropdown>; */}

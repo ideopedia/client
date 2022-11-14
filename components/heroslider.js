@@ -32,7 +32,7 @@ export default function SliderComponent() {
                             autoplay
                             loop
                             src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                            style={{ height: '380px', width: '380px' }}
+                            style={{ height: '480px', width: '480px' }}
                             className="cim"
                         >
 
