@@ -10,11 +10,29 @@ import twitter from "../public/twitter.svg";
 import telegram from "../public/telegram.svg";
 import map from "../public/map.svg";
 import mail from "../public/mail.svg";
-import contactUs from "./Auth"
+import ContactUs from "./Auth"
 import location from "../public/location.svg";
 
 const New = () => {
-
+  const contactList=[ {
+    label: "Name",
+    type: "text",
+    placeholder: "Enter your name",
+    change: (e) => setEmail_Id(e.target.value),
+  },
+  {
+    label: "Email",
+    type: "email",
+    placeholder: "Enter your email",
+    change: (e) => setEmail_Id(e.target.value),
+  },
+  {
+    label: "Message",
+    type: "text",
+    placeholder: "write your message",
+    change: (e) => setEmail_Id(e.target.value),
+  }
+]
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -91,7 +109,7 @@ const New = () => {
             </div>
           </div>
           <div class="rounded-md flex items-center justify-center pb-9">
-            <div>
+            {/* <div>
               <FormHeader title="Contact us" className="bd1" />
               <div>
                 <form ref={form} onSubmit={sendEmail}>
@@ -128,7 +146,12 @@ const New = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
+            <ContactUs
+              title="Contact"
+              box={contactList}
+              button="Send message"
+              />
           </div>
         </div>
       </div>
