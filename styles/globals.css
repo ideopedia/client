@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 .FormSec {
   margin-top: 1.5rem;
@@ -17,7 +17,6 @@
 .FormSec form input {
   margin: 0.5rem 0 2.5rem;
   padding-left: 3rem;
-
 }
 
 .desc {
@@ -43,197 +42,195 @@
 .descIdeo {
   margin-top: 1rem;
 }
-.greenBtn div{
+.greenBtn div {
   padding-top: 10px;
 }
 
 @media screen and (min-width: 410px) {
-  .greenBtn div span{
+  .greenBtn div span {
     margin: 0.6rem;
   }
 }
 
-.greenBtn{
+.greenBtn {
   font-weight: bold;
 }
 @media screen and (min-width: 600px) {
   .greenBtn {
     font-weight: bold;
     font-size: 1.5rem;
-    letter-spacing: 1.2px
+    letter-spacing: 1.2px;
   }
-  .greenBtn div{
+  .greenBtn div {
     padding-top: 6.5px;
   }
 }
 @media screen and (max-width: 600px) {
-  .descIdeo .cutEdg{
+  .descIdeo .cutEdg {
     font-size: 16px;
     letter-spacing: -0.5px;
-    font-weight:bold
+    font-weight: bold;
   }
 }
 @media screen and (max-width: 325px) {
-  .descIdeo .cutEdg{
+  .descIdeo .cutEdg {
     font-size: 14.5px;
   }
-  .greenBtn{
+  .greenBtn {
     font-size: 14px;
   }
-  .greenBtn div{
+  .greenBtn div {
     padding-top: 13px;
   }
 }
 
-@media screen and (max-width: 915px){
-  .iii{
+@media screen and (max-width: 915px) {
+  .iii {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 782px){
-  .heroTop{
-    margin-top:5rem;
+@media screen and (max-width: 782px) {
+  .heroTop {
+    margin-top: 5rem;
   }
-  .iii{
+  .iii {
     font-size: 18px;
   }
-} 
-@media screen and (max-width:442px){
-  .iii{
+}
+@media screen and (max-width: 442px) {
+  .iii {
     font-size: 20px;
   }
 }
-@media screen and (max-width:420px) {
-  .iii{
+@media screen and (max-width: 420px) {
+  .iii {
     font-size: 17px;
   }
 }
-.loginImg{
-  width:650px;
+.loginImg {
+  width: 650px;
 }
-@media screen and (max-width:625px){
-        .loginImg{
-          visibility: none;
-        }
+@media screen and (max-width: 625px) {
+  .loginImg {
+    visibility: none;
+  }
 }
-.loginContainer{
+.loginContainer {
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
-.newloginContainer{
+.newloginContainer {
   width: 100%;
 }
-@media screen and (min-width:1025px){
-     .newloginContainer{
-      width: 30rem;
-     }
+@media screen and (min-width: 1025px) {
+  .newloginContainer {
+    width: 30rem;
+  }
 }
-@media screen and (max-width:1024px){
-  .loginContainer{
+@media screen and (max-width: 1024px) {
+  .loginContainer {
     flex-direction: column;
     align-items: center;
   }
 }
 
-.newLoginForm{
+.newLoginForm {
   padding: 2rem;
   display: flex;
   flex-direction: column;
 }
-.newLoginForm input{
-  margin:5px 0 1rem;
+.newLoginForm input {
+  margin: 5px 0 1rem;
   padding-left: 1.2rem;
 }
-.formBottom{
+.formBottom {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 0;
 }
-.bulletPoints{
+.bulletPoints {
   margin: 5px;
-  display:inline;
-  font-size:8px;
-  position:relative;
-  bottom:5px;
+  display: inline;
+  font-size: 8px;
+  position: relative;
+  bottom: 5px;
 }
 
-.ideoData{
+.ideoData {
   font-size: 1.6rem;
   text-align: center;
 }
-@media screen and (max-width:470px){
-  .ideoData{
+@media screen and (max-width: 470px) {
+  .ideoData {
     font-size: 1.25rem;
   }
-  .ideoHead{
+  .ideoHead {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width:715px){
-  .greyContent{
+@media screen and (max-width: 715px) {
+  .greyContent {
     font-size: 20px;
   }
 }
-@media screen and (max-width:1065px){
-  .rightQuote{
+@media screen and (max-width: 1065px) {
+  .rightQuote {
     height: 1.8rem;
-  }read
-  .leftQuote{
+  }
+  read .leftQuote {
     width: 2rem;
   }
 }
-@media screen and (max-width:750px){
-  .RightIcons{
+@media screen and (max-width: 750px) {
+  .RightIcons {
     width: 2.3rem;
   }
 }
-@media screen and (max-width:750px){
-  .ideoIcons{
+@media screen and (max-width: 750px) {
+  .ideoIcons {
     width: 1.5rem;
   }
   /* .progRight{
     padding: 0 3rem;
   } */
-  .perc{
+  .perc {
     font-size: 10px;
   }
 }
-.progBar{
+.progBar {
   position: relative;
-  top:8px;
+  top: 8px;
 }
 
-.infPics>*{
+.infPics > * {
   display: inline;
 }
-@media screen and (max-width:720px){
-  .readContent{
+@media screen and (max-width: 720px) {
+  .readContent {
     font-size: 18px;
   }
-  .readHead{
+  .readHead {
     font-size: 25px;
   }
 }
-.logo{
-  position:relative;
-  bottom:5rem;
+.logo {
+  position: relative;
+  bottom: 5rem;
 }
-@media screen and (max-width:1464px){
-  .logo{
-    bottom:4.5rem;
+@media screen and (max-width: 1464px) {
+  .logo {
+    bottom: 4.5rem;
   }
 }
-@media screen and (max-width:1110px){
-  .logo{
-    bottom:3.8rem;
+@media screen and (max-width: 1110px) {
+  .logo {
+    bottom: 3.8rem;
   }
 }
-
-
 
 /* md'ss */
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   /* box-sizing: border-box; */
 }
 
@@ -297,7 +294,7 @@
 
   border-radius: 2px;
   background-color: #2cb67d;
-  color: #fff; 
+  color: #fff;
 }
 
 .mob {
@@ -372,12 +369,11 @@
 .row textarea:focus::-webkit-input-placeholder {
   opacity: 0;
 }
-.loginput
-{
+.loginput {
   width: 24rem;
 }
 .row label {
-  align-self:flex-start;
+  align-self: flex-start;
   padding-left: 4rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
@@ -398,7 +394,7 @@
   background: #2cb67d;
   border: 0px;
   cursor: pointer;
-  transition: background 0.20s ease-out;
+  transition: background 0.2s ease-out;
 }
 
 .row button:hover {
@@ -513,11 +509,11 @@
 
 .hru {
   background-color: rgb(2, 2, 2);
-  
+
   height: 2px;
 }
 .nhr {
-  background-color: #7F5AF0;
+  background-color: #7f5af0;
   padding-top: 3px;
   height: 5px;
 }
@@ -542,13 +538,12 @@
 
   border: 2px solid #7f5af0;
 }
-.inner{
+.inner {
   border-radius: 50%;
   max-width: 100px;
   max-height: 100px;
 }
 .inne {
-
   border-radius: 50%;
 }
 
@@ -570,7 +565,8 @@
   font-weight: 600;
 }
 
-.b_auth {}
+.b_auth {
+}
 
 .svg {
   max-width: 100%;
@@ -737,3 +733,26 @@
   display: none;
 }
 
+.opp {
+  opacity: 0.7;
+}
+
+#card1 {
+  background: linear-gradient(rgba(33, 147, 176, 1), rgba(109, 213, 237, 1));
+}
+#card2 {
+  background: linear-gradient(rgba(233, 162, 100, 1), rgba(157, 93, 40, 1));
+}
+#card3 {
+  background: linear-gradient(rgba(76, 29, 81, 1), rgba(60, 12, 60, 1));
+}
+
+#card4 {
+  background: linear-gradient(rgba(162, 24, 109, 1), rgba(132, 35, 89, 1));
+}
+#card5 {
+  background: linear-gradient(rgba(94, 71, 137, 1), rgba(110, 89, 202, 1));
+}
+#card6 {
+  background: linear-gradient(rgba(159, 233, 95, 1), rgba(107, 151, 69, 1));
+}
