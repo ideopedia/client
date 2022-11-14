@@ -62,6 +62,23 @@ export default function Navbar() {
 
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ">
                 <li className="text-black flex justify-center">
+                <Dropdown
+  label="Dropdown"
+  inline={true}
+>
+  <Dropdown.Item>
+    Dashboard
+  </Dropdown.Item>
+  <Dropdown.Item>
+    Settings
+  </Dropdown.Item>
+  <Dropdown.Item>
+    Earnings
+  </Dropdown.Item>
+  <Dropdown.Item>
+    Sign out
+  </Dropdown.Item>
+</Dropdown>
                   <Link href="/testimonials">
                     <a className="nava">Our Readers</a>
                   </Link>
