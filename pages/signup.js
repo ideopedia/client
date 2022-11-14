@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar";
 import signupvector from "../public/signupvector.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 function Signup() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
@@ -19,25 +20,19 @@ function Signup() {
               <div>
                 <form>
                   <div className="row">
-                    <label>Name</label>
+                    <label>Email</label>
                     <input
+                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
                       type="email"
                       placeholder="Enter your email"
                       onChange={(e) => setEmail_Id(e.target.value)}
                     />
                   </div>
                   <div className="row">
-                    <label>Email</label>
-                    <input
-                      type="text"
-                      placeholder="Enter your password"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
                     <label>Password</label>
                     <input
-                      type="text"
+                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
+                      type="password"
                       placeholder="Enter your password"
                       onChange={(e) => setComponent_available(e.target.value)}
                     />
@@ -45,8 +40,9 @@ function Signup() {
                   <div className="row">
                     <label>Invite Code</label>
                     <input
-                      type="text"
-                      placeholder="Enter your password"
+                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
+                      type="password"
+                      placeholder="Enter your Invite Code"
                       onChange={(e) => setComponent_available(e.target.value)}
                     />
                   </div>
@@ -57,7 +53,7 @@ function Signup() {
                 </form>
                 <div className="row">
                   <p>
-                    Already have an account? <span>Log in</span>
+                    Already have an account? <span><Link href="/">Log in</Link></span>
                   </p>
                 </div>
               </div>

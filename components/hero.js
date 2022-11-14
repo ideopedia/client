@@ -36,7 +36,7 @@ function Hero() {
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
-                    <div className="log ">
+                    <div className="getstarted">
                       <button className="">Get Started</button>
                     </div>
                   </Link>
