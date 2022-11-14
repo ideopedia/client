@@ -9,7 +9,6 @@ import audio from "../public/audio.svg";
 import summarry from "../public/summary.svg";
 import download from "../public/download.svg";
 import TextSelector from "text-selection-react";
-
 import test from "../public/test.svg";
 import Link from "next/link";
 import rightarr from "../public/rightarr.svg";
@@ -34,7 +33,6 @@ export default function Home() {
     return (<div className="fixed z-20 top-30  text-red-900 ">
       hello
     </div>)
-    
   }
   const useWidth = () => {
     const [screenWidth, setScreenWidth] = useState(0);
