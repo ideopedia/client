@@ -228,6 +228,14 @@
     bottom:3.8rem;
   }
 }
+@media screen and (max-width:441px){
+  .logo{
+    bottom:3.6rem;
+  }
+}
+.bookImg{
+  float: left;
+}
 
 
 

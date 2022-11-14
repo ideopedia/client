@@ -26,6 +26,7 @@ var prebookSchema = new Schema({
   Ideos: [{ name: { type: String }, Ideo_id: { type: Number } }],
 });
 
+<<<<<<< HEAD
 //returns a function which returns either a compiled model, or a precompiled model
 //s is a String for the model name e.g. "User", and model is the mongoose Schema
 // function getModel(s, model) {
@@ -36,6 +37,8 @@ var prebookSchema = new Schema({
 //   };
 // }
 // module.exports = getModel("PreBooks", prebookSchema);
+=======
+>>>>>>> 944858e17b0e6e9ad994c0ddc0902c379ea765c9
 var preBooks = models.PreBooks || model("PreBooks", prebookSchema);
 
 export default preBooks;

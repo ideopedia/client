@@ -133,12 +133,15 @@ const Book = () => {
 
           <div className="desc">
             <h1 className="text-xl new2 pl-2">Description</h1>
-            <div className="flex justify-center">
-              <div className="p-4 text-xl text-gray-700 indent-12 lg:pr-9 pr-0">
-                <Image src={before} height={200} width={200} />
-                {data.Book_Description}
-              </div>
-            </div>
+            <p>
+              <Image
+                src={before}
+                height={200}
+                width={100}
+                className="bookImg"
+              />
+              {data.Book_Description}
+            </p>
           </div>
           <br />
           <div className="desc">
