@@ -24,7 +24,7 @@ function Login() {
   return (
     <div>
       <Navbar />
-      <section class="h-screen new" style={{ padding: "7rem 2rem 0 0" }}>
+      <section class="h-screen new" style={{ padding: "4rem 2rem 0 0" }}>
         <div className="loginContainer">
           <div className="loginImg">
             <Image src={login} />
@@ -33,10 +33,10 @@ function Login() {
             title="Login"
             box={emailList}
             isLogin={true}
-            button="Login"
+            button="LOGIN"
             isAuth={true}
-            desc1="Already have an account?"
-            desc2="Login here"
+            desc1="Don't have an account?"
+            desc2="Signup here"
           />
         </div>
       </section>

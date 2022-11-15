@@ -76,7 +76,7 @@ const OurReaders = () => {
               </div>
               <br />
               <div className="flex justify-center items-center">
-                <span className=" p-7 text-black text-3xl text-center uppercase font-regular">
+                <span className=" p-10 text-black lg:text-3xl text-xl text-center uppercase font-regular">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>
@@ -92,15 +92,13 @@ const OurReaders = () => {
       <br />
       <br />
       <br />
-      <div>
+      <div className="flowerbg">
         <div className="flex justify-center items-center p-4">
           <span className="text-3xl font-semibold text-green-500">TESTIMONIALS</span>
         </div>
         <div className="pt-2 pl-9 pr-9" id="readers">
             <SliderComponent />
         </div>
-        
-        
       </div>
       <br />
       <br />

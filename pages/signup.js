@@ -37,10 +37,10 @@ function Signup() {
             <SignUp
               title="Sign Up"
               box={signUpList}
-              button="Login"
+              button="SIGNUP"
               isAuth={true}
-              desc1="Didn't have an account?"
-              desc2="Signup here"
+              desc1="Already have an account?"
+              desc2="Login here"
             />
             {/* <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
               <FormHeader title="Sign up" className="bd1" />

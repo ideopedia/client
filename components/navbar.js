@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import log from "../public/logo.svg";
+import { Dropdown } from "flowbite-react";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -61,19 +62,37 @@ export default function Navbar() {
             >
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
-                  <Link href="/testimonials">
-                    <a>Our Readers</a>
-                  </Link>
+                  <Dropdown label="About us" inline="true">
+                    <Dropdown.Item>
+                      <Link href="/about#about_hero">What is Ideopedia ?</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link href="/about#mission">Mission</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link href="/about#vission">Vision</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link href="/about#what">What we do</Link>
+                    </Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
-                  <Link href="/about">
-                    <a>About Us</a>
-                  </Link>
+                  <Dropdown label="Our Readers" inline="true">
+                    <Dropdown.Item>
+                      <Link href="/testimonials#readers">Testimonials</Link>
+                    </Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
-                  <Link href="/teams">
-                    <a>Team</a>
-                  </Link>
+                  <Dropdown label="Team" inline="true">
+                    <Dropdown.Item>
+                    <Link href="/teams#bod">Board of Directors</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                    <Link href="/teams#bod">Founders</Link>
+                    </Dropdown.Item>
+                  </Dropdown>
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/contact">

@@ -18,20 +18,20 @@ const About = () => {
   return (
     <div>
       <Navbar />
-      <div className="p-9">
-        <div className="about_hero" id="about_hero">
+      <div className="">
+        <div className="about_hero1 pt-10" id="about_hero">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
             <div class=" rounded-md flex items-center justify-center">
               <Image src={about} />
             </div>
-            <div class=" p-4 rounded-md flex items-start justify-center">
+            <div class=" p-4 rounded-md flex items-center justify-center">
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-                <div class="rounded-md flex items-center justify-center">
-                  <h1 className="text-3xl text-green-700">
+                <div class="rounded-md flex items-start justify-start">
+                  <h1 className="text-3xl text-green-500 font-semibold">
                     WHAT IS IDEOPEDIA?
                   </h1>
                 </div>
-                <div class="mt-[3rem] rounded-md flex items-center justify-center">
+                <div class="mt-[1rem] rounded-md flex items-center justify-center">
                   <span className="text-2xl  text-gray-600 ">
                     Ideopedia is an invitation-only platform that identifies,
                     shares, and facilitates cutting-edge ideas with the top 5000
@@ -48,6 +48,7 @@ const About = () => {
         </div>
         <br />
         <br />
+        <div className="missionpage">
         <div
           class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pb-5 "
           id="mission"
@@ -57,10 +58,10 @@ const About = () => {
           </div>
           <div class=" rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-              <div class=" rounded-md flex items-start justify-center">
-                <h1 className="text-3xl text-green-700 pb-3">MISSION</h1>
+              <div class=" rounded-md flex items-start justify-start">
+                <h1 className="text-3xl text-green-500 font-semibold pb-3 px-20">MISSION</h1>
               </div>
-              <div class=" rounded-md flex items-center justify-center text-2xl  text-gray-600 ">
+              <div class=" rounded-md flex items-center justify-center text-2xl  text-gray-600 px-20">
                 To Inspire, Enable, and Facilitate the creation and nurturing of
                 Ideas that can catalyse India,s path to unprecedented innovation
                 and growth.
@@ -74,10 +75,10 @@ const About = () => {
         >
           <div class=" rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-              <div class=" rounded-md flex items-start justify-center">
-                <h1 className="text-3xl text-green-700 pb-3">VISION</h1>
+              <div class=" rounded-md flex items-start justify-start px-20">
+                <h1 className="text-3xl text-green-500 font-semibold pb-3">VISION</h1>
               </div>
-              <div class=" rounded-md flex items-center justify-center text-2xl  text-gray-600 ">
+              <div class=" rounded-md flex items-center justify-center text-2xl  text-gray-600 px-20">
                 An India where the power of ideas and their successful
                 implementation ensures prosperity, equity, and well-being for
                 all its citizens.
@@ -88,51 +89,52 @@ const About = () => {
             <Image src={vission} />
           </div>
         </div>
-        <div class="rounded-md flex items-start justify-start">
+        </div>
+        {/* <div class="rounded-md flex items-start justify-start">
           <Image src={leafstart} />
         </div>
         <div class="rounded-md flex items-end justify-end">
           <Image src={leafend} />
-        </div>
+        </div> */}
 
         <div className="pb-9" id="what">
           <div class=" rounded-md flex items-center justify-center">
-            <h1 className="text-3xl text-bold text-black pb-3">WHAT WE DO</h1>
+            <h1 className="text-3xl font-semibold text-green-500 py-20">WHAT WE DO</h1>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2">
-            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer">
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 pb-20">
+            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
               <div>
-                <div className="text-3xl text-bold text-black flex justify-center items-center">
+                <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Ideas</span>
                 </div>
-                <div className=" p-4 pb-9 text-2xl text-bold text-black flex justify-center items-center">
-                  <span>
+                <div className=" p-4 pb-9 text-2xl text-bold flex justify-center items-center">
+                  <span className="text-center">
                     We research and identify powerful ideas, global trends,
                     inventions and discoveries that are relevant to India.
                   </span>
                 </div>
               </div>
             </div>
-            <div class="p-4 rounded-md flex items-center justify-center  bg-green-600 drop-shadow pb-9 cursor-pointer">
+            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
               <div>
-                <div className="text-3xl text-bold text-white flex justify-center items-center">
+                <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Research</span>
                 </div>
-                <div className=" p-4 pb-9 text-2xl text-bold text-white flex justify-center items-center">
-                  <span>
+                <div className=" p-4 pb-9 text-2xl text-bold flex justify-center items-center">
+                  <span className="text-center">
                     We research and identify powerful ideas, global trends,
                     inventions and discoveries that are relevant to India.
                   </span>
                 </div>
               </div>
             </div>
-            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer">
+            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
               <div>
-                <div className="text-3xl text-bold text-black flex justify-center items-center">
+                <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Discover</span>
                 </div>
-                <div className=" p-4 pb-9 text-2xl text-bold text-black flex justify-center items-center">
-                  <span>
+                <div className=" p-4 pb-9 text-2xl text-bold flex justify-center items-center">
+                  <span className="text-center">
                     We research and identify powerful ideas, global trends,
                     inventions and discoveries that are relevant to India.
                   </span>
@@ -142,25 +144,24 @@ const About = () => {
           </div>
         </div>
         <div className="bg-green-100 text-center  py-[4rem] flex items-center justify-center">
-            <div className="">
-              <div className="text-left ml-[1rem] aboutQuote">
-                <Image src={startquotes} />
-              </div>
-              <span className="text-black text-3xl mx-[7rem] my-[2rem] bandf">
-                We believe in and facilitate the transformational power of
-                ideas.
-              </span>
-              <div className="text-right  aboutQuote ">
-                <Image src={endquotes} />
-              </div>
+          <div className="">
+            <div className="text-left ml-[1rem] aboutQuote">
+              <Image src={startquotes} />
+            </div>
+            <span className="text-black text-3xl mx-[7rem] my-[2rem] bandf">
+              We believe in and facilitate the transformational power of ideas.
+            </span>
+            <div className="text-right  aboutQuote ">
+              <Image src={endquotes} />
+            </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 keybgr">
           <div class=" rounded-md flex items-center justify-center">
             <Image src={aboutkeys} />
           </div>
           <div class="rounded-md flex items-center justify-center">
-            <span className="text-3xl">
+            <span className="text-2xl">
               The time has come for India to realize its true potential, and
               reach unprecedented heights of economic, social, and human
               potential to become a more prosperous, united, equitable, happy,
@@ -168,15 +169,15 @@ const About = () => {
             </span>
           </div>
         </div>
-        <div className="pt-9 pb-9" id="goal">
-          <div className="flex justify-center items-center p-2">
-            <span className="text-black-700 text-3xl text-bold">
-              INDIA’S ABUNDANT RESOURCES
+        <div className="py-20" id="goal">
+          <div className="flex justify-center items-center">
+            <span className="text-3xl font-semibold text-green-500 text-center">
+              INDIA'S ABUNDANT RESOURCES
             </span>
           </div>
-          <div className="flex justify-center items-center p-9">
-            <span className="text-xl text-black-700 text-bold">
-              As the world’s largest democracy with millions of Indians at the
+          <div className="flex justify-center items-center p-10">
+            <span className="text-2xl text-black-700 text-bold text-center lg:px-20">
+              As the world's largest democracy with millions of Indians at the
               cusp of one of the biggest economic and social transformations
               globally, India is poised to make history and take the next leap
               by leveraging its abundant resources.

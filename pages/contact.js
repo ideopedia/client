@@ -59,7 +59,7 @@ const New = () => {
       <Navbar />
       <div className="p-4">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <div class=" rounded-md flex items-center justify-center bg-green-700 h-screen">
+          <div class=" rounded-md flex items-center justify-center bg-green-500 h-screen">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class="pt-4 pl-4 pr-4 rounded-md flex items-center justify-center">
                 <Link href="https://g.page/thinkindia?share">
@@ -150,7 +150,7 @@ const New = () => {
             <ContactUs
               title="Contact"
               box={contactList}
-              button="Send message"
+              button="SEND MESSAGE"
               className="pb-[4rem]"
               />
           </div>
