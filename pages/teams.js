@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import found1 from "../public/founder1.svg";
-import Footer from "../components/footer"
+import Footer from "../components/footer";
 import found2 from "../public/founder2.svg";
 import bod1 from "../public/bod1.svg";
 import bod2 from "../public/bod2.svg";
@@ -36,7 +36,10 @@ const Teams = () => {
     <div>
       <Navbar />
       <div className="p-5">
-        <div class="pt-5 pb-4 rounded-md flex items-center justify-center" id="bod">
+        <div
+          class="pt-5 pb-4 rounded-md flex items-center justify-center"
+          id="bod"
+        >
           <span>The Team</span>
         </div>
         <div class=" rounded-md flex items-center justify-center">
@@ -49,7 +52,6 @@ const Teams = () => {
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard1}
-            
           >
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
               <div class="flex items-center justify-center">
@@ -152,7 +154,7 @@ const Teams = () => {
               className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0  z-50 outline-none focus:outline-none cursor-pointer"
               onClick={handleBoard1}
             >
-              <div className="relative w-auto my-20 mx-auto max-w-3xl">
+              <div className="relative sm:w-auto md:w-10/12  lg:w-9/12 xl:w-9/12 my-20 mx-auto ">
                 {/*content*/}
                 <div className="bg-white rounded-md drop-shadow-md">
                   <div className="p-4">
@@ -172,13 +174,16 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black">
+                            <span className="text-bold text-xl text-black pb-9">
                               Board of directors
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class=" rounded-md flex items-center justify-center">
+                      <div
+                        class=" rounded-md flex items-center justify-center"
+                        style={{ lineHeight: "2.1rem" }}
+                      >
                         <span className="text-lg text-base text-black ">
                           Mr Binod Kumar Bawri is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
@@ -212,7 +217,7 @@ const Teams = () => {
               className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0  z-50 outline-none focus:outline-none cursor-pointer"
               onClick={handleBoard2}
             >
-              <div className="relative w-auto my-20 mx-auto max-w-3xl">
+              <div className="relative sm:w-auto md:w-10/12  lg:w-9/12 xl:w-9/12 my-20 mx-auto">
                 {/*content*/}
                 <div className="bg-white rounded-md drop-shadow-md">
                   <div className="p-4">
@@ -232,13 +237,16 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black">
+                            <span className="text-bold text-xl text-black pb-9">
                               Board of directors
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class=" rounded-md flex items-center justify-center">
+                      <div
+                        class=" rounded-md flex items-center justify-center"
+                        style={{ lineHeight: "2.1rem" }}
+                      >
                         <span className="text-lg text-base text-black ">
                           Mr Binod Kumar Bawri is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
@@ -272,7 +280,7 @@ const Teams = () => {
               className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0  z-50 outline-none focus:outline-none cursor-pointer"
               onClick={handleBoard3}
             >
-              <div className="relative w-auto my-20 mx-auto max-w-3xl">
+              <div className="relative sm:w-auto md:w-10/12  lg:w-9/12 xl:w-9/12 my-20 mx-auto">
                 {/*content*/}
                 <div className="bg-white rounded-md drop-shadow-md">
                   <div className="p-4">
@@ -292,13 +300,16 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black">
+                            <span className="text-bold text-xl text-black pb-9">
                               Board of directors
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class=" rounded-md flex items-center justify-center">
+                      <div
+                        class=" rounded-md flex items-center justify-center"
+                        style={{ lineHeight: "2.1rem" }}
+                      >
                         <span className="text-lg text-base text-black ">
                           Mr Binod Kumar Bawri is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
@@ -332,7 +343,7 @@ const Teams = () => {
               className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0  z-50 outline-none focus:outline-none cursor-pointer"
               onClick={handleFounder1}
             >
-              <div className="relative w-auto my-20 mx-auto max-w-3xl">
+              <div className="relative sm:w-auto md:w-10/12  lg:w-9/12 xl:w-9/12 my-20 mx-auto">
                 {/*content*/}
                 <div className="bg-white rounded-md drop-shadow-md">
                   <div className="p-4">
@@ -352,13 +363,16 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black">
+                            <span className="text-bold text-xl text-black pb-9">
                               Founder
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class=" rounded-md flex items-center justify-center">
+                      <div
+                        class=" rounded-md flex items-center justify-center"
+                        style={{ lineHeight: "2.1rem" }}
+                      >
                         <span className="text-lg text-base text-black ">
                           Mr Binod Kumar Bawri is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
@@ -392,7 +406,7 @@ const Teams = () => {
               className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0  z-50 outline-none focus:outline-none cursor-pointer"
               onClick={handleFounder2}
             >
-              <div className="relative w-auto my-20 mx-auto max-w-3xl">
+              <div className="relative sm:w-auto md:w-10/12  lg:w-9/12 xl:w-9/12 my-20 mx-auto">
                 {/*content*/}
                 <div className="bg-white rounded-md drop-shadow-md">
                   <div className="p-4">
@@ -412,14 +426,17 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black">
+                            <span className="text-bold text-xl text-black pb-9">
                               Founder
                             </span>
                           </div>
                         </div>
                       </div>
                       <div class=" rounded-md flex items-center justify-center">
-                        <span className="text-lg text-base text-black ">
+                        <span
+                          className="text-lg text-base text-black  "
+                          style={{ lineHeight: "2.1rem" }}
+                        >
                           Mr Binod Kumar Bawri is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
                           He is the Founding Director of Ideopedia. He is the

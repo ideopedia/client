@@ -10,6 +10,7 @@ import cht from "../../public/cht.svg";
 import feed from "../../public/feedp.svg";
 import shares from "../../public/shrs.svg";
 import bronze from "../../public/bronze.svg";
+import UserChart from "../../components/UserChart";
 import gold from "../../public/gold.svg";
 import silver from "../../public/silver.svg";
 import rank1 from "../../public/rank1.svg";
@@ -80,7 +81,7 @@ const Dashboard = () => {
               <div className="pt-3 pb-4">
                 <h1 className="text-xl new2 pl-2">ACTIVITY</h1>
               </div>
-              <Image src={chart} />
+              <UserChart />
             </div>
             <div class="  rounded-md  items-center justify-start">
               <div className="pt-3 ">
