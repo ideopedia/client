@@ -180,8 +180,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <br />
-      <div class="pb-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 bg-gray-100">
+      <div class="pb-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 bg-gray-50">
         <div class=" rounded-md flex items-center justify-center">
           <Image src={homeimage} />
         </div>
@@ -205,23 +204,23 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-2xl text-bold">
-        <span>TESTIMONALS</span>
+      <div className="flex justify-center items-center text-2xl text-bold p-10">
+        <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">TESTIMONALS</span>
       </div>
       <div>
-        <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class=" rounded-md flex items-center justify-center bg-white drop-shadow">
+        <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+          <div class=" rounded-md flex items-center justify-center bg-white dropshadow">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
+                  <span className="text-white text-xl text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-xl ">
+                  <span className="p-2 text-black text-lg ">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -232,29 +231,29 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={test}/>
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl">Mr Suresh Prabhu</h1>
-                  <div className="text-sm">
+                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class=" rounded-md flex items-center justify-center  bg-white drop-shadow">
+          <div class="py-6 rounded-md flex items-center justify-center bg-white dropshadow">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
+                  <span className="text-white text-xl text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-xl ">
+                  <span className="p-2 text-black text-lg ">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -265,29 +264,29 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={test}/>
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl">Mr Suresh Prabhu</h1>
-                  <div className="text-sm">
+                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="  rounded-md flex items-center justify-center  bg-white drop-shadow">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+          <div class=" rounded-md flex items-center justify-center bg-white dropshadow">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-700 flex justify-center items-center high">
-                  <span className="p-2 text-white text-xl ">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
+                  <span className="text-white text-xl text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-xl ">
+                  <span className="p-2 text-black text-lg ">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -298,11 +297,11 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={test}/>
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl">Mr Suresh Prabhu</h1>
-                  <div className="text-sm">
+                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
                 </div>
@@ -312,12 +311,12 @@ export default function Home() {
         </div>
       </div>
       <div className="p-4 flex justify-end items-end ">
-        <div className="border border-green-600 cursor-pointer">
+        <div className="border-[2px] border-green-500 cursor-pointer rounded-md px-1">
           <Link href="/testimonials">
-            <div className="p-1 flex justify-center items-center border-green-600">
-              <div className="text-green-700 text-2xl">Read more </div>
-              <div className="pl-2 pt-1">
-                <Image src={rightarr} />
+            <div className="p-1 flex justify-center items-center border-green-500">
+              <div className="text-green-500 text-[16px]">Read more </div>
+              <div className="pt-2 px-1">
+                <Image src={rightarr} width={20}/>
               </div>
             </div>
           </Link>

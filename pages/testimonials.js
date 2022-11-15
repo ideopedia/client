@@ -20,14 +20,14 @@ const OurReaders = () => {
           <div class=" rounded-md flex items-center justify-center">
             <Image src={readershero} />
           </div>
-          <div class=" p-4 rounded-md flex items-start justify-center">
+          <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-              <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="text-3xl text-black-700 readHead">OUR READERS</h1>
+              <div class="rounded-md flex items-start justify-start">
+                <h1 className="text-3xl text-green-500 font-semibold readHead">OUR READERS</h1>
               </div>
-              <div class="p-9 rounded-md flex items-center justify-center">
-                <span className="text-2xl  text-gray-600 readContent text-center">
-                  Ideopedia’s Readers are among the top 5000 influencers in
+              <div class="rounded-md flex items-center justify-center">
+                <span className="text-2xl  text-gray-600 readContent text-left">
+                  Ideopedia's Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
                   leading scientists, distinguished, top CEOs, academicians and
@@ -41,15 +41,15 @@ const OurReaders = () => {
       </div>
       <div className="p-4 pb-9">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <div class=" p-4 rounded-md flex items-start justify-center">
+          <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="text-3xl text-black-700 readHead text-center">
-                  TRUSTED AND LOVED BY INDIA’S LEADING INFLUENCERS
+                <h1 className="text-3xl text-green-500 font-semibold readHead px-8">
+                  TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>
-              <div class="rounded-md flex items-center justify-center p-9">
-                <span className="pt-9 text-2xl  text-gray-600 readContent text-center">
+              <div class="rounded-md flex items-center justify-center">
+                <span className="pt-9 text-2xl  text-gray-600 readContent px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its
@@ -76,7 +76,7 @@ const OurReaders = () => {
               </div>
               <br />
               <div className="flex justify-center items-center">
-                <span className=" p-7 text-black text-3xl text-center">
+                <span className=" p-7 text-black text-3xl text-center uppercase font-regular">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>
@@ -94,7 +94,7 @@ const OurReaders = () => {
       <br />
       <div>
         <div className="flex justify-center items-center p-4">
-          <span className="text-3xl text-bold text-black">TESTIMONIALS</span>
+          <span className="text-3xl font-semibold text-green-500">TESTIMONIALS</span>
         </div>
         <div className="pt-2 pl-9 pr-9" id="readers">
             <SliderComponent />
