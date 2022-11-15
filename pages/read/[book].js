@@ -113,7 +113,7 @@ const Book = () => {
                     <div className="mr-1.5 mt-1">
                       <Image src={bookicn} />
                     </div>
-                    <Link className="" href="/read/book">
+                    <Link className="" href="">
                       Read
                     </Link>
                   </div>
@@ -278,7 +278,7 @@ const Book = () => {
             <br />
             <br />
             <hr />
-            <div class="pt-5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
+            <div class="p-9 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
                 class=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
@@ -303,7 +303,10 @@ const Book = () => {
             </div>
             <br />
             {arr ? (
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2 pb-9">
+              <div
+                class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                id="read"
+              >
                 {data.Ideos.map((idea, n) => (
                   <div
                     class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white drop-shadow-md"
@@ -311,17 +314,15 @@ const Book = () => {
                       router.push(`/read/summary/${idea.Ideo_id}`);
                     }}
                   >
-                    <div class="p-4 rounded-md flex items-center justify-center">
-                      <h1 className="text-sm lg:text-xl  ">
-                        {"IDEO" + " " + n}
-                      </h1>
+                    <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
+                      <h1 className="text-sm lg:text-xl  ">{idea.Ideo_num}</h1>
                     </div>
-                    <div class="p-4 rounded-md flex items-center justify-start">
+                    <div class="p-4 rounded-md flex items-center justify-start h-auto lg:h-20">
                       <span className="text-sm lg:text-xl">{idea.name}</span>
                     </div>
 
                     {tick ? (
-                      <div class="p-4 rounded-md flex items-center justify-center">
+                      <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
                         <Image src={ok} width={25} height={25} />
                       </div>
                     ) : (

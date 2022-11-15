@@ -38,6 +38,12 @@ const Read = () => {
     fetchData();
     console.log(data);
   }, []);
+  useEffect(() => {
+    // Prefetch the dashboard page
+    router.prefetch(
+      `http://localhost:3000/read/summary/${String(num2)}${String(num3 + 1)}`
+    );
+  }, []);
 
   return (
     <>
@@ -65,7 +71,10 @@ const Read = () => {
             </div>
             <div class="rounded-md flex items-center justify-end">
               <div>
-                <div className="p-2 RightIcons cursor-pointer" onClick={() => setShowModal(true)}>
+                <div
+                  className="p-2 RightIcons cursor-pointer"
+                  onClick={() => setShowModal(true)}
+                >
                   <Image src={content} />
                 </div>
                 <div className="p-2   RightIcons cursor-pointer">
@@ -77,7 +86,7 @@ const Read = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="flex justify-center items-center text-3xl text-green-700 text-bold pl-4 ideoData">
             {data.Ideo}
           </div>
@@ -107,11 +116,12 @@ const Read = () => {
                 <div
                   class="rounded-md flex  justify-end cursor-pointer"
                   onClick={function handleBackward() {
-                    router.push(
+                    router.replace(
                       `http://localhost:3000/read/summary/${String(
                         num2
                       )}${String(num3 + 1)}`
                     );
+                    
                   }}
                 >
                   <Image src={backward} />

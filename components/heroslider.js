@@ -27,13 +27,13 @@ export default function SliderComponent() {
                     className="mySwiper "
                 >
                    
-                    <SwiperSlide className="cim">
+                    <SwiperSlide className="cim ">
                         <Player
                             autoplay
                             loop
                             src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
                             style={{ height: '380px', width: '380px' }}
-                            className="cim"
+                            className="cim pr-9"
                         >
 
                         </Player>

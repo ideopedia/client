@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import log from "../public/logo.svg";
-import DropD from "./dropD";
+
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   return (
