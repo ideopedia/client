@@ -23,7 +23,13 @@ var prebookSchema = new Schema({
     },
   ],
   Aclaimed: [{ type: String }],
-  Ideos: [{ name: { type: String }, Ideo_id: { type: Number } }],
+  Ideos: [
+    {
+      name: { type: String },
+      Ideo_id: { type: Number },
+      Ideo_num: { type: String },
+    },
+  ],
 });
 
 //returns a function which returns either a compiled model, or a precompiled model

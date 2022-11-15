@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SliderComponent from "../components/heroslider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import bpoints from "../public/circle.svg"
+import bpoints from "../public/circle.svg";
 import Navbar from "../components/navbar";
 
 function Hero() {
@@ -16,20 +16,34 @@ function Hero() {
         <div className="bg-white heroTop">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:h-screen">
             <div class=" rounded-md flex items-center justify-center">
-              <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-[28px]  text-black font-semibold iii">INFORMING
-                    <div className="bulletPoints" >
-                      <Image src={bpoints} width={8} height={8} className="blt"/>
+                  <span className="text-[28px]  text-black font-semibold iii">
+                    INFORMING
+                    <div className="bulletPoints">
+                      <Image
+                        src={bpoints}
+                        width={8}
+                        height={8}
+                        className="blt"
+                      />
                     </div>
-                    INSPIRING<div className="bulletPoints">
-                      <Image src={bpoints} width={8} height={8}  className="blt"/>
+                    INSPIRING
+                    <div className="bulletPoints">
+                      <Image
+                        src={bpoints}
+                        width={8}
+                        height={8}
+                        className="blt"
+                      />
                     </div>
                     IMPACTING
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="lg:text-[28px] text-xl text-green-500 font-semibold">INDIA’S TOP LEADERS</span>
+                  <span className="lg:text-[28px] text-xl text-green-500 font-semibold">
+                    INDIA’S TOP LEADERS
+                  </span>
                 </div>
                 <div class="lg:text-[28px] rounded-md flex items-center justify-center font-semibold">
                   <span>One idea at a time</span>
