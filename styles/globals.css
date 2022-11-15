@@ -884,3 +884,6 @@
   background-repeat: no-repeat;
   padding: 100px 0;
 }
+.bg{
+  background-color: #111010 !important;
+}

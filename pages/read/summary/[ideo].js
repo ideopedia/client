@@ -8,18 +8,23 @@ import Image from "next/image";
 import font from "../../../public/font.svg";
 import sound from "../../../public/sound.svg";
 import close from "../../../public/close.svg";
+import dclose from "../../../public/darkclose.svg";
 import ProgressBar from "../../../components/progress";
 import forward from "../../../public/forward.svg";
 import backward from "../../../public/backward.svg";
-import ideo2 from "../../../public/ideo2.svg";
-import ideo2in from "../../../public/ideo2in.svg";
+import darkad from "../../../public/darkaudio.svg";
+import darkb from "../../../public/darkback.svg";
+import darkc from "../../../public/darkconc.svg";
+import darkfor from "../../../public/darkfor.svg";
+import darkfont from "../../../public/darkfont.svg";
+import forwhole from "../../../public/forwardwh.svg";
 import content from "../../../public/content.svg";
 import startq from "../../../public/startq.svg";
 import endq from "../../../public/endq.svg";
 const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [showModal, setShowModal] = React.useState(false);
   const router = useRouter();
   const { ideo } = router.query;
@@ -90,7 +95,12 @@ const Read = () => {
                     >
                       <Image src={content} />
                     </div>
-                    <div className="p-2   RightIcons cursor-pointer">
+                    <div
+                      className="p-2   RightIcons cursor-pointer"
+                      onClick={function handleDark() {
+                        setDark(!dark);
+                      }}
+                    >
                       <Image src={font} />
                     </div>
                     <div className="p-2 RightIcons cursor-pointer">
@@ -121,10 +131,14 @@ const Read = () => {
                       <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                         <div
                           class="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{ width: "45%" }}
+                          style={{
+                            width: `${(data.Ideo_num / data.Total) * 100}%`,
+                          }}
                         ></div>
                       </div>
-                      <div className="text-base pl-4 pb-3 perc">45%</div>
+                      <div className="text-base pl-4 pb-3 perc">
+                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"} 
+                      </div>
                     </div>
                     <div
                       class="rounded-md flex  justify-end cursor-pointer"
@@ -202,26 +216,35 @@ const Read = () => {
                   </div>
                 </div>
               ))}
+
               {data.Ideo_Peaks.length > 1 ? (
-                <div className="bg-green-100 p-6">
-                  <div className="p-4">
-                    {data.Ideo_Peaks.map((val) => (
-                      <div>
-                        <div
-                          style={{ position: "absolute", marginTop: "0.7rem" }}
-                        >
-                          <Image src={bullet} width={40} height={40} />
-                        </div>
-                        <div className=" p-4 ml-8">
-                          <div className="pr-4">
-                            <div className="text-xl">{val.name}</div>
-                            <div className="text-base text-green-700">
-                              {val.quote}
+                <div>
+                  <div className="text-2xl text-black font-bold pl-4">
+                    Ideo Peaks
+                  </div>
+                  <div className="bg-green-100 p-6">
+                    <div className="p-4">
+                      {data.Ideo_Peaks.map((val) => (
+                        <div>
+                          <div
+                            style={{
+                              position: "absolute",
+                              marginTop: "0.7rem",
+                            }}
+                          >
+                            <Image src={bullet} width={40} height={40} />
+                          </div>
+                          <div className=" p-4 ml-8">
+                            <div className="pr-4">
+                              <div className="text-xl">{val.name}</div>
+                              <div className="text-base text-green-700">
+                                {val.quote}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -239,7 +262,7 @@ const Read = () => {
                           <div class=" rounded-md flex items-center justify-end">
                             <span className="text-2xl ">Contents </span>
                           </div>
-                          <div class="p-4  rounded-md flex items-center justify-end">
+                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowModal(false)}
@@ -295,7 +318,7 @@ const Read = () => {
                   }}
                 >
                   <div className="ideoIcons">
-                    <Image src={forward} width={30} height={30} />
+                    <Image src={forwhole} width={30} height={30} />
                   </div>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
@@ -311,13 +334,18 @@ const Read = () => {
                       className="p-2 RightIcons cursor-pointer"
                       onClick={() => setShowModal(true)}
                     >
-                      <Image src={content} />
+                      <Image src={darkc} />
                     </div>
-                    <div className="p-2   RightIcons cursor-pointer">
-                      <Image src={font} />
+                    <div
+                      className="p-2   RightIcons cursor-pointer"
+                      onClick={function handleDark() {
+                        setDark(!dark);
+                      }}
+                    >
+                      <Image src={darkfont} />
                     </div>
                     <div className="p-2 RightIcons cursor-pointer">
-                      <Image src={sound} />
+                      <Image src={darkad} />
                     </div>
                   </div>
                 </div>
@@ -330,7 +358,7 @@ const Read = () => {
                 <Image src={data.Ideo_image} width={1500} height={700} />
               </div>
               <div>
-                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
+                <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
                   <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                     <div
                       class=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
@@ -338,7 +366,7 @@ const Read = () => {
                         router.push(`/read/summary/${num2}${num3 - 1}`);
                       }}
                     >
-                      <Image src={forward} />
+                      <Image src={darkfor} />
                     </div>
                     <div class="rounded-md flex items-center justify-center progBar">
                       <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
@@ -347,7 +375,9 @@ const Read = () => {
                           style={{ width: "45%" }}
                         ></div>
                       </div>
-                      <div className="text-base pl-4 pb-3 perc">45%</div>
+                      <div className="text-base text-white pl-4 pb-3 perc">
+                        45%
+                      </div>
                     </div>
                     <div
                       class="rounded-md flex  justify-end cursor-pointer"
@@ -359,7 +389,7 @@ const Read = () => {
                         );
                       }}
                     >
-                      <Image src={backward} />
+                      <Image src={darkb} />
                     </div>
                   </div>
                 </div>
@@ -368,7 +398,7 @@ const Read = () => {
                 <div>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 text-white bg-black greyContent"
+                      className="flex justify-center items-center text-2xl bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
                       style={{ textAlign: "center" }}
                     >
                       {dat}
@@ -425,26 +455,37 @@ const Read = () => {
                   </div>
                 </div>
               ))}
+
               {data.Ideo_Peaks.length > 1 ? (
-                <div className="bg-green-100 p-6">
-                  <div className="p-4">
-                    {data.Ideo_Peaks.map((val) => (
-                      <div>
-                        <div
-                          style={{ position: "absolute", marginTop: "0.7rem" }}
-                        >
-                          <Image src={bullet} width={40} height={40} />
-                        </div>
-                        <div className=" p-4 ml-8">
-                          <div className="pr-4">
-                            <div className="text-xl">{val.name}</div>
-                            <div className="text-base text-green-700">
-                              {val.quote}
+                <div>
+                  <div className="text-2xl text-white font-bold pl-4">
+                    Ideo Peaks
+                  </div>
+                  <div className="bg-black p-6">
+                    <div className="p-4">
+                      {data.Ideo_Peaks.map((val) => (
+                        <div>
+                          <div
+                            style={{
+                              position: "absolute",
+                              marginTop: "0.7rem",
+                            }}
+                          >
+                            <Image src={bullet} width={40} height={40} />
+                          </div>
+                          <div className=" p-4 ml-8">
+                            <div className="pr-4">
+                              <div className="text-xl text-white">
+                                {val.name}
+                              </div>
+                              <div className="text-base text-green-500">
+                                {val.quote}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -455,19 +496,21 @@ const Read = () => {
                   <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
                     <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
                       {/*content*/}
-                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                         {/*header*/}
 
                         <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
                           <div class=" rounded-md flex items-center justify-end">
-                            <span className="text-2xl ">Contents </span>
+                            <span className="text-2xl text-white font-bold">
+                              Contents{" "}
+                            </span>
                           </div>
-                          <div class="p-4  rounded-md flex items-center justify-end">
+                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowModal(false)}
                             >
-                              <Image src={close} />
+                              <Image src={dclose} />
                             </div>
                           </div>
                         </div>
@@ -480,18 +523,18 @@ const Read = () => {
                           >
                             {conten.Ideos.map((idea, n) => (
                               <div
-                                class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
+                                class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                 onClick={function handleTick() {
                                   router.push(`/read/summary/${idea.Ideo_id}`);
                                 }}
                               >
                                 <div class="p-2rounded-md flex items-center justify-center ">
-                                  <h1 className="text-sm lg:text-xl  ">
+                                  <h1 className="text-sm lg:text-xl text-white ">
                                     {idea.Ideo_num}
                                   </h1>
                                 </div>
                                 <div class="p-2rounded-md flex items-center justify-start ">
-                                  <span className="text-sm lg:text-xl">
+                                  <span className="text-sm lg:text-xl text-white">
                                     {idea.name}
                                   </span>
                                 </div>

@@ -5,6 +5,8 @@ var bookSchema = new Schema({
   id: { type: Number },
   Book_Name: { type: String },
   Ideo_id: { type: Number },
+  Ideo_num: { type: Number },
+  Total: { type: Number },
   Ideo_title: { type: String },
   Ideo_image: { type: String },
   Ideo: { type: String },
