@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-
+*{
+  font-family: 'Poppins',sans-serif;
+}
 .FormSec {
   margin-top: 1.5rem;
 }
@@ -345,8 +347,6 @@
     font-size: 17px;
   }
 }
-
-
 
 /* .body {
   min-height: 100vh;
@@ -881,8 +881,7 @@
   box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.1);
 }
 
-.about_hero
-{
+.about_hero {
   background-image: url(../public/readwave.svg);
   width: 100%;
   height: 100%;
@@ -891,6 +890,18 @@
   background-repeat: no-repeat;
   padding: 100px 0;
 }
-.bg{
+.bg {
   background-color: #111010 !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    cursor: ew-resize;
+    background: #fff;
+    box-shadow: -405px 0 0 400px #7F5AF0;
+    border-radius: 50%;
+  }
 }

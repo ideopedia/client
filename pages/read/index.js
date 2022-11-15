@@ -100,7 +100,7 @@ const Read = () => {
                         <div className="text-xl font-semibold text-black">
                           <i>
                             {" "}
-                            Search instaed for{" "}
+                            Search instead for{" "}
                             <span className="text-green-700">{inpt}</span>
                           </i>
                         </div>

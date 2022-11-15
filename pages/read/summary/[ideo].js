@@ -15,6 +15,8 @@ import backward from "../../../public/backward.svg";
 import darkad from "../../../public/darkaudio.svg";
 import darkb from "../../../public/darkback.svg";
 import darkc from "../../../public/darkconc.svg";
+import dark1 from "../../../public/dark.svg";
+import light from "../../../public/light.svg";
 import darkfor from "../../../public/darkfor.svg";
 import darkfont from "../../../public/darkfont.svg";
 import forwhole from "../../../public/forwardwh.svg";
@@ -25,7 +27,9 @@ const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
   const [dark, setDark] = useState(true);
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [rangeval, setRangeval] = useState(1);
+  const [showMod, setShowMod] = useState(false);
   const router = useRouter();
   const { ideo } = router.query;
   var num = Number(ideo);
@@ -82,7 +86,7 @@ const Read = () => {
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
-                    <div className="text-3xl text-black text-bold ideoHead">
+                    <div className=" text-black text-bold ideoHead"style={{fontSize: `${rangeval*34}px`}}>
                       {data.Ideo_title}
                     </div>
                   </div>
@@ -97,9 +101,7 @@ const Read = () => {
                     </div>
                     <div
                       className="p-2   RightIcons cursor-pointer"
-                      onClick={function handleDark() {
-                        setDark(!dark);
-                      }}
+                      onClick={() => setShowMod(true)}
                     >
                       <Image src={font} />
                     </div>
@@ -110,10 +112,10 @@ const Read = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center text-3xl text-green-700 text-bold pl-4 ideoData">
+              <div className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData" style={{fontSize: `${rangeval*38}px`}}>
                 {data.Ideo}
               </div>
-              <div className="pb-4">
+              <div className="pb-4 ">
                 <Image src={data.Ideo_image} width={1500} height={700} />
               </div>
               <div>
@@ -137,7 +139,7 @@ const Read = () => {
                         ></div>
                       </div>
                       <div className="text-base pl-4 pb-3 perc">
-                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"} 
+                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
                       </div>
                     </div>
                     <div
@@ -159,8 +161,8 @@ const Read = () => {
                 <div>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center text-2xl bg-neutral-300  text-bold p-4 bg-white greyContent"
-                      style={{ textAlign: "center" }}
+                      className="flex justify-center items-center  bg-neutral-300  text-bold p-4 bg-white greyContent"
+                      style={{ textAlign: "center" , fontSize: `${rangeval*38}px`}}
                     >
                       {dat}
                     </div>
@@ -171,8 +173,8 @@ const Read = () => {
                     <div className="p-4">
                       {data.Book_Summary[0].Content[n].map((val) => (
                         <div
-                          className="text-xl text-black  p-4 flex justify-center items-center"
-                          style={{ lineHeight: "1.5" }}
+                          className=" text-black  p-4 flex justify-center items-center"
+                          style={{ lineHeight: "1.7",fontSize: `${rangeval*28}px` }}
                         >
                           {val}
                         </div>
@@ -195,7 +197,7 @@ const Read = () => {
                             <div className="text-left leftQuote">
                               <Image src={startq} />
                             </div>
-                            <div className="lg:text-2xl text-base text-green-700 mx-[2rem]">
+                            <div className=" text-green-700 mx-[2rem]" style={{fontSize: `${rangeval*28}px`}}>
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
                             <div
@@ -219,7 +221,7 @@ const Read = () => {
 
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
-                  <div className="text-2xl text-black font-bold pl-4">
+                  <div className=" text-black font-bold pl-4" style={{fontSize: `${rangeval*38}px`}}>
                     Ideo Peaks
                   </div>
                   <div className="bg-green-100 p-6">
@@ -236,8 +238,8 @@ const Read = () => {
                           </div>
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
-                              <div className="text-xl">{val.name}</div>
-                              <div className="text-base text-green-700">
+                              <div className="" style={{fontSize: "28px"}}>{val.name}</div>
+                              <div className=" text-green-700"style={{fontSize: `${rangeval*23}px`}}>
                                 {val.quote}
                               </div>
                             </div>
@@ -250,6 +252,74 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
+              {showMod ? (
+                <>
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                      {/*content*/}
+                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        {/*header*/}
+
+                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div class=" rounded-md flex items-center justify-end"></div>
+                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                            <div
+                              className="pr-5"
+                              onClick={() => setShowMod(false)}
+                            >
+                              <Image src={close} />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/*body*/}
+                        <div className="relative p-6 flex-auto">
+                          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+                            <div class=" rounded-md flex items-center justify-center">
+                              <div
+                                className="cursor-pointer"
+                                onClick={function handleDark() {
+                                  setDark(false);
+                                }}
+                              >
+                                <Image src={dark1} />
+                              </div>
+                              <div
+                                className="pl-9 cursor-pointer"
+                                onClick={function handleDark() {
+                                  setDark(true);
+                                }}
+                              >
+                                <Image src={light} />
+                              </div>
+                            </div>
+                            <div class="p-4  rounded-md flex items-center justify-center">
+                              <div className="text-black text-base">Aa</div>
+                              <div className="pl-3 pr-2">
+                                <input
+                                  class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
+                                  type="range"
+                                  min="1"
+                                  max="1.4"
+                                  value={rangeval}
+                                  step="0.1"
+                                  onChange={(event) =>
+                                    setRangeval(event.target.value)
+                                  }
+                                />
+
+                                {console.log(rangeval)}
+                              </div>
+                              <div className="text-black text-2xl">Aa</div>
+                            </div>
+                          </div>
+                        </div>
+                        {/*footer*/}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : null}
               {showModal ? (
                 <>
                   <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
@@ -323,7 +393,7 @@ const Read = () => {
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
-                    <div className="text-3xl text-white text-bold ideoHead">
+                    <div className=" text-white text-bold pb-4 ideoHead" style={{fontSize: `${rangeval*34}px`}}>
                       {data.Ideo_title}
                     </div>
                   </div>
@@ -351,7 +421,7 @@ const Read = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 ideoData">
+              <div className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 ideoData" style={{fontSize: `${rangeval*38}px`}}>
                 {data.Ideo}
               </div>
               <div className="pb-4">
@@ -372,11 +442,13 @@ const Read = () => {
                       <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                         <div
                           class="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{ width: "45%" }}
+                          style={{
+                            width: `${(data.Ideo_num / data.Total) * 100}%`,
+                          }}
                         ></div>
                       </div>
                       <div className="text-base text-white pl-4 pb-3 perc">
-                        45%
+                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
                       </div>
                     </div>
                     <div
@@ -398,8 +470,8 @@ const Read = () => {
                 <div>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center text-2xl bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
-                      style={{ textAlign: "center" }}
+                      className="flex justify-center items-center  bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
+                      style={{ textAlign: "center" ,fontSize: `${rangeval*38}px` }}
                     >
                       {dat}
                     </div>
@@ -410,8 +482,8 @@ const Read = () => {
                     <div className="p-4">
                       {data.Book_Summary[0].Content[n].map((val) => (
                         <div
-                          className="text-xl text-white  p-4 flex justify-center items-center"
-                          style={{ lineHeight: "1.5" }}
+                          className=" text-white  p-4 flex justify-center items-center"
+                          style={{ lineHeight: "1.5" ,fontSize: `${rangeval*28}px`}}
                         >
                           {val}
                         </div>
@@ -434,7 +506,7 @@ const Read = () => {
                             <div className="text-left leftQuote">
                               <Image src={startq} />
                             </div>
-                            <div className="lg:text-2xl text-base text-green-500 mx-[2rem]">
+                            <div className=" text-green-500 mx-[2rem]" style={{fontSize: `${rangeval*28}px`}}>
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
                             <div
@@ -458,7 +530,7 @@ const Read = () => {
 
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
-                  <div className="text-2xl text-white font-bold pl-4">
+                  <div className=" text-white font-bold pl-4" style={{fontSize: `${rangeval*38}px`}}>
                     Ideo Peaks
                   </div>
                   <div className="bg-black p-6">
@@ -475,10 +547,10 @@ const Read = () => {
                           </div>
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
-                              <div className="text-xl text-white">
+                              <div className=" text-white" style={{fontSize: `${rangeval*28}px`}}>
                                 {val.name}
                               </div>
-                              <div className="text-base text-green-500">
+                              <div className=" text-green-500" style={{fontSize: `${rangeval*23}px`}}>
                                 {val.quote}
                               </div>
                             </div>
@@ -491,6 +563,74 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
+              {showMod ? (
+                <>
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                      {/*content*/}
+                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
+                        {/*header*/}
+
+                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div class=" rounded-md flex items-center justify-end"></div>
+                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                            <div
+                              className="pr-5"
+                              onClick={() => setShowMod(false)}
+                            >
+                              <Image src={dclose} />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/*body*/}
+                        <div className="relative p-6 flex-auto">
+                          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+                            <div class=" rounded-md flex items-center justify-center">
+                              <div
+                                className="cursor-pointer"
+                                onClick={function handleDark() {
+                                  setDark(false);
+                                }}
+                              >
+                                <Image src={dark1} />
+                              </div>
+                              <div
+                                className="pl-9 cursor-pointer"
+                                onClick={function handleDark() {
+                                  setDark(true);
+                                }}
+                              >
+                                <Image src={light} />
+                              </div>
+                            </div>
+                            <div class="p-4  rounded-md flex items-center justify-center">
+                              <div className="text-white text-base">Aa</div>
+                              <div className="pl-3 pr-2">
+                                <input
+                                  class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
+                                  type="range"
+                                  min="1"
+                                  max="1.4"
+                                  value={rangeval}
+                                  step="0.1"
+                                  onChange={(event) =>
+                                    setRangeval(event.target.value)
+                                  }
+                                />
+
+                                {console.log(rangeval)}
+                              </div>
+                              <div className="text-white text-2xl">Aa</div>
+                            </div>
+                          </div>
+                        </div>
+                        {/*footer*/}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : null}
               {showModal ? (
                 <>
                   <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
