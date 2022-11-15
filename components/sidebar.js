@@ -2,6 +2,7 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Disclosure } from "@headlessui/react";
 import Profile from "../pages/dashboard/profile";
+import { useRouter } from "next/router";
 import {
   MdOutlineSpaceDashboard,
   MdOutlineAnalytics,
@@ -35,6 +36,7 @@ import {
 import edit from "../public/Edit.svg";
 function SideNavbar() {
   const [data, setData] = useState([]);
+  const router = useRouter()
 
   useEffect(() => {
     Axios.post("https://ideopedia-books.herokuapp.com/listBooks", {
@@ -94,7 +96,9 @@ function SideNavbar() {
                 </div>
               </div>
 
-              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4 pb-4">
+              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4 pb-4" onClick={function handleRoute(){
+                router.push("/dashboard/profile")
+              }} >
                 <h3 className="text-sm foottext font-semibold ">
                   Complete your Profile
                 </h3>

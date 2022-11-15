@@ -26,7 +26,7 @@ import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
 import { useState, useEffect } from "react";
 export default function Home() {
-  const [width, setWidth] = useState(250);
+  // const [width, setWidth] = useState(250);
   const [data, setData] = useState("");
   function handleMouseUp() {
     setData(window.getSelection().toString());
@@ -34,26 +34,26 @@ export default function Home() {
       hello
     </div>)
   }
-  const useWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(0);
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    useEffect(() => {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [handleResize]);
-    return screenWidth;
-  };
+  // const useWidth = () => {
+  //   const [screenWidth, setScreenWidth] = useState(0);
+  //   const handleResize = () => setScreenWidth(window.innerWidth);
+  //   useEffect(() => {
+  //     window.addEventListener("resize", handleResize);
+  //     return () => window.removeEventListener("resize", handleResize);
+  //   }, [handleResize]);
+  //   return screenWidth;
+  // };
 
-  const screen = useWidth();
-  useEffect(() => {
-    return ()=>{
-      if (screen < 565) {
-        setWidth(155);
-      } else {
-        setWidth(250);
-      }
-    }
-  }, [screen]);
+  // const screen = useWidth();
+  // useEffect(() => {
+  //   return ()=>{
+  //     if (screen < 565) {
+  //       setWidth(155);
+  //     } else {
+  //       setWidth(250);
+  //     }
+  //   }
+  // }, [screen]);
 
   return (
     <div onMouseUp={handleMouseUp}>
@@ -83,29 +83,29 @@ export default function Home() {
           </div>
         </div>
         <div class="infPics pt-9 text-center">
-          <div class="p-4 rounded-md">
-            <Image src={influencer1} width={width} />
+          <div class="p-4 rounded-md" >
+            <Image src={influencer1}  width={250}/>
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer2} width={width} />
+            <Image src={influencer2} width={250} />
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer3} width={width} />
+            <Image src={influencer3} width={250} />
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer4} width={width} />
+            <Image src={influencer4} width={250} />
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer5} width={width} />
+            <Image src={influencer5} width={250} />
           </div>
           <div class="p-4 rounded-md ">
-            <Image src={influencer6} width={width} />
+            <Image src={influencer6} width={250} />
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer7} width={width} />
+            <Image src={influencer7} width={250} />
           </div>
           <div class="p-4  rounded-md">
-            <Image src={influencer8} width={width} />
+            <Image src={influencer8} width={250} />
           </div>
         </div>
       </div>

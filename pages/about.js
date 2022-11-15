@@ -144,16 +144,17 @@ const About = () => {
           </div>
         </div>
         <div className="bg-green-100 text-center  py-[4rem] flex items-center justify-center">
-          <div className="">
-            <div className="text-left ml-[1rem] aboutQuote">
-              <Image src={startquotes} />
-            </div>
-            <span className="text-black text-3xl mx-[7rem] my-[2rem] bandf">
-              We believe in and facilitate the transformational power of ideas.
-            </span>
-            <div className="text-right  aboutQuote ">
-              <Image src={endquotes} />
-            </div>
+            <div className="">
+              <div className="text-left ml-[1rem] aboutQuote">
+                <Image src={startquotes} />
+              </div>
+              <span className="text-black text-3xl mx-[7rem] my-[2rem] bandf">
+                We believe in and facilitate the transformational power of
+                ideas.
+              </span>
+              <div className="text-right  aboutQuote mr-[1rem]">
+                <Image src={endquotes} />
+              </div>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 keybgr">

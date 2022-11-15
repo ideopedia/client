@@ -15,6 +15,10 @@ import silver from "../../public/silver.svg";
 import rank1 from "../../public/rank1.svg";
 import rank2 from "../../public/rank2.svg";
 import chatp from "../../public/chatp.svg";
+import ReadBox from "../../components/ReadBox";
+import ChatBox from "../../components/ChatBox";
+import ShareBox from "../../components/ShareBox";
+import FeedBox from "../../components/FeedBox";
 import sharep from "../../public/sharep.svg";
 import feedp from "../../public/feedp.svg";
 import chart from "../../public/chart.svg";
@@ -57,17 +61,17 @@ const Dashboard = () => {
           </div>
           <br />
           <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
-            <div class="p-4 rounded-md flex items-center justify-center">
-              <Image src={red} />
+            <div class="rounded-md flex items-center justify-center">
+              <ReadBox />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={shares} />
+            <div class=" rounded-md flex items-center justify-center">
+              <ShareBox />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={cht} />
+            <div class="rounded-md flex items-center justify-center">
+              <ChatBox />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={feed} />
+            <div class="rounded-md flex items-center justify-center">
+              <FeedBox />
             </div>
           </div>
           <br />
