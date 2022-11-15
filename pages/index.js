@@ -63,8 +63,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <div>
-        {console.log(data)}
+      <div className="wavebgr">
+        {/* {console.log(data)} */}
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo">
           <div class="rounded-md flex items-center justify-center">
             <span className="text-xl">An Invitation-only platform</span>
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <div className="Mobileappsection">
         <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <Image src={audio} />
@@ -160,8 +160,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-white">
         <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">

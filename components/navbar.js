@@ -77,7 +77,7 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <Link href="/contact">
-                    <a>Contact US</a>
+                    <a>Contact Us</a>
                   </Link>
                 </li>
                 <li className="text-white flex justify-center">

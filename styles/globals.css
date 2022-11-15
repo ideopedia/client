@@ -865,19 +865,30 @@
   background: linear-gradient(rgba(159, 233, 95, 1), rgba(107, 151, 69, 1));
 }
 
-/* .wavebgr
+.wavebgr
 {
-  background-image: url(../public/wave1.svg);
+  background-image: url(../public/landingwave1.svg);
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
   padding: 200px 0;
-} */
+}
 
 #feat
 {
   font-weight: 600;
   color: #2cb67d;
+}
+
+.Mobileappsection
+{
+  background-image: url(../public/landingwave2.svg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding: 200px 0;
 }
