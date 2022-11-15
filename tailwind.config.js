@@ -8,10 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-     
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
-  plugins: [
-    require("flowbite/plugin")
-  ],
+  plugins: [require("flowbite/plugin")],
 };
