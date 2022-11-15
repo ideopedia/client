@@ -65,26 +65,24 @@ export default function Home() {
       <Hero />
       <div className="wavebgr">
         {/* {console.log(data)} */}
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo pb-9">
           <div class="rounded-md flex items-center justify-center">
-            <span className="text-xl">An Invitation-only platform</span>
+            <span className="lg:text-[26px]">An Invitation-only platform</span>
           </div>
           <div class="rounded-md flex items-center justify-center cutEdg">
-            <span className="text-xl text-black text-bold cutEdg">
+            <span className="lg:text-[26px] text-black font-bold cutEdg">
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
           <div class="rounded-md flex items-center justify-center greenBtn">
-            <div className=" h-12 bg-green-700  justify-center items-center high">
-              <span className="p-5 text-white">
+            <div className=" h-12 bg-green-500  justify-center items-center high">
+              <span className="p-5 text-white font-semibold">
                 THE TOP 5000 INFLUENCERS IN INDIA
               </span>
             </div>
           </div>
         </div>
-        <br />
-        <br />
-        <div class="infPics" style={{ textAlign: "center" }}>
+        <div class="infPics pt-9 text-center">
           <div class="p-4 rounded-md">
             <Image src={influencer1} width={width} />
           </div>
@@ -116,7 +114,7 @@ export default function Home() {
       <br />
       <div>
         <div id="feat">
-          <span>Features</span>
+          <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">Features</span>
         </div>
 
         <div class="p-6 bg-white-300">
@@ -149,7 +147,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
+              <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
               <p className="mt-4 text-black text-xl">
@@ -163,7 +161,7 @@ export default function Home() {
         <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl tracking-wide text-green-800 text-gray-800 lg:text-xl lg:text-2xl">
+              <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
               <p className="mt-4  text-black text-xl">
@@ -183,7 +181,7 @@ export default function Home() {
         </div>
       </div>
       <br />
-      <div class="pb-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+      <div class="pb-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 bg-gray-100">
         <div class=" rounded-md flex items-center justify-center">
           <Image src={homeimage} />
         </div>
@@ -193,12 +191,12 @@ export default function Home() {
             style={{ padding: "1.2rem" }}
           >
             <div class=" rounded-md flex items-center justify-start">
-              <span className="text-2xl text-bold text-black-700">
-                Ideopedia is trusted and loved by India’s leading influencers
+              <span className="text-2xl text-green-500 font-semibold uppercase">
+                Ideopedia is trusted and loved by India's leading influencers
               </span>
             </div>
             <div class=" rounded-md flex items-center justify-center">
-              <span className="text-xl text-bold text-black-700">
+              <span className="text-xl text-black-700">
                 An India where the power of ideas and their successful
                 implementation ensures prosperity, equity, and well-being for
                 all its citizens.

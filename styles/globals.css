@@ -53,9 +53,6 @@
   }
 }
 
-.greenBtn {
-  font-weight: bold;
-}
 @media screen and (min-width: 600px) {
   .greenBtn {
     font-weight: bold;
@@ -575,11 +572,11 @@
   z-index: -99999999;
 }
 
-#feat {
+/* #feat {
   text-align: center;
   justify-content: center;
   align-items: center;
-}
+} */
 
 #feat span {
   font-size: 2rem;
@@ -873,13 +870,8 @@
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
-  padding: 200px 0;
-}
-
-#feat
-{
-  font-weight: 600;
-  color: #2cb67d;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
 
 .Mobileappsection
@@ -890,5 +882,5 @@
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
-  padding: 200px 0;
+  padding: 100px 0;
 }
