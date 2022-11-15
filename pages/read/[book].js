@@ -317,7 +317,7 @@ const Book = () => {
                     <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
                       <h1 className="text-sm lg:text-xl  ">{idea.Ideo_num}</h1>
                     </div>
-                    <div class="p-4 rounded-md flex items-center justify-start h-auto lg:h-20">
+                    <div class="p-4 rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
                       <span className="text-sm lg:text-xl">{idea.name}</span>
                     </div>
 
