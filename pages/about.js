@@ -150,7 +150,7 @@ const About = () => {
                 We believe in and facilitate the transformational power of
                 ideas.
               </span>
-              <div className="text-right  aboutQuote ">
+              <div className="text-right  aboutQuote mr-[1rem]">
                 <Image src={endquotes} />
               </div>
           </div>

@@ -88,17 +88,17 @@ const Read = () => {
                     />
                   </div>
                 ) : (
-                  <div className="flex justify-center items-center mt-9">
+                  <div className="flex items-center mt-9 searchCont">
                     {data.map((val) => (
                       <div className="flex-column justify-center items-center">
-                        <div className="text-xl font-semibold text-black">
+                        <div className="text-xl font-semibold text-black showRes">
                           Showing results for{" "}
                           <span className="text-green-700">
                             {val.Book_Name.toUpperCase()}
                           </span>
                         </div>
                         <div className="text-xl font-semibold text-black">
-                          <i>
+                          <i className="showRes">
                             {" "}
                             Search instaed for{" "}
                             <span className="text-green-700">{inpt}</span>

@@ -119,7 +119,7 @@
 .newloginContainer {
   width: 100%;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1023px) {
   .newloginContainer {
     width: 30rem;
   }
@@ -343,6 +343,53 @@
 @media screen and (max-width: 766px) {
   .nava {
     font-size: 17px;
+  }
+}
+@media screen and (max-width:550px){
+  .readBk{
+    flex-direction: column;
+  }
+  .bkActions{
+    justify-content: center;
+  }
+  .b_name,.b_auth{
+    text-align: center;
+  }
+  .book_con{
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width:770px){
+  .showRes{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:550px){
+  .showRes{
+        font-size: 16px;
+  }
+  .searchCont{
+    padding: 0 2rem;
+  }
+}
+.b_name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+@media screen and (max-width:426px){
+  .b_name{
+    font-size: 14px;
+  }
+  .book_con{
+    position: relative;
+    bottom: 13px;
+  }
+}
+@media screen and (max-width:395px)
+{
+  .book_con{
+    position: relative;
+    bottom: 9px;
   }
 }
 
@@ -661,10 +708,7 @@
   height: 200px;
 }
 
-.b_name {
-  font-size: 1rem;
-  font-weight: 600;
-}
+
 
 .svg {
   max-width: 100%;
