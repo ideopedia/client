@@ -38,7 +38,6 @@ function Hero() {
   return (
     <div>
       <Navbar />
-
       <div className="h-auto">
         <div className="bg-white heroTop">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:h-screen">
