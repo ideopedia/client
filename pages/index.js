@@ -21,6 +21,7 @@ import influencer5 from "../public/influencer5.svg";
 import influencer6 from "../public/influencer6.svg";
 import influencer7 from "../public/influencer7.svg";
 import influencer8 from "../public/influencer8.svg";
+import sampInf from "../public/infTest.svg"
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";

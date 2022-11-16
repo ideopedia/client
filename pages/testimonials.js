@@ -10,7 +10,7 @@ import testimage1 from "../public/testimage1.svg";
 import SliderComponent from "../components/testimonialSlider";
 import Footer from "../components/footer";
 import TestSlides from "../components/testSlides";
-import flower from "../public/testFlower.svg"
+import flower from "../public/flower.svg"
 import { useEffect,useCallback,useState } from "react";
 const OurReaders = () => {
   const useMediaQuery = (width) => {

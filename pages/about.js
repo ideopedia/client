@@ -10,11 +10,41 @@ import leafend from "../public/leafend.svg";
 import startquotes from "../public/startquotes.svg";
 import endquotes from "../public/endquotes.svg";
 import aboutkeys from "../public/aboutkeys.svg";
-
+import flower from "../public/flower.svg"
 import abundantimage from "../public/abundantimage.svg";
+import search from "../public/search.svg"
+import searchMagic from "../public/searchMagic.svg"
+import web from "../public/web.svg"
 import background from "../public/bg.svg";
 import Link from "next/link";
+import { useCallback,useEffect,useState } from "react";
 const About = () => {
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(450);
   return (
     <div>
       <Navbar />
@@ -96,13 +126,19 @@ const About = () => {
         <div class="rounded-md flex items-end justify-end">
           <Image src={leafend} />
         </div> */}
-
-        <div className="pb-9" id="what">
-          <div class=" rounded-md flex items-center justify-center">
-            <h1 className="text-3xl font-semibold text-green-500 py-20">WHAT WE DO</h1>
+        <div style={{position:"relative",bottom:`${isBreakpoint?"11rem":"7rem"}`,marginBottom:"-18rem"}}>
+          <Image src={flower} width={isBreakpoint?100:200}/>
+        </div>
+        <div className="py-[6rem] pb-[13rem]" id="what">
+          <div class="mb-[5rem]">
+            <h1 className="text-3xl font-semibold text-green-500  text-center">WHAT WE DO</h1>
+            <div className="text-right" style={{position:"relative",bottom:`${isBreakpoint?"13rem":"9rem"}`,marginBottom:"-13rem"}}>
+            <Image src={flower} width={isBreakpoint?100:200}/>
+              </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 pb-20">
-            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
+          
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 pb-20 mx-[3rem]">
+            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Ideas</span>
@@ -113,9 +149,13 @@ const About = () => {
                     inventions and discoveries that are relevant to India.
                   </span>
                 </div>
+                <div className="text-center" style={{position:"relative",top:"6.5rem",marginTop:"-5rem"}}>
+                  <Image src={searchMagic}/>
+                </div>
               </div>
+              
             </div>
-            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
+            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Research</span>
@@ -126,9 +166,12 @@ const About = () => {
                     inventions and discoveries that are relevant to India.
                   </span>
                 </div>
+                <div className="text-center" style={{position:"relative",top:"7rem",marginTop:"-5rem"}}>
+                  <Image src={search}/>
+                </div>
               </div>
             </div>
-            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white">
+            <div class="p-4 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="text-3xl text-bold flex justify-center items-center">
                   <span>Discover</span>
@@ -138,6 +181,9 @@ const About = () => {
                     We research and identify powerful ideas, global trends,
                     inventions and discoveries that are relevant to India.
                   </span>
+                </div>
+                <div className="text-center" style={{position:"relative",top:"7rem",marginTop:"-5rem"}}>
+                  <Image src={web}/>
                 </div>
               </div>
             </div>
