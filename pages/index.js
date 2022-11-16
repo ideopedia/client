@@ -141,8 +141,8 @@ export default function Home() {
         </div>
       </div>
       <div className="Mobileappsection">
-        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
-          <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center ">
+          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[630px] ">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
+        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
@@ -175,7 +175,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
+          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-[630px]">
             <Image src={summarry} />
           </div>
         </div>

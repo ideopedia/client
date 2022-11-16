@@ -6,6 +6,7 @@ import SliderComponent from "../components/heroslider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import bpoints from "../public/circle.svg";
 import Navbar from "../components/navbar";
+import Bullet from "./Bullet";
 
 function Hero() {
   return (
@@ -21,7 +22,7 @@ function Hero() {
                   <span className="text-[28px]  text-black font-semibold iii">
                     INFORMING
                     <div className="bulletPoints">
-                      <Image
+                    <Image
                         src={bpoints}
                         width={8}
                         height={8}

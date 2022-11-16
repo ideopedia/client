@@ -64,7 +64,7 @@ export default function Navbar() {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">Our Readers <Image src={drop} style={{marginTop:"4px"}} /></button>
+                    <button class="dropbtn flex items-center justify-center">Our Readers <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">About Us <Image src={drop} style={{marginTop:"4px"}} /></button>
+                    <button class="dropbtn flex items-center justify-center">About Us <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">Team <Image src={drop} style={{marginTop:"4px"}} /></button>
+                    <button class="dropbtn flex items-center justify-center">Team <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
                       <Link href="/teams#bod">Founders</Link>
