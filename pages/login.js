@@ -26,7 +26,7 @@ function Login() {
       <Navbar />
       <section class="h-screen new" style={{ padding: "4rem 2rem 0 0" }}>
         <div className="loginContainer">
-          <div className="loginImg">
+          <div className="">
             <Image src={login} />
           </div>
           <MyLogin

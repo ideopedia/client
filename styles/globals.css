@@ -664,7 +664,7 @@
 
 .foottext {
   color: rgba(0, 0, 0, 0.4);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -1004,7 +1004,7 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.keybgr
+/* .keybgr
 {
   background-image: url(../public/bulbbgr.svg);
   width: 100%;
@@ -1013,4 +1013,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 0;
-}
+  object-fit: cover;
+  object-position: top;
+} */

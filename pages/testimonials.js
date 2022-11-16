@@ -120,12 +120,14 @@ const OurReaders = () => {
       <br />
       <br />
       <br />
-      <div style={{textAlign:"right",position:"relative",bottom:"13rem",marginBottom:"-18rem"}}>
-        {isBreakpoint?<Image src={flower} width={100}/>:<Image src={flower} width={200}/>}
+      <div style={{textAlign:"right",position:"relative",bottom:"12rem",marginBottom:"-18rem"}}>
+        {isBreakpoint?<Image src={flower} width={60}/>:<Image src={flower} width={160}/>}
         </div>
         <div className="flex justify-center items-center p-4">
-          
           <span className="text-3xl font-semibold text-green-500">TESTIMONIALS</span>
+        </div>
+        <div style={{position:"relative",marginBottom:"-18rem"}}>
+        {isBreakpoint?<Image src={flower} width={80}/>:<Image src={flower} width={240}/>}
         </div>
         <div className="pt-2 pl-9 pr-9 testi" id="readers">
             <SliderComponent />
