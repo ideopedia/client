@@ -4,9 +4,7 @@ import { Schema, model, models } from "mongoose";
 var userNotesSchema = new Schema({
   Book_Name: { type: String },
   Author: { type: String },
-  Notes: {
-    notes: { type: String },
-  },
+  Notes: { type: String },
 
   User_Id: { type: String },
 });

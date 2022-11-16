@@ -6,11 +6,23 @@ import UserFavourites from "../../../models/UserFavourites";
  * @param {import('next').NextApiResponse} res
  */
 export default async function addFavourites(req, res) {
-  const { Favourites, User_Id } = req.body;
+  const {
+    name,
+    image,
+    author,
+    percent,
+    id,
+
+    User_Id,
+  } = req.body;
 
   try {
     const newFavourites = new UserFavourites({
-      Favourites,
+      name,
+      image,
+      author,
+      percent,
+      id,
 
       User_Id,
     });

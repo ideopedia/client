@@ -6,11 +6,24 @@ import UserCompleted from "../../../models/UserCompleted";
  * @param {import('next').NextApiResponse} res
  */
 export default async function addCompleted(req, res) {
-  const { Completed, User_Id } = req.body;
+  const {
+    name,
+    image,
+    author,
+    percent,
+    id,
+
+    User_Id,
+  } = req.body;
 
   try {
     const newCompleted = new UserCompleted({
-      Completed,
+      name,
+      image,
+      author,
+      percent,
+      id,
+
       User_Id,
     });
     await connectMongo();

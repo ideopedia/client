@@ -6,11 +6,23 @@ import UserRecent from "../../../models/UserRecent";
  * @param {import('next').NextApiResponse} res
  */
 export default async function addRecent(req, res) {
-  const { Recent, User_Id } = req.body;
+  const {
+    name,
+    image,
+    author,
+    percent,
+    id,
+
+    User_Id,
+  } = req.body;
 
   try {
     const newRecent = new UserRecent({
-      Recent,
+      name,
+      image,
+      author,
+      percent,
+      id,
 
       User_Id,
     });

@@ -6,11 +6,22 @@ import UserHistory from "../../../models/UserHistory";
  * @param {import('next').NextApiResponse} res
  */
 export default async function addHistory(req, res) {
-  const { History, User_Id } = req.body;
+  const {
+    name,
+    action,
+    date,
+    points,
+
+    User_Id,
+  } = req.body;
 
   try {
     const newHistory = new UserHistory({
-      History,
+      name,
+      action,
+      date,
+      points,
+
       User_Id,
     });
     await connectMongo();
