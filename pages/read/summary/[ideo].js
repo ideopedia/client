@@ -26,9 +26,12 @@ import endq from "../../../public/endq.svg";
 const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
+  const [card, setCard] = useState(false);
   const [dark, setDark] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [rangeval, setRangeval] = useState(1);
+  const [comp, setComp] = useState(1);
+  const [compdata, setCompData] = useState(false);
   const [showMod, setShowMod] = useState(false);
   const router = useRouter();
   const { ideo } = router.query;
@@ -51,19 +54,96 @@ const Read = () => {
     console.log(data);
   }, []);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/prebook/findPrebook", {
-      id: 1,
-    }).then((data) => {
-      setContent(data.data);
-    });
+    const fetchPre = async () => {
+      const result = await Axios.post(
+        "http://localhost:3000/api/prebook/findPrebook",
+        {
+          id: 1,
+        }
+      );
+
+      setContent(result.data);
+    };
+
+    fetchPre();
     console.log(conten);
   }, []);
   useEffect(() => {
-    // Prefetch the dashboard page
-    router.prefetch(
-      `http://localhost:3000/read/summary/${String(num2)}${String(num3 + 1)}`
-    );
+    const fetchCard = async () => {
+      const result = await Axios.post(
+        "http://localhost:3000/api/bookCard/findBookcard",
+        {
+          id: 1,
+        }
+      );
+
+      setCard(result.data);
+    };
+
+    fetchCard();
+    console.log(card);
   }, []);
+  // useEffect(() => {
+  //   const fetchComp = async () => {
+  //     const result = await Axios.post(
+  //       "http://localhost:3000/api/UserCompleted/addCompleted",
+  //       {
+  //         name: card.Book_Name,
+  //         image: card.Cover_image,
+  //         author: card.Book_Author,
+  //         percent: Math.round((data.Ideo_num / data.Total) * 100),
+  //         id: card.id,
+
+  //         User_Id: "1212",
+  //       }
+  //     );
+
+  //     setCompData(result.data);
+  //   };
+
+  //   fetchComp();
+  //   console.log(compdata);
+  // }, []);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/prebook/findPrebook", {
+  //     id: 1,
+  //   }).then((data) => {
+  //     setContent(data.data);
+  //   });
+  //   console.log(conten);
+  // }, []);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/bookCard/findBookcard", {
+  //     id: 1,
+  //   }).then((data) => {
+  //     setCard(data.data);
+  //   });
+  //   console.log(card);
+  // }, []);
+
+  // useEffect(() => {
+  //   // Prefetch the dashboard page
+  //   router.prefetch(
+  //     `http://localhost:3000/read/summary/${String(num2)}${String(num3 + 1)}`
+  //   );
+  // }, []);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/UserCompleted/addCompleted", {
+  //     name: card.Book_Name,
+  //     image: card.Cover_image,
+  //     author: card.Book_Author,
+  //     percent: Math.round((data.Ideo_num / data.Total) * 100),
+  //     id: card.id,
+
+  //     User_Id: "1212",
+  //   }).then((data) => {
+  //     setCompData(data.data);
+  //   });
+  //   console.log(compdata);
+  // }, []);
+  // {if (Math.round((data.Ideo_num / data.Total) * 100) === 100) {
+
+  // }}
 
   return (
     <>
@@ -86,7 +166,10 @@ const Read = () => {
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
-                    <div className=" text-black text-bold ideoHead"style={{fontSize: `${rangeval*34}px`}}>
+                    <div
+                      className=" text-black text-bold ideoHead"
+                      style={{ fontSize: `${rangeval * 34}px` }}
+                    >
                       {data.Ideo_title}
                     </div>
                   </div>
@@ -112,7 +195,10 @@ const Read = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData" style={{fontSize: `${rangeval*38}px`}}>
+              <div
+                className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData"
+                style={{ fontSize: `${rangeval * 38}px` }}
+              >
                 {data.Ideo}
               </div>
               <div className="pb-4 ">
@@ -145,6 +231,26 @@ const Read = () => {
                     <div
                       class="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
+                        Axios.post(
+                          "http://localhost:3000/api/UserCompleted/addCompleted",
+                          {
+                            name: card.Book_Name,
+                            image: card.Cover_image,
+                            author: card.Book_Author,
+                            percent:
+                              Math.round((data.Ideo_num / data.Total) * 100) >=
+                              80
+                                ? 100
+                                : Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ),
+                            id: card.id,
+
+                            User_Id: "1212",
+                          }
+                        ).then((data) => {
+                          setCompData(data.data);
+                        });
                         router.replace(
                           `http://localhost:3000/read/summary/${String(
                             num2
@@ -162,7 +268,10 @@ const Read = () => {
                   {dat.length > 2 ? (
                     <div
                       className="flex justify-center items-center  bg-neutral-300  text-bold p-4 bg-white greyContent"
-                      style={{ textAlign: "center" , fontSize: `${rangeval*38}px`}}
+                      style={{
+                        textAlign: "center",
+                        fontSize: `${rangeval * 38}px`,
+                      }}
                     >
                       {dat}
                     </div>
@@ -174,7 +283,10 @@ const Read = () => {
                       {data.Book_Summary[0].Content[n].map((val) => (
                         <div
                           className=" text-black  p-4 flex justify-center items-center"
-                          style={{ lineHeight: "1.7",fontSize: `${rangeval*28}px` }}
+                          style={{
+                            lineHeight: "1.7",
+                            fontSize: `${rangeval * 28}px`,
+                          }}
                         >
                           {val}
                         </div>
@@ -197,7 +309,10 @@ const Read = () => {
                             <div className="text-left leftQuote">
                               <Image src={startq} />
                             </div>
-                            <div className=" text-green-700 mx-[2rem]" style={{fontSize: `${rangeval*28}px`}}>
+                            <div
+                              className=" text-green-700 mx-[2rem]"
+                              style={{ fontSize: `${rangeval * 28}px` }}
+                            >
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
                             <div
@@ -221,7 +336,10 @@ const Read = () => {
 
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
-                  <div className=" text-black font-bold pl-4" style={{fontSize: `${rangeval*38}px`}}>
+                  <div
+                    className=" text-black font-bold pl-4"
+                    style={{ fontSize: `${rangeval * 38}px` }}
+                  >
                     Ideo Peaks
                   </div>
                   <div className="bg-green-100 p-6">
@@ -238,8 +356,13 @@ const Read = () => {
                           </div>
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
-                              <div className="" style={{fontSize: "28px"}}>{val.name}</div>
-                              <div className=" text-green-700"style={{fontSize: `${rangeval*23}px`}}>
+                              <div className="" style={{ fontSize: "28px" }}>
+                                {val.name}
+                              </div>
+                              <div
+                                className=" text-green-700"
+                                style={{ fontSize: `${rangeval * 23}px` }}
+                              >
                                 {val.quote}
                               </div>
                             </div>
@@ -393,7 +516,10 @@ const Read = () => {
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
-                    <div className=" text-white text-bold pb-4 ideoHead" style={{fontSize: `${rangeval*34}px`}}>
+                    <div
+                      className=" text-white text-bold pb-4 ideoHead"
+                      style={{ fontSize: `${rangeval * 34}px` }}
+                    >
                       {data.Ideo_title}
                     </div>
                   </div>
@@ -421,7 +547,10 @@ const Read = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 ideoData" style={{fontSize: `${rangeval*38}px`}}>
+              <div
+                className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 ideoData"
+                style={{ fontSize: `${rangeval * 38}px` }}
+              >
                 {data.Ideo}
               </div>
               <div className="pb-4">
@@ -454,6 +583,26 @@ const Read = () => {
                     <div
                       class="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
+                        Axios.post(
+                          "http://localhost:3000/api/UserCompleted/addCompleted",
+                          {
+                            name: card.Book_Name,
+                            image: card.Cover_image,
+                            author: card.Book_Author,
+                            percent:
+                              Math.round((data.Ideo_num / data.Total) * 100) >=
+                              80
+                                ? 100
+                                : Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ),
+                            id: card.id,
+
+                            User_Id: "1212",
+                          }
+                        ).then((data) => {
+                          setCompData(data.data);
+                        });
                         router.replace(
                           `http://localhost:3000/read/summary/${String(
                             num2
@@ -471,7 +620,10 @@ const Read = () => {
                   {dat.length > 2 ? (
                     <div
                       className="flex justify-center items-center  bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
-                      style={{ textAlign: "center" ,fontSize: `${rangeval*38}px` }}
+                      style={{
+                        textAlign: "center",
+                        fontSize: `${rangeval * 38}px`,
+                      }}
                     >
                       {dat}
                     </div>
@@ -483,7 +635,10 @@ const Read = () => {
                       {data.Book_Summary[0].Content[n].map((val) => (
                         <div
                           className=" text-white  p-4 flex justify-center items-center"
-                          style={{ lineHeight: "1.5" ,fontSize: `${rangeval*28}px`}}
+                          style={{
+                            lineHeight: "1.5",
+                            fontSize: `${rangeval * 28}px`,
+                          }}
                         >
                           {val}
                         </div>
@@ -506,7 +661,10 @@ const Read = () => {
                             <div className="text-left leftQuote">
                               <Image src={startq} />
                             </div>
-                            <div className=" text-green-500 mx-[2rem]" style={{fontSize: `${rangeval*28}px`}}>
+                            <div
+                              className=" text-green-500 mx-[2rem]"
+                              style={{ fontSize: `${rangeval * 28}px` }}
+                            >
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
                             <div
@@ -530,7 +688,10 @@ const Read = () => {
 
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
-                  <div className=" text-white font-bold pl-4" style={{fontSize: `${rangeval*38}px`}}>
+                  <div
+                    className=" text-white font-bold pl-4"
+                    style={{ fontSize: `${rangeval * 38}px` }}
+                  >
                     Ideo Peaks
                   </div>
                   <div className="bg-black p-6">
@@ -547,10 +708,16 @@ const Read = () => {
                           </div>
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
-                              <div className=" text-white" style={{fontSize: `${rangeval*28}px`}}>
+                              <div
+                                className=" text-white"
+                                style={{ fontSize: `${rangeval * 28}px` }}
+                              >
                                 {val.name}
                               </div>
-                              <div className=" text-green-500" style={{fontSize: `${rangeval*23}px`}}>
+                              <div
+                                className=" text-green-500"
+                                style={{ fontSize: `${rangeval * 23}px` }}
+                              >
                                 {val.quote}
                               </div>
                             </div>

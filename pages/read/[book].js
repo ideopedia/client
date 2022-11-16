@@ -15,6 +15,10 @@ import ok from "../../public/ok.svg";
 import before from "../../public/before.svg";
 import beforetime from "../../public/timebefore.svg";
 import time from "../../public/time.svg";
+import send from "../../public/send.svg";
+import Like from "../../components/Like";
+import cart from "../../public/cart.svg";
+import like from "../../public/like.svg";
 import arrowone from "../../public/arrowone.svg";
 import arrowtwo from "../../public/arrowtwo.svg";
 import arrowthree from "../../public/Arrow16.svg";
@@ -61,6 +65,7 @@ const Book = () => {
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(true);
   const [benarr, setBenarr] = useState(false);
+  const [lik, setLike] = useState(false);
   const [tick, setTick] = useState(false);
   const router = useRouter();
   const { book } = router.query;
@@ -99,6 +104,43 @@ const Book = () => {
       {data ? (
         <div className="py-8">
           {console.log(data)}
+          <div className="flex justify-center items-center">
+            <div
+              className="p-4 cursor-pointer"
+              onClick={function handleLike() {
+                const fetchData = async () => {
+                  const result = await Axios.post(
+                    "http://localhost:3000/api/UserFavourites/addFavourites",
+                    {
+                      name: data.Book_Name,
+                      image: data.Cover_image,
+                      author: data.Book_Author,
+                      percent: 30,
+                      id: data.id,
+
+                      User_Id: "1212",
+                    }
+                  );
+
+                  setLike(result.data);
+                };
+
+                fetchData();
+              }}
+            >
+              {lik ? (
+                <Like inn="red" out="white" stroke="red" />
+              ) : (
+                <Like inn="none" out="white" stroke="black" />
+              )}
+            </div>
+            <div className="p-4">
+              <Image src={cart} />
+            </div>
+            <div className="p-4">
+              <Image src={send} />
+            </div>
+          </div>
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
             <div class=" rounded-md flex items-center justify-center">
               <div>

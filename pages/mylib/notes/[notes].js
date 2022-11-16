@@ -1,23 +1,24 @@
 import React from "react";
-import SideNavbar from "../../components/sidebar";
-import Card from "../../components/card";
+import SideNavbar from "../../../components/sidebar";
+import Card from "../../../components/card";
 import Link from "next/link";
 import { useState } from "react";
-import task from "../../public/task.svg";
-import arr from "../../public/downarr.svg";
-import Modal from "../../components/notesModal";
-import create from "../../public/create.svg";
-import fav from "../../public/fav.svg";
-import note from "../../public/note.svg";
-import share from "../../public/share.svg";
-import dele from "../../public/delete.svg";
-import checked from "../../public/checked.svg";
-import unchecked from "../../public/unchecked.svg";
-import dropd from "../../public/dropd.svg";
+import task from "../../../public/task.svg";
+import arr from "../../../public/downarr.svg";
+import Modal from "../../../components/notesModal";
+
+import create from "../../../public/create.svg";
+import fav from "../../../public/fav.svg";
+import note from "../../../public/note.svg";
+import share from "../../../public/share.svg";
+import dele from "../../../public/delete.svg";
+import checked from "../../../public/checked.svg";
+import unchecked from "../../../public/unchecked.svg";
+import dropd from "../../../public/dropd.svg";
 
 import Image from "next/image";
-import wtf from "../../public/wtf.svg";
-import dmmt from "../../public/dmmt.svg";
+import wtf from "../../../public/wtf.svg";
+import dmmt from "../../../public/dmmt.svg";
 const Notes = () => {
   const [arr, setArr] = useState(false);
   const [nts, setNts] = useState(false);
@@ -37,7 +38,7 @@ const Notes = () => {
           <div class="scrollmenu flex pt-9 ml-9">
             <div className="pr-9 flex">
               <Image src={task} />
-              <Link href="/mylib/completed" className="navtxt">
+              <Link href="/mylib/completed/1212" className="navtxt">
                 <span className="text-xl hover:text-green-700 cursor-pointer">
                   Completed
                 </span>
@@ -45,7 +46,7 @@ const Notes = () => {
             </div>
             <div className="pr-9 flex">
               <Image src={fav} />
-              <Link href="/mylib/favourites" className="navtxt">
+              <Link href="/mylib/favourites/1212" className="navtxt">
                 <span className="text-xl hover:text-green-700 cursor-pointer">
                   Favourites
                 </span>
@@ -53,7 +54,7 @@ const Notes = () => {
             </div>
             <div className="pr-9 flex">
               <Image src={create} />
-              <Link href="/mylib/notes" className="navtxt">
+              <Link href="/mylib/notes/1212" className="navtxt">
                 <div>
                   <span className="text-xl text-green-700 cursor-pointer">
                     Notes & highlightes
