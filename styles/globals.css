@@ -983,7 +983,7 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.keybgr
+/* .keybgr
 {
   background-image: url(../public/bulbbgr.svg);
   width: 100%;
@@ -992,4 +992,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 0;
-}
+  object-fit: cover;
+  object-position: top;
+} */
