@@ -9,7 +9,10 @@ export default async function listCompleted(req, res) {
   try {
     await connectMongo();
 
-    var books = await UserCompleted.find({ User_Id: req.body.User_Id });
+    var books = await UserCompleted.find({
+      User_Id: req.body.User_Id,
+      percent: req.body.percent,
+    });
     res.json(books);
   } catch (err) {
     res.json({ err });

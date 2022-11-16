@@ -35,17 +35,17 @@ import {
 } from "react-circular-progressbar";
 import edit from "../public/Edit.svg";
 function SideNavbar() {
-  const [data, setData] = useState([]);
-  const router = useRouter()
+  // const [data, setData] = useState([]);
+  // const router = useRouter()
 
-  useEffect(() => {
-    Axios.post("https://ideopedia-books.herokuapp.com/listBooks", {
-      Password: "Ideopedia@001",
-    }).then((data) => {
-      setData(data.data);
-    });
-    console.log(data);
-  }, []);
+  // useEffect(() => {
+  //   Axios.post("https://ideopedia-books.herokuapp.com/listBooks", {
+  //     Password: "Ideopedia@001",
+  //   }).then((data) => {
+  //     setData(data.data);
+  //   });
+  //   console.log(data);
+  // }, []);
 
   return (
     <div>

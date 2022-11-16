@@ -48,7 +48,7 @@ const New = () => {
             <div class="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
-                <Link href="/mylib/completed" className="navtxt">
+                <Link href="/mylib/completed/1212" className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Completed
                   </span>
@@ -56,7 +56,7 @@ const New = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={fav} />
-                <Link href="/mylib/favourites" className="navtxt">
+                <Link href="/mylib/favourites/1212" className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Favourites
                   </span>
@@ -64,7 +64,7 @@ const New = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href="/mylib/notes" className="navtxt">
+                <Link href="/mylib/notes/1212" className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>
