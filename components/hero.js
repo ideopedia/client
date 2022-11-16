@@ -34,7 +34,7 @@ function Hero() {
 
     return targetReached;
   };
-  const isBreakpoint = useMediaQuery(500);
+  const isBreakpoint = useMediaQuery(800);
   return (
     <div>
       <Navbar />
@@ -45,37 +45,37 @@ function Hero() {
             <div class=" rounded-md flex items-center justify-center">
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-[28px]  text-black font-semibold iii">
+                  <span className="text-[28px]  text-black font-medium iii">
                     INFORMING
                     <div className="bulletPoints">
                       {isBreakpoint ? (
-                        <Bullet widthc="4" heightc="4" />
+                        <Bullet widthc="5" heightc="5" />
                       ) : (
-                        <Bullet widthc="20" heightc="20" />
+                        <Bullet widthc="8" heightc="8" />
                       )}
                     </div>
                     INSPIRING
                     <div className="bulletPoints">
                       {isBreakpoint ? (
-                        <Bullet widthc="4" heightc="4" />
+                        <Bullet widthc="5" heightc="5" />
                       ) : (
-                        <Bullet widthc="20" heightc="20" />
+                        <Bullet widthc="8" heightc="8" />
                       )}
                     </div>
                     IMPACTING
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="lg:text-[28px] text-xl text-green-500 font-semibold">
+                  <span className="lg:text-[28px] text-xl text-green-500 font-medium">
                     INDIA’S TOP LEADERS
                   </span>
                 </div>
-                <div class="lg:text-[28px] rounded-md flex items-center justify-center font-semibold">
+                <div class="lg:text-[28px] rounded-md flex items-center justify-center font-medium">
                   <span>One idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
-                    <div className="getstarted lg:text-xl">
+                    <div className="getstarted lg:text-xl font-medium">
                       <button className="">Get Started</button>
                     </div>
                   </Link>

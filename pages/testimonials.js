@@ -39,7 +39,7 @@ const OurReaders = () => {
           </div>
         </div>
       </div>
-      <div className="p-4 pb-9">
+      <div className="py-20">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
@@ -64,7 +64,8 @@ const OurReaders = () => {
           </div>
         </div>
       </div>
-      <div className="bg-green-100 p-4 pb-9">
+    <div className="flowerbg">
+      <div className="bg-green-100 p-10 pb-9">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" rounded-md flex items-center justify-center">
             <Image src={testwinner} />
@@ -92,14 +93,13 @@ const OurReaders = () => {
       <br />
       <br />
       <br />
-      <div className="flowerbg">
         <div className="flex justify-center items-center p-4">
           <span className="text-3xl font-semibold text-green-500">TESTIMONIALS</span>
         </div>
         <div className="pt-2 pl-9 pr-9" id="readers">
             <SliderComponent />
         </div>
-      </div>
+    </div>
       <br />
       <br />
       <br />

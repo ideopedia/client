@@ -11,8 +11,8 @@ function Footer() {
     <div>
       <div class="pt-10 pb-4 footer">
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 focenter">
-          <div class="p-2 rounded-md flex items-center justify-center logo">
-            <div className="py-9">
+          <div class="p-2  logo item">
+            <div className="pt-20">
               <Image src={logo} width={120}/>
               <br />
               <label className="foottext pl-2">
@@ -55,9 +55,9 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex  mb-5">
+          <div class="p-2  rounded-md flex mb-5">
             <div>
-              <span className=" heading tm">Team</span>
+              <span className="heading">Team</span>
               <br />
               <ul>
                 <li className="py-1 foottext hover:text-green-500">
@@ -76,7 +76,7 @@ function Footer() {
           </div>
           <div class="p-2  rounded-md flex  mb-9">
             <div>
-              <span className=" heading tm">Our Readers</span>
+              <span className="heading">Our Readers</span>
               <br />
               <ul>
                 <li className="py-1 foottext hover:text-green-500">
@@ -91,22 +91,22 @@ function Footer() {
           </div>
           <div class="p-2  rounded-md flex  mb-9">
             <div>
-              <span className=" heading tm">Social Media</span>
+              <span className="heading">Social Media</span>
               <br />
               <div className=" py-3">
-                <span className="mr-3 hover:text-green-500 cursor-pointer">
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
                   <Link href="/login">
-                    <Image src={facebook} />
+                    <Image src={facebook} width={38}/>
                   </Link>
                 </span>
-                <span className="mr-3 hover:text-green-500 cursor-pointer">
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
                   <Link href="/login">
-                    <Image src={twitter} />
+                    <Image src={twitter} width={38}/>
                   </Link>
                 </span>
-                <span className="mr-3 hover:text-green-500 cursor-pointer">
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
                   <Link href="/login">
-                    <Image src={telegram} />
+                    <Image src={telegram} width={38}/>
                   </Link>
                 </span>
               </div>

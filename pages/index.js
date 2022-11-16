@@ -48,7 +48,7 @@ export default function Home() {
             <span className="lg:text-[26px]">An Invitation-only platform</span>
           </div>
           <div class="rounded-md flex items-center justify-center cutEdg">
-            <span className="lg:text-[26px] text-black font-bold cutEdg">
+            <span className="lg:text-[26px] text-black font-semibold cutEdg">
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
       </div>
       <div className="Mobileappsection">
         <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center ">
-          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[630px] ">
+          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px] ">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
@@ -178,14 +178,14 @@ export default function Home() {
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
-              <div className="mt-6">
+              <div className="mt-4">
                 <a className=" ">
-                  <Image src={download} width={400} />
+                  <Image src={download} width={320} />
                 </a>
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-[630px]">
+          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-[560px]">
             <Image src={summarry} />
           </div>
         </div>
