@@ -10,8 +10,35 @@ import testimage1 from "../public/testimage1.svg";
 import SliderComponent from "../components/testimonialSlider";
 import Footer from "../components/footer";
 import TestSlides from "../components/testSlides";
-
+import flower from "../public/testFlower.svg"
+import { useEffect,useCallback,useState } from "react";
 const OurReaders = () => {
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(450);
   return (
     <div>
       <Navbar />
@@ -64,8 +91,8 @@ const OurReaders = () => {
           </div>
         </div>
       </div>
-    <div className="flowerbg">
-      <div className="bg-green-100 p-10 pb-9">
+    <div className="flowerbg ">
+      <div className="bg-green-100 p-10  py-[10rem]">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" rounded-md flex items-center justify-center">
             <Image src={testwinner} />
@@ -93,10 +120,14 @@ const OurReaders = () => {
       <br />
       <br />
       <br />
+      <div style={{textAlign:"right",position:"relative",bottom:"13rem",marginBottom:"-18rem"}}>
+        {isBreakpoint?<Image src={flower} width={100}/>:<Image src={flower} width={200}/>}
+        </div>
         <div className="flex justify-center items-center p-4">
+          
           <span className="text-3xl font-semibold text-green-500">TESTIMONIALS</span>
         </div>
-        <div className="pt-2 pl-9 pr-9" id="readers">
+        <div className="pt-2 pl-9 pr-9 testi" id="readers">
             <SliderComponent />
         </div>
     </div>

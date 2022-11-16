@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
@@ -25,27 +25,39 @@ import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
-  const init = { one: arrowone, two: arrowtwo };
-  const useWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(0);
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    useEffect(() => {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [handleResize]);
-    return screenWidth;
-  };
-  const screen = useWidth();
-  useEffect(() => {
-    return () => {
-      if (screen < 1025) {
-        setImages({ one: arrowthree, two: arrowfour });
+  let images1 = { one: arrowone, two: arrowtwo };
+  let images2={one:arrowthree,two:arrowfour}
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
       } else {
-        setImages(init);
+        setTargetReached(false);
       }
-    };
-  }, [screen]);
-  const [images, setImages] = useState(init);
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(450);
+  // useEffect(() => {
+  //     if (isBreakpoint){
+  //       images={one:arrowthree,two:arrowfour};
+  //     } 
+  // });
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(true);
   const [benarr, setBenarr] = useState(false);
@@ -215,7 +227,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
-                  <Image src={images.one} />
+                  {isBreakpoint?<Image src={images2.one}/>:<Image src={images1.one}/>}
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -229,7 +241,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
-                  <Image src={images.two} />
+                {isBreakpoint?<Image src={images2.two}/>:<Image src={images1.two}/>}
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">

@@ -61,8 +61,15 @@ export default function Home() {
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
-          <div class=" flex items-center justify-center infPic">
-            <Image src={influencer1} width={250} />
+          <div
+            class=" flex items-center justify-center infPic"
+            style={{ borderRadius: "200rem" }}
+          >
+              <Image
+                src={influencer1}
+                width={250}
+                style={{ borderRadius: "200px" }}
+              />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
             <Image src={influencer2} width={250} />
