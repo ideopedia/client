@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import log from "../public/logo.svg";
 import { Dropdown } from "flowbite-react";
+import drop from "../public/dropdownlogo.svg"
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -63,31 +64,29 @@ export default function Navbar() {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">Our Readers <Image src={drop} style={{marginTop:"4px"}} /></button>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
                   </div>
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">About Us <Image src={drop} style={{marginTop:"4px"}} /></button>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <Link href="/about#about_hero">What is Ideopedia ?</Link>
+                      <Link href="/about#mission">Mission</Link>
+                      <Link href="/about#vission">Vision</Link>
+                      <Link href="/about#what">What we do</Link>
                     </div>
                   </div>
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">Team <Image src={drop} style={{marginTop:"4px"}} /></button>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <Link href="/teams#bod">Board of Directors</Link>
+                      <Link href="/teams#bod">Founders</Link>
                     </div>
                   </div>
                 </li>
