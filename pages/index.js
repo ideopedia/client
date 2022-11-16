@@ -24,36 +24,14 @@ import influencer8 from "../public/influencer8.svg";
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
-import { useState, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 export default function Home() {
   // const [width, setWidth] = useState(250);
   const [data, setData] = useState("");
   function handleMouseUp() {
     setData(window.getSelection().toString());
-    return (<div className="fixed z-20 top-30  text-red-900 ">
-      hello
-    </div>)
+    return <div className="fixed z-20 top-30  text-red-900 ">hello</div>;
   }
-  // const useWidth = () => {
-  //   const [screenWidth, setScreenWidth] = useState(0);
-  //   const handleResize = () => setScreenWidth(window.innerWidth);
-  //   useEffect(() => {
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, [handleResize]);
-  //   return screenWidth;
-  // };
-
-  // const screen = useWidth();
-  // useEffect(() => {
-  //   return ()=>{
-  //     if (screen < 565) {
-  //       setWidth(155);
-  //     } else {
-  //       setWidth(250);
-  //     }
-  //   }
-  // }, [screen]);
 
   return (
     <div onMouseUp={handleMouseUp}>
@@ -82,9 +60,39 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div class="infPics pt-9 text-center">
-          <div class="p-4 rounded-md" >
-            <Image src={influencer1}  width={250}/>
+        <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
+          <div class=" rounded-md flex items-center justify-center">
+            <Image src={influencer1} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer2} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer3} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer4} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer5} width={250} />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
+          <div class="p-4  rounded-md flex items-center justify-center"></div>
+          <div class=" rounded-md flex items-center justify-center">
+            <Image src={influencer6} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer7} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center">
+            <Image src={influencer8} width={250} />
+          </div>
+          <div class="p-4  rounded-md flex items-center justify-center"></div>
+        </div>
+        {/* <div class="infPics pt-9 text-center">
+          <div class="p-4 rounded-md">
+            <Image src={influencer1} width={250} />
           </div>
           <div class="p-4  rounded-md">
             <Image src={influencer2} width={250} />
@@ -107,14 +115,16 @@ export default function Home() {
           <div class="p-4  rounded-md">
             <Image src={influencer8} width={250} />
           </div>
-        </div>
+        </div> */}
       </div>
       <br />
       <br />
       <br />
       <div>
         <div id="feat">
-          <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">Features</span>
+          <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">
+            Features
+          </span>
         </div>
 
         <div class="p-6 bg-white-300">
@@ -205,7 +215,9 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center items-center text-2xl text-bold p-10">
-        <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">TESTIMONALS</span>
+        <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">
+          TESTIMONALS
+        </span>
       </div>
       <div>
         <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
@@ -231,7 +243,7 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test}/>
+                  <Image src={test} />
                 </div>
                 <div className="pl-5">
                   <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
@@ -264,7 +276,7 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test}/>
+                  <Image src={test} />
                 </div>
                 <div className="pl-5">
                   <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
@@ -297,7 +309,7 @@ export default function Home() {
               </div>
               <div class="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test}/>
+                  <Image src={test} />
                 </div>
                 <div className="pl-5">
                   <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
@@ -316,7 +328,7 @@ export default function Home() {
             <div className="p-1 flex justify-center items-center border-green-500">
               <div className="text-green-500 text-[16px]">Read more </div>
               <div className="pt-2 px-1">
-                <Image src={rightarr} width={20}/>
+                <Image src={rightarr} width={20} />
               </div>
             </div>
           </Link>

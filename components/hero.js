@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SliderComponent from "../components/heroslider";
@@ -9,6 +9,32 @@ import Navbar from "../components/navbar";
 import Bullet from "./Bullet";
 
 function Hero() {
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(500);
   return (
     <div>
       <Navbar />
@@ -22,21 +48,19 @@ function Hero() {
                   <span className="text-[28px]  text-black font-semibold iii">
                     INFORMING
                     <div className="bulletPoints">
-                    <Image
-                        src={bpoints}
-                        width={8}
-                        height={8}
-                        className="blt"
-                      />
+                      {isBreakpoint ? (
+                        <Bullet widthc="4" heightc="4" />
+                      ) : (
+                        <Bullet widthc="20" heightc="20" />
+                      )}
                     </div>
                     INSPIRING
                     <div className="bulletPoints">
-                      <Image
-                        src={bpoints}
-                        width={8}
-                        height={8}
-                        className="blt"
-                      />
+                      {isBreakpoint ? (
+                        <Bullet widthc="4" heightc="4" />
+                      ) : (
+                        <Bullet widthc="20" heightc="20" />
+                      )}
                     </div>
                     IMPACTING
                   </span>
