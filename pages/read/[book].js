@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
@@ -30,7 +30,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
   let images1 = { one: arrowone, two: arrowtwo };
-  let images2={one:arrowthree,two:arrowfour}
+  let images2 = { one: arrowthree, two: arrowfour };
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
 
@@ -60,7 +60,7 @@ const Book = () => {
   // useEffect(() => {
   //     if (isBreakpoint){
   //       images={one:arrowthree,two:arrowfour};
-  //     } 
+  //     }
   // });
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(true);
@@ -104,43 +104,6 @@ const Book = () => {
       {data ? (
         <div className="py-8">
           {console.log(data)}
-          <div className="flex justify-center items-center">
-            <div
-              className="p-4 cursor-pointer"
-              onClick={function handleLike() {
-                const fetchData = async () => {
-                  const result = await Axios.post(
-                    "http://localhost:3000/api/UserFavourites/addFavourites",
-                    {
-                      name: data.Book_Name,
-                      image: data.Cover_image,
-                      author: data.Book_Author,
-                      percent: 30,
-                      id: data.id,
-
-                      User_Id: "1212",
-                    }
-                  );
-
-                  setLike(result.data);
-                };
-
-                fetchData();
-              }}
-            >
-              {lik ? (
-                <Like inn="red" out="white" stroke="red" />
-              ) : (
-                <Like inn="none" out="white" stroke="black" />
-              )}
-            </div>
-            <div className="p-4">
-              <Image src={cart} />
-            </div>
-            <div className="p-4">
-              <Image src={send} />
-            </div>
-          </div>
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
             <div class=" rounded-md flex items-center justify-center">
               <div>
@@ -203,48 +166,86 @@ const Book = () => {
               </div>
             </div>
           </div>
+          <div className="flex flex-col justify-center items-center">
+            <div
+              className="p-4 cursor-pointer"
+              onClick={function handleLike() {
+                const fetchData = async () => {
+                  const result = await Axios.post(
+                    "http://localhost:3000/api/UserFavourites/addFavourites",
+                    {
+                      name: data.Book_Name,
+                      image: data.Cover_image,
+                      author: data.Book_Author,
+                      percent: 30,
+                      id: data.id,
 
-          <div className="readDesc px-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
-            <div className="flex justify-center items-center picAndDesc">
-              <div
-                style={{ marginRight: "2rem", textAlign: "center" }}
-                class="bkimg"
-              >
-                <Image
-                  src={before}
-                  width={300}
-                  height={300}
-                  className="bookImg"
-                />
-              </div>
-              <div style={{ lineHeight: "1.8" }}>{data.Book_Description}</div>
-            </div>
-          </div>
-          <br />
-          <div className="readDesc p-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
-            <div className="flex justify-between items-center picAndDesc">
-              <div
-                style={{ marginRight: "2rem", width: "10rem" }}
-                class="authImg"
-              >
-                <Image
-                  src={data.Author_image}
-                  width={170}
-                  height={170}
-                  className="authimg"
-                />
-              </div>
-              <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
-            </div>
-            <h1
-              className="text-xl new2 pt-4 pb-4"
-              style={{ position: "relative", top: "4rem" }}
+                      User_Id: "1212",
+                    }
+                  );
+
+                  setLike(result.data);
+                };
+
+                fetchData();
+              }}
             >
-              Time Saved
-            </h1>
+              {lik ? (
+                <Like inn="red" out="white" stroke="red" />
+              ) : (
+                <Like inn="none" out="white" stroke="black" />
+              )}
+            </div>
+            <div className="p-4">
+              <Image src={cart} />
+            </div>
+            <div className="p-4">
+              <Image src={send} />
+            </div>
           </div>
+          <div className="Descbgr py-20">
+            <div className="readDesc px-[3rem]">
+              <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+              <div className="flex justify-center items-center picAndDesc">
+                <div
+                  style={{ marginRight: "2rem", textAlign: "center" }}
+                  class="bkimg"
+                >
+                  <Image
+                    src={before}
+                    width={300}
+                    height={300}
+                    className="bookImg"
+                  />
+                </div>
+                <div style={{ lineHeight: "1.8" }}>{data.Book_Description}</div>
+              </div>
+            </div>
+            <br />
+            <div className="readDesc px-[3rem]">
+              <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+              <div className="flex justify-between items-center picAndDesc">
+                <div
+                  style={{ marginRight: "2rem", width: "10rem" }}
+                  class="authImg"
+                >
+                  <Image
+                    src={data.Author_image}
+                    width={170}
+                    height={170}
+                    className="authimg"
+                  />
+                </div>
+                <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
+              </div>
+            </div>
+          </div>
+          <h1
+            className="text-xl new2 pt-4 pb-4"
+            style={{ position: "relative", top: "4rem" }}
+          >
+            Time Saved
+          </h1>
           <br />
 
           <div class="py-[3rem] timeSaved px-[1.5rem]">
@@ -269,7 +270,11 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
-                  {isBreakpoint?<Image src={images2.one}/>:<Image src={images1.one}/>}
+                  {isBreakpoint ? (
+                    <Image src={images2.one} />
+                  ) : (
+                    <Image src={images1.one} />
+                  )}
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -283,7 +288,11 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
-                {isBreakpoint?<Image src={images2.two}/>:<Image src={images1.two}/>}
+                  {isBreakpoint ? (
+                    <Image src={images2.two} />
+                  ) : (
+                    <Image src={images1.two} />
+                  )}
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">

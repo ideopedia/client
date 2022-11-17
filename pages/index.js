@@ -229,7 +229,7 @@ export default function Home() {
       </div>
       <div>
         <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-          <div class=" rounded-md flex items-center justify-center bg-white dropshadow">
+          <div class=" rounded-md flex items-center justify-center bg-white dropshadow tte">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
@@ -262,7 +262,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div class="py-6 rounded-md flex items-center justify-center bg-white dropshadow">
+          <div class="py-6 rounded-md flex items-center justify-center bg-white dropshadow tte">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
@@ -295,7 +295,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div class=" rounded-md flex items-center justify-center bg-white dropshadow">
+          <div class=" rounded-md flex items-center justify-center bg-white dropshadow tte">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">

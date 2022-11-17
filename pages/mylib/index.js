@@ -49,7 +49,7 @@ const New = () => {
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link href="/mylib/completed/1212" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-500 cursor-pointer pl-2">
                     Completed
                   </span>
                 </Link>
@@ -57,7 +57,7 @@ const New = () => {
               <div className="pr-9 flex">
                 <Image src={fav} />
                 <Link href="/mylib/favourites/1212" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-500 cursor-pointer pl-2">
                     Favourites
                   </span>
                 </Link>
@@ -65,7 +65,7 @@ const New = () => {
               <div className="pr-9 flex">
                 <Image src={create} />
                 <Link href="/mylib/notes/1212" className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-500 cursor-pointer pl-2">
                     Notes & highlightes
                   </span>
                 </Link>
@@ -124,7 +124,7 @@ const New = () => {
                     listen={data[0].listen_time}
                   />
                 ) : (
-                  <div>
+                  <div className="pb-10">
                     <div className="flex justify-center items-center">
                       <Image src={recomend} />
                     </div>
