@@ -1,6 +1,6 @@
 import React from "react";
 import SideNavbar from "../../../components/sidebar";
-import Card from "../../../components/card";
+import FavouritesCard from "../../../components/FavouritesCard";
 import Link from "next/link";
 import task from "../../../public/task.svg";
 import create from "../../../public/create.svg";
@@ -72,12 +72,13 @@ const Favourites = () => {
               <Image src={arr} />
             </div>
             {data.map((val) => (
-              <Card
+              <FavouritesCard
                 image={val.image}
                 name={val.name}
                 author={val.author}
                 percent={val.percent}
                 book_id={val.id}
+                b_name={val.name}
               />
             ))}
           </div>
