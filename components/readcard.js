@@ -18,7 +18,7 @@ const ReadCard = (props) => {
     <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left">
       <div class=" rounded-md flex items-center   bg-white readBk">
         <div className="flex cover_image ">
-          <Image src={props.image} width={300} height={300}/>
+          <Image src={props.image} width={300} height={300} />
         </div>
         <div className=" book_con pl-4 ">
           <h1 className="b_name ">{props.name}</h1>
@@ -28,27 +28,29 @@ const ReadCard = (props) => {
             <div className="lg:ml-1 pt-2 text-center">
               <div className="cont flex mb-[0.5rem]">
                 <Image src={bookicn} />
-                <div className="px-1">
-                <Link className="" href="/read/book">
+                <Link
+                  className=""
+                  href={`/read/desc/${props.u_id}:${props.b_id}`}
+                >
                   Read
                 </Link>
               </div>
-              </div>
-              <span>{props.read} Minutes</span>
             </div>
-            <div className="ml-5 pt-2 text-center">
-              <div className="cont flex mb-[0.5rem]">
-                <Image src={airpods} />
-                <div className="px-1">
+            <span>{props.read} Minutes</span>
+          </div>
+          <div className="ml-5 pt-2 text-center">
+            <div className="cont flex mb-[0.5rem]">
+              <Image src={airpods} />
+              <div className="px-1">
                 <Link className="" href="/read/book">
                   Listen
                 </Link>
-                </div>
               </div>
-              <span>{props.listen} Minutes</span>
             </div>
+            <span>{props.listen} Minutes</span>
           </div>
-          {/* <div className="flex mt-[1rem]">
+        </div>
+        {/* <div className="flex mt-[1rem]">
             <div className="ml-3 pt-2">
               
             </div>
@@ -56,9 +58,7 @@ const ReadCard = (props) => {
               
             </div>
           </div> */}
-        </div>
       </div>
-      <div class=" rounded-md flex items-center justify-center drop-shadow-md bg-white"></div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ var userCompletedSchema = new Schema({
   author: { type: String },
   percent: { type: Number },
   id: { type: Number },
-
+  date: { type: String },
   User_Id: { type: String },
 });
 

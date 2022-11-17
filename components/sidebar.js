@@ -1,19 +1,9 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Disclosure } from "@headlessui/react";
-import Profile from "../pages/dashboard/profile";
+
 import { useRouter } from "next/router";
-import {
-  MdOutlineSpaceDashboard,
-  MdOutlineAnalytics,
-  MdOutlineIntegrationInstructions,
-  MdOutlineMoreHoriz,
-  MdOutlineSettings,
-  MdOutlineLogout,
-} from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { FaRegComments } from "react-icons/fa";
-import { BiMessageSquareDots } from "react-icons/bi";
+
 import Image from "next/image";
 import { useState, useEffect } from "react";
 //import {useHistory} from "react-router-dom"
@@ -34,7 +24,7 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import edit from "../public/Edit.svg";
-function SideNavbar() {
+function SideNavbar(props) {
   // const [data, setData] = useState([]);
   // const router = useRouter()
 
@@ -46,6 +36,9 @@ function SideNavbar() {
   //   });
   //   console.log(data);
   // }, []);
+  const [good, setGood] = useState("");
+  var day = new Date();
+  var hr = day.getHours();
 
   return (
     <div>
@@ -72,7 +65,7 @@ function SideNavbar() {
             <div className="p-4  border-b border-gray-100 pb-4">
               <div className="flex  justify-center items-center pl-8 pr-8  group cursor-pointer m-auto ">
                 <CircularProgressbarWithChildren
-                  value={80}
+                  value={props.per} 
                   styles={buildStyles({
                     pathColor: "#2CB67D",
                     trailColor: "#fff",
@@ -81,7 +74,9 @@ function SideNavbar() {
                   {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
                   <div className="mr-2 inne ml-2 mt-3 mb-1">
                     <Image
-                      src={prime}
+                      src={props.image}
+                      width={200}
+                      height={200}
                       className="justify-center items-center  imgr"
                     />
                   </div>
@@ -91,38 +86,37 @@ function SideNavbar() {
               <div className="flex justify-center items-center z-10 -mt-1 ml-3 ">
                 <div className="flex justify-center items-center  group cursor-pointer pb-2 bg-[#2CB67D] w-3/12 h-5 rounded-md  ">
                   <h3 className="flex text-[12px] font-semibold pt-2 text-white">
-                    80%
+                    {props.per}
                   </h3>
                 </div>
               </div>
 
-              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4 pb-4" onClick={function handleRoute(){
-                router.push("/dashboard/profile")
-              }} >
-                <h3 className="text-sm foottext font-semibold ">
-                  Complete your Profile
-                </h3>
+              <div className="flex   justify-center items-center gap-4 pl-5  group cursor-pointer pt-4 pb-4">
+                <Link href={`/dashboard/profile/${props.u_id}`}>
+                  <h3 className="text-sm foottext font-semibold ">
+                    Complete your Profile
+                  </h3>
+                </Link>
               </div>
               <div className="flex   justify-center items-center gap-1 group cursor-pointer pb-4">
                 <h3 className="text-sm  font-semibold ">
-                  Good Morning,Mr.Suresh Prabhu
+                  {hr < 12 ? "Good Morning" : "Good Evening"},{props.name}
                 </h3>
               </div>
 
-              
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer  hover:border hover:border-purple-900">
-                  <Link href="/dashboard">
+                  <Link href={`/dashboard/${props.u_id}`}>
                     <Image src={dash} />
                   </Link>
                 </div>
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
-                  <Link href="/read">
+                  <Link href={`/read/${props.u_id}`}>
                     <Image src={read} />
                   </Link>
                 </div>
                 <div class=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
-                  <Link href="/mylib">
+                  <Link href={`/mylib/${props.u_id}`}>
                     <Image src={lib} />
                   </Link>
                 </div>

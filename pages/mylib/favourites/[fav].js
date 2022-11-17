@@ -17,11 +17,19 @@ import wtf from "../../../public/wtf.svg";
 import dmmt from "../../../public/dmmt.svg";
 const Favourites = () => {
   const router = useRouter();
-  const { favo } = router.query;
+  const favo = router.query;
   const [data, setData] = useState(false);
+  const [user, setUser] = useState(false);
+  useEffect(() => {
+    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+      User_Id: favo.fav,
+    }).then((data) => {
+      setUser(data.data);
+    });
+  }, []);
   useEffect(() => {
     Axios.post("http://localhost:3000/api/UserFavourites/listFavourites", {
-      User_Id: "1212",
+      User_Id: favo.fav,
     }).then((data) => {
       setData(data.data);
     });
@@ -30,14 +38,19 @@ const Favourites = () => {
     <div>
       {data ? (
         <div className="md:flex">
-          <SideNavbar />
+          <SideNavbar
+            per={user[0].Profile_percent}
+            image={user[0].Image}
+            name={user[0].Name}
+            u_id={user[0].User_Id}
+          />
           {console.log(data)}
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
-                <Link href="/mylib/completed/1212" className="navtxt">
+                <Link href={`/mylib/completed/${favo.fav}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Completed
                   </span>
@@ -45,7 +58,7 @@ const Favourites = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={fav} />
-                <Link href="/mylib/favourites/1212" className="navtxt">
+                <Link href={`/mylib/favourites/${favo.fav}`} className="navtxt">
                   <div>
                     <span className="text-xl text-green-700 cursor-pointer">
                       Favourites
@@ -56,7 +69,7 @@ const Favourites = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href="/mylib/notes/1212" className="navtxt">
+                <Link href={`/mylib/notes/${favo.fav}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>

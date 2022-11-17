@@ -34,10 +34,35 @@ const Read = () => {
   const [compdata, setCompData] = useState(false);
   const [showMod, setShowMod] = useState(false);
   const router = useRouter();
-  const { ideo } = router.query;
-  var num = Number(ideo);
-  var num2 = Number(ideo[0]);
-  var num3 = Number(ideo[1]);
+  const favo = router.query;
+
+  const array = favo.ideo.split(":");
+  console.log(array[0]);
+  console.log(array[1]);
+  var str = array[1];
+  var num = Number(array[1]);
+
+  const userid = array[0];
+
+  var num2 = Number(str[0]);
+  var num3 = Number(str[1]);
+  const d = new Date();
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let currentDate = `${day}-${month}-${year}`;
+  const week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  console.log(week[d.getDay()]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
@@ -58,7 +83,7 @@ const Read = () => {
       const result = await Axios.post(
         "http://localhost:3000/api/prebook/findPrebook",
         {
-          id: 1,
+          id: num2,
         }
       );
 
@@ -73,7 +98,7 @@ const Read = () => {
       const result = await Axios.post(
         "http://localhost:3000/api/bookCard/findBookcard",
         {
-          id: 1,
+          id: num2,
         }
       );
 
@@ -153,11 +178,13 @@ const Read = () => {
             <div className="p-4 pb-9">
               <ProgressBar />
               {console.log(data)}
+              {console.log(card)}
+              {console.log(conten)}
               <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                 <div
                   class=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
-                    router.push(`/read/${num2}`);
+                    router.push(`/read/desc/${userid}:${num2}`);
                   }}
                 >
                   <div className="ideoIcons">
@@ -210,7 +237,9 @@ const Read = () => {
                     <div
                       class=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
-                        router.push(`/read/summary/${num2}${num3 - 1}`);
+                        router.push(
+                          `/read/summary/${userid}:${num2}${num3 - 1}`
+                        );
                       }}
                     >
                       <Image src={forward} />
@@ -245,14 +274,32 @@ const Read = () => {
                                     (data.Ideo_num / data.Total) * 100
                                   ),
                             id: card.id,
-
-                            User_Id: "1212",
+                            date: currentDate,
+                            User_Id: userid,
                           }
                         ).then((data) => {
                           setCompData(data.data);
                         });
+                        Axios.post(
+                          "http://localhost:3000/api/UserDashboard/updateDash",
+                          {
+                            Activity: [
+                              4 * 8,
+                              8 * 8,
+                              12 * 8,
+                              16 * 1,
+                              7 * 5,
+                              4 * 9,
+                              10 * 6,
+                            ],
+                            User_Id: userid,
+                          }
+                        ).then((val) => {
+                          console.log(val);
+                        });
+
                         router.replace(
-                          `http://localhost:3000/read/summary/${String(
+                          `http://localhost:3000/read/summary/${userid}:${String(
                             num2
                           )}${String(num3 + 1)}`
                         );
@@ -475,7 +522,9 @@ const Read = () => {
                               <div
                                 class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
                                 onClick={function handleTick() {
-                                  router.push(`/read/summary/${idea.Ideo_id}`);
+                                  router.push(
+                                    `/read/summary/${userid}:${idea.Ideo_id}`
+                                  );
                                 }}
                               >
                                 <div class="p-2rounded-md flex items-center justify-center ">
@@ -507,7 +556,7 @@ const Read = () => {
                 <div
                   class=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
-                    router.push(`/read/${num2}`);
+                    router.push(`/read/desc/${userid}:${num2}`);
                   }}
                 >
                   <div className="ideoIcons">
@@ -534,9 +583,7 @@ const Read = () => {
                     </div>
                     <div
                       className="p-2   RightIcons cursor-pointer"
-                      onClick={function handleDark() {
-                        setDark(!dark);
-                      }}
+                      onClick={() => setShowMod(true)}
                     >
                       <Image src={darkfont} />
                     </div>
@@ -548,7 +595,7 @@ const Read = () => {
               </div>
 
               <div
-                className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 ideoData"
+                className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 pb-4 ideoData"
                 style={{ fontSize: `${rangeval * 38}px` }}
               >
                 {data.Ideo}
@@ -562,7 +609,9 @@ const Read = () => {
                     <div
                       class=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
-                        router.push(`/read/summary/${num2}${num3 - 1}`);
+                        router.push(
+                          `/read/summary/${userid}:${num2}${num3 - 1}`
+                        );
                       }}
                     >
                       <Image src={darkfor} />
@@ -597,14 +646,31 @@ const Read = () => {
                                     (data.Ideo_num / data.Total) * 100
                                   ),
                             id: card.id,
-
-                            User_Id: "1212",
+                            date: currentDate,
+                            User_Id: userid,
                           }
                         ).then((data) => {
                           setCompData(data.data);
                         });
+                        Axios.post(
+                          "http://localhost:3000/api/UserDashboard/updateDash",
+                          {
+                            Activity: [
+                              4 * 8,
+                              8 * 8,
+                              12 * 8,
+                              16 * 8,
+                              7 * 1,
+                              4 * 13,
+                              10 * 6,
+                            ],
+                            User_Id: userid,
+                          }
+                        ).then((val) => {
+                          console.log(val);
+                        });
                         router.replace(
-                          `http://localhost:3000/read/summary/${String(
+                          `http://localhost:3000/read/summary/${userid}:${String(
                             num2
                           )}${String(num3 + 1)}`
                         );
@@ -832,7 +898,9 @@ const Read = () => {
                               <div
                                 class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                 onClick={function handleTick() {
-                                  router.push(`/read/summary/${idea.Ideo_id}`);
+                                  router.push(
+                                    `/read/summary/${userid}:${idea.Ideo_id}`
+                                  );
                                 }}
                               >
                                 <div class="p-2rounded-md flex items-center justify-center ">
