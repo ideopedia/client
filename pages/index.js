@@ -159,8 +159,8 @@ export default function Home() {
         </div>
       </div>
       <div className="Mobileappsection">
-        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center ">
-          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px] ">
+        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex">
+          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px]">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
@@ -176,19 +176,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center">
+        <div className="container px-6 py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4  text-black text-xl">
+              <p className="mt-4 text-black text-xl">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
-              <div className="mt-4">
+              <div className="mt">
                 <a className=" ">
-                  <Image src={download} width={320} />
+                  <Image src={download} width={320}/>
                 </a>
               </div>
             </div>
