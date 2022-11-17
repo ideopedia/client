@@ -1101,3 +1101,18 @@
   }
 }
  */
+.savebtn
+{
+  width: 120px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #2cb67d;
+  color: #ffff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.savebtn:hover {
+  background: #249a69;
+}
