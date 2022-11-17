@@ -130,7 +130,7 @@ export default function Home() {
       <br />
       <div>
         <div id="feat">
-          <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">
+          <span className="flex items-center justify-center lg:text-3xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
             Features
           </span>
         </div>
@@ -165,10 +165,10 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-3xl md:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-black text-xl">
+              <p className="mt-4 text-black lg:text-lg md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -179,10 +179,10 @@ export default function Home() {
         <div className="container px-6 py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-3xl md:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-black text-xl">
+              <p className="mt-4 text-black lg:text-lg md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -207,13 +207,13 @@ export default function Home() {
             class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2"
             style={{ padding: "1.2rem" }}
           >
-            <div class=" rounded-md flex items-center justify-start">
-              <span className="text-2xl text-green-500 font-semibold uppercase">
+            <div class=" rounded-md flex items-center justify-start lg:pr-20">
+              <span className="lg:text-3xl md:text-2xl text-xl text-green-500 font-semibold uppercase">
                 Ideopedia is trusted and loved by India's leading influencers
               </span>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <span className="text-xl text-black-700">
+            <div class=" pt-5 rounded-md flex items-center justify-center lg:pr-40">
+              <span className="lg:text-lg md:text-lg text-sm text-black-700">
                 An India where the power of ideas and their successful
                 implementation ensures prosperity, equity, and well-being for
                 all its citizens.
@@ -222,25 +222,25 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-2xl text-bold p-10">
-        <span className="flex items-center justify-center lg:text-2xl font-semibold text-green-500 uppercase">
+      <div className="flex justify-center items-center text-bold p-10">
+        <span className="flex items-center justify-center lg:text-3xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
       </div>
       <div>
         <div class="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-          <div class=" rounded-md flex items-center justify-center bg-white dropshadow tte">
+          <div class=" rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow tte">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
-                  <span className="text-white text-xl text-center">
+                  <span className="text-white font-semibold lg:text-lg md:text-lg text-sm text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-lg ">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -254,7 +254,7 @@ export default function Home() {
                   <Image src={test} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">Mr Suresh Prabhu</h1>
                   <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
@@ -266,14 +266,14 @@ export default function Home() {
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
-                  <span className="text-white text-xl text-center">
+                  <span className="text-white lg:text-lg md:text-lg text-sm font-semibold text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-lg ">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -287,7 +287,7 @@ export default function Home() {
                   <Image src={test} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">Mr Suresh Prabhu</h1>
                   <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
@@ -299,14 +299,14 @@ export default function Home() {
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div class=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
-                  <span className="text-white text-xl text-center">
+                  <span className="text-white lg:text-lg md:text-lg text-sm font-semibold text-center">
                     Selfless service at its best so that our country benefits
                   </span>
                 </div>
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black text-lg ">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -320,7 +320,7 @@ export default function Home() {
                   <Image src={test} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="text-xl font-semibold">Mr Suresh Prabhu</h1>
+                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">Mr Suresh Prabhu</h1>
                   <div className="text-[13px] font-medium text-gray-500">
                     FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
                   </div>
