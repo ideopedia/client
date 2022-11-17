@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import usershare from "../public/usershare.svg";
 
-const ShareBox = () => {
+const ShareBox = (props) => {
   return (
     <div className="w-[190px] h-[140px] bg-white drop-shadow-xl rounded-md">
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
@@ -12,7 +12,7 @@ const ShareBox = () => {
           <span className="pl-2 text-black text-xl">Shares</span>
         </div>
         <div class="flex items-center justify-center">
-          <span className="text-2xl text-black font-bold">5 Shares</span>
+          <span className="text-2xl text-black font-bold">{props.amt} Shares</span>
         </div>
       </div>
     </div>

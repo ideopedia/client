@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-export default function UserChart() {
+export default function UserChart(props) {
   const canvasEl = useRef(null);
 
   const colors = {
@@ -26,7 +26,7 @@ export default function UserChart() {
     gradient.addColorStop(0.65, colors.purple.quarter);
     gradient.addColorStop(1, colors.purple.zero);
 
-    const weight = [10, 3, 20, 30, 60, 55, 100];
+    const weight = props.array
 
     const labels = [
       "Sunday",

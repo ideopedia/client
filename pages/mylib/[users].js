@@ -1,10 +1,12 @@
 import React from "react";
 import Axios from "axios";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import SideNavbar from "../../components/sidebar";
 import Card from "../../components/card";
+import CompletedCard from "../../components/CompletedCards";
 import Link from "next/link";
-
+import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import task from "../../public/task.svg";
 import create from "../../public/create.svg";
@@ -19,7 +21,20 @@ import bmark from "../../public/bmark.svg";
 import Image from "next/image";
 const New = () => {
   const [data, setData] = useState(false);
+  const [Recent, setRecent] = useState(false);
   const [Recommended, setRecommended] = useState(false);
+  const router = useRouter();
+  const favo = router.query;
+  console.log(favo.users);
+  const [type, setType] = useState("Bronze Influencer");
+  const [user, setUser] = useState(false);
+  useEffect(() => {
+    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+      User_Id: favo.users,
+    }).then((data) => {
+      setUser(data.data);
+    });
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,19 +51,43 @@ const New = () => {
     fetchData();
     console.log(data);
   }, []);
+  useEffect(() => {
+    const fetchRecent = async () => {
+      const result = await Axios.post(
+        "http://localhost:3000/api/UserCompleted/listCompleted",
+        {
+          User_Id: favo.users,
+          percent: 100,
+        }
+      );
+
+      setRecent(result.data);
+    };
+
+    fetchRecent();
+    console.log(Recent);
+  }, []);
 
   return (
     <div>
       {data ? (
         <div className="md:flex">
-          <SideNavbar />
+          <SideNavbar
+            per={user[0].Profile_percent}
+            image={user[0].Image}
+            name={user[0].Name}
+            u_id={user[0].User_Id}
+          />
 
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
-                <Link href="/mylib/completed/1212" className="navtxt">
+                <Link
+                  href={`/mylib/completed/${favo.users}`}
+                  className="navtxt"
+                >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Completed
                   </span>
@@ -56,7 +95,10 @@ const New = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={fav} />
-                <Link href="/mylib/favourites/1212" className="navtxt">
+                <Link
+                  href={`/mylib/favourites/${favo.users}`}
+                  className="navtxt"
+                >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Favourites
                   </span>
@@ -64,7 +106,7 @@ const New = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href="/mylib/notes/1212" className="navtxt">
+                <Link href={`/mylib/notes/${favo.users}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>
@@ -72,7 +114,7 @@ const New = () => {
               </div>
             </div>
             <br />
-            
+
             <div>
               <div className="p-4">
                 <span className="text-xl text-black text-bold">
@@ -85,6 +127,7 @@ const New = () => {
                 name={data[0].Book_Name.toUpperCase()}
                 author={data[0].Book_Author}
                 read={data[0].read_time}
+                b_id={data[0].id}
                 listen={data[0].listen_time}
               />
 
@@ -97,17 +140,22 @@ const New = () => {
               </div>
               <br />
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
-                {data.map((val) => (
-                  <div class="rounded-md flex items-start justify-start">
-                    <ReadCard
-                      image={val.Cover_image}
-                      name={val.Book_Name.toUpperCase()}
-                      author={val.Book_Author}
-                      read={val.read_time}
-                      listen={val.listen_time}
-                    />
-                  </div>
-                ))}
+                {Recent ? (
+                  Recent.map((val) => (
+                    <div class="rounded-md flex items-start justify-start">
+                      <CompletedCard
+                        image={val.image}
+                        name={val.name}
+                        author={val.author}
+                        percent={val.percent}
+                        book_id={val.id}
+                        b_name={val.name}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <div>No Recent</div>
+                )}
               </div>
               <div className="p-4">
                 <span className="text-xl text-black text-bold">
@@ -142,7 +190,7 @@ const New = () => {
           </div>
         </div>
       ) : (
-        console.log("false")
+        <Loader />
       )}
     </div>
   );

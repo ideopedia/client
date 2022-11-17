@@ -12,6 +12,7 @@ export default async function addCompleted(req, res) {
     author,
     percent,
     id,
+    date,
 
     User_Id,
   } = req.body;
@@ -23,6 +24,7 @@ export default async function addCompleted(req, res) {
       author,
       percent,
       id,
+      date,
 
       User_Id,
     });

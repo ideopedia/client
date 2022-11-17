@@ -17,11 +17,12 @@ import Image from "next/image";
 export default function ReadCard() {
   const [data, setData] = useState(false);
   const router = useRouter();
-  const { card } = router.query;
-  var id = String(card);
+  const favo = router.query;
+  const array = favo.readCards.split(":");
+  var id = array[1];
   useEffect(() => {
     Axios.post("http://localhost:3000/api/summaryCard/findSummaryCard", {
-      Book_id: "1",
+      Book_id: id,
     }).then((data) => {
       setData(data.data);
     });
@@ -33,7 +34,7 @@ export default function ReadCard() {
         <div
           className="flex justify-start items-center pl-4 pr-4 pt-4 pb-1 cursor-pointer"
           onClick={function handleBack() {
-            router.push("/read/1");
+            router.push(`/read/desc/${favo.readCards}`);
           }}
         >
           <Image src={leftarr} />
