@@ -2,16 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import wtf from "../public/wtf.svg";
-import {
-  CircularProgressbar,
-  
-  buildStyles,
-} from "react-circular-progressbar";
+import { useRouter } from "next/router";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Axios from "axios"
+import Axios from "axios";
 import del from "../public/del.svg";
 
-const Card = (props) => {
+const CompletedCard = (props) => {
+  const router = useRouter();
   const percentage = 66;
   return (
     <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
@@ -45,12 +43,14 @@ const Card = (props) => {
                 className="ml-3 pt-2 cursor-pointer"
                 onClick={function handleLike({}) {
                   Axios.post(
-                    "http://localhost:3000/api/UserFavourites/deleteFavourites",
+                    "http://localhost:3000/api/UserCompleted/deleteCompleted",
                     {
                       User_Id: "1212",
                       name: `${props.b_name}`,
+                      percent: 100,
                     }
                   );
+                  router.reload();
                 }}
               >
                 <Image src={del} />
@@ -68,4 +68,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default CompletedCard;

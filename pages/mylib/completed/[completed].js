@@ -1,6 +1,6 @@
 import React from "react";
 import SideNavbar from "../../../components/sidebar";
-import Card from "../../../components/card";
+import CompletedCard from "../../../components/CompletedCards";
 import Link from "next/link";
 import task from "../../../public/task.svg";
 import create from "../../../public/create.svg";
@@ -74,12 +74,13 @@ const Completed = () => {
               <Image src={arr} />
             </div>
             {data.map((val) => (
-              <Card
+              <CompletedCard
                 image={val.image}
                 name={val.name}
                 author={val.author}
                 percent={val.percent}
                 book_id={val.id}
+                b_name={val.name}
               />
             ))}
           </div>
