@@ -26,7 +26,7 @@ const ReadCard = (props) => {
           <h1 className=" pt-2 b_auth">{props.author}</h1>
           <div className="flex pt-5 bkActions">
             <div className="lg:ml-1 pt-2 text-center">
-              <div className="cont flex mb-[0.5rem]">
+              <div className="cont flex mb-[0.8rem]">
                 <Image src={bookicn} />
                 <Link
                   className=""
@@ -35,19 +35,19 @@ const ReadCard = (props) => {
                   Read
                 </Link>
               </div>
+              <span>{props.read} Minutes</span>
             </div>
-            <span>{props.read} Minutes</span>
-          </div>
-          <div className="ml-5 pt-2 text-center">
-            <div className="cont flex mb-[0.5rem]">
-              <Image src={airpods} />
-              <div className="px-1">
-                <Link className="" href="/read/book">
-                  Listen
-                </Link>
+            <div className="ml-5 pt-2 text-center">
+              <div className="cont flex mb-[0.5rem]">
+                <Image src={airpods} />
+                <div className="px-1">
+                  <Link className="" href="/read/book">
+                    Listen
+                  </Link>
+                </div>
               </div>
+              <span>{props.listen} Minutes</span>
             </div>
-            <span>{props.listen} Minutes</span>
           </div>
         </div>
         {/* <div className="flex mt-[1rem]">
