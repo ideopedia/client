@@ -1,6 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-const Auth = (props) => {
+import React from "react";
+import { useImperativeHandle,useRef } from "react";
+const Auth = React.forwardRef((props,ref) => {
+  const fieldRef=useRef()
+  const activate=()=>{
+        fieldRef.current.focus()
+  }
+  useImperativeHandle(ref,()=>{
+    return {focus:activate}
+  })
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   const router = useRouter();
   const classes="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
@@ -19,6 +28,8 @@ const Auth = (props) => {
                 type={arr.type}
                 placeholder={arr.placeholder}
                 onChange={arr.change}
+                ref={arr.ref}
+                onBlur={arr.onBlur}
               />
             </>
           );
@@ -66,5 +77,5 @@ const Auth = (props) => {
       </form>
     </div>
   );
-};
+});
 export default Auth;

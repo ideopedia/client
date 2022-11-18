@@ -410,6 +410,9 @@
     margin-bottom:5rem;
   }
 }
+.emailIp:focus{
+    border: 2px solid green;
+}
 /* .body {
   min-height: 100vh;
 } */
