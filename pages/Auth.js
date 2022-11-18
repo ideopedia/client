@@ -9,7 +9,7 @@ const Auth = (props) => {
       <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
         <FormHeader title={props.title} />
       </div>
-      <form className="newLoginForm">
+      <form className="newLoginForm" onSubmit={props.submit}>
         {props.box.map((arr) => {
           return (
             <>
@@ -18,7 +18,7 @@ const Auth = (props) => {
                 className={!arr.message?classes:classes+props.className}
                 type={arr.type}
                 placeholder={arr.placeholder}
-                onChange={props.change}
+                onChange={arr.change}
               />
             </>
           );
@@ -48,9 +48,9 @@ const Auth = (props) => {
           <button
             type="submit"
             style={{ width: "100%" }}
-            onClick={function handleClick() {
-              router.push("/read");
-            }}
+            // onClick={function handleClick() {
+            //   router.push("/read");
+            // }}
           >
             {props.button}
           </button>
