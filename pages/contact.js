@@ -1,52 +1,52 @@
 import React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Link from "next/link";
-import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import facebook from "../public/facebook.svg";
 import twitter from "../public/twitter.svg";
 import telegram from "../public/telegram.svg";
 import map from "../public/map.svg";
 import mail from "../public/mail.svg";
-import ContactUs from "./Auth"
+import emailjs from "@emailjs/browser";
 import location from "../public/location.svg";
 const New = () => {
-  const contactList=[ {
-    label: "Name",
-    type: "text",
-    placeholder: "Enter your name",
-    change: (e) => setEmail_Id(e.target.value),
-  },
-  {
-    label: "Email",
-    type: "email",
-    placeholder: "Enter your email",
-    change: (e) => setEmail_Id(e.target.value),
-  },
-  {
-    label: "Message",
-    type: "text",
-    placeholder: "write your message",
-    change: (e) => setEmail_Id(e.target.value),
-    message:true,
-  }
-]
+  const [user, setUser] = useState(null);
+  const [email_Id, setEmail_Id] = useState(null);
+  const [message, setMessage] = useState(null);
+  const [name, setName] = useState(null);
+  const toastifySuccess = () => {
+    toast.success('Mail Sent !', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });;
+  };
+  const classes =
+    "border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
+    // console.log(email_Id, message, name);
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_n2cjfcp",
+        "template_jegrfeo",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "k4OIq4bqtNeEAjuPU"
       )
       .then(
         (result) => {
           console.log(result.text);
+          toastifySuccess();
         },
         (error) => {
           console.log(error.text);
@@ -108,51 +108,51 @@ const New = () => {
               </div>
             </div>
           </div>
+          
           <div class="rounded-md flex items-center justify-center pb-9">
-            {/* <div>
-              <FormHeader title="Contact us" className="bd1" />
-              <div>
-                <form ref={form} onSubmit={sendEmail}>
-                  <div className="row">
-                    <label>Name</label>
-                    <input
-                      type="email"
-                      name="name"
-                      placeholder="Enter your name"
-                      onChange={(e) => setEmail_Id(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
-                    <label>Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
-                    <label>Message</label>
-                    <textarea
-                      type="text"
-                      name="message"
-                      placeholder="write your message"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    ></textarea>
-                  </div>
-
-                  <div id="button" className="row">
-                    <button type="submit" value="send">Send Message</button>
-                  </div>
-                </form>
+          <ToastContainer />
+            <div className="newloginContainer">
+              <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
+                <FormHeader title="contact us" />
               </div>
-            </div> */}
-            <ContactUs
-              title="Contact"
-              box={contactList}
-              button="SEND MESSAGE"
-              className="pb-[4rem]"
-              />
+              <form className="newLoginForm" ref={form} onSubmit={sendEmail}>
+                <label>Name</label>
+                <input
+                  className={classes}
+                  type="text"
+                  name="name"
+                  value={name}
+                  placeholder="enter your Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <label>Email Id</label>
+                <input
+                  className={classes}
+                  type="email"
+                  name="email_Id"
+                  value={email_Id}
+                  placeholder="enter your Email"
+                  onChange={(e) => setEmail_Id(e.target.value)}
+                />
+                <label>Message</label>
+                <input
+                  className={classes + "pb-[4rem]"}
+                  type="text"
+                  name="message"
+                  value={message}
+                  placeholder="enter your Message"
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+                <div
+                  id="button"
+                  className="row flex justify-center items-center"
+                >
+                  <button type="submit" style={{ width: "100%" }}>
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
