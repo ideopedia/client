@@ -44,18 +44,18 @@ export default function Home() {
       <Hero />
       <div className="wavebgr">
         {/* {console.log(data)} */}
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo pb-9">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 descIdeo pb-20">
           <div class="rounded-md flex items-center justify-center">
-            <span className="lg:text-[26px]">An Invitation-only platform</span>
+            <span className="lg:text-3xl">An Invitation-only platform</span>
           </div>
           <div class="rounded-md flex items-center justify-center cutEdg">
-            <span className="lg:text-[26px] text-black font-semibold cutEdg">
+            <span className="lg:text-4xl text-black font-semibold cutEdg">
               THAT SHARES CUTTING-EDGE IDEAS WITH
             </span>
           </div>
           <div class="rounded-md flex items-center justify-center greenBtn">
-            <div className=" h-12 bg-green-500  justify-center items-center high">
-              <span className="p-5 text-white font-semibold">
+            <div className=" bg-green-500 flex justify-center items-center high">
+              <span className=" text-white font-semibold text-4xl">
                 THE TOP 5000 INFLUENCERS IN INDIA
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
       <br />
       <div>
         <div id="feat">
-          <span className="flex items-center justify-center lg:text-3xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
+          <span className="flex items-center justify-center lg:text-4xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
             Features
           </span>
         </div>
@@ -165,10 +165,10 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-3xl md:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-4xl md:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-black lg:text-lg md:text-lg text-sm">
+              <p className="mt-4 text-black lg:text-xl md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -179,10 +179,10 @@ export default function Home() {
         <div className="container px-6 py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-3xl md:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-4xl md:text-2xl font-semibold text-green-500 uppercase">
                 Available in audio & text formats.
               </h1>
-              <p className="mt-4 text-black lg:text-lg md:text-lg text-sm">
+              <p className="mt-4 text-black lg:text-xl md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -208,7 +208,7 @@ export default function Home() {
             style={{ padding: "1.2rem" }}
           >
             <div class=" rounded-md flex items-center justify-start lg:pr-20">
-              <span className="lg:text-3xl md:text-2xl text-xl text-green-500 font-semibold uppercase">
+              <span className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold uppercase">
                 Ideopedia is trusted and loved by India's leading influencers
               </span>
             </div>
@@ -223,7 +223,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center items-center text-bold p-10">
-        <span className="flex items-center justify-center lg:text-3xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
+        <span className="flex items-center justify-center lg:text-4xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
       </div>

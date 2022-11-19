@@ -42,7 +42,7 @@ const Auth = (props) => {
             ></input>
             Remember Me
           </label>
-          <label className="text-gray-500">Forget password</label>
+          <label className="text-gray-500">Forgot password</label>
         </div>}
         <div id="button" className="row flex justify-center items-center">
           <button

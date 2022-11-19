@@ -40,13 +40,13 @@ const Teams = () => {
           class="pt-5 pb-4 rounded-md flex items-center justify-center"
           id="bod"
         >
-          <span>The Team</span>
+          <span className="text-xl">The Team</span>
         </div>
         <div class=" rounded-md flex items-center justify-center">
-          <span className="text-2xl text-semi-bold text-black">
-            This is our team, a lot of smiling happy people who work hard to
-            empower your teams
-          </span>
+          <div className="text-2xl font-medium text-black">
+            <div>This is our team, a lot of smiling happy people</div>
+            <div className="text-center">who work hard to empower your teams</div>
+          </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           <div
@@ -58,13 +58,13 @@ const Teams = () => {
                 <Image src={bod1} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="text-bold text-2xl text-black">
+                <span className="font-medium text-2xl text-black ">
                   Mr Binod Kumar Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black">
-                  Board of directors
+                <span className="text-bold text-xl text-black uppercase">
+                  Founder - director
                 </span>
               </div>
             </div>
@@ -78,13 +78,13 @@ const Teams = () => {
                 <Image src={bod2} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="text-bold text-2xl text-black">
+                <span className="font-medium text-2xl text-black">
                   Mr A Surya Prakash
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black">
-                  Board of directors
+                <span className="text-bold text-xl text-black uppercase">
+                  director
                 </span>
               </div>
             </div>
@@ -98,19 +98,19 @@ const Teams = () => {
                 <Image src={bod3} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="text-bold text-2xl text-black">
+                <span className="font-medium text-2xl text-black">
                   Mr Swapan Dasgupta
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black">
-                  Board of directors
+                <span className="text-bold text-xl text-black uppercase">
+                  director
                 </span>
               </div>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleFounder1}
@@ -120,12 +120,12 @@ const Teams = () => {
                 <Image src={found1} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="text-bold text-2xl text-black">
+                <span className="font-medium text-2xl text-black">
                   Malvika Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black">Founder</span>
+                <span className="text-bold text-xl text-black uppercase">Founder</span>
               </div>
             </div>
           </div>
@@ -138,12 +138,12 @@ const Teams = () => {
                 <Image src={found2} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="text-bold text-2xl text-black">
+                <span className="font-medium text-2xl text-black">
                   Ritesh Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black">Founder</span>
+                <span className="text-bold text-xl text-black uppercase">Founder</span>
               </div>
             </div>
           </div>
@@ -169,13 +169,13 @@ const Teams = () => {
                             <Image src={bod1} />
                           </div>
                           <div class="rounded-md flex items-center justify-center">
-                            <span className="text-bold text-2xl text-black">
+                            <span className="font-medium text-2xl text-black">
                               Mr Binod Kumar Bawri
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black pb-9">
-                              Board of directors
+                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                              founder - director
                             </span>
                           </div>
                         </div>
@@ -184,23 +184,27 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-lg text-base text-black ">
-                          Mr Binod Kumar Bawri is a leading intellectual,
+                        <span className="text-base text-black ">
+                          <div className="py-5 pr-8">
+                          <span classname="text-green-500 " id="p1">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia. He is the
-                          pioneer of industrialization in North-East India. For
+                          He is the Founding Director of Ideopedia.</div> 
+                      
+                         <div className="py-5 pr-8">He is the pioneer of industrialization in North-East India. For
                           over 40 years he has dedicated himself to the economic
                           and social enhancement of North-East India. He has
                           uplifted the lives of tens of thousands of people
                           through results-oriented philanthrophy and
-                          public-spirited endeavors. He was the Founder of
-                          Calcom Cement, the largest private-sector enterprise
+                          public-spirited endeavors.</div> 
+                          
+                          <div className="py-5 pr-8">He was the Founder of Calcom Cement, the largest private-sector enterprise
                           in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually. Mr
-                          Bawri has over 30 years of experience in the cement
+                          indirect employment to over 25,000 people annually.</div>
+
+                          <div className="py-5 pr-8">Mr Bawri has over 30 years of experience in the cement
                           industry, and over 40 years of business experience in
                           manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.
+                          first manufacturing industries in North-East India.</div>
                         </span>
                       </div>
                     </div>
@@ -232,13 +236,13 @@ const Teams = () => {
                             <Image src={bod2} />
                           </div>
                           <div class="rounded-md flex items-center justify-center">
-                            <span className="text-bold text-2xl text-black">
+                            <span className="font-medium text-2xl text-black">
                               Mr A Surya Prakash
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black pb-9">
-                              Board of directors
+                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                              director
                             </span>
                           </div>
                         </div>
@@ -247,23 +251,24 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-lg text-base text-black ">
-                          Mr Binod Kumar Bawri is a leading intellectual,
+                        <span className="text-base text-black ">
+                        <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia. He is the
-                          pioneer of industrialization in North-East India. For
+                          He is the Founding Director of Ideopedia.</div>
+                          <div className="py-5 pr-8">He is the pioneer of industrialization in North-East India. For
                           over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. He has
-                          uplifted the lives of tens of thousands of people
+                          and social enhancement of North-East India. 
+                          He has uplifted the lives of tens of thousands of people
                           through results-oriented philanthrophy and
-                          public-spirited endeavors. He was the Founder of
+                          public-spirited endeavors.</div>
+                          <div className="py-5 pr-8">He was the Founder of
                           Calcom Cement, the largest private-sector enterprise
                           in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually. Mr
-                          Bawri has over 30 years of experience in the cement
+                          indirect employment to over 25,000 people annually.</div>
+                          <div className="py-5 pr-8">Mr Bawri has over 30 years of experience in the cement
                           industry, and over 40 years of business experience in
                           manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.
+                          first manufacturing industries in North-East India.</div>
                         </span>
                       </div>
                     </div>
@@ -295,13 +300,13 @@ const Teams = () => {
                             <Image src={bod3} />
                           </div>
                           <div class="rounded-md flex items-center justify-center">
-                            <span className="text-bold text-2xl text-black">
+                            <span className="font-medium text-2xl text-black">
                               Mr Swapan Dasgupta
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black pb-9">
-                              Board of directors
+                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                              director
                             </span>
                           </div>
                         </div>
@@ -310,23 +315,27 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-lg text-base text-black ">
-                          Mr Binod Kumar Bawri is a leading intellectual,
+                        <span className="text-base text-black ">
+                        <div className="py-5 pr-8"><span id="p3">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia. He is the
+                          He is the Founding Director of Ideopedia.</div>
+                          <div className="py-5 pr-8">He is the
                           pioneer of industrialization in North-East India. For
                           over 40 years he has dedicated himself to the economic
                           and social enhancement of North-East India. He has
                           uplifted the lives of tens of thousands of people
                           through results-oriented philanthrophy and
-                          public-spirited endeavors. He was the Founder of
+                          public-spirited endeavors.</div>
+                          <div className="py-5 pr-8">He was the Founder of
                           Calcom Cement, the largest private-sector enterprise
                           in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually. Mr
+                          indirect employment to over 25,000 people annually.</div>
+                          <div className="py-5 pr-8">Mr
                           Bawri has over 30 years of experience in the cement
                           industry, and over 40 years of business experience in
                           manufacturing. At the age of 21 he set up one of the
                           first manufacturing industries in North-East India.
+                          </div>
                         </span>
                       </div>
                     </div>
@@ -358,12 +367,12 @@ const Teams = () => {
                             <Image src={found1} />
                           </div>
                           <div class="rounded-md flex items-center justify-center">
-                            <span className="text-bold text-2xl text-black">
+                            <span className="font-medium text-2xl text-black">
                               Malvika Bawri
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black pb-9">
+                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
                           </div>
@@ -373,23 +382,26 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-lg text-base text-black ">
-                          Mr Binod Kumar Bawri is a leading intellectual,
+                        <span className="text-base text-black ">
+                        <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia. He is the
+                          He is the Founding Director of Ideopedia.</div>
+                          <div className="py-5 pr-8">He is the
                           pioneer of industrialization in North-East India. For
                           over 40 years he has dedicated himself to the economic
                           and social enhancement of North-East India. He has
                           uplifted the lives of tens of thousands of people
                           through results-oriented philanthrophy and
-                          public-spirited endeavors. He was the Founder of
+                          public-spirited endeavors.</div>
+                          <div className="py-5 pr-8">He was the Founder of
                           Calcom Cement, the largest private-sector enterprise
                           in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually. Mr
+                          indirect employment to over 25,000 people annually.</div>
+                          <div className="py-5 pr-8">Mr
                           Bawri has over 30 years of experience in the cement
                           industry, and over 40 years of business experience in
                           manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.
+                          first manufacturing industries in North-East India.</div>
                         </span>
                       </div>
                     </div>
@@ -421,12 +433,12 @@ const Teams = () => {
                             <Image src={found2} />
                           </div>
                           <div class="rounded-md flex items-center justify-center">
-                            <span className="text-bold text-2xl text-black">
+                            <span className="font-medium text-2xl text-black">
                               Ritesh Bawri
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-black pb-9">
+                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
                           </div>
@@ -434,25 +446,26 @@ const Teams = () => {
                       </div>
                       <div class=" rounded-md flex items-center justify-center">
                         <span
-                          className="text-lg text-base text-black  "
-                          style={{ lineHeight: "2.1rem" }}
-                        >
-                          Mr Binod Kumar Bawri is a leading intellectual,
+                          className="text-base text-black">
+                         <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia. He is the
+                          He is the Founding Director of Ideopedia.</div>
+                          <div className="py-5 pr-8">He is the
                           pioneer of industrialization in North-East India. For
                           over 40 years he has dedicated himself to the economic
                           and social enhancement of North-East India. He has
                           uplifted the lives of tens of thousands of people
                           through results-oriented philanthrophy and
-                          public-spirited endeavors. He was the Founder of
+                          public-spirited endeavors.</div>
+                          <div className="py-5 pr-8">He was the Founder of
                           Calcom Cement, the largest private-sector enterprise
                           in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually. Mr
+                          indirect employment to over 25,000 people annually.</div>
+                          <div className="py-5 pr-8">Mr
                           Bawri has over 30 years of experience in the cement
                           industry, and over 40 years of business experience in
                           manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.
+                          first manufacturing industries in North-East India.</div>
                         </span>
                       </div>
                     </div>
