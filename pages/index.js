@@ -13,6 +13,7 @@ import test from "../public/test.svg";
 import Link from "next/link";
 import rightarr from "../public/rightarr.svg";
 import homeimage from "../public/homeimage.svg";
+import features_sam from "../public/features_sam.svg";
 import influencer1 from "../public/influencer1.svg";
 import influencer2 from "../public/influencer2.svg";
 import influencer3 from "../public/influencer3.svg";
@@ -21,7 +22,8 @@ import influencer5 from "../public/influencer5.svg";
 import influencer6 from "../public/influencer6.svg";
 import influencer7 from "../public/influencer7.svg";
 import influencer8 from "../public/influencer8.svg";
-import sampInf from "../public/infTest.svg"
+import Features from "../components/Features";
+import sampInf from "../public/infTest.svg";
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
@@ -66,11 +68,11 @@ export default function Home() {
             class=" flex items-center justify-center infPic"
             style={{ borderRadius: "200rem" }}
           >
-              <Image
-                src={influencer1}
-                width={250}
-                style={{ borderRadius: "200px" }}
-              />
+            <Image
+              src={influencer1}
+              width={250}
+              style={{ borderRadius: "200px" }}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
             <Image src={influencer2} width={250} />
@@ -138,22 +140,40 @@ export default function Home() {
         <div class="p-6 bg-white-300">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
             <div class=" rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="The World’s only knowledge portal for leaders "
+              />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="Featuring a new trend everyday "
+              />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="Real world examples to enhance learning"
+              />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="Real world examples to enhance learning"
+              />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="Real world examples to enhance learning"
+              />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center">
-              <Image src={card1} />
+              <Features
+                features={features_sam}
+                info="Real world examples to enhance learning"
+              />
             </div>
           </div>
         </div>
@@ -188,7 +208,7 @@ export default function Home() {
               </p>
               <div className="mt">
                 <a className=" ">
-                  <Image src={download} width={320}/>
+                  <Image src={download} width={320} />
                 </a>
               </div>
             </div>
