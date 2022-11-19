@@ -118,7 +118,7 @@ function Login() {
               {!emailValid && (
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "16px",
                     position: "relative",
                     bottom: "10px",
                     left: "10px",
@@ -153,7 +153,7 @@ function Login() {
               {!passValid && (
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "16px",
                     position: "relative",
                     bottom: "10px",
                     left: "10px",

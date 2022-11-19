@@ -8,7 +8,7 @@ import { useState, useReducer, useEffect, useRef } from "react";
 function Signup() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   const classes =
-    "border-2 border-gray-300 text-gray-900 text-lg font-medium rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
+    "border-2 border-gray-300 text-gray-900 text-base font-medium rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
   const emailRef = useRef();
   const passRef = useRef();
   const inviteRef = useRef();
@@ -156,7 +156,7 @@ function Signup() {
                 {!emailValid && (
                   <p
                     style={{
-                      fontSize: "12px",
+                      fontSize: "16px",
                       position: "relative",
                       bottom: "10px",
                       left: "10px",
@@ -192,7 +192,7 @@ function Signup() {
                 {!passValid && (
                   <p
                     style={{
-                      fontSize: "12px",
+                      fontSize: "16px",
                       position: "relative",
                       bottom: "10px",
                       left: "10px",
@@ -215,7 +215,7 @@ function Signup() {
                 {!inviteValid && (
                   <p
                     style={{
-                      fontSize: "12px",
+                      fontSize: "16px",
                       position: "relative",
                       bottom: "10px",
                       left: "10px",
