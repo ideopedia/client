@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*
-{
-  font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
 }
 .FormSec {
   margin-top: 1.5rem;
@@ -388,30 +387,30 @@
     bottom: 9px;
   }
 }
-.infPic:hover{
+.infPic:hover {
   transform: scale(1.2);
-  transition:  300ms ease-out;
+  transition: 300ms ease-out;
 }
-@media screen and (min-width:770px){
-  .testi{
-    margin:0 10rem
+@media screen and (min-width: 770px) {
+  .testi {
+    margin: 0 10rem;
   }
 }
-.samp img{
+.samp img {
   border-radius: 500px;
 }
-.wwd:hover{
-   z-index: 10;
-   transform: scale(1.1);
-   transition: all 300ms ease-out;
+.wwd:hover {
+  z-index: 10;
+  transform: scale(1.1);
+  transition: all 300ms ease-out;
 }
-@media screen and (max-width:1024px){
-  .wwd{
-    margin-bottom:5rem;
+@media screen and (max-width: 1024px) {
+  .wwd {
+    margin-bottom: 5rem;
   }
 }
-.emailIp:focus{
-    border: 2px solid green;
+.emailIp:focus {
+  border: 2px solid green;
 }
 /* .body {
   min-height: 100vh;
@@ -838,8 +837,7 @@
   color: #ffff;
 }
 
-.cont:hover
-{
+.cont:hover {
   background-color: #249a69;
 }
 
@@ -929,8 +927,7 @@
   padding-bottom: 200px;
 }
 
-@media screen and (max-width: 450px){
-
+@media screen and (max-width: 450px) {
   .wavebgr {
     background-image: url(../public/homewavemobile.svg);
     width: 100%;
@@ -952,8 +949,7 @@
   background-repeat: no-repeat;
   padding: 100px 0;
 }
-.missionpage 
-{
+.missionpage {
   background-image: url(../public/mwavedesk.svg);
   width: 100%;
   height: 100%;
@@ -962,36 +958,32 @@
   background-repeat: no-repeat;
   padding: 100px 0;
 }
-@media screen and (max-width:790px) {
-  .missionpage 
-{
-  background-image: url(../public/mwavetab.svg);
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 100px 0;
+@media screen and (max-width: 790px) {
+  .missionpage {
+    background-image: url(../public/mwavetab.svg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+  }
 }
-}
-@media screen and (max-width:590px) {
-  .missionpage 
-{
-  background-image: url(../public/mwavemobile.svg);
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 100px 0;
-}
+@media screen and (max-width: 590px) {
+  .missionpage {
+    background-image: url(../public/mwavemobile.svg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+  }
 }
 
 .dropshadow {
   box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .about_hero {
   background-image: url(../public/readwave.svg);
@@ -1079,14 +1071,12 @@
   object-position: top;
 } */
 
-.Descbgr
-{
+.Descbgr {
   background-color: rgba(138, 187, 167, 0.1);
   width: 100%;
   height: 100%;
 }
-.tte:hover 
-{
+.tte:hover {
   z-index: 10;
   transform: scale(1.1);
   transition: all 300ms ease-out;
@@ -1104,8 +1094,7 @@
   }
 }
  */
-.savebtn
-{
+.savebtn {
   width: 120px;
   padding: 10px 20px;
   text-align: center;
@@ -1118,4 +1107,10 @@
 
 .savebtn:hover {
   background: #249a69;
+}
+.oop {
+  opacity: 0.3;
+}
+input[type="checkbox"]:focus {
+  outline: 0;
 }

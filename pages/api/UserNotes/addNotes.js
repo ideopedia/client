@@ -10,6 +10,7 @@ export default async function addNotes(req, res) {
     Book_Name,
     Author,
     Notes,
+    Book_id,
 
     User_Id,
   } = req.body;
@@ -19,6 +20,7 @@ export default async function addNotes(req, res) {
       Book_Name,
       Author,
       Notes,
+      Book_id,
 
       User_Id,
     });
