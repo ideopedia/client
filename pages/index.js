@@ -131,15 +131,15 @@ export default function Home() {
       <br />
       <br />
       <div>
-        <div id="feat">
-          <span className="flex items-center justify-center lg:text-4xl md:text-2xl text-xl font-semibold text-green-500 uppercase">
+        <div>
+          <span className="flex items-center justify-center text-4xl font-semibold text-green-500 uppercase">
             Features
           </span>
         </div>
 
-        <div class="p-6 bg-white-300">
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-            <div class=" rounded-md flex items-center justify-center">
+        <div class="p-10 bg-white">
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4">
+            <div class="p-4 rounded-md flex items-center justify-center">
               <Features
                 features={features_sam}
                 info="The World’s only knowledge portal for leaders "
@@ -179,14 +179,14 @@ export default function Home() {
         </div>
       </div>
       <div className="Mobileappsection">
-        <div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex">
+        <div className="container  py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px]">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl lg:text-4xl md:text-2xl font-semibold text-green-500 uppercase">
-                Available in audio & text formats.
+                The World's only knowledge portal for top leaders
               </h1>
               <p className="mt-4 text-black lg:text-xl md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
@@ -196,25 +196,37 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container px-6 py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
+        <div className="container py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl lg:text-4xl md:text-2xl font-semibold text-green-500 uppercase">
-                Available in audio & text formats.
+                Featuring a new trend everyday
               </h1>
               <p className="mt-4 text-black lg:text-xl md:text-lg text-sm">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
-              <div className="mt">
-                <a className=" ">
-                  <Image src={download} width={320} />
-                </a>
-              </div>
             </div>
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-[560px]">
             <Image src={summarry} />
+          </div>
+        </div>
+        <div className="container py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex">
+          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px]">
+            <Image src={audio} />
+          </div>
+          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
+            <div className="max-w-lg">
+              <h1 className="text-xl lg:text-4xl md:text-2xl font-semibold text-green-500 uppercase">
+                Real world examples to enhance learning
+              </h1>
+              <p className="mt-4 text-black lg:text-xl md:text-lg text-sm">
+                Enjoy access to bestselling book summaries and content from our
+                partners, all available in audio or text segments.
+              </p>
+              <div className="mt-6"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -227,17 +239,17 @@ export default function Home() {
             class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2"
             style={{ padding: "1.2rem" }}
           >
-            <div class=" rounded-md flex items-center justify-start lg:pr-20">
+            <div class=" rounded-md flex items-center justify-start lg:pr-36">
               <span className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold uppercase">
                 Ideopedia is trusted and loved by India's leading influencers
               </span>
             </div>
-            <div class=" pt-5 rounded-md flex items-center justify-center lg:pr-40">
-              <span className="lg:text-lg md:text-lg text-sm text-black-700">
+            <div class=" pt-5 rounded-md flex items-center justify-center lg:pr-36">
+              <p className="lg:text-xl md:text-lg text-sm text-black-700">
                 An India where the power of ideas and their successful
                 implementation ensures prosperity, equity, and well-being for
                 all its citizens.
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -354,7 +366,7 @@ export default function Home() {
         <div className="border-[2px] border-green-500 cursor-pointer rounded-md px-1">
           <Link href="/testimonials">
             <div className="p-1 flex justify-center items-center border-green-500">
-              <div className="text-green-500 text-[16px]">Read more </div>
+              <div className="text-green-500 text-[18px]">Read more </div>
               <div className="pt-2 px-1">
                 <Image src={rightarr} width={20} />
               </div>

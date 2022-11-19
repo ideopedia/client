@@ -31,7 +31,7 @@ const New = () => {
       });;
   };
   const classes =
-    "border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
+    "border border-gray-300 text-gray-900 text-base font-medium rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500";
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -112,43 +112,46 @@ const New = () => {
           <div class="rounded-md flex items-center justify-center pb-9">
           <ToastContainer />
             <div className="newloginContainer">
-              <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
-                <FormHeader title="contact us" />
+              <div className="newLoginTop" style={{ marginLeft: "-1.8rem"}}>
+                <FormHeader title="CONTACT US" />
               </div>
               <form className="newLoginForm" ref={form} onSubmit={sendEmail}>
-                <label>Name</label>
+                <label className="text-lg font-medium">Name</label>
                 <input
                   className={classes}
                   type="text"
                   name="name"
                   value={name}
-                  placeholder="enter your Name"
+                  placeholder="Enter your name"
                   onChange={(e) => setName(e.target.value)}
                 />
-                <label>Email Id</label>
+                <label className="text-lg font-medium">Email Id</label>
                 <input
                   className={classes}
                   type="email"
                   name="email_Id"
                   value={email_Id}
-                  placeholder="enter your Email"
+                  placeholder="Enter your email"
                   onChange={(e) => setEmail_Id(e.target.value)}
                 />
-                <label>Message</label>
-                <input
+                <label className="text-lg font-medium">Message</label>
+                <textarea
                   className={classes + "pb-[4rem]"}
                   type="text"
                   name="message"
+                  rows="5"
+                  cols="50"
                   value={message}
-                  placeholder="enter your Message"
+                  placeholder="Write your message..."
                   onChange={(e) => setMessage(e.target.value)}
-                />
+                >
+                </textarea>
                 <div
                   id="button"
                   className="row flex justify-center items-center"
                 >
-                  <button type="submit" style={{ width: "100%" }}>
-                    Send Message
+                  <button type="submit" style={{ width: "40%" }}>
+                    Send
                   </button>
                 </div>
               </form>

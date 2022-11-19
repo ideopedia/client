@@ -8,7 +8,7 @@ import { useState, useReducer, useEffect, useRef } from "react";
 function Signup() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   const classes =
-    "border border-gray-300 text-gray-900 text-sm rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
+    "border-2 border-gray-300 text-gray-900 text-lg font-medium rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
   const emailRef = useRef();
   const passRef = useRef();
   const inviteRef = useRef();
@@ -127,8 +127,8 @@ function Signup() {
       <section class="h-screen new">
         <div class="px-6 h-full text-gray-800">
           <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-            <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0 new1">
-              <Image src={signupvector} />
+            <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-8/12 md:w-9/12 mb-12 md:mb-0 new1">
+              <Image src={signupvector}/>
             </div>
             {/* <SignUp
               title="Sign Up"
@@ -140,14 +140,14 @@ function Signup() {
             /> */}
             <div className="newloginContainer">
               <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
-                <FormHeader title="Email" />
+                <FormHeader title="SIGNUP" />
               </div>
               <form className="newLoginForm" onSubmit={loginSubmitHandler}>
-                <label>Email</label>
+                <label className="text-lg font-medium">Email</label>
                 <input
                   className={classes + emailClass}
                   type="email"
-                  placeholder="enter your email"
+                  placeholder="Enter your email"
                   onChange={emailChangeHandler}
                   ref={emailRef}
                   onBlur={emailBlurHandler}
@@ -167,7 +167,7 @@ function Signup() {
                   </p>
                 )}
                 <div className="flex justify-between pr-[1.5rem]">
-                  <label>Password</label>
+                  <label className="text-lg font-medium">Password</label>
                   <p
                     style={{ position: "relative", top: "2.3rem" }}
                     className="cursor-pointer"
@@ -183,7 +183,7 @@ function Signup() {
                 <input
                   className={classes + passClass}
                   type={pass}
-                  placeholder="enter your password"
+                  placeholder="Enter your password"
                   onChange={passwordChangeHandler}
                   ref={passRef}
                   onBlur={passBlurHandler}
@@ -202,11 +202,11 @@ function Signup() {
                     Enter atleast 6 characters
                   </p>
                 )}
-                <label>Invite code</label>
+                <label className="text-lg font-medium">Invite code</label>
                 <input
                   className={classes + inviteClass}
                   type="text"
-                  placeholder="enter your invite code"
+                  placeholder="Enter your invite code"
                   onChange={inviteChangeHandler}
                   ref={inviteRef}
                   onBlur={inviteBlurHandler}
@@ -231,17 +231,17 @@ function Signup() {
                 >
                   <button
                     type="submit"
-                    style={{ width: "100%" }}
+                    style={{ width: "40%" }}
                     // onClick={function handleClick() {
                     //   router.push("/read");
                     // }}
                   >
-                    Login
+                    Signup
                   </button>
                 </div>
 
                 <div className="signDesc" style={{ margin: "1.5rem auto" }}>
-                  <p>
+                  <p className="text-base font-medium">
                     Don't have an account?{"    "}
                     <span className="text-green-500">
                       <Link href="/login">Login here</Link>

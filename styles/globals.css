@@ -88,6 +88,10 @@
     font-size: 20px;
   }
 } */
+.heroTop
+{
+  padding: 26px 0;
+}
 @media screen and (max-width: 782px) {
   .heroTop {
     margin-top: 5rem;
@@ -452,7 +456,7 @@
 }
 .getstarted {
   width: 180px;
-  padding: 8px 15px;
+  padding: 10px 20px;
   text-align: center;
   border-radius: 5px;
   background-color: #2cb67d;
@@ -494,7 +498,7 @@
 .row {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-center;
   padding-top: 2rem;
   max-width: 100%;
 }
@@ -638,9 +642,9 @@
   align-items: center;
 } */
 
-#feat span {
+/* #feat span {
   font-size: 2rem;
-}
+} */
 
 .cti {
   width: 400px;
@@ -659,7 +663,7 @@
 
 .foottext {
   color: rgba(0, 0, 0, 0.4);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -674,7 +678,7 @@
 
 .hru {
   background-color: rgba(0, 0, 0, 0.5);
-  opacity: 50%;
+  opacity: 80%;
   height: 1.5px;
 }
 .nhr {
@@ -1129,4 +1133,9 @@
 }
 input[type="checkbox"]:focus {
   outline: 0;
+}
+.linespace 
+{
+  font-size: 20px;
+  line-height: 197%;
 }

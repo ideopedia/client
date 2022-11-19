@@ -40,11 +40,11 @@ function Hero() {
       <Navbar />
       <div className="h-auto">
         <div className="bg-white heroTop">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:h-screen">
-            <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-                <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-[28px]  text-black font-medium iii">
+          <div class="grid lg:grid-cols-[65%_35%] md:grid-cols-1">
+            <div class="flex items-center justify-start pl-16">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+                <div class=" flex items-center justify-center">
+                  <span className="text-[48px]  text-black font-medium iii">
                     INFORMING
                     <div className="bulletPoints">
                       {isBreakpoint ? (
@@ -65,16 +65,16 @@ function Hero() {
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="lg:text-[28px] text-xl text-green-500 font-medium">
-                    INDIA’S TOP LEADERS
+                  <span className="lg:text-[48px] text-xl text-green-500 font-medium">
+                    INDIA'S TOP LEADERS
                   </span>
                 </div>
-                <div class="lg:text-[28px] rounded-md flex items-center justify-center font-medium">
+                <div class="lg:text-[38px] rounded-md flex items-center justify-center font-medium">
                   <span>One idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
-                    <div className="getstarted lg:text-xl font-medium">
+                    <div className="getstarted lg:text-[20px] font-medium">
                       <button className="">Get Started</button>
                     </div>
                   </Link>

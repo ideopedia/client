@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div>
       <div class="pt-10 pb-4 footer">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4 focenter">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
           <div class="p-2  logo item">
             <div className="pt-20">
               <Image src={logo} width={120}/>
@@ -24,7 +24,7 @@ function Footer() {
                 <div className="bulletPoint">
                   <Image src={bpoint} />
                 </div>
-                IMPACTING 
+                <span className="pl-2">IMPACTING</span>
                 <div className="pl-2">INDIA'S TOP LEADERS</div>
                 <div className="pl-2">ONE IDEA AT A TIME</div>
               </label>
