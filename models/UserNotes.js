@@ -5,7 +5,7 @@ var userNotesSchema = new Schema({
   Book_Name: { type: String },
   Author: { type: String },
   Notes: { type: String },
-
+  Book_id:{type:String},
   User_Id: { type: String },
 });
 

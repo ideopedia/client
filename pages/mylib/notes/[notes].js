@@ -4,12 +4,13 @@ import Card from "../../../components/card";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import NotesGrid from "../../../components/NotesGrid";
 import { useRouter } from "next/router";
 import task from "../../../public/task.svg";
 import arr from "../../../public/downarr.svg";
 import Loader from "../../../components/loader";
 import Modal from "../../../components/notesModal";
-
+import NotesContainer from "../../../components/Notes";
 import create from "../../../public/create.svg";
 import fav from "../../../public/fav.svg";
 import note from "../../../public/note.svg";
@@ -27,6 +28,7 @@ const Notes = () => {
   const favo = router.query;
   const [arr, setArr] = useState(false);
   const [nts, setNts] = useState(false);
+  const [view, setView] = useState(true);
   const [user, setUser] = useState(false);
   useEffect(() => {
     Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
@@ -58,7 +60,10 @@ const Notes = () => {
               <div class="scrollmenu flex pt-9 ml-9">
                 <div className="pr-9 flex">
                   <Image src={task} />
-                  <Link href={`/mylib/completed/${favo.notes}`} className="navtxt">
+                  <Link
+                    href={`/mylib/completed/${favo.notes}`}
+                    className="navtxt"
+                  >
                     <span className="text-xl hover:text-green-700 cursor-pointer">
                       Completed
                     </span>
@@ -66,7 +71,10 @@ const Notes = () => {
                 </div>
                 <div className="pr-9 flex">
                   <Image src={fav} />
-                  <Link href={`/mylib/favourites/${favo.notes}`} className="navtxt">
+                  <Link
+                    href={`/mylib/favourites/${favo.notes}`}
+                    className="navtxt"
+                  >
                     <span className="text-xl hover:text-green-700 cursor-pointer">
                       Favourites
                     </span>
@@ -149,12 +157,12 @@ const Notes = () => {
                 </div>
                 <div className="flex cls">
                   <div className="inline-flex bg-white border rounded-md border-none drop-shadow">
-                    <a
+                    <span
                       href="#"
                       className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
                     >
-                      SortBy
-                    </a>
+                      view
+                    </span>
 
                     <div className="relative">
                       <button
@@ -181,18 +189,22 @@ const Notes = () => {
                       {arr ? (
                         <div className="absolute z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
                           <div className="p-2">
-                            <a
-                              href="#"
+                            <span
+                              onClick={function handleGrid() {
+                                setView(true);
+                              }}
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                             >
-                              Author
-                            </a>
-                            <a
-                              href="#"
+                              Grid
+                            </span>
+                            <span
+                              onClick={function handleGrid() {
+                                setView(false);
+                              }}
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                             >
-                              Tittle
-                            </a>
+                              Inline
+                            </span>
                           </div>
                         </div>
                       ) : (
@@ -203,38 +215,95 @@ const Notes = () => {
                 </div>
               </div>
               <br />
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-                <div class=" rounded-md flex items-center justify-center">
-                  <span className="text-2xl">
-                    What’s The Future And Why It’s Up To Us
-                  </span>
+              {view ? (
+                <div>
+                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                    <div class=" rounded-md flex items-center justify-center">
+                      <span className="lg:text-xl text-base">
+                        What’s The Future And Why It’s Up To Us
+                      </span>
+                    </div>
+                    <div class="rounded-md flex items-center justify-center">
+                      <div className="p-4 ">
+                        <input
+                          class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <Image src={dele} />
+                      </div>
+                      <div className="p-4 ">
+                        <Image src={share} />
+                      </div>
+                      <div className="p-4 ">
+                        <Image src={dropd} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pl-5 flex justify-start items-start ">
+                    <span>Tim O’Reilly</span>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
+                    <div class=" rounded-md flex items-center justify-center">
+                      <NotesContainer />
+                    </div>
+                    <div class="rounded-md flex items-center justify-center">
+                      <NotesContainer />
+                    </div>
+                    <div class="rounded-md flex items-center justify-center">
+                      <NotesContainer />
+                    </div>
+                  </div>
                 </div>
-                <div class="rounded-md flex items-center justify-center">
-                  <div className="p-4 ">
-                    <input
-                      class="form-check-input appearance-none h-4 w-4 border border-black rounded-sm bg-white checked:bg-black checked:border-black focus:outline-none   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                      type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
-                    />
+              ) : (
+                <div>
+                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                    <div class=" rounded-md flex items-center justify-center">
+                      <span className="lg:text-xl text-base">
+                        What’s The Future And Why It’s Up To Us
+                      </span>
+                    </div>
+                    <div class="rounded-md flex items-center justify-center">
+                      <div className="p-4 ">
+                        <input
+                          class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <Image src={dele} />
+                      </div>
+                      <div className="p-4 ">
+                        <Image src={share} />
+                      </div>
+                      <div className="p-4 ">
+                        <Image src={dropd} />
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <Image src={dele} />
+                  <div className="pl-5 flex justify-start items-start">
+                    <span>Tim O’Reilly</span>
                   </div>
-                  <div className="p-4 ">
-                    <Image src={share} />
-                  </div>
-                  <div className="p-4 ">
-                    <Image src={dropd} />
+                  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                    <div class=" rounded-md flex items-center justify-start">
+                      <NotesGrid />
+                    </div>
+                    <div class="rounded-md flex items-center justify-start">
+                      <NotesGrid />
+                    </div>
+                    <div class="rounded-md flex items-center justify-start">
+                      <NotesGrid />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              <div className="pl-9 flex justify-start items-start">
-                <span>Tim O’Reilly</span>
-              </div>
-
-              <Modal />
+              {/* <Modal /> */}
             </div>
           </div>
         </div>
