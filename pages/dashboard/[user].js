@@ -84,7 +84,7 @@ const Dashboard = () => {
               <div className="pt-9">
                 <h1 className="text-xl new2 pl-2">Welcome Back</h1>
               </div>
-              <div class="scrollmenu flex pt-9 w-[24rem]">
+              <div class="scrollmenu flex pt-9">
                 <div className=" flex justify-center items-center">
                   {type === "Bronze Influencer" ? (
                     <Image src={bronze}/>
@@ -131,11 +131,11 @@ const Dashboard = () => {
                   <ShareBox amt={data[0].Share} />
                 </div>
                 <div class="rounded-md flex items-center">
-                  <ChatBox amt={data[0].Chat} />
+                  <ChatBox amt={data[0].Feed} />
                 </div>
-                <div class="rounded-md flex items-center">
+                {/* <div class="rounded-md flex items-center">
                   <FeedBox amt={data[0].Feed} />
-                </div>
+                </div> */}
               </div>
               </div>
               <br />
@@ -151,7 +151,7 @@ const Dashboard = () => {
                 <div class="rounded-md  items-center justify-start pt-[3rem] lboard mx-[2rem]">
                     <h1 className="text-xl new2 pl-2 mb-[3rem]">Leaderboard</h1>
                   <div class=""style={{width:"20rem"}}>
-                    <div class=" rounded-md ">
+                    {/* <div class=" rounded-md ">
                       <div className="pt-3 pb-1 text-center">
                         <h1 className="text-xl ">Most Points</h1>
                       </div>
@@ -164,7 +164,7 @@ const Dashboard = () => {
                         <div className=" pb-1 text-center">
                           <h1 className="text-xl text-purple-700">1000</h1>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="  rounded-md flex items-center justify-start">
                       <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                         <div class=" rounded-md flex items-center justify-end">
@@ -173,7 +173,7 @@ const Dashboard = () => {
                           </div>
                         </div>
                         <div class="  rounded-md flex items-center justify-center">
-                          <Image src={rank2} />
+                          <Image src={rank2}/>
                         </div>
                         <div class="  rounded-md flex items-center justify-start">
                           <div className="pt-1 pb-1">
@@ -195,7 +195,7 @@ const Dashboard = () => {
                           </div>
                         </div>
                         <div class="  rounded-md flex items-center justify-center">
-                          <Image src={rank2} />
+                          <Image src={rank2}/>
                         </div>
                         <div class="  rounded-md flex items-center justify-start">
                           <div className="pt-1 pb-1">

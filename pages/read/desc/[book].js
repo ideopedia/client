@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
@@ -30,27 +30,34 @@ import DropdownComponent from "../../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
-  const init = { one: arrowone, two: arrowtwo };
-  const useWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(0);
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    useEffect(() => {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [handleResize]);
-    return screenWidth;
-  };
-  const screen = useWidth();
-  useEffect(() => {
-    return () => {
-      if (screen < 1025) {
-        setImages({ one: arrowthree, two: arrowfour });
+  const lap = { one: arrowone, two: arrowtwo };
+  const mob= { one: arrowthree, two: arrowfour };
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
       } else {
-        setImages(init);
+        setTargetReached(false);
       }
-    };
-  }, [screen]);
-  const [images, setImages] = useState(init);
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(1025);
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(true);
   const [benarr, setBenarr] = useState(false);
@@ -242,11 +249,11 @@ const Book = () => {
           </div>
           <br />
 
-          <div class="py-[3rem] timeSaved px-[1.5rem]">
-            <div class="flex items-center justify-around flexTime">
-              <div class=" rounded-md flex items-center justify-center">
+          <div class="py-[3rem] timeSaved">
+            <div class="flex items-center  flexTime">
+              <div class=" rounded-md  items-center ">
                 <div>
-                  <div className="wtf">
+                  <div className="wtf text-center">
                     <Image src={beforetime} />
                   </div>
 
@@ -264,7 +271,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
-                  <Image src={images.one} />
+                  <Image src={isBreakpoint?mob.one:lap.one} />
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -278,12 +285,12 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
-                  <Image src={images.two} />
+                  <Image src={isBreakpoint?mob.two:lap.two} />
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">
                 <div>
-                  <div className="wtf">
+                  <div className="wtf text-center">
                     <Image src={aftertime} />
                   </div>
 

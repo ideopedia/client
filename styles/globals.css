@@ -263,8 +263,11 @@
   .timeClock {
     margin: 0 20px;
   }
-  .timeSaved {
-    padding: 0 20%;
+}
+@media screen and (min-width:1025px){
+  .flexTime{
+    width: 90rem;
+    margin: 0 10rem;
   }
 }
 @media screen and (max-width: 1025px) {
@@ -439,8 +442,10 @@
     width: 25rem;
   }
 }
-@media screen and (max-width:1006px){
-  
+@media screen and (max-width:430px){
+  .scrollmenu{
+    width: 24rem;
+  }
 }
 /* .body {
   min-height: 100vh;

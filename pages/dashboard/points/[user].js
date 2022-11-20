@@ -48,16 +48,15 @@ const Points = () => {
       {data ? (
         <div>
           <div className="md:flex">
-            {/* <SideNavbar
+            <SideNavbar
               per={data[0].Profile_percent}
               image={data[0].Image}
               name={data[0].Name}
               u_id={data[0].User_Id}
-            /> */}
-
+            />
             <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
               <div className="flex">
-                <div className="pl-5 cls pt-9 justify-start">
+                <div className=" cls pt-9 justify-start">
                   <div className="flex ">
                     <div className="larr cursor-pointer ">
                       <Link href={`/dashboard/${data[0].User_Id}`}>
@@ -96,8 +95,8 @@ const Points = () => {
               <br />
               <br />
               <br />
-              <h1 className="text-xl new2 pl-2">Progress</h1>
-              <div className="medalAndProg mx-[2rem]">
+              <h1 className="text-xl new2 ">Progress</h1>
+              <div className="medalAndProg ml-[2rem] mt-[2rem] mx-[3rem]">
                 <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2 ">
                   <div class="rounded-md flex items-center">
                     <Image src={bronze} />
@@ -123,13 +122,13 @@ const Points = () => {
               </div>
               <br />
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">
-                <div class="p-4 rounded-md flex items-center justify-start">
-                  <h1 className="text-xl new2 pl-2">History</h1>
+                <div class=" rounded-md flex items-center justify-start">
+                  <h1 className="text-xl new2">History</h1>
                 </div>
                 <div class="p-4  rounded-md flex items-center justify-end">
                   <div className="flex">
                     <span className="pr-3 text-xl cursor-pointer">Sort By</span>
-                    <div className="flex mt-1">
+                    <div className="flex">
                       <div className="pr-3 text-base">
                         <Link href="">Book</Link>
                       </div>
@@ -144,39 +143,31 @@ const Points = () => {
               <br />
               {comp
                 ? comp.map((val) => (
-                    <div class="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-1 lg:gap-1">
+                    <div class="flex justify-between items-center mb-[3rem]">
                       {console.log(comp)}
-                      <div class="p-4 rounded-md flex items-center justify-start">
+                      <div class="flex justify-between w-[10rem] items-center">
                         <Image src={completedhis} />
-                      </div>
-                      <div class="p-4  rounded-md flex items-center justify-start">
                         <span>{val.date}</span>
                       </div>
-                      <div class="p-4  rounded-md flex items-center justify-start">
                         <span>{val.name}</span>
-                      </div>
-                      <div class="p-4  rounded-md flex items-center justify-center">
                         <span>Completed Book</span>
-                      </div>
-                      <div class="p-4  rounded-md flex items-center justify-start">
                         <span className="pointc">20 Points</span>
-                      </div>
                     </div>
                   ))
                 : console.log("no history")}
 
-              <h1 className="text-xl new2 pl-2 pt-5">How to Earn Points ?</h1>
+              <h1 className="text-xl new2 pt-5">How to Earn Points ?</h1>
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
-                <div class="p-4 rounded-md flex items-center justify-center">
+                <div class="p-4 rounded-md flex items-center">
                   <Image src={readp} />
                 </div>
-                <div class="p-4  rounded-md flex items-center justify-center">
+                <div class="p-4  rounded-md flex items-center">
                   <Image src={sharep} />
                 </div>
-                <div class="p-4  rounded-md flex items-center justify-center">
+                <div class="p-4  rounded-md flex items-center">
                   <Image src={chatp} />
                 </div>
-                <div class="p-4  rounded-md flex items-center justify-center">
+                <div class="p-4  rounded-md flex items-center">
                   <Image src={feedp} />
                 </div>
               </div>
