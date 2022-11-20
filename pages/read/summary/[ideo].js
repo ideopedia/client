@@ -40,6 +40,7 @@ const Read = () => {
   const router = useRouter();
   const favo = router.query;
 
+  const adid = favo.ideo;
   const array = favo.ideo.split(":");
   console.log(array[0]);
   console.log(array[1]);
@@ -219,7 +220,12 @@ const Read = () => {
                     >
                       <Image src={font} />
                     </div>
-                    <div className="p-2 RightIcons cursor-pointer">
+                    <div
+                      className="p-2 RightIcons cursor-pointer"
+                      onClick={function handleAudio() {
+                        router.push(`/read/audio/${adid}`);
+                      }}
+                    >
                       <Image src={sound} />
                     </div>
                   </div>

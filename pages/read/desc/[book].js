@@ -184,7 +184,7 @@ const Book = () => {
                     <div className="mr-1.5 mt-1">
                       <Image src={airpods} />
                     </div>
-                    <Link className="" href="/read/book">
+                    <Link className="" href={`/read/audio/${userid}:${data.id}1`}>
                       Listen
                     </Link>
                   </div>
