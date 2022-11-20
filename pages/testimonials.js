@@ -48,12 +48,12 @@ const OurReaders = () => {
             <Image src={readershero} />
           </div>
           <div class=" p-4 rounded-md flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-              <div class="rounded-md flex items-start justify-start">
-                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold readHead">OUR READERS</h1>
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-12">
+              <div class="rounded-md flex items-center justify-center">
+                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold">OUR READERS</h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <div className="lg:text-xl lg:leading-9 md:text-lg text-sm  text-gray-600 readContent text-left pr-20 font-medium">
+                <div className="lg:text-xl lg:leading-normal md:text-lg text-sm  text-gray-600 readContent text-left font-medium">
                   Ideopedia's Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
@@ -71,12 +71,12 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold readHead pl-20 px-8">
+                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold lg:leading-normal pl-20 px-8 text-center">
                   TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-sm  text-gray-600 pl-20 readContent px-8">
+                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-sm  text-gray-600 pl-20 readContent leading-normal px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its
@@ -104,7 +104,7 @@ const OurReaders = () => {
               </div>
               <br />
               <div className="flex justify-center items-center">
-                <span className=" p-10 text-black lg:text-3xl md:text-2xl text-base text-center uppercase font-regular">
+                <span className=" p-10 text-black lg:text-3xl lg:leading-normal md:text-2xl text-base text-center uppercase font-medium">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>

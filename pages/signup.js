@@ -248,7 +248,7 @@ function Signup() {
 
                 <div className="signDesc" style={{ margin: "1.5rem auto" }}>
                   <p className="text-base font-medium">
-                    Don't have an account?{"    "}
+                    Already have an account?{"    "}
                     <span className="text-green-500">
                       <Link href="/login">Login here</Link>
                     </span>

@@ -59,7 +59,7 @@ const Teams = () => {
               </div>
               <div class="rounded-md flex items-center justify-center">
                 <span className="font-medium text-2xl text-black ">
-                  Mr Binod Kumar Bawri
+                  Mr. Binod Kumar Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
@@ -79,7 +79,7 @@ const Teams = () => {
               </div>
               <div class="rounded-md flex items-center justify-center">
                 <span className="font-medium text-2xl text-black">
-                  Mr A Surya Prakash
+                  Mr. A. Surya Prakash
                 </span>
               </div>
               <div class="flex items-center justify-center">
@@ -99,7 +99,7 @@ const Teams = () => {
               </div>
               <div class="rounded-md flex items-center justify-center">
                 <span className="font-medium text-2xl text-black">
-                  Mr Swapan Dasgupta
+                  Mr. Swapan Dasgupta
                 </span>
               </div>
               <div class="flex items-center justify-center">
@@ -170,7 +170,7 @@ const Teams = () => {
                           </div>
                           <div class="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
-                              Mr Binod Kumar Bawri
+                              Mr. Binod Kumar Bawri
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
@@ -237,7 +237,7 @@ const Teams = () => {
                           </div>
                           <div class="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
-                              Mr A Surya Prakash
+                              Mr. A. Surya Prakash
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
@@ -301,7 +301,7 @@ const Teams = () => {
                           </div>
                           <div class="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
-                              Mr Swapan Dasgupta
+                              Mr. Swapan Dasgupta
                             </span>
                           </div>
                           <div class="flex items-center justify-center">

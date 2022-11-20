@@ -139,7 +139,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div class="p-10 bg-white">
+        <div class=" bg-white">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4">
             <div class="p-4 rounded-md flex items-center justify-center">
               <Features
@@ -188,9 +188,9 @@ export default function Home() {
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl lg:text-4xl lg:leading-normal md:text-2xl font-semibold text-green-500 uppercase text-center">
-                The World's only knowledge portal for top leaders
+                The World's only knowledge portal specially for leaders
               </h1>
-              <p className="mt-4 text-black lg:text-xl lg:leading-normal md:text-lg text-sm">
+              <p className="mt-4 text-black lg:text-xl lg:leading-[197%] md:text-lg text-sm font-medium">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -201,10 +201,10 @@ export default function Home() {
         <div className="container py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-4xl lg:leading-normal md:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-4xl lg:leading-normal md:text-2xl font-semibold text-green-500 uppercase text-center">
                 Featuring a new trend everyday
               </h1>
-              <p className="mt-4 text-black lg:text-xl lg:leading-normal md:text-lg text-sm">
+              <p className="mt-4 text-black lg:text-xl lg:leading-relaxed md:text-lg text-sm font-medium">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -220,10 +220,10 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="text-xl lg:text-4xl lg:leading-normal md:text-2xl font-semibold text-green-500 uppercase">
+              <h1 className="text-xl lg:text-4xl lg:leading-normal md:text-2xl font-semibold text-green-500 uppercase text-center">
                 Real world examples to enhance learning
               </h1>
-              <p className="mt-4 text-black lg:text-xl lg:leading-normal md:text-lg text-sm">
+              <p className="mt-4 text-black lg:text-xl lg:leading-relaxed md:text-lg text-sm font-medium">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -274,7 +274,7 @@ export default function Home() {
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -307,7 +307,7 @@ export default function Home() {
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
@@ -340,7 +340,7 @@ export default function Home() {
               </div>
               <div class="p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center">
+                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the

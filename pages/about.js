@@ -55,14 +55,14 @@ const About = () => {
               <Image src={about} />
             </div>
             <div class=" p-4 rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-                <div class="rounded-md flex items-start justify-start">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 px-10">
+                <div class="rounded-md flex items-center justify-center">
                   <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold">
                     WHAT IS IDEOPEDIA?
                   </h1>
                 </div>
-                <div class="mt-[1rem] rounded-md flex items-center justify-center pr-24">
-                  <span className="text-gray-500 font-medium linespace ">
+                <div class="mt-[1rem] rounded-md flex items-center justify-center lg:text-xl lg:leading-relaxed">
+                  <span className="text-gray-700 font-medium ">
                     Ideopedia is an invitation-only platform that identifies,
                     shares, and facilitates cutting-edge ideas with the top 5000
                     influencers in India.
@@ -85,20 +85,20 @@ const About = () => {
         <br />
         <div className="missionpage">
           <div
-            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-10 "
+            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 py-14"
             id="mission"
           >
-            <div class=" rounded-md flex items-center justify-center px-20">
-              <Image src={mission} />
+            <div class=" rounded-md flex items-center justify-center">
+              <Image src={mission} width={400} height={400} />
             </div>
             <div class=" rounded-md flex items-center justify-center">
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                <div class=" rounded-md flex items-start justify-start">
-                  <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold pb-3 lg:px-20 md:px-20 px-5">
+                <div class=" rounded-md flex items-center justify-center">
+                  <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold pb-5 pr-20">
                     MISSION
                   </h1>
                 </div>
-                <div class=" rounded-md flex items-center justify-center linespace font-medium text-gray-500 lg:px-20 md:px-20 px-5">
+                <div class=" rounded-md flex items-center justify-center lg:text-xl lg:leading-[197%] font-medium text-gray-700 px-20">
                   To Inspire, Enable, and Facilitate the creation and nurturing
                   of Ideas that can catalyse India's path to unprecedented
                   innovation and growth.
@@ -107,25 +107,27 @@ const About = () => {
             </div>
           </div>
           <div
-            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 lg:pb-9 md:pb-9 pt-10"
+            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 py-14"
             id="vission"
           >
             <div class=" rounded-md flex items-center justify-center">
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                <div class=" rounded-md flex items-start justify-start">
-                  <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold pb-3 lg:px-20 md:px-20 px-5">
+                <div class=" rounded-md flex items-center justify-center">
+                  <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold pb-5 pr-20">
                     VISION
                   </h1>
                 </div>
-                <div class=" rounded-md flex items-center justify-center linespace font-medium text-gray-500 lg:px-20 md:px-20 px-5">
+                <div class=" rounded-md flex items-center justify-center lg:text-xl lg:leading-[197%] font-medium text-gray-700 px-28">
                   An India where the power of ideas and their successful
                   implementation ensures prosperity, equity, and well-being for
                   all its citizens.
                 </div>
               </div>
             </div>
-            <div class=" rounded-md flex items-center justify-center px-20">
-              <Image src={vission} />
+            <div class=" rounded-md flex items-center justify-center">
+              <div className="">
+                <Image src={vission} width={400} height={400} />
+              </div>
             </div>
           </div>
         </div>
@@ -253,13 +255,20 @@ const About = () => {
           <div class=" rounded-md flex items-center justify-center p-14">
             <Image src={aboutkeys} />
           </div>
-          <div class="rounded-md flex items-center justify-center pr-28">
-            <span className="text-center lg:text-left font-medium lg:text-2xl lg:leading-loose">
-              The time has come for India to realize its true potential, and
-              reach unprecedented heights of economic, social, and human
-              potential to become a more prosperous, united, equitable, happy,
-              and healthy nation.
-            </span>
+          <div class=" rounded-md flex items-center justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+              <div class=" rounded-md flex items-center justify-center">
+                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold pb-10 pr-16">
+                  THE RIGHT TIME IS NOW
+                </h1>
+              </div>
+              <div class=" rounded-md flex items-center justify-center lg:text-xl lg:leading-[197%] font-medium text-gray-700 px-20">
+                The time has come for India to realize its true potential, and
+                reach unprecedented heights of economic, social, and human
+                potential to become a more prosperous, united, equitable, happy,
+                and healthy nation.
+              </div>
+            </div>
           </div>
         </div>
         <div className="py-20" id="goal">
