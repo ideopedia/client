@@ -86,8 +86,11 @@ function Signup() {
       console.log(user);
     }
     if (!emailValid) {
-      emailRef.current.focus();
-      return;
+      emailRef.current.focus()
+      return
+    }     
+    if(!passValid) {
+      passRef.current.focus()
     }
     if (!passValid) {
       passRef.current.focus();
