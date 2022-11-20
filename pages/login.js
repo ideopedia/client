@@ -3,6 +3,8 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import login from "../public/login.svg";
 import Image from "next/image";
+import eyeoff from "../public/eyeoff.svg"
+import eyeon from "../public/eyeon.svg"
 import Link from "next/link";
 import { useReducer, useEffect, useState, useRef } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
@@ -131,18 +133,19 @@ function Login() {
               <div className="flex justify-between pr-[1.5rem]">
                 <label>Password</label>
                 <p
-                  style={{ position: "relative", top: "2.3rem" }}
+                  style={{ position: "relative", top: "2.6rem" }}
                   className="cursor-pointer"
                   onClick={function handlePass() {
                     pass === "password" ? setPass("text") : setPass("password");
                   }}
                 >
-                  ic
+                  {pass==="password"?<Image src={eyeoff} />:<Image src={eyeon} />}
+                  
                 </p>
               </div>
 
               <input
-                className={classes + passClass}
+                className={classes + passClass} 
                 type={pass}
                 placeholder="enter your password"
                 onChange={passwordChangeHandler}
@@ -167,7 +170,7 @@ function Login() {
                 <label>
                   <input
                     style={{ marginRight: "6px" }}
-                    class="form-check-input appearance-none h-4 w-4 border-0 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                    class="form-check-input appearance-none h-4 w-4 border border-green-500 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"

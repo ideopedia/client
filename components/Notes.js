@@ -1,9 +1,9 @@
 import React from "react";
 
-const NotesContainer = () => {
+const NotesContainer = (props) => {
   return (
     <div>
-      <div className="w-[220px] h-[180px] rounded-lg bg-[#F9D371] oop">
+      <div className="w-[220px] h-[180px] rounded-lg bg-[#F9D371]">
         <div className="flex p-2 pt-4">
           <div>
             <input
@@ -14,8 +14,8 @@ const NotesContainer = () => {
               id="flexCheckDefault"
             ></input>
           </div>
-          <div className="flex justify-center items-center text-center text-[18px] pl-2">
-            djfsdifjkjp
+          <div className="flex justify-center items-center text-center text-black text-[18px] pl-2">
+            {props.info}
           </div>
         </div>
       </div>

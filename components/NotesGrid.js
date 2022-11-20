@@ -1,6 +1,6 @@
 import React from "react";
 
-const NotesGrid = () => {
+const NotesGrid = (props) => {
   return (
     <div>
       <div className="flex items-center p-4 w-full h-auto">
@@ -14,7 +14,7 @@ const NotesGrid = () => {
           ></input>
         </div>
         <div className="pl-3 pt-1">
-          <span className="text-[16px] text-center ">sdfjsd;ofk;j;sfkse;</span>
+          <span className="text-[16px] text-center ">{props.info}</span>
         </div>
       </div>
     </div>

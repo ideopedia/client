@@ -3,6 +3,8 @@ import Navbar from "../components/navbar";
 import signupvector from "../public/signupvector.svg";
 import Image from "next/image";
 import Link from "next/link";
+import eyeoff from "../public/eyeoff.svg";
+import eyeon from "../public/eyeon.svg";
 import SignUp from "./Auth";
 import { useState, useReducer, useEffect, useRef } from "react";
 function Signup() {
@@ -169,7 +171,7 @@ function Signup() {
                 <div className="flex justify-between pr-[1.5rem]">
                   <label>Password</label>
                   <p
-                    style={{ position: "relative", top: "2.3rem" }}
+                    style={{ position: "relative", top: "2.6rem" }}
                     className="cursor-pointer"
                     onClick={function handlePass() {
                       pass === "password"
@@ -177,7 +179,11 @@ function Signup() {
                         : setPass("password");
                     }}
                   >
-                    ic
+                    {pass === "password" ? (
+                      <Image src={eyeoff} />
+                    ) : (
+                      <Image src={eyeon} />
+                    )}
                   </p>
                 </div>
                 <input
