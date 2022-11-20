@@ -415,6 +415,33 @@
 .emailIp:focus {
   border: 2px solid green;
 }
+@media screen and (min-width:1023px){
+  .lboard{
+    position: relative;
+    bottom: 2rem;
+  }
+}
+@media screen and (max-width:412px){
+  .gridBx{
+    width: 24rem;
+  }
+}
+@media screen and (max-width:450px){
+  .medalAndProg{
+    margin:0 1rem
+  }
+  .medalCont{
+    margin:0 1rem;
+    width: 24rem;
+  }
+  .progBar{
+    padding: 0 1rem;
+    width: 25rem;
+  }
+}
+@media screen and (max-width:1006px){
+  
+}
 /* .body {
   min-height: 100vh;
 } */
