@@ -1,16 +1,16 @@
 import connectMongo from "../../../utils/connectMongo";
-import UserRecent from "../../../models/UserRecent";
+import Audios from "../../../models/Audio";
 /**
  *
  * @param {import('next').NextApiRequest} req
  * @param {import('next').NextApiResponse} res
  */
-export default async function listRecent(req, res) {
+export default async function listAudios(req, res) {
   try {
     await connectMongo();
 
-    var recents = await UserRecent.find({ User_Id: req.body.User_Id });
-    res.json(recents);
+    var audios = await Audios.find({ Ideo_id: req.body.Ideo_id });
+    res.json(audios);
   } catch (err) {
     res.json({ err });
   }

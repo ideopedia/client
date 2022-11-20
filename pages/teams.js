@@ -45,10 +45,12 @@ const Teams = () => {
         <div class=" rounded-md flex items-center justify-center">
           <div className="text-2xl font-medium text-black">
             <div>This is our team, a lot of smiling happy people</div>
-            <div className="text-center">who work hard to empower your teams</div>
+            <div className="text-center">
+              who work hard to empower your teams
+            </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-3 gap-4 lg:gap-8">
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard1}
@@ -69,6 +71,7 @@ const Teams = () => {
               </div>
             </div>
           </div>
+
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard2}
@@ -89,6 +92,7 @@ const Teams = () => {
               </div>
             </div>
           </div>
+
           <div
             class="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard3}
@@ -110,9 +114,10 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
           <div
-            class="p-4  rounded-md flex items-center justify-center cursor-pointer"
+            class=" rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleFounder1}
           >
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
@@ -125,7 +130,9 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">Founder</span>
+                <span className="font-medium text-xl text-black uppercase">
+                  Founder
+                </span>
               </div>
             </div>
           </div>
@@ -143,11 +150,14 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">Founder</span>
+                <span className="font-medium text-xl text-black uppercase">
+                  Founder
+                </span>
               </div>
             </div>
           </div>
         </div>
+
         {board1 ? (
           <>
             <div
@@ -186,25 +196,37 @@ const Teams = () => {
                       >
                         <span className="text-base text-black font-medium ">
                           <div className="py-5 pr-8">
-                          <span classname="text-green-500 " id="p1">Mr Binod Kumar Bawri</span> is a leading intellectual,
-                          visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia.</div> 
-                      
-                         <div className="py-5 pr-8">He is the pioneer of industrialization in North-East India. For
-                          over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. He has
-                          uplifted the lives of tens of thousands of people
-                          through results-oriented philanthrophy and
-                          public-spirited endeavors.</div> 
-                          
-                          <div className="py-5 pr-8">He was the Founder of Calcom Cement, the largest private-sector enterprise
-                          in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually.</div>
+                            <span classname="text-green-500 " id="p1">
+                              Mr Binod Kumar Bawri
+                            </span>{" "}
+                            is a leading intellectual, visionary, entrepreneur,
+                            and philanthropist in India. He is the Founding
+                            Director of Ideopedia.
+                          </div>
 
-                          <div className="py-5 pr-8">Mr Bawri has over 30 years of experience in the cement
-                          industry, and over 40 years of business experience in
-                          manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.</div>
+                          <div className="py-5 pr-8">
+                            He is the pioneer of industrialization in North-East
+                            India. For over 40 years he has dedicated himself to
+                            the economic and social enhancement of North-East
+                            India. He has uplifted the lives of tens of
+                            thousands of people through results-oriented
+                            philanthrophy and public-spirited endeavors.
+                          </div>
+
+                          <div className="py-5 pr-8">
+                            He was the Founder of Calcom Cement, the largest
+                            private-sector enterprise in North-East India.
+                            Calcom provided direct and indirect employment to
+                            over 25,000 people annually.
+                          </div>
+
+                          <div className="py-5 pr-8">
+                            Mr Bawri has over 30 years of experience in the
+                            cement industry, and over 40 years of business
+                            experience in manufacturing. At the age of 21 he set
+                            up one of the first manufacturing industries in
+                            North-East India.
+                          </div>
                         </span>
                       </div>
                     </div>
@@ -252,23 +274,33 @@ const Teams = () => {
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
-                        <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
-                          visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia.</div>
-                          <div className="py-5 pr-8">He is the pioneer of industrialization in North-East India. For
-                          over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. 
-                          He has uplifted the lives of tens of thousands of people
-                          through results-oriented philanthrophy and
-                          public-spirited endeavors.</div>
-                          <div className="py-5 pr-8">He was the Founder of
-                          Calcom Cement, the largest private-sector enterprise
-                          in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually.</div>
-                          <div className="py-5 pr-8">Mr Bawri has over 30 years of experience in the cement
-                          industry, and over 40 years of business experience in
-                          manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.</div>
+                          <div className="py-5 pr-8">
+                            <span id="p2">Mr Binod Kumar Bawri</span> is a
+                            leading intellectual, visionary, entrepreneur, and
+                            philanthropist in India. He is the Founding Director
+                            of Ideopedia.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He is the pioneer of industrialization in North-East
+                            India. For over 40 years he has dedicated himself to
+                            the economic and social enhancement of North-East
+                            India. He has uplifted the lives of tens of
+                            thousands of people through results-oriented
+                            philanthrophy and public-spirited endeavors.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He was the Founder of Calcom Cement, the largest
+                            private-sector enterprise in North-East India.
+                            Calcom provided direct and indirect employment to
+                            over 25,000 people annually.
+                          </div>
+                          <div className="py-5 pr-8">
+                            Mr Bawri has over 30 years of experience in the
+                            cement industry, and over 40 years of business
+                            experience in manufacturing. At the age of 21 he set
+                            up one of the first manufacturing industries in
+                            North-East India.
+                          </div>
                         </span>
                       </div>
                     </div>
@@ -316,25 +348,32 @@ const Teams = () => {
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
-                        <div className="py-5 pr-8"><span id="p3">Mr Binod Kumar Bawri</span> is a leading intellectual,
-                          visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia.</div>
-                          <div className="py-5 pr-8">He is the
-                          pioneer of industrialization in North-East India. For
-                          over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. He has
-                          uplifted the lives of tens of thousands of people
-                          through results-oriented philanthrophy and
-                          public-spirited endeavors.</div>
-                          <div className="py-5 pr-8">He was the Founder of
-                          Calcom Cement, the largest private-sector enterprise
-                          in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually.</div>
-                          <div className="py-5 pr-8">Mr
-                          Bawri has over 30 years of experience in the cement
-                          industry, and over 40 years of business experience in
-                          manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.
+                          <div className="py-5 pr-8">
+                            <span id="p3">Mr Binod Kumar Bawri</span> is a
+                            leading intellectual, visionary, entrepreneur, and
+                            philanthropist in India. He is the Founding Director
+                            of Ideopedia.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He is the pioneer of industrialization in North-East
+                            India. For over 40 years he has dedicated himself to
+                            the economic and social enhancement of North-East
+                            India. He has uplifted the lives of tens of
+                            thousands of people through results-oriented
+                            philanthrophy and public-spirited endeavors.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He was the Founder of Calcom Cement, the largest
+                            private-sector enterprise in North-East India.
+                            Calcom provided direct and indirect employment to
+                            over 25,000 people annually.
+                          </div>
+                          <div className="py-5 pr-8">
+                            Mr Bawri has over 30 years of experience in the
+                            cement industry, and over 40 years of business
+                            experience in manufacturing. At the age of 21 he set
+                            up one of the first manufacturing industries in
+                            North-East India.
                           </div>
                         </span>
                       </div>
@@ -383,25 +422,33 @@ const Teams = () => {
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
-                        <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
-                          visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia.</div>
-                          <div className="py-5 pr-8">He is the
-                          pioneer of industrialization in North-East India. For
-                          over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. He has
-                          uplifted the lives of tens of thousands of people
-                          through results-oriented philanthrophy and
-                          public-spirited endeavors.</div>
-                          <div className="py-5 pr-8">He was the Founder of
-                          Calcom Cement, the largest private-sector enterprise
-                          in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually.</div>
-                          <div className="py-5 pr-8">Mr
-                          Bawri has over 30 years of experience in the cement
-                          industry, and over 40 years of business experience in
-                          manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.</div>
+                          <div className="py-5 pr-8">
+                            <span id="p2">Mr Binod Kumar Bawri</span> is a
+                            leading intellectual, visionary, entrepreneur, and
+                            philanthropist in India. He is the Founding Director
+                            of Ideopedia.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He is the pioneer of industrialization in North-East
+                            India. For over 40 years he has dedicated himself to
+                            the economic and social enhancement of North-East
+                            India. He has uplifted the lives of tens of
+                            thousands of people through results-oriented
+                            philanthrophy and public-spirited endeavors.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He was the Founder of Calcom Cement, the largest
+                            private-sector enterprise in North-East India.
+                            Calcom provided direct and indirect employment to
+                            over 25,000 people annually.
+                          </div>
+                          <div className="py-5 pr-8">
+                            Mr Bawri has over 30 years of experience in the
+                            cement industry, and over 40 years of business
+                            experience in manufacturing. At the age of 21 he set
+                            up one of the first manufacturing industries in
+                            North-East India.
+                          </div>
                         </span>
                       </div>
                     </div>
@@ -445,27 +492,34 @@ const Teams = () => {
                         </div>
                       </div>
                       <div class=" rounded-md flex items-center justify-center">
-                        <span
-                          className="text-base font-medium text-black">
-                         <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
-                          visionary, entrepreneur, and philanthropist in India.
-                          He is the Founding Director of Ideopedia.</div>
-                          <div className="py-5 pr-8">He is the
-                          pioneer of industrialization in North-East India. For
-                          over 40 years he has dedicated himself to the economic
-                          and social enhancement of North-East India. He has
-                          uplifted the lives of tens of thousands of people
-                          through results-oriented philanthrophy and
-                          public-spirited endeavors.</div>
-                          <div className="py-5 pr-8">He was the Founder of
-                          Calcom Cement, the largest private-sector enterprise
-                          in North-East India. Calcom provided direct and
-                          indirect employment to over 25,000 people annually.</div>
-                          <div className="py-5 pr-8">Mr
-                          Bawri has over 30 years of experience in the cement
-                          industry, and over 40 years of business experience in
-                          manufacturing. At the age of 21 he set up one of the
-                          first manufacturing industries in North-East India.</div>
+                        <span className="text-base font-medium text-black">
+                          <div className="py-5 pr-8">
+                            <span id="p2">Mr Binod Kumar Bawri</span> is a
+                            leading intellectual, visionary, entrepreneur, and
+                            philanthropist in India. He is the Founding Director
+                            of Ideopedia.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He is the pioneer of industrialization in North-East
+                            India. For over 40 years he has dedicated himself to
+                            the economic and social enhancement of North-East
+                            India. He has uplifted the lives of tens of
+                            thousands of people through results-oriented
+                            philanthrophy and public-spirited endeavors.
+                          </div>
+                          <div className="py-5 pr-8">
+                            He was the Founder of Calcom Cement, the largest
+                            private-sector enterprise in North-East India.
+                            Calcom provided direct and indirect employment to
+                            over 25,000 people annually.
+                          </div>
+                          <div className="py-5 pr-8">
+                            Mr Bawri has over 30 years of experience in the
+                            cement industry, and over 40 years of business
+                            experience in manufacturing. At the age of 21 he set
+                            up one of the first manufacturing industries in
+                            North-East India.
+                          </div>
                         </span>
                       </div>
                     </div>
