@@ -3,10 +3,12 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import log from "../public/logo.svg";
+import { useRouter } from "next/router";
 import { Dropdown } from "flowbite-react";
 import drop from "../public/dropdownlogo.svg"
 
 export default function Navbar() {
+  const router = useRouter()
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
@@ -64,7 +66,9 @@ export default function Navbar() {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center">Our Readers <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    <button class="dropbtn flex items-center justify-center" onClick={function handleClick(){
+                      router.push("/testimonials")
+                    }}>Our Readers <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
@@ -72,7 +76,9 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center">About Us <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
+                      router.push("/about")
+                    }}>About Us <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
@@ -83,7 +89,9 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center">Team <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
+                      router.push("/teams")
+                    }}>Team <div className="mt-2 ml-1"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
                       <Link href="/teams#bod">Founders</Link>

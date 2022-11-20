@@ -71,12 +71,12 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold readHead px-8">
+                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold readHead pl-20 px-8">
                   TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-sm  text-gray-600 readContent px-8">
+                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-sm  text-gray-600 pl-20 readContent px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its

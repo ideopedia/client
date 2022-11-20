@@ -32,10 +32,9 @@ export default function SliderComponent() {
                             autoplay
                             loop
                             src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                            style={{ height: '620px', width: '620px' }}
-                            className="cim lg:pr-20"
+                            style={{ height: '380px', width: '380px' }}
+                            className="cim pr-9"
                         >
-
                         </Player>
                     </SwiperSlide>
                     

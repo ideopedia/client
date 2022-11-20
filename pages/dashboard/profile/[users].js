@@ -148,7 +148,7 @@ const profile = () => {
                   placeholder="+234"
                   onChange={(e) => setPhone(e.target.value)}
                 />
-                <label>Designation</label>
+                {/* <label>Designation</label>
                 <div>
                   <i className="ipSvg">
                     <Image src={abou} />
@@ -160,7 +160,7 @@ const profile = () => {
                   
                   placeholder="Add designation"
                   onChange={(e) => setDes(e.target.value)}
-                />
+                /> */}
                 <label>Birthday</label>
                 <div>
                   <i className="ipSvg">
@@ -187,7 +187,7 @@ const profile = () => {
                   placeholder="Add City of Birth"
                   onChange={(e) => setNative(e.target.value)}
                 />
-                <label>School/College Name</label>
+                {/* <label>School/College Name</label>
                 <div>
                   <i className="ipSvg">
                     <Image src={abou} />
@@ -199,7 +199,7 @@ const profile = () => {
                   required
                   placeholder="Add School/College Name"
                   onChange={(e) => setSchool(e.target.value)}
-                />
+                /> */}
                 <label>Spouse Name</label>
                 <div>
                   <i className="ipSvg">
@@ -241,7 +241,7 @@ const profile = () => {
                   onChange={(e) => setPaddr(e.target.value)}
                   style={{ paddingBottom: "3rem" }}
                 />
-                <label>About</label>
+                {/* <label>About</label>
                 <div>
                   <i className="ipSvg">
                     <Image src={abou} />
@@ -254,10 +254,10 @@ const profile = () => {
                   placeholder="Add a short Bio"
                   onChange={(e) => setAbt(e.target.value)}
                   style={{ paddingBottom: "3rem" }}
-                />
+                /> */}
                 <div
-                  className="formBtn"
-                  style={{ textAlign: "left", width: "10rem" }}
+                  className="formBtn pb-16 flex items-center justify-center"
+                  
                 >
                   <div className="savebtn pb-20 font-semibold">
                       <button type="submit" onClick={handleSubmit}>

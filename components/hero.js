@@ -6,9 +6,9 @@ import SliderComponent from "../components/heroslider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import bpoints from "../public/circle.svg";
 import Navbar from "../components/navbar";
-import Bullet from "./Bullet";
+import Bullet from "../components/Bullet";
 
-function Hero() {
+function Newhero() {
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
 
@@ -37,14 +37,13 @@ function Hero() {
   const isBreakpoint = useMediaQuery(800);
   return (
     <div>
-      <Navbar />
-      <div className="h-auto">
-        <div className="bg-white heroTop">
-          <div class="grid lg:grid-cols-[65%_35%] md:grid-cols-1">
-            <div class="flex items-center justify-start pl-16">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                <div class=" flex items-center justify-center">
-                  <span className="text-[48px]  text-black font-medium iii">
+      <div className="h-screen">
+        <div className="lg:flex justify-center items-center lg:pt-9 pt-0">
+          <div className="lg:flex lg:justify-between lg:items-center p-5">
+            <div className="w-auto h-auto p-1 lg:pt-16">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-7">
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="xl:text-[50px] lg:text-[34px] text-black font-medium iii">
                     INFORMING
                     <div className="bulletPoints">
                       {isBreakpoint ? (
@@ -65,59 +64,35 @@ function Hero() {
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="lg:text-[48px] text-xl text-green-500 font-medium">
+                  <span className="xl:text-[42px] lg:text-[34px] text-xl text-green-500 font-medium">
                     INDIA'S TOP LEADERS
                   </span>
                 </div>
-                <div class="lg:text-[38px] rounded-md flex items-center justify-center font-medium">
-                  <span>One idea at a time</span>
+                <div class="xl:text-[38px] lg:text-[32px] rounded-md flex items-center justify-center font-medium">
+                  <span>one idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
                   <Link href="/signup">
-                    <div className="getstarted lg:text-[20px] font-medium">
+                    <div className="getstarted lg:text-xl font-medium">
                       <button className="">Get Started</button>
                     </div>
                   </Link>
                 </div>
               </div>
             </div>
-            <div class="rounded-md flex items-center justify-center">
-              <SliderComponent />
+            <div className="w-auto h-auto  ">
+              <Player
+                autoplay
+                loop
+                src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
+                className=" xl:w-[500px] xl:h-[500px] lg:w-[380px] lg:h-[400px] md:w-[400px] md:h-[400px]"
+              ></Player>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   );
 }
 
-export default Hero;
-
-{
-  /*
-<div className="container px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
-                        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
-                            <div className="max-w-lg">
-                                <h1 className="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">Set your
-                                    Title</h1>
-                                <p className="mt-4  text-black">Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                                    laudantium quod rem voluptatem eos accusantium cumque.</p>
-                                <div className="mt-6">
-                                    <a href="#"
-                                        className=" px-3 py-2  text-center text-white transition-colors duration-200 transform get">
-                                        Get Started</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
-
-                           
-                                <SliderComponent />
-                            
-
-
-                        </div>
-                    </div>
-*/
-}
+export default Newhero;

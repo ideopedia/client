@@ -83,24 +83,23 @@
     padding-top: 13px;
   }
 }
-/* @media screen and (max-width: 915px) {
+@media screen and (max-width: 915px) {
   .iii {
     font-size: 20px;
   }
-} */
-.heroTop
-{
+}
+.heroTop {
   padding: 26px 0;
 }
 @media screen and (max-width: 782px) {
   .heroTop {
     margin-top: 5rem;
   }
-  /* .iii {
+  .iii {
     font-size: 18px;
-  } */
+  }
 }
-/* @media screen and (max-width: 442px) {
+@media screen and (max-width: 442px) {
   .iii {
     font-size: 20px;
   }
@@ -109,7 +108,7 @@
   .iii {
     font-size: 17px;
   }
-} */
+}
 .loginImg {
   width: 650px;
 }
@@ -151,11 +150,11 @@
   margin: 1rem 0 0;
 }
 .bulletPoints {
-  margin: 6px;
+  margin: 10px;
   display: inline-block;
   font-size: 8px;
   position: relative;
-  bottom: 2px;
+  bottom: 4px;
 }
 .bulletPoint {
   margin: 5px;
@@ -199,9 +198,9 @@
   .ideoIcons {
     width: 1.5rem;
   }
-  /* .progRight{
+  .progRight {
     padding: 0 3rem;
-  } */
+  }
   .perc {
     font-size: 10px;
   }
@@ -456,7 +455,7 @@
 }
 .getstarted {
   width: 180px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   text-align: center;
   border-radius: 5px;
   background-color: #2cb67d;
@@ -636,15 +635,15 @@
   z-index: -99999999;
 }
 
-/* #feat {
+#feat {
   text-align: center;
   justify-content: center;
   align-items: center;
-} */
+}
 
-/* #feat span {
+#feat span {
   font-size: 2rem;
-} */
+}
 
 .cti {
   width: 400px;
@@ -989,19 +988,19 @@
   box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.1);
 }
 
-#p1{
+#p1 {
   color: #2cb67d !important;
 }
-#p2{
+#p2 {
   color: #2cb67d !important;
 }
-#p3{
+#p3 {
   color: #2cb67d !important;
 }
-#p4{
+#p4 {
   color: #2cb67d !important;
 }
-#p5{
+#p5 {
   color: #2cb67d !important;
 }
 
@@ -1134,8 +1133,7 @@
 input[type="checkbox"]:focus {
   outline: 0;
 }
-.linespace 
-{
+.linespace {
   font-size: 20px;
   line-height: 197%;
 }

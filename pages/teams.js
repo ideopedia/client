@@ -63,7 +63,7 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black uppercase">
+                <span className="font-medium text-xl text-black uppercase">
                   Founder - director
                 </span>
               </div>
@@ -83,7 +83,7 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black uppercase">
+                <span className="font-medium text-xl text-black uppercase">
                   director
                 </span>
               </div>
@@ -103,7 +103,7 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black uppercase">
+                <span className="font-medium text-xl text-black uppercase">
                   director
                 </span>
               </div>
@@ -125,7 +125,7 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black uppercase">Founder</span>
+                <span className="font-medium text-xl text-black uppercase">Founder</span>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ const Teams = () => {
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="text-bold text-xl text-black uppercase">Founder</span>
+                <span className="font-medium text-xl text-black uppercase">Founder</span>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                            <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               founder - director
                             </span>
                           </div>
@@ -184,7 +184,7 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-base text-black ">
+                        <span className="text-base text-black font-medium ">
                           <div className="py-5 pr-8">
                           <span classname="text-green-500 " id="p1">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
@@ -241,7 +241,7 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                            <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               director
                             </span>
                           </div>
@@ -251,7 +251,7 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-base text-black ">
+                        <span className="text-base text-black font-medium">
                         <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
                           He is the Founding Director of Ideopedia.</div>
@@ -305,7 +305,7 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                            <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               director
                             </span>
                           </div>
@@ -315,7 +315,7 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-base text-black ">
+                        <span className="text-base text-black font-medium">
                         <div className="py-5 pr-8"><span id="p3">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
                           He is the Founding Director of Ideopedia.</div>
@@ -372,7 +372,7 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                            <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
                           </div>
@@ -382,7 +382,7 @@ const Teams = () => {
                         class=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
-                        <span className="text-base text-black ">
+                        <span className="text-base text-black font-medium">
                         <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
                           He is the Founding Director of Ideopedia.</div>
@@ -438,7 +438,7 @@ const Teams = () => {
                             </span>
                           </div>
                           <div class="flex items-center justify-center">
-                            <span className="text-bold text-xl text-gray-500 pb-9 uppercase">
+                            <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
                           </div>
@@ -446,7 +446,7 @@ const Teams = () => {
                       </div>
                       <div class=" rounded-md flex items-center justify-center">
                         <span
-                          className="text-base text-black">
+                          className="text-base font-medium text-black">
                          <div className="py-5 pr-8"><span id="p2">Mr Binod Kumar Bawri</span> is a leading intellectual,
                           visionary, entrepreneur, and philanthropist in India.
                           He is the Founding Director of Ideopedia.</div>
