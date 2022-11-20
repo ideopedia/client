@@ -71,7 +71,7 @@ function Signup() {
     if (!emailValid) {
       emailRef.current.focus()
       return
-    } 
+    }     
     if(!passValid) {
       passRef.current.focus()
     }

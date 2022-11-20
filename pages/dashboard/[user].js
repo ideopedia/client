@@ -80,24 +80,25 @@ const Dashboard = () => {
               name={data[0].Name}
               u_id={data[0].User_Id}
             />
-            <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/1">
+            <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1">
               <div className="pt-9">
                 <h1 className="text-xl new2 pl-2">Welcome Back</h1>
               </div>
-              <div class="scrollmenu flex pt-9 ">
-                <div className="pr-3 flex justify-center items-center">
+              <div class="scrollmenu flex pt-9 w-[24rem]">
+                <div className=" flex justify-center items-center">
                   {type === "Bronze Influencer" ? (
-                    <Image src={bronze} />
+                    <Image src={bronze}/>
                   ) : (
-                    <Image src={silver} />
+                    <Image src={silver}/>
                   )}
                 </div>
-                <div className="pr-3 pt-2 flex">
+                
+                <div className="pr-3 pt-2 flex"style={{position:"relative",left:"1rem"}}>
                   <Link href="/mylib/completed" className="navtxt">
                     <span className="text-xl cursor-pointer">{type}</span>
                   </Link>
-                </div>
-                <div className="pr-3 pt-2 flex">
+                </div> 
+                <div className="pr-3 pt-2 flex" style={{position:"relative",left:"1rem"}}>
                   <Link href="/mylib/favourites" className="navtxt ">
                     <span className="text-xl text-purple-700 cursor-pointer text-bold new2">
                       {20 * data[0].Read +
@@ -112,58 +113,57 @@ const Dashboard = () => {
                       href={`/dashboard/points/${data[0].User_Id}`}
                       className="navtxt"
                     >
-                      <span className="text-base text-gray-700 cursor-pointer text-bold new2">
+                      <span className="text-base text-gray-700 cursor-pointer text-bold new2" >
                         Learn more
                       </span>
                     </Link>
                   </div>
+        
                 </div>
               </div>
               <br />
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
-                <div class="rounded-md flex items-center justify-center">
+              <div className="gridBx">
+              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1">
+                <div class="rounded-md flex items-center " >
                   <ReadBox amt={data[0].Read} />
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div class=" rounded-md flex items-center">
                   <ShareBox amt={data[0].Share} />
                 </div>
-                <div class="rounded-md flex items-center justify-center">
+                <div class="rounded-md flex items-center">
                   <ChatBox amt={data[0].Chat} />
                 </div>
-                <div class="rounded-md flex items-center justify-center">
+                <div class="rounded-md flex items-center">
                   <FeedBox amt={data[0].Feed} />
                 </div>
               </div>
+              </div>
               <br />
               <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-2">
-                <div class=" rounded-md  items-center justify-start">
+                <div class=" rounded-md  items-center justify-start mb-[-8rem]">
                   <div className="pt-3 pb-4">
                     <h1 className="text-xl new2 pl-2">ACTIVITY</h1>
                   </div>
+                  <div class="">
                   <UserChart array={data[0].Activity} />
-                </div>
-                <div class="  rounded-md  items-center justify-start">
-                  <div className="pt-3 ">
-                    <h1 className="text-xl new2 pl-2">Leaderboard</h1>
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2">
-                    <div class=" rounded-md flex items-center justify-center">
-                      <div className="pt-3 pb-1">
+                </div>
+                <div class="rounded-md  items-center justify-start pt-[3rem] lboard mx-[2rem]">
+                    <h1 className="text-xl new2 pl-2 mb-[3rem]">Leaderboard</h1>
+                  <div class=""style={{width:"20rem"}}>
+                    <div class=" rounded-md ">
+                      <div className="pt-3 pb-1 text-center">
                         <h1 className="text-xl ">Most Points</h1>
                       </div>
-                    </div>
-                    <div class=" rounded-md flex items-center justify-center">
-                      <div>
-                        <div className="pl-3">
+                      <div className="pl-3 mt-[1rem] text-center">
                           <Image src={rank1} />
                         </div>
-                        <div className="pt-1 pb-1">
+                        <div className=" pb-1 text-center mb-[1rem]">
                           <h1 className="text-xl ">Sarah Martins</h1>
                         </div>
-                        <div className="pl-6 pb-1">
+                        <div className=" pb-1 text-center">
                           <h1 className="text-xl text-purple-700">1000</h1>
                         </div>
-                      </div>
                     </div>
                     <div class="  rounded-md flex items-center justify-start">
                       <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">

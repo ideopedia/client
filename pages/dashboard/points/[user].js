@@ -48,12 +48,12 @@ const Points = () => {
       {data ? (
         <div>
           <div className="md:flex">
-            <SideNavbar
+            {/* <SideNavbar
               per={data[0].Profile_percent}
               image={data[0].Image}
               name={data[0].Name}
               u_id={data[0].User_Id}
-            />
+            /> */}
 
             <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
               <div className="flex">
@@ -94,12 +94,12 @@ const Points = () => {
                 </div>
               </div>
               <br />
+              <br />
+              <br />
               <h1 className="text-xl new2 pl-2">Progress</h1>
-              <br />
-              <br />
-              <div>
-                <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2">
-                  <div class="rounded-md flex items-center justify-start">
+              <div className="medalAndProg mx-[2rem]">
+                <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2 ">
+                  <div class="rounded-md flex items-center">
                     <Image src={bronze} />
                   </div>
                   <div class="p-4  rounded-md flex items-center justify-center">
@@ -109,7 +109,7 @@ const Points = () => {
                     <Image src={gold} />
                   </div>
                 </div>
-
+                <div className=" ">
                 <ProgressBar
                   completed={
                     20 * data[0].Read +
@@ -119,6 +119,7 @@ const Points = () => {
                   }
                   customLabel=" "
                 />
+                </div>
               </div>
               <br />
               <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">

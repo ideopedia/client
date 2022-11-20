@@ -65,8 +65,8 @@ export default function UserChart(props) {
   });
 
   return (
-    <div className="w-[400px] h-[400px] ">
-      <canvas id="myChart" ref={canvasEl} height="250" width="400" />
+    <div className="w-[400px] h-[400px]">
+      <canvas id="myChart" ref={canvasEl} height="250" width="300" className="mr-[3rem]" />
     </div>
   );
 }
