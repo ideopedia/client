@@ -10,6 +10,7 @@ export default async function listNotes(req, res) {
     await connectMongo();
 
     var books = await UserNotes.find({ User_Id: req.body.User_Id });
+    
     res.json(books);
   } catch (err) {
     res.json({ err });

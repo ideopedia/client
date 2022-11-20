@@ -28,15 +28,53 @@ const Notes = () => {
   const favo = router.query;
   const [arr, setArr] = useState(false);
   const [nts, setNts] = useState(false);
+  const [notes, setNotes] = useState(false);
   const [view, setView] = useState(true);
   const [user, setUser] = useState(false);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+  //     User_Id: favo.notes,
+  //   }).then((data) => {
+  //     setUser(data.data);
+  //   });
+  // }, []);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
-      User_Id: favo.notes,
-    }).then((data) => {
-      setUser(data.data);
-    });
+    const fetchData = async () => {
+      const result = await Axios.post(
+        "http://localhost:3000/api/UserDashboard/findUser",
+        {
+          User_Id: favo.notes,
+        }
+      );
+
+      setUser(result.data);
+    };
+
+    fetchData();
+    //console.log(data);
   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await Axios.post(
+        "http://localhost:3000/api/UserNotes/listNotes",
+        {
+          User_Id: favo.notes,
+        }
+      );
+
+      setNotes(result.data);
+    };
+
+    fetchData();
+    //console.log(data);
+  }, []);
+  // useEffect(() => {
+  //   Axios.post("http://localhost:3000/api/UserNotes/listNotes", {
+  //     User_Id: favo.notes,
+  //   }).then((data) => {
+  //     setNotes(data.data);
+  //   });
+  // }, []);
   function handleDown() {
     setArr(!arr);
   }
@@ -45,8 +83,10 @@ const Notes = () => {
   }
   return (
     <div>
-      {user ? (
+      {user && notes ? (
         <div>
+          {console.log(notes)}
+          {console.log(user)}
           <div className="md:flex">
             <SideNavbar
               per={user[0].Profile_percent}
@@ -193,7 +233,7 @@ const Notes = () => {
                               onClick={function handleGrid() {
                                 setView(true);
                               }}
-                              className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                              className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700 cursor-pointer"
                             >
                               Grid
                             </span>
@@ -201,9 +241,9 @@ const Notes = () => {
                               onClick={function handleGrid() {
                                 setView(false);
                               }}
-                              className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                              className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700 cursor-pointer"
                             >
-                              Inline
+                              List
                             </span>
                           </div>
                         </div>
@@ -217,87 +257,83 @@ const Notes = () => {
               <br />
               {view ? (
                 <div>
-                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                    <div class=" rounded-md flex items-center justify-center">
-                      <span className="lg:text-xl text-base">
-                        What’s The Future And Why It’s Up To Us
-                      </span>
-                    </div>
-                    <div class="rounded-md flex items-center justify-center">
-                      <div className="p-4 ">
-                        <input
-                          class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckChecked"
-                        />
+                  <div>
+                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                      <div class=" rounded-md flex items-center justify-center">
+                        <span className="lg:text-xl text-base">
+                          {notes[0].Book_Name}
+                        </span>
                       </div>
-                      <div className="p-4">
-                        <Image src={dele} />
-                      </div>
-                      <div className="p-4 ">
-                        <Image src={share} />
-                      </div>
-                      <div className="p-4 ">
-                        <Image src={dropd} />
+                      <div class="rounded-md flex items-center justify-center">
+                        <div className="p-4 ">
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <Image src={dele} />
+                        </div>
+                        <div className="p-4 ">
+                          <Image src={share} />
+                        </div>
+                        <div className="p-4 ">
+                          <Image src={dropd} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="pl-5 flex justify-start items-start ">
-                    <span>Tim O’Reilly</span>
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
-                    <div class=" rounded-md flex items-center justify-center">
-                      <NotesContainer />
+                    <div className="pl-5 flex justify-start items-start ">
+                      <span>{notes[0].Author}</span>
                     </div>
-                    <div class="rounded-md flex items-center justify-center">
-                      <NotesContainer />
-                    </div>
-                    <div class="rounded-md flex items-center justify-center">
-                      <NotesContainer />
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
+                      {notes.map((val) => (
+                        <div class=" rounded-md flex items-center justify-center">
+                          <NotesContainer info={val.Notes} />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               ) : (
                 <div>
-                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                    <div class=" rounded-md flex items-center justify-center">
-                      <span className="lg:text-xl text-base">
-                        What’s The Future And Why It’s Up To Us
-                      </span>
-                    </div>
-                    <div class="rounded-md flex items-center justify-center">
-                      <div className="p-4 ">
-                        <input
-                          class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckChecked"
-                        />
+                  <div>
+                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                      <div class=" rounded-md flex items-center justify-center">
+                        <span className="lg:text-xl text-base">
+                          {notes[0].Book_Name}
+                        </span>
                       </div>
-                      <div className="p-4">
-                        <Image src={dele} />
-                      </div>
-                      <div className="p-4 ">
-                        <Image src={share} />
-                      </div>
-                      <div className="p-4 ">
-                        <Image src={dropd} />
+                      <div class="rounded-md flex items-center justify-center">
+                        <div className="p-4 ">
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <Image src={dele} />
+                        </div>
+                        <div className="p-4 ">
+                          <Image src={share} />
+                        </div>
+                        <div className="p-4 ">
+                          <Image src={dropd} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="pl-5 flex justify-start items-start">
-                    <span>Tim O’Reilly</span>
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                    <div class=" rounded-md flex items-center justify-start">
-                      <NotesGrid />
+                    <div className="pl-5 flex justify-start items-start">
+                      <span>{notes[0].Author}</span>
                     </div>
-                    <div class="rounded-md flex items-center justify-start">
-                      <NotesGrid />
-                    </div>
-                    <div class="rounded-md flex items-center justify-start">
-                      <NotesGrid />
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                      {notes.map((val) => (
+                        <div class=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
+                          <NotesGrid info={val.Notes} />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

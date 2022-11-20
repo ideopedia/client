@@ -10,6 +10,7 @@ import sound from "../../../public/sound.svg";
 import close from "../../../public/close.svg";
 import dclose from "../../../public/darkclose.svg";
 import ProgressBar from "../../../components/progress";
+import user_notes from "../../../public/user_notes.svg";
 import forward from "../../../public/forward.svg";
 import backward from "../../../public/backward.svg";
 import darkad from "../../../public/darkaudio.svg";
@@ -381,82 +382,6 @@ const Read = () => {
                       )}
                     </div>
                   </div>
-                  <>
-                    <button
-                      className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowNotesModal(true)}
-                    >
-                      Notes
-                    </button>
-                    {showNotesModal ? (
-                      <>
-                        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                          <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                            {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                              {/*header*/}
-                              <div className=" p-5 border-b bg-yellow-300 border-solid border-slate-200 rounded-t">
-                                <div className="flex items-center justify-center text-xl font-bold ">
-                                  IDEO II
-                                </div>
-                                <div className="flex items-center justify-center  text-base text-black">
-                                  Technology & Innovation Lyft Employment{" "}
-                                  <span className=" ml-5 text-sm text-green-800">
-                                    Saved Notes
-                                  </span>{" "}
-                                </div>
-                              </div>
-                              {/*body*/}
-                              <div className="relative p-6 flex-auto">
-                                <textarea
-                                  type="text"
-                                  placeholder="Type here ....."
-                                  className="focus:border-black"
-                                  rows="10"
-                                  cols="50"
-                                  onChange={(e) => setNotes(e.target.value)}
-                                ></textarea>
-                              </div>
-                              {/*footer*/}
-                              <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                                <button
-                                  className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                  type="button"
-                                  onClick={() => setShowNotesModal(false)}
-                                >
-                                  Cancel
-                                </button>
-                                <button
-                                  className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                  type="button"
-                                  onClick={function submitNotes() {
-                                    Axios.post(
-                                      "http://localhost:3000/api/UserNotes/addNotes",
-                                      {
-                                        Book_Name: card.Book_Name,
-                                        Author: card.Book_Author,
-                                        Notes: notes,
-                                        Book_id: card.id,
-
-                                        User_Id: userid,
-                                      }
-                                    ).then((data) => {
-                                      setCompData(data.data);
-                                    });
-                                    setShowNotesModal(false);
-                                  }}
-                                >
-                                  Save
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                      </>
-                    ) : null}
-                  </>
                 </div>
               ))}
 
@@ -501,6 +426,94 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
+              <div className="fixed bottom-5 right-3">
+                <Image
+                  src={user_notes}
+                  className="cursor-pointer"
+                  onClick={() => setShowNotesModal(true)}
+                />
+                {/* <button
+                  className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                  
+                >
+                  Notes
+                </button> */}
+                {showNotesModal ? (
+                  <>
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                      <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                          {/*header*/}
+                          <div className=" p-5 border-b bg-yellow-300 border-solid border-slate-200 rounded-t">
+                            <div className="flex items-center justify-center text-xl font-bold ">
+                              {data.Ideo_title}
+                            </div>
+                            <div className="flex items-center justify-center  text-base text-black">
+                              {data.Ideo}
+                              <span
+                                className=" ml-5 text-sm text-green-800 cursor-pointer"
+                                onClick={function handleSavedNotes() {
+                                  router.push(
+                                    `http://localhost:3000/mylib/notes/${userid}`
+                                  );
+                                }}
+                              >
+                                Saved Notes
+                              </span>{" "}
+                            </div>
+                          </div>
+                          {/*body*/}
+                          <div className="relative p-6 flex-auto">
+                            <textarea
+                              type="text"
+                              placeholder="Type here ....."
+                              className="focus:border-black"
+                              rows="10"
+                              cols="50"
+                              onChange={(e) => setNotes(e.target.value)}
+                            ></textarea>
+                          </div>
+                          {/*footer*/}
+                          <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                            <button
+                              className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button"
+                              onClick={() => setShowNotesModal(false)}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button"
+                              onClick={function submitNotes() {
+                                Axios.post(
+                                  "http://localhost:3000/api/UserNotes/addNotes",
+                                  {
+                                    Book_Name: card.Book_Name,
+                                    Author: card.Book_Author,
+                                    Notes: notes,
+                                    Book_id: card.id,
+
+                                    User_Id: userid,
+                                  }
+                                ).then((data) => {
+                                  setCompData(data.data);
+                                });
+                                setShowNotesModal(false);
+                              }}
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                  </>
+                ) : null}
+              </div>
               {showMod ? (
                 <>
                   <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
@@ -875,6 +888,94 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
+              <div className="fixed bottom-5 right-3">
+                <Image
+                  src={user_notes}
+                  className="cursor-pointer"
+                  onClick={() => setShowNotesModal(true)}
+                />
+                {/* <button
+                  className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                  onClick={() => setShowNotesModal(true)}
+                >
+                  Notes
+                </button> */}
+                {showNotesModal ? (
+                  <>
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                      <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                          {/*header*/}
+                          <div className=" p-5 border-b bg-yellow-300 border-solid border-slate-200 rounded-t">
+                            <div className="flex items-center justify-center text-xl font-bold ">
+                              {data.Ideo_title}
+                            </div>
+                            <div className="flex items-center justify-center  text-base text-black">
+                              {data.Ideo}
+                              <span
+                                className=" ml-5 text-sm text-green-800 cursor-pointer"
+                                onClick={function handleSavedNotes() {
+                                  router.push(
+                                    `http://localhost:3000/mylib/notes/${userid}`
+                                  );
+                                }}
+                              >
+                                Saved Notes
+                              </span>{" "}
+                            </div>
+                          </div>
+                          {/*body*/}
+                          <div className="relative p-6 flex-auto">
+                            <textarea
+                              type="text"
+                              placeholder="Type here ....."
+                              className="focus:border-black"
+                              rows="10"
+                              cols="50"
+                              onChange={(e) => setNotes(e.target.value)}
+                            ></textarea>
+                          </div>
+                          {/*footer*/}
+                          <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                            <button
+                              className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button"
+                              onClick={() => setShowNotesModal(false)}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button"
+                              onClick={function submitNotes() {
+                                Axios.post(
+                                  "http://localhost:3000/api/UserNotes/addNotes",
+                                  {
+                                    Book_Name: card.Book_Name,
+                                    Author: card.Book_Author,
+                                    Notes: notes,
+                                    Book_id: card.id,
+
+                                    User_Id: userid,
+                                  }
+                                ).then((data) => {
+                                  setCompData(data.data);
+                                });
+                                setShowNotesModal(false);
+                              }}
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                  </>
+                ) : null}
+              </div>
               {showMod ? (
                 <>
                   <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">

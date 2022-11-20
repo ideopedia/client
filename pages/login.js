@@ -3,6 +3,8 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import login from "../public/login.svg";
 import Image from "next/image";
+import eyeoff from "../public/eyeoff.svg"
+import eyeon from "../public/eyeon.svg"
 import Link from "next/link";
 import { useReducer, useEffect, useState, useRef } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
@@ -131,18 +133,19 @@ function Login() {
               <div className="flex justify-between pr-[1.5rem]">
                 <label className="text-lg font-medium">Password</label>
                 <p
-                  style={{ position: "relative", top: "2.3rem" }}
+                  style={{ position: "relative", top: "2.6rem" }}
                   className="cursor-pointer"
                   onClick={function handlePass() {
                     pass === "password" ? setPass("text") : setPass("password");
                   }}
                 >
-                  ic
+                  {pass==="password"?<Image src={eyeoff} />:<Image src={eyeon} />}
+                  
                 </p>
               </div>
 
               <input
-                className={classes + passClass}
+                className={classes + passClass} 
                 type={pass}
                 placeholder="Enter your password"
                 onChange={passwordChangeHandler}
