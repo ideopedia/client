@@ -37,7 +37,7 @@ function Newhero() {
   const isBreakpoint = useMediaQuery(639);
   return (
     <div>
-      <div className="h-auto">
+      <div className=" lg:h-screen">
         <div className="lg:flex justify-center items-center lg:pt-9 sm:pt-10">
           <div className="lg:flex lg:justify-between lg:items-center p-5">
             <div className="w-auto h-auto p-1 lg:pt-16">

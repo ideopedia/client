@@ -59,7 +59,7 @@ export default function Navbar() {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center  pb-3 mt-8 lg:block md:pb-0 md:mt-0 ${
+              className={`flex-1 justify-self-center  pb-3 mt-8 lg:block md:pb-0 md:mt-0  ${
                 navbar ? "block" : "hidden"
               }`}
             >
@@ -68,7 +68,7 @@ export default function Navbar() {
                   <div class="dropdown">
                     <button class="dropbtn flex items-center justify-center" onClick={function handleClick(){
                       router.push("/testimonials")
-                    }}>Our Readers <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    }}>Our Readers <div className="mt-2 ml-2"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
@@ -78,7 +78,7 @@ export default function Navbar() {
                   <div class="dropdown">
                     <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
                       router.push("/about")
-                    }}>About Us <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    }}>About Us <div className="mt-2 ml-2"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
@@ -91,7 +91,19 @@ export default function Navbar() {
                   <div class="dropdown">
                     <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
                       router.push("/teams")
-                    }}>Team <div className="mt-2 ml-1"><Image src={drop} /></div></button>
+                    }}>My Account<div className="mt-2 ml-2"><Image src={drop} /></div></button>
+                    <div class="dropdown-content">
+                      <Link href="/teams#bod">Dashboard</Link>
+                      <Link href="/teams#bod">Read Ideos</Link>
+                      <Link href="/teams#bod">My Library</Link>
+                    </div>
+                  </div>
+                </li>
+                <li className="text-black flex justify-center">
+                  <div class="dropdown">
+                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
+                      router.push("/teams")
+                    }}>Team <div className="mt-2 ml-2"><Image src={drop} /></div></button>
                     <div class="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
                       <Link href="/teams#bod">Founders</Link>
