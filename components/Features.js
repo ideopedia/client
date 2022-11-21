@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 const Features = (props) => {
   return (
-    <div className="h-[260px] w-[260px] bg-white rounded-lg border border-gray-300 hover:border-green-500 hover:drop-shadow-lg infPic">
+    <div className="h-[280px] w-[280px] bg-white rounded-lg border border-gray-300 hover:border-green-500 hover:drop-shadow-lg infPic flex flex-col items-center justify-center">
       <div className="flex justify-center items-center">
         <Image src={props.features} width={180} height={180} />
       </div>

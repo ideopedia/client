@@ -317,7 +317,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1025px) {
+/* @media screen and (max-width: 1025px) {
   .bandf {
     font-size: 25px;
   }
@@ -335,7 +335,7 @@
     margin: 0;
     font-size: 20px;
   }
-}
+} */
 @media screen and (max-width: 769px) {
   .nava {
     font-size: 13.3px;
@@ -418,26 +418,26 @@
 .emailIp:focus {
   border: 2px solid green;
 }
-@media screen and (min-width:1023px){
-  .lboard{
+@media screen and (min-width: 1023px) {
+  .lboard {
     position: relative;
     bottom: 2rem;
   }
 }
-@media screen and (max-width:412px){
-  .gridBx{
+@media screen and (max-width: 412px) {
+  .gridBx {
     width: 24rem;
   }
 }
-@media screen and (max-width:450px){
-  .medalAndProg{
-    margin:0 1rem
+@media screen and (max-width: 450px) {
+  .medalAndProg {
+    margin: 0 1rem;
   }
-  .medalCont{
-    margin:0 1rem;
+  .medalCont {
+    margin: 0 1rem;
     width: 24rem;
   }
-  .progBar{
+  .progBar {
     padding: 0 1rem;
     width: 25rem;
   }
@@ -493,7 +493,14 @@
   background-color: #2cb67d;
   color: #fff;
 }
-
+.getstart {
+  width: 100px;
+  padding: 7px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #2cb67d;
+  color: #fff;
+}
 .getstarted:hover {
   background-color: #249a69;
 }
@@ -694,8 +701,6 @@
 
 .foottext {
   color: rgba(0, 0, 0, 0.4);
-  font-size: 18px;
-  font-weight: 500;
 }
 
 .footer {
@@ -1054,7 +1059,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 25px 0 100px 0;
   }
 }
 
@@ -1066,7 +1071,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 10px 0 80px 0;
   }
 }
 .bg {
@@ -1170,14 +1175,6 @@ input[type="checkbox"]:focus {
   line-height: 197%;
 }
 
-
-
-
-
-
-
-
-
 .btn-play {
   width: 0;
   height: 0;
@@ -1216,7 +1213,7 @@ input[type="checkbox"]:focus {
 
 /* Background */
 .slider-container::before {
-  content: '';
+  content: "";
   background-color: rgb(168, 162, 162);
   width: 99%;
   height: calc(var(--progress-bar-height) - 1px);
@@ -1336,7 +1333,7 @@ input[type="checkbox"]:focus {
   pointer-events: none;
 }
 .slider-container-dark::before {
-  content: '';
+  content: "";
   background-color: #228f61;
   width: 99%;
   height: calc(var(--progress-bar-height) - 1px);
@@ -1352,4 +1349,10 @@ input[type="checkbox"]:focus {
   font-size: 12px;
   font-weight: 200;
   color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 768px) {
+  #mission {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

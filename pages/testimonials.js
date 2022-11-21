@@ -48,12 +48,12 @@ const OurReaders = () => {
             <Image src={readershero} />
           </div>
           <div class=" p-4 rounded-md flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-12 md:px-24">
               <div class="rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold">OUR READERS</h1>
+                <h1 className="lg:text-4xl md:text-3xl text-[26px] text-green-500 font-semibold">OUR READERS</h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <div className="lg:text-xl lg:leading-normal md:text-lg text-sm  text-gray-600 readContent text-left font-medium">
+                <div className="lg:text-xl md:text-lg text-gray-600 readContent font-medium lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center">
                   Ideopedia's Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
@@ -66,17 +66,17 @@ const OurReaders = () => {
           </div>
         </div>
       </div>
-      <div className="py-20">
+      <div className="lg:py-20 md:py-16 py-12">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
-              <div class="pt-9 rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-2xl text-xl text-green-500 font-semibold lg:leading-normal pl-20 px-8 text-center">
+              <div class="lg:pt-9 rounded-md flex items-center justify-center">
+                <h1 className="lg:text-4xl md:text-3xl text-[26px] text-green-500 font-semibold lg:leading-normal lg:pl-20 lg:px-8 md:px-20 text-center">
                   TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-sm  text-gray-600 pl-20 readContent leading-normal px-8">
+                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-gray-600 lg:pl-20 sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center md:px-24 px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its
@@ -92,7 +92,7 @@ const OurReaders = () => {
         </div>
       </div>
     <div className="flowerbg ">
-      <div className="bg-green-100 p-10  py-[10rem]">
+      <div className="bg-green-100 p-10  lg:py-[10rem] md:py-[9rem] sm:py-[6rem]">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" rounded-md flex items-center justify-center">
             <Image src={testwinner} />
@@ -104,7 +104,7 @@ const OurReaders = () => {
               </div>
               <br />
               <div className="flex justify-center items-center">
-                <span className=" p-10 text-black lg:text-3xl lg:leading-normal md:text-2xl text-base text-center uppercase font-medium">
+                <span className=" p-10 text-black lg:text-3xl md:text-3xl text-[22px] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] text-center uppercase font-medium">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>
@@ -124,7 +124,7 @@ const OurReaders = () => {
         {isBreakpoint?<Image src={flower} width={60}/>:<Image src={flower} width={160}/>}
         </div>
         <div className="flex justify-center items-center p-4">
-          <span className="lg:text-4xl md:text-2xl text-xl font-semibold text-green-500">TESTIMONIALS</span>
+          <span className="lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500">TESTIMONIALS</span>
         </div>
         <div style={{position:"relative",marginBottom:"-18rem"}}>
         {isBreakpoint?<Image src={flower} width={80}/>:<Image src={flower} width={240}/>}
