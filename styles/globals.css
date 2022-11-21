@@ -156,12 +156,22 @@
   position: relative;
   bottom: 4px;
 }
-.bulletPoint {
+/* .bulletPoint {
   margin: 5px;
   display: inline;
   font-size: 8px;
   position: relative;
   bottom: 3px;
+} */
+@media screen and (max-width: 1025px) {
+  .bulletPoints{
+     bottom:0px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .bulletPoints{
+     bottom:-5px;
+  }
 }
 
 .ideoData {
@@ -493,6 +503,18 @@
   background-color: #2cb67d;
   color: #fff;
 }
+@media screen and (max-width:769px){
+  .getstarted{
+    padding: 6px;
+    width: 140px;
+  }
+}
+@media screen and (max-width:430px){
+  .getstarted{
+    padding: 5px;
+    width:110px;
+  }
+}
 .getstart {
   width: 100px;
   padding: 7px 10px;
@@ -501,6 +523,7 @@
   background-color: #2cb67d;
   color: #fff;
 }
+
 .getstarted:hover {
   background-color: #249a69;
 }

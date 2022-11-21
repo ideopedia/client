@@ -366,13 +366,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="p-4 flex justify-end items-end ">
+      <div className="p-4 flex lg:justify-end justify-center items-end ">
         <div className="border-[2px] border-green-500 cursor-pointer rounded-md px-1">
           <Link href="/testimonials">
             <div className="p-1 flex justify-center items-center border-green-500">
-              <div className="text-green-500 text-[18px]">Read more </div>
+              <div className="text-green-500 text-[18px]">Read more</div>
               <div className="pt-2 px-1">
-                <Image src={rightarr} width={20} />
+                <Image src={rightarr} width={20} /> 
               </div>
             </div>
           </Link>

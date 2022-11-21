@@ -34,10 +34,10 @@ function Newhero() {
 
     return targetReached;
   };
-  const isBreakpoint = useMediaQuery(800);
+  const isBreakpoint = useMediaQuery(639);
   return (
     <div>
-      <div className="h-screen">
+      <div className="h-auto">
         <div className="lg:flex justify-center items-center lg:pt-9 sm:pt-10">
           <div className="lg:flex lg:justify-between lg:items-center p-5">
             <div className="w-auto h-auto p-1 lg:pt-16">
@@ -85,7 +85,7 @@ function Newhero() {
                 autoplay
                 loop
                 src="https://assets2.lottiefiles.com/private_files/lf30_ipvphpwo.json"
-                className=" xl:w-[500px] xl:h-[500px] lg:w-[380px] lg:h-[400px] md:w-[400px] md:h-[400px] xl:pt-0 xl:pb-0 lg:pt-0 lg:pb-0 sm:pt-5 sm:pb-10"
+                className=" xl:w-[500px] xl:h-[500px] lg:w-[380px] lg:h-[400px] md:w-[400px] md:h-[400px] sm:w-[360px] sm:h-[360px] xl:pt-0 xl:pb-0 lg:pt-0 lg:pb-0 sm:pt-5 sm:pb-10"
               ></Player>
             </div>
           </div>
