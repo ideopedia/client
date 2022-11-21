@@ -144,7 +144,7 @@ function Signup() {
               desc2="Login here"
             /> */}
             <div className="newloginContainer">
-              <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
+              <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="SIGNUP" />
               </div>
               <form className="newLoginForm" onSubmit={loginSubmitHandler}>
