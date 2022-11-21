@@ -1,16 +1,16 @@
 import connectMongo from "../../../utils/connectMongo";
-import UserHistory from "../../../models/UserHistory";
+import PreAudios from "../../../models/PreAudio";
 /**
  *
  * @param {import('next').NextApiRequest} req
  * @param {import('next').NextApiResponse} res
  */
-export default async function listHistory(req, res) {
+export default async function listPreAudios(req, res) {
   try {
     await connectMongo();
 
-    var history = await UserHistory.find({ User_Id: req.body.User_Id });
-    res.json(history);
+    var prebooks = await PreAudios.find({ id: req.body.id });
+    res.json(prebooks);
   } catch (err) {
     res.json({ err });
   }
