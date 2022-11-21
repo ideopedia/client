@@ -14,7 +14,9 @@ import Link from "next/link";
 
 import rightarr from "../public/rightarr.svg";
 import homeimage from "../public/homeimage.svg";
-import features_sam from "../public/features_sam.svg";
+import fe1 from "../public/f1.svg";
+import fe2 from "../public/f2.svg";
+import fe3 from "../public/f3.svg";
 import influencer1 from "../public/influencer1.svg";
 import influencer2 from "../public/influencer2.svg";
 import influencer3 from "../public/influencer3.svg";
@@ -141,39 +143,39 @@ export default function Home() {
 
         <div class=" bg-white">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4">
-            <div class="p-4 rounded-md flex items-center justify-center">
+            <div class="p-4 rounded-md flex items-center justify-center font-medium">
               <Features
-                features={features_sam}
-                info="The World’s only knowledge portal for leaders "
+                features={fe1}
+                info="Available in text & audio formats"
               />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
               <Features
-                features={features_sam}
-                info="Featuring a new trend everyday "
+                features={fe2}
+                info="Save your key points and notes"
               />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
               <Features
-                features={features_sam}
+                features={fe3}
+                info="Personalized reading experience"
+              />
+            </div>
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
+              <Features
+                features={fe1}
                 info="Real world examples to enhance learning"
               />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
               <Features
-                features={features_sam}
+                features={fe1}
                 info="Real world examples to enhance learning"
               />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
               <Features
-                features={features_sam}
-                info="Real world examples to enhance learning"
-              />
-            </div>
-            <div class="p-4  rounded-md flex items-center justify-center">
-              <Features
-                features={features_sam}
+                features={fe1}
                 info="Real world examples to enhance learning"
               />
             </div>

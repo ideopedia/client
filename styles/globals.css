@@ -314,7 +314,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1025px) {
+/* @media screen and (max-width: 1025px) {
   .bandf {
     font-size: 25px;
   }
@@ -332,7 +332,7 @@
     margin: 0;
     font-size: 20px;
   }
-}
+} */
 @media screen and (max-width: 769px) {
   .nava {
     font-size: 13.3px;
@@ -488,7 +488,14 @@
   background-color: #2cb67d;
   color: #fff;
 }
-
+.getstart {
+  width: 100px;
+  padding: 7px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #2cb67d;
+  color: #fff;
+}
 .getstarted:hover {
   background-color: #249a69;
 }
@@ -689,8 +696,6 @@
 
 .foottext {
   color: rgba(0, 0, 0, 0.4);
-  font-size: 18px;
-  font-weight: 500;
 }
 
 .footer {
@@ -1049,7 +1054,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 25px 0 100px 0;
   }
 }
 
@@ -1061,7 +1066,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 10px 0 80px 0;
   }
 }
 .bg {
@@ -1163,4 +1168,11 @@ input[type="checkbox"]:focus {
 .linespace {
   font-size: 20px;
   line-height: 197%;
+}
+@media screen and (max-width:768px){
+#mission
+{
+  display: flex;
+  flex-direction: column-reverse;
+}
 }
