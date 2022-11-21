@@ -2,7 +2,7 @@ import React from "react";
 
 const Like = (props) => {
   return (
-    <div>
+    <div >
       <svg
         width="105"
         height="105"

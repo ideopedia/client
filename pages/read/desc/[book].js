@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
@@ -31,7 +31,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
   const lap = { one: arrowone, two: arrowtwo };
-  const mob= { one: arrowthree, two: arrowfour };
+  const mob = { one: arrowthree, two: arrowfour };
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
 
@@ -106,44 +106,9 @@ const Book = () => {
       {data ? (
         <div className="py-8">
           {console.log(data)}
-          <div className="flex justify-center items-center">
-            <div
-              className="p-4 cursor-pointer"
-              onClick={function handleLike() {
-                const fetchData = async () => {
-                  const result = await Axios.post(
-                    "http://localhost:3000/api/UserFavourites/addFavourites",
-                    {
-                      name: data.Book_Name,
-                      image: data.Cover_image,
-                      author: data.Book_Author,
-                      percent: 30,
-                      id: data.id,
+          
 
-                      User_Id: userid,
-                    }
-                  );
-
-                  setLike(result.data);
-                };
-
-                fetchData();
-              }}
-            >
-              {lik ? (
-                <Like inn="red" out="white" stroke="red" />
-              ) : (
-                <Like inn="none" out="white" stroke="black" />
-              )}
-            </div>
-            <div className="p-4">
-              <Image src={cart} />
-            </div>
-            <div className="p-4">
-              <Image src={send} />
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 text-center">
             <div class=" rounded-md flex items-center justify-center">
               <div>
                 <Image src={data.Cover_image} width={400} height={350} />
@@ -184,7 +149,10 @@ const Book = () => {
                     <div className="mr-1.5 mt-1">
                       <Image src={airpods} />
                     </div>
-                    <Link className="" href={`/read/audio/${userid}:${data.id}1`}>
+                    <Link
+                      className=""
+                      href={`/read/audio/${userid}:${data.id}1`}
+                    >
                       Listen
                     </Link>
                   </div>
@@ -197,12 +165,52 @@ const Book = () => {
                     <div className="mr-1.5 w-5 mt-1">
                       <Image src={cards} />
                     </div>
-                    <Link className="" href={`/read/cards/${userid}:${data.id}`}>
+                    <Link
+                      className=""
+                      href={`/read/cards/${userid}:${data.id}`}
+                    >
                       Cards
                     </Link>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="p-4 cursor-pointer"
+              onClick={function handleLike() {
+                const fetchData = async () => {
+                  const result = await Axios.post(
+                    "http://localhost:3000/api/UserFavourites/addFavourites",
+                    {
+                      name: data.Book_Name,
+                      image: data.Cover_image,
+                      author: data.Book_Author,
+                      percent: 30,
+                      id: data.id,
+
+                      User_Id: userid,
+                    }
+                  );
+
+                  setLike(result.data);
+                };
+
+                fetchData();
+              }}
+            >
+              {lik ? (
+                <Like inn="red" out="white" stroke="red" />
+              ) : (
+                <Like inn="none" out="white" stroke="black" />
+              )}
+            </div>
+            <div className="p-4">
+              <Image src={cart} />
+            </div>
+            <div className="p-4">
+              <Image src={send} />
             </div>
           </div>
 
@@ -271,7 +279,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
-                  <Image src={isBreakpoint?mob.one:lap.one} />
+                  <Image src={isBreakpoint ? mob.one : lap.one} />
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -285,7 +293,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
-                  <Image src={isBreakpoint?mob.two:lap.two} />
+                  <Image src={isBreakpoint ? mob.two : lap.two} />
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">
