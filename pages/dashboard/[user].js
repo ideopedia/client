@@ -6,6 +6,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import task from "../../public/task.svg";
 import create from "../../public/create.svg";
 import red from "../../public/red.svg";
+import Navbar from "../../components/navbar";
 import cht from "../../public/cht.svg";
 import feed from "../../public/feedp.svg";
 import shares from "../../public/shrs.svg";

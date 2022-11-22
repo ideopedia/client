@@ -265,9 +265,9 @@ const Notes = () => {
                         </span>
                       </div>
                       <div class="rounded-md flex items-center justify-center">
-                        <div className="p-4 ">
+                        <div className="p-4 pt-2">
                           <input
-                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
@@ -276,9 +276,7 @@ const Notes = () => {
                         <div className="p-4">
                           <Image src={dele} />
                         </div>
-                        <div className="p-4 ">
-                          <Image src={share} />
-                        </div>
+
                         <div className="p-4 ">
                           <Image src={dropd} />
                         </div>
