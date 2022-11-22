@@ -20,6 +20,7 @@ import send from "../../../public/send.svg";
 import Like from "../../../components/Like";
 import cart from "../../../public/cart.svg";
 import like from "../../../public/like.svg";
+import leftarr from "../../../public/leftarrow.svg";
 import arrowone from "../../../public/arrowone.svg";
 import arrowtwo from "../../../public/arrowtwo.svg";
 import arrowthree from "../../../public/Arrow16.svg";
@@ -99,6 +100,14 @@ const Book = () => {
       {data ? (
         <div className="py-8">
           {console.log(data)}
+          <div
+            className="flex justify-start items-center "
+            onClick={function handleDescription() {
+              router.push(`/read/${userid}`);
+            }}
+          >
+            <Image src={leftarr} />
+          </div>
           <div className="flex justify-center items-center">
             <div
               className="p-4 cursor-pointer"
@@ -177,7 +186,10 @@ const Book = () => {
                     <div className="mr-1.5 mt-1">
                       <Image src={airpods} />
                     </div>
-                    <Link className="" href={`/read/audio/${userid}:${data.id}1`}>
+                    <Link
+                      className=""
+                      href={`/read/audio/${userid}:${data.id}1`}
+                    >
                       Listen
                     </Link>
                   </div>
@@ -190,7 +202,10 @@ const Book = () => {
                     <div className="mr-1.5 w-5 mt-1">
                       <Image src={cards} />
                     </div>
-                    <Link className="" href={`/read/cards/${userid}:${data.id}`}>
+                    <Link
+                      className=""
+                      href={`/read/cards/${userid}:${data.id}`}
+                    >
                       Cards
                     </Link>
                   </div>

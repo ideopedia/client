@@ -52,7 +52,7 @@ function Audio(props) {
         onLoadedData={(e) => {
           setDuration(e.currentTarget.duration.toFixed(2));
         }}
-        src={song}
+        src={props.song}
       ></audio>
       <ControlPanel
         play={play}

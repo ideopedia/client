@@ -112,7 +112,7 @@ const New = () => {
           <div class="rounded-md flex items-center justify-center pb-9">
           <ToastContainer />
             <div className="newloginContainer">
-              <div className="newLoginTop" style={{ marginLeft: "-1.8rem"}}>
+              <div className="newLoginTop flex justify-center items-center" style={{ marginLeft: "-1.8rem"}}>
                 <FormHeader title="CONTACT US" />
               </div>
               <form className="newLoginForm" ref={form} onSubmit={sendEmail}>
