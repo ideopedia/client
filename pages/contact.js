@@ -19,7 +19,7 @@ const New = () => {
   const [message, setMessage] = useState(null);
   const [name, setName] = useState(null);
   const toastifySuccess = () => {
-    toast.success('Mail Sent !', {
+    toast.success("Mail Sent !", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -28,7 +28,7 @@ const New = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });;
+    });
   };
   const classes =
     "border border-gray-300 text-gray-900 text-base font-medium rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500";
@@ -38,10 +38,10 @@ const New = () => {
     // console.log(email_Id, message, name);
     emailjs
       .sendForm(
-        "service_n2cjfcp",
-        "template_jegrfeo",
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         form.current,
-        "k4OIq4bqtNeEAjuPU"
+        process.env.NEXT_PUBLIC_USER_ID
       )
       .then(
         (result) => {
@@ -56,7 +56,7 @@ const New = () => {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
   return (
     <div>
-      <Navbar />
+      <Navbar isLogedIn={false} />
       <div className="p-4">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" rounded-md flex items-center justify-center bg-green-500 h-screen">
@@ -108,9 +108,9 @@ const New = () => {
               </div>
             </div>
           </div>
-          
+
           <div class="rounded-md flex items-center justify-center pb-9">
-          <ToastContainer />
+            <ToastContainer />
             <div className="newloginContainer">
               <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="CONTACT US" />
@@ -144,8 +144,7 @@ const New = () => {
                   value={message}
                   placeholder="Write your message..."
                   onChange={(e) => setMessage(e.target.value)}
-                >
-                </textarea>
+                ></textarea>
                 <div
                   id="button"
                   className="row flex justify-center items-center"

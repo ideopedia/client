@@ -2,11 +2,13 @@ import React from "react";
 import SideNavbar from "../../../components/sidebar";
 import Card from "../../../components/card";
 import Link from "next/link";
+import Navbar from "../../../components/navbar";
 import ProgressBar from "@ramonak/react-progress-bar";
 import feedbackhis from "../../../public/feedbackhis.svg";
 import completedhis from "../../../public/completedhis.svg";
 import fav from "../../../public/fav.svg";
 import Loader from "../../../components/loader";
+import drop from "../../../public/dropdownlogo.svg";
 import darr from "../../../public/downarr.svg";
 import arr from "../../../public/leftarr.svg";
 import srch from "../../../public/srch.svg";
@@ -47,27 +49,17 @@ const Points = () => {
     <div>
       {data ? (
         <div>
-          <div className="md:flex">
-            <SideNavbar
+          <Navbar isLogedIn={true} userid={data[0].User_Id} />
+          <div className="p-2">
+            {/* <SideNavbar
               per={data[0].Profile_percent}
               image={data[0].Image}
               name={data[0].Name}
               u_id={data[0].User_Id}
-            />
-            <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
-              <div className="flex">
-                <div className=" cls pt-9 justify-start">
-                  <div className="flex ">
-                    <div className="larr cursor-pointer ">
-                      <Link href={`/dashboard/${data[0].User_Id}`}>
-                        <Image src={arr} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div class="scrollmenu flex pt-9 ml-9">
+            /> */}
+
+            <div className="md:pl-9 lg:w-11/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+              <div class="flex pt-9 ml-9">
                 <div className="pr-5 flex">
                   {type === "Bronze Influencer" ? (
                     <Image src={bronze} />
@@ -108,16 +100,17 @@ const Points = () => {
                     <Image src={gold} />
                   </div>
                 </div>
-                <div className=" ">
-                <ProgressBar
-                  completed={
-                    20 * data[0].Read +
-                    10 * data[0].Share +
-                    5 * data[0].Chat +
-                    5 * data[0].Feed
-                  }
-                  customLabel=" "
-                />
+                <div className="">
+                  <ProgressBar
+                    height="10"
+                    completed={
+                      20 * data[0].Read +
+                      10 * data[0].Share +
+                      5 * data[0].Chat +
+                      5 * data[0].Feed
+                    }
+                    customLabel=" "
+                  />
                 </div>
               </div>
               <br />
@@ -127,14 +120,22 @@ const Points = () => {
                 </div>
                 <div class="p-4  rounded-md flex items-center justify-end">
                   <div className="flex">
-                    <span className="pr-3 text-xl cursor-pointer">Sort By</span>
-                    <div className="flex">
-                      <div className="pr-3 text-base">
-                        <Link href="">Book</Link>
-                      </div>
-
-                      <div className="mb-2">
-                        <Image src={darr} />
+                    <div class="dropdown">
+                      <button
+                        class="dropbtn flex items-center justify-center"
+                        onClick={function handleClick() {
+                          router.push("/teams");
+                        }}
+                      >
+                        Sort By{" "}
+                        <div className="mt-2 ml-2">
+                          <Image src={drop} />
+                        </div>
+                      </button>
+                      <div class="dropdown-content">
+                        <Link href="">Completed</Link>
+                        <Link href="">Shared</Link>
+                        <Link href="">Feed back</Link>
                       </div>
                     </div>
                   </div>
@@ -149,9 +150,9 @@ const Points = () => {
                         <Image src={completedhis} />
                         <span>{val.date}</span>
                       </div>
-                        <span>{val.name}</span>
-                        <span>Completed Book</span>
-                        <span className="pointc">20 Points</span>
+                      <span>{val.name}</span>
+                      <span>Completed Book</span>
+                      <span className="pointc">20 Points</span>
                     </div>
                   ))
                 : console.log("no history")}

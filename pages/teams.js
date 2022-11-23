@@ -34,7 +34,7 @@ const Teams = () => {
   }
   return (
     <div>
-      <Navbar />
+      <Navbar  isLogedIn={false} />
       <div className="p-5">
         <div
           class="pt-5 pb-4 rounded-md flex items-center justify-center"

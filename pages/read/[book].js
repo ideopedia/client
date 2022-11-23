@@ -11,6 +11,7 @@ import fav from "../../public/fav.svg";
 import recomend from "../../public/recomend.svg";
 import Axios from "axios";
 import { useState, useEffect } from "react";
+import Navbar from "../../components/navbar";
 import wtf from "../../public/wtf.svg";
 import arr from "../../public/downarr.svg";
 import srch from "../../public/srch.svg";
@@ -58,31 +59,31 @@ const Read = () => {
   return (
     <div>
       {data && user ? (
-        <div className="md:flex">
-          <SideNavbar
+        <div className="">
+          {/* <SideNavbar
             per={user[0].Profile_percent}
             image={user[0].Image}
             name={user[0].Name}
             u_id={user[0].User_Id}
-          />
+          /> */}
           {console.log(data)}
-          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12 h-screen">
-            <div>
-              <br />
+          <Navbar isLogedIn={true} userid={user[0].User_Id} />
+          <div className="flex justify-end pt-2">
+            <div class="p-4  rounded-md flex items-center justify-end">
+              <div className="flex ">
+                <Image src={srch} />
 
-              <div class="p-4  rounded-md flex items-center justify-end">
-                <div className="flex">
-                  <Image src={srch} />
-
-                  <input
-                    className="int pl-7"
-                    type="text"
-                    placeholder="Search"
-                    onChange={(e) => setInpt(e.target.value)}
-                  />
-                </div>
+                <input
+                  className="int pl-7"
+                  type="text"
+                  placeholder="Search"
+                  onChange={(e) => setInpt(e.target.value)}
+                />
               </div>
-
+            </div>
+          </div>
+          <div className="md:pl-9 lg:w-9/12 md:w-10/12 sm:pl-1 sm:w-9/12 h-screen">
+            <div>
               {data.map((val) =>
                 val.Book_Name.match(inpt) ? (
                   <div className="flex justify-center items-center mt-9">

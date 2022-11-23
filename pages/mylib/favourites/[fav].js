@@ -7,6 +7,7 @@ import create from "../../../public/create.svg";
 import arr from "../../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import Navbar from "../../../components/navbar";
 import { useRouter } from "next/router";
 import fav from "../../../public/fav.svg";
 import Loader from "../../../components/loader";
@@ -37,14 +38,15 @@ const Favourites = () => {
   return (
     <div>
       {data ? (
-        <div className="md:flex">
-          <SideNavbar
+        <div className="">
+          {/* <SideNavbar
             per={user[0].Profile_percent}
             image={user[0].Image}
             name={user[0].Name}
             u_id={user[0].User_Id}
-          />
+          /> */}
           {console.log(data)}
+          <Navbar isLogedIn={true} userid={favo.fav} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">

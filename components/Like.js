@@ -4,8 +4,8 @@ const Like = (props) => {
   return (
     <div >
       <svg
-        width="105"
-        height="105"
+        width="70"
+        height="70"
         viewBox="0 0 105 105"
         fill={props.inn}
         xmlns="http://www.w3.org/2000/svg"

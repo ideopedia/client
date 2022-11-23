@@ -2,6 +2,7 @@ import SideNavbar from "../../../components/sidebar";
 import Image from "next/image";
 import prime from "../../../public/prime.svg";
 import abou from "../../../public/About.svg";
+import Navbar from "../../../components/navbar";
 import Loader from "../../../components/loader";
 import { useState, useEffect } from "react";
 import Axios from "axios";
@@ -92,14 +93,15 @@ const profile = () => {
   return (
     <div>
       {data ? (
-        <div className="profile md:flex">
-          <SideNavbar
+        <div className="profile ">
+          {/* <SideNavbar
             per={data[0].Profile_percent}
             image={data[0].Image}
             name={data[0].Name}
             u_id={data[0].User_Id}
-          />
+          /> */}
           {console.log(data)}
+          <Navbar isLogedIn={true} userid={data[0].User_Id} />
           <div className="desc md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/1">
             <div className="top">
               <h3 className="text-3xl font-semibold">Profile</h3>
@@ -255,14 +257,11 @@ const profile = () => {
                   onChange={(e) => setAbt(e.target.value)}
                   style={{ paddingBottom: "3rem" }}
                 /> */}
-                <div
-                  className="formBtn pb-16 flex items-center justify-center"
-                  
-                >
+                <div className="formBtn pb-16 flex items-center justify-center">
                   <div className="savebtn pb-20 font-semibold">
-                      <button type="submit" onClick={handleSubmit}>
-                        Save
-                      </button>
+                    <button type="submit" onClick={handleSubmit}>
+                      Save
+                    </button>
                   </div>
                 </div>
               </form>
