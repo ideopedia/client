@@ -18,7 +18,7 @@ function Footer() {
               <label className="foottext pl-2">
                 INFORMING
                 <div className="bulletPoint">
-                  <Image src={bpoint} />
+                  <Image src={bpoint}/>
                 </div>
                 INSPIRING
                 <div className="bulletPoint">
