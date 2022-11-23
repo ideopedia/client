@@ -15,8 +15,8 @@ import del from "../public/del.svg";
 const ReadCard = (props) => {
   const percentage = 66;
   return (
-    <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left">
-      <div class=" rounded-md flex items-center   bg-white readBk">
+    <div class="pt-5  p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left ">
+      <div class="p-2 rounded-md flex items-center  drop-shadow-lg bg-white readBk">
         <div className="flex cover_image ">
           <Image src={props.image} width={300} height={300} />
         </div>
@@ -41,7 +41,10 @@ const ReadCard = (props) => {
               <div className="cont flex mb-[0.5rem]">
                 <Image src={airpods} />
                 <div className="px-1">
-                  <Link className="" href="/read/book">
+                  <Link
+                    className=""
+                    href={`/read/audio/${props.u_id}:${props.b_id}1`}
+                  >
                     Listen
                   </Link>
                 </div>

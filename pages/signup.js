@@ -144,7 +144,7 @@ function Signup() {
   }`;
   return (
     <div>
-      <Navbar />
+      <Navbar  isLogedIn={false} />
       <section class="h-screen new">
         <div class="px-6 h-full text-gray-800">
           <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">

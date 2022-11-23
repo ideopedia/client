@@ -10,7 +10,7 @@ import arrow from "../../../public/arrow.svg";
 import cards from "../../../public/cards.svg";
 import downarr from "../../../public/downarr.svg";
 import ben1 from "../../../public/ben1.svg";
-
+import Navbar from "../../../components/navbar";
 import uparr from "../../../public/uparrow.svg";
 import ok from "../../../public/ok.svg";
 import before from "../../../public/before.svg";
@@ -98,117 +98,123 @@ const Book = () => {
   return (
     <div>
       {data ? (
-        <div className="py-8">
+        <div>
+          <Navbar isLogedIn={true} userid={userid} />
           {console.log(data)}
-          <div
-            className="flex justify-start items-center "
-            onClick={function handleDescription() {
-              router.push(`/read/${userid}`);
-            }}
-          >
-            <Image src={leftarr} />
-          </div>
-          <div className="flex justify-center items-center">
-            <div
-              className="p-4 cursor-pointer"
-              onClick={function handleLike() {
-                const fetchData = async () => {
-                  const result = await Axios.post(
-                    "http://localhost:3000/api/UserFavourites/addFavourites",
-                    {
-                      name: data.Book_Name,
-                      image: data.Cover_image,
-                      author: data.Book_Author,
-                      percent: 30,
-                      id: data.id,
 
-                      User_Id: userid,
-                    }
-                  );
+          <div className="flex justify-center items-center pt-7">
+            <div className="flex ">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
+                <div class=" rounded-md flex items-center justify-center">
+                  <div>
+                    <Image src={data.Cover_image} width={400} height={350} />
+                  </div>
+                </div>
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="lg:text-xl sm:text-base text-gray-800">
+                    IDEOS OF
+                  </span>
+                </div>
+                <div class=" p-3 rounded-md flex items-center justify-center">
+                  <span className="lg:text-xl sm:text-base text-black text-center">
+                    {data.Book_Name}
+                  </span>
+                </div>
+                <div class=" rounded-md flex items-center justify-center mb-4">
+                  <span className="text-base text-black">
+                    {data.Book_Author}
+                  </span>
+                </div>
+                <div class="rounded-md flex items-center justify-center mb-[5rem]">
+                  <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                    <div className="pl-2 text-center">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 mt-1">
+                          <Image src={bookicn} />
+                        </div>
+                        <Link className="" href="/read/desc/1212:1">
+                          Read
+                        </Link>
+                      </div>
 
-                  setLike(result.data);
-                };
+                      <div className="text-base text-black mt-3">
+                        {data.read_time} Minutes
+                      </div>
+                    </div>
 
-                fetchData();
-              }}
-            >
-              {lik ? (
-                <Like inn="red" out="white" stroke="red" />
-              ) : (
-                <Like inn="none" out="white" stroke="black" />
-              )}
-            </div>
-            <div className="p-4">
-              <Image src={cart} />
-            </div>
-            <div className="p-4">
-              <Image src={send} />
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
-            <div class=" rounded-md flex items-center justify-center">
-              <div>
-                <Image src={data.Cover_image} width={400} height={350} />
+                    <div class="pl-2 text-center">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 mt-1">
+                          <Image src={airpods} />
+                        </div>
+                        <Link
+                          className=""
+                          href={`/read/audio/${userid}:${data.id}1`}
+                        >
+                          Listen
+                        </Link>
+                      </div>
+                      <div className="text-base text-black mt-3">
+                        {data.listen_time} Minutes
+                      </div>
+                    </div>
+                    <div class="pl-2 text-center">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 w-5 mt-1">
+                          <Image src={cards} />
+                        </div>
+                        <Link
+                          className=""
+                          href={`/read/cards/${userid}:${data.id}`}
+                        >
+                          Cards
+                        </Link>
+                      </div>
+                      <div className="text-base text-black mt-3">9 Cards</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <span className="lg:text-xl sm:text-base text-gray-800">
-                IDEOS OF
-              </span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <span className="lg:text-xl sm:text-base text-black text-center">
-                {data.Book_Name}
-              </span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center mb-4">
-              <span className="text-base text-black">{data.Book_Author}</span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center mb-[5rem]">
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
-                <div className="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 mt-1">
-                      <Image src={bookicn} />
-                    </div>
-                    <Link className="" href="">
-                      Read
-                    </Link>
-                  </div>
+              <div className="pt-7">
+                <div
+                  className="cursor-pointer"
+                  onClick={function handleLike() {
+                    const fetchData = async () => {
+                      const result = await Axios.post(
+                        "http://localhost:3000/api/UserFavourites/addFavourites",
+                        {
+                          name: data.Book_Name,
+                          image: data.Cover_image,
+                          author: data.Book_Author,
+                          percent: 30,
+                          id: data.id,
 
-                  <div className="text-base text-black mt-3">
-                    {data.read_time} Minutes
-                  </div>
-                </div>
+                          User_Id: userid,
+                        }
+                      );
 
-                <div class="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 mt-1">
-                      <Image src={airpods} />
+                      setLike(result.data);
+                    };
+
+                    fetchData();
+                  }}
+                >
+                  {lik ? (
+                    <div style={{ width: "50px", height: "50px" }}>
+                      <Like inn="red" out="white" stroke="red" />
                     </div>
-                    <Link
-                      className=""
-                      href={`/read/audio/${userid}:${data.id}1`}
-                    >
-                      Listen
-                    </Link>
-                  </div>
-                  <div className="text-base text-black mt-3">
-                    {data.listen_time} Minutes
-                  </div>
+                  ) : (
+                    <div style={{ width: "50px", height: "50px" }}>
+                        <Like inn="none" out="white" stroke="black" />
+                    </div>
+                    
+                  )}
                 </div>
-                <div class="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 w-5 mt-1">
-                      <Image src={cards} />
-                    </div>
-                    <Link
-                      className=""
-                      href={`/read/cards/${userid}:${data.id}`}
-                    >
-                      Cards
-                    </Link>
-                  </div>
+                <div className="-z-50">
+                  <Image src={cart} />
+                </div>
+                <div className="">
+                  <Image src={send} />
                 </div>
               </div>
             </div>

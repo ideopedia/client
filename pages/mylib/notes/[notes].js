@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import task from "../../../public/task.svg";
 import arr from "../../../public/downarr.svg";
 import Loader from "../../../components/loader";
+import Navbar from "../../../components/navbar";
 import Modal from "../../../components/notesModal";
 import NotesContainer from "../../../components/Notes";
 import create from "../../../public/create.svg";
@@ -87,13 +88,14 @@ const Notes = () => {
         <div>
           {console.log(notes)}
           {console.log(user)}
-          <div className="md:flex">
-            <SideNavbar
+          <div className="">
+            {/* <SideNavbar
               per={user[0].Profile_percent}
               image={user[0].Image}
               name={user[0].Name}
               u_id={user[0].User_Id}
-            />
+            /> */}
+            <Navbar isLogedIn={true} userid={favo.notes} />
 
             <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
               <br />

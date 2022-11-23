@@ -47,7 +47,7 @@ const About = () => {
   const isBreakpoint = useMediaQuery(450);
   return (
     <div>
-      <Navbar />
+      <Navbar isLogedIn={false} />
       <div className="">
         <div className="about_hero1 pt-10" id="about_hero">
           <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">

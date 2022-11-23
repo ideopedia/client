@@ -7,6 +7,7 @@ import create from "../../../public/create.svg";
 import arr from "../../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import Navbar from "../../../components/navbar";
 import { useRouter } from "next/router";
 import Loader from "../../../components/loader";
 import fav from "../../../public/fav.svg";
@@ -47,20 +48,24 @@ const Completed = () => {
   return (
     <div>
       {data ? (
-        <div className="md:flex">
-          <SideNavbar
+        <div className="">
+          {/* <SideNavbar
             per={user[0].Profile_percent}
             image={user[0].Image}
             name={user[0].Name}
             u_id={user[0].User_Id}
-          />
+          /> */}
           {console.log(data)}
+          <Navbar isLogedIn={true} userid={favo.completed} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
-                <Link href={`/mylib/completed/${favo.completed}`} className="navtxt">
+                <Link
+                  href={`/mylib/completed/${favo.completed}`}
+                  className="navtxt"
+                >
                   <div>
                     <span className="text-xl hover:text-green-700 cursor-pointer pb-3">
                       Completed
@@ -72,7 +77,10 @@ const Completed = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={fav} />
-                <Link href={`/mylib/favourites/${favo.completed}`} className="navtxt">
+                <Link
+                  href={`/mylib/favourites/${favo.completed}`}
+                  className="navtxt"
+                >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Favourites
                   </span>
@@ -80,7 +88,10 @@ const Completed = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href={`/mylib/notes/${favo.completed}`} className="navtxt">
+                <Link
+                  href={`/mylib/notes/${favo.completed}`}
+                  className="navtxt"
+                >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>

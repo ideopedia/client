@@ -9,6 +9,7 @@ import Link from "next/link";
 import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import task from "../../public/task.svg";
+import Navbar from "../../components/navbar";
 import create from "../../public/create.svg";
 import fav from "../../public/fav.svg";
 import arr from "../../public/downarr.svg";
@@ -71,14 +72,14 @@ const New = () => {
   return (
     <div>
       {data ? (
-        <div className="md:flex">
-          <SideNavbar
+        <div className="">
+          {/* <SideNavbar
             per={user[0].Profile_percent}
             image={user[0].Image}
             name={user[0].Name}
             u_id={user[0].User_Id}
-          />
-
+          /> */}
+          <Navbar isLogedIn={true} userid={favo.users} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">
