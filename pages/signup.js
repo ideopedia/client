@@ -8,6 +8,7 @@ import eyeon from "../public/eyeon.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Axios from "axios";
+import { getCookie, setCookies, removeCookies,setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { useState, useReducer, useEffect, useRef } from "react";
 function Signup() {
@@ -34,7 +35,7 @@ function Signup() {
     });
   };
   const toastifyFailure = () => {
-    toast.success("Invail Email or Invite Code !", {
+    toast.error("Invail Email or Invite Code !", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -127,6 +128,7 @@ function Signup() {
           toastifyFailure();
         } else {
           console.log(data.data);
+          setCookies('user',data.data.User_Id,{ maxAge: 10000 })
           toastifySuccess();
           router.push(`/dashboard/${data.data.User_Id}`);
         }

@@ -3,6 +3,8 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SliderComponent from "../components/heroslider";
+import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
+
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import bpoints from "../public/circle.svg";
 import Navbar from "../components/navbar";
@@ -72,11 +74,19 @@ function Newhero() {
                   <span>one idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
-                  <Link href="/signup">
-                    <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
-                      <button className="">Get Started</button>
-                    </div>
-                  </Link>
+                  {getCookie("user") ? (
+                    <Link href={`/dashboard/${getCookie('user')}`}>
+                      <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
+                        <button className="">Get Started</button>
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link href="/signup">
+                      <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
+                        <button className="">Get Started</button>
+                      </div>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -89,7 +99,7 @@ function Newhero() {
               ></Player>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );

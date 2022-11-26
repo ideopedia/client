@@ -7,6 +7,7 @@ import create from "../../../public/create.svg";
 import arr from "../../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import drop from "../../../public/dropdownlogo.svg";
 import Navbar from "../../../components/navbar";
 import { useRouter } from "next/router";
 import Loader from "../../../components/loader";
@@ -100,11 +101,17 @@ const Completed = () => {
             </div>
 
             <br />
-            <div className="flex drop-shadow-md bg-white pl-5 cls">
-              <Link href="#">
-                <span className="pr-4 cursor-pointer">Books</span>
-              </Link>
-              <Image src={arr} />
+            <div class="dropdown pl-4">
+              <button class="dropbtn flex items-center justify-center">
+                Sort By{" "}
+                <div className="mt-2 ml-2">
+                  <Image src={drop} />
+                </div>
+              </button>
+              <div class="dropdown-content ">
+                <Link href={`/mylib/favourites/${favo.completed}`} >Books</Link>
+                <Link href={`/mylib/favourites/${favo.completed}`}>Author</Link>
+              </div>
             </div>
             {data.map((val) => (
               <CompletedCard

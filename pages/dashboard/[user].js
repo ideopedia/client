@@ -7,6 +7,7 @@ import task from "../../public/task.svg";
 import create from "../../public/create.svg";
 import red from "../../public/red.svg";
 import infu from "../../public/influencer1.svg";
+import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
 import Navbar from "../../components/navbar";
 import cht from "../../public/cht.svg";
 import {

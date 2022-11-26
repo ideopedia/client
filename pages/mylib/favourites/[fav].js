@@ -11,6 +11,7 @@ import Navbar from "../../../components/navbar";
 import { useRouter } from "next/router";
 import fav from "../../../public/fav.svg";
 import Loader from "../../../components/loader";
+import drop from "../../../public/dropdownlogo.svg";
 import srch from "../../../public/srch.svg";
 import bmark from "../../../public/bmark.svg";
 import Image from "next/image";
@@ -80,22 +81,27 @@ const Favourites = () => {
             </div>
 
             <br />
-            <div className="flex drop-shadow-md bg-white pl-5 cls">
-              <Link href="#">
-                <span className="pr-4 cursor-pointer">Books</span>
-              </Link>
-              <Image src={arr} />
+            <div class="dropdown pl-4">
+              <button class="dropbtn flex items-center justify-center">
+                Sort By{" "}
+                <div className="mt-2 ml-2">
+                  <Image src={drop} />
+                </div>
+              </button>
+              <div class="dropdown-content ">
+                <Link href={`/mylib/favourites/${favo.fav}`} >Books</Link>
+                <Link href={`/mylib/favourites/${favo.fav}`}>Author</Link>
+              </div>
             </div>
-            {data.map((val) => (
-              <FavouritesCard
-                image={val.image}
-                name={val.name}
-                author={val.author}
-                percent={val.percent}
-                book_id={val.id}
-                b_name={val.name}
-              />
-            ))}
+
+            <FavouritesCard
+              image={data.image}
+              name={data.name}
+              author={data.author}
+              percent={data.percent}
+              book_id={data.id}
+              b_name={data.name}
+            />
           </div>
         </div>
       ) : (
