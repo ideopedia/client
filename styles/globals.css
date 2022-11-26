@@ -174,18 +174,18 @@
   }
 }
 
-.ideoData {
+/* .ideoData {
   font-size: 1.6rem;
   text-align: center;
-}
-@media screen and (max-width: 470px) {
+} */
+/* @media screen and (max-width: 470px) {
   .ideoData {
     font-size: 1.25rem;
   }
   .ideoHead {
     font-size: 1.5rem;
   }
-}
+} */
 @media screen and (max-width: 715px) {
   .greyContent {
     font-size: 20px;

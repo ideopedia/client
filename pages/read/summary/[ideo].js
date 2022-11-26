@@ -197,8 +197,8 @@ const Read = () => {
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
                     <div
-                      className=" text-black text-bold ideoHead"
-                      style={{ fontSize: `${rangeval * 34}px` }}
+                      className=" text-black font-semibold"
+                      style={{ fontSize: `${rangeval * 38}px` }}
                     >
                       {data.Ideo_title}
                     </div>
@@ -231,7 +231,7 @@ const Read = () => {
               </div>
 
               <div
-                className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData"
+                className="flex justify-center items-center  text-green-500 font-semibold uppercase pl-4 pb-4 text-center ideoData"
                 style={{ fontSize: `${rangeval * 36}px` }}
               >
                 {data.Ideo}
@@ -337,9 +337,8 @@ const Read = () => {
                     <div className="p-4">
                       {data.Book_Summary[0].Content[n].map((val) => (
                         <div
-                          className=" text-black  p-4 flex justify-center items-center"
+                          className=" text-black  py-4 px-8 flex justify-center items-center leading-[197%] font-medium"
                           style={{
-                            lineHeight: "1.7",
                             fontSize: `${rangeval * 28}px`,
                           }}
                         >
@@ -347,7 +346,7 @@ const Read = () => {
                         </div>
                       ))}
                       {data.Book_Summary[0].images[n][0].length > 2 ? (
-                        <div className="flex justify-center items-center p-4">
+                        <div className="flex justify-center items-center px-4 py-18">
                           <Image
                             src={data.Book_Summary[0].images[n][0]}
                             width={300}
@@ -365,7 +364,7 @@ const Read = () => {
                               <Image src={startq} />
                             </div>
                             <div
-                              className=" text-green-700 mx-[2rem]"
+                              className=" text-green-500 mx-[2rem]"
                               style={{ fontSize: `${rangeval * 28}px` }}
                             >
                               {data.Book_Summary[0].Quotes[n]}
@@ -415,7 +414,7 @@ const Read = () => {
                                 {val.name}
                               </div>
                               <div
-                                className=" text-green-700"
+                                className=" text-green-500"
                                 style={{ fontSize: `${rangeval * 28}px` }}
                               >
                                 {val.quote}

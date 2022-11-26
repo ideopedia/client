@@ -398,7 +398,7 @@ const Book = () => {
           
           
           
-          <div className="acclaimed pt-[3rem] pb-[3rem]">
+          <div className="acclaimed pt-[4rem] pb-[3rem]">
             <div className="flex justify-center items-center px-[3rem]">
               <span className="text-[36px]  uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
