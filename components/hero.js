@@ -77,20 +77,20 @@ function Newhero() {
                   {getCookie("user") ? (
                     <Link href={`/dashboard/${getCookie('user')}`}>
                       <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
-                        <button className="">Get Started</button>
+                        <button className="font-bold">Get Started</button>
                       </div>
                     </Link>
                   ) : (
-                    <Link href="/signup">
-                      <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
-                        <button className="">Get Started</button>
+                    <Link href="/login">
+                      <div className="getstarted gt xl:text-[25px] lg:text-[20px] text-white  ">
+                        <button className="text -bold ">Get Started</button>
                       </div>
                     </Link>
                   )}
                 </div>
               </div>
             </div>
-            <div className="w-auto h-auto">
+            <div className="w-auto h-auto -z-50">
               <Player
                 autoplay
                 loop

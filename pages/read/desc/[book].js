@@ -126,7 +126,7 @@ const Book = () => {
                   </span>
                 </div>
                 <div class="rounded-md flex items-center justify-center mb-[5rem]">
-                  <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     <div className="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
@@ -158,7 +158,7 @@ const Book = () => {
                         {data.listen_time} Minutes
                       </div>
                     </div>
-                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
+                    <div class="pl-2 text-center font-medium md:text-[18px]  text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
                           <Image src={cards} />
@@ -175,7 +175,7 @@ const Book = () => {
                   </div>
                 </div>
               </div>
-              <div className="">
+              <div className="pr-9">
                 <div
                   className="cursor-pointer"
                   onClick={function handleLike() {

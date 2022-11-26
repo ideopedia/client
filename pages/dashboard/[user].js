@@ -83,11 +83,70 @@ const Dashboard = () => {
       {data ? (
         <div>
           <Navbar isLogedIn={true} userid={favo.user} />
-          <div class="p-4  pt-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-8 pb-9">
+
+          <div className="flex justify-start p-4">
+            <div className="text-4xl pb-4">Welcome Back</div>
+          </div>
+          <div className="flex xl:justify-start lg:justify-center md:justify-center sm:justify-center p-4 ">
+            <div className="">
+              <CircularProgressbarWithChildren
+                strokeWidth={3}
+               
+                counterClockwise={true}
+                value={data[0].Profile_percent}
+                styles={buildStyles({
+                  pathColor: "#2CB67D",
+                  trailColor: "#fff",
+                  
+                })}
+                className="w-[200px] h-[200px]"
+              >
+                <div className=" inne mt-3 ml-2 mr-1">
+                  <Image
+                    src={data[0].Image}
+                    width={200}
+                    height={200}
+                    className="justify-center items-center  imgr"
+                  />
+                </div>
+              </CircularProgressbarWithChildren>
+              <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
+                <span className="p-2 md:p-0 sm:p-5 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
+                  {data[0].Profile_percent} %
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex xl:justify-start lg:justify-center md:justify-center sm:justify-center p-4">
+            <div className="text-3xl pb-4">
+              {hr < 12 ? "Good Morning" : "Good Evening"}, Hon. {data[0].Name}
+            </div>
+          </div>
+          <div className="flex xl:justify-start lg:justify-center md:justify-center sm:justify-center p-4 pb-9 ">
+            <div className="text-2xl pt-4">
+              {type === "Bronze Influencer" ? (
+                <Image src={bronze} />
+              ) : (
+                <Image src={silver} />
+              )}
+              
+              <span className="pl-2 pb-2 pt-20"> You are a {type}</span>
+              <span className="pl-2 pr-2 text-green-500">{data[0].Read * 20} Points</span>
+              <span
+                onClick={function handleLink() {
+                  router.push(`/dashboard/points/${favo.user}`);
+                }}
+                className="text-base pl-2"
+              >
+                Learn more
+              </span>
+            </div>
+          </div>
+          {/* <div class="p-4  pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 pb-9">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 ">
               <div className="text-4xl pb-4">Welcome</div>
               <div className="flex justify-center items-center pt-7 pl-5">
-                <div className="w-4/12 ">
+                <div className="w-4/12">
                   <CircularProgressbarWithChildren
                     strokeWidth={3}
                     counterClockwise={true}
@@ -97,7 +156,7 @@ const Dashboard = () => {
                       trailColor: "#fff",
                     })}
                   >
-                    {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                   
                     <div className="mr-2 inne ml-2 mt-3 mb-1">
                       <Image
                         src={infu}
@@ -141,7 +200,7 @@ const Dashboard = () => {
                 }} className="text-base pl-2">Learn more</span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div class="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div class="rounded-md flex items-center justify-center">
               <ReadBox amt={data[0].Read} />

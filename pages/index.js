@@ -220,7 +220,11 @@ export default function Home() {
               />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center font-medium">
-              <Features features={fe2} info="Content customised especially for India's leaders" />
+              <Features features={fe2} info="Save your key points and notes" />
+            </div>
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
+              <Features features={fe3} info="Personalized reading experience" />
+              
             </div>
             <div class="p-4  rounded-md flex items-center justify-center font-medium">
               <Features features={fe3} info="One of a kind knowledge portal" />
@@ -237,12 +241,7 @@ export default function Home() {
                 info="Content written by subject matter experts"
               />
             </div>
-            <div class="p-4  rounded-md flex items-center justify-center font-medium">
-              <Features
-                features={fe1}
-                info="Available in text and audio formats"
-              />
-            </div>
+            
           </div>
         </div>
       </div>
