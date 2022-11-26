@@ -32,7 +32,7 @@ import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
 import { useState, useCallback, useEffect, useReducer } from "react";
-import { useState, useCallback, useEffect } from "react";
+
 
 export default function Home() {
   const infReducer = (state, action) => {
