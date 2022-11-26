@@ -298,6 +298,11 @@
     margin-right: 15rem;
   }
 }
+@media screen and (min-width:1440px){
+  .timeSaved{
+    margin:1rem 8rem;
+  }
+}
 @media screen and (max-width: 580px) {
   .benifitsTopics {
     font-size: 15px;
