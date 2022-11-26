@@ -57,9 +57,9 @@ const OurReaders = () => {
                   Ideopedia's Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
-                  leading scientists, distinguished, top CEOs, academicians and
-                  other luminaries. Our readers shape economic, public, and
-                  social policy across India.
+                  leading scientists, distinguished academicians and
+                  other luminaries. Our readers shape the economic, public, and
+                  social policy of our nation.
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="lg:pt-9 rounded-md flex items-center justify-center">
-                <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold lg:leading-normal xl:pl-20 lg:pl-2 lg:px-8 md:px-20 text-center">
+                <h1 className="xl:text-4xl xl:leading-relaxed lg:leading-relaxed lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold  xl:pl-20 lg:pl-2 lg:px-8 md:px-20 text-center">
                   TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>

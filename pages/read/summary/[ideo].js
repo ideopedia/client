@@ -322,7 +322,7 @@ const Read = () => {
                 <div>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center  bg-neutral-300  text-bold p-4 bg-white greyContent"
+                      className="flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent"
                       style={{
                         textAlign: "center",
                         fontSize: `${rangeval * 38}px`,
@@ -346,7 +346,7 @@ const Read = () => {
                         </div>
                       ))}
                       {data.Book_Summary[0].images[n][0].length > 2 ? (
-                        <div className="flex justify-center items-center px-4 py-18">
+                        <div className="flex justify-center items-center px-4 py-16">
                           <Image
                             src={data.Book_Summary[0].images[n][0]}
                             width={300}
@@ -364,7 +364,7 @@ const Read = () => {
                               <Image src={startq} />
                             </div>
                             <div
-                              className=" text-green-500 mx-[2rem]"
+                              className=" text-green-500 mx-[4rem] text-center font-medium"
                               style={{ fontSize: `${rangeval * 28}px` }}
                             >
                               {data.Book_Summary[0].Quotes[n]}

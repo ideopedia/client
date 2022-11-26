@@ -256,7 +256,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase text-center">
+              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
                 The World's only knowledge portal specially for leaders
               </h1>
               <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
@@ -270,7 +270,7 @@ export default function Home() {
         <div className="container py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase text-center">
+              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
                 Featuring a new trend everyday
               </h1>
               <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
@@ -292,7 +292,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase text-center">
+              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
                 Real world examples to enhance learning
               </h1>
               <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
