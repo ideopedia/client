@@ -71,7 +71,7 @@ const Read = () => {
           <div className="flex justify-end pt-2">
             <div class="p-4  rounded-md flex items-center justify-end ">
               <div className="flex ">
-                <Image src={srch} />
+                <Image src={srch}  className="-z-50"/>
 
                 <input
                   className="int pl-7"

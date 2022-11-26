@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import song from "../public/new_audio.mp3";
-import Slider from "../components/controls/Slider";
-import ControlPanel from "../components/controls/ControlPanel";
+import Slider from "../components/dark/Slider";
+import ControlPanel from "../components/dark/ControlPanel";
 
-function Audio(props) {
+function DarkAudio(props) {
   const [percentage, setPercentage] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(2);
@@ -44,7 +44,7 @@ function Audio(props) {
   };
 
   return (
-    <div className={`app-container w-7/12`}>
+    <div className={`app-container-dark w-7/12`}>
       <Slider percentage={percentage} onChange={onChange} />
       <audio
         ref={audioRef}
@@ -64,4 +64,4 @@ function Audio(props) {
   );
 }
 
-export default Audio;
+export default DarkAudio;
