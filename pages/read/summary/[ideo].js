@@ -24,7 +24,6 @@ import forwhole from "../../../public/forwardwh.svg";
 import content from "../../../public/content.svg";
 import startq from "../../../public/startq.svg";
 import endq from "../../../public/endq.svg";
-import Modal from "../../../components/notesModal";
 const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
@@ -33,7 +32,6 @@ const Read = () => {
   const [notes, setNotes] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [rangeval, setRangeval] = useState(1);
-  const [comp, setComp] = useState(1);
   const [showNotesModal, setShowNotesModal] = React.useState(false);
   const [compdata, setCompData] = useState(false);
   const [showMod, setShowMod] = useState(false);
@@ -418,7 +416,7 @@ const Read = () => {
                               </div>
                               <div
                                 className=" text-green-700"
-                                style={{ fontSize: `${rangeval * 23}px` }}
+                                style={{ fontSize: `${rangeval * 28}px` }}
                               >
                                 {val.quote}
                               </div>

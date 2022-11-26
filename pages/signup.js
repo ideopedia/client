@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import eyeoff from "../public/eyeoff.svg";
 import eyeon from "../public/eyeon.svg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import Axios from "axios";
 import { useRouter } from "next/router";
 import { useState, useReducer, useEffect, useRef } from "react";
@@ -19,6 +21,30 @@ function Signup() {
   const [pass, setPass] = useState("password");
   const [update, setUpdate] = useState(false);
   const router = useRouter();
+  const toastifySuccess = () => {
+    toast.success("Successfully LogedIn !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  const toastifyFailure = () => {
+    toast.success("Invail Email or Invite Code !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   const emailReducer = (state, action) => {
     switch (action.type) {
@@ -96,8 +122,15 @@ function Signup() {
         Invite_code: invite.value,
       }).then((data) => {
         setUpdate(data.data);
-        console.log(data.data);
-        router.push(`/dashboard/${data.data.User_Id}`);
+        if (data.data === null) {
+          console.log(data.data);
+          toastifyFailure();
+        } else {
+          console.log(data.data);
+          toastifySuccess();
+          router.push(`/dashboard/${data.data.User_Id}`);
+        }
+        // router.push(`/dashboard/${data.data.User_Id}`);
       });
       // console.log(update);
     }
@@ -144,7 +177,7 @@ function Signup() {
   }`;
   return (
     <div>
-      <Navbar  isLogedIn={false} />
+      <Navbar isLogedIn={false} />
       <section class="h-screen new">
         <div class="px-6 h-full text-gray-800">
           <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -160,9 +193,11 @@ function Signup() {
               desc2="Login here"
             /> */}
             <div className="newloginContainer">
+              
               <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="SIGNUP" />
               </div>
+              <ToastContainer />
               <form className="newLoginForm" onSubmit={loginSubmitHandler}>
                 <label className="text-lg font-medium">Email</label>
                 <input
