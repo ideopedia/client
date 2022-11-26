@@ -5,10 +5,10 @@ import Image from "next/image";
 import log from "../public/logo.svg";
 import { useRouter } from "next/router";
 import { Dropdown } from "flowbite-react";
-import drop from "../public/dropdownlogo.svg"
-
-export default function Navbar() {
-  const router = useRouter()
+import drop from "../public/dropdownlogo.svg";
+import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
+export default function Navbar(props) {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
@@ -66,9 +66,17 @@ export default function Navbar() {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center" onClick={function handleClick(){
-                      router.push("/testimonials")
-                    }}>Our Readers <div className="mt-2 ml-2"><Image src={drop} /></div></button>
+                    <button
+                      class="dropbtn flex items-center justify-center"
+                      onClick={function handleClick() {
+                        router.push("/testimonials");
+                      }}
+                    >
+                      Our Readers{" "}
+                      <div className="mt-2 ml-2">
+                        <Image src={drop} />
+                      </div>
+                    </button>
                     <div class="dropdown-content">
                       <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
@@ -76,10 +84,18 @@ export default function Navbar() {
                 </li>
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
-                      router.push("/about")
-                    }}>About Us <div className="mt-2 ml-2"><Image src={drop} /></div></button>
-                    <div class="dropdown-content">
+                    <button
+                      class="dropbtn flex items-center justify-center"
+                      onClick={function handleClick() {
+                        router.push("/about");
+                      }}
+                    >
+                      About Us{" "}
+                      <div className="mt-2 ml-2">
+                        <Image src={drop} />
+                      </div>
+                    </button>
+                    <div class="dropdown-content ">
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
                       <Link href="/about#vission">Vision</Link>
@@ -87,23 +103,48 @@ export default function Navbar() {
                     </div>
                   </div>
                 </li>
-                <li className="text-black flex justify-center">
-                  <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
-                      router.push("/teams")
-                    }}>My Account<div className="mt-2 ml-2"><Image src={drop} /></div></button>
-                    <div class="dropdown-content">
-                      <Link href="/teams#bod">Dashboard</Link>
-                      <Link href="/teams#bod">Read Ideos</Link>
-                      <Link href="/teams#bod">My Library</Link>
+                {getCookie("user") ? (
+                  <li className="text-black flex justify-center">
+                    <div class="dropdown">
+                      <button
+                        class="dropbtn flex items-center justify-center"
+                        onClick={function handleClick() {
+                          router.push(`/dashboard/${getCookie("user")}`);
+                        }}
+                      >
+                        My Account
+                        <div className="mt-2 ml-2">
+                          <Image src={drop} />
+                        </div>
+                      </button>
+                      <div class="dropdown-content ">
+                        <Link href={`/dashboard/${getCookie("user")}`}>
+                          Dashboard
+                        </Link>
+                        <Link href={`/read/${getCookie("user")}`}>
+                          Read Ideos
+                        </Link>
+                        <Link href={`/mylib/${getCookie("user")}`}>
+                          My Library
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                ) : null}
+
                 <li className="text-black flex justify-center">
                   <div class="dropdown">
-                    <button class="dropbtn flex items-center justify-center"  onClick={function handleClick(){
-                      router.push("/teams")
-                    }}>Team <div className="mt-2 ml-2"><Image src={drop} /></div></button>
+                    <button
+                      class="dropbtn flex items-center justify-center"
+                      onClick={function handleClick() {
+                        router.push("/teams");
+                      }}
+                    >
+                      Team{" "}
+                      <div className="mt-2 ml-2">
+                        <Image src={drop} />
+                      </div>
+                    </button>
                     <div class="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
                       <Link href="/teams#bod">Founders</Link>
@@ -115,20 +156,34 @@ export default function Navbar() {
                     <a>Contact Us</a>
                   </Link>
                 </li>
-                <li className="text-white flex justify-center">
-                  <Link href="/login">
+                {getCookie("user") ? (
+                  <li className="text-white flex justify-center">
                     <div className="log">
-                      <button>Login</button>
-                    </div>
-                  </Link>
-                </li>
-                <li className="text-white flex justify-center">
-                  <Link href="/signup">
-                    <div className="sin">
-                      <button>Signup</button>
-                    </div>
-                  </Link>
-                </li>
+                      <button onClick={function handleLogout(){
+                        removeCookies('user')
+                        router.push("/")
+                      }} >Logout</button>
+                    </div> 
+                  </li>
+                ) : (
+                  <li className="text-white flex justify-center">
+                    <Link href="/login">
+                      <div className="log">
+                        <button>Login</button>
+                      </div>
+                    </Link>
+                  </li>
+                )}
+
+                {getCookie("user") ? null : (
+                  <li className="text-white flex justify-center">
+                    <Link href="/signup">
+                      <div className="sin">
+                        <button>Signup</button>
+                      </div>
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

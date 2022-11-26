@@ -10,27 +10,27 @@ function Footer() {
   return (
     <div>
       <div class="pt-10 pb-4 footer">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
-          <div class="p-2  logo item">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-2 lg:gap-4 px-5">
+          <div class="p-2  logo item sm:text-left text-center">
             <div className="pt-20">
               <Image src={logo} width={120}/>
               <br />
-              <label className="foottext pl-2">
+              <label className="foottext">
                 INFORMING
                 <div className="bulletPoint">
-                  <Image src={bpoint} />
+                  <Image src={bpoint}/>
                 </div>
                 INSPIRING
                 <div className="bulletPoint">
                   <Image src={bpoint} />
                 </div>
-                <span className="pl-2">IMPACTING</span>
-                <div className="pl-2">INDIA'S TOP LEADERS</div>
-                <div className="pl-2">ONE IDEA AT A TIME</div>
+                <span className="">IMPACTING</span>
+                <div className="">INDIA'S TOP LEADERS</div>
+                <div className="">ONE IDEA AT A TIME</div>
               </label>
             </div>
           </div>
-          <div class="p-2 rounded-md flex">
+          <div class="p-2 rounded-md flex sm:justify-start justify-center sm:text-left text-center">
             <div>
               <span className="heading">About</span>
               <br />
@@ -55,7 +55,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex mb-5">
+          <div class="p-2  rounded-md flex sm:justify-start justify-center mb-5 sm:text-left text-center">
             <div>
               <span className="heading">Team</span>
               <br />
@@ -74,7 +74,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex  mb-9">
+          <div class="p-2  rounded-md flex sm:justify-start justify-center mb-9 sm:text-left text-center">
             <div>
               <span className="heading">Our Readers</span>
               <br />
@@ -89,7 +89,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex  mb-9">
+          {/* <div class="p-2  rounded-md flex  mb-9">
             <div>
               <span className="heading">Social Media</span>
               <br />
@@ -111,15 +111,31 @@ function Footer() {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-
-        <hr className="hru mx-9" />
-        <br />
-        <span className="foottext pl-8">
+        <hr className="hru mx-9 mb-5" />
+        <div className="flex items-center justify-between">
+        <div className="foottext pl-8">
           <Link href="/about">©️ Ideopedia - 2022</Link>
-        </span>
-        <br></br>
+        </div>
+        <div className="pr-8">
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
+                  <Link href="/login">
+                    <Image src={facebook} width={38}/>
+                  </Link>
+                </span>
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
+                  <Link href="/login">
+                    <Image src={twitter} width={38}/>
+                  </Link>
+                </span>
+                <span className="mr-2 hover:text-green-500 cursor-pointer">
+                  <Link href="/login">
+                    <Image src={telegram} width={38}/>
+                  </Link>
+                </span>
+              </div>
+              </div>
       </div>
     </div>
   );

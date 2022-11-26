@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Loader from "../../../components/loader";
 import Axios from "axios";
+import DarkAudio from "../../../components/DarkAudio";
 import close from "../../../public/close.svg";
 import dclose from "../../../public/darkclose.svg";
 import darkfor from "../../../public/darkfor.svg";
@@ -125,7 +126,7 @@ const Listen = () => {
               <Image src={conten[0].Ideo_image} width={300} height={300} />
             </div> */}
               <div className="flex justify-center items-center pt-2">
-                <Audio />
+                <Audio song={conten[0].audio} />
               </div>
 
               {showModal ? (
@@ -250,7 +251,7 @@ const Listen = () => {
             <Image src={conten[0].Ideo_image} width={300} height={300} />
           </div> */}
                 <div className="flex justify-center items-center pt-2">
-                  <Audio />
+                  <DarkAudio song={conten[0].audio} />
                 </div>
                 {showModal ? (
                   <>

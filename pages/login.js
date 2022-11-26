@@ -3,31 +3,65 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import login from "../public/login.svg";
 import Image from "next/image";
-import eyeoff from "../public/eyeoff.svg"
-import eyeon from "../public/eyeon.svg"
+import eyeoff from "../public/eyeoff.svg";
+import eyeon from "../public/eyeon.svg";
+import { getCookie, setCookies, removeCookies,setCookie } from "cookies-next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import Link from "next/link";
+import Axios from "axios";
+import { useRouter } from "next/router";
 import { useReducer, useEffect, useState, useRef } from "react";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import MyLogin from "./Auth";
+
 function Login() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+  console.log(getCookie('test'))
   const classes =
     "border-2 border-gray-300 text-gray-900 text-base font-medium rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
   const emailRef = useRef();
   const passRef = useRef();
   const [formValid, setFormValid] = useState(false);
   const [pass, setPass] = useState("password");
+  const [update, setUpdate] = useState(false);
+  const router = useRouter();
+  const toastifySuccess = () => {
+    toast.success("Successfully LogedIn !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  const toastifyFailure = () => {
+    toast.error("Invail Email or Password !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   const emailReducer = (state, action) => {
     switch (action.type) {
       case "input":
         return {
           value: action.val,
-          isValid: action.val.includes("@") && action.val.includes("."),
+          //isValid: action.val.includes("@") && action.val.includes("."),
+          isValid: true,
         };
       case "validate":
         return {
           value: state.value,
-          isValid: state.value.includes("@") && action.val.includes("."),
+          // isValid: state.value.includes("@") && action.val.includes("."),
+          isValid: true,
         };
       default:
         return { value: "", isValid: false };
@@ -61,11 +95,28 @@ function Login() {
       clearTimeout(loginCheck);
     };
   }, [emailValid, passValid]);
-  const loginSubmitHandler = (e) => {
+  const loginSubmitHandler = async (e) => {
     e.preventDefault();
     if (formValid) {
-      const user = { email: email.value, password: password.value };
-      console.log(user);
+      // const user = { email: email.value, password: password.value };
+      // console.log(user);
+      await Axios.post("http://localhost:3000/api/UserCredit/Login", {
+        Email: email.value,
+        Password: password.value,
+      }).then((data) => {
+        setUpdate(data.data);
+        // console.log(data.data);
+        // router.push(`/dashboard/${data.data.User_Id}`);
+        if (data.data === null) {
+          console.log(data.data)
+          toastifyFailure();
+        } else {
+          console.log(data.data);
+          setCookie('user',data.data.User_Id,{ maxAge: 10000 })
+          toastifySuccess();
+          router.push(`/dashboard/${data.data.User_Id}`);
+        }
+      });
     }
     if (!emailValid) {
       emailRef.current.focus();
@@ -95,13 +146,13 @@ function Login() {
   }`;
   return (
     <div>
-      <Navbar />
+      <Navbar isLogedIn={false} />
       <section class="h-screen new" style={{ padding: "4.5rem 2rem 0 0" }}>
         <div className="loginContainer">
           <div className="">
             <Image src={login} />
           </div>
-
+          <ToastContainer />
           <div className="newloginContainer">
             <div className="newLoginTop flex items-center justify-center">
               <FormHeader title="LOGIN" />
@@ -133,19 +184,22 @@ function Login() {
               <div className="flex justify-between pr-[1.5rem]">
                 <label className="text-lg font-medium">Password</label>
                 <p
-                  style={{ position: "relative", top: "2.6rem" }}
+                  style={{ position: "relative", top: "2.9rem" }}
                   className="cursor-pointer"
                   onClick={function handlePass() {
                     pass === "password" ? setPass("text") : setPass("password");
                   }}
                 >
-                  {pass==="password"?<Image src={eyeoff} />:<Image src={eyeon} />}
-                  
+                  {pass === "password" ? (
+                    <Image src={eyeoff} />
+                  ) : (
+                    <Image src={eyeon} />
+                  )}
                 </p>
               </div>
 
               <input
-                className={classes + passClass} 
+                className={classes + passClass}
                 type={pass}
                 placeholder="Enter your password"
                 onChange={passwordChangeHandler}
@@ -177,7 +231,14 @@ function Login() {
                   ></input>
                   <span className="text-base font-medium">Remember me</span>
                 </label>
-                <label className="text-gray-500 text-base font-medium">Forgot password</label>
+                <label
+                  className="text-gray-500 text-base font-medium cursor-pointer"
+                  onClick={function handleForgot() {
+                    router.push("/forgotPassword");
+                  }}
+                >
+                  Forgot password
+                </label>
               </div>
               <div id="button" className="row flex justify-center items-center">
                 <button

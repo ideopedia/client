@@ -24,7 +24,6 @@ import forwhole from "../../../public/forwardwh.svg";
 import content from "../../../public/content.svg";
 import startq from "../../../public/startq.svg";
 import endq from "../../../public/endq.svg";
-import Modal from "../../../components/notesModal";
 const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
@@ -33,7 +32,6 @@ const Read = () => {
   const [notes, setNotes] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [rangeval, setRangeval] = useState(1);
-  const [comp, setComp] = useState(1);
   const [showNotesModal, setShowNotesModal] = React.useState(false);
   const [compdata, setCompData] = useState(false);
   const [showMod, setShowMod] = useState(false);
@@ -180,7 +178,7 @@ const Read = () => {
       {data ? (
         <div>
           {dark ? (
-            <div className="p-4 pb-9">
+            <div className="pb-9">
               <ProgressBar />
               {console.log(data)}
               {console.log(card)}
@@ -234,7 +232,7 @@ const Read = () => {
 
               <div
                 className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData"
-                style={{ fontSize: `${rangeval * 38}px` }}
+                style={{ fontSize: `${rangeval * 36}px` }}
               >
                 {data.Ideo}
               </div>
@@ -418,7 +416,7 @@ const Read = () => {
                               </div>
                               <div
                                 className=" text-green-700"
-                                style={{ fontSize: `${rangeval * 23}px` }}
+                                style={{ fontSize: `${rangeval * 28}px` }}
                               >
                                 {val.quote}
                               </div>

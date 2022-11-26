@@ -41,7 +41,7 @@ const OurReaders = () => {
   const isBreakpoint = useMediaQuery(450);
   return (
     <div>
-      <Navbar />
+      <Navbar  isLogedIn={false} />
       <div className="about_hero">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div class=" rounded-md flex items-center justify-center">
@@ -50,10 +50,10 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-12 md:px-24">
               <div class="rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-3xl text-[26px] text-green-500 font-semibold">OUR READERS</h1>
+                <h1 className="xl:text-4xl lg::text-3xl md:text-3xl text-[26px] text-green-500 font-semibold">OUR READERS</h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <div className="lg:text-xl md:text-lg text-gray-600 readContent font-medium lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center">
+                <div className="xl:text-xl lg:text-lg md:text-lg text-gray-600 readContent font-medium xl:leading-[197%] leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center">
                   Ideopedia's Readers are among the top 5000 influencers in
                   India. Our readers include leading policymakers, thought
                   leaders, top members of the judiciary and the legislature,
@@ -71,12 +71,12 @@ const OurReaders = () => {
           <div class=" p-4 rounded-md flex items-center justify-center">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div class="lg:pt-9 rounded-md flex items-center justify-center">
-                <h1 className="lg:text-4xl md:text-3xl text-[26px] text-green-500 font-semibold lg:leading-normal lg:pl-20 lg:px-8 md:px-20 text-center">
+                <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold lg:leading-normal xl:pl-20 lg:pl-2 lg:px-8 md:px-20 text-center">
                   TRUSTED AND LOVED BY INDIA'S LEADING INFLUENCERS
                 </h1>
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="lg:text-xl lg:leading-relaxed font-medium md:text-lg text-gray-600 lg:pl-20 sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center md:px-24 px-8">
+                <span className="xl:text-xl lg:text-lg  font-medium md:text-lg text-gray-600 lg:pl-20 xl:leading-[197%] leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center md:px-24 px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its

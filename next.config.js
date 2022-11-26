@@ -19,7 +19,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ogyncefr.sirv.com",
+        hostname: "ideopedia-audios.b-cdn.net",
       },
     ],
   },

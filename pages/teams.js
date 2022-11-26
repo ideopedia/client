@@ -34,7 +34,7 @@ const Teams = () => {
   }
   return (
     <div>
-      <Navbar />
+      <Navbar  isLogedIn={false} />
       <div className="p-5">
         <div
           class="pt-5 pb-4 rounded-md flex items-center justify-center"
@@ -43,8 +43,8 @@ const Teams = () => {
           <span className="text-xl">The Team</span>
         </div>
         <div class=" rounded-md flex items-center justify-center">
-          <div className="text-2xl font-medium text-black">
-            <div>This is our team, a lot of smiling happy people</div>
+          <div className="md:text-2xl text-xl font-medium text-black">
+            <div className="text-center">This is our team, a lot of smiling happy people</div>
             <div className="text-center">
               who work hard to empower your teams
             </div>
@@ -60,12 +60,12 @@ const Teams = () => {
                 <Image src={bod1} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="font-medium text-2xl text-black ">
+                <span className="font-medium text-black md:text-[24px] text-xl ">
                   Mr. Binod Kumar Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">
+                <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder - director
                 </span>
               </div>
@@ -81,12 +81,12 @@ const Teams = () => {
                 <Image src={bod2} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="font-medium text-2xl text-black">
+                <span className="font-medium md:text-[24px] text-xl text-black ">
                   Mr. A. Surya Prakash
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">
+                <span className="font-medium md:text-xl text-lg text-black uppercase">
                   director
                 </span>
               </div>
@@ -102,12 +102,12 @@ const Teams = () => {
                 <Image src={bod3} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="font-medium text-2xl text-black">
+                <span className="font-medium md:text-[24px] text-xl text-black">
                   Mr. Swapan Dasgupta
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">
+                <span className="font-medium md:text-xl text-lg text-black uppercase">
                   director
                 </span>
               </div>
@@ -125,12 +125,12 @@ const Teams = () => {
                 <Image src={found1} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="font-medium text-2xl text-black">
+                <span className="font-medium md:text-[24px] text-xl text-black">
                   Malvika Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">
+                <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder
                 </span>
               </div>
@@ -145,12 +145,12 @@ const Teams = () => {
                 <Image src={found2} />
               </div>
               <div class="rounded-md flex items-center justify-center">
-                <span className="font-medium text-2xl text-black">
+                <span className="font-medium md:text-[24px] text-xl text-black">
                   Ritesh Bawri
                 </span>
               </div>
               <div class="flex items-center justify-center">
-                <span className="font-medium text-xl text-black uppercase">
+                <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder
                 </span>
               </div>

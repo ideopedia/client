@@ -3,6 +3,8 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SliderComponent from "../components/heroslider";
+import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
+
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import bpoints from "../public/circle.svg";
 import Navbar from "../components/navbar";
@@ -41,9 +43,9 @@ function Newhero() {
         <div className="lg:flex justify-center items-center lg:pt-9 sm:pt-10">
           <div className="lg:flex lg:justify-between lg:items-center p-5">
             <div className="w-auto h-auto p-1 lg:pt-16">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:gap-6 lg:gap-5 sm:gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:gap-6 lg:gap-5 sm:gap-4 gap-4">
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="xl:text-[50px] lg:text-[32px] sm:text-[34px] text-[16px] text-black font-medium">
+                  <span className="xl:text-[50px] lg:text-[32px] sm:text-[34px] text-[20px] text-black font-medium ff">
                     INFORMING
                     <div className="bulletPoints">
                       {isBreakpoint ? (
@@ -64,19 +66,27 @@ function Newhero() {
                   </span>
                 </div>
                 <div class="  rounded-md flex items-center justify-center">
-                  <span className="xl:text-[42px] lg:text-[32px] sm:text-[32px] text-[16px] text-green-500 font-medium">
+                  <span className="xl:text-[42px] lg:text-[32px] sm:text-[32px] text-[20px] text-green-500 font-medium">
                     INDIA'S TOP LEADERS
                   </span>
                 </div>
-                <div class="xl:text-[38px] lg:text-[30px] sm:text-[30px] text-[16px] flex items-center justify-center font-medium">
+                <div class="xl:text-[38px] lg:text-[30px] sm:text-[30px] text-[18px] flex items-center justify-center font-medium">
                   <span>one idea at a time</span>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
-                  <Link href="/signup">
-                    <div className="getstarted xl:text-[22px] lg:text-[20px] sm:text-[20px] font-medium">
-                      <button className="">Get Started</button>
-                    </div>
-                  </Link>
+                  {getCookie("user") ? (
+                    <Link href={`/dashboard/${getCookie('user')}`}>
+                      <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
+                        <button className="">Get Started</button>
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link href="/signup">
+                      <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
+                        <button className="">Get Started</button>
+                      </div>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -89,7 +99,7 @@ function Newhero() {
               ></Player>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );

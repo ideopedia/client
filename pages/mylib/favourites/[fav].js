@@ -7,9 +7,11 @@ import create from "../../../public/create.svg";
 import arr from "../../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import Navbar from "../../../components/navbar";
 import { useRouter } from "next/router";
 import fav from "../../../public/fav.svg";
 import Loader from "../../../components/loader";
+import drop from "../../../public/dropdownlogo.svg";
 import srch from "../../../public/srch.svg";
 import bmark from "../../../public/bmark.svg";
 import Image from "next/image";
@@ -37,14 +39,15 @@ const Favourites = () => {
   return (
     <div>
       {data ? (
-        <div className="md:flex">
-          <SideNavbar
+        <div className="">
+          {/* <SideNavbar
             per={user[0].Profile_percent}
             image={user[0].Image}
             name={user[0].Name}
             u_id={user[0].User_Id}
-          />
+          /> */}
           {console.log(data)}
+          <Navbar isLogedIn={true} userid={favo.fav} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
             <div class="scrollmenu flex pt-9 ml-9">
@@ -78,22 +81,27 @@ const Favourites = () => {
             </div>
 
             <br />
-            <div className="flex drop-shadow-md bg-white pl-5 cls">
-              <Link href="#">
-                <span className="pr-4 cursor-pointer">Books</span>
-              </Link>
-              <Image src={arr} />
+            <div class="dropdown pl-4">
+              <button class="dropbtn flex items-center justify-center">
+                Sort By{" "}
+                <div className="mt-2 ml-2">
+                  <Image src={drop} />
+                </div>
+              </button>
+              <div class="dropdown-content ">
+                <Link href={`/mylib/favourites/${favo.fav}`} >Books</Link>
+                <Link href={`/mylib/favourites/${favo.fav}`}>Author</Link>
+              </div>
             </div>
-            {data.map((val) => (
-              <FavouritesCard
-                image={val.image}
-                name={val.name}
-                author={val.author}
-                percent={val.percent}
-                book_id={val.id}
-                b_name={val.name}
-              />
-            ))}
+
+            <FavouritesCard
+              image={data.image}
+              name={data.name}
+              author={data.author}
+              percent={data.percent}
+              book_id={data.id}
+              b_name={data.name}
+            />
           </div>
         </div>
       ) : (

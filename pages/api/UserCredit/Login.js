@@ -10,21 +10,12 @@ export default async function Signup(req, res) {
 
   try {
     await connectMongo();
-    // var user = await UsersCredit.findOne({
-    //   Email: Email,
-    //   Password: Password,
-    //   Invite_code: Invite_code,
-    // });
-    var signupuser = await UsersCredit.findOneAndUpdate(
-      { Email: Email },
-      {
-        $set: {
-          Password: Password,
-        },
-      }
-    );
+    var user = await UsersCredit.findOne({
+      Email: Email,
+      Password: Password,
+    });
 
-    res.json(signupuser);
+    res.json(user);
   } catch (err) {
     res.json({ err });
   }

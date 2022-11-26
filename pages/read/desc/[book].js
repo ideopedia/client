@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
@@ -10,7 +10,7 @@ import arrow from "../../../public/arrow.svg";
 import cards from "../../../public/cards.svg";
 import downarr from "../../../public/downarr.svg";
 import ben1 from "../../../public/ben1.svg";
-
+import Navbar from "../../../components/navbar";
 import uparr from "../../../public/uparrow.svg";
 import ok from "../../../public/ok.svg";
 import before from "../../../public/before.svg";
@@ -20,6 +20,7 @@ import send from "../../../public/send.svg";
 import Like from "../../../components/Like";
 import cart from "../../../public/cart.svg";
 import like from "../../../public/like.svg";
+import leftarr from "../../../public/leftarrow.svg";
 import arrowone from "../../../public/arrowone.svg";
 import arrowtwo from "../../../public/arrowtwo.svg";
 import arrowthree from "../../../public/Arrow16.svg";
@@ -30,34 +31,27 @@ import DropdownComponent from "../../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
-  const lap = { one: arrowone, two: arrowtwo };
-  const mob = { one: arrowthree, two: arrowfour };
-  const useMediaQuery = (width) => {
-    const [targetReached, setTargetReached] = useState(false);
-
-    const updateTarget = useCallback((e) => {
-      if (e.matches) {
-        setTargetReached(true);
-      } else {
-        setTargetReached(false);
-      }
-    }, []);
-
+  const init = { one: arrowone, two: arrowtwo };
+  const useWidth = () => {
+    const [screenWidth, setScreenWidth] = useState(0);
+    const handleResize = () => setScreenWidth(window.innerWidth);
     useEffect(() => {
-      const media = window.matchMedia(`(max-width: ${width}px)`);
-      media.addListener(updateTarget);
-
-      // Check on mount (callback is not called until a change occurs)
-      if (media.matches) {
-        setTargetReached(true);
-      }
-
-      return () => media.removeListener(updateTarget);
-    }, []);
-
-    return targetReached;
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [handleResize]);
+    return screenWidth;
   };
-  const isBreakpoint = useMediaQuery(1025);
+  const screen = useWidth();
+  useEffect(() => {
+    return () => {
+      if (screen < 1025) {
+        setImages({ one: arrowthree, two: arrowfour });
+      } else {
+        setImages(init);
+      }
+    };
+  }, [screen]);
+  const [images, setImages] = useState(init);
   const [data, setData] = useState(false);
   const [arr, setArr] = useState(true);
   const [benarr, setBenarr] = useState(false);
@@ -104,118 +98,124 @@ const Book = () => {
   return (
     <div>
       {data ? (
-        <div className="py-8">
+        <div>
+          <Navbar isLogedIn={true} userid={userid} />
           {console.log(data)}
-          
 
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 text-center">
-            <div class=" rounded-md flex items-center justify-center">
-              <div>
-                <Image src={data.Cover_image} width={400} height={350} />
+          <div className="flex justify-center items-center pt-16">
+            <div className="flex ">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-6 ">
+                <div class=" rounded-md flex items-center justify-center">
+                  <div>
+                    <Image src={data.Cover_image} width={400} height={350} />
+                  </div>
+                </div>
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="lg:text-[28px] sm:text-base text-green-500 font-medium">
+                    IDEOS OF
+                  </span>
+                </div>
+                <div class="rounded-md flex items-center justify-center">
+                  <span className="lg:text-[34px] sm:text-base text-black text-center font-medium">
+                    {data.Book_Name}
+                  </span>
+                </div>
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="lg:text-[24px] text-gray-500 italic font-medium">
+                    {data.Book_Author}
+                  </span>
+                </div>
+                <div class="rounded-md flex items-center justify-center mb-[5rem]">
+                  <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                    <div className="pl-2 text-center font-medium md:text-[18px] text-[16px]">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 mt-1.5">
+                          <Image src={bookicn} />
+                        </div>
+                        <Link className="" href="/read/desc/1212:1">
+                          Read
+                        </Link>
+                      </div>
+
+                      <div className=" text-black mt-3">
+                        {data.read_time} Minutes
+                      </div>
+                    </div>
+
+                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 mt-1.5">
+                          <Image src={airpods} />
+                        </div>
+                        <Link
+                          className=""
+                          href={`/read/audio/${userid}:${data.id}1`}
+                        >
+                          Listen
+                        </Link>
+                      </div>
+                      <div className=" text-black mt-3">
+                        {data.listen_time} Minutes
+                      </div>
+                    </div>
+                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
+                      <div className="cont flex py-6">
+                        <div className="mr-1.5 mt-1.5">
+                          <Image src={cards} />
+                        </div>
+                        <Link
+                          className=""
+                          href={`/read/cards/${userid}:${data.id}`}
+                        >
+                          Cards
+                        </Link>
+                      </div>
+                      <div className=" text-black mt-3">9 Cards</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <span className="lg:text-xl sm:text-base text-gray-800">
-                IDEOS OF
-              </span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <span className="lg:text-xl sm:text-base text-black text-center">
-                {data.Book_Name}
-              </span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center mb-4">
-              <span className="text-base text-black">{data.Book_Author}</span>
-            </div>
-            <div class=" rounded-md flex items-center justify-center mb-[5rem]">
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
-                <div className="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 mt-1">
-                      <Image src={bookicn} />
-                    </div>
-                    <Link className="" href="">
-                      Read
-                    </Link>
-                  </div>
+              <div className="">
+                <div
+                  className="cursor-pointer"
+                  onClick={function handleLike() {
+                    const fetchData = async () => {
+                      const result = await Axios.post(
+                        "http://localhost:3000/api/UserFavourites/addFavourites",
+                        {
+                          name: data.Book_Name,
+                          image: data.Cover_image,
+                          author: data.Book_Author,
+                          percent: 30,
+                          id: data.id,
 
-                  <div className="text-base text-black mt-3">
-                    {data.read_time} Minutes
-                  </div>
-                </div>
+                          User_Id: userid,
+                        }
+                      );
 
-                <div class="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 mt-1">
-                      <Image src={airpods} />
+                      setLike(result.data);
+                    };
+
+                    fetchData();
+                  }}
+                >
+                  {lik ? (
+                    <div style={{ width: "50px", height: "50px" }}>
+                      <Like inn="red" out="white" stroke="red" />
                     </div>
-                    <Link
-                      className=""
-                      href={`/read/audio/${userid}:${data.id}1`}
-                    >
-                      Listen
-                    </Link>
-                  </div>
-                  <div className="text-base text-black mt-3">
-                    {data.listen_time} Minutes
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div className="cont flex py-6">
-                    <div className="mr-1.5 w-5 mt-1">
-                      <Image src={cards} />
+                  ) : (
+                    <div style={{ width: "50px", height: "50px" }}>
+                        <Like inn="none" out="white" stroke="black" />
                     </div>
-                    <Link
-                      className=""
-                      href={`/read/cards/${userid}:${data.id}`}
-                    >
-                      Cards
-                    </Link>
-                  </div>
+                    
+                  )}
                 </div>
               </div>
             </div>
           </div>
-          <div>
-            <div
-              className="p-4 cursor-pointer"
-              onClick={function handleLike() {
-                const fetchData = async () => {
-                  const result = await Axios.post(
-                    "http://localhost:3000/api/UserFavourites/addFavourites",
-                    {
-                      name: data.Book_Name,
-                      image: data.Cover_image,
-                      author: data.Book_Author,
-                      percent: 30,
-                      id: data.id,
-
-                      User_Id: userid,
-                    }
-                  );
-
-                  setLike(result.data);
-                };
-
-                fetchData();
-              }}
-            >
-              {lik ? (
-                <Like inn="red" out="white" stroke="red" />
-              ) : (
-                <Like inn="none" out="white" stroke="black" />
-              )}
-            </div>
-            <div className="p-4">
-              <Image src={cart} />
-            </div>
-            <div className="p-4">
-              <Image src={send} />
-            </div>
-          </div>
-
+          <div className="descbgr pt-20">
           <div className="readDesc px-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic uppercase">Description</h1>
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
@@ -232,8 +232,8 @@ const Book = () => {
             </div>
           </div>
           <br />
-          <div className="readDesc p-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+          <div className="readDesc p-[2rem]">
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic">ABOUT THE AUTHOR</h1>
             <div className="flex justify-between items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", width: "10rem" }}
@@ -248,8 +248,9 @@ const Book = () => {
               </div>
               <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
             </div>
+            </div>
             <h1
-              className="text-xl new2 pt-4 pb-4"
+              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase new2 pt-4 pb-4"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
@@ -257,11 +258,11 @@ const Book = () => {
           </div>
           <br />
 
-          <div class="py-[3rem] timeSaved">
-            <div class="flex items-center  flexTime">
-              <div class=" rounded-md  items-center ">
+          <div class="py-[3rem] timeSaved px-[1.5rem]">
+            <div class="flex items-center justify-around flexTime">
+              <div class=" rounded-md flex items-center justify-center">
                 <div>
-                  <div className="wtf text-center">
+                  <div className="wtf">
                     <Image src={beforetime} />
                   </div>
 
@@ -279,7 +280,7 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
-                  <Image src={isBreakpoint ? mob.one : lap.one} />
+                  <Image src={images.one} />
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -293,12 +294,12 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
-                  <Image src={isBreakpoint ? mob.two : lap.two} />
+                  <Image src={images.two} />
                 </div>
               </div>
               <div class="  rounded-md flex items-center justify-center">
                 <div>
-                  <div className="wtf text-center">
+                  <div className="wtf">
                     <Image src={aftertime} />
                   </div>
 
@@ -317,7 +318,7 @@ const Book = () => {
           </div>
 
           <div className="benifits my-[2rem] px-[2rem]">
-            <h1 className="text-xl new2 ">Benifits</h1>
+            <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Benifits</h1>
             {data.benifits.map((val, n) => (
               <div className="pt-6 pb-6 " style={{ width: "100%" }}>
                 <DropdownComponent
@@ -347,7 +348,7 @@ const Book = () => {
                 class=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl new2">Contents</h1>
+                <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Contents</h1>
               </div>
               <div class="rounded-md flex items-center justify-end">
                 {arr ? (
