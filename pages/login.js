@@ -111,7 +111,7 @@ function Login() {
   return (
     <div>
       <Navbar  isLogedIn={false} />
-      <section class="h-screen">
+      <section class="h-screen newn">
         <div className="loginContainer">
           <div className="">
             <Image src={login} />
