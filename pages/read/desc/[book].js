@@ -102,34 +102,34 @@ const Book = () => {
           <Navbar isLogedIn={true} userid={userid} />
           {console.log(data)}
 
-          <div className="flex justify-center items-center pt-7">
+          <div className="flex justify-center items-center pt-16">
             <div className="flex ">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-2 ">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-6 ">
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
                     <Image src={data.Cover_image} width={400} height={350} />
                   </div>
                 </div>
                 <div class=" rounded-md flex items-center justify-center">
-                  <span className="lg:text-xl sm:text-base text-gray-800">
+                  <span className="lg:text-[28px] sm:text-base text-green-500 font-medium">
                     IDEOS OF
                   </span>
                 </div>
-                <div class=" p-3 rounded-md flex items-center justify-center">
-                  <span className="lg:text-xl sm:text-base text-black text-center">
+                <div class="rounded-md flex items-center justify-center">
+                  <span className="lg:text-[34px] sm:text-base text-black text-center font-medium">
                     {data.Book_Name}
                   </span>
                 </div>
-                <div class=" rounded-md flex items-center justify-center mb-4">
-                  <span className="text-base text-black">
+                <div class=" rounded-md flex items-center justify-center">
+                  <span className="lg:text-[24px] text-gray-500 italic font-medium">
                     {data.Book_Author}
                   </span>
                 </div>
                 <div class="rounded-md flex items-center justify-center mb-[5rem]">
                   <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                    <div className="pl-2 text-center">
+                    <div className="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
-                        <div className="mr-1.5 mt-1">
+                        <div className="mr-1.5 mt-1.5">
                           <Image src={bookicn} />
                         </div>
                         <Link className="" href="/read/desc/1212:1">
@@ -137,14 +137,14 @@ const Book = () => {
                         </Link>
                       </div>
 
-                      <div className="text-base text-black mt-3">
+                      <div className=" text-black mt-3">
                         {data.read_time} Minutes
                       </div>
                     </div>
 
-                    <div class="pl-2 text-center">
+                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
-                        <div className="mr-1.5 mt-1">
+                        <div className="mr-1.5 mt-1.5">
                           <Image src={airpods} />
                         </div>
                         <Link
@@ -154,13 +154,13 @@ const Book = () => {
                           Listen
                         </Link>
                       </div>
-                      <div className="text-base text-black mt-3">
+                      <div className=" text-black mt-3">
                         {data.listen_time} Minutes
                       </div>
                     </div>
-                    <div class="pl-2 text-center">
+                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
-                        <div className="mr-1.5 w-5 mt-1">
+                        <div className="mr-1.5 mt-1.5">
                           <Image src={cards} />
                         </div>
                         <Link
@@ -170,12 +170,12 @@ const Book = () => {
                           Cards
                         </Link>
                       </div>
-                      <div className="text-base text-black mt-3">9 Cards</div>
+                      <div className=" text-black mt-3">9 Cards</div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="pt-7">
+              <div className="">
                 <div
                   className="cursor-pointer"
                   onClick={function handleLike() {
@@ -210,18 +210,12 @@ const Book = () => {
                     
                   )}
                 </div>
-                <div className="-z-50">
-                  <Image src={cart} />
-                </div>
-                <div className="">
-                  <Image src={send} />
-                </div>
               </div>
             </div>
           </div>
-
+          <div className="descbgr pt-20">
           <div className="readDesc px-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic uppercase">Description</h1>
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
@@ -238,8 +232,8 @@ const Book = () => {
             </div>
           </div>
           <br />
-          <div className="readDesc p-[3rem]">
-            <h1 className="text-xl new2 mb-[2rem] descTopic">Description</h1>
+          <div className="readDesc p-[2rem]">
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic">ABOUT THE AUTHOR</h1>
             <div className="flex justify-between items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", width: "10rem" }}
@@ -254,8 +248,9 @@ const Book = () => {
               </div>
               <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
             </div>
+            </div>
             <h1
-              className="text-xl new2 pt-4 pb-4"
+              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase new2 pt-4 pb-4"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
@@ -323,7 +318,7 @@ const Book = () => {
           </div>
 
           <div className="benifits my-[2rem] px-[2rem]">
-            <h1 className="text-xl new2 ">Benifits</h1>
+            <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Benifits</h1>
             {data.benifits.map((val, n) => (
               <div className="pt-6 pb-6 " style={{ width: "100%" }}>
                 <DropdownComponent
@@ -353,7 +348,7 @@ const Book = () => {
                 class=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl new2">Contents</h1>
+                <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Contents</h1>
               </div>
               <div class="rounded-md flex items-center justify-end">
                 {arr ? (

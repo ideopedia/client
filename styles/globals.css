@@ -906,15 +906,27 @@
   font-weight: 600;
 }
 
-.cont {
+/* .cont {
   width: 120px;
-  padding: 5px 8px;
+  padding: 5px 12px;
   text-align: center;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   background-color: #2cb67d;
   color: #ffff;
+} */
+.cont{
+  width: 120px;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #2cb67d;
+  color: #ffff;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .cont:hover {
@@ -1443,4 +1455,10 @@ input[type="checkbox"]:focus {
     align-items: center;
     justify-content: center;
   }
+}
+.descbgr
+{
+  width: 100%;
+  height: 100%;
+  background: rgba(138, 187, 167, 0.1);
 }

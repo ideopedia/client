@@ -39,7 +39,9 @@ const ReadCard = (props) => {
             </div>
             <div className="pl-5 pt-2 text-center">
               <div className="cont flex items-center justify-between mb-4">
-                <Image src={airpods} width={32}/>
+                <div className=" mt-1">
+                <Image src={airpods} width={32} />
+                </div>
                 <div className=" md:text-[18px] text-[16px] font-medium">
                   <Link
                     className=""
