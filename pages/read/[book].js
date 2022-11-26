@@ -68,8 +68,8 @@ const Read = () => {
           /> */}
           {console.log(data)}
           <Navbar isLogedIn={true} userid={user[0].User_Id} />
-          <div className="flex justify-end pt-2">
-            <div class="p-4  rounded-md flex items-center justify-end">
+          <div className="flex md:justify-end justify-center pt-2">
+            <div class="p-4  rounded-md flex items-center justify-end ">
               <div className="flex ">
                 <Image src={srch} />
 
@@ -82,7 +82,7 @@ const Read = () => {
               </div>
             </div>
           </div>
-          <div className="md:pl-9 lg:w-9/12 md:w-10/12 sm:pl-1 sm:w-9/12 h-screen">
+          <div className="lg:mx-20 mx-5 h-screen">
             <div>
               {data.map((val) =>
                 val.Book_Name.match(inpt) ? (
@@ -99,28 +99,30 @@ const Read = () => {
                     />
                   </div>
                 ) : (
-                  <div className="flex items-center mt-9 searchCont">
+                  <div className="flex items-center  mt-9 ">
                     {data.map((val) => (
                       <div className="flex-column justify-center items-center">
-                        <div className="text-xl font-semibold text-black showRes">
+                        <div className="text-xl font-medium text-black showRes">
                           Showing results for{" "}
-                          <span className="text-green-700">
-                            {val.Book_Name.toUpperCase()}
+                          <span className="text-green-500">
+                            {val.Book_Name[0].toUpperCase()+val.Book_Name.slice(1).toLowerCase()}
                           </span>
                         </div>
-                        <div className="text-xl font-semibold text-black">
-                          <i className="showRes">
+                        <div className="text-xl font-medium text-black ">
+                          <div className="showRes">
                             {" "}
                             Search instead for{" "}
-                            <span className="text-green-700">{inpt}</span>
-                          </i>
+                            <span className="text-green-500">{inpt}</span>
+                          </div>
                         </div>
                         <div
-                          className="cursor-pointer"
+                          className="cursor-pointer "
                           onClick={function handleCick() {
                             router.push(`/read/${val.id}`);
                           }}
+
                         >
+                          <div className="flex justify-center items-center">
                           <ReadCard
                             image={val.Cover_image}
                             name={val.Book_Name.toUpperCase()}
@@ -128,6 +130,8 @@ const Read = () => {
                             read={val.read_time}
                             listen={val.listen_time}
                           />
+                          </div>
+                          
                         </div>
                       </div>
                     ))}
