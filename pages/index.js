@@ -259,7 +259,7 @@ export default function Home() {
         </div>
       </div> */}
       <div className="flex justify-center items-center text-bold p-10">
-        <span className="flex items-center justify-centerlg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase">
+        <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
       </div>

@@ -8,7 +8,7 @@ const Features = (props) => {
         <Image src={props.features} width={180} height={180} />
       </div>
       <div className="flex justify-center items-center">
-        <span className="text-[18px] text-black text-center px-5">
+        <span className="lg:md:text-[18px] md:text-[18px] sm:text-[16px] text-[16px] text-black text-center px-5">
           {props.info}
         </span>
       </div>

@@ -6,9 +6,9 @@ import Navbar from "../components/navbar";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import facebook from "../public/facebook.svg";
-import twitter from "../public/twitter.svg";
-import telegram from "../public/telegram.svg";
+import facebook from "../public/facebook1.svg";
+import twitter from "../public/twitter2.svg";
+import telegram from "../public/telegram2.svg";
 import map from "../public/map.svg";
 import mail from "../public/mail.svg";
 import emailjs from "@emailjs/browser";
@@ -96,13 +96,13 @@ const New = () => {
                 </Link>
               </div>
               <div class="pt-9 rounded-md flex items-end justify-center">
-                <div className="pl-3 pb-1 ">
+                <div className="pl-3 pb-1 fohv">
                   <Image src={facebook} />
                 </div>
-                <div className="pl-3 pb-1">
+                <div className="pl-3 pb-1 fohv">
                   <Image src={telegram} />
                 </div>
-                <div className="pl-3 pb-1">
+                <div className="pl-3 pb-1 fohv">
                   <Image src={twitter} />
                 </div>
               </div>

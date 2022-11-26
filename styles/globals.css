@@ -276,8 +276,8 @@
 }
 @media screen and (min-width: 1025px) {
   .flexTime {
-    width: 90rem;
-    margin: 0 10rem;
+    width: 87rem;
+    /* margin: 0 10rem; */
   }
 }
 @media screen and (max-width: 1025px) {
@@ -638,13 +638,24 @@
 }
 
 #headerTitle {
-  text-align: left;
   font-weight: 600;
   padding-top: 14vh;
   color: #2cb67d;
   font-size: 2rem;
 }
-
+@media screen and (max-width:768px) {
+  #headerTitle {
+    font-weight: 600;
+    padding-top: 20px;
+    color: #2cb67d;
+    font-size: 2rem;
+  }
+  .new {
+    margin-top: -50px;
+    padding: 10px 10px;
+  }
+  
+}
 .rw {
   margin-top: 20px;
 }
@@ -671,7 +682,9 @@
 
 .new {
   margin-top: -50px;
+  padding: 4.5rem 2rem 0rem 0rem;
 }
+
 
 .new1 {
   margin-top: 50px;

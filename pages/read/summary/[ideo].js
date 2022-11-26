@@ -180,7 +180,7 @@ const Read = () => {
       {data ? (
         <div>
           {dark ? (
-            <div className="p-4 pb-9">
+            <div className="pb-9">
               <ProgressBar />
               {console.log(data)}
               {console.log(card)}
@@ -234,7 +234,7 @@ const Read = () => {
 
               <div
                 className="flex justify-center items-center  text-green-700 text-bold pl-4 pb-4 ideoData"
-                style={{ fontSize: `${rangeval * 38}px` }}
+                style={{ fontSize: `${rangeval * 36}px` }}
               >
                 {data.Ideo}
               </div>

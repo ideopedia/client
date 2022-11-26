@@ -38,7 +38,7 @@ const ReadCard = (props) => {
               <span>{props.read} Minutes</span>
             </div>
             <div className="ml-5 pt-2 text-center">
-              <div className="cont flex mb-[0.5rem]">
+              <div className="cont flex mb-[0.8rem]">
                 <Image src={airpods} />
                 <div className="px-1">
                   <Link

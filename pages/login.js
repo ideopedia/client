@@ -111,7 +111,7 @@ function Login() {
   return (
     <div>
       <Navbar  isLogedIn={false} />
-      <section class="h-screen new" style={{ padding: "4.5rem 2rem 0 0" }}>
+      <section class="h-screen">
         <div className="loginContainer">
           <div className="">
             <Image src={login} />
