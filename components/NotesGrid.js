@@ -11,6 +11,7 @@ const NotesGrid = (props) => {
             type="checkbox"
             value=""
             id="flexCheckDefault"
+            checked={props.val}
           ></input>
         </div>
         <div className="pl-3 pt-1">

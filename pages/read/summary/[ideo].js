@@ -111,68 +111,7 @@ const Read = () => {
     fetchCard();
     console.log(card);
   }, []);
-  // useEffect(() => {
-  //   const fetchComp = async () => {
-  //     const result = await Axios.post(
-  //       "http://localhost:3000/api/UserCompleted/addCompleted",
-  //       {
-  //         name: card.Book_Name,
-  //         image: card.Cover_image,
-  //         author: card.Book_Author,
-  //         percent: Math.round((data.Ideo_num / data.Total) * 100),
-  //         id: card.id,
-
-  //         User_Id: "1212",
-  //       }
-  //     );
-
-  //     setCompData(result.data);
-  //   };
-
-  //   fetchComp();
-  //   console.log(compdata);
-  // }, []);
-  // useEffect(() => {
-  //   Axios.post("http://localhost:3000/api/prebook/findPrebook", {
-  //     id: 1,
-  //   }).then((data) => {
-  //     setContent(data.data);
-  //   });
-  //   console.log(conten);
-  // }, []);
-  // useEffect(() => {
-  //   Axios.post("http://localhost:3000/api/bookCard/findBookcard", {
-  //     id: 1,
-  //   }).then((data) => {
-  //     setCard(data.data);
-  //   });
-  //   console.log(card);
-  // }, []);
-
-  // useEffect(() => {
-  //   // Prefetch the dashboard page
-  //   router.prefetch(
-  //     `http://localhost:3000/read/summary/${String(num2)}${String(num3 + 1)}`
-  //   );
-  // }, []);
-  // useEffect(() => {
-  //   Axios.post("http://localhost:3000/api/UserCompleted/addCompleted", {
-  //     name: card.Book_Name,
-  //     image: card.Cover_image,
-  //     author: card.Book_Author,
-  //     percent: Math.round((data.Ideo_num / data.Total) * 100),
-  //     id: card.id,
-
-  //     User_Id: "1212",
-  //   }).then((data) => {
-  //     setCompData(data.data);
-  //   });
-  //   console.log(compdata);
-  // }, []);
-  // {if (Math.round((data.Ideo_num / data.Total) * 100) === 100) {
-
-  // }}
-
+  
   return (
     <>
       {data ? (

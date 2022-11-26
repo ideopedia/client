@@ -58,7 +58,7 @@ const Points = () => {
               u_id={data[0].User_Id}
             /> */}
 
-            <div className="md:pl-9 lg:w-11/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+            <div className="md:pl-9 lg:w-11/12 md:w-12/12 sm:pl-1 sm:w-12/12">
               <div class="flex pt-9 ml-9">
                 <div className="pr-5 flex">
                   {type === "Bronze Influencer" ? (

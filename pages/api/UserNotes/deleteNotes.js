@@ -11,7 +11,7 @@ export default async function deleteNotes(req, res) {
 
     var notes = await UserNotes.findOneAndDelete({
       User_Id: req.body.User_Id,
-      _id: req.body._id,
+      Book_Name:req.body.Book_Name,
     });
     res.json(notes);
   } catch (err) {

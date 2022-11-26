@@ -28,6 +28,8 @@ const Notes = () => {
   const router = useRouter();
   const favo = router.query;
   const [arr, setArr] = useState(false);
+  const [drp, setDrp] = useState(true);
+  const [chkd, setChkd] = useState(false);
   const [nts, setNts] = useState(false);
   const [notes, setNotes] = useState(false);
   const [view, setView] = useState(true);
@@ -273,13 +275,33 @@ const Notes = () => {
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
+                            onClick={function handleCheck() {
+                              setChkd(!chkd);
+                            }}
                           />
                         </div>
-                        <div className="p-4">
+                        <div
+                          className="p-4 cursor-pointer"
+                          onClick={function handleDel() {
+                            Axios.post(
+                              "http://localhost:3000/api/UserNotes/deleteNotes",
+                              {
+                                User_Id: favo.notes,
+                                Book_Name: notes[0].Book_Name,
+                              }
+                            );
+                            router.reload();
+                          }}
+                        >
                           <Image src={dele} />
                         </div>
 
-                        <div className="p-4 ">
+                        <div
+                          className="p-4 "
+                          onClick={function handleDrp() {
+                            setDrp(!drp);
+                          }}
+                        >
                           <Image src={dropd} />
                         </div>
                       </div>
@@ -287,13 +309,18 @@ const Notes = () => {
                     <div className="pl-5 flex justify-start items-start ">
                       <span>{notes[0].Author}</span>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
-                      {notes.map((val) => (
-                        <div class=" rounded-md flex items-center justify-center">
-                          <NotesContainer info={val.Notes} />
-                        </div>
-                      ))}
-                    </div>
+                    {drp ? (
+                      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
+                        {notes.map((val) => (
+                          <div class=" rounded-md flex items-center justify-center">
+                            <NotesContainer
+                              info={val.Notes}
+                              val={chkd ? true : false}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ) : (
@@ -312,6 +339,9 @@ const Notes = () => {
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
+                            onClick={function handleCheck() {
+                              setChkd(!chkd);
+                            }}
                           />
                         </div>
                         <div className="p-4">
@@ -320,7 +350,12 @@ const Notes = () => {
                         <div className="p-4 ">
                           <Image src={share} />
                         </div>
-                        <div className="p-4 ">
+                        <div
+                          className="p-4 "
+                          onClick={function handleDrp() {
+                            setDrp(!drp);
+                          }}
+                        >
                           <Image src={dropd} />
                         </div>
                       </div>
@@ -328,13 +363,18 @@ const Notes = () => {
                     <div className="pl-5 flex justify-start items-start">
                       <span>{notes[0].Author}</span>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                      {notes.map((val) => (
-                        <div class=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
-                          <NotesGrid info={val.Notes} />
-                        </div>
-                      ))}
-                    </div>
+                    {drp ? (
+                      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                        {notes.map((val) => (
+                          <div class=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
+                            <NotesGrid
+                              info={val.Notes}
+                              val={chkd ? true : false}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               )}
