@@ -104,7 +104,7 @@ const Book = () => {
 
           <div className="flex justify-center items-center pt-16">
             <div className="flex ">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-6 ">
+              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-7 ">
                 <div class=" rounded-md flex items-center justify-center">
                   <div>
                     <Image src={data.Cover_image} width={400} height={350} />
@@ -214,7 +214,7 @@ const Book = () => {
             </div>
           </div>
           <div className="readDesc px-[3rem] pt-[6rem]">
-            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic uppercase">Description</h1>
+            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] mb-[2rem] descTopic font-medium uppercase">Description</h1>
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
@@ -232,7 +232,7 @@ const Book = () => {
           </div>
           
           <div className="readDesc  pt-10 px-[3rem] pb-[6rem]">
-            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic">ABOUT THE AUTHOR</h1>
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px]  mb-[2rem] font-medium descTopic">ABOUT THE AUTHOR</h1>
             <div className="flex justify-between items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", width: "10rem" }}
@@ -250,7 +250,7 @@ const Book = () => {
             </div>
             <div className="tmesaved">
             <h1
-              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase new2 pt-4 pb-20 px-[3rem]"
+              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium pt-4 pb-20 px-[3rem]"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
@@ -268,9 +268,9 @@ const Book = () => {
                       className="text-white p-2 px-[2rem]"
                       style={{ width: "max-content" }}
                     >
-                      Read {data.book_page} pages in {data.original_read_time}
+                       <span className="text-[18px] font-medium">Read {data.book_page} pages in {data.original_read_time}
                       {"  "}
-                      Hours
+                      Hours</span>
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ const Book = () => {
                       className="text-white p-2 px-[1rem] text-center"
                       style={{ width: "max-content" }}
                     >
-                      Read finely distilled Ideos in {data.read_time} min
+                      <span className="text-[18px] font-medium">Read finely distilled Ideos in {data.read_time} min</span>
                     </div>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ const Book = () => {
           </div>
           <div className="benefits pt-[3rem] pb-[3rem]">          
           <div className="benifits my-[2rem] px-[3rem]">
-            <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem]">benefits</h1>
+            <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">benefits</h1>
             {data.benifits.map((val, n) => (
               <div className="pt-6 pb-6 " style={{ width: "100%" }}>
                 <DropdownComponent
@@ -338,12 +338,12 @@ const Book = () => {
             
             
             <hr />
-            <div class="p-9 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
+            <div class="px-[3rem] pt-20 pb-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
                 class=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Contents</h1>
+                <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium">Contents</h1>
               </div>
               <div class="rounded-md flex items-center justify-end">
                 {arr ? (
@@ -369,16 +369,16 @@ const Book = () => {
               >
                 {data.Ideos.map((idea, n) => (
                   <div
-                    class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white drop-shadow-md"
+                    class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-8 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
                       router.push(`/read/summary/${userid}:${idea.Ideo_id}`);
                     }}
                   >
-                    <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
-                      <h1 className="text-[28px] ">{idea.Ideo_num}</h1>
+                    <div class=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
+                      <h1 className="text-[28px] font-medium">{idea.Ideo_num}</h1>
                     </div>
-                    <div class="p-4 rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
-                      <span className="text-[28px]">{idea.name}</span>
+                    <div class=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
+                      <span className="text-[28px] font-medium">{idea.name}</span>
                     </div>
 
                     {tick ? (
@@ -398,9 +398,9 @@ const Book = () => {
           
           
           
-          <div>
+          <div className="acclaimed pt-[3rem] pb-[3rem]">
             <div className="flex justify-center items-center px-[3rem]">
-              <span className="text-[36px] font-medium uppercase">
+              <span className="text-[36px]  uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
             </div>
