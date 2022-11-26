@@ -11,6 +11,7 @@ import download from "../public/download.svg";
 import TextSelector from "text-selection-react";
 import test from "../public/test.svg";
 import Link from "next/link";
+import infSquare from "../public/Hoveritem.svg";
 import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
 import rightarr from "../public/rightarr.svg";
 import homeimage from "../public/homeimage.svg";
@@ -30,11 +31,34 @@ import sampInf from "../public/infTest.svg";
 import Hero from "../components/hero";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useReducer } from "react";
+
 
 export default function Home() {
-  // const [width, setWidth] = useState(250);
+  const infReducer = (state, action) => {
+    switch (action.type) {
+      case "inf1":
+        return { inf1: true };
+      case "inf2":
+        return { inf2: true };
+      case "inf3":
+        return { inf3: true };
+      case "inf4":
+        return { inf4: true };
+      case "inf5":
+        return { inf5: true };
+      case "inf6":
+        return { inf6: true };
+      case "inf7":
+        return { inf7: true };
+      case "inf8":
+        return { inf8: true };
+      default:
+        return {};
+    }
+  };
   const [data, setData] = useState("");
+  const [infState, dispatchInf] = useReducer(infReducer, {});
   // setCookies("test", "value", { maxAge: 60 * 6 * 24 });
   function handleMouseUp() {
     setData(window.getSelection().toString());
@@ -72,39 +96,81 @@ export default function Home() {
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
-          <div
-            class=" flex items-center justify-center infPic"
-            style={{ borderRadius: "200rem" }}
-          >
+          <div class=" flex justify-center infPic">
             <Image
+              onMouseEnter={() => {} }
+              onMouseLeave={() => {} }
               src={influencer1}
               width={250}
-              style={{ borderRadius: "200px" }}
+              height={250}
+            />
+          </div>
+
+          <div class="p-4  rounded-md flex items-center justify-center infPic">
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer2}
+              width={250}
+              height={250}
             />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer2} width={250} />
+            <Image
+              onMouseEnter={() => dispatchInf({type:"inf3"})}
+              onMouseLeave={() => dispatchInf({type:"noth"})}
+              src={!infState.inf3 ? influencer3 : infSquare}
+              width={250}
+              height={250}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer3} width={250} />
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer4}
+              width={250}
+              height={250}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer4} width={250} />
-          </div>
-          <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer5} width={250} />
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer5}
+              width={250}
+              height={250}
+            />
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
           <div class="p-4  rounded-md flex items-center justify-center"></div>
           <div class=" rounded-md flex items-center justify-center infPic ">
-            <Image src={influencer6} width={250} />
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer6}
+              width={250}
+              height={250}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer7} width={250} />
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer7}
+              width={250}
+              height={250}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center infPic">
-            <Image src={influencer8} width={250} />
+            <Image
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
+              src={influencer8}
+              width={250}
+              height={250}
+            />
           </div>
           <div class="p-4  rounded-md flex items-center justify-center"></div>
         </div>
@@ -154,6 +220,10 @@ export default function Home() {
               />
             </div>
             <div class="p-4  rounded-md flex items-center justify-center font-medium">
+              <Features features={fe2} info="Save your key points and notes" />
+            </div>
+            <div class="p-4  rounded-md flex items-center justify-center font-medium">
+              <Features features={fe3} info="Personalized reading experience" />
               <Features
                 features={fe2}
                 info="Content customised especially for India's leaders"

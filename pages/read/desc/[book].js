@@ -405,8 +405,8 @@ const Book = () => {
           <br />
           <div>
             <div className="flex justify-center items-center">
-              <span className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-semibold">
-                {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
+              <span className="text-2xl">
+                {"The Book  " + data.Book_Name + "has been Acclaimed  by"}{" "}
               </span>
             </div>
             <br />
