@@ -10,15 +10,15 @@ export default function  DropdownComponent(props) {
   return (
     <Menu as="div" className="relative inline-block whiteBox">
       <div>
-        <Menu.Button className=" px-4 py-2 text-xl drop-shadow-md text-green-700 bg-white    focus:outline-none  whiteBox">
-          <div className="flex items-center justify-between py-[1rem]">
+        <Menu.Button className=" px-4 py-2 text-[28px] font-medium drop-shadow-md text-green-500 bg-white    focus:outline-none  whiteBox">
+          <div className="flex items-center justify-between py-[1rem] xl:px-[3rem]">
             <div class="rounded-md text-left">
               <span className="benifitsTopics">{props.name}</span>
             </div>
             <div class="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 ml-2 -mr-1"
+                className="w-7 h-7 ml-2 -mr-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -51,22 +51,22 @@ export default function  DropdownComponent(props) {
                 <div
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
+                    "block px-6 py-4 text-sm"
                   )}
                 >
                   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
                     <div class="rounded-md flex items-center justify-start">
-                      <Image src={props.image} width={300} height={300} />
+                      <Image src={props.image} width={420} height={420} />
                     </div>
                     <div class="rounded-md flex items-center justify-start">
                       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 ">
                         <div class="rounded-md flex items-start justify-start pb-5 ">
-                          <span className="text-xl text-green-700 ">{props.name}</span>
+                          <span className="text-[30px] text-green-500 font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%]">{props.name}</span>
                           
                         </div>
                         <div class="rounded-md flex items-start justify-start">
                           {" "}
-                          <span className="text-xl pb-1 text-left"> {props.content}</span>
+                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 text-left px-8"> {props.content}</span>
                         </div>
                       </div>
                     </div>

@@ -213,9 +213,8 @@ const Book = () => {
               </div>
             </div>
           </div>
-          <div className="descbgr pt-20">
-          <div className="readDesc px-[3rem]">
-            <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic uppercase">Description</h1>
+          <div className="readDesc px-[3rem] pt-[6rem]">
+            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic uppercase">Description</h1>
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
@@ -228,11 +227,11 @@ const Book = () => {
                   className="bookImg"
                 />
               </div>
-              <div style={{ lineHeight: "1.8" }}>{data.Book_Description}</div>
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium px-8">{data.Book_Description}</div>
             </div>
           </div>
-          <br />
-          <div className="readDesc p-[2rem]">
+          
+          <div className="readDesc  pt-10 px-[3rem] pb-[6rem]">
             <h1 className="lg:text-[36px] md:text-[30px] text-[26px] new2 mb-[2rem] descTopic">ABOUT THE AUTHOR</h1>
             <div className="flex justify-between items-center picAndDesc">
               <div
@@ -246,18 +245,16 @@ const Book = () => {
                   className="authimg"
                 />
               </div>
-              <div style={{ lineHeight: "1.8" }}>{data.About_Author}</div>
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] px-8">{data.About_Author}</div>
             </div>
             </div>
+            <div className="tmesaved">
             <h1
-              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase new2 pt-4 pb-4"
+              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase new2 pt-4 pb-20 px-[3rem]"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
             </h1>
-          </div>
-          <br />
-
           <div class="py-[3rem] timeSaved px-[1.5rem]">
             <div class="flex items-center justify-around flexTime">
               <div class=" rounded-md flex items-center justify-center">
@@ -266,7 +263,7 @@ const Book = () => {
                     <Image src={beforetime} />
                   </div>
 
-                  <div className="bg-green-700 high mt-[2rem]">
+                  <div className="bg-green-500 high mt-[2rem]">
                     <div
                       className="text-white p-2 px-[2rem]"
                       style={{ width: "max-content" }}
@@ -285,11 +282,11 @@ const Book = () => {
               </div>
               <div class=" rounded-md flex items-center justify-center">
                 <div>
-                  <h1 className="pl-9 text-center mr-[1.5rem]">SAVE OVER </h1>
+                  <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">SAVE OVER </h1>
                   <div className="timeClock">
                     <Image src={time} />
                   </div>
-                  <h1 className="pl-9 text-center mr-[1.5rem]">HOURS</h1>
+                  <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">HOURS</h1>
                 </div>
               </div>
               <div class=" rounded-md flex items-center justify-center">
@@ -303,7 +300,7 @@ const Book = () => {
                     <Image src={aftertime} />
                   </div>
 
-                  <div className="bg-green-700 high mt-[2rem]">
+                  <div className="bg-green-500 high mt-[2rem]">
                     <div
                       className="text-white p-2 px-[1rem] text-center"
                       style={{ width: "max-content" }}
@@ -314,11 +311,12 @@ const Book = () => {
                 </div>
               </div>
             </div>
-            <br />
+            </div>
+            
           </div>
-
-          <div className="benifits my-[2rem] px-[2rem]">
-            <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase">Benifits</h1>
+          <div className="benefits pt-[3rem] pb-[3rem]">          
+          <div className="benifits my-[2rem] px-[3rem]">
+            <h1 className="text-xl new2 lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem]">benefits</h1>
             {data.benifits.map((val, n) => (
               <div className="pt-6 pb-6 " style={{ width: "100%" }}>
                 <DropdownComponent
@@ -332,16 +330,13 @@ const Book = () => {
                     val.benifits[1]
                   }
                 />
-                <br />
               </div>
             ))}
           </div>
-          <br />
-          <br />
-
+          </div>
           <div>
-            <br />
-            <br />
+            
+            
             <hr />
             <div class="p-9 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
@@ -366,7 +361,7 @@ const Book = () => {
                 )}
               </div>
             </div>
-            <br />
+            
             {arr ? (
               <div
                 class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
@@ -380,10 +375,10 @@ const Book = () => {
                     }}
                   >
                     <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
-                      <h1 className="text-sm lg:text-xl  ">{idea.Ideo_num}</h1>
+                      <h1 className="text-[28px] ">{idea.Ideo_num}</h1>
                     </div>
                     <div class="p-4 rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
-                      <span className="text-sm lg:text-xl">{idea.name}</span>
+                      <span className="text-[28px]">{idea.name}</span>
                     </div>
 
                     {tick ? (
@@ -400,16 +395,16 @@ const Book = () => {
               console.log("Error")
             )}
           </div>
-          <br />
-          <br />
-          <br />
+          
+          
+          
           <div>
-            <div className="flex justify-center items-center">
-              <span className="text-2xl">
-                {"The Book  " + data.Book_Name + "has been Acclaimed  by"}{" "}
+            <div className="flex justify-center items-center px-[3rem]">
+              <span className="text-[36px] font-medium uppercase">
+                {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
             </div>
-            <br />
+            
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
               {data.Aclaimed.map((val) => (
                 <div class="p-4 rounded-md flex items-center justify-center">
