@@ -84,9 +84,9 @@ const Read = () => {
           </div>
           <div className="lg:mx-20 mx-5 h-screen">
             <div>
-              {data.map((val) =>
+              {data.map((val,n) =>
                 val.Book_Name.match(inpt) ? (
-                  <div className="flex justify-center items-center mt-9">
+                  <div className="flex justify-center items-center mt-9" key={n} >
                     {console.log(val.id)}
                     <ReadCard
                       image={val.Cover_image}
@@ -100,8 +100,8 @@ const Read = () => {
                   </div>
                 ) : (
                   <div className="flex items-center  mt-9 ">
-                    {data.map((val) => (
-                      <div className="flex-column justify-center items-center">
+                    {data.map((val,n) => (
+                      <div className="flex-column justify-center items-center" key={n} >
                         <div className="text-xl font-medium text-black showRes">
                           Showing results for{" "}
                           <span className="text-green-500">

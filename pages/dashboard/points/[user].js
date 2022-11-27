@@ -143,8 +143,8 @@ const Points = () => {
               </div>
               <br />
               {comp
-                ? comp.map((val) => (
-                    <div className="flex justify-between items-center mb-[3rem]">
+                ? comp.map((val,n) => (
+                    <div className="flex justify-between items-center mb-[3rem]" key={n}>
                       {console.log(comp)}
                       <div className="flex justify-between w-[10rem] items-center">
                         <Image src={completedhis} />

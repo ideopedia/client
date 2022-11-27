@@ -113,7 +113,7 @@ const Completed = () => {
                 <Link href={`/mylib/favourites/${favo.completed}`}>Author</Link>
               </div>
             </div>
-            {data.map((val) => (
+            {data.map((val,n) => (
               <CompletedCard
                 image={val.image}
                 name={val.name}
@@ -121,6 +121,7 @@ const Completed = () => {
                 percent={val.percent}
                 book_id={val.id}
                 b_name={val.name}
+                key={n}
               />
             ))}
             {}

@@ -57,7 +57,7 @@ export default function ReadCard() {
               style={{ height: "90vh" }}
             >
               {data.Card.map((val, n) => (
-                <SwiperSlide>
+                <SwiperSlide key={n}>
                   <SummaryCard
                     style_id={val.style_id}
                     name={data.Book_name}

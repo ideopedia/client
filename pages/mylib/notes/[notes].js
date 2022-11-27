@@ -311,8 +311,8 @@ const Notes = () => {
                     </div>
                     {drp ? (
                       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
-                        {notes.map((val) => (
-                          <div className=" rounded-md flex items-center justify-center">
+                        {notes.map((val,n) => (
+                          <div className=" rounded-md flex items-center justify-center" key={n}>
                             <NotesContainer
                               info={val.Notes}
                               val={chkd ? true : false}
@@ -365,8 +365,8 @@ const Notes = () => {
                     </div>
                     {drp ? (
                       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                        {notes.map((val) => (
-                          <div className=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
+                        {notes.map((val,n) => (
+                          <div className=" rounded-md flex items-center justify-start bg-[#2CB67D] oop" key={n} >
                             <NotesGrid
                               info={val.Notes}
                               val={chkd ? true : false}

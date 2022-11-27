@@ -327,7 +327,7 @@ const Book = () => {
           <div className="benifits my-[2rem] px-[3rem]">
             <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">benefits</h1>
             {data.benifits.map((val, n) => (
-              <div className="pt-6 pb-6 " style={{ width: "100%" }}>
+              <div className="pt-6 pb-6 " style={{ width: "100%" }} key={n} >
                 <DropdownComponent
                   name={n + 1 + ". " + val.name}
                   image={val.image}
@@ -382,6 +382,7 @@ const Book = () => {
                     onClick={function handleTick() {
                       router.push(`/read/summary/${userid}:${idea.Ideo_id}`);
                     }}
+                    key={n}
                   >
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
                       <h1 className="text-[28px] font-medium">{idea.Ideo_num}</h1>
@@ -415,8 +416,8 @@ const Book = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
-              {data.Aclaimed.map((val) => (
-                <div className="p-4 rounded-md flex items-center justify-center">
+              {data.Aclaimed.map((val,n) => (
+                <div className="p-4 rounded-md flex items-center justify-center" key={n} >
                   <Image src={val} width={300} height={300} />
                 </div>
               ))}

@@ -258,7 +258,7 @@ const Read = () => {
                 </div>
               </div>
               {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
-                <div>
+                <div key={n}>
                   {dat.length > 2 ? (
                     <div
                       className="flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent"
@@ -274,12 +274,13 @@ const Read = () => {
                   )}
                   <div className="px-1">
                     <div className="p-4">
-                      {data.Book_Summary[0].Content[n].map((val) => (
+                      {data.Book_Summary[0].Content[n].map((val,n) => (
                         <div
                           className=" text-black  py-4 px-8 flex justify-center items-center leading-[197%] font-medium"
                           style={{
                             fontSize: `${rangeval * 28}px`,
                           }}
+                          key={n}
                         >
                           {val}
                         </div>
@@ -337,8 +338,8 @@ const Read = () => {
                   </div>
                   <div className="bg-green-100 p-6">
                     <div className="p-4">
-                      {data.Ideo_Peaks.map((val) => (
-                        <div>
+                      {data.Ideo_Peaks.map((val,n) => (
+                        <div key={n} >
                           <div
                             style={{
                               position: "absolute",
@@ -560,6 +561,7 @@ const Read = () => {
                                     `/read/summary/${userid}:${idea.Ideo_id}`
                                   );
                                 }}
+                                key={n}
                               >
                                 <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl  ">
@@ -716,7 +718,7 @@ const Read = () => {
                 </div>
               </div>
               {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
-                <div>
+                <div key={n}>
                   {dat.length > 2 ? (
                     <div
                       className="flex justify-center items-center  bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
@@ -732,13 +734,14 @@ const Read = () => {
                   )}
                   <div className="px-1">
                     <div className="p-4">
-                      {data.Book_Summary[0].Content[n].map((val) => (
+                      {data.Book_Summary[0].Content[n].map((val,n) => (
                         <div
                           className=" text-white  p-4 flex justify-center items-center"
                           style={{
                             lineHeight: "1.5",
                             fontSize: `${rangeval * 28}px`,
                           }}
+                          key={n}
                         >
                           {val}
                         </div>
@@ -796,8 +799,8 @@ const Read = () => {
                   </div>
                   <div className="bg-black p-6">
                     <div className="p-4">
-                      {data.Ideo_Peaks.map((val) => (
-                        <div>
+                      {data.Ideo_Peaks.map((val,n) => (
+                        <div key={n}>
                           <div
                             style={{
                               position: "absolute",
@@ -1024,6 +1027,7 @@ const Read = () => {
                                     `/read/summary/${userid}:${idea.Ideo_id}`
                                   );
                                 }}
+                                key={n}
                               >
                                 <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl text-white ">

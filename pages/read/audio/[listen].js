@@ -165,6 +165,7 @@ const Listen = () => {
                                     `/read/audio/${array[0]}:${idea.Ideo_id}`
                                   );
                                 }}
+                                key={n}
                               >
                                 <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl  ">
@@ -291,6 +292,7 @@ const Listen = () => {
                                       `/read/audio/${array[0]}:${idea.Ideo_id}`
                                     );
                                   }}
+                                  key={n}
                                 >
                                   <div className="p-2rounded-md flex items-center justify-center ">
                                     <h1 className="text-sm lg:text-xl  text-white">

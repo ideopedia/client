@@ -142,8 +142,8 @@ const New = () => {
               <br />
               <div className=" ">
                 {Recent ? (
-                  Recent.map((val) => (
-                    <div className="rounded-md flex items-start justify-start">
+                  Recent.map((val,n) => (
+                    <div className="rounded-md flex items-start justify-start" key={n}>
                       <CompletedCard
                         image={val.image}
                         name={val.name}
