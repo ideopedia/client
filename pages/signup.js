@@ -54,14 +54,14 @@ function Signup() {
           value: action.val,
           // isValid: action.val ? (action.val.includes("@") && action.val.includes(".")):false,
           
-          isValid: action.val.includes("@") && action.val.includes("."),
-          // isValid: true,
+            
+          isValid: true,
         };
       case "validate":
         return {
           value: state.value,
-          // isValid: true,
-          isValid: state.value.includes("@") && action.val.includes("."),
+          isValid: true,
+          // isValid: state.value.includes("@") && action.val.includes("."),
         };
       default:
         return { value: "", isValid: false };
