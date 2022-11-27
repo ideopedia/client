@@ -50,8 +50,8 @@ const Read = () => {
 
   const userid = user;
 
-  var num2 = Number(ideo[0]);
-  var num3 = Number(ideo[1]);
+  var num2 = Number(ideo?ideo[0]:null);
+  var num3 = Number(ideo?ideo[1]:null);
   const d = new Date();
   const date = new Date();
 
@@ -108,7 +108,7 @@ const Read = () => {
 
   return (
     <>
-      {data ? (
+      {data && ideo ? (
         <div>
           {dark ? (
             <div className="pb-9">
