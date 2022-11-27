@@ -1,22 +1,22 @@
 import React from "react";
-import SideNavbar from "../../../components/sidebar";
-import CompletedCard from "../../../components/CompletedCards";
+import SideNavbar from "../../components/sidebar";
+import CompletedCard from "../../components/CompletedCards";
 import Link from "next/link";
-import task from "../../../public/task.svg";
-import create from "../../../public/create.svg";
-import arr from "../../../public/downarr.svg";
+import task from "../../public/task.svg";
+import create from "../../public/create.svg";
+import arr from "../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import drop from "../../../public/dropdownlogo.svg";
-import Navbar from "../../../components/navbar";
+import drop from "../../public/dropdownlogo.svg";
+import Navbar from "../../components/navbar";
 import { useRouter } from "next/router";
-import Loader from "../../../components/loader";
-import fav from "../../../public/fav.svg";
-import srch from "../../../public/srch.svg";
-import bmark from "../../../public/bmark.svg";
+import Loader from "../../components/loader";
+import fav from "../../public/fav.svg";
+import srch from "../../public/srch.svg";
+import bmark from "../../public/bmark.svg";
 import Image from "next/image";
-import wtf from "../../../public/wtf.svg";
-import dmmt from "../../../public/dmmt.svg";
+import wtf from "../../public/wtf.svg";
+import dmmt from "../../public/dmmt.svg";
 const Completed = () => {
   const router = useRouter();
   const favo = router.query;
@@ -64,7 +64,7 @@ const Completed = () => {
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link
-                  href={`/mylib/completed/${favo.completed}`}
+                  href={`/completed/${favo.completed}`}
                   className="navtxt"
                 >
                   <div>
@@ -79,7 +79,7 @@ const Completed = () => {
               <div className="pr-9 flex">
                 <Image src={fav} />
                 <Link
-                  href={`/mylib/favourites/${favo.completed}`}
+                  href={`/favourites/${favo.completed}`}
                   className="navtxt"
                 >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
@@ -90,7 +90,7 @@ const Completed = () => {
               <div className="pr-9 flex">
                 <Image src={create} />
                 <Link
-                  href={`/mylib/notes/${favo.completed}`}
+                  href={`/notes/${favo.completed}`}
                   className="navtxt"
                 >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
@@ -109,8 +109,8 @@ const Completed = () => {
                 </div>
               </button>
               <div className="dropdown-content ">
-                <Link href={`/mylib/favourites/${favo.completed}`} >Books</Link>
-                <Link href={`/mylib/favourites/${favo.completed}`}>Author</Link>
+                <Link href={`/favourites/${favo.completed}`} >Books</Link>
+                <Link href={`/favourites/${favo.completed}`}>Author</Link>
               </div>
             </div>
             {data.map((val,n) => (

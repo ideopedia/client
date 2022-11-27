@@ -30,7 +30,7 @@ const ReadCard = (props) => {
                 <Image src={bookicn} width={32}/>
                 <Link
                   className=""
-                  href={`/read/desc/${props.u_id}:${props.b_id}`}
+                  href={`/desc/${props.b_id}?user=${props.u_id}&book=${props.b_id}`}
                 >
                   Read
                 </Link>
@@ -45,7 +45,7 @@ const ReadCard = (props) => {
                 <div className=" md:text-[18px] text-[16px] font-medium">
                   <Link
                     className=""
-                    href={`/read/audio/${props.u_id}:${props.b_id}1`}
+                    href={`/audio/${props.b_id}1?user=${props.u_id}&book=${props.b_id}1`}
                   >
                     Listen
                   </Link>

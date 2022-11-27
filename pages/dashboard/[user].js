@@ -134,7 +134,7 @@ const Dashboard = () => {
               <span className="pl-2 pr-2 text-green-500">{data[0].Read * 20} Points</span>
               <span
                 onClick={function handleLink() {
-                  router.push(`/dashboard/points/${favo.user}`);
+                  router.push(`/points/${favo.user}`);
                 }}
                 className="text-base pl-2"
               >

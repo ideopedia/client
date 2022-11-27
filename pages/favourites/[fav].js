@@ -1,22 +1,22 @@
 import React from "react";
-import SideNavbar from "../../../components/sidebar";
-import FavouritesCard from "../../../components/FavouritesCard";
+import SideNavbar from "../../components/sidebar";
+import FavouritesCard from "../../components/FavouritesCard";
 import Link from "next/link";
-import task from "../../../public/task.svg";
-import create from "../../../public/create.svg";
-import arr from "../../../public/downarr.svg";
+import task from "../../public/task.svg";
+import create from "../../public/create.svg";
+import arr from "../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import Navbar from "../../../components/navbar";
+import Navbar from "../../components/navbar";
 import { useRouter } from "next/router";
-import fav from "../../../public/fav.svg";
-import Loader from "../../../components/loader";
-import drop from "../../../public/dropdownlogo.svg";
-import srch from "../../../public/srch.svg";
-import bmark from "../../../public/bmark.svg";
+import fav from "../../public/fav.svg";
+import Loader from "../../components/loader";
+import drop from "../../public/dropdownlogo.svg";
+import srch from "../../public/srch.svg";
+import bmark from "../../public/bmark.svg";
 import Image from "next/image";
-import wtf from "../../../public/wtf.svg";
-import dmmt from "../../../public/dmmt.svg";
+import wtf from "../../public/wtf.svg";
+import dmmt from "../../public/dmmt.svg";
 const Favourites = () => {
   const router = useRouter();
   const favo = router.query;
@@ -53,7 +53,7 @@ const Favourites = () => {
             <div className="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
-                <Link href={`/mylib/completed/${favo.fav}`} className="navtxt">
+                <Link href={`/completed/${favo.fav}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Completed
                   </span>
@@ -61,7 +61,7 @@ const Favourites = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={fav} />
-                <Link href={`/mylib/favourites/${favo.fav}`} className="navtxt">
+                <Link href={`/favourites/${favo.fav}`} className="navtxt">
                   <div>
                     <span className="text-xl text-green-700 cursor-pointer">
                       Favourites
@@ -72,7 +72,7 @@ const Favourites = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href={`/mylib/notes/${favo.fav}`} className="navtxt">
+                <Link href={`/notes/${favo.fav}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>
@@ -89,8 +89,8 @@ const Favourites = () => {
                 </div>
               </button>
               <div className="dropdown-content ">
-                <Link href={`/mylib/favourites/${favo.fav}`} >Books</Link>
-                <Link href={`/mylib/favourites/${favo.fav}`}>Author</Link>
+                <Link href={`/favourites/${favo.fav}`} >Books</Link>
+                <Link href={`favourites/${favo.fav}`}>Author</Link>
               </div>
             </div>
 

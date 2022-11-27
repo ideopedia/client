@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Axios from "axios";
-import Loader from "../../../components/loader";
+import Loader from "../../components/loader";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCube, Pagination } from "swiper";
@@ -10,19 +10,20 @@ import { EffectCube, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
-import leftarr from "../../../public/leftarrow.svg";
-import SummaryCard from "../../../components/SummaryCard";
+import leftarr from "../../public/leftarrow.svg";
+import SummaryCard from "../../components/SummaryCard";
 import Image from "next/image";
 
 export default function ReadCard() {
   const [data, setData] = useState(false);
   const router = useRouter();
-  const favo = router.query;
-  const array = favo.readCards?favo.readCards.split(":"):null
-  var id = array[1];
+  const {user,book} = router.query;
+  // const array = favo.readCards?favo.readCards.split(":"):null
+  // var id = array[1];
+
   useEffect(() => {
     Axios.post("/api/summaryCard/findSummaryCard", {
-      Book_id: id,
+      Book_id: book,
     }).then((data) => {
       setData(data.data);
     });
@@ -34,7 +35,7 @@ export default function ReadCard() {
         <div
           className="flex justify-start items-center pl-4 pr-4 pt-4 pb-1 cursor-pointer"
           onClick={function handleBack() {
-            router.push(`/read/desc/${favo.readCards}`);
+            router.push(`/desc/${book}?user=${user}&book=${book}`);
           }}
         >
           <Image src={leftarr} />

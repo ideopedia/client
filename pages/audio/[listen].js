@@ -2,19 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import Loader from "../../../components/loader";
+import Loader from "../../components/loader";
 import Axios from "axios";
-import DarkAudio from "../../../components/DarkAudio";
-import close from "../../../public/close.svg";
-import dclose from "../../../public/darkclose.svg";
-import darkfor from "../../../public/darkfor.svg";
-import darkc from "../../../public/darkconc.svg";
-import forward from "../../../public/forward.svg";
-import content from "../../../public/content.svg";
-import read from "../../../public/read_add.svg";
-import read_white from "../../../public/read_white.svg";
-import light from "../../../public/light.svg";
-import Audio from "../../../components/Audio";
+import DarkAudio from "../../components/DarkAudio";
+import close from "../../public/close.svg";
+import dclose from "../../public/darkclose.svg";
+import darkfor from "../../public/darkfor.svg";
+import darkc from "../../public/darkconc.svg";
+import forward from "../../public/forward.svg";
+import content from "../../public/content.svg";
+import read from "../../public/read_add.svg";
+import read_white from "../../public/read_white.svg";
+import light from "../../public/light.svg";
+import Audio from "../../components/Audio";
 
 const Listen = () => {
   const router = useRouter();
@@ -22,21 +22,19 @@ const Listen = () => {
   const [conten, setContent] = useState(false);
   const [dark, setDark] = useState(true);
   const [showModal, setshowModal] = useState(false);
-  const favo = router.query;
+  const {user,book} = router.query;
 
-  const array = favo.listen ?favo.listen.split(":"):null
-  console.log(array[0]);
-  console.log(array[1]);
-  const num = array[1];
+  // const array = favo.listen ?favo.listen.split(":"):null
+  // console.log(array[0]);
+  // console.log(array[1]);
+  // const num = array[1];
+  
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios.post(
-        "/api/PreAudio/listPreAudio",
-        {
-          id: num[0],
-        }
-      );
+      const result = await Axios.post("/api/PreAudio/listPreAudio", {
+        id: book[1],
+      });
 
       setData(result.data);
     };
@@ -46,12 +44,9 @@ const Listen = () => {
   }, []);
   useEffect(() => {
     const fetchPre = async () => {
-      const result = await Axios.post(
-        "/api/audioCont/listAudio",
-        {
-          Ideo_id: num,
-        }
-      );
+      const result = await Axios.post("/api/audioCont/listAudio", {
+        Ideo_id: book,
+      });
 
       setContent(result.data);
     };
@@ -72,7 +67,7 @@ const Listen = () => {
                 <div
                   className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleForward() {
-                    router.push(`/read/desc/${array[0]}:${num[0]}`);
+                    router.push(`/desc/${book[0]}?user=${user}&book=${book[0]}`);
                   }}
                 >
                   <div className="ideoIcons">
@@ -99,7 +94,7 @@ const Listen = () => {
                     <div
                       className="p-2   RightIcons cursor-pointer"
                       onClick={function handleRead() {
-                        router.push(`/read/summary/${array[0]}:11`);
+                        router.push(`/summary/11?user=${user}&ideo=11`);
                       }}
                     >
                       <Image src={read} />
@@ -162,7 +157,7 @@ const Listen = () => {
                                 className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
                                 onClick={function handleTick() {
                                   router.push(
-                                    `/read/audio/${array[0]}:${idea.Ideo_id}`
+                                    `/audio/${idea.Ideo_id}?user=${user}&book=${idea.Ideo_id}`
                                   );
                                 }}
                                 key={n}
@@ -198,7 +193,9 @@ const Listen = () => {
                   <div
                     className=" rounded-md flex items-center justify-start cursor-pointer"
                     onClick={function handleForward() {
-                      router.push(`/read/desc/${array[0]}:${num[0]}`);
+                      router.push(
+                        `/desc/${book[0]}?user=${user}&book=${book[0]}`
+                      );
                     }}
                   >
                     <div className="ideoIcons">
@@ -225,7 +222,7 @@ const Listen = () => {
                       <div
                         className="p-2   RightIcons cursor-pointer"
                         onClick={function handleRead() {
-                          router.push(`/read/summary/${array[0]}:11`);
+                          router.push(`/summary/11?user=${user}&book=11`);
                         }}
                       >
                         <Image src={read_white} />
@@ -289,7 +286,7 @@ const Listen = () => {
                                   className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                   onClick={function handleTick() {
                                     router.push(
-                                      `/read/audio/${array[0]}:${idea.Ideo_id}`
+                                      `/audio/${idea.Ideo_id}?user=${user}&book=${idea.Ideo_id}`
                                     );
                                   }}
                                   key={n}

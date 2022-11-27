@@ -86,7 +86,7 @@ const New = () => {
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link
-                  href={`/mylib/completed/${favo.users}`}
+                  href={`/completed/${favo.users}`}
                   className="navtxt"
                 >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
@@ -97,7 +97,7 @@ const New = () => {
               <div className="pr-9 flex">
                 <Image src={fav} />
                 <Link
-                  href={`/mylib/favourites/${favo.users}`}
+                  href={`/favourites/${favo.users}`}
                   className="navtxt"
                 >
                   <span className="text-xl hover:text-green-700 cursor-pointer">
@@ -107,7 +107,7 @@ const New = () => {
               </div>
               <div className="pr-9 flex">
                 <Image src={create} />
-                <Link href={`/mylib/notes/${favo.users}`} className="navtxt">
+                <Link href={`/notes/${favo.users}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer">
                     Notes & highlightes
                   </span>

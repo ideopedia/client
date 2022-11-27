@@ -1,33 +1,34 @@
 import React from "react";
-import { useState, useEffect,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
-import Loader from "../../../components/loader";
-import ReadCard from "../../../components/readcard";
-import bookicn from "../../../public/bookicn.svg";
-import arrow from "../../../public/arrow.svg";
-import cards from "../../../public/cards.svg";
-import downarr from "../../../public/downarr.svg";
-import ben1 from "../../../public/ben1.svg";
-import Navbar from "../../../components/navbar";
-import uparr from "../../../public/uparrow.svg";
-import ok from "../../../public/ok.svg";
-import before from "../../../public/before.svg";
-import beforetime from "../../../public/timebefore.svg";
-import time from "../../../public/time.svg";
-import send from "../../../public/send.svg";
-import Like from "../../../components/Like";
-import cart from "../../../public/cart.svg";
-import like from "../../../public/like.svg";
-import leftarr from "../../../public/leftarrow.svg";
-import arrowone from "../../../public/arrowone.svg";
-import arrowtwo from "../../../public/arrowtwo.svg";
-import arrowthree from "../../../public/Arrow16.svg";
-import arrowfour from "../../../public/Arrow17.svg";
-import aftertime from "../../../public/timeafter.svg";
-import airpods from "../../../public/airpods.svg";
-import DropdownComponent from "../../../components/dropdown";
+
+import Loader from "../../components/loader";
+import ReadCard from "../../components/readcard";
+import bookicn from "../../public/bookicn.svg";
+import arrow from "../../public/arrow.svg";
+import cards from "../../public/cards.svg";
+import downarr from "../../public/downarr.svg";
+import ben1 from "../../public/ben1.svg";
+import Navbar from "../../components/navbar";
+import uparr from "../../public/uparrow.svg";
+import ok from "../../public/ok.svg";
+import before from "../../public/before.svg";
+import beforetime from "../../public/timebefore.svg";
+import time from "../../public/time.svg";
+import send from "../../public/send.svg";
+import Like from "../../components/Like";
+import cart from "../../public/cart.svg";
+import like from "../../public/like.svg";
+import leftarr from "../../public/leftarrow.svg";
+import arrowone from "../../public/arrowone.svg";
+import arrowtwo from "../../public/arrowtwo.svg";
+import arrowthree from "../../public/Arrow16.svg";
+import arrowfour from "../../public/Arrow17.svg";
+import aftertime from "../../public/timeafter.svg";
+import airpods from "../../public/airpods.svg";
+import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
 import Link from "next/link";
 const Book = () => {
@@ -63,14 +64,16 @@ const Book = () => {
   const [lik, setLike] = useState(false);
   const [tick, setTick] = useState(false);
   const router = useRouter();
-  const favo = router.query;
-  const array = favo.book ? favo.book.split(":"):null
-  console.log(array[0]);
-  console.log(array[1]);
+  console.log(router.query);
+  const { user, book } = router.query;
+  // const array = favo.book ? favo.book.split(":"):null
+  // console.log(array[0]);
+  // console.log(array[1]);
 
-  var num = Number(array[1]);
+  // var num = Number(array[1]);
 
-  const userid = array[0];
+  // const user = array[0];
+  var num = Number(book);
   function handleClick() {
     setArr(!arr);
   }
@@ -97,14 +100,14 @@ const Book = () => {
   //       console.log(data);
   //     });
   // }, []);
- 
+
   console.log(arr);
 
   return (
     <div>
       {data ? (
         <div>
-          <Navbar isLogedIn={true} userid={userid} />
+          <Navbar isLogedIn={true} user={user} />
           {console.log(data)}
 
           <div className="flex justify-center items-center pt-16">
@@ -137,7 +140,10 @@ const Book = () => {
                         <div className="mr-1.5 mt-1.5">
                           <Image src={bookicn} />
                         </div>
-                        <Link className="" href="/read/desc/1212:1">
+                        <Link
+                          className=""
+                          href={`/desc/${num}?user=${user}&book=${num}`}
+                        >
                           Read
                         </Link>
                       </div>
@@ -154,7 +160,7 @@ const Book = () => {
                         </div>
                         <Link
                           className=""
-                          href={`/read/audio/${userid}:${data.id}1`}
+                          href={`/audio/${data.id}1?user=${user}&book=${data.id}1`}
                         >
                           Listen
                         </Link>
@@ -170,7 +176,7 @@ const Book = () => {
                         </div>
                         <Link
                           className=""
-                          href={`/read/cards/${userid}:${data.id}`}
+                          href={`/cards/${data.id}?user=${user}&book=${data.id}`}
                         >
                           Cards
                         </Link>
@@ -194,7 +200,7 @@ const Book = () => {
                           percent: 30,
                           id: data.id,
 
-                          User_Id: userid,
+                          User_Id: user,
                         }
                       );
 
@@ -210,16 +216,17 @@ const Book = () => {
                     </div>
                   ) : (
                     <div style={{ width: "50px", height: "50px" }}>
-                        <Like inn="none" out="white" stroke="black" />
+                      <Like inn="none" out="white" stroke="black" />
                     </div>
-                    
                   )}
                 </div>
               </div>
             </div>
           </div>
           <div className="readDesc px-[3rem] pt-[6rem]">
-            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] mb-[2rem] descTopic font-medium uppercase">Description</h1>
+            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] mb-[2rem] descTopic font-medium uppercase">
+              Description
+            </h1>
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
@@ -232,12 +239,16 @@ const Book = () => {
                   className="bookImg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium px-8">{data.Book_Description}</div>
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium px-8">
+                {data.Book_Description}
+              </div>
             </div>
           </div>
-          
+
           <div className="readDesc  pt-10 px-[3rem] pb-[6rem]">
-            <h1 className="lg:text-[36px] md:text-[30px] text-[26px]  mb-[2rem] font-medium descTopic">ABOUT THE AUTHOR</h1>
+            <h1 className="lg:text-[36px] md:text-[30px] text-[26px]  mb-[2rem] font-medium descTopic">
+              ABOUT THE AUTHOR
+            </h1>
             <div className="flex justify-between items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", width: "10rem" }}
@@ -250,109 +261,120 @@ const Book = () => {
                   className="authimg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] px-8">{data.About_Author}</div>
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] px-8">
+                {data.About_Author}
+              </div>
             </div>
-            </div>
-            <div className="tmesaved">
+          </div>
+          <div className="tmesaved">
             <h1
               className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium pt-4 pb-20 px-[3rem]"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
             </h1>
-          <div className="py-[3rem] timeSaved px-[1.5rem]">
-          </div>
-          <br />
+            <div className="py-[3rem] timeSaved px-[1.5rem]"></div>
+            <br />
 
-          <div className="py-[3rem] timeSaved">  
-            <div className="flex items-center justify-around flexTime">
-              <div className=" rounded-md flex items-center justify-center">
-                <div>
-                  <div className="wtf xl:text-center">
-                    <Image src={beforetime} />
-                  </div>
+            <div className="py-[3rem] timeSaved">
+              <div className="flex items-center justify-around flexTime">
+                <div className=" rounded-md flex items-center justify-center">
+                  <div>
+                    <div className="wtf xl:text-center">
+                      <Image src={beforetime} />
+                    </div>
 
-                  <div className="bg-green-500 high mt-[2rem]">
-                    <div
-                      className="text-white p-2 px-[2rem]"
-                      style={{ width: "max-content" }}
-                    >
-                       <span className="text-[18px] font-medium">Read {data.book_page} pages in {data.original_read_time}
-                      {"  "}
-                      Hours</span>
+                    <div className="bg-green-500 high mt-[2rem]">
+                      <div
+                        className="text-white p-2 px-[2rem]"
+                        style={{ width: "max-content" }}
+                      >
+                        <span className="text-[18px] font-medium">
+                          Read {data.book_page} pages in{" "}
+                          {data.original_read_time}
+                          {"  "}
+                          Hours
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className=" rounded-md flex items-center justify-center">
-                <div className="arrowOne">
-                  <Image src={!isBreakpoint?arrowone:arrowthree} />
-                </div>
-              </div>
-              <div className=" rounded-md flex items-center justify-center">
-                <div>
-                  <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">SAVE OVER </h1>
-                  <div className="timeClock">
-                    <Image src={time} />
+                <div className=" rounded-md flex items-center justify-center">
+                  <div className="arrowOne">
+                    <Image src={!isBreakpoint ? arrowone : arrowthree} />
                   </div>
-                  <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">HOURS</h1>
                 </div>
-              </div>
-              <div className=" rounded-md flex items-center justify-center">
-                <div className="arrowTwo">
-                  <Image src={!isBreakpoint?arrowtwo:arrowfour} />
-                </div>
-              </div>
-              <div className="  rounded-md flex items-center justify-center">
-                <div>
-                  <div className="wtf xl:text-center">
-                    <Image src={aftertime} />
+                <div className=" rounded-md flex items-center justify-center">
+                  <div>
+                    <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">
+                      SAVE OVER{" "}
+                    </h1>
+                    <div className="timeClock">
+                      <Image src={time} />
+                    </div>
+                    <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">
+                      HOURS
+                    </h1>
                   </div>
+                </div>
+                <div className=" rounded-md flex items-center justify-center">
+                  <div className="arrowTwo">
+                    <Image src={!isBreakpoint ? arrowtwo : arrowfour} />
+                  </div>
+                </div>
+                <div className="  rounded-md flex items-center justify-center">
+                  <div>
+                    <div className="wtf xl:text-center">
+                      <Image src={aftertime} />
+                    </div>
 
-                  <div className="bg-green-500 high mt-[2rem]">
-                    <div
-                      className="text-white p-2 px-[1rem] text-center"
-                      style={{ width: "max-content" }}
-                    >
-                      <span className="text-[18px] font-medium">Read finely distilled Ideos in {data.read_time} min</span>
+                    <div className="bg-green-500 high mt-[2rem]">
+                      <div
+                        className="text-white p-2 px-[1rem] text-center"
+                        style={{ width: "max-content" }}
+                      >
+                        <span className="text-[18px] font-medium">
+                          Read finely distilled Ideos in {data.read_time} min
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="benefits pt-[3rem] pb-[3rem]">
+            <div className="benifits my-[2rem] px-[3rem]">
+              <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">
+                benefits
+              </h1>
+              {data.benifits.map((val, n) => (
+                <div className="pt-6 pb-6 " style={{ width: "100%" }} key={n}>
+                  <DropdownComponent
+                    name={n + 1 + ". " + val.name}
+                    image={val.image}
+                    content={
+                      val.benifits[0] +
+                      "." +
+                      val.benifits[1] +
+                      "." +
+                      val.benifits[1]
+                    }
+                  />
+                </div>
+              ))}
             </div>
-            
-          </div>
-          <div className="benefits pt-[3rem] pb-[3rem]">          
-          <div className="benifits my-[2rem] px-[3rem]">
-            <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">benefits</h1>
-            {data.benifits.map((val, n) => (
-              <div className="pt-6 pb-6 " style={{ width: "100%" }} key={n} >
-                <DropdownComponent
-                  name={n + 1 + ". " + val.name}
-                  image={val.image}
-                  content={
-                    val.benifits[0] +
-                    "." +
-                    val.benifits[1] +
-                    "." +
-                    val.benifits[1]
-                  }
-                />
-              </div>
-            ))}
-          </div>
           </div>
           <div>
-            
-            
             <hr />
             <div className="px-[3rem] pt-20 pb-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
                 className=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium">Contents</h1>
+                <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium">
+                  Contents
+                </h1>
               </div>
               <div className="rounded-md flex items-center justify-end">
                 {arr ? (
@@ -370,7 +392,7 @@ const Book = () => {
                 )}
               </div>
             </div>
-            
+
             {arr ? (
               <div
                 className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
@@ -380,15 +402,21 @@ const Book = () => {
                   <div
                     className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-8 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
-                      router.push(`/read/summary/${userid}:${idea.Ideo_id}`);
+                      router.push(
+                        `/summary/${idea.Ideo_id}?user=${user}&ideo=${idea.Ideo_id}`
+                      );
                     }}
                     key={n}
                   >
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
-                      <h1 className="text-[28px] font-medium">{idea.Ideo_num}</h1>
+                      <h1 className="text-[28px] font-medium">
+                        {idea.Ideo_num}
+                      </h1>
                     </div>
                     <div className=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
-                      <span className="text-[28px] font-medium">{idea.name}</span>
+                      <span className="text-[28px] font-medium">
+                        {idea.name}
+                      </span>
                     </div>
 
                     {tick ? (
@@ -405,19 +433,20 @@ const Book = () => {
               console.log("Error")
             )}
           </div>
-          
-          
-          
+
           <div className="acclaimed pt-[4rem] pb-[3rem]">
             <div className="flex justify-center items-center px-[3rem]">
               <span className="text-[36px]  uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
-              {data.Aclaimed.map((val,n) => (
-                <div className="p-4 rounded-md flex items-center justify-center" key={n} >
+              {data.Aclaimed.map((val, n) => (
+                <div
+                  className="p-4 rounded-md flex items-center justify-center"
+                  key={n}
+                >
                   <Image src={val} width={300} height={300} />
                 </div>
               ))}

@@ -1,9 +1,9 @@
-import SideNavbar from "../../../components/sidebar";
+import SideNavbar from "../../components/sidebar";
 import Image from "next/image";
-import prime from "../../../public/prime.svg";
-import abou from "../../../public/About.svg";
-import Navbar from "../../../components/navbar";
-import Loader from "../../../components/loader";
+import prime from "../../public/prime.svg";
+import abou from "../../public/About.svg";
+import Navbar from "../../components/navbar";
+import Loader from "../../components/loader";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";

@@ -25,6 +25,7 @@ const Read = () => {
   const [user, setUser] = useState(false);
   const router = useRouter();
   const favo = router.query;
+  console.log(favo)
   useEffect(() => {
     Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.book,
@@ -67,7 +68,7 @@ const Read = () => {
             u_id={user[0].User_Id}
           /> */}
           {console.log(data)}
-          <Navbar isLogedIn={true} userid={user[0].User_Id} />
+          <Navbar isLogedIn={true} userid={favo.book} />
           <div className="flex justify-end pt-2">
             <div className="p-4  rounded-md flex items-center justify-end ">
               <div className="flex ">
@@ -95,7 +96,7 @@ const Read = () => {
                       read={val.read_time}
                       listen={val.listen_time}
                       b_id={val.id}
-                      u_id={user[0].User_Id}
+                      u_id={favo.book}
                     />
                   </div>
                 ) : (

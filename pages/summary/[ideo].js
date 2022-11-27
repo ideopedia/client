@@ -1,29 +1,29 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import Loader from "../../../components/loader";
+import Loader from "../../components/loader";
 import Axios from "axios";
-import bullet from "../../../public/bullet.svg";
+import bullet from "../../public/bullet.svg";
 import Image from "next/image";
-import font from "../../../public/font.svg";
-import sound from "../../../public/sound.svg";
-import close from "../../../public/close.svg";
-import dclose from "../../../public/darkclose.svg";
-import ProgressBar from "../../../components/progress";
-import user_notes from "../../../public/user_notes.svg";
-import forward from "../../../public/forward.svg";
-import backward from "../../../public/backward.svg";
-import darkad from "../../../public/darkaudio.svg";
-import darkb from "../../../public/darkback.svg";
-import darkc from "../../../public/darkconc.svg";
-import dark1 from "../../../public/dark.svg";
-import light from "../../../public/light.svg";
-import darkfor from "../../../public/darkfor.svg";
-import darkfont from "../../../public/darkfont.svg";
-import forwhole from "../../../public/forwardwh.svg";
-import content from "../../../public/content.svg";
-import startq from "../../../public/startq.svg";
-import endq from "../../../public/endq.svg";
+import font from "../../public/font.svg";
+import sound from "../../public/sound.svg";
+import close from "../../public/close.svg";
+import dclose from "../../public/darkclose.svg";
+import ProgressBar from "../../components/progress";
+import user_notes from "../../public/user_notes.svg";
+import forward from "../../public/forward.svg";
+import backward from "../../public/backward.svg";
+import darkad from "../../public/darkaudio.svg";
+import darkb from "../../public/darkback.svg";
+import darkc from "../../public/darkconc.svg";
+import dark1 from "../../public/dark.svg";
+import light from "../../public/light.svg";
+import darkfor from "../../public/darkfor.svg";
+import darkfont from "../../public/darkfont.svg";
+import forwhole from "../../public/forwardwh.svg";
+import content from "../../public/content.svg";
+import startq from "../../public/startq.svg";
+import endq from "../../public/endq.svg";
 const Read = () => {
   const [data, setData] = useState(false);
   const [conten, setContent] = useState(false);
@@ -36,19 +36,22 @@ const Read = () => {
   const [compdata, setCompData] = useState(false);
   const [showMod, setShowMod] = useState(false);
   const router = useRouter();
-  const favo = router.query;
+  const { user, ideo } = router.query;
+  // const [num2, setNum1] = useState(ideo[0]);
+  // const [num3, setNum2] = useState(ideo[1]);
 
-  const adid = favo.ideo;
-  const array = favo.ideo?favo.ideo.split(":"):null
-  console.log(array[0]);
-  console.log(array[1]);
-  var str = array[1];
-  var num = Number(array[1]);
+  // const adid = favo.ideo;
+  // const array = favo.ideo?favo.ideo.split(":"):null
+  // console.log(array[0]);
+  // console.log(array[1]);
+  // var str = array[1];
+  console.log(router.query)
+  var num = Number(ideo);
 
-  const userid = array[0];
+  const userid = user;
 
-  var num2 = Number(str[0]);
-  var num3 = Number(str[1]);
+  var num2 = Number(ideo[0]);
+  var num3 = Number(ideo[1]);
   const d = new Date();
   const date = new Date();
 
@@ -68,12 +71,9 @@ const Read = () => {
   console.log(week[d.getDay()]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios.post(
-        "/api/bookSummary/findSummary",
-        {
-          Ideo_id: num,
-        }
-      );
+      const result = await Axios.post("/api/bookSummary/findSummary", {
+        Ideo_id: num,
+      });
 
       setData(result.data);
     };
@@ -83,12 +83,9 @@ const Read = () => {
   }, []);
   useEffect(() => {
     const fetchPre = async () => {
-      const result = await Axios.post(
-        "/api/prebook/findPrebook",
-        {
-          id: num2,
-        }
-      );
+      const result = await Axios.post("/api/prebook/findPrebook", {
+        id: num2,
+      });
 
       setContent(result.data);
     };
@@ -98,12 +95,9 @@ const Read = () => {
   }, []);
   useEffect(() => {
     const fetchCard = async () => {
-      const result = await Axios.post(
-        "/api/bookCard/findBookcard",
-        {
-          id: num2,
-        }
-      );
+      const result = await Axios.post("/api/bookCard/findBookcard", {
+        id: num2,
+      });
 
       setCard(result.data);
     };
@@ -111,7 +105,7 @@ const Read = () => {
     fetchCard();
     console.log(card);
   }, []);
-  
+
   return (
     <>
       {data ? (
@@ -126,7 +120,7 @@ const Read = () => {
                 <div
                   className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
-                    router.push(`/read/desc/${userid}:${num2}`);
+                    router.push(`/desc/${num2}?user=${userid}&book=${num2}`);
                   }}
                 >
                   <div className="ideoIcons">
@@ -160,7 +154,7 @@ const Read = () => {
                     <div
                       className="p-2 RightIcons cursor-pointer"
                       onClick={function handleAudio() {
-                        router.push(`/read/audio/${adid}`);
+                        router.push(`/audio/${ideo}?user=${userid}&book=${ideo}`);
                       }}
                     >
                       <Image src={sound} />
@@ -185,7 +179,9 @@ const Read = () => {
                       className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
                         router.push(
-                          `/read/summary/${userid}:${num2}${num3 - 1}`
+                          `/summary/${num2}${
+                            num3 - 1
+                          }?user=${userid}&ideo=${num2}${num3 - 1}`
                         );
                       }}
                     >
@@ -207,48 +203,41 @@ const Read = () => {
                     <div
                       className="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
-                        Axios.post(
-                          "/api/UserCompleted/addCompleted",
-                          {
-                            name: card.Book_Name,
-                            image: card.Cover_image,
-                            author: card.Book_Author,
-                            percent:
-                              Math.round((data.Ideo_num / data.Total) * 100) >=
-                              80
-                                ? 100
-                                : Math.round(
-                                    (data.Ideo_num / data.Total) * 100
-                                  ),
-                            id: card.id,
-                            date: currentDate,
-                            User_Id: userid,
-                          }
-                        ).then((data) => {
+                        Axios.post("/api/UserCompleted/addCompleted", {
+                          name: card.Book_Name,
+                          image: card.Cover_image,
+                          author: card.Book_Author,
+                          percent:
+                            Math.round((data.Ideo_num / data.Total) * 100) >= 80
+                              ? 100
+                              : Math.round((data.Ideo_num / data.Total) * 100),
+                          id: card.id,
+                          date: currentDate,
+                          User_Id: userid,
+                        }).then((data) => {
                           setCompData(data.data);
                         });
-                        Axios.post(
-                          "/api/UserDashboard/updateDash",
-                          {
-                            Activity: [
-                              4 * 8,
-                              8 * 8,
-                              12 * 8,
-                              16 * 1,
-                              7 * 5,
-                              4 * 9,
-                              10 * 6,
-                            ],
-                            User_Id: userid,
-                          }
-                        ).then((val) => {
+                        Axios.post("/api/UserDashboard/updateDash", {
+                          Activity: [
+                            4 * 8,
+                            8 * 8,
+                            12 * 8,
+                            16 * 1,
+                            7 * 5,
+                            4 * 9,
+                            10 * 6,
+                          ],
+                          User_Id: userid,
+                        }).then((val) => {
                           console.log(val);
                         });
 
                         router.replace(
-                          `/read/summary/${userid}:${String(
-                            num2
-                          )}${String(num3 + 1)}`
+                          `/summary/${String(num2)}${String(
+                            num3 + 1
+                          )}?user=${userid}&ideo=${String(num2)}${String(
+                            num3 + 1
+                          )}`
                         );
                       }}
                     >
@@ -274,7 +263,7 @@ const Read = () => {
                   )}
                   <div className="px-1">
                     <div className="p-4">
-                      {data.Book_Summary[0].Content[n].map((val,n) => (
+                      {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
                           className=" text-black  py-4 px-8 flex justify-center items-center leading-[197%] font-medium"
                           style={{
@@ -338,8 +327,8 @@ const Read = () => {
                   </div>
                   <div className="bg-green-100 p-6">
                     <div className="p-4">
-                      {data.Ideo_Peaks.map((val,n) => (
-                        <div key={n} >
+                      {data.Ideo_Peaks.map((val, n) => (
+                        <div key={n}>
                           <div
                             style={{
                               position: "absolute",
@@ -398,9 +387,7 @@ const Read = () => {
                               <span
                                 className=" ml-5 text-sm text-green-800 cursor-pointer"
                                 onClick={function handleSavedNotes() {
-                                  router.push(
-                                    `/mylib/notes/${userid}`
-                                  );
+                                  router.push(`/notes/${userid}`);
                                 }}
                               >
                                 Saved Notes
@@ -431,17 +418,14 @@ const Read = () => {
                               className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                               type="button"
                               onClick={function submitNotes() {
-                                Axios.post(
-                                  "/api/UserNotes/addNotes",
-                                  {
-                                    Book_Name: card.Book_Name,
-                                    Author: card.Book_Author,
-                                    Notes: notes,
-                                    Book_id: card.id,
+                                Axios.post("/api/UserNotes/addNotes", {
+                                  Book_Name: card.Book_Name,
+                                  Author: card.Book_Author,
+                                  Notes: notes,
+                                  Book_id: card.id,
 
-                                    User_Id: userid,
-                                  }
-                                ).then((data) => {
+                                  User_Id: userid,
+                                }).then((data) => {
                                   setCompData(data.data);
                                 });
                                 setShowNotesModal(false);
@@ -558,7 +542,7 @@ const Read = () => {
                                 className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
                                 onClick={function handleTick() {
                                   router.push(
-                                    `/read/summary/${userid}:${idea.Ideo_id}`
+                                    `/summary/${idea.Ideo_id}?user=${userid}&ideo=${idea.Ideo_id}`
                                   );
                                 }}
                                 key={n}
@@ -592,7 +576,7 @@ const Read = () => {
                 <div
                   className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
-                    router.push(`/read/desc/${userid}:${num2}`);
+                    router.push(`/desc/${num2}?user=${userid}&book=${num2}`);
                   }}
                 >
                   <div className="ideoIcons">
@@ -646,7 +630,9 @@ const Read = () => {
                       className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
                         router.push(
-                          `/read/summary/${userid}:${num2}${num3 - 1}`
+                          `/summary/${num2}${
+                            num3 - 1
+                          }?user=${userid}&book=${num2}${num3 - 1}`
                         );
                       }}
                     >
@@ -668,47 +654,40 @@ const Read = () => {
                     <div
                       className="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
-                        Axios.post(
-                          "/api/UserCompleted/addCompleted",
-                          {
-                            name: card.Book_Name,
-                            image: card.Cover_image,
-                            author: card.Book_Author,
-                            percent:
-                              Math.round((data.Ideo_num / data.Total) * 100) >=
-                              80
-                                ? 100
-                                : Math.round(
-                                    (data.Ideo_num / data.Total) * 100
-                                  ),
-                            id: card.id,
-                            date: currentDate,
-                            User_Id: userid,
-                          }
-                        ).then((data) => {
+                        Axios.post("/api/UserCompleted/addCompleted", {
+                          name: card.Book_Name,
+                          image: card.Cover_image,
+                          author: card.Book_Author,
+                          percent:
+                            Math.round((data.Ideo_num / data.Total) * 100) >= 80
+                              ? 100
+                              : Math.round((data.Ideo_num / data.Total) * 100),
+                          id: card.id,
+                          date: currentDate,
+                          User_Id: userid,
+                        }).then((data) => {
                           setCompData(data.data);
                         });
-                        Axios.post(
-                          "/api/UserDashboard/updateDash",
-                          {
-                            Activity: [
-                              4 * 8,
-                              8 * 8,
-                              12 * 8,
-                              16 * 8,
-                              7 * 1,
-                              4 * 13,
-                              10 * 6,
-                            ],
-                            User_Id: userid,
-                          }
-                        ).then((val) => {
+                        Axios.post("/api/UserDashboard/updateDash", {
+                          Activity: [
+                            4 * 8,
+                            8 * 8,
+                            12 * 8,
+                            16 * 8,
+                            7 * 1,
+                            4 * 13,
+                            10 * 6,
+                          ],
+                          User_Id: userid,
+                        }).then((val) => {
                           console.log(val);
                         });
                         router.replace(
-                          `/read/summary/${userid}:${String(
-                            num2
-                          )}${String(num3 + 1)}`
+                          `/summary/${String(num2)}${String(
+                            num3 + 1
+                          )}?user=${userid}&ideo=${String(num2)}${String(
+                            num3 + 1
+                          )}`
                         );
                       }}
                     >
@@ -734,7 +713,7 @@ const Read = () => {
                   )}
                   <div className="px-1">
                     <div className="p-4">
-                      {data.Book_Summary[0].Content[n].map((val,n) => (
+                      {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
                           className=" text-white  p-4 flex justify-center items-center"
                           style={{
@@ -799,7 +778,7 @@ const Read = () => {
                   </div>
                   <div className="bg-black p-6">
                     <div className="p-4">
-                      {data.Ideo_Peaks.map((val,n) => (
+                      {data.Ideo_Peaks.map((val, n) => (
                         <div key={n}>
                           <div
                             style={{
@@ -862,9 +841,7 @@ const Read = () => {
                               <span
                                 className=" ml-5 text-sm text-green-800 cursor-pointer"
                                 onClick={function handleSavedNotes() {
-                                  router.push(
-                                    `/mylib/notes/${userid}`
-                                  );
+                                  router.push(`/notes/${userid}`);
                                 }}
                               >
                                 Saved Notes
@@ -895,17 +872,14 @@ const Read = () => {
                               className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                               type="button"
                               onClick={function submitNotes() {
-                                Axios.post(
-                                  "/api/UserNotes/addNotes",
-                                  {
-                                    Book_Name: card.Book_Name,
-                                    Author: card.Book_Author,
-                                    Notes: notes,
-                                    Book_id: card.id,
+                                Axios.post("/api/UserNotes/addNotes", {
+                                  Book_Name: card.Book_Name,
+                                  Author: card.Book_Author,
+                                  Notes: notes,
+                                  Book_id: card.id,
 
-                                    User_Id: userid,
-                                  }
-                                ).then((data) => {
+                                  User_Id: userid,
+                                }).then((data) => {
                                   setCompData(data.data);
                                 });
                                 setShowNotesModal(false);
@@ -1024,7 +998,7 @@ const Read = () => {
                                 className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                 onClick={function handleTick() {
                                   router.push(
-                                    `/read/summary/${userid}:${idea.Ideo_id}`
+                                    `/summary/${idea.Ideo_id}?user=${userid}&ideo=${idea.Ideo_id}`
                                   );
                                 }}
                                 key={n}
