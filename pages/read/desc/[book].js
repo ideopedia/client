@@ -109,29 +109,29 @@ const Book = () => {
 
           <div className="flex justify-center items-center pt-16">
             <div className="flex ">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-7 ">
-                <div class=" rounded-md flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-7 ">
+                <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <Image src={data.Cover_image} width={400} height={350} />
                   </div>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div className=" rounded-md flex items-center justify-center">
                   <span className="lg:text-[28px] sm:text-base text-green-500 font-medium">
                     IDEOS OF
                   </span>
                 </div>
-                <div class="rounded-md flex items-center justify-center">
+                <div className="rounded-md flex items-center justify-center">
                   <span className="lg:text-[34px] sm:text-base text-black text-center font-medium">
                     {data.Book_Name}
                   </span>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div className=" rounded-md flex items-center justify-center">
                   <span className="lg:text-[24px] text-gray-500 italic font-medium">
                     {data.Book_Author}
                   </span>
                 </div>
-                <div class="rounded-md flex items-center justify-center mb-[5rem]">
-                  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="rounded-md flex items-center justify-center mb-[5rem]">
+                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     <div className="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
@@ -147,7 +147,7 @@ const Book = () => {
                       </div>
                     </div>
 
-                    <div class="pl-2 text-center font-medium md:text-[18px] text-[16px]">
+                    <div className="pl-2 text-center font-medium md:text-[18px] text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
                           <Image src={airpods} />
@@ -163,7 +163,7 @@ const Book = () => {
                         {data.listen_time} Minutes
                       </div>
                     </div>
-                    <div class="pl-2 text-center font-medium md:text-[18px]  text-[16px]">
+                    <div className="pl-2 text-center font-medium md:text-[18px]  text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
                           <Image src={cards} />
@@ -223,7 +223,7 @@ const Book = () => {
             <div className="flex justify-center items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", textAlign: "center" }}
-                class="bkimg"
+                className="bkimg"
               >
                 <Image
                   src={before}
@@ -241,7 +241,7 @@ const Book = () => {
             <div className="flex justify-between items-center picAndDesc">
               <div
                 style={{ marginRight: "2rem", width: "10rem" }}
-                class="authImg"
+                className="authImg"
               >
                 <Image
                   src={data.Author_image}
@@ -260,13 +260,13 @@ const Book = () => {
             >
               Time Saved
             </h1>
-          <div class="py-[3rem] timeSaved px-[1.5rem]">
+          <div className="py-[3rem] timeSaved px-[1.5rem]">
           </div>
           <br />
 
-          <div class="py-[3rem] timeSaved">  
-            <div class="flex items-center justify-around flexTime">
-              <div class=" rounded-md flex items-center justify-center">
+          <div className="py-[3rem] timeSaved">  
+            <div className="flex items-center justify-around flexTime">
+              <div className=" rounded-md flex items-center justify-center">
                 <div>
                   <div className="wtf xl:text-center">
                     <Image src={beforetime} />
@@ -284,12 +284,12 @@ const Book = () => {
                   </div>
                 </div>
               </div>
-              <div class=" rounded-md flex items-center justify-center">
+              <div className=" rounded-md flex items-center justify-center">
                 <div className="arrowOne">
                   <Image src={!isBreakpoint?arrowone:arrowthree} />
                 </div>
               </div>
-              <div class=" rounded-md flex items-center justify-center">
+              <div className=" rounded-md flex items-center justify-center">
                 <div>
                   <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">SAVE OVER </h1>
                   <div className="timeClock">
@@ -298,12 +298,12 @@ const Book = () => {
                   <h1 className="pl-5 text-center text-[26px] font-medium mr-[1.2rem]">HOURS</h1>
                 </div>
               </div>
-              <div class=" rounded-md flex items-center justify-center">
+              <div className=" rounded-md flex items-center justify-center">
                 <div className="arrowTwo">
                   <Image src={!isBreakpoint?arrowtwo:arrowfour} />
                 </div>
               </div>
-              <div class="  rounded-md flex items-center justify-center">
+              <div className="  rounded-md flex items-center justify-center">
                 <div>
                   <div className="wtf xl:text-center">
                     <Image src={aftertime} />
@@ -347,14 +347,14 @@ const Book = () => {
             
             
             <hr />
-            <div class="px-[3rem] pt-20 pb-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
+            <div className="px-[3rem] pt-20 pb-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
-                class=" rounded-md flex items-center justify-start"
+                className=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
                 <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium">Contents</h1>
               </div>
-              <div class="rounded-md flex items-center justify-end">
+              <div className="rounded-md flex items-center justify-end">
                 {arr ? (
                   <Image
                     src={uparr}
@@ -373,25 +373,25 @@ const Book = () => {
             
             {arr ? (
               <div
-                class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
                 id="read"
               >
                 {data.Ideos.map((idea, n) => (
                   <div
-                    class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-8 cursor-pointer bg-white drop-shadow-md"
+                    className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-8 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
                       router.push(`/read/summary/${userid}:${idea.Ideo_id}`);
                     }}
                   >
-                    <div class=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
+                    <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
                       <h1 className="text-[28px] font-medium">{idea.Ideo_num}</h1>
                     </div>
-                    <div class=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
+                    <div className=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
                       <span className="text-[28px] font-medium">{idea.name}</span>
                     </div>
 
                     {tick ? (
-                      <div class="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
+                      <div className="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
                         <Image src={ok} width={25} height={25} />
                       </div>
                     ) : (
@@ -414,9 +414,9 @@ const Book = () => {
               </span>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1 ">
               {data.Aclaimed.map((val) => (
-                <div class="p-4 rounded-md flex items-center justify-center">
+                <div className="p-4 rounded-md flex items-center justify-center">
                   <Image src={val} width={300} height={300} />
                 </div>
               ))}

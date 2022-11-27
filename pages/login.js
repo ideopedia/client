@@ -147,7 +147,7 @@ function Login() {
   return (
     <div>
       <Navbar isLogedIn={false} />
-      <section class="h-screen new" style={{ padding: "4.5rem 2rem 0 0" }}>
+      <section className="h-screen new" style={{ padding: "4.5rem 2rem 0 0" }}>
         <div className="loginContainer">
           <div className="">
             <Image src={login} />
@@ -224,7 +224,7 @@ function Login() {
                 <label>
                   <input
                     style={{ marginRight: "6px" }}
-                    class="form-check-input appearance-none h-4 w-4 border-2 border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                    className="form-check-input appearance-none h-4 w-4 border-2 border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"

@@ -65,9 +65,9 @@ export default function Navbar(props) {
             >
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="dropbtn flex items-center justify-center"
+                      className="dropbtn flex items-center justify-center"
                       onClick={function handleClick() {
                         router.push("/testimonials");
                       }}
@@ -77,15 +77,15 @@ export default function Navbar(props) {
                         <Image src={drop} />
                       </div>
                     </button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                       <Link href="/testimonials#readers">Testimonials</Link>
                     </div>
                   </div>
                 </li>
                 <li className="text-black flex justify-center">
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="dropbtn flex items-center justify-center"
+                      className="dropbtn flex items-center justify-center"
                       onClick={function handleClick() {
                         router.push("/about");
                       }}
@@ -95,7 +95,7 @@ export default function Navbar(props) {
                         <Image src={drop} />
                       </div>
                     </button>
-                    <div class="dropdown-content ">
+                    <div className="dropdown-content ">
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
                       <Link href="/about#vission">Vision</Link>
@@ -105,9 +105,9 @@ export default function Navbar(props) {
                 </li>
                 {getCookie("user") ? (
                   <li className="text-black flex justify-center">
-                    <div class="dropdown">
+                    <div className="dropdown">
                       <button
-                        class="dropbtn flex items-center justify-center"
+                        className="dropbtn flex items-center justify-center"
                         onClick={function handleClick() {
                           router.push(`/dashboard/${getCookie("user")}`);
                         }}
@@ -117,7 +117,7 @@ export default function Navbar(props) {
                           <Image src={drop} />
                         </div>
                       </button>
-                      <div class="dropdown-content ">
+                      <div className="dropdown-content ">
                         <Link href={`/dashboard/${getCookie("user")}`}>
                           Dashboard
                         </Link>
@@ -133,9 +133,9 @@ export default function Navbar(props) {
                 ) : null}
 
                 <li className="text-black flex justify-center">
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="dropbtn flex items-center justify-center"
+                      className="dropbtn flex items-center justify-center"
                       onClick={function handleClick() {
                         router.push("/teams");
                       }}
@@ -145,7 +145,7 @@ export default function Navbar(props) {
                         <Image src={drop} />
                       </div>
                     </button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
                       <Link href="/teams#bod">Founders</Link>
                     </div>

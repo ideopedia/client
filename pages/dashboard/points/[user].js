@@ -59,7 +59,7 @@ const Points = () => {
             /> */}
 
             <div className="md:pl-9 lg:w-11/12 md:w-12/12 sm:pl-1 sm:w-12/12">
-              <div class="flex pt-9 ml-9">
+              <div className="flex pt-9 ml-9">
                 <div className="pr-5 flex">
                   {type === "Bronze Influencer" ? (
                     <Image src={bronze} />
@@ -89,14 +89,14 @@ const Points = () => {
               <br />
               <h1 className="text-xl new2 ">Progress</h1>
               <div className="medalAndProg ml-[2rem] mt-[2rem] mx-[3rem]">
-                <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2 ">
-                  <div class="rounded-md flex items-center">
+                <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2 ">
+                  <div className="rounded-md flex items-center">
                     <Image src={bronze} />
                   </div>
-                  <div class="p-4  rounded-md flex items-center justify-center">
+                  <div className="p-4  rounded-md flex items-center justify-center">
                     <Image src={silver} />
                   </div>
-                  <div class="p-4  rounded-md flex items-center justify-end">
+                  <div className="p-4  rounded-md flex items-center justify-end">
                     <Image src={gold} />
                   </div>
                 </div>
@@ -114,15 +114,15 @@ const Points = () => {
                 </div>
               </div>
               <br />
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">
-                <div class=" rounded-md flex items-center justify-start">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">
+                <div className=" rounded-md flex items-center justify-start">
                   <h1 className="text-xl new2">History</h1>
                 </div>
-                <div class="p-4  rounded-md flex items-center justify-end">
+                <div className="p-4  rounded-md flex items-center justify-end">
                   <div className="flex">
-                    <div class="dropdown">
+                    <div className="dropdown">
                       <button
-                        class="dropbtn flex items-center justify-center"
+                        className="dropbtn flex items-center justify-center"
                         onClick={function handleClick() {
                           router.push("/teams");
                         }}
@@ -132,7 +132,7 @@ const Points = () => {
                           <Image src={drop} />
                         </div>
                       </button>
-                      <div class="dropdown-content">
+                      <div className="dropdown-content">
                         <Link href="">Completed</Link>
                         <Link href="">Shared</Link>
                         <Link href="">Feed back</Link>
@@ -144,9 +144,9 @@ const Points = () => {
               <br />
               {comp
                 ? comp.map((val) => (
-                    <div class="flex justify-between items-center mb-[3rem]">
+                    <div className="flex justify-between items-center mb-[3rem]">
                       {console.log(comp)}
-                      <div class="flex justify-between w-[10rem] items-center">
+                      <div className="flex justify-between w-[10rem] items-center">
                         <Image src={completedhis} />
                         <span>{val.date}</span>
                       </div>
@@ -158,17 +158,17 @@ const Points = () => {
                 : console.log("no history")}
 
               <h1 className="text-xl new2 pt-5">How to Earn Points ?</h1>
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
-                <div class="p-4 rounded-md flex items-center">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
+                <div className="p-4 rounded-md flex items-center">
                   <Image src={readp} />
                 </div>
-                <div class="p-4  rounded-md flex items-center">
+                <div className="p-4  rounded-md flex items-center">
                   <Image src={sharep} />
                 </div>
-                <div class="p-4  rounded-md flex items-center">
+                <div className="p-4  rounded-md flex items-center">
                   <Image src={chatp} />
                 </div>
-                <div class="p-4  rounded-md flex items-center">
+                <div className="p-4  rounded-md flex items-center">
                   <Image src={feedp} />
                 </div>
               </div>

@@ -52,10 +52,10 @@ function SideNavbar(props) {
         <div className=" p-2 w-full  bg-white z-20 relative top-0 -left-96 md:left-0 md:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start item-center">
             <div className="flex">
-              <div class=" rounded-md flex items-center justify-start lg:hidden ">
+              <div className=" rounded-md flex items-center justify-start lg:hidden ">
                 <Image src={dashc} />
               </div>
-              <div class=" flex items-center justify- w-auto h-auto pl-4 pr-4 pb-4">
+              <div className=" flex items-center justify- w-auto h-auto pl-4 pr-4 pb-4">
                 <Link href="/" className="cursor-pointer">
                   <Image src={logo} width={150} height={100} />
                 </Link>
@@ -104,23 +104,23 @@ function SideNavbar(props) {
                 </h3>
               </div>
 
-              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
-                <div class=" rounded-md flex items-center justify-center  cursor-pointer  hover:border hover:border-purple-900">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-1">
+                <div className=" rounded-md flex items-center justify-center  cursor-pointer  hover:border hover:border-purple-900">
                   <Link href={`/dashboard/${props.u_id}`}>
                     <Image src={dash} />
                   </Link>
                 </div>
-                <div class=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
+                <div className=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
                   <Link href={`/read/${props.u_id}`}>
                     <Image src={read} />
                   </Link>
                 </div>
-                <div class=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
+                <div className=" rounded-md flex items-center justify-center  cursor-pointer hover:border hover:border-purple-900 ">
                   <Link href={`/mylib/${props.u_id}`}>
                     <Image src={lib} />
                   </Link>
                 </div>
-                <div class="  rounded-md flex items-center justify-center cursor-pointer hover:border hover:border-purple-900">
+                <div className="  rounded-md flex items-center justify-center cursor-pointer hover:border hover:border-purple-900">
                   <Link href="chat">
                     <Image src={chat} />
                   </Link>

@@ -101,7 +101,7 @@ const Notes = () => {
 
             <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
               <br />
-              <div class="scrollmenu flex pt-9 ml-9">
+              <div className="scrollmenu flex pt-9 ml-9">
                 <div className="pr-9 flex">
                   <Image src={task} />
                   <Link
@@ -262,16 +262,16 @@ const Notes = () => {
               {view ? (
                 <div>
                   <div>
-                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div class=" rounded-md flex items-center justify-center">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                      <div className=" rounded-md flex items-center justify-center">
                         <span className="lg:text-xl text-base">
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div class="rounded-md flex items-center justify-center">
+                      <div className="rounded-md flex items-center justify-center">
                         <div className="p-4 pt-2">
                           <input
-                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
@@ -310,9 +310,9 @@ const Notes = () => {
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
-                      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
+                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
                         {notes.map((val) => (
-                          <div class=" rounded-md flex items-center justify-center">
+                          <div className=" rounded-md flex items-center justify-center">
                             <NotesContainer
                               info={val.Notes}
                               val={chkd ? true : false}
@@ -326,16 +326,16 @@ const Notes = () => {
               ) : (
                 <div>
                   <div>
-                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div class=" rounded-md flex items-center justify-center">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                      <div className=" rounded-md flex items-center justify-center">
                         <span className="lg:text-xl text-base">
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div class="rounded-md flex items-center justify-center">
+                      <div className="rounded-md flex items-center justify-center">
                         <div className="p-4 ">
                           <input
-                            class="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
@@ -364,9 +364,9 @@ const Notes = () => {
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
-                      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
                         {notes.map((val) => (
-                          <div class=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
+                          <div className=" rounded-md flex items-center justify-start bg-[#2CB67D] oop">
                             <NotesGrid
                               info={val.Notes}
                               val={chkd ? true : false}

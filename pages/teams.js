@@ -37,12 +37,12 @@ const Teams = () => {
       <Navbar  isLogedIn={false} />
       <div className="p-5">
         <div
-          class="pt-5 pb-4 rounded-md flex items-center justify-center"
+          className="pt-5 pb-4 rounded-md flex items-center justify-center"
           id="bod"
         >
           <span className="text-xl">The Team</span>
         </div>
-        <div class=" rounded-md flex items-center justify-center">
+        <div className=" rounded-md flex items-center justify-center">
           <div className="md:text-2xl text-xl font-medium text-black">
             <div className="text-center">This is our team, a lot of smiling happy people</div>
             <div className="text-center">
@@ -50,21 +50,21 @@ const Teams = () => {
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-3 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1  lg:grid-cols-3 gap-4 lg:gap-8">
           <div
-            class="p-4  rounded-md flex items-center justify-center cursor-pointer"
+            className="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard1}
           >
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-              <div class="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+              <div className="flex items-center justify-center">
                 <Image src={bod1} />
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span className="font-medium text-black md:text-[24px] text-xl ">
                   Mr. Binod Kumar Bawri
                 </span>
               </div>
-              <div class="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder - director
                 </span>
@@ -73,19 +73,19 @@ const Teams = () => {
           </div>
 
           <div
-            class="p-4  rounded-md flex items-center justify-center cursor-pointer"
+            className="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard2}
           >
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-              <div class="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+              <div className="flex items-center justify-center">
                 <Image src={bod2} />
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span className="font-medium md:text-[24px] text-xl text-black ">
                   Mr. A. Surya Prakash
                 </span>
               </div>
-              <div class="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <span className="font-medium md:text-xl text-lg text-black uppercase">
                   director
                 </span>
@@ -94,19 +94,19 @@ const Teams = () => {
           </div>
 
           <div
-            class="p-4  rounded-md flex items-center justify-center cursor-pointer"
+            className="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleBoard3}
           >
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-              <div class="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+              <div className="flex items-center justify-center">
                 <Image src={bod3} />
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span className="font-medium md:text-[24px] text-xl text-black">
                   Mr. Swapan Dasgupta
                 </span>
               </div>
-              <div class="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <span className="font-medium md:text-xl text-lg text-black uppercase">
                   director
                 </span>
@@ -115,21 +115,21 @@ const Teams = () => {
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
           <div
-            class=" rounded-md flex items-center justify-center cursor-pointer"
+            className=" rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleFounder1}
           >
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-              <div class="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+              <div className="flex items-center justify-center">
                 <Image src={found1} />
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span className="font-medium md:text-[24px] text-xl text-black">
                   Malvika Bawri
                 </span>
               </div>
-              <div class="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder
                 </span>
@@ -137,19 +137,19 @@ const Teams = () => {
             </div>
           </div>
           <div
-            class="p-4  rounded-md flex items-center justify-center cursor-pointer"
+            className="p-4  rounded-md flex items-center justify-center cursor-pointer"
             onClick={handleFounder2}
           >
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-              <div class="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+              <div className="flex items-center justify-center">
                 <Image src={found2} />
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span className="font-medium md:text-[24px] text-xl text-black">
                   Ritesh Bawri
                 </span>
               </div>
-              <div class="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <span className="font-medium md:text-xl text-lg text-black uppercase">
                   Founder
                 </span>
@@ -172,18 +172,18 @@ const Teams = () => {
                       <Image src={close} />
                     </div>
                     <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-                      <div class=" rounded-md flex items-center justify-center">
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                          <div class="flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+                      <div className=" rounded-md flex items-center justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                          <div className="flex items-center justify-center">
                             <Image src={bod1} />
                           </div>
-                          <div class="rounded-md flex items-center justify-center">
+                          <div className="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
                               Mr. Binod Kumar Bawri
                             </span>
                           </div>
-                          <div class="flex items-center justify-center">
+                          <div className="flex items-center justify-center">
                             <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               founder - director
                             </span>
@@ -191,7 +191,7 @@ const Teams = () => {
                         </div>
                       </div>
                       <div
-                        class=" rounded-md flex items-center justify-center"
+                        className=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium ">
@@ -251,18 +251,18 @@ const Teams = () => {
                       <Image src={close} />
                     </div>
                     <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-                      <div class=" rounded-md flex items-center justify-center">
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                          <div class="flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+                      <div className=" rounded-md flex items-center justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                          <div className="flex items-center justify-center">
                             <Image src={bod2} />
                           </div>
-                          <div class="rounded-md flex items-center justify-center">
+                          <div className="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
                               Mr. A. Surya Prakash
                             </span>
                           </div>
-                          <div class="flex items-center justify-center">
+                          <div className="flex items-center justify-center">
                             <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               director
                             </span>
@@ -270,7 +270,7 @@ const Teams = () => {
                         </div>
                       </div>
                       <div
-                        class=" rounded-md flex items-center justify-center"
+                        className=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
@@ -325,18 +325,18 @@ const Teams = () => {
                       <Image src={close} />
                     </div>
                     <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-                      <div class=" rounded-md flex items-center justify-center">
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                          <div class="flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+                      <div className=" rounded-md flex items-center justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                          <div className="flex items-center justify-center">
                             <Image src={bod3} />
                           </div>
-                          <div class="rounded-md flex items-center justify-center">
+                          <div className="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
                               Mr. Swapan Dasgupta
                             </span>
                           </div>
-                          <div class="flex items-center justify-center">
+                          <div className="flex items-center justify-center">
                             <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               director
                             </span>
@@ -344,7 +344,7 @@ const Teams = () => {
                         </div>
                       </div>
                       <div
-                        class=" rounded-md flex items-center justify-center"
+                        className=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
@@ -399,18 +399,18 @@ const Teams = () => {
                       <Image src={close} />
                     </div>
                     <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-                      <div class=" rounded-md flex items-center justify-center">
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                          <div class="flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+                      <div className=" rounded-md flex items-center justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                          <div className="flex items-center justify-center">
                             <Image src={found1} />
                           </div>
-                          <div class="rounded-md flex items-center justify-center">
+                          <div className="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
                               Malvika Bawri
                             </span>
                           </div>
-                          <div class="flex items-center justify-center">
+                          <div className="flex items-center justify-center">
                             <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
@@ -418,7 +418,7 @@ const Teams = () => {
                         </div>
                       </div>
                       <div
-                        class=" rounded-md flex items-center justify-center"
+                        className=" rounded-md flex items-center justify-center"
                         style={{ lineHeight: "2.1rem" }}
                       >
                         <span className="text-base text-black font-medium">
@@ -473,25 +473,25 @@ const Teams = () => {
                       <Image src={close} />
                     </div>
                     <br />
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-                      <div class=" rounded-md flex items-center justify-center">
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                          <div class="flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+                      <div className=" rounded-md flex items-center justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                          <div className="flex items-center justify-center">
                             <Image src={found2} />
                           </div>
-                          <div class="rounded-md flex items-center justify-center">
+                          <div className="rounded-md flex items-center justify-center">
                             <span className="font-medium text-2xl text-black">
                               Ritesh Bawri
                             </span>
                           </div>
-                          <div class="flex items-center justify-center">
+                          <div className="flex items-center justify-center">
                             <span className="font-medium text-xl text-gray-500 pb-9 uppercase">
                               Founder
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class=" rounded-md flex items-center justify-center">
+                      <div className=" rounded-md flex items-center justify-center">
                         <span className="text-base font-medium text-black">
                           <div className="py-5 pr-8">
                             <span id="p2">Mr Binod Kumar Bawri</span> is a

@@ -58,17 +58,17 @@ const New = () => {
     <div>
       <Navbar isLogedIn={false} />
       <div className="p-4">
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <div class=" rounded-md flex items-center justify-center bg-green-500 h-screen">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-              <div class="pt-4 pl-4 pr-4 rounded-md flex items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+          <div className=" rounded-md flex items-center justify-center bg-green-500 h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
+              <div className="pt-4 pl-4 pr-4 rounded-md flex items-center justify-center">
                 <Link href="https://g.page/thinkindia?share">
                   <a target="_blank">
                     <Image src={map} />
                   </a>
                 </Link>
               </div>
-              <div class="rounded-md flex items-center justify-center cursor-pointer">
+              <div className="rounded-md flex items-center justify-center cursor-pointer">
                 <span>
                   <Image src={mail} />
                 </span>
@@ -83,7 +83,7 @@ const New = () => {
                   </a>
                 </Link>
               </div>
-              <div class="rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <span>
                   <Image src={location} />
                 </span>
@@ -95,7 +95,7 @@ const New = () => {
                   </a>
                 </Link>
               </div>
-              <div class="pt-9 rounded-md flex items-end justify-center">
+              <div className="pt-9 rounded-md flex items-end justify-center">
                 <div className="pl-3 pb-1 fohv">
                   <Image src={facebook} />
                 </div>
@@ -109,7 +109,7 @@ const New = () => {
             </div>
           </div>
 
-          <div class="rounded-md flex items-center justify-center pb-9">
+          <div className="rounded-md flex items-center justify-center pb-9">
             <ToastContainer />
             <div className="newloginContainer">
               <div className="newLoginTop flex items-center justify-center">

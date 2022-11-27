@@ -6,7 +6,7 @@ import Image from "next/image";
 const SummaryCard = (props) => {
   return (
     <div className="">
-      <div class="p-6 h-[90vh] bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 cardbg" id={props.style_id}>
+      <div className="p-6 h-[90vh] bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 cardbg" id={props.style_id}>
         <div className="flex-column justify-center items-center h-20 pb-9">
           <div className="float">
             <div className="float-left justify-start items-center">

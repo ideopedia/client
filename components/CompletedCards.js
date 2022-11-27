@@ -14,8 +14,8 @@ const CompletedCard = (props) => {
   const router = useRouter();
   const percentage = 66;
   return (
-    // <div class=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
-    //   <div class=" rounded-md flex items-center  justify-start drop-shadow-lg bg-white pr-6">
+    // <div className=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+    //   <div className=" rounded-md flex items-center  justify-start drop-shadow-lg bg-white pr-6">
     //     <div className="flex cover_image p-2">
     //       <Image src={props.image} width={200} height={300} />
     //     </div>
@@ -67,8 +67,8 @@ const CompletedCard = (props) => {
     //     </div>
     //   </div>
     // </div>
-    <div class="pt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left ">
-      <div class="sm:pl-12 sm:p-8 p-3 rounded-md flex items-center justify-start  drop-shadow-lg bg-white readBk">
+    <div className="pt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left ">
+      <div className="sm:pl-12 sm:p-8 p-3 rounded-md flex items-center justify-start  drop-shadow-lg bg-white readBk">
         <div className="flex cover_image ">
         <Image src={props.image} width={200} height={300} />
         </div>

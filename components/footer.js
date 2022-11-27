@@ -9,9 +9,9 @@ import bpoint from "../public/circle2.svg";
 function Footer() {
   return (
     <div>
-      <div class="pt-10 pb-4 footer">
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-2 lg:gap-4 px-5">
-          <div class="p-2  logo item sm:text-left text-center">
+      <div className="pt-10 pb-4 footer">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-2 lg:gap-4 px-5">
+          <div className="p-2  logo item sm:text-left text-center">
             <div className="pt-20">
               <Image src={logo} width={120}/>
               <br />
@@ -30,7 +30,7 @@ function Footer() {
               </label>
             </div>
           </div>
-          <div class="p-2 rounded-md flex sm:justify-start justify-center sm:text-left text-center">
+          <div className="p-2 rounded-md flex sm:justify-start justify-center sm:text-left text-center">
             <div>
               <span className="heading">About</span>
               <br />
@@ -55,7 +55,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex sm:justify-start justify-center mb-5 sm:text-left text-center">
+          <div className="p-2  rounded-md flex sm:justify-start justify-center mb-5 sm:text-left text-center">
             <div>
               <span className="heading">Team</span>
               <br />
@@ -74,7 +74,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="p-2  rounded-md flex sm:justify-start justify-center mb-9 sm:text-left text-center">
+          <div className="p-2  rounded-md flex sm:justify-start justify-center mb-9 sm:text-left text-center">
             <div>
               <span className="heading">Our Readers</span>
               <br />
@@ -89,7 +89,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          {/* <div class="p-2  rounded-md flex  mb-9">
+          {/* <div className="p-2  rounded-md flex  mb-9">
             <div>
               <span className="heading">Social Media</span>
               <br />

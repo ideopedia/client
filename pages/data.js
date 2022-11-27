@@ -11,18 +11,18 @@ import Audio from "../components/Audio";
 const Data = () => {
   return (
     <div>
-      <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
-        <div class=" rounded-md flex items-center justify-start cursor-pointer">
+      <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+        <div className=" rounded-md flex items-center justify-start cursor-pointer">
           <div className="ideoIcons">
             <Image src={forward} width={30} height={30} />
           </div>
         </div>
-        <div class=" rounded-md flex items-center justify-center">
+        <div className=" rounded-md flex items-center justify-center">
           <div>
             <div className=" text-black text-bold ideoHead">IDEO II</div>
           </div>
         </div>
-        <div class="rounded-md flex items-center justify-end">
+        <div className="rounded-md flex items-center justify-end">
           <div>
             <div className="p-2 RightIcons cursor-pointer">
               <Image src={content} />

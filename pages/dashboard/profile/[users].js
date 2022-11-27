@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
-const profile = () => {
+const Profile = () => {
   const router = useRouter();
   const favo = router.query;
   console.log(favo.user);
@@ -274,4 +274,4 @@ const profile = () => {
     </div>
   );
 };
-export default profile;
+export default Profile;

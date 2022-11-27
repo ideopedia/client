@@ -68,9 +68,9 @@ const Listen = () => {
             <div>
               {console.log(data)}
               {console.log(conten)}
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                 <div
-                  class=" rounded-md flex items-center justify-start cursor-pointer"
+                  className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleForward() {
                     router.push(`/read/desc/${array[0]}:${num[0]}`);
                   }}
@@ -79,14 +79,14 @@ const Listen = () => {
                     <Image src={forward} width={30} height={30} />
                   </div>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div className=" text-black text-bold ideoHead">
                       {conten[0].Ideo_num}
                     </div>
                   </div>
                 </div>
-                <div class="rounded-md flex items-center justify-end">
+                <div className="rounded-md flex items-center justify-end">
                   <div>
                     <div
                       className="p-2 RightIcons cursor-pointer"
@@ -137,11 +137,11 @@ const Listen = () => {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div class=" rounded-md flex items-center justify-end">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div className=" rounded-md flex items-center justify-end">
                             <span className="text-2xl ">Audios </span>
                           </div>
-                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setshowModal(false)}
@@ -154,24 +154,24 @@ const Listen = () => {
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
                           <div
-                            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
                             id="read"
                           >
                             {data[0].Ideos.map((idea, n) => (
                               <div
-                                class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
+                                className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
                                 onClick={function handleTick() {
                                   router.push(
                                     `/read/audio/${array[0]}:${idea.Ideo_id}`
                                   );
                                 }}
                               >
-                                <div class="p-2rounded-md flex items-center justify-center ">
+                                <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl  ">
                                     {idea.Ideo_num}
                                   </h1>
                                 </div>
-                                <div class="p-2rounded-md flex items-center justify-start ">
+                                <div className="p-2rounded-md flex items-center justify-start ">
                                   <span className="text-sm lg:text-xl">
                                     {idea.name}
                                   </span>
@@ -193,9 +193,9 @@ const Listen = () => {
               <div>
                 {console.log(data)}
                 {console.log(conten)}
-                <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+                <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                   <div
-                    class=" rounded-md flex items-center justify-start cursor-pointer"
+                    className=" rounded-md flex items-center justify-start cursor-pointer"
                     onClick={function handleForward() {
                       router.push(`/read/desc/${array[0]}:${num[0]}`);
                     }}
@@ -204,14 +204,14 @@ const Listen = () => {
                       <Image src={darkfor} width={30} height={30} />
                     </div>
                   </div>
-                  <div class=" rounded-md flex items-center justify-center">
+                  <div className=" rounded-md flex items-center justify-center">
                     <div>
                       <div className=" text-white text-bold ideoHead">
                         {conten[0].Ideo_num}
                       </div>
                     </div>
                   </div>
-                  <div class="rounded-md flex items-center justify-end">
+                  <div className="rounded-md flex items-center justify-end">
                     <div>
                       <div
                         className="p-2 RightIcons cursor-pointer"
@@ -261,13 +261,13 @@ const Listen = () => {
                         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                           {/*header*/}
 
-                          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                            <div class=" rounded-md flex items-center justify-end">
+                          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                            <div className=" rounded-md flex items-center justify-end">
                               <span className="text-2xl text-white">
                                 Audios{" "}
                               </span>
                             </div>
-                            <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                            <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                               <div
                                 className="pr-5"
                                 onClick={() => setshowModal(false)}
@@ -280,24 +280,24 @@ const Listen = () => {
                           {/*body*/}
                           <div className="relative p-6 flex-auto">
                             <div
-                              class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                              className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
                               id="read"
                             >
                               {data[0].Ideos.map((idea, n) => (
                                 <div
-                                  class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
+                                  className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                   onClick={function handleTick() {
                                     router.push(
                                       `/read/audio/${array[0]}:${idea.Ideo_id}`
                                     );
                                   }}
                                 >
-                                  <div class="p-2rounded-md flex items-center justify-center ">
+                                  <div className="p-2rounded-md flex items-center justify-center ">
                                     <h1 className="text-sm lg:text-xl  text-white">
                                       {idea.Ideo_num}
                                     </h1>
                                   </div>
-                                  <div class="p-2rounded-md flex items-center justify-start ">
+                                  <div className="p-2rounded-md flex items-center justify-start ">
                                     <span className="text-sm lg:text-xl text-white">
                                       {idea.name}
                                     </span>

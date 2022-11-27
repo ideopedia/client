@@ -142,8 +142,8 @@ const Dashboard = () => {
               </span>
             </div>
           </div>
-          {/* <div class="p-4  pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 pb-9">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 ">
+          {/* <div className="p-4  pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 pb-9">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 ">
               <div className="text-4xl pb-4">Welcome</div>
               <div className="flex justify-center items-center pt-7 pl-5">
                 <div className="w-4/12">
@@ -201,94 +201,94 @@ const Dashboard = () => {
               </div>
             </div>
           </div> */}
-          <div class="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="rounded-md flex items-center justify-center">
+          <div className="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="rounded-md flex items-center justify-center">
               <ReadBox amt={data[0].Read} />
             </div>
-            <div class=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center">
               <ShareBox amt={data[0].Share} />
             </div>
-            <div class="rounded-md flex items-center justify-center">
+            <div className="rounded-md flex items-center justify-center">
               <ChatBox amt={data[0].Feed} />
             </div>
           </div>
 
-          <div class=" pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
-            <div class="p-4  rounded-md  items-center justify-start ">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-4">
-                <div class="pb-4 rounded-md  items-center justify-start ">
+          <div className=" pt-9 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
+            <div className="p-4  rounded-md  items-center justify-start ">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-4">
+                <div className="pb-4 rounded-md  items-center justify-start ">
                   ACTIVITY
                 </div>
-                <div class="p-4 rounded-md  items-center justify-center ">
+                <div className="p-4 rounded-md  items-center justify-center ">
                   <UserChart array={data[0].Activity} />
                 </div>
               </div>
             </div>
-            <div class="p-4  rounded-md  items-center justify-center ">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8">
-                <div class="rounded-md  items-center justify-center ">
+            <div className="p-4  rounded-md  items-center justify-center ">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8">
+                <div className="rounded-md  items-center justify-center ">
                   LEADERBOARD
                 </div>
-                <div class="rounded-md  items-center justify-center ">
-                  <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
-                    <div class=" rounded-md flex items-center justify-end">
+                <div className="rounded-md  items-center justify-center ">
+                  <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
+                    <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
                         <h1 className="text-xl ">1ND</h1>
                       </div>
                     </div>
-                    <div class="  rounded-md flex items-center justify-center">
+                    <div className="  rounded-md flex items-center justify-center">
                       <Image src={rank2} />
                     </div>
-                    <div class="  rounded-md flex items-center justify-start">
+                    <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base ">Nimi Martins</h1>
                       </div>
                     </div>
-                    <div class="p-4  rounded-md flex items-center justify-center">
+                    <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base text-purple-700 ">1000</h1>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="rounded-md  items-center justify-center ">
-                  <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
-                    <div class=" rounded-md flex items-center justify-end">
+                <div className="rounded-md  items-center justify-center ">
+                  <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
+                    <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
                         <h1 className="text-xl ">2ND</h1>
                       </div>
                     </div>
-                    <div class="  rounded-md flex items-center justify-center">
+                    <div className="  rounded-md flex items-center justify-center">
                       <Image src={rank2} />
                     </div>
-                    <div class="  rounded-md flex items-center justify-start">
+                    <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base ">Nimi Martins</h1>
                       </div>
                     </div>
-                    <div class="p-4  rounded-md flex items-center justify-center">
+                    <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base text-purple-700 ">800</h1>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="rounded-md  items-center justify-center ">
-                  <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
-                    <div class=" rounded-md flex items-center justify-end">
+                <div className="rounded-md  items-center justify-center ">
+                  <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
+                    <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
                         <h1 className="text-xl ">3ND</h1>
                       </div>
                     </div>
-                    <div class="  rounded-md flex items-center justify-center">
+                    <div className="  rounded-md flex items-center justify-center">
                       <Image src={rank2} />
                     </div>
-                    <div class="  rounded-md flex items-center justify-start">
+                    <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base ">Nimi Martins</h1>
                       </div>
                     </div>
-                    <div class="p-4  rounded-md flex items-center justify-center">
+                    <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
                         <h1 className="text-base text-purple-700 ">600</h1>
                       </div>

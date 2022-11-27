@@ -122,9 +122,9 @@ const Read = () => {
               {console.log(data)}
               {console.log(card)}
               {console.log(conten)}
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                 <div
-                  class=" rounded-md flex items-center justify-start cursor-pointer"
+                  className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
                     router.push(`/read/desc/${userid}:${num2}`);
                   }}
@@ -133,7 +133,7 @@ const Read = () => {
                     <Image src={forward} width={30} height={30} />
                   </div>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
                       className=" text-black font-semibold"
@@ -143,7 +143,7 @@ const Read = () => {
                     </div>
                   </div>
                 </div>
-                <div class="rounded-md flex items-center justify-end">
+                <div className="rounded-md flex items-center justify-end">
                   <div>
                     <div
                       className="p-2 RightIcons cursor-pointer"
@@ -180,9 +180,9 @@ const Read = () => {
               </div>
               <div>
                 <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                     <div
-                      class=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
                         router.push(
                           `/read/summary/${userid}:${num2}${num3 - 1}`
@@ -191,10 +191,10 @@ const Read = () => {
                     >
                       <Image src={forward} />
                     </div>
-                    <div class="rounded-md flex items-center justify-center progBar">
-                      <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="rounded-md flex items-center justify-center progBar">
+                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                         <div
-                          class="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
                           style={{
                             width: `${(data.Ideo_num / data.Total) * 100}%`,
                           }}
@@ -205,7 +205,7 @@ const Read = () => {
                       </div>
                     </div>
                     <div
-                      class="rounded-md flex  justify-end cursor-pointer"
+                      className="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
                         Axios.post(
                           "/api/UserCompleted/addCompleted",
@@ -464,9 +464,9 @@ const Read = () => {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div class=" rounded-md flex items-center justify-end"></div>
-                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div className=" rounded-md flex items-center justify-end"></div>
+                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowMod(false)}
@@ -478,8 +478,8 @@ const Read = () => {
 
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
-                            <div class=" rounded-md flex items-center justify-center">
+                          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+                            <div className=" rounded-md flex items-center justify-center">
                               <div
                                 className="cursor-pointer"
                                 onClick={function handleDark() {
@@ -497,11 +497,11 @@ const Read = () => {
                                 <Image src={light} />
                               </div>
                             </div>
-                            <div class="p-4  rounded-md flex items-center justify-center">
+                            <div className="p-4  rounded-md flex items-center justify-center">
                               <div className="text-black text-base">Aa</div>
                               <div className="pl-3 pr-2">
                                 <input
-                                  class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
+                                  className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
                                   type="range"
                                   min="1"
                                   max="1.4"
@@ -532,11 +532,11 @@ const Read = () => {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div class=" rounded-md flex items-center justify-end">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div className=" rounded-md flex items-center justify-end">
                             <span className="text-2xl ">Contents </span>
                           </div>
-                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowModal(false)}
@@ -549,24 +549,24 @@ const Read = () => {
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
                           <div
-                            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
                             id="read"
                           >
                             {conten.Ideos.map((idea, n) => (
                               <div
-                                class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
+                                className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
                                 onClick={function handleTick() {
                                   router.push(
                                     `/read/summary/${userid}:${idea.Ideo_id}`
                                   );
                                 }}
                               >
-                                <div class="p-2rounded-md flex items-center justify-center ">
+                                <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl  ">
                                     {idea.Ideo_num}
                                   </h1>
                                 </div>
-                                <div class="p-2rounded-md flex items-center justify-start ">
+                                <div className="p-2rounded-md flex items-center justify-start ">
                                   <span className="text-sm lg:text-xl">
                                     {idea.name}
                                   </span>
@@ -586,9 +586,9 @@ const Read = () => {
             <div className="p-4 pb-9 bg-black">
               <ProgressBar />
               {console.log(data)}
-              <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                 <div
-                  class=" rounded-md flex items-center justify-start cursor-pointer"
+                  className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
                     router.push(`/read/desc/${userid}:${num2}`);
                   }}
@@ -597,7 +597,7 @@ const Read = () => {
                     <Image src={forwhole} width={30} height={30} />
                   </div>
                 </div>
-                <div class=" rounded-md flex items-center justify-center">
+                <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
                       className=" text-white text-bold pb-4 ideoHead"
@@ -607,7 +607,7 @@ const Read = () => {
                     </div>
                   </div>
                 </div>
-                <div class="rounded-md flex items-center justify-end">
+                <div className="rounded-md flex items-center justify-end">
                   <div>
                     <div
                       className="p-2 RightIcons cursor-pointer"
@@ -639,9 +639,9 @@ const Read = () => {
               </div>
               <div>
                 <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                     <div
-                      class=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
                       onClick={function handleForward() {
                         router.push(
                           `/read/summary/${userid}:${num2}${num3 - 1}`
@@ -650,10 +650,10 @@ const Read = () => {
                     >
                       <Image src={darkfor} />
                     </div>
-                    <div class="rounded-md flex items-center justify-center progBar">
-                      <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="rounded-md flex items-center justify-center progBar">
+                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                         <div
-                          class="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
                           style={{
                             width: `${(data.Ideo_num / data.Total) * 100}%`,
                           }}
@@ -664,7 +664,7 @@ const Read = () => {
                       </div>
                     </div>
                     <div
-                      class="rounded-md flex  justify-end cursor-pointer"
+                      className="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
                         Axios.post(
                           "/api/UserCompleted/addCompleted",
@@ -926,9 +926,9 @@ const Read = () => {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                         {/*header*/}
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div class=" rounded-md flex items-center justify-end"></div>
-                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div className=" rounded-md flex items-center justify-end"></div>
+                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowMod(false)}
@@ -940,8 +940,8 @@ const Read = () => {
 
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
-                            <div class=" rounded-md flex items-center justify-center">
+                          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+                            <div className=" rounded-md flex items-center justify-center">
                               <div
                                 className="cursor-pointer"
                                 onClick={function handleDark() {
@@ -959,11 +959,11 @@ const Read = () => {
                                 <Image src={light} />
                               </div>
                             </div>
-                            <div class="p-4  rounded-md flex items-center justify-center">
+                            <div className="p-4  rounded-md flex items-center justify-center">
                               <div className="text-white text-base">Aa</div>
                               <div className="pl-3 pr-2">
                                 <input
-                                  class="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
+                                  className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
                                   type="range"
                                   min="1"
                                   max="1.4"
@@ -994,13 +994,13 @@ const Read = () => {
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                         {/*header*/}
 
-                        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div class=" rounded-md flex items-center justify-end">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                          <div className=" rounded-md flex items-center justify-end">
                             <span className="text-2xl text-white font-bold">
                               Contents{" "}
                             </span>
                           </div>
-                          <div class="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
                             <div
                               className="pr-5"
                               onClick={() => setShowModal(false)}
@@ -1013,24 +1013,24 @@ const Read = () => {
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
                           <div
-                            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
                             id="read"
                           >
                             {conten.Ideos.map((idea, n) => (
                               <div
-                                class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
+                                className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-black "
                                 onClick={function handleTick() {
                                   router.push(
                                     `/read/summary/${userid}:${idea.Ideo_id}`
                                   );
                                 }}
                               >
-                                <div class="p-2rounded-md flex items-center justify-center ">
+                                <div className="p-2rounded-md flex items-center justify-center ">
                                   <h1 className="text-sm lg:text-xl text-white ">
                                     {idea.Ideo_num}
                                   </h1>
                                 </div>
-                                <div class="p-2rounded-md flex items-center justify-start ">
+                                <div className="p-2rounded-md flex items-center justify-start ">
                                   <span className="text-sm lg:text-xl text-white">
                                     {idea.name}
                                   </span>

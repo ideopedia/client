@@ -50,18 +50,18 @@ const About = () => {
       <Navbar isLogedIn={false} />
       <div className="">
         <div className="about_hero1 pt-10" id="about_hero">
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-            <div class=" rounded-md flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+            <div className=" rounded-md flex items-center justify-center">
               <Image src={about} />
             </div>
-            <div class=" p-4 rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-10 md:px-10 px-5">
-                <div class="rounded-md flex items-center justify-center">
+            <div className=" p-4 rounded-md flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-10 md:px-10 px-5">
+                <div className="rounded-md flex items-center justify-center">
                   <h1 className=" xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold">
                     WHAT IS IDEOPEDIA?
                   </h1>
                 </div>
-                <div class="mt-[1rem] rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] leading-[197%] lg:text-left md:text-center text-center ">
+                <div className="mt-[1rem] rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] leading-[197%] lg:text-left md:text-center text-center ">
                   <span className="text-gray-700 font-medium ">
                     Ideopedia is an invitation-only platform that identifies,
                     shares, and facilitates cutting-edge ideas with the top 5000
@@ -85,20 +85,20 @@ const About = () => {
         <br />
         <div className="missionpage">
           <div
-            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 gap-10 lg:py-14 md:py-14 py-8"
+            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 gap-10 lg:py-14 md:py-14 py-8"
             id="mission"
           >
-            <div class=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center">
               <Image src={mission} width={400} height={400} />
             </div>
-            <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                <div class=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+                <div className=" rounded-md flex items-center justify-center">
                   <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold pb-5 lg:pr-20">
                     MISSION
                   </h1>
                 </div>
-                <div class=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 xl:px-28 lg:px-12 md:px-28 px-10 lg:text-left md:text-center text-center md:pb-10">
+                <div className=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 xl:px-28 lg:px-12 md:px-28 px-10 lg:text-left md:text-center text-center md:pb-10">
                   To Inspire, Enable, and Facilitate the creation and nurturing
                   of Ideas that can catalyse India's path to unprecedented
                   innovation and growth.
@@ -107,34 +107,34 @@ const About = () => {
             </div>
           </div>
           <div
-            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 gap-10 lg:py-14 md:py-14 py-8"
+            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 gap-10 lg:py-14 md:py-14 py-8"
             id="vission"
           >
-            <div class=" rounded-md flex items-center justify-center">
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                <div class=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+                <div className=" rounded-md flex items-center justify-center">
                   <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold pb-5 lg:pr-20 ">
                     VISION
                   </h1>
                 </div>
-                <div class=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 xl:px-28 lg:px-12 md:px-28 px-10 lg:text-left md:text-center text-center md:pb-10">
+                <div className=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 xl:px-28 lg:px-12 md:px-28 px-10 lg:text-left md:text-center text-center md:pb-10">
                   An India where the power of ideas and their successful
                   implementation ensures prosperity, equity, and well-being for
                   all its citizens.
                 </div>
               </div>
             </div>
-            <div class=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center">
               <div className="">
                 <Image src={vission} width={400} height={400} />
               </div>
             </div>
           </div>
         </div>
-        {/* <div class="rounded-md flex items-start justify-start">
+        {/* <div className="rounded-md flex items-start justify-start">
           <Image src={leafstart} />
         </div>
-        <div class="rounded-md flex items-end justify-end">
+        <div className="rounded-md flex items-end justify-end">
           <Image src={leafend} />
         </div> */}
         <div
@@ -150,7 +150,7 @@ const About = () => {
           className="py-[6rem] lg:pb-[13rem] md:pb-[13rem] pb-[4rem]"
           id="what"
         >
-          <div class="lg:mb-[5rem] md:mb-[5rem] mb-[1rem]">
+          <div className="lg:mb-[5rem] md:mb-[5rem] mb-[1rem]">
             <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-semibold text-green-500  text-center">
               WHAT WE DO
             </h1>
@@ -166,8 +166,8 @@ const About = () => {
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 pb-5 mx-[3rem]">
-            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 pb-5 mx-[3rem]">
+            <div className="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="lg:text-3xl md:text-3xl text-xl  font-medium flex justify-center items-center">
                   <span>Ideas</span>
@@ -190,7 +190,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
+            <div className="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="lg:text-3xl md:text-3xl text-xl font-medium flex justify-center items-center">
                   <span>Research</span>
@@ -213,7 +213,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
+            <div className="p-10 rounded-md flex items-center justify-center  bg-white drop-shadow pb-9 cursor-pointer text-black  hover:bg-green-500 hover:text-white wwd">
               <div>
                 <div className="lg:text-3xl md:text-3xl text-xl font-medium flex justify-center items-center">
                   <span>Discover</span>
@@ -251,18 +251,18 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 bg-gray-50 keybgr">
-          <div class=" rounded-md flex items-center justify-center p-14">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 bg-gray-50 keybgr">
+          <div className=" rounded-md flex items-center justify-center p-14">
             <Image src={aboutkeys} />
           </div>
-          <div class=" rounded-md flex items-center justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-              <div class=" rounded-md flex items-center justify-center">
+          <div className=" rounded-md flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+              <div className=" rounded-md flex items-center justify-center">
                 <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold pb-10 xl:pr-16">
                   THE RIGHT TIME IS NOW
                 </h1>
               </div>
-              <div class=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 lg:px-20 md:px-20 px-10 lg:text-left md:text-center text-center ">
+              <div className=" rounded-md flex items-center justify-center xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium text-gray-700 lg:px-20 md:px-20 px-10 lg:text-left md:text-center text-center ">
                 The time has come for India to realize its true potential, and
                 reach unprecedented heights of economic, social, and human
                 potential to become a more prosperous, united, equitable, happy,

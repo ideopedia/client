@@ -82,7 +82,7 @@ const New = () => {
           <Navbar isLogedIn={true} userid={favo.users} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
-            <div class="scrollmenu flex pt-9 ml-9">
+            <div className="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link
@@ -140,10 +140,10 @@ const New = () => {
                 </span>
               </div>
               <br />
-              <div class=" ">
+              <div className=" ">
                 {Recent ? (
                   Recent.map((val) => (
-                    <div class="rounded-md flex items-start justify-start">
+                    <div className="rounded-md flex items-start justify-start">
                       <CompletedCard
                         image={val.image}
                         name={val.name}

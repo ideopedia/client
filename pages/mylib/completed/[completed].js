@@ -60,7 +60,7 @@ const Completed = () => {
           <Navbar isLogedIn={true} userid={favo.completed} />
           <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
             <br />
-            <div class="scrollmenu flex pt-9 ml-9">
+            <div className="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link
@@ -101,14 +101,14 @@ const Completed = () => {
             </div>
 
             <br />
-            <div class="dropdown pl-4">
-              <button class="dropbtn flex items-center justify-center">
+            <div className="dropdown pl-4">
+              <button className="dropbtn flex items-center justify-center">
                 Sort By{" "}
                 <div className="mt-2 ml-2">
                   <Image src={drop} />
                 </div>
               </button>
-              <div class="dropdown-content ">
+              <div className="dropdown-content ">
                 <Link href={`/mylib/favourites/${favo.completed}`} >Books</Link>
                 <Link href={`/mylib/favourites/${favo.completed}`}>Author</Link>
               </div>
