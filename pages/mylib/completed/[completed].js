@@ -24,20 +24,20 @@ const Completed = () => {
   const [data, setData] = useState(false);
   const [user, setUser] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.completed,
     }).then((data) => {
       setUser(data.data);
     });
   }, []);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserCompleted/listCompleted", {
+    Axios.post("/api/UserCompleted/listCompleted", {
       User_Id: favo.completed,
       percent: 100,
     }).then((data) => {
       setData(data.data);
 
-      Axios.post("http://localhost:3000/api/UserDashboard/updateDash", {
+      Axios.post("/api/UserDashboard/updateDash", {
         Read: data.data.length,
         User_Id: favo.completed,
       }).then((val) => {

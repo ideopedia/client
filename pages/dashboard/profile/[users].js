@@ -26,7 +26,7 @@ const profile = () => {
   const [update, setUpdate] = useState(false);
   const [data, setData] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.users,
     }).then((data) => {
       setData(data.data);
@@ -49,7 +49,7 @@ const profile = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await Axios.post("http://localhost:3000/api/UserProfile/addUserProfile", {
+    await Axios.post("/api/UserProfile/addUserProfile", {
       email,
       official_mail,
       phone,

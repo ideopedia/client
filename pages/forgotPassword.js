@@ -104,7 +104,7 @@ function ForgotPassword() {
       //   Invite_code: invite.value,
       // };
       // console.log(user);
-      await Axios.post("http://localhost:3000/api/UserCredit/ForgotPass", {
+      await Axios.post("/api/UserCredit/ForgotPass", {
         Email: email.value,
         Password: password.value,
       }).then((data) => {

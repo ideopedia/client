@@ -44,7 +44,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/UserDashboard/findUser",
+        "/api/UserDashboard/findUser",
         {
           User_Id: favo.notes,
         }
@@ -59,7 +59,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/UserNotes/listNotes",
+        "/api/UserNotes/listNotes",
         {
           User_Id: favo.notes,
         }
@@ -284,7 +284,7 @@ const Notes = () => {
                           className="p-4 cursor-pointer"
                           onClick={function handleDel() {
                             Axios.post(
-                              "http://localhost:3000/api/UserNotes/deleteNotes",
+                              "/api/UserNotes/deleteNotes",
                               {
                                 User_Id: favo.notes,
                                 Book_Name: notes[0].Book_Name,

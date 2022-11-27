@@ -100,7 +100,7 @@ function Login() {
     if (formValid) {
       // const user = { email: email.value, password: password.value };
       // console.log(user);
-      await Axios.post("http://localhost:3000/api/UserCredit/Login", {
+      await Axios.post("/api/UserCredit/Login", {
         Email: email.value,
         Password: password.value,
       }).then((data) => {

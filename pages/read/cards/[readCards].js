@@ -21,7 +21,7 @@ export default function ReadCard() {
   const array = favo.readCards.split(":");
   var id = array[1];
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/summaryCard/findSummaryCard", {
+    Axios.post("/api/summaryCard/findSummaryCard", {
       Book_id: id,
     }).then((data) => {
       setData(data.data);

@@ -43,7 +43,7 @@ const FavouritesCard = (props) => {
                 className="ml-3 pt-2 cursor-pointer"
                 onClick={function handleLike({}) {
                   Axios.post(
-                    "http://localhost:3000/api/UserFavourites/deleteFavourites",
+                    "/api/UserFavourites/deleteFavourites",
                     {
                       User_Id: "1212",
                       name: `${props.b_name}`,

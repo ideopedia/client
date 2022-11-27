@@ -30,7 +30,7 @@ const New = () => {
   const [type, setType] = useState("Bronze Influencer");
   const [user, setUser] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.users,
     }).then((data) => {
       setUser(data.data);
@@ -40,7 +40,7 @@ const New = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios(
-        "http://localhost:3000/api/bookCard/listBookcard",
+        "/api/bookCard/listBookcard",
         {
           Password: "Ideopedia@001",
         }
@@ -55,7 +55,7 @@ const New = () => {
   useEffect(() => {
     const fetchRecent = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/UserCompleted/listCompleted",
+        "/api/UserCompleted/listCompleted",
         {
           User_Id: favo.users,
           percent: 100,

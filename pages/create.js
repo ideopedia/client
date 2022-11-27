@@ -25,7 +25,7 @@ const Read = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/bookSummary/findSummary",
+        "/api/bookSummary/findSummary",
         {
           Ideo_id: 11,
         }

@@ -70,7 +70,7 @@ const Book = () => {
     setArr(!arr);
   }
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/prebook/findPrebook", {
+    Axios.post("/api/prebook/findPrebook", {
       id: num,
     }).then((data) => {
       setData(data.data);
@@ -181,7 +181,7 @@ const Book = () => {
                   onClick={function handleLike() {
                     const fetchData = async () => {
                       const result = await Axios.post(
-                        "http://localhost:3000/api/UserFavourites/addFavourites",
+                        "/api/UserFavourites/addFavourites",
                         {
                           name: data.Book_Name,
                           image: data.Cover_image,

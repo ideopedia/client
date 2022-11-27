@@ -23,14 +23,14 @@ const Favourites = () => {
   const [data, setData] = useState(false);
   const [user, setUser] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.fav,
     }).then((data) => {
       setUser(data.data);
     });
   }, []);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserFavourites/listFavourites", {
+    Axios.post("/api/UserFavourites/listFavourites", {
       User_Id: favo.fav,
     }).then((data) => {
       setData(data.data);

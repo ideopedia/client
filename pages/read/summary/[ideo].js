@@ -69,7 +69,7 @@ const Read = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/bookSummary/findSummary",
+        "/api/bookSummary/findSummary",
         {
           Ideo_id: num,
         }
@@ -84,7 +84,7 @@ const Read = () => {
   useEffect(() => {
     const fetchPre = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/prebook/findPrebook",
+        "/api/prebook/findPrebook",
         {
           id: num2,
         }
@@ -99,7 +99,7 @@ const Read = () => {
   useEffect(() => {
     const fetchCard = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/bookCard/findBookcard",
+        "/api/bookCard/findBookcard",
         {
           id: num2,
         }
@@ -208,7 +208,7 @@ const Read = () => {
                       class="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
                         Axios.post(
-                          "http://localhost:3000/api/UserCompleted/addCompleted",
+                          "/api/UserCompleted/addCompleted",
                           {
                             name: card.Book_Name,
                             image: card.Cover_image,
@@ -228,7 +228,7 @@ const Read = () => {
                           setCompData(data.data);
                         });
                         Axios.post(
-                          "http://localhost:3000/api/UserDashboard/updateDash",
+                          "/api/UserDashboard/updateDash",
                           {
                             Activity: [
                               4 * 8,
@@ -246,7 +246,7 @@ const Read = () => {
                         });
 
                         router.replace(
-                          `http://localhost:3000/read/summary/${userid}:${String(
+                          `/read/summary/${userid}:${String(
                             num2
                           )}${String(num3 + 1)}`
                         );
@@ -398,7 +398,7 @@ const Read = () => {
                                 className=" ml-5 text-sm text-green-800 cursor-pointer"
                                 onClick={function handleSavedNotes() {
                                   router.push(
-                                    `http://localhost:3000/mylib/notes/${userid}`
+                                    `/mylib/notes/${userid}`
                                   );
                                 }}
                               >
@@ -431,7 +431,7 @@ const Read = () => {
                               type="button"
                               onClick={function submitNotes() {
                                 Axios.post(
-                                  "http://localhost:3000/api/UserNotes/addNotes",
+                                  "/api/UserNotes/addNotes",
                                   {
                                     Book_Name: card.Book_Name,
                                     Author: card.Book_Author,
@@ -667,7 +667,7 @@ const Read = () => {
                       class="rounded-md flex  justify-end cursor-pointer"
                       onClick={function handleBackward() {
                         Axios.post(
-                          "http://localhost:3000/api/UserCompleted/addCompleted",
+                          "/api/UserCompleted/addCompleted",
                           {
                             name: card.Book_Name,
                             image: card.Cover_image,
@@ -687,7 +687,7 @@ const Read = () => {
                           setCompData(data.data);
                         });
                         Axios.post(
-                          "http://localhost:3000/api/UserDashboard/updateDash",
+                          "/api/UserDashboard/updateDash",
                           {
                             Activity: [
                               4 * 8,
@@ -704,7 +704,7 @@ const Read = () => {
                           console.log(val);
                         });
                         router.replace(
-                          `http://localhost:3000/read/summary/${userid}:${String(
+                          `/read/summary/${userid}:${String(
                             num2
                           )}${String(num3 + 1)}`
                         );
@@ -860,7 +860,7 @@ const Read = () => {
                                 className=" ml-5 text-sm text-green-800 cursor-pointer"
                                 onClick={function handleSavedNotes() {
                                   router.push(
-                                    `http://localhost:3000/mylib/notes/${userid}`
+                                    `/mylib/notes/${userid}`
                                   );
                                 }}
                               >
@@ -893,7 +893,7 @@ const Read = () => {
                               type="button"
                               onClick={function submitNotes() {
                                 Axios.post(
-                                  "http://localhost:3000/api/UserNotes/addNotes",
+                                  "/api/UserNotes/addNotes",
                                   {
                                     Book_Name: card.Book_Name,
                                     Author: card.Book_Author,

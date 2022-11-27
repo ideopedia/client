@@ -117,7 +117,7 @@ function Signup() {
       //   Invite_code: invite.value,
       // };
       // console.log(user);
-      await Axios.post("http://localhost:3000/api/UserCredit/Signup", {
+      await Axios.post("/api/UserCredit/Signup", {
         Email: email.value,
         Password: password.value,
         Invite_code: invite.value,

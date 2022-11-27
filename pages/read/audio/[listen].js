@@ -32,7 +32,7 @@ const Listen = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/PreAudio/listPreAudio",
+        "/api/PreAudio/listPreAudio",
         {
           id: num[0],
         }
@@ -47,7 +47,7 @@ const Listen = () => {
   useEffect(() => {
     const fetchPre = async () => {
       const result = await Axios.post(
-        "http://localhost:3000/api/audioCont/listAudio",
+        "/api/audioCont/listAudio",
         {
           Ideo_id: num,
         }

@@ -46,7 +46,7 @@ const Dashboard = () => {
   const [type, setType] = useState("Bronze Influencer");
   const [data, setData] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.user,
     }).then((data) => {
       setData(data.data);

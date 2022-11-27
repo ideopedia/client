@@ -31,14 +31,14 @@ const Points = () => {
   const [data, setData] = useState(false);
   const [comp, setComp] = useState(false);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.user,
     }).then((data) => {
       setData(data.data);
     });
   }, []);
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserCompleted/listCompleted", {
+    Axios.post("/api/UserCompleted/listCompleted", {
       User_Id: favo.user,
       percent: 100,
     }).then((data) => {

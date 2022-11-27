@@ -26,7 +26,7 @@ const Read = () => {
   const router = useRouter();
   const favo = router.query;
   useEffect(() => {
-    Axios.post("http://localhost:3000/api/UserDashboard/findUser", {
+    Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.book,
     }).then((data) => {
       setUser(data.data);
@@ -36,7 +36,7 @@ const Read = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios(
-        "http://localhost:3000/api/bookCard/listBookcard",
+        "/api/bookCard/listBookcard",
         {
           Password: "Ideopedia@001",
         }
