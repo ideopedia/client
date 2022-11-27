@@ -64,7 +64,7 @@ const Book = () => {
   const [tick, setTick] = useState(false);
   const router = useRouter();
   const favo = router.query;
-  const array = favo.book.split(":");
+  const array = favo.book ? favo.book.split(":"):null
   console.log(array[0]);
   console.log(array[1]);
 

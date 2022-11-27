@@ -18,7 +18,7 @@ export default function ReadCard() {
   const [data, setData] = useState(false);
   const router = useRouter();
   const favo = router.query;
-  const array = favo.readCards.split(":");
+  const array = favo.readCards?favo.readCards.split(":"):null
   var id = array[1];
   useEffect(() => {
     Axios.post("/api/summaryCard/findSummaryCard", {

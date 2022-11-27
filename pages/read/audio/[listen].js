@@ -24,7 +24,7 @@ const Listen = () => {
   const [showModal, setshowModal] = useState(false);
   const favo = router.query;
 
-  const array = favo.listen.split(":");
+  const array = favo.listen ?favo.listen.split(":"):null
   console.log(array[0]);
   console.log(array[1]);
   const num = array[1];

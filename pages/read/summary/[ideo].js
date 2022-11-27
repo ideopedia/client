@@ -39,7 +39,7 @@ const Read = () => {
   const favo = router.query;
 
   const adid = favo.ideo;
-  const array = favo.ideo.split(":");
+  const array = favo.ideo?favo.ideo.split(":"):null
   console.log(array[0]);
   console.log(array[1]);
   var str = array[1];
