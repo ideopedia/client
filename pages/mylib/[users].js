@@ -140,7 +140,7 @@ const New = () => {
                 </span>
               </div>
               <br />
-              <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">
+              <div class=" ">
                 {Recent ? (
                   Recent.map((val) => (
                     <div class="rounded-md flex items-start justify-start">

@@ -305,6 +305,12 @@
   background: rgba(138, 187, 167, 0.1);
 }
 /* @media screen and (max-width: 580px) {
+@media screen and (min-width:1440px){
+  .timeSaved{
+    margin:1rem 8rem;
+  }
+}
+@media screen and (max-width: 580px) {
   .benifitsTopics {
     font-size: 15px;
     font-weight: bold;
@@ -405,10 +411,15 @@
     bottom: 9px;
   }
 }
-.infPic:hover {
-  transform: scale(1.2);
-  transition: 300ms ease-out;
+
+@media screen and (min-width:768px){
+  .infPic:hover {
+    transform: scale(1.2);
+    transition: 300ms ease-out;
+  }
 }
+
+
 @media screen and (min-width: 770px) {
   .testi {
     margin: 0 10rem;
