@@ -25,7 +25,7 @@ const NotesContainer = (props) => {
           </div>
         </div>
         <div
-          className="relative -bottom-[5.5rem] -right-[11.2rem]"
+          className="relative -bottom-[5.5rem] -right-[11.2rem] cursor-pointer "
           onClick={function handleDel() {
             Axios.post("/api/UserNotes/deleteNotes", {
               _id: props.nick,

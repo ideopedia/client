@@ -39,12 +39,9 @@ const New = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios(
-        "/api/bookCard/listBookcard",
-        {
-          Password: "Ideopedia@001",
-        }
-      );
+      const result = await Axios("/api/bookCard/listBookcard", {
+        Password: "Ideopedia@001",
+      });
 
       setData(result.data);
     };
@@ -54,13 +51,10 @@ const New = () => {
   }, []);
   useEffect(() => {
     const fetchRecent = async () => {
-      const result = await Axios.post(
-        "/api/UserCompleted/listCompleted",
-        {
-          User_Id: favo.users,
-          percent: 100,
-        }
-      );
+      const result = await Axios.post("/api/UserCompleted/listCompleted", {
+        User_Id: favo.users,
+        percent: 100,
+      });
 
       setRecent(result.data);
     };
@@ -81,8 +75,33 @@ const New = () => {
           /> */}
           <Navbar isLogedIn={true} userid={favo.users} />
           <div className="">
-            <br />
-            <div className="scrollmenu flex pt-9 ml-9">
+            <div className="scrollmenu flex  pt-9 ml-9">
+              {/* <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-[9rem]">
+                <div className="pr-4">
+                  <Image src={task} />
+                  <Link href={`/completed/${favo.users}`} className="navtxt">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
+                      Completed
+                    </span>
+                  </Link>
+                </div>
+                <div>
+                  <Image src={fav} />
+                  <Link href={`/favourites/${favo.users}`} className="navtxt">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
+                      Favourites
+                    </span>
+                  </Link>
+                </div>
+                <div>
+                  <Image src={create} />
+                  <Link href={`/notes/${favo.users}`} className="navtxt">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
+                      Notes & highlightes
+                    </span>
+                  </Link>
+                </div>
+              </div> */}
               <div className="mr-9 flex">
                 <Image src={task} />
                 <Link
@@ -114,7 +133,6 @@ const New = () => {
                 </Link>
               </div>
             </div>
-            <br />
 
             <div className="">
               <div className="p-4">
@@ -124,14 +142,14 @@ const New = () => {
               </div>
               <br />
               <div class="rounded-md flex items-start justify-center px-9">
-              <ReadCard
-                image={data[0].Cover_image}
-                name={data[0].Book_Name.toUpperCase()}
-                author={data[0].Book_Author}
-                read={data[0].read_time}
-                b_id={data[0].id}
-                listen={data[0].listen_time}
-              />
+                <ReadCard
+                  image={data[0].Cover_image}
+                  name={data[0].Book_Name.toUpperCase()}
+                  author={data[0].Book_Author}
+                  read={data[0].read_time}
+                  b_id={data[0].id}
+                  listen={data[0].listen_time}
+                />
               </div>
 
               <br />
@@ -144,8 +162,11 @@ const New = () => {
               <br />
               <div className="">
                 {Recent ? (
-                  Recent.map((val,n) => (
-                    <div className="rounded-md flex items-start justify-center px-9" key={n}>
+                  Recent.map((val, n) => (
+                    <div
+                      className="rounded-md flex items-start justify-center px-9"
+                      key={n}
+                    >
                       <CompletedCard
                         image={val.image}
                         name={val.name}
