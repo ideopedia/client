@@ -104,7 +104,7 @@ const Notes = () => {
                 <div className="pr-9 flex">
                   <Image src={task} />
                   <Link href={`/completed/${favo.notes}`} className="navtxt">
-                    <span className="text-xl hover:text-green-700 cursor-pointer">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                       Completed
                     </span>
                   </Link>
@@ -112,7 +112,7 @@ const Notes = () => {
                 <div className="pr-9 flex">
                   <Image src={fav} />
                   <Link href={`/favourites/${favo.notes}`} className="navtxt">
-                    <span className="text-xl hover:text-green-700 cursor-pointer">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                       Favourites
                     </span>
                   </Link>
@@ -121,7 +121,7 @@ const Notes = () => {
                   <Image src={create} />
                   <Link href={`/notes/${favo.notes}`} className="navtxt">
                     <div>
-                      <span className="text-xl text-green-700 cursor-pointer">
+                      <span className="text-xl text-green-700 cursor-pointer ml-[0.5rem]">
                         Notes & highlightes
                       </span>
                       <hr className="w-8/12 nhr" />
@@ -255,13 +255,13 @@ const Notes = () => {
               {view ? (
                 <div>
                   <div>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div className=" rounded-md flex items-center justify-start">
-                        <span className="lg:text-xl text-base">
+                    <div className="bkContentnotes">
+                      <div className="">
+                        <span className="lg:text-xl" >
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div className="rounded-md flex items-center justify-end">
+                      <div className="rounded-md text-right">
                         {/* <div className="p-4 pt-2">
                           <input
                             className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -287,7 +287,8 @@ const Notes = () => {
                         </div> */}
 
                         <div
-                          className="p-4  "
+                          className=" inline "
+                          style={{position: "relative",bottom:"1.6rem"}}
                           onClick={function handleDrp() {
                             setDrp(!drp);
                           }}
@@ -296,7 +297,7 @@ const Notes = () => {
                         </div>
                       </div>
                     </div>
-                    <div className=" flex justify-start items-start ">
+                    <div className="bkContentnotes">
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
@@ -320,13 +321,13 @@ const Notes = () => {
               ) : (
                 <div>
                   <div>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div className=" rounded-md flex items-center justify-start">
+                    <div className="bkContentnotes">
+                      <div className="">
                         <span className="lg:text-xl text-base">
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div className="rounded-md flex items-center justify-end">
+                      <div className=" rounded-md text-right">
                         {/* <div className="p-4 ">
                           <input
                             className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -345,7 +346,8 @@ const Notes = () => {
                           <Image src={share} />
                         </div> */}
                         <div
-                          className="p-4 "
+                          className="inline"
+                          style={{position: "relative",bottom:"1.5rem"}}
                           onClick={function handleDrp() {
                             setDrp(!drp);
                           }}
@@ -354,14 +356,14 @@ const Notes = () => {
                         </div>
                       </div>
                     </div>
-                    <div className=" flex justify-start items-start">
+                    <div className="bkContentnotes">
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
-                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
+                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 listNotes" style={{margin:"0 auto"}}>
                         {notes.map((val, n) => (
                           <div
-                            className=" rounded-md flex items-center justify-start bg-[#2CB67D] oop"
+                            className=" rounded-md bg-[#2CB67D] oop"
                             key={n}
                           >
                             <NotesGrid

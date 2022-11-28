@@ -12,7 +12,7 @@ const FavouritesCard = (props) => {
   const router = useRouter();
   const percentage = 66;
   return (
-    <div class=" py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 " style={{width:"100%"}}>
+    <div class=" py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 " style={{maxWidth:"100rem",width:"100%"}}>
       <div class="rounded-md flex items-center  justify-start drop-shadow-lg bg-white py-[1.5rem] pl-[2rem] pr-[2rem] flex-col sm:flex-row">
         <div className="flex cover_image p-2 mr-[1.3rem]">
           <Image src={props.image} width={200} height={300} />

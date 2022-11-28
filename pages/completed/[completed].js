@@ -58,7 +58,7 @@ const Completed = () => {
           /> */}
           {console.log(data)}
           <Navbar isLogedIn={true} userid={favo.completed} />
-          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+          <div className="">
             <br />
             <div className="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
@@ -68,7 +68,7 @@ const Completed = () => {
                   className="navtxt"
                 >
                   <div>
-                    <span className="text-xl hover:text-green-700 cursor-pointer pb-3">
+                    <span className="text-xl hover:text-green-700 cursor-pointer pb-3 ml-[0.5rem]">
                       Completed
                     </span>
 
@@ -82,7 +82,7 @@ const Completed = () => {
                   href={`/favourites/${favo.completed}`}
                   className="navtxt"
                 >
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Favourites
                   </span>
                 </Link>
@@ -93,7 +93,7 @@ const Completed = () => {
                   href={`/notes/${favo.completed}`}
                   className="navtxt"
                 >
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Notes & highlightes
                   </span>
                 </Link>
@@ -114,6 +114,7 @@ const Completed = () => {
               </div>
             </div>
             {data.map((val,n) => (
+              <div class="rounded-md flex items-start justify-center px-9">
               <CompletedCard
                 image={val.image}
                 name={val.name}
@@ -123,6 +124,7 @@ const Completed = () => {
                 b_name={val.name}
                 key={n}
               />
+              </div>
             ))}
             {}
           </div>

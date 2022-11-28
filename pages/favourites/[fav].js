@@ -48,13 +48,13 @@ const Favourites = () => {
           /> */}
           {console.log(data)}
           <Navbar isLogedIn={true} userid={favo.fav} />
-          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+          <div className="">
             <br />
             <div className="scrollmenu flex pt-9 ml-9">
               <div className="pr-9 flex">
                 <Image src={task} />
                 <Link href={`/completed/${favo.fav}`} className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Completed
                   </span>
                 </Link>
@@ -63,7 +63,7 @@ const Favourites = () => {
                 <Image src={fav} />
                 <Link href={`/favourites/${favo.fav}`} className="navtxt">
                   <div>
-                    <span className="text-xl text-green-700 cursor-pointer">
+                    <span className="text-xl text-green-700 cursor-pointer ml-[0.5rem]">
                       Favourites
                     </span>
                     <hr className="w-6/12 nhr" />
@@ -73,7 +73,7 @@ const Favourites = () => {
               <div className="pr-9 flex">
                 <Image src={create} />
                 <Link href={`/notes/${favo.fav}`} className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Notes & highlightes
                   </span>
                 </Link>
@@ -93,7 +93,7 @@ const Favourites = () => {
                 <Link href={`favourites/${favo.fav}`}>Author</Link>
               </div>
             </div>
-
+            <div className="rounded-md flex items-start justify-center px-9">
             <FavouritesCard
               image={data.image}
               name={data.name}
@@ -102,6 +102,7 @@ const Favourites = () => {
               book_id={data.id}
               b_name={data.name}
             />
+            </div>
           </div>
         </div>
       ) : (

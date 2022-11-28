@@ -485,6 +485,21 @@
           font-size: 14.5px;
     }
     }
+  @media screen and (max-width:450px){
+    .bkContentnotes{
+      text-align: center;
+    }
+    .listNotes{
+      max-width: 90rem;
+      width: 90%;
+    }
+    .bookDet,.pointc{
+      text-align: center;
+    }
+    .unWantMob{
+      display: none;
+    }
+  }
 
 /* .body {
   min-height: 100vh;
