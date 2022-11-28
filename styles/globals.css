@@ -276,7 +276,7 @@
 }
 @media screen and (min-width: 1025px) {
   .flexTime {
-    width: 87rem;
+    width: 80rem;
     /* margin: 0 10rem; */
   }
 }
@@ -462,12 +462,12 @@
   }
   .progBar {
     padding: 0 1rem;
-    width: 25rem;
+    
   }
 }
 @media screen and (max-width: 430px) {
   .scrollmenu {
-    width: 24rem;
+    width: 18rem;
   }
 }
 @media screen and (max-width:450px){

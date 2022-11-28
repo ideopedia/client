@@ -123,9 +123,7 @@ const Points = () => {
                     <div className="dropdown">
                       <button
                         className="dropbtn flex items-center justify-center"
-                        onClick={function handleClick() {
-                          router.push("/teams");
-                        }}
+                        
                       >
                         Sort By{" "}
                         <div className="mt-2 ml-2">
@@ -133,9 +131,9 @@ const Points = () => {
                         </div>
                       </button>
                       <div className="dropdown-content">
-                        <Link href="">Completed</Link>
-                        <Link href="">Shared</Link>
-                        <Link href="">Feed back</Link>
+                        <Link href={`/points/${favo.user}`}  >Completed</Link>
+                        <Link href={`/points/${favo.user}`}>Shared</Link>
+                        <Link href={`/points/${favo.user}`}>Feed back</Link>
                       </div>
                     </div>
                   </div>

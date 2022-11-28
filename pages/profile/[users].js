@@ -106,7 +106,7 @@ const Profile = () => {
             <div className="top">
               <h3 className="text-3xl font-semibold">Profile</h3>
             </div>
-            <div className="profImg m-4 inner">
+            <div className="profImg m-4 inner flex justify-center items-center">
               <Image src={prime} className="imgr" />
             </div>
             <div className="FormSec">

@@ -13,7 +13,7 @@ const NotesGrid = (props) => {
           <span className="text-[16px] text-center ">{props.info}</span>
         </div>
         <div
-          className=" p-4 flex justify-end items-center"
+          className=" p-4 flex justify-end items-center "
           onClick={function handleDel() {
             Axios.post("/api/UserNotes/deleteNotes", {
               _id: props.nick,
@@ -21,7 +21,7 @@ const NotesGrid = (props) => {
             router.reload();
           }}
         >
-          <Image src={del} />
+          <Image src={del} className="cursor-pointer" />
         </div>
       </div>
       {/* <div className="flex items-center p-4 w-full h-auto">

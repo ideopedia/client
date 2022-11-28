@@ -45,13 +45,13 @@ const Read = () => {
   // console.log(array[0]);
   // console.log(array[1]);
   // var str = array[1];
-  console.log(router.query)
+  console.log(router.query);
   var num = Number(ideo);
 
   const userid = user;
 
-  var num2 = Number(ideo?ideo[0]:null);
-  var num3 = Number(ideo?ideo[1]:null);
+  var num2 = Number(ideo ? ideo[0] : null);
+  var num3 = Number(ideo ? ideo[1] : null);
   const d = new Date();
   const date = new Date();
 
@@ -154,7 +154,9 @@ const Read = () => {
                     <div
                       className="p-2 RightIcons cursor-pointer"
                       onClick={function handleAudio() {
-                        router.push(`/audio/${ideo}?user=${userid}&book=${ideo}`);
+                        router.push(
+                          `/audio/${ideo}?user=${userid}&book=${ideo}`
+                        );
                       }}
                     >
                       <Image src={sound} />
@@ -177,13 +179,21 @@ const Read = () => {
                   <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                     <div
                       className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
-                      onClick={function handleForward() {
-                        router.push(
-                          `/summary/${num2}${
-                            num3 - 1
-                          }?user=${userid}&ideo=${num2}${num3 - 1}`
-                        );
-                      }}
+                      onClick={
+                        num3 !== 0
+                          ? function handleForward() {
+                              router.push(
+                                `/summary/${num2}${
+                                  num3 - 1
+                                }?user=${userid}&ideo=${num2}${num3 - 1}`
+                              );
+                            }
+                          : function handleForward() {
+                              router.push(
+                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
+                              );
+                            }
+                      }
                     >
                       <Image src={forward} />
                     </div>
@@ -202,44 +212,60 @@ const Read = () => {
                     </div>
                     <div
                       className="rounded-md flex  justify-end cursor-pointer"
-                      onClick={function handleBackward() {
-                        Axios.post("/api/UserCompleted/addCompleted", {
-                          name: card.Book_Name,
-                          image: card.Cover_image,
-                          author: card.Book_Author,
-                          percent:
-                            Math.round((data.Ideo_num / data.Total) * 100) >= 80
-                              ? 100
-                              : Math.round((data.Ideo_num / data.Total) * 100),
-                          id: card.id,
-                          date: currentDate,
-                          User_Id: userid,
-                        }).then((data) => {
-                          setCompData(data.data);
-                        });
-                        Axios.post("/api/UserDashboard/updateDash", {
-                          Activity: [
-                            4 * 8,
-                            8 * 8,
-                            12 * 8,
-                            16 * 1,
-                            7 * 5,
-                            4 * 9,
-                            10 * 6,
-                          ],
-                          User_Id: userid,
-                        }).then((val) => {
-                          console.log(val);
-                        });
+                      onClick={
+                        num3 === data.total-1
+                          ? function handleBackward() {
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3
+                                )}`
+                              );
+                            }
+                          : function handleBackward() {
+                              Axios.post("/api/UserCompleted/addCompleted", {
+                                name: card.Book_Name,
+                                image: card.Cover_image,
+                                author: card.Book_Author,
+                                percent:
+                                  Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ) >= 80
+                                    ? 100
+                                    : Math.round(
+                                        (data.Ideo_num / data.Total) * 100
+                                      ),
+                                id: card.id,
+                                date: currentDate,
+                                User_Id: userid,
+                              }).then((data) => {
+                                setCompData(data.data);
+                              });
+                              Axios.post("/api/UserDashboard/updateDash", {
+                                Activity: [
+                                  4 * 8,
+                                  8 * 8,
+                                  12 * 8,
+                                  16 * 1,
+                                  7 * 5,
+                                  4 * 9,
+                                  10 * 6,
+                                ],
+                                User_Id: userid,
+                              }).then((val) => {
+                                console.log(val);
+                              });
 
-                        router.replace(
-                          `/summary/${String(num2)}${String(
-                            num3 + 1
-                          )}?user=${userid}&ideo=${String(num2)}${String(
-                            num3 + 1
-                          )}`
-                        );
-                      }}
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3 + 1
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3 + 1
+                                )}`
+                              );
+                            }
+                      }
                     >
                       <Image src={backward} />
                     </div>

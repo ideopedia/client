@@ -114,13 +114,13 @@ const Listen = () => {
               <div className="flex justify-center items-center">
                 {conten[0].Ideo_title}
               </div>
-              <div className="pb-4 pt-4">
+              <div className="pb-4 pt-4 flex justify-center items-center" >
                 <Image src={conten[0].Ideo_image} width={1500} height={500} />
               </div>
               {/* <div className="flex justify-center items-center pt-2">
               <Image src={conten[0].Ideo_image} width={300} height={300} />
             </div> */}
-              <div className="flex justify-center items-center pt-2">
+              <div className="flex justify-center  items-center pt-2">
                 <Audio song={conten[0].audio} />
               </div>
 

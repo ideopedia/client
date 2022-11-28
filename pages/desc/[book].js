@@ -273,11 +273,11 @@ const Book = () => {
             >
               Time Saved
             </h1>
-            <div className="py-[3rem] timeSaved px-[1.5rem]"></div>
-            <br />
+            
+            
 
             <div className="py-[3rem] timeSaved">
-              <div className="flex items-center justify-around flexTime">
+              <div className="flex items-center justify-around flexTime mx-auto">
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div className="wtf xl:text-center">
