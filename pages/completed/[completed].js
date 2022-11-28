@@ -114,7 +114,7 @@ const Completed = () => {
               </div>
             </div>
             {data.map((val,n) => (
-              <div class="rounded-md flex items-start justify-center px-9">
+              <div class="rounded-md flex items-start justify-center px-9" key={n} >
               <CompletedCard
                 image={val.image}
                 name={val.name}
