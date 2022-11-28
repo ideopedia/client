@@ -1017,11 +1017,6 @@
     padding: 10px 15px;
   }
 }
-@media screen and (max-width: 380px) {
-  .high {
-    margin: 0px 10px;
-  }
-}
 @media screen and (max-width: 330px) {
   .cuteg {
     margin: 0px 10px;

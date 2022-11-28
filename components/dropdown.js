@@ -10,7 +10,7 @@ export default function  DropdownComponent(props) {
   return (
     <Menu as="div" className="relative inline-block whiteBox">
       <div>
-        <Menu.Button className=" px-4 py-2 text-[28px] font-medium drop-shadow-md text-green-500 bg-white    focus:outline-none  whiteBox">
+        <Menu.Button className=" md:px-4 py-2 px-3 xl:text-[26px] lg:text-[24px] sm:text-[22px] text-[18px] font-medium drop-shadow-md text-green-500 bg-white    focus:outline-none  whiteBox">
           <div className="flex items-center justify-between py-[1rem] xl:px-[3rem]">
             <div className="rounded-md text-left">
               <span className="benifitsTopics">{props.name}</span>
@@ -61,12 +61,12 @@ export default function  DropdownComponent(props) {
                     <div className="rounded-md flex items-center justify-start">
                       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 ">
                         <div className="rounded-md flex items-start justify-start pb-5 ">
-                          <span className="text-[30px] text-green-500 font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%]">{props.name}</span>
+                          <span className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[22px] text-green-500 font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%]">{props.name}</span>
                           
                         </div>
                         <div className="rounded-md flex items-start justify-start">
                           {" "}
-                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 text-left px-8"> {props.content}</span>
+                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 lg:text-left text-center px-8"> {props.content}</span>
                         </div>
                       </div>
                     </div>
