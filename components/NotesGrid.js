@@ -1,9 +1,30 @@
 import React from "react";
-
+import Image from "next/image";
+import del from "../public/delete.svg";
+import { useRouter } from "next/router";
+import Axios from "axios";
+import { useEffect, useState } from "react";
 const NotesGrid = (props) => {
+  const router = useRouter()
   return (
-    <div>
-      <div className="flex items-center p-4 w-full h-auto">
+    <div className="w-[100%]">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className="p-4 flex justify-start items-center">
+          <span className="text-[16px] text-center ">{props.info}</span>
+        </div>
+        <div
+          className=" p-4 flex justify-end items-center"
+          onClick={function handleDel() {
+            Axios.post("/api/UserNotes/deleteNotes", {
+              _id: props.nick,
+            });
+            router.reload();
+          }}
+        >
+          <Image src={del} />
+        </div>
+      </div>
+      {/* <div className="flex items-center p-4 w-full h-auto">
         <div>
           <input
             style={{ marginRight: "6px" }}
@@ -14,10 +35,7 @@ const NotesGrid = (props) => {
             checked={props.val}
           ></input>
         </div>
-        <div className="pl-3 pt-1">
-          <span className="text-[16px] text-center ">{props.info}</span>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };

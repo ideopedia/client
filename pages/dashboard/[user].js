@@ -91,13 +91,11 @@ const Dashboard = () => {
             <div className="">
               <CircularProgressbarWithChildren
                 strokeWidth={3}
-               
                 counterClockwise={true}
                 value={data[0].Profile_percent}
                 styles={buildStyles({
                   pathColor: "#2CB67D",
                   trailColor: "#fff",
-                  
                 })}
                 className="w-[200px] h-[200px]"
               >
@@ -117,6 +115,11 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+          <div className="flex xl:justify-start lg:justify-center md:justify-center sm:justify-center ">
+            <div className="text-sm foottext font-semibold pb-4 pl-4 ">
+              <Link href={`/profile/${favo.user}`}>complete Your profile</Link>
+            </div>
+          </div>
           <div className="flex xl:justify-start lg:justify-center md:justify-center sm:justify-center p-4">
             <div className="text-3xl pb-4">
               {hr < 12 ? "Good Morning" : "Good Evening"}, Hon. {data[0].Name}
@@ -129,9 +132,11 @@ const Dashboard = () => {
               ) : (
                 <Image src={silver} />
               )}
-              
+
               <span className="pl-2 pb-2 pt-20"> You are a {type}</span>
-              <span className="pl-2 pr-2 text-green-500">{data[0].Read * 20} Points</span>
+              <span className="pl-2 pr-2 text-green-500">
+                {data[0].Read * 20} Points
+              </span>
               <span
                 onClick={function handleLink() {
                   router.push(`/points/${favo.user}`);

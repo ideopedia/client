@@ -10,8 +10,7 @@ export default async function deleteNotes(req, res) {
     await connectMongo();
 
     var notes = await UserNotes.findOneAndDelete({
-      User_Id: req.body.User_Id,
-      Book_Name:req.body.Book_Name,
+      _id: req.body._id,
     });
     res.json(notes);
   } catch (err) {
