@@ -81,7 +81,7 @@ const Notes = () => {
   return (
     <div>
       {
-        notes.length === 0 ?(
+        !notes ?(
           console.log("Noooo")
         ):(
           <div>
