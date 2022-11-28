@@ -12,9 +12,9 @@ const FavouritesCard = (props) => {
   const router = useRouter();
   const percentage = 66;
   return (
-    <div className=" p-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
-      <div className=" rounded-md flex items-center  justify-start">
-        <div className="flex cover_image p-2">
+    <div class=" py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 " style={{width:"100%"}}>
+      <div class="rounded-md flex items-center  justify-start drop-shadow-lg bg-white py-[1.5rem] pl-[2rem] pr-[2rem] flex-col sm:flex-row">
+        <div className="flex cover_image p-2 mr-[1.3rem]">
           <Image src={props.image} width={200} height={300} />
         </div>
         <div className=" book_con ">
@@ -23,10 +23,10 @@ const FavouritesCard = (props) => {
             <h1 className=" pt-2 b_auth">{props.author}</h1>
           </div>
 
-          <div className="flex pt-12 justify-between">
+          <div className="flex pt-12 sm:justify-between justify-center">
             <div
-              className="ml-3 w-[4rem]"
-              style={{ position: "relative", bottom: "10px", right: "20px" }}
+              className="mr-[2rem] sm:w-[4rem]  w-[3rem] sm:mt-[-0.5rem]"
+              
             >
               <CircularProgressbar
                 value={props.percent}
@@ -38,12 +38,12 @@ const FavouritesCard = (props) => {
                 })}
               />
             </div>
-            <div className="flex ">
+            <div className="flex justify-between">
               <div
-                className="ml-3 pt-2 cursor-pointer"
+                className="ml-3 pt-2 cursor-pointer mr-[1.8rem] sm:mr-[0]"
                 onClick={function handleLike({}) {
                   Axios.post(
-                    "/api/UserFavourites/deleteFavourites",
+                    "http://localhost:3000/api/UserFavourites/deleteFavourites",
                     {
                       User_Id: "1212",
                       name: `${props.b_name}`,
@@ -54,7 +54,7 @@ const FavouritesCard = (props) => {
               >
                 <Image src={del} />
               </div>
-              <div className="ml-3 pt-1 cont">
+              <div className="ml-3 pt-1 cont mb-[2rem]" style={{paddingTop:"13px"}}>
                 <Link className="" href={`/read/${props.book_id}`}>
                   Continue
                 </Link>
