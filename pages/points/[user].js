@@ -144,14 +144,14 @@ const Points = () => {
               <br />
               {comp
                 ? comp.map((val,n) => (
-                    <div className="flex justify-between items-center mb-[3rem]" key={n}>
+                    <div className="flex justify-between items-center mb-[3rem] mr-[0.5rem]" key={n}>
                       {console.log(comp)}
-                      <div className="flex justify-between w-[10rem] items-center">
+                      <div className="flex justify-between w-[10rem] items-center unWantMob">
                         <Image src={completedhis} />
                         <span>{val.date}</span>
                       </div>
-                      <span>{val.name}</span>
-                      <span>Completed Book</span>
+                      <span className="bookDet">{val.name}</span>
+                      <span className="bookDet">Completed Book</span>
                       <span className="pointc">20 Points</span>
                     </div>
                   ))

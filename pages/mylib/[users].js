@@ -80,35 +80,35 @@ const New = () => {
             u_id={user[0].User_Id}
           /> */}
           <Navbar isLogedIn={true} userid={favo.users} />
-          <div className="md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/12">
+          <div className="">
             <br />
             <div className="scrollmenu flex pt-9 ml-9">
-              <div className="pr-9 flex">
+              <div className="mr-9 flex">
                 <Image src={task} />
                 <Link
                   href={`/completed/${favo.users}`}
                   className="navtxt"
                 >
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Completed
                   </span>
                 </Link>
               </div>
-              <div className="pr-9 flex">
+              <div className="mr-9 flex">
                 <Image src={fav} />
                 <Link
                   href={`/favourites/${favo.users}`}
                   className="navtxt"
                 >
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Favourites
                   </span>
                 </Link>
               </div>
-              <div className="pr-9 flex">
+              <div className="mr-9 flex">
                 <Image src={create} />
                 <Link href={`/notes/${favo.users}`} className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Notes & highlightes
                   </span>
                 </Link>
@@ -116,13 +116,14 @@ const New = () => {
             </div>
             <br />
 
-            <div>
+            <div className="">
               <div className="p-4">
                 <span className="text-xl text-black text-bold">
                   Launch of the Month
                 </span>
               </div>
               <br />
+              <div class="rounded-md flex items-start justify-center px-9">
               <ReadCard
                 image={data[0].Cover_image}
                 name={data[0].Book_Name.toUpperCase()}
@@ -131,6 +132,7 @@ const New = () => {
                 b_id={data[0].id}
                 listen={data[0].listen_time}
               />
+              </div>
 
               <br />
               <br />
@@ -140,10 +142,10 @@ const New = () => {
                 </span>
               </div>
               <br />
-              <div className=" ">
+              <div className="">
                 {Recent ? (
                   Recent.map((val,n) => (
-                    <div className="rounded-md flex items-start justify-start" key={n}>
+                    <div className="rounded-md flex items-start justify-center px-9" key={n}>
                       <CompletedCard
                         image={val.image}
                         name={val.name}

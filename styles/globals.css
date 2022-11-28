@@ -470,6 +470,37 @@
     width: 24rem;
   }
 }
+@media screen and (max-width:450px){
+.readCardBk{
+      font-size: 16px;
+}
+}
+@media screen and (max-width:769px){
+  .readBkAuth{
+        font-size: 16px;
+  }
+  }
+  @media screen and (max-width:450px){
+    .readBkAuth{
+          font-size: 14.5px;
+    }
+    }
+  @media screen and (max-width:450px){
+    .bkContentnotes{
+      text-align: center;
+    }
+    .listNotes{
+      max-width: 90rem;
+      width: 90%;
+    }
+    .bookDet,.pointc{
+      text-align: center;
+    }
+    .unWantMob{
+      display: none;
+    }
+  }
+
 /* .body {
   min-height: 100vh;
 } */

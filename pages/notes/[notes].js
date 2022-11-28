@@ -43,12 +43,9 @@ const Notes = () => {
   // }, []);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios.post(
-        "/api/UserDashboard/findUser",
-        {
-          User_Id: favo.notes,
-        }
-      );
+      const result = await Axios.post("/api/UserDashboard/findUser", {
+        User_Id: favo.notes,
+      });
 
       setUser(result.data);
     };
@@ -58,12 +55,9 @@ const Notes = () => {
   }, []);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios.post(
-        "/api/UserNotes/listNotes",
-        {
-          User_Id: favo.notes,
-        }
-      );
+      const result = await Axios.post("/api/UserNotes/listNotes", {
+        User_Id: favo.notes,
+      });
 
       setNotes(result.data);
     };
@@ -86,7 +80,12 @@ const Notes = () => {
   }
   return (
     <div>
-      {user && notes ? (
+      {
+        notes.length === 0 ?(
+          console.log("Noooo")
+        ):(
+          <div>
+      {user  ? (
         <div>
           {console.log(notes)}
           {console.log(user)}
@@ -104,22 +103,16 @@ const Notes = () => {
               <div className="scrollmenu flex pt-9 ml-9">
                 <div className="pr-9 flex">
                   <Image src={task} />
-                  <Link
-                    href={`/completed/${favo.notes}`}
-                    className="navtxt"
-                  >
-                    <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <Link href={`/completed/${favo.notes}`} className="navtxt">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                       Completed
                     </span>
                   </Link>
                 </div>
                 <div className="pr-9 flex">
                   <Image src={fav} />
-                  <Link
-                    href={`/favourites/${favo.notes}`}
-                    className="navtxt"
-                  >
-                    <span className="text-xl hover:text-green-700 cursor-pointer">
+                  <Link href={`/favourites/${favo.notes}`} className="navtxt">
+                    <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                       Favourites
                     </span>
                   </Link>
@@ -128,7 +121,7 @@ const Notes = () => {
                   <Image src={create} />
                   <Link href={`/notes/${favo.notes}`} className="navtxt">
                     <div>
-                      <span className="text-xl text-green-700 cursor-pointer">
+                      <span className="text-xl text-green-700 cursor-pointer ml-[0.5rem]">
                         Notes & highlightes
                       </span>
                       <hr className="w-8/12 nhr" />
@@ -141,12 +134,9 @@ const Notes = () => {
               <div className="p-4 flex justify-start items-center">
                 <div className="flex cls">
                   <div className="inline-flex bg-white border rounded-md border-none drop-shadow">
-                    <a
-                      href="#"
-                      className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
-                    >
+                    <div className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md">
                       Notes
-                    </a>
+                    </div>
 
                     <div className="relative">
                       <button
@@ -173,18 +163,22 @@ const Notes = () => {
                       {nts ? (
                         <div className="absolute z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
                           <div className="p-2">
-                            <a
-                              href="#"
+                            <div
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                              onClick={function handleCls() {
+                                setNts(false);
+                              }}
                             >
                               Highlightes
-                            </a>
-                            <a
-                              href="#"
+                            </div>
+                            <div
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                              onClick={function handleCls() {
+                                setNts(false);
+                              }}
                             >
                               Notes
-                            </a>
+                            </div>
                           </div>
                         </div>
                       ) : (
@@ -201,12 +195,9 @@ const Notes = () => {
                 </div>
                 <div className="flex cls">
                   <div className="inline-flex bg-white border rounded-md border-none drop-shadow">
-                    <span
-                      href="#"
-                      className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
-                    >
+                    <div className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md">
                       view
-                    </span>
+                    </div>
 
                     <div className="relative">
                       <button
@@ -236,6 +227,7 @@ const Notes = () => {
                             <span
                               onClick={function handleGrid() {
                                 setView(true);
+                                setArr(false);
                               }}
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700 cursor-pointer"
                             >
@@ -244,6 +236,7 @@ const Notes = () => {
                             <span
                               onClick={function handleGrid() {
                                 setView(false);
+                                setArr(false);
                               }}
                               className="block  py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700 cursor-pointer"
                             >
@@ -262,14 +255,14 @@ const Notes = () => {
               {view ? (
                 <div>
                   <div>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div className=" rounded-md flex items-center justify-center">
-                        <span className="lg:text-xl text-base">
+                    <div className="bkContentnotes">
+                      <div className="">
+                        <span className="lg:text-xl" >
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div className="rounded-md flex items-center justify-center">
-                        <div className="p-4 pt-2">
+                      <div className="rounded-md text-right">
+                        {/* <div className="p-4 pt-2">
                           <input
                             className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             type="checkbox"
@@ -279,25 +272,23 @@ const Notes = () => {
                               setChkd(!chkd);
                             }}
                           />
-                        </div>
-                        <div
+                        </div> */}
+                        {/* <div
                           className="p-4 cursor-pointer"
                           onClick={function handleDel() {
-                            Axios.post(
-                              "/api/UserNotes/deleteNotes",
-                              {
-                                User_Id: favo.notes,
-                                Book_Name: notes[0].Book_Name,
-                              }
-                            );
+                            Axios.post("/api/UserNotes/deleteNotes", {
+                              User_Id: favo.notes,
+                              Book_Name: notes[0].Book_Name,
+                            });
                             router.reload();
                           }}
                         >
                           <Image src={dele} />
-                        </div>
+                        </div> */}
 
                         <div
-                          className="p-4 "
+                          className=" inline "
+                          style={{position: "relative",bottom:"1.6rem"}}
                           onClick={function handleDrp() {
                             setDrp(!drp);
                           }}
@@ -306,16 +297,20 @@ const Notes = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="pl-5 flex justify-start items-start ">
+                    <div className="bkContentnotes">
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
-                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
-                        {notes.map((val,n) => (
-                          <div className=" rounded-md flex items-center justify-center" key={n}>
+                      <div className="pt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-1">
+                        {notes.map((val, n) => (
+                          <div
+                            className=" rounded-md flex items-center justify-center"
+                            key={n}
+                          >
                             <NotesContainer
                               info={val.Notes}
                               val={chkd ? true : false}
+                              nick={val._id}
                             />
                           </div>
                         ))}
@@ -326,14 +321,14 @@ const Notes = () => {
               ) : (
                 <div>
                   <div>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                      <div className=" rounded-md flex items-center justify-center">
+                    <div className="bkContentnotes">
+                      <div className="">
                         <span className="lg:text-xl text-base">
                           {notes[0].Book_Name}
                         </span>
                       </div>
-                      <div className="rounded-md flex items-center justify-center">
-                        <div className="p-4 ">
+                      <div className=" rounded-md text-right">
+                        {/* <div className="p-4 ">
                           <input
                             className="form-check-input appearance-none h-4 w-4 border border-black  rounded-sm bg-white checked:bg-black checked:border-black focus-within:hidden   transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             type="checkbox"
@@ -349,9 +344,10 @@ const Notes = () => {
                         </div>
                         <div className="p-4 ">
                           <Image src={share} />
-                        </div>
+                        </div> */}
                         <div
-                          className="p-4 "
+                          className="inline"
+                          style={{position: "relative",bottom:"1.5rem"}}
                           onClick={function handleDrp() {
                             setDrp(!drp);
                           }}
@@ -360,16 +356,20 @@ const Notes = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="pl-5 flex justify-start items-start">
+                    <div className="bkContentnotes">
                       <span>{notes[0].Author}</span>
                     </div>
                     {drp ? (
-                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1">
-                        {notes.map((val,n) => (
-                          <div className=" rounded-md flex items-center justify-start bg-[#2CB67D] oop" key={n} >
+                      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 listNotes" style={{margin:"0 auto"}}>
+                        {notes.map((val, n) => (
+                          <div
+                            className=" rounded-md bg-[#2CB67D] oop"
+                            key={n}
+                          >
                             <NotesGrid
                               info={val.Notes}
                               val={chkd ? true : false}
+                              nick={val._id}
                             />
                           </div>
                         ))}
@@ -386,6 +386,9 @@ const Notes = () => {
       ) : (
         <Loader />
       )}
+    </div>
+        )
+      }
     </div>
   );
 };
