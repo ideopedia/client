@@ -51,7 +51,7 @@ const About = () => {
       <div className="">
         <div className="about_hero1 pt-10" id="about_hero">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-            <div className=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center px-8">
               <Image src={about} />
             </div>
             <div className=" p-4 rounded-md flex items-center justify-center">
@@ -88,7 +88,7 @@ const About = () => {
             className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 gap-10 lg:py-14 md:py-14 py-8"
             id="mission"
           >
-            <div className=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center px-8">
               <Image src={mission} width={400} height={400} />
             </div>
             <div className=" rounded-md flex items-center justify-center">
@@ -124,7 +124,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className=" rounded-md flex items-center justify-center">
+            <div className=" rounded-md flex items-center justify-center px-8">
               <div className="">
                 <Image src={vission} width={400} height={400} />
               </div>
@@ -240,18 +240,18 @@ const About = () => {
         </div>
         <div className="bg-green-100 text-center  py-[4rem] flex items-center justify-center">
           <div className="">
-            <div className="text-left ml-[1rem] aboutQuote">
+            <div className="text-left sm:ml-[1rem] ml-[0rem] aboutQuote pl-2">
               <Image src={startquotes} />
             </div>
-            <span className="text-black lg:text-4xl md:text-3xl text-xl mx-[7rem] my-[2rem] bandf">
+            <div className="text-black lg:text-4xl md:text-3xl text-xl font-medium text-center xl:px-52 lg:px-20 px-8 lg:leading-[197%] md:leading-[197%] sm:leading-[197%]">
               We believe in and facilitate the transformational power of ideas.
-            </span>
-            <div className="text-right  aboutQuote mr-[1rem]">
+            </div>
+            <div className="text-right  aboutQuote sm:mr-[1rem] mr-[0rem] pr-2">
               <Image src={endquotes} />
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 bg-gray-50 keybgr">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 pt-9 pb-9 bg-gray-50">
           <div className=" rounded-md flex items-center justify-center p-14">
             <Image src={aboutkeys} />
           </div>

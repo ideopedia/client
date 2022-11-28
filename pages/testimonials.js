@@ -44,7 +44,7 @@ const OurReaders = () => {
       <Navbar  isLogedIn={false} />
       <div className="about_hero">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <div className=" rounded-md flex items-center justify-center">
+          <div className=" rounded-md flex items-center justify-center px-8">
             <Image src={readershero} />
           </div>
           <div className=" p-4 rounded-md flex items-center justify-center">
@@ -76,7 +76,7 @@ const OurReaders = () => {
                 </h1>
               </div>
               <div className="rounded-md flex items-center justify-center">
-                <span className="xl:text-xl lg:text-lg  font-medium md:text-lg text-gray-600 lg:pl-20 xl:leading-[197%] leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center md:px-24 px-8">
+                <span className="xl:text-xl lg:text-lg  font-medium md:text-lg text-gray-600 xl:pl-20 xl:leading-[197%] leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center xl:px-24 lg:px-10 md:px-24 px-8">
                   Ideopedia has been a long-time favourite with its readers. Our
                   readers derive immense value from the information we share
                   with them.Ideopedia has been a long-time favourite with its
@@ -86,12 +86,12 @@ const OurReaders = () => {
               </div>
             </div>
           </div>
-          <div className=" rounded-md flex items-center justify-center">
+          <div className=" rounded-md flex items-center justify-center px-8">
             <Image src={testimage2} />
           </div>
         </div>
       </div>
-    <div className="flowerbg ">
+    <div className="flowerbg">
       <div className="bg-green-100 p-10  lg:py-[10rem] md:py-[9rem] sm:py-[6rem]">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div className=" rounded-md flex items-center justify-center">
@@ -102,14 +102,14 @@ const OurReaders = () => {
               <div className="flex justify-start items-start p-2">
                 <Image src={startquotes} />
               </div>
-              <br />
+              
               <div className="flex justify-center items-center">
                 <span className=" p-10 text-black lg:text-3xl md:text-3xl text-[22px] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] text-center uppercase font-medium">
                   We are truly honoured and humbled by the feedback from our
                   readers.
                 </span>
               </div>
-              <br />
+              
               <div className="flex justify-end items-end p-2">
                 <Image src={endquotes} />
               </div>
@@ -117,10 +117,9 @@ const OurReaders = () => {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <div style={{textAlign:"right",position:"relative",bottom:"12rem",marginBottom:"-18rem"}}>
+      
+      
+      <div style={{textAlign:"right",position:"relative",bottom:"12rem",marginBottom:"-18rem"}} className="md:pt-20 pt-8" >
         {isBreakpoint?<Image src={flower} width={60}/>:<Image src={flower} width={160}/>}
         </div>
         <div className="flex justify-center items-center p-4">
@@ -133,11 +132,7 @@ const OurReaders = () => {
             <SliderComponent />
         </div>
     </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <Footer />
+      <div className="md:pt-11 pt-8"><Footer /></div>
     </div>
   );
 };

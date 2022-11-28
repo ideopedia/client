@@ -35,23 +35,23 @@ function Footer() {
               <span className="heading">About</span>
               <br />
               <ul>
-                <li className="py-2 foottext hover:text-green-500">
+                <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#about_hero">What is Ideopedia ?</Link>
                 </li>
-                <li className="py-2 foottext hover:text-green-500">
+                <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#mission">Mission</Link>
                 </li>
-                <li className="py-2 foottext hover:text-green-500">
+                <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#vission">Vision</Link>
                 </li>
-                <li className="py-2 foottext hover:text-green-500">
+                <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#what">What we do</Link>
                 </li>
 
-                <li className="py-2 foottext hover:text-green-500">
+                <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#contact">Contact us</Link>
                 </li>
-                <li className="py-2 foottext hover:text-green-500"> </li>
+                <li className="py-1 foottext hover:text-green-500"> </li>
               </ul>
             </div>
           </div>

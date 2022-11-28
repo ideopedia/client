@@ -147,13 +147,13 @@ function Login() {
   return (
     <div>
       <Navbar isLogedIn={false} />
-      <section className="h-screen new" style={{ padding: "4.5rem 2rem 0 0" }}>
+      <section className="h-screen new">
         <div className="loginContainer">
-          <div className="">
+          <div className=" pt-20">
             <Image src={login} />
           </div>
           <ToastContainer />
-          <div className="newloginContainer">
+          <div className="newloginContainer lg:pt-16">
             <div className="newLoginTop flex items-center justify-center">
               <FormHeader title="LOGIN" />
             </div>

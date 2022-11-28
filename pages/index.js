@@ -5,8 +5,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import audio from "../public/audio.svg";
-import summarry from "../public/summary.svg";
+import audio from "../public/hsec2.svg";
+import summarry from "../public/hsec1.svg";
 import download from "../public/download.svg";
 import TextSelector from "text-selection-react";
 import test from "../public/test.svg";
@@ -216,11 +216,11 @@ export default function Home() {
             <div className="p-4 rounded-md flex items-center justify-center font-medium">
               <Features
                 features={fe1}
-                info="Global trends that will impact India"
+                info="Leading global trends impacting India"
               />
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
-              <Features features={fe2} info="Save your key points and notes" />
+              <Features features={fe2} info="Curated specialized for India's Leaders" />
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
               <Features features={fe3} info="Personalized reading experience" />
@@ -245,56 +245,38 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="Mobileappsection">
-        <div
-          className="container  py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex"
-          id="sec1"
-        >
-          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px]">
-            <Image src={audio} />
-          </div>
-          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
-            <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
-                The World's only knowledge portal specially for leaders
-              </h1>
-              <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
-                Enjoy access to bestselling book summaries and content from our
-                partners, all available in audio or text segments.
-              </p>
-              <div className="mt-6"></div>
-            </div>
-          </div>
-        </div>
-        <div className="container py-4 mx-auto md:flex lg:flex lg:h-128 lg:py-16 items-center justify-center">
+      <div className="Mobileappsection xl:px-0 lg:px-8 md:px-8">
+        <div className="container py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center lg:text-left md:text-center text-center  lg:pb-2 pb-8">
           <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
+              <h1 className="xl:text-4xl md:text-3xl text-[26px] xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
                 Featuring a new trend everyday
               </h1>
-              <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
+              <p className="mt-4 text-black xl:text-xl md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] xl:text-left md:text-center text-center sm:px-0 px-8 font-medium">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-[560px]">
-            <Image src={summarry} />
+          <div className="flex justify-center items-center">
+          <div className="  mt-2 lg:w-[420px] w-[320px] px-8 lg:pt-0 pt-8">
+            <Image src={summarry}/>
+          </div>
           </div>
         </div>
         <div
           className="container py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex"
-          id="sec1"
+          id="mission"
         >
-          <div className="flex flex-col items-center w-full lg:flex-row lg:w-[540px]">
+          <div className="flex items-center lg:w-[580px] w-[320px] px-8 lg:pt-0 pt-6">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="lg:text-4xl md:text-3xl text-[26px] lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
+              <h1 className="xl:text-4xl md:text-3xl text-[26px] xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
                 Real world examples to enhance learning
               </h1>
-              <p className="mt-4 text-black lg:text-xl md:text-lg lg:leading-[197%] sm:leading-[197%] md:leading-[197%] lg:text-left md:text-center text-center font-medium">
+              <p className="mt-4 text-black xl:text-xl md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] xl:text-left md:text-center text-center sm:px-0 px-8 font-medium">
                 Enjoy access to bestselling book summaries and content from our
                 partners, all available in audio or text segments.
               </p>
@@ -327,7 +309,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="flex justify-center items-center text-bold p-10">
+      <div className="flex justify-center items-center text-bold pt-8 pb-2 px-10">
         <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
@@ -343,7 +325,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="p-4  rounded-md flex items-center justify-center">
+              <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
@@ -378,7 +360,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="p-4  rounded-md flex items-center justify-center">
+              <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
@@ -413,7 +395,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="p-4  rounded-md flex items-center justify-center">
+              <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
                     Month after month, year after year, Ideopedia has been
