@@ -88,7 +88,7 @@ const Dashboard = () => {
             <div className="text-4xl pb-4">Welcome Back</div>
           </div>
           <div className="flex  justify-center p-4 ">
-            <div className="">
+            <div className="-z-50">
               <CircularProgressbarWithChildren
                 strokeWidth={3}
                 counterClockwise={true}

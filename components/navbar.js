@@ -99,7 +99,7 @@ export default function Navbar(props) {
                       <Link href="/about#about_hero">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
                       <Link href="/about#vission">Vision</Link>
-                      <Link href="/about#what">What we do</Link>
+                      <Link href="/about#what">What we do ?</Link>
                     </div>
                   </div>
                 </li>
