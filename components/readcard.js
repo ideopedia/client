@@ -15,18 +15,17 @@ import del from "../public/del.svg";
 const ReadCard = (props) => {
   const percentage = 66;
   return (
-    <div className="pt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 w-[100%] text-left ">
+    <div className="pt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 text-left h-auto" style={{maxWidth:"100rem",width:"90%"}}>
       <div className="sm:pl-12 sm:p-8 p-3 rounded-md flex items-center justify-start  drop-shadow-lg bg-white readBk">
         <div className="flex cover_image ">
           <Image src={props.image} width={300} height={300} />
         </div>
-        <div className=" book_con md:pl-5 md:pt-5">
-          <h1 className="lg:text-[20px] font-medium text-[18px] md:text-left text-center">{props.name}</h1>
-
-          <h1 className=" pt-2 lg:text-[18px] text-[16px] md:text-left text-center">{props.author}</h1>
+        <div className=" book_con md:pl-5">
+          <h1 className="text-[20px] font-medium  md:text-left text-center readCardBk">{props.name[0].toUpperCase()+props.name.slice(1).toLowerCase()}</h1>
+          <h1 className=" pt-2 lg:text-[18px] text-[16px] md:text-left text-center readBkAuth">{props.author}</h1>
           <div className="flex pt-5 cenbtn">
             <div className="pt-2 text-center">
-              <div className="cont flex items-center justify-between md:text-[18px] text-[16px] font-medium mb-4">
+              <div className="cont flex items-center justify-between md:text-[18px] text-[16px] font-medium mb-4 mr-[0.7rem]">
                 <Image src={bookicn} width={32}/>
                 <Link
                   className=""
@@ -39,10 +38,10 @@ const ReadCard = (props) => {
             </div>
             <div className="pl-5 pt-2 text-center">
               <div className="cont flex items-center justify-between mb-4">
-                <div className=" mt-1">
+                <div className="flex items-center ">
                 <Image src={airpods} width={32} />
                 </div>
-                <div className=" md:text-[18px] text-[16px] font-medium">
+                <div className=" md:text-[18px] text-[16px] font-medium flex items-center">
                   <Link
                     className=""
                     href={`/audio/${props.b_id}1?user=${props.u_id}&book=${props.b_id}1`}
