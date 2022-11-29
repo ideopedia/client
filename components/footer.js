@@ -123,7 +123,7 @@ function Footer() {
         <div className="foottext pl-8">
           <Link href="/about">©️ Ideopedia - 2023</Link>
         </div>
-        <div className="pr-8">
+        <div className="pr-8 foobar">
                 <span className="mr-2 hover:text-green-500 cursor-pointer">
                   <Link href="/login">
                     <Image src={facebook} width={38}/>

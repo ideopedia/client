@@ -273,7 +273,7 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="xl:text-4xl md:text-3xl text-[26px] xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center">
+              <h1 className="xl:text-4xl md:text-3xl text-[26px]  xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center sm:px-0 px-4">
                 Real world examples to enhance learning
               </h1>
               <p className="mt-4 text-black xl:text-xl md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] xl:text-left md:text-center text-center sm:px-0 px-8 font-medium">

@@ -55,7 +55,7 @@ const About = () => {
               <Image src={about} />
             </div>
             <div className=" p-4 rounded-md flex items-center justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-10 md:px-10 px-5">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8 lg:px-10 md:px-10 px-3">
                 <div className="rounded-md flex items-center justify-center">
                   <h1 className=" xl:text-4xl lg:text-3xl md:text-3xl text-[26px] text-green-500 font-semibold">
                     WHAT IS IDEOPEDIA?

@@ -223,7 +223,7 @@ const Book = () => {
               </div>
             </div>
           </div>
-          <div className="readDesc px-[3rem] pt-[6rem]">
+          <div className="readDesc lg:px-[3rem] md:px-[2rem] lg:pt-[5rem] pt-[4rem]">
             <h1 className="xl:text-[36px] md:text-[30px] text-[26px] mb-[2rem] descTopic font-medium uppercase">
               Description
             </h1>
@@ -239,13 +239,13 @@ const Book = () => {
                   className="bookImg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium px-8">
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium lg:text-left text-center px-8">
                 {data.Book_Description}
               </div>
             </div>
           </div>
 
-          <div className="readDesc  pt-10 px-[3rem] pb-[6rem]">
+          <div className="readDesc  pt-10 lg:px-[3rem] px-[0rem] lg:pb-[6rem] pb-[5rem]">
             <h1 className="lg:text-[36px] md:text-[30px] text-[26px]  mb-[2rem] font-medium descTopic">
               ABOUT THE AUTHOR
             </h1>
@@ -261,14 +261,14 @@ const Book = () => {
                   className="authimg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] px-8">
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] lg:text-left text-center px-8">
                 {data.About_Author}
               </div>
             </div>
           </div>
           <div className="tmesaved">
             <h1
-              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium pt-4 pb-20 px-[3rem]"
+              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium pb-20 px-[3rem]"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
@@ -344,7 +344,7 @@ const Book = () => {
             </div>
           </div>
           <div className="benefits pt-[3rem] pb-[3rem]">
-            <div className="benifits my-[2rem] px-[3rem]">
+            <div className="benifits my-[2rem] md:px-[3rem] px-[1rem]">
               <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">
                 benefits
               </h1>
@@ -379,15 +379,19 @@ const Book = () => {
               <div className="rounded-md flex items-center justify-end">
                 {arr ? (
                   <Image
-                    src={uparr}
-                    className="cursor-pointer"
-                    onClick={handleClick}
-                  />
-                ) : (
-                  <Image
                     src={downarr}
                     className="cursor-pointer"
                     onClick={handleClick}
+                    width={30}
+                    height={30}
+                  />
+                ) : (
+                  <Image
+                    src={uparr}
+                    className="cursor-pointer"
+                    onClick={handleClick}
+                    width={30}
+                    height={30}
                   />
                 )}
               </div>
@@ -409,12 +413,12 @@ const Book = () => {
                     key={n}
                   >
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
-                      <h1 className="text-[28px] font-medium">
+                      <h1 className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[20px] font-medium">
                         {idea.Ideo_num}
                       </h1>
                     </div>
                     <div className=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
-                      <span className="text-[28px] font-medium">
+                      <span className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[20px] font-medium">
                         {idea.name}
                       </span>
                     </div>
@@ -436,7 +440,7 @@ const Book = () => {
 
           <div className="acclaimed pt-[4rem] pb-[3rem]">
             <div className="flex justify-center items-center px-[3rem]">
-              <span className="text-[36px]  uppercase font-medium pb-20">
+              <span className="lg:text-[36px] md:text-[30px] text-[26px]  uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
             </div>
