@@ -25,7 +25,7 @@ const Read = () => {
   const [user, setUser] = useState(false);
   const router = useRouter();
   const favo = router.query;
-  console.log(favo)
+  console.log(favo);
   useEffect(() => {
     Axios.post("/api/UserDashboard/findUser", {
       User_Id: favo.book,
@@ -36,12 +36,9 @@ const Read = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await Axios(
-        "/api/bookCard/listBookcard",
-        {
-          Password: "Ideopedia@001",
-        }
-      );
+      const result = await Axios("/api/bookCard/listBookcard", {
+        Password: "Ideopedia@001",
+      });
 
       setData(result.data);
     };
@@ -72,7 +69,7 @@ const Read = () => {
           <div className="flex justify-end pt-2">
             <div className="p-4  rounded-md flex items-center justify-end ">
               <div className="flex ">
-                <Image src={srch}  className="-z-50"/>
+                <Image src={srch} className="-z-50" />
 
                 <input
                   className="int pl-7"
@@ -85,9 +82,12 @@ const Read = () => {
           </div>
           <div className="lg:mx-20 mx-5 h-screen">
             <div>
-              {data.map((val,n) =>
+              {data.map((val, n) =>
                 val.Book_Name.match(inpt) ? (
-                  <div className="flex justify-center items-center mt-9" key={n} >
+                  <div
+                    className="flex justify-center items-center mt-9"
+                    key={n}
+                  >
                     {console.log(val.id)}
                     <ReadCard
                       image={val.Cover_image}
@@ -100,42 +100,46 @@ const Read = () => {
                     />
                   </div>
                 ) : (
-                  <div className="flex items-center  mt-9 " key={n}>
-                    {data.map((val,n) => (
-                      <div className="flex-column justify-center items-center" key={n} >
-                        <div className="text-xl font-medium text-black showRes">
-                          Showing results for{" "}
-                          <span className="text-green-500">
-                            {val.Book_Name[0].toUpperCase()+val.Book_Name.slice(1).toLowerCase()}
-                          </span>
-                        </div>
-                        <div className="text-xl font-medium text-black ">
-                          <div className="showRes">
-                            {" "}
-                            Search instead for{" "}
-                            <span className="text-green-500">{inpt}</span>
-                          </div>
-                        </div>
+                  <div className="" >
+                    <div className="flex items-center   mt-9 " key={n}>
+                      {data.map((val, n) => (
                         <div
-                          className="cursor-pointer "
-                          onClick={function handleCick() {
-                            router.push(`/read/${val.id}`);
-                          }}
-
+                          className="flex-column justify-center items-center w-[100%]"
+                          key={n}
                         >
-                          <div className="flex justify-center items-center">
-                          <ReadCard
-                            image={val.Cover_image}
-                            name={val.Book_Name.toUpperCase()}
-                            author={val.Book_Author}
-                            read={val.read_time}
-                            listen={val.listen_time}
-                          />
+                          <div className="text-xl font-medium text-black showRes">
+                            Showing results for{" "}
+                            <span className="text-green-500">
+                              {val.Book_Name[0].toUpperCase() +
+                                val.Book_Name.slice(1).toLowerCase()}
+                            </span>
                           </div>
-                          
+                          <div className="text-xl font-medium text-black ">
+                            <div className="showRes">
+                              {" "}
+                              Search instead for{" "}
+                              <span className="text-green-500">{inpt}</span>
+                            </div>
+                          </div>
+                          <div
+                            className="cursor-pointer "
+                            onClick={function handleCick() {
+                              router.push(`/read/${val.id}`);
+                            }}
+                          >
+                            <div className="flex justify-center items-center ">
+                              <ReadCard
+                                image={val.Cover_image}
+                                name={val.Book_Name.toUpperCase()}
+                                author={val.Book_Author}
+                                read={val.read_time}
+                                listen={val.listen_time}
+                              />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 )
               )}

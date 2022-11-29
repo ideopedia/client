@@ -68,9 +68,7 @@ export default function Navbar(props) {
                   <div className="dropdown">
                     <button
                       className="dropbtn flex items-center justify-center"
-                      onClick={function handleClick() {
-                        router.push("/testimonials");
-                      }}
+                      
                     >
                       Our Readers{" "}
                       <div className="mt-2 ml-2">
@@ -86,9 +84,7 @@ export default function Navbar(props) {
                   <div className="dropdown">
                     <button
                       className="dropbtn flex items-center justify-center"
-                      onClick={function handleClick() {
-                        router.push("/about");
-                      }}
+                      
                     >
                       About Us{" "}
                       <div className="mt-2 ml-2">
@@ -108,9 +104,7 @@ export default function Navbar(props) {
                     <div className="dropdown">
                       <button
                         className="dropbtn flex items-center justify-center"
-                        onClick={function handleClick() {
-                          router.push(`/dashboard/${getCookie("user")}`);
-                        }}
+                       
                       >
                         My Account
                         <div className="mt-2 ml-2">
@@ -136,9 +130,7 @@ export default function Navbar(props) {
                   <div className="dropdown">
                     <button
                       className="dropbtn flex items-center justify-center"
-                      onClick={function handleClick() {
-                        router.push("/teams");
-                      }}
+                      
                     >
                       Team{" "}
                       <div className="mt-2 ml-2">

@@ -45,7 +45,7 @@ function Newhero() {
             <div className="w-auto h-auto p-1 lg:pt-16">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:gap-6 lg:gap-5 sm:gap-4 gap-4">
                 <div className=" rounded-md flex items-center justify-center">
-                  <span className="xl:text-[50px] lg:text-[32px] sm:text-[34px] text-[20px] text-black font-medium ff">
+                  <span className="xl:text-[41px] lg:text-[32px] sm:text-[34px] text-[20px] text-black font-medium ff">
                     INFORMING
                     <div className="bulletPoints">
                       {isBreakpoint ? (

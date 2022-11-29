@@ -3,17 +3,22 @@ import Link from "next/link";
 import facebook from "../public/facebook.svg";
 import twitter from "../public/twitter.svg";
 import Image from "next/image";
+import {useRouter} from "next/router"
+
 import telegram from "../public/telegram.svg";
 import logo from "../public/logo.svg";
 import bpoint from "../public/circle2.svg";
 function Footer() {
+  const router = useRouter()
   return (
     <div>
       <div className="pt-10 pb-4 footer">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-2 lg:gap-4 px-5">
           <div className="p-2  logo item sm:text-left text-center">
             <div className="pt-20">
-              <Image src={logo} width={120}/>
+              <Image src={logo} width={120} onClick={function handlenav(){
+                router.push("/")
+              }} />
               <br />
               <label className="foottext">
                 INFORMING
@@ -49,7 +54,7 @@ function Footer() {
                 </li>
 
                 <li className="py-1 foottext hover:text-green-500">
-                  <Link href="/about#contact">Contact us</Link>
+                  <Link href="/contact">Contact us</Link>
                 </li>
                 <li className="py-1 foottext hover:text-green-500"> </li>
               </ul>
