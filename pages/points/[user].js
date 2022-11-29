@@ -59,7 +59,7 @@ const Points = () => {
             /> */}
 
             <div className="md:pl-9 lg:w-11/12 md:w-12/12 sm:pl-1 sm:w-12/12">
-              <div className="flex pt-9 ml-9">
+              <div className="flex pt-9 sm:ml-9 ml-4">
                 <div className="pr-5 flex">
                   {type === "Bronze Influencer" ? (
                     <Image src={bronze} />
@@ -96,7 +96,7 @@ const Points = () => {
                   <div className="p-4  rounded-md flex items-center justify-center">
                     <Image src={silver} />
                   </div>
-                  <div className="p-4  rounded-md flex items-center justify-end">
+                  <div className="p-0  rounded-md flex items-center justify-end">
                     <Image src={gold} />
                   </div>
                 </div>
