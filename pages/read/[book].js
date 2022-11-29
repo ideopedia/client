@@ -134,6 +134,8 @@ const Read = () => {
                                 author={val.Book_Author}
                                 read={val.read_time}
                                 listen={val.listen_time}
+                                b_id={val.id}
+                                u_id={favo.book}
                               />
                             </div>
                           </div>

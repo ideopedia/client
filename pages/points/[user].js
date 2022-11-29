@@ -118,7 +118,7 @@ const Points = () => {
                 <div className=" rounded-md flex items-center justify-start">
                   <h1 className="text-xl new2">History</h1>
                 </div>
-                <div className="p-4  rounded-md flex items-center justify-end">
+                <div className="  rounded-md flex items-center lg:justify-end justify-start">
                   <div className="flex">
                     <div className="dropdown">
                       <button
@@ -130,7 +130,7 @@ const Points = () => {
                           <Image src={drop} />
                         </div>
                       </button>
-                      <div className="dropdown-content">
+                      <div className="dropdown-content relative ">
                         <Link href={`/points/${favo.user}`}  >Completed</Link>
                         <Link href={`/points/${favo.user}`}>Shared</Link>
                         <Link href={`/points/${favo.user}`}>Feed back</Link>

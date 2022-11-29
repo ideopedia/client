@@ -211,7 +211,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div> */}
-          <div className="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:pt-0 pt-8">
+          <div className="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:pt-0 pt-8 pb-8">
             <div className="rounded-md flex items-center justify-center">
               <ReadBox amt={data[0].Read} />
             </div>
