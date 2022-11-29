@@ -49,7 +49,7 @@ function Footer() {
                 </li>
 
                 <li className="py-1 foottext hover:text-green-500">
-                  <Link href="/about#contact">Contact us</Link>
+                  <Link href="/contact">Contact us</Link>
                 </li>
                 <li className="py-1 foottext hover:text-green-500"> </li>
               </ul>
@@ -118,7 +118,7 @@ function Footer() {
         <div className="foottext pl-8">
           <Link href="/about">©️ Ideopedia - 2023</Link>
         </div>
-        <div className="pr-8">
+        <div className="pr-8 foobar">
                 <span className="mr-2 hover:text-green-500 cursor-pointer">
                   <Link href="/login">
                     <Image src={facebook} width={38}/>

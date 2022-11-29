@@ -96,13 +96,13 @@ const New = () => {
                 </Link>
               </div>
               <div className="pt-9 rounded-md flex items-end justify-center">
-                <div className="pl-3 pb-1 fohv">
+                <div className="m-2 fohv">
                   <Image src={facebook} />
                 </div>
-                <div className="pl-3 pb-1 fohv">
+                <div className="m-2 fohv">
                   <Image src={telegram} />
                 </div>
-                <div className="pl-3 pb-1 fohv">
+                <div className="m-2 fohv">
                   <Image src={twitter} />
                 </div>
               </div>

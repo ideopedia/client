@@ -41,7 +41,7 @@ function Newhero() {
     <div>
       <div className=" lg:h-screen">
         <div className="lg:flex justify-center items-center lg:pt-9 sm:pt-10">
-          <div className="lg:flex lg:justify-between lg:items-center p-5">
+          <div className="lg:flex lg:justify-between lg:items-center sm:p-5 py-5 px-0">
             <div className="w-auto h-auto p-1 lg:pt-16">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:gap-6 lg:gap-5 sm:gap-4 gap-4">
                 <div className=" rounded-md flex items-center justify-center">

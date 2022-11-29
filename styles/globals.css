@@ -543,6 +543,10 @@
   .ff {
     font-size: 16px;
   }
+  .phero
+  {
+    padding: 5px 0px;
+  }
 }
 .getstarted {
   width: 220px;
@@ -1540,4 +1544,21 @@ input[type="checkbox"]:focus {
   width: 100%;
   height: 100%;
   background: rgba(138, 187, 167, 0.1);
+}
+@media screen and (max-width:357px) {
+ .foobar
+ {
+  display:flex;
+  flex-direction: column;
+ } 
+}
+.fohv
+{
+  padding: 7px 8px 0px 8px;
+  border-radius: 100%;
+  transition: 0.5s;
+}
+.fohv:hover
+{
+  background: #b7008f;
 }
