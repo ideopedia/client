@@ -161,7 +161,7 @@ const Notes = () => {
                       <div className="flex justify-start items-center">
                         <div className="dropdown">
                           <button className="dropbtn flex items-center  justify-center">
-                            Notes{" "}
+                            View{" "}
                             <div className="mt-2 ml-2">
                               <Image src={drop} />
                             </div>

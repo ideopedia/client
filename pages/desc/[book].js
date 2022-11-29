@@ -224,7 +224,7 @@ const Book = () => {
             </div>
           </div>
           <div className="readDesc lg:px-[3rem] md:px-[2rem] lg:pt-[5rem] pt-[4rem]">
-            <h1 className="xl:text-[36px] md:text-[30px] text-[26px] mb-[2rem] descTopic font-medium uppercase">
+            <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] mb-[2rem] descTopic font-medium uppercase">
               Description
             </h1>
             <div className="flex justify-center items-center picAndDesc">
@@ -246,7 +246,7 @@ const Book = () => {
           </div>
 
           <div className="readDesc  pt-10 lg:px-[3rem] px-[0rem] lg:pb-[6rem] pb-[5rem]">
-            <h1 className="lg:text-[36px] md:text-[30px] text-[26px]  mb-[2rem] font-medium descTopic">
+            <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px]  mb-[2rem] font-medium descTopic">
               ABOUT THE AUTHOR
             </h1>
             <div className="flex justify-between items-center picAndDesc">
@@ -268,7 +268,7 @@ const Book = () => {
           </div>
           <div className="tmesaved">
             <h1
-              className="lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium pb-20 px-[3rem]"
+              className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] sm:text-left text-center uppercase font-medium pb-20 px-[3rem]"
               style={{ position: "relative", top: "4rem" }}
             >
               Time Saved
@@ -343,7 +343,7 @@ const Book = () => {
           </div>
           <div className="benefits pt-[3rem] pb-[3rem]">
             <div className="benifits my-[2rem] md:px-[3rem] px-[1rem]">
-              <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase pb-[2rem] font-medium">
+              <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] uppercase pb-[2rem] sm:text-left text-center font-medium">
                 benefits
               </h1>
               {data.benifits.map((val, n) => (
@@ -370,7 +370,7 @@ const Book = () => {
                 className=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl  lg:text-[36px] md:text-[30px] text-[26px] uppercase font-medium">
+                <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] uppercase font-medium">
                   Contents
                 </h1>
               </div>
@@ -438,7 +438,7 @@ const Book = () => {
 
           <div className="acclaimed pt-[4rem] pb-[3rem]">
             <div className="flex justify-center items-center px-[3rem]">
-              <span className="lg:text-[36px] md:text-[30px] text-[26px]  uppercase font-medium pb-20">
+              <span className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] lg:leading-[197%] md:leading-[197%] leading-[197%] sm:text-left text-center uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
             </div>
