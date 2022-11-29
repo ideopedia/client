@@ -93,7 +93,7 @@ const Favourites = () => {
                 <Link href={`favourites/${favo.fav}`}>Author</Link>
               </div>
             </div>
-            <div className="rounded-md flex items-start justify-center px-9">
+            <div className="rounded-md flex items-start justify-center px-0 md:px-5 lg:px-9">
             <FavouritesCard
               image={data.image}
               name={data.name}

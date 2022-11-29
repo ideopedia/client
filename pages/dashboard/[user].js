@@ -115,7 +115,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="flex xl:justify-center lg:justify-center md:justify-center sm:justify-center ">
+          <div className="flex justify-center lg:justify-center md:justify-center sm:justify-center ">
             <div className="text-sm foottext font-semibold pb-4 pl-4 ">
               <Link href={`/profile/${favo.user}`}>complete Your profile</Link>
             </div>

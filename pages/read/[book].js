@@ -100,7 +100,7 @@ const Read = () => {
                     />
                   </div>
                 ) : (
-                  <div className="" >
+                  <div className="" key={n} >
                     <div className="flex items-center   mt-9 " key={n}>
                       {data.map((val, n) => (
                         <div

@@ -141,7 +141,7 @@ const New = () => {
                 </span>
               </div>
               <br />
-              <div class="rounded-md flex items-start justify-center px-9">
+              <div class="rounded-md flex items-start justify-center px-0 md:px-5 lg:px-9">
                 <ReadCard
                   image={data[0].Cover_image}
                   name={data[0].Book_Name.toUpperCase()}
@@ -164,7 +164,7 @@ const New = () => {
                 {Recent ? (
                   Recent.map((val, n) => (
                     <div
-                      className="rounded-md flex items-start justify-center px-9"
+                      className="rounded-md flex items-start justify-center px-0 md:px-5 lg:px-9"
                       key={n}
                     >
                       <CompletedCard
@@ -202,7 +202,7 @@ const New = () => {
                     </div>
                     <br />
                     <div className="flex justify-center items-center">
-                      <span className="text-md">
+                      <span className="text-center">
                         Complete Reading A Book To Get Personalized
                         Recommendations{" "}
                       </span>
