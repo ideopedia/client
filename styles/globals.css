@@ -280,10 +280,7 @@
   }
 }
 @media screen and (min-width: 1025px) {
-  .flexTime {
-    width: 80rem;
-    /* margin: 0 10rem; */
-  }
+  
 }
 @media screen and (max-width: 1025px) {
   .flexTime {

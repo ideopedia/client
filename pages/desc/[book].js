@@ -113,9 +113,44 @@ const Book = () => {
           <div className="flex justify-center items-center pt-16">
             <div className="flex ">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-7 ">
-                <div className=" rounded-md flex items-center justify-center">
+                <div className=" flex items-center justify-end">
+                  <div
+                    className="cursor-pointer mr-9 mb-9"
+                    onClick={function handleLike() {
+                      const fetchData = async () => {
+                        const result = await Axios.post(
+                          "/api/UserFavourites/addFavourites",
+                          {
+                            name: data.Book_Name,
+                            image: data.Cover_image,
+                            author: data.Book_Author,
+                            percent: 30,
+                            id: data.id,
+
+                            User_Id: user,
+                          }
+                        );
+
+                        setLike(result.data);
+                      };
+
+                      fetchData();
+                    }}
+                  >
+                    {lik ? (
+                      <div style={{ width: "50px", height: "50px" }}>
+                        <Like inn="red" out="white" stroke="red" />
+                      </div>
+                    ) : (
+                      <div style={{ width: "50px", height: "50px" }}>
+                        <Like inn="none" out="white" stroke="black" />
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className=" flex items-center justify-center">
                   <div>
-                    <Image src={data.Cover_image} width={400} height={350} />
+                    <Image src={data.Cover_image} width={350} height={350} />
                   </div>
                 </div>
                 <div className=" rounded-md flex items-center justify-center">
@@ -186,41 +221,6 @@ const Book = () => {
                   </div>
                 </div>
               </div>
-              <div className="pr-9">
-                <div
-                  className="cursor-pointer"
-                  onClick={function handleLike() {
-                    const fetchData = async () => {
-                      const result = await Axios.post(
-                        "/api/UserFavourites/addFavourites",
-                        {
-                          name: data.Book_Name,
-                          image: data.Cover_image,
-                          author: data.Book_Author,
-                          percent: 30,
-                          id: data.id,
-
-                          User_Id: user,
-                        }
-                      );
-
-                      setLike(result.data);
-                    };
-
-                    fetchData();
-                  }}
-                >
-                  {lik ? (
-                    <div style={{ width: "50px", height: "50px" }}>
-                      <Like inn="red" out="white" stroke="red" />
-                    </div>
-                  ) : (
-                    <div style={{ width: "50px", height: "50px" }}>
-                      <Like inn="none" out="white" stroke="black" />
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
           </div>
           <div className="readDesc lg:px-[3rem] md:px-[2rem] lg:pt-[5rem] pt-[4rem]">
@@ -273,10 +273,8 @@ const Book = () => {
             >
               Time Saved
             </h1>
-            
-            
 
-            <div className="py-[3rem] timeSaved">
+            <div className="py-[3rem] timeSaved ">
               <div className="flex items-center justify-around flexTime mx-auto">
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
@@ -330,10 +328,10 @@ const Book = () => {
 
                     <div className="bg-green-500 high mt-[2rem]">
                       <div
-                        className="text-white p-2 px-[1rem] text-center"
+                        className="text-white p-2 px-[0.1rem] text-center"
                         style={{ width: "max-content" }}
                       >
-                        <span className="text-[18px] font-medium">
+                        <span className="text-[18px] font-medium ">
                           Read finely distilled Ideos in {data.read_time} min
                         </span>
                       </div>
