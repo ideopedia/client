@@ -729,7 +729,7 @@ const Read = () => {
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
-                      className={` text-white sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2  ideoHead font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
+                      className={`text-white font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
     
                     >
                       {data.Ideo_title}
@@ -765,7 +765,7 @@ const Read = () => {
               </div>
 
               <div
-                className={`flex justify-center items-center text-green-500 sm:pl-4 sm:pb-4 pb-5 ideoData font-medium text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
+                className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
               >
                 {data.Ideo}
               </div>
@@ -777,7 +777,7 @@ const Read = () => {
                 <div key={n}>
                   {dat.length > 2 ? (
                     <div
-                      className={`flex justify-center items-center bg-gray-900  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+                      className={`flex justify-center items-center text-white bg-gray-900  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
 
                     >
                       {dat}
@@ -789,7 +789,7 @@ const Read = () => {
                     <div className="py-4 px-6">
                       {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
-                          className={` text-white  sm:p-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
+                          className={` text-white py-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
                           key={n}
                         >
                           {val}
@@ -814,8 +814,8 @@ const Read = () => {
                               <Image src={startq} />
                             </div>
                             <div
-                              className=" text-green-500 mx-[2rem]"
-                              style={{ fontSize: `${rangeval * 28}px` }}
+                              className="text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]"
+                            
                             >
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
@@ -841,12 +841,12 @@ const Read = () => {
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
                   <div
-                    className=" text-white font-bold pl-4"
-                    style={{ fontSize: `${rangeval * 38}px` }}
+                    className=" text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] "
+                
                   >
                     Ideo Peaks
                   </div>
-                  <div className="bg-black p-6">
+                  <div className="bg-black sm:p-6">
                     <div className="p-4">
                       {data.Ideo_Peaks.map((val, n) => (
                         <div key={n}>
@@ -861,14 +861,15 @@ const Read = () => {
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
                               <div
-                                className=" text-white"
-                                style={{ fontSize: `${rangeval * 28}px` }}
+                                className={` text-white font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`
+                                }
+
                               >
                                 {val.name}
                               </div>
                               <div
-                                className=" text-green-500"
-                                style={{ fontSize: `${rangeval * 23}px` }}
+                                className={` text-green-500 font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}
+
                               >
                                 {val.quote}
                               </div>
