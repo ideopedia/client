@@ -100,14 +100,14 @@ const Dashboard = () => {
                   pathColor: "#2CB67D",
                   trailColor: "#fff",
                 })}
-                className="w-[200px] h-[200px] flex justify-center items-center"
+                className="w-[200px] h-[200px]  "
               >
-                <div className=" inne pt-3 pl-2 pr-1">
+                <div className="relative"  >
                   <Image
-                    src={normal}
-                    width={200}
-                    height={200}
-                    className="fixed  imgr"
+                    src={data[0].Image}
+                    width={191}
+                    height={191}
+                    style={{borderRadius: "50%" ,marginTop: "3px"}}
                   />
                 </div>
               </CircularProgressbarWithChildren>

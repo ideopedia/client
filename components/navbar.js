@@ -16,9 +16,12 @@ export default function Navbar(props) {
         <div className="justify-between px-4  lg:items-center lg:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-1  md:py-1 lg:block">
-              <Link href="/" className="cursor-pointer">
+              <div href="/" className="cursor-pointer" onClick={function handleLogo(){
+                router.push("/")
+                setNavbar(false)
+              }} >
                 <Image src={log} className="cursor-pointer" />
-              </Link>
+              </div>
               <div className="lg:hidden">
                 <button
                   className="p-1 pt-3  outline-none "
