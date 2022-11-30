@@ -120,8 +120,9 @@ const Completed = () => {
                 name={val.name}
                 author={val.author}
                 percent={val.percent}
-                book_id={val.id}
+                b_id={val.id}
                 b_name={val.name}
+                u_id={favo.completed}
                 key={n}
               />
               </div>

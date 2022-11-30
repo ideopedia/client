@@ -13,22 +13,26 @@ const CompletedCard = (props) => {
   const router = useRouter();
   const percentage = 66;
   return (
-    <div class=" py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4" style={{maxWidth:"100rem",width:"100%"}}>
+    <div
+      class=" py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4"
+      style={{ maxWidth: "100rem", width: "100%" }}
+    >
       <div class=" rounded-md flex items-center  justify-start drop-shadow-lg bg-white py-[1.5rem] pl-[2rem] pr-[2rem] flex-col sm:flex-row">
         <div className="flex cover_image p-2 mr-[1.3rem]">
           <Image src={props.image} width={200} height={300} />
         </div>
         <div className=" book_con ">
-          <div className="" style={{ marginTop:"8px" }}>
-            <h1 className="b_name text-[20px] readCardBk">{props.name[0].toUpperCase()+props.name.slice(1).toLowerCase()}</h1>
-            <h1 className=" pt-2 b_auth text-[18px] readBkAuth">{props.author}</h1>
+          <div className="" style={{ marginTop: "8px" }}>
+            <h1 className="b_name text-[20px] readCardBk">
+              {props.name[0].toUpperCase() + props.name.slice(1).toLowerCase()}
+            </h1>
+            <h1 className=" pt-2 b_auth text-[18px] readBkAuth">
+              {props.author}
+            </h1>
           </div>
 
           <div className="flex pt-12 sm:justify-between justify-center">
-            <div
-              className="  mr-[2rem] sm:w-[4rem]  w-[3rem] sm:mt-[-0.5rem]"
-              
-            >
+            <div className="  mr-[2rem] sm:w-[4rem]  w-[3rem] sm:mt-[-0.5rem]">
               <CircularProgressbar
                 value={props.percent}
                 text={`${props.percent}%`}
@@ -54,10 +58,16 @@ const CompletedCard = (props) => {
                   router.reload();
                 }}
               >
-                <Image src={del}  />
+                <Image src={del} />
               </div>
-              <div className="ml-3 pt-1 cont mb-[2rem]" style={{paddingTop:"13px"}}>
-                <Link className="" href={`/read/${props.book_id}`}>
+              <div
+                className="ml-3 pt-1 cont mb-[2rem]"
+                style={{ paddingTop: "13px" }}
+              >
+                <Link
+                  className=""
+                  href={`/desc/${props.b_id}?user=${props.u_id}&book=${props.b_id}`}
+                >
                   Continue
                 </Link>
               </div>
@@ -68,12 +78,12 @@ const CompletedCard = (props) => {
     </div>
     //      <div className="flex mt-[1rem]">
     //         <div className="ml-3 pt-2">
-              
+
     //         </div>
     //         <div className="ml-12 pt-2">
-              
+
     //         </div>
-    //       </div> 
+    //       </div>
     //   </div>
     // </div>
   );

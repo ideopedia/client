@@ -99,7 +99,8 @@ const Favourites = () => {
               name={data.name}
               author={data.author}
               percent={data.percent}
-              book_id={data.id}
+              b_id={data.id}
+              u_id={favo.fav}
               b_name={data.name}
             />
             </div>

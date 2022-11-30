@@ -55,7 +55,7 @@ const FavouritesCard = (props) => {
                 <Image src={del} />
               </div>
               <div className="ml-3 pt-1 cont mb-[2rem]" style={{paddingTop:"13px"}}>
-                <Link className="" href={`/read/${props.book_id}`}>
+                <Link className="" href={`/desc/${props.b_id}?user=${props.u_id}&book=${props.b_id}`}>
                   Continue
                 </Link>
               </div>

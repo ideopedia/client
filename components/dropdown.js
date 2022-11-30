@@ -50,8 +50,8 @@ export default function  DropdownComponent(props) {
               {({ active }) => (
                 <div
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block sm:px-6 px-4 py-4 text-sm"
+                    active ? " text-gray-900" : "text-gray-700",
+                    "block px-6 py-4 text-sm"
                   )}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1 ">

@@ -104,10 +104,7 @@ const New = () => {
               </div> */}
               <div className="mr-9 flex">
                 <Image src={task} />
-                <Link
-                  href={`/completed/${favo.users}`}
-                  className="navtxt"
-                >
+                <Link href={`/completed/${favo.users}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Completed
                   </span>
@@ -115,10 +112,7 @@ const New = () => {
               </div>
               <div className="mr-9 flex">
                 <Image src={fav} />
-                <Link
-                  href={`/favourites/${favo.users}`}
-                  className="navtxt"
-                >
+                <Link href={`/favourites/${favo.users}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Favourites
                   </span>
@@ -148,6 +142,7 @@ const New = () => {
                   author={data[0].Book_Author}
                   read={data[0].read_time}
                   b_id={data[0].id}
+                  u_id={favo.users}
                   listen={data[0].listen_time}
                 />
               </div>
@@ -172,7 +167,8 @@ const New = () => {
                         name={val.name}
                         author={val.author}
                         percent={val.percent}
-                        book_id={val.id}
+                        b_id={val.id}
+                        u_id={favo.users}
                         b_name={val.name}
                       />
                     </div>

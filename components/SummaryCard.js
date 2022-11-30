@@ -6,7 +6,7 @@ import Image from "next/image";
 const SummaryCard = (props) => {
   return (
     <div className="">
-      <div className="p-6 h-[90vh] bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 cardbg" id={props.style_id}>
+      <div className="p-6 h-[95vh] bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 cardbg" id={props.style_id}>
         <div className="flex-column justify-center items-center h-20 pb-9">
           <div className="float">
             <div className="float-left justify-start items-center">
@@ -30,9 +30,9 @@ const SummaryCard = (props) => {
             Quotes from {props.name}
           </span>
         </div>
-        <div className="pt-9 pb-9"></div>
-        <div className=" flex justify-center items-center text-center h-auto leading-loose rounded-md pt-7 pb-7">
-          <span className="text-base xl:text-xl text-white">
+        <div className=" pb-9"></div>
+        <div className=" flex justify-center items-center text-center h-auto leading-loose rounded-md  ">
+          <span className="text-[16px] xl:text-xl text-white">
             {props.content}
           </span>
         </div>

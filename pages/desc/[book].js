@@ -204,7 +204,7 @@ const Book = () => {
                         {data.listen_time} Minutes
                       </div>
                     </div>
-                    <div className="pl-2 text-center font-medium md:text-[18px]  text-[16px]">
+                    <div className="  pl-2 text-center font-medium md:text-[18px]  text-[16px]">
                       <div className="cont flex py-6">
                         <div className="mr-1.5 mt-1.5">
                           <Image src={cards} />
@@ -216,7 +216,7 @@ const Book = () => {
                           Cards
                         </Link>
                       </div>
-                      <div className=" text-black mt-3">9 Cards</div>
+                      <div className=" text-black mt-3 ">9 Cards</div>
                     </div>
                   </div>
                 </div>
