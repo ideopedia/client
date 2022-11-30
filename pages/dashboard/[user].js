@@ -25,7 +25,7 @@ import silver from "../../public/silver.svg";
 import rank1 from "../../public/rank1.svg";
 import rank2 from "../../public/rank2.svg";
 import Loader from "../../components/loader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
 import chatp from "../../public/chatp.svg";
@@ -39,6 +39,32 @@ import FeedBox from "../../components/FeedBox";
 // import readp from "../../../public/readp.svg";
 import Image from "next/image";
 const Dashboard = () => {
+  const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+
+      return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+  };
+  const isBreakpoint = useMediaQuery(330);
   const router = useRouter();
   const favo = router.query;
   var day = new Date();
@@ -92,35 +118,40 @@ const Dashboard = () => {
           </div>
           <div className="flex  justify-center items-center p-4 ">
             <div className="">
-              <div className="relative">
-                <Image
-                  src={data[0].Image}
-                  width={191}
-                  height={191}
-                  style={{ borderRadius: "50%", marginTop: "3px" }}
-                />
-              </div>
-              {/* <CircularProgressbarWithChildren
-                strokeWidth={3}
-                counterClockwise={true}
-                value={data[0].Profile_percent}
-                styles={buildStyles({
-                  pathColor: "#2CB67D",
-                  trailColor: "#fff",
-                })}
-                className="w-[200px] h-[200px]  "
-              >
-              <div className="relative">
-                <Image
-                  src={data[0].Image}
-                  width={191}
-                  height={191}
-                  style={{ borderRadius: "50%", marginTop: "3px" }}
-                />
-              </div>
-              </CircularProgressbarWithChildren> */}
+              {isBreakpoint ? (
+                <div className="relative">
+                  <Image
+                    src={data[0].Image}
+                    width={191}
+                    height={191}
+                    style={{ borderRadius: "50%", marginTop: "3px" }}
+                  />
+                </div>
+              ) : (
+                <CircularProgressbarWithChildren
+                  strokeWidth={3}
+                  counterClockwise={true}
+                  value={data[0].Profile_percent}
+                  styles={buildStyles({
+                    pathColor: "#2CB67D",
+                    trailColor: "#fff",
+                  })}
+                  className="w-[200px] h-[200px]  "
+                >
+                  <div className=" inne pt-3 pl-2 pr-1">
+                    <Image
+                      src={data[0].Image}
+                      width={191}
+                      height={191}
+                      style={{ borderRadius: "50%", marginTop: "3px" }}
+                    />
+                  </div>
+                </CircularProgressbarWithChildren>
+              )}
+
+              {/*  */}
               <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
-                <span className="p-2 md:p-0 sm:p-5 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
+                <span className="p-2 md:p-0 sm:p-2 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
                   {data[0].Profile_percent} %
                 </span>
               </div>
