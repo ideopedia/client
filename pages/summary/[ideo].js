@@ -130,8 +130,8 @@ const Read = () => {
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
-                      className=" text-black font-semibold"
-                      style={{ fontSize: `${rangeval * 38}px` }}
+                      className={ `text-black font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+                       //ideo
                     >
                       {data.Ideo_title}
                     </div>
@@ -174,8 +174,8 @@ const Read = () => {
               </div>
 
               <div
-                className="flex justify-center items-center  text-green-500 font-semibold uppercase pl-4 pb-4 text-center ideoData"
-                style={{ fontSize: `${rangeval * 36}px` }}
+                className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+              //heading
               >
                 {data.Ideo}
               </div>
@@ -183,29 +183,122 @@ const Read = () => {
                 <Image src={data.Ideo_image} width={1500} height={700} />
               </div>
               <div></div>
+              <div>
+                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
+                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                    <div
+                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                      onClick={
+                        num3 !== 0
+                          ? function handleForward() {
+                              router.push(
+                                `/summary/${num2}${
+                                  num3 - 1
+                                }?user=${userid}&ideo=${num2}${num3 - 1}`
+                              );
+                            }
+                          : function handleForward() {
+                              router.push(
+                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
+                              );
+                            }
+                      }
+                    >
+                      <Image src={forward} />
+                    </div>
+                    <div className="rounded-md flex items-center justify-center progBar">
+                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-400">
+                        <div
+                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                          style={{
+                            width: `${(data.Ideo_num / data.Total) * 100}%`,
+                          }}
+                        ></div>
+                      </div>
+                      <div className="text-base pl-4 pb-3 perc">
+                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
+                      </div>
+                    </div>
+                    <div
+                      className="rounded-md flex  justify-end cursor-pointer"
+                      onClick={
+                        num3 === data.total-1
+                          ? function handleBackward() {
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3
+                                )}`
+                              );
+                            }
+                          : function handleBackward() {
+                              Axios.post("/api/UserCompleted/addCompleted", {
+                                name: card.Book_Name,
+                                image: card.Cover_image,
+                                author: card.Book_Author,
+                                percent:
+                                  Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ) >= 80
+                                    ? 100
+                                    : Math.round(
+                                        (data.Ideo_num / data.Total) * 100
+                                      ),
+                                id: card.id,
+                                date: currentDate,
+                                User_Id: userid,
+                              }).then((data) => {
+                                setCompData(data.data);
+                              });
+                              Axios.post("/api/UserDashboard/updateDash", {
+                                Activity: [
+                                  4 * 8,
+                                  8 * 8,
+                                  12 * 8,
+                                  16 * 1,
+                                  7 * 5,
+                                  4 * 9,
+                                  10 * 6,
+                                ],
+                                User_Id: userid,
+                              }).then((val) => {
+                                console.log(val);
+                              });
+
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3 + 1
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3 + 1
+                                )}`
+                              );
+                            }
+                      }
+                    >
+                      <Image src={backward} />
+                    </div>
+                  </div>
+                </div>
+              </div>
               {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
                 <div key={n}>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent"
-                      style={{
-                        textAlign: "center",
-                        fontSize: `${rangeval * 38}px`,
-                      }}
+                      className={`flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+
                     >
                       {dat}
                     </div>
                   ) : (
                     console.log("")
                   )}
-                  <div className="px-1">
-                    <div className="p-4">
+                  <div className="">
+                    <div className="py-4 px-6">
                       {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
-                          className=" text-black  py-4 px-8 flex justify-center items-center leading-[197%] font-medium"
-                          style={{
-                            fontSize: `${rangeval * 28}px`,
-                          }}
+                          className={`text-black  py-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
+                          
                           key={n}
                         >
                           {val}
@@ -230,8 +323,7 @@ const Read = () => {
                               <Image src={startq} />
                             </div>
                             <div
-                              className=" text-green-500 mx-[4rem] text-center font-medium"
-                              style={{ fontSize: `${rangeval * 28}px` }}
+                              className={`text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}//quotes
                             >
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
@@ -257,13 +349,13 @@ const Read = () => {
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
                   <div
-                    className=" text-black font-bold pl-4"
-                    style={{ fontSize: `${rangeval * 38}px` }}
+                    className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+//ideopeaks
                   >
                     Ideo Peaks
                   </div>
-                  <div className="bg-green-100 p-6">
-                    <div className="p-4">
+                  <div className="bg-green-100 sm:p-6 p-4">
+                    <div className="">
                       {data.Ideo_Peaks.map((val, n) => (
                         <div key={n}>
                           <div
@@ -276,12 +368,12 @@ const Read = () => {
                           </div>
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
-                              <div className="" style={{ fontSize: "28px" }}>
+                              <div className={`font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}>
                                 {val.name}
                               </div>
                               <div
-                                className=" text-green-500"
-                                style={{ fontSize: `${rangeval * 28}px` }}
+                                className={` text-green-500 font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}
+                          //action
                               >
                                 {val.quote}
                               </div>
@@ -620,10 +712,10 @@ const Read = () => {
               ) : null}
             </div>
           ) : (
-            <div className="p-4 pb-9 bg-black">
+            <div className="sm:p-4 pb-9 bg-black">
               <ProgressBar />
               {console.log(data)}
-              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
+              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 sm:px-[1.7rem] px-[0.8rem]">
                 <div
                   className=" rounded-md flex items-center justify-start cursor-pointer"
                   onClick={function handleDesc() {
@@ -637,8 +729,8 @@ const Read = () => {
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
-                      className=" text-white text-bold pb-4 ideoHead"
-                      style={{ fontSize: `${rangeval * 34}px` }}
+                      className={` text-white sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2  ideoHead font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
+    
                     >
                       {data.Ideo_title}
                     </div>
@@ -673,8 +765,7 @@ const Read = () => {
               </div>
 
               <div
-                className="flex justify-center items-center text-3xl text-green-500 text-bold pl-4 pb-4 ideoData"
-                style={{ fontSize: `${rangeval * 38}px` }}
+                className={`flex justify-center items-center text-green-500 sm:pl-4 sm:pb-4 pb-5 ideoData font-medium text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
               >
                 {data.Ideo}
               </div>
@@ -686,26 +777,19 @@ const Read = () => {
                 <div key={n}>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center  bg-gray-900  font-bold p-4 text-white bg-black greyContent"
-                      style={{
-                        textAlign: "center",
-                        fontSize: `${rangeval * 38}px`,
-                      }}
+                      className={`flex justify-center items-center bg-gray-900  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+
                     >
                       {dat}
                     </div>
                   ) : (
                     console.log("")
                   )}
-                  <div className="px-1">
-                    <div className="p-4">
+                  <div className="">
+                    <div className="py-4 px-6">
                       {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
-                          className=" text-white  p-4 flex justify-center items-center"
-                          style={{
-                            lineHeight: "1.5",
-                            fontSize: `${rangeval * 28}px`,
-                          }}
+                          className={` text-white  sm:p-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
                           key={n}
                         >
                           {val}

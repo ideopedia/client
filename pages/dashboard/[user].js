@@ -236,7 +236,7 @@ const Dashboard = () => {
             </div>
             <div className="p-4  rounded-md  items-center justify-center ">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 ">
-                <div className="p-4 rounded-md  items-center justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium">
+                <div className="rounded-md  items-center justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium">
                   LEADERBOARD
                 </div>
                 <div className=" rounded-md items-center justify-center z-50 bg-green-100 drop-shadow-md">

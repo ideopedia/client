@@ -61,12 +61,12 @@ export default function  DropdownComponent(props) {
                     <div className="rounded-md flex items-center justify-start">
                       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 ">
                         <div className="rounded-md flex items-start justify-start pb-5 ">
-                          <span className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[22px] text-green-500 font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%]">{props.name}</span>
+                          <span className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[22px] text-green-500 font-medium leading-relaxed">{props.name}</span>
                           
                         </div>
                         <div className="rounded-md flex items-start justify-start">
                           {" "}
-                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 lg:text-left text-center px-8"> {props.content}</span>
+                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 lg:text-left text-center sm:px-8 px-2"> {props.content}</span>
                         </div>
                       </div>
                     </div>
