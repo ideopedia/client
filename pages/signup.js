@@ -8,7 +8,7 @@ import eyeon from "../public/eyeon.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Axios from "axios";
-import { getCookie, setCookies, removeCookies,setCookie } from "cookies-next";
+import { getCookie, setCookies, removeCookies, setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { useState, useReducer, useEffect, useRef } from "react";
 function Signup() {
@@ -52,16 +52,16 @@ function Signup() {
       case "input":
         return {
           value: action.val,
-          // isValid: action.val ? (action.val.includes("@") && action.val.includes(".")):false,
-          
-            
-          isValid: true,
+
+          isValid: action.val.includes("@"),
+
+          // isValid: true,
         };
       case "validate":
         return {
           value: state.value,
-          isValid: true,
-          // isValid: state.value.includes("@") && action.val.includes("."),
+          isValid: state.value.includes("@"),
+          // isValid: true,
         };
       default:
         return { value: "", isValid: false };
@@ -130,7 +130,7 @@ function Signup() {
           toastifyFailure();
         } else {
           console.log(data.data);
-          setCookies('user',data.data.User_Id,{ maxAge: 10000 })
+          setCookies("user", data.data.User_Id, { maxAge: 10000 });
           toastifySuccess();
           router.push(`/dashboard/${data.data.User_Id}`);
         }
@@ -197,7 +197,6 @@ function Signup() {
               desc2="Login here"
             /> */}
             <div className="newloginContainer">
-              
               <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="SIGNUP" />
               </div>

@@ -8,7 +8,7 @@ import CompletedCard from "../../components/CompletedCards";
 import Link from "next/link";
 import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
-import task from "../../public/task.svg";
+import task from "../../public/newtask.svg";
 import Navbar from "../../components/navbar";
 import create from "../../public/create.svg";
 import fav from "../../public/fav.svg";
