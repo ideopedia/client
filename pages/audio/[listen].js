@@ -76,7 +76,7 @@ const Listen = () => {
                 </div>
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
-                    <div className=" text-black text-bold ideoHead">
+                    <div className="font-semibold text-green-500 ideoHead xl:text-4xl lg:text-3xl md:text-2xl text-[20px]">
                       {conten[0].Ideo_num}
                     </div>
                   </div>
@@ -111,7 +111,7 @@ const Listen = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center font-medium xl:text-4xl lg:text-3xl md:text-2xl text-[18px] text-center sm:px-6 sm:pb-10 px-4 pb-4">
                 {conten[0].Ideo_title}
               </div>
               <div className="pb-4 pt-4 flex justify-center items-center" >

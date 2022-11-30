@@ -25,7 +25,7 @@
 .desc {
   width: 100%;
   height: 100vh;
-  padding: 2.3rem;
+  padding: 1.8rem;
 }
 
 .desc h1 {
@@ -34,7 +34,7 @@
 }
 
 .profImg {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .ipSvg {
@@ -141,7 +141,7 @@
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width:346px) {
+@media screen and (max-width: 346px) {
   .newLoginForm {
     padding: 1rem;
   }
@@ -280,7 +280,6 @@
   }
 }
 @media screen and (min-width: 1025px) {
-  
 }
 @media screen and (max-width: 1025px) {
   .flexTime {
@@ -300,8 +299,7 @@
     margin-right: 15rem;
   }
 }
-.benefits
-{
+.benefits {
   width: 100%;
   height: 100%;
   background: rgba(138, 187, 167, 0.1);
@@ -414,13 +412,12 @@
   }
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width: 768px) {
   .infPic:hover {
     transform: scale(1.2);
     transition: 300ms ease-out;
   }
 }
-
 
 @media screen and (min-width: 770px) {
   .testi {
@@ -464,7 +461,6 @@
   }
   .progBar {
     padding: 0 1rem;
-    
   }
 }
 @media screen and (max-width: 430px) {
@@ -472,36 +468,40 @@
     width: 18rem;
   }
 }
-@media screen and (max-width:450px){
-.readCardBk{
-      font-size: 16px;
+@media screen and (max-width: 450px) {
+  .readCardBk {
+    font-size: 16px;
+  }
 }
+@media screen and (max-width: 769px) {
+  .readBkAuth {
+    font-size: 16px;
+  }
+  .unWantMob {
+    display: none;
+  }
 }
-@media screen and (max-width:769px){
-  .readBkAuth{
-        font-size: 16px;
+@media screen and (max-width: 450px) {
+  .readBkAuth {
+    font-size: 14.5px;
   }
+}
+@media screen and (max-width: 450px) {
+  .bkContentnotes {
+    text-align: center;
   }
-  @media screen and (max-width:450px){
-    .readBkAuth{
-          font-size: 14.5px;
-    }
-    }
-  @media screen and (max-width:450px){
-    .bkContentnotes{
-      text-align: center;
-    }
-    .listNotes{
-      max-width: 90rem;
-      width: 90%;
-    }
-    .bookDet,.pointc{
-      text-align: center;
-    }
-    .unWantMob{
-      display: none;
-    }
+  .listNotes {
+    max-width: 90rem;
+    width: 90%;
   }
+  .bookDet,
+  .pointc {
+    text-align: center;
+  }
+  .unWantMob {
+    display: none;
+  }
+}
 
 /* .body {
   min-height: 100vh;
@@ -545,8 +545,7 @@
   .ff {
     font-size: 16px;
   }
-  .phero
-  {
+  .phero {
     padding: 5px 0px;
   }
 }
@@ -693,7 +692,7 @@
   color: #2cb67d;
   font-size: 2rem;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   #headerTitle {
     font-weight: 600;
     padding-top: 20px;
@@ -704,7 +703,6 @@
     margin-top: -50px;
     padding: "4.5rem 2rem 0 0";
   }
-  
 }
 .rw {
   margin-top: 20px;
@@ -733,12 +731,10 @@
 .new {
   margin-top: -50px;
 }
-.newn
-{
+.newn {
   margin-top: -50px;
   padding: 4.5rem 2rem 0rem 0rem;
 }
-
 
 .new1 {
   margin-top: 50px;
@@ -956,10 +952,6 @@
   width: 20px;
 }
 
-.new2 {
-  font-weight: 600;
-}
-
 /* .cont {
   width: 120px;
   padding: 5px 12px;
@@ -970,7 +962,7 @@
   background-color: #2cb67d;
   color: #ffff;
 } */
-.cont{
+.cont {
   width: 120px;
   padding: 10px 20px;
   text-align: center;
@@ -988,7 +980,7 @@
 }
 
 .pointc {
-  color: #7f5af0;
+  color: #2cb67d;
 }
 
 .verticalscroll::-webkit-scrollbar {
@@ -1406,7 +1398,7 @@ input[type="checkbox"]:focus {
   user-select: none;
   pointer-events: none;
 }
-.progress-bar-cover-dark{
+.progress-bar-cover-dark {
   background-color: #ffff;
   width: 0%;
   height: var(--progress-bar-height);
@@ -1448,7 +1440,6 @@ input[type="checkbox"]:focus {
   --thumb-height: 20px;
 }
 
-
 .range::-webkit-slider-thumb {
   width: var(--thumb-width);
   height: var(--thumb-height);
@@ -1483,7 +1474,7 @@ input[type="checkbox"]:focus {
   pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
   user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
 }
-.thumb-dark{
+.thumb-dark {
   width: var(--thumb-width);
   height: var(--thumb-height);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.753);
@@ -1510,11 +1501,7 @@ input[type="checkbox"]:focus {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 30px 50px;
   border-radius: 10px;
-  
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   #mission {
@@ -1535,32 +1522,27 @@ input[type="checkbox"]:focus {
     justify-content: center;
   }
 }
-.descbgr
-{
+.descbgr {
   width: 100%;
   height: 100%;
   background: rgba(138, 187, 167, 0.1);
 }
-.acclaimed
-{
+.acclaimed {
   width: 100%;
   height: 100%;
   background: rgba(138, 187, 167, 0.1);
 }
-@media screen and (max-width:357px) {
- .foobar
- {
-  display:flex;
-  flex-direction: column;
- } 
+@media screen and (max-width: 357px) {
+  .foobar {
+    display: flex;
+    flex-direction: column;
+  }
 }
-.fohv
-{
+.fohv {
   padding: 7px 8px 0px 8px;
   border-radius: 100%;
   transition: 0.5s;
 }
-.fohv:hover
-{
+.fohv:hover {
   background: #b7008f;
 }

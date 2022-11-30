@@ -104,10 +104,12 @@ const Profile = () => {
           <Navbar isLogedIn={true} userid={data[0].User_Id} />
           <div className="desc md:pl-9 lg:w-9/12 md:w-9/12 sm:pl-1 sm:w-9/1">
             <div className="top">
-              <h3 className="text-3xl font-semibold">Profile</h3>
+              <h3 className="text-3xl font-medium sm:text-left text-center">Profile</h3>
             </div>
-            <div className="profImg m-4 inner flex justify-center items-center">
+            <div className="flex sm:justify-start items-center justify-center pb-3">
+            <div className="profImg inner">
               <Image src={prime} className="imgr" />
+            </div>
             </div>
             <div className="FormSec">
               <form>

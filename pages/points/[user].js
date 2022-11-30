@@ -50,7 +50,7 @@ const Points = () => {
       {data ? (
         <div>
           <Navbar isLogedIn={true} userid={data[0].User_Id} />
-          <div className="p-2">
+          <div className="p-2 font-medium">
             {/* <SideNavbar
               per={data[0].Profile_percent}
               image={data[0].Image}
@@ -74,7 +74,7 @@ const Points = () => {
                 </div>
                 <div className="pr-5 pt-2 flex">
                   <Link href="/mylib/favourites" className="navtxt">
-                    <span className="text-xl text-purple-700 cursor-pointer text-bold new2">
+                    <span className="text-xl text-green-500 cursor-pointer font-medium new2">
                       {20 * data[0].Read +
                         10 * data[0].Share +
                         5 * data[0].Chat +
@@ -87,7 +87,7 @@ const Points = () => {
               <br />
               <br />
               <br />
-              <h1 className="text-xl new2 ">Progress</h1>
+              <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[22px] font-medium sm:pl-0 pl-2 pb-4">Progress</h1>
               <div className="medalAndProg ml-[2rem] mt-[2rem] mx-[3rem]">
                 <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-2 ">
                   <div className="rounded-md flex items-center">
@@ -116,7 +116,7 @@ const Points = () => {
               <br />
               <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-1 lg:gap-2">
                 <div className=" rounded-md flex items-center justify-start">
-                  <h1 className="text-xl new2">History</h1>
+                  <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[22px] font-medium sm:pl-0 pl-2">History</h1>
                 </div>
                 <div className="p-4  rounded-md flex items-center justify-end">
                   <div className="flex">
@@ -131,7 +131,7 @@ const Points = () => {
                         </div>
                       </button>
                       <div className="dropdown-content">
-                        <Link href={`/points/${favo.user}`}  >Completed</Link>
+                        <Link href={`/points/${favo.user}`}>Completed</Link>
                         <Link href={`/points/${favo.user}`}>Shared</Link>
                         <Link href={`/points/${favo.user}`}>Feed back</Link>
                       </div>
@@ -155,7 +155,7 @@ const Points = () => {
                   ))
                 : console.log("no history")}
 
-              <h1 className="text-xl new2 pt-5">How to Earn Points ?</h1>
+              <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-[22px] font-medium pb-5 sm:pl-0 pl-2">How to Earn Points ?</h1>
               <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2">
                 <div className="p-4 rounded-md flex items-center">
                   <Image src={readp} />

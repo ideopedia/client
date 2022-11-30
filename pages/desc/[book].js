@@ -239,7 +239,7 @@ const Book = () => {
                   className="bookImg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium lg:text-left text-center px-8">
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium lg:text-left text-center sm:px-8 px-6">
                 {data.Book_Description}
               </div>
             </div>
@@ -261,7 +261,7 @@ const Book = () => {
                   className="authimg"
                 />
               </div>
-              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] lg:text-left text-center px-8">
+              <div className="lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] lg:text-left text-center sm:px-8 px-6">
                 {data.About_Author}
               </div>
             </div>
@@ -342,7 +342,7 @@ const Book = () => {
             </div>
           </div>
           <div className="benefits pt-[3rem] pb-[3rem]">
-            <div className="benifits my-[2rem] md:px-[3rem] px-[1rem]">
+            <div className="benifits my-[2rem] sm:px-[3rem] px-[1rem]">
               <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] uppercase pb-[2rem] sm:text-left text-center font-medium">
                 benefits
               </h1>
@@ -365,12 +365,12 @@ const Book = () => {
           </div>
           <div>
             <hr />
-            <div className="px-[3rem] pt-20 pb-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
+            <div className="sm:px-[3rem] px-[1rem] sm:pt-20 sm:pb-20 pt-10 pb-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-2">
               <div
                 className=" rounded-md flex items-center justify-start"
                 onClick={handleClick}
               >
-                <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] uppercase font-medium">
+                <h1 className="lg:text-[34px] md:text-[26px] text-[24px] uppercase font-medium">
                   Contents
                 </h1>
               </div>
@@ -411,12 +411,12 @@ const Book = () => {
                     key={n}
                   >
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
-                      <h1 className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[20px] font-medium">
+                      <h1 className="lg:text-[24px] md:text-[20px] text-[16px] font-medium">
                         {idea.Ideo_num}
                       </h1>
                     </div>
-                    <div className=" rounded-md flex items-center justify-start h-auto lg:h-20 text-center">
-                      <span className="xl:text-[30px] lg:text-[28px] sm:text-[26px] text-[20px] font-medium">
+                    <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
+                      <span className="lg:text-[24px] md:text-[20px] text-[16px] leading-relaxed font-medium">
                         {idea.name}
                       </span>
                     </div>
@@ -437,7 +437,7 @@ const Book = () => {
           </div>
 
           <div className="acclaimed pt-[4rem] pb-[3rem]">
-            <div className="flex justify-center items-center px-[3rem]">
+            <div className="flex justify-center items-center sm:px-[3rem] px-[1rem]">
               <span className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] lg:leading-[197%] md:leading-[197%] leading-[197%] sm:text-left text-center uppercase font-medium pb-20">
                 {"The Book  " + data.Book_Name + " has been Acclaimed  by"}{" "}
               </span>
