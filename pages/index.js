@@ -29,8 +29,8 @@ import influencer8 from "../public/influencer8.svg";
 import Features from "../components/Features";
 import sampInf from "../public/infTest.svg";
 import Hero from "../components/hero";
-import testflu from "../public/testflu2.svg"
-import testfl from "../public/testflu3.svg"
+import testflu from "../public/testflu2.svg";
+import testfl from "../public/testflu3.svg";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
 import { useState, useCallback, useEffect, useReducer } from "react";
@@ -340,7 +340,7 @@ export default function Home() {
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test}/>
+                  <Image src={test} />
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">
@@ -365,7 +365,8 @@ export default function Home() {
               <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
-                    As an Indian, and a constant seeker of knowledge I truly
+                    Knowledge is among the most precious gifts in the world. As
+                    an Indian, and a constant seeker of knowledge I truly
                     applaud Ideopedia for the stellar work they are doing in
                     sharing such incredible knowledge with our country.
                   </span>
@@ -373,14 +374,14 @@ export default function Home() {
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={testflu} />
+                  <Image src={testflu} width={66} height={66} />
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr Rajiv Kumar
                   </h1>
                   <div className="text-[14px] font-medium text-gray-500">
-                    VICE CHAIRMAN, NITI AAYOG
+                    VICE CHAIRMAN OF NITI AAYOG, INDIA
                   </div>
                 </div>
               </div>
@@ -408,7 +409,7 @@ export default function Home() {
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={testfl} />
+                  <Image src={testfl} width={66} height={66} />
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">

@@ -77,13 +77,13 @@ function Newhero() {
                   {getCookie("user") ? (
                     <Link href={`/dashboard/${getCookie('user')}`}>
                       <div className="getstarted xl:text-[22px] lg:text-[20px] font-medium">
-                        <button className="font-bold">Get Started</button>
+                        <button className="font-semibold">Get Started</button>
                       </div>
                     </Link>
                   ) : (
                     <Link href="/login">
                       <div className="getstarted gt xl:text-[25px] lg:text-[20px] text-white  ">
-                        <button className="text -bold ">Get Started</button>
+                        <button className="font-medium">Get Started</button>
                       </div>
                     </Link>
                   )}
