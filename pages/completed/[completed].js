@@ -58,35 +58,32 @@ const Completed = () => {
           /> */}
           {console.log(data)}
           <Navbar isLogedIn={true} userid={favo.completed} />
-          <div className="">
-            <br />
-            <div className="scrollmenu flex pt-9 ml-9">
-              <div className="pr-9 flex">
+          <div className="pt-20">
+            <div className="grid grid-cols-2">
+              <div className="flex justify-center items-center">
                 <Image src={task} />
-                <Link
-                  href={`/completed/${favo.completed}`}
-                  className="navtxt"
-                >
+                <Link href={`/completed/${favo.completed}`} className="navtxt">
                   <div>
                     <span className="text-xl hover:text-green-700 cursor-pointer pb-3 ml-[0.5rem]">
                       Completed
                     </span>
 
-                    <hr className="w-6/12 nhr" />
+                    <hr className="ml-2 w-6/12 nhr" />
                   </div>
                 </Link>
               </div>
-              <div className="pr-9 flex">
+              <div className="flex justify-center items-center">
                 <Image src={fav} />
-                <Link
-                  href={`/favourites/${favo.completed}`}
-                  className="navtxt"
-                >
+                <Link href={`/favourites/${favo.completed}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Favourites
                   </span>
                 </Link>
               </div>
+            </div>
+            {/* <div className="scrollmenu flex pt-9 ml-9">
+              
+              
               <div className="pr-9 flex">
                 <Image src={create} />
                 <Link
@@ -98,7 +95,7 @@ const Completed = () => {
                   </span>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             <br />
             <div className="dropdown pl-4">
@@ -109,22 +106,25 @@ const Completed = () => {
                 </div>
               </button>
               <div className="dropdown-content ">
-                <Link href={`/favourites/${favo.completed}`} >Books</Link>
+                <Link href={`/favourites/${favo.completed}`}>Books</Link>
                 <Link href={`/favourites/${favo.completed}`}>Author</Link>
               </div>
             </div>
-            {data.map((val,n) => (
-              <div class="rounded-md flex items-start justify-center px-0 md:px-5 lg:px-9" key={n} >
-              <CompletedCard
-                image={val.image}
-                name={val.name}
-                author={val.author}
-                percent={val.percent}
-                b_id={val.id}
-                b_name={val.name}
-                u_id={favo.completed}
+            {data.map((val, n) => (
+              <div
+                class="rounded-md flex items-start justify-center px-0 md:px-5 lg:px-9"
                 key={n}
-              />
+              >
+                <CompletedCard
+                  image={val.image}
+                  name={val.name}
+                  author={val.author}
+                  percent={val.percent}
+                  b_id={val.id}
+                  b_name={val.name}
+                  u_id={favo.completed}
+                  key={n}
+                />
               </div>
             ))}
             {}
