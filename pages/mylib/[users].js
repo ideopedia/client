@@ -75,7 +75,25 @@ const New = () => {
           /> */}
           <Navbar isLogedIn={true} userid={favo.users} />
           <div className="">
-            <div className="scrollmenu flex  pt-9 ml-9">
+            <div className="pt-20  grid grid-cols-2">
+              <div className="flex justify-center items-center">
+                <Image src={task} />
+                <Link href={`/completed/${favo.users}`} className="navtxt">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
+                    Completed
+                  </span>
+                </Link>
+              </div>
+              <div className="flex justify-center items-center">
+                <Image src={fav} />
+                <Link href={`/favourites/${favo.users}`} className="navtxt">
+                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
+                    Favourites
+                  </span>
+                </Link>
+              </div>
+            </div>
+            <div className="flex  pt-9 justify-center items-center">
               {/* <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-[9rem]">
                 <div className="pr-4">
                   <Image src={task} />
@@ -102,30 +120,15 @@ const New = () => {
                   </Link>
                 </div>
               </div> */}
-              <div className="mr-9 flex">
-                <Image src={task} />
-                <Link href={`/completed/${favo.users}`} className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
-                    Completed
-                  </span>
-                </Link>
-              </div>
-              <div className="mr-9 flex">
-                <Image src={fav} />
-                <Link href={`/favourites/${favo.users}`} className="navtxt">
-                  <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
-                    Favourites
-                  </span>
-                </Link>
-              </div>
-              <div className="mr-9 flex">
+
+              {/* <div className="mr-9 flex">
                 <Image src={create} />
                 <Link href={`/notes/${favo.users}`} className="navtxt">
                   <span className="text-xl hover:text-green-700 cursor-pointer ml-[0.5rem]">
                     Notes & highlightes
                   </span>
                 </Link>
-              </div>
+              </div> */}
             </div>
 
             <div className="">
