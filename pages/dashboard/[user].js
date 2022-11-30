@@ -92,7 +92,15 @@ const Dashboard = () => {
           </div>
           <div className="flex  justify-center items-center p-4 ">
             <div className="">
-              <CircularProgressbarWithChildren
+              <div className="relative">
+                <Image
+                  src={data[0].Image}
+                  width={191}
+                  height={191}
+                  style={{ borderRadius: "50%", marginTop: "3px" }}
+                />
+              </div>
+              {/* <CircularProgressbarWithChildren
                 strokeWidth={3}
                 counterClockwise={true}
                 value={data[0].Profile_percent}
@@ -102,15 +110,15 @@ const Dashboard = () => {
                 })}
                 className="w-[200px] h-[200px]  "
               >
-                <div className="relative"  >
-                  <Image
-                    src={data[0].Image}
-                    width={191}
-                    height={191}
-                    style={{borderRadius: "50%" ,marginTop: "3px"}}
-                  />
-                </div>
-              </CircularProgressbarWithChildren>
+              <div className="relative">
+                <Image
+                  src={data[0].Image}
+                  width={191}
+                  height={191}
+                  style={{ borderRadius: "50%", marginTop: "3px" }}
+                />
+              </div>
+              </CircularProgressbarWithChildren> */}
               <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
                 <span className="p-2 md:p-0 sm:p-5 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
                   {data[0].Profile_percent} %
