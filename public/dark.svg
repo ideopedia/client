@@ -1,22 +1,10 @@
-<svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g filter="url(#filter0_d_293_749)">
-<circle cx="45" cy="41" r="30" fill="#010303" fill-opacity="0.87" shape-rendering="crispEdges"/>
-</g>
-<rect x="30" y="26" width="30" height="30" fill="url(#pattern0)"/>
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle cx="30" cy="30" r="30" fill="black"/>
+<rect x="15.6" y="15.6001" width="28.8" height="28.8" fill="url(#pattern0)"/>
 <defs>
-<filter id="filter0_d_293_749" x="0" y="0" width="90" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="7.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_293_749"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_293_749" result="shape"/>
-</filter>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_293_749" transform="scale(0.0111111)"/>
+<use xlink:href="#image0_2807_1239" transform="scale(0.0111111)"/>
 </pattern>
-<image id="image0_293_749" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVR4nO3dT2oUQRgF8FdBiFFzgcQbKGbpJXKCAbfmCN7DPxCzDOgNPIS7BMUTiEsVHYVx4XPR4yZMj3ZVva+6O++3br6qeRTf9BTFFGBmZmYWISmLk7wJ4ATAAsA9ALeV42X4AeA9gNcAXqaUVqqBZEGTvAvgDYAHqjEquwRwnFL6qCguCXq9kt9iOiH/dQngoWJl79QuuHaC6YUMAEcAHisKq4JeiOpGkMxd1Tq+A7ijqB1gmVLar11UFTQ3DpaS9C1nqMh5qlqHXeGggzjoIA46iIMO4qCDOOggDjrIKIImeYvkC5JfWc8Xks9J7rX+fDJ9n3zL86cVA77qtNY8SzT/CU5yB8ASgGrl/QSwn1L6vWFs/wSfm+ZBr1fauXCI802reRaG9j6SeySfsfsCq+Uzyafc8mV4rXp0S+7RM+SggzjoIA46iIMOMoqgWbbXMf89jT5D309ZZ6+jd0+j1jxLNH+PZr29jt49jT5D5llqFK3jOmgedMW9jvnuafTJ6NElex3/3NOoNc8SzXt0S+7RM+SggzjoIA46iIMOMoqg6XMdeYa+n9LnOvL0TdbnOkyuedA+11FgaO+jz3Xkiex9JdyjZ8hBB3HQQRx0EAcdZBRB0+c68gx9P6XPdeTpm6zPdZhc86B9rqNARo/2uY4ckb2vhHv0DDnoIA46iIMO4qCDOOggDjqIgw5yI3KwjF9dhymlT/9Z+xCA5E+2axj7in4kenYeMvYr+qxIPiF5sGWsg/Uzq1qDKjIJ3euYCu91TJiDDqIKeimqG+Gboqgq6A+iuhEkc1cF/UpUN4Jk7qq3jl10F94cKeoLXaC78OZX7cKSFb2+mecY3U09U3GB7gqn6iED+kvJdtHd1LMAcB/ju5tlCeAdukvJzlQhm5mZmcX5AznfokfzrLEnAAAAAElFTkSuQmCC"/>
+<image id="image0_2807_1239" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAA6dJREFUeF7tnbuSTUEUhv8lcJ8iNt6AIqO8gydwSV0CI1ImEkgUEopgSF2egHcgo3iEIaUYFIGlumYfNXPqtL26V3ebM/2fdNal97f/3fvs//TsFvDThIA06cImIOhGIiBogm5EoFEbKno7gFbV3QAuAjgD4AiAfY2Oy9rmG4D3AJ4DeCQiP62JqXHVFK2qhwG8BHAsdVD/Kf4tgNMislqjfxXQg5JfzxHkCdsA+2QNZdcCfRXAvRrKaFBzSUQelO5TC3RQ84nSg21U75WInCrdqxborwD2lx5so3prIrJQulct0DproCJSpV8uFFVtNs4qB97yAHIhh7yW4yToGWeqxpVH0ATtmRRsuZw6bJzcUQTtRmgrQNA2Tu4ognYjtBXoDrSq7gVwF8BZAAdsmEajPgN4BuCaiPyYFd0j6JXBtx6llxEQfOZL3YNW1R0A1gDsyYBoSfkOYEFEfk8Hd6VogrZoJRKTqhRVrTl1rIjI5e6njsHcCdPGHQDnABx0nOONqZ8APAVwnTfDQkRzy6Reebl9Qh5NJZpKHv3YcqloGyd3FEG7EdoKELSNkzuqO9BOr2PU04idkR5Bl3hgiXoaBL3+S3QpryPqaRA0QfvuM6lzXyGvI+ppUNEDAVX1eB2jngZB+y4cd3bqledpSK+DXodHP7ZcKtrGyR1F0G6EtgIEbePkjuoOtNPriAEf9UB6BF3C64gB57qOQKag1xEDzXUdBO28zaTOfYW8jtioua5jQsbpdcQAj3ogqYLw6I+P4HwE9+jHlktF2zi5owjajdBWgKBtnNxRBO1GaCvQHWin1zHqacSw9wi6hNfBdR0TRc36Z/aCXgfXdRD0FlmIXsjr4LqOfyl6cPC4rsP2RWlzVMu7ec74NphZfNWPB6A1t6Ug6N7RvbPqMj+Ois5nl5RJ0Em48oMJOp9dUiZBJ+HKDybofHZJmdsWdBKF9eBFEfloyVPVRQBFXrI9929ytACbilkWkduWPFVdBnDLEjsW0yPoXwBuAHgSU7aqHgJwHsBNADvHIFr+3iNoC5fiMQRdHOnsggRN0JsJqOo8v3r+i4iUesnhXzC13DtupjB19dUCvQTgfqMrvXSbKyLysHTRWqB3AQiqPl56wJXrvRk2vAlfK4t+qoAOIxy2cHoxR7AD5LCF04eihIdi1UAPsIOyLwybkh3dgnuzhHeivhs2JXssIsWVPDlpVUHXUMa81iToRmeOoAm6EYFGbahogm5EoFGbP66C33m+WSQDAAAAAElFTkSuQmCC"/>
 </defs>
 </svg>

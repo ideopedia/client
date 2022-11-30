@@ -92,7 +92,7 @@ export default function Navbar(props) {
                       </div>
                     </button>
                     <div className="dropdown-content ">
-                      <Link href="/about#about_hero">What is Ideopedia ?</Link>
+                      <Link href="/about">What is Ideopedia ?</Link>
                       <Link href="/about#mission">Mission</Link>
                       <Link href="/about#vission">Vision</Link>
                       <Link href="/about#what">What we do ?</Link>
@@ -139,7 +139,7 @@ export default function Navbar(props) {
                     </button>
                     <div className="dropdown-content">
                       <Link href="/teams#bod">Board of Directors</Link>
-                      <Link href="/teams#bod">Founders</Link>
+                      <Link href="/teams#bod1">Founders</Link>
                     </div>
                   </div>
                 </li>

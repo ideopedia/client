@@ -126,7 +126,7 @@ const Profile = () => {
                   placeholder="xyz@gmail.com"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <label>Official Mail Address</label>
+                <label>Official Email</label>
                 <div>
                   <i className="ipSvg">
                     <Image src={abou} />
@@ -136,7 +136,7 @@ const Profile = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                   type="email"
                   required
-                  placeholder="Add official Mail"
+                  placeholder="Add official Email"
                   onChange={(e) => setOffmail(e.target.value)}
                 />
                 <label>Phone</label>
@@ -175,7 +175,7 @@ const Profile = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                   type="text"
                   required
-                  placeholder="Add BirthDay"
+                  placeholder="Add Birthday"
                   onChange={(e) => setDob(e.target.value)}
                 />
                 <label>City of Birth</label>
@@ -204,7 +204,7 @@ const Profile = () => {
                   placeholder="Add School/College Name"
                   onChange={(e) => setSchool(e.target.value)}
                 /> */}
-                <label>Spouse Name</label>
+                <label>Spouse's Name</label>
                 <div>
                   <i className="ipSvg">
                     <Image src={abou} />
@@ -214,7 +214,7 @@ const Profile = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                   type="text"
                   required
-                  placeholder="Add Spouse Name"
+                  placeholder="Add Spouse's Name"
                   onChange={(e) => setSpouse(e.target.value)}
                 />
                 <label>Current Address</label>

@@ -599,7 +599,7 @@ const Read = () => {
                                 <Image src={dark1} />
                               </div>
                               <div
-                                className="pl-9 cursor-pointer"
+                                className="ml-9 cursor-pointer"
                                 onClick={function handleDark() {
                                   setDark(true);
                                 }}
@@ -1067,7 +1067,7 @@ const Read = () => {
                           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
                             <div className=" rounded-md flex items-center justify-center">
                               <div
-                                className="cursor-pointer"
+                                className="cursor-pointer  h-[40px] w-[40px] "
                                 onClick={function handleDark() {
                                   setDark(false);
                                 }}
@@ -1075,7 +1075,7 @@ const Read = () => {
                                 <Image src={dark1} />
                               </div>
                               <div
-                                className="pl-9 cursor-pointer"
+                                className="pl-9 cursor-pointer  h-[40px] w-[40px] "
                                 onClick={function handleDark() {
                                   setDark(true);
                                 }}

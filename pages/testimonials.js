@@ -67,7 +67,7 @@ const OurReaders = () => {
         </div>
       </div>
       <div className="lg:py-20 md:py-16 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8" id="mission">
           <div className=" p-4 rounded-md flex items-center justify-center">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-8">
               <div className="lg:pt-9 rounded-md flex items-center justify-center">
@@ -122,13 +122,13 @@ const OurReaders = () => {
       <div style={{textAlign:"right",position:"relative",bottom:"12rem",marginBottom:"-18rem"}} className="md:pt-20 pt-8" >
         {isBreakpoint?<Image src={flower} width={60}/>:<Image src={flower} width={160}/>}
         </div>
-        <div className="flex justify-center items-center p-4">
+        <div className="flex justify-center items-center p-4" id="readers">
           <span className="lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500">TESTIMONIALS</span>
         </div>
         <div style={{position:"relative",marginBottom:"-18rem"}}>
         {isBreakpoint?<Image src={flower} width={80}/>:<Image src={flower} width={240}/>}
         </div>
-        <div className="pt-2 pl-9 pr-9 testi" id="readers">
+        <div className="pt-2 pl-9 pr-9 testi">
             <SliderComponent />
         </div>
     </div>

@@ -149,7 +149,7 @@ function Login() {
       <Navbar isLogedIn={false} />
       <section className="h-screen new">
         <div className="loginContainer">
-          <div className=" pt-20">
+          <div className="pt-20">
             <Image src={login} />
           </div>
           <ToastContainer />

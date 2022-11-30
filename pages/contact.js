@@ -125,7 +125,7 @@ const New = () => {
                   placeholder="Enter your name"
                   onChange={(e) => setName(e.target.value)}
                 />
-                <label className="text-lg font-medium">Email Id</label>
+                <label className="text-lg font-medium">Email</label>
                 <input
                   className={classes}
                   type="email"

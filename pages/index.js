@@ -29,10 +29,11 @@ import influencer8 from "../public/influencer8.svg";
 import Features from "../components/Features";
 import sampInf from "../public/infTest.svg";
 import Hero from "../components/hero";
+import testflu from "../public/testflu2.svg"
+import testfl from "../public/testflu3.svg"
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
 import { useState, useCallback, useEffect, useReducer } from "react";
-
 
 export default function Home() {
   const infReducer = (state, action) => {
@@ -98,8 +99,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
           <div className=" flex justify-center infPic">
             <Image
-              onMouseEnter={() => {} }
-              onMouseLeave={() => {} }
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
               src={influencer1}
               width={250}
               height={250}
@@ -117,8 +118,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf3"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf3" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf3 ? influencer3 : infSquare}
               width={250}
               height={250}
@@ -206,7 +207,7 @@ export default function Home() {
       <br />
       <div className="py-10">
         <div>
-          <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase pb-9">
+          <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase pb-5">
             Features
           </span>
         </div>
@@ -220,11 +221,13 @@ export default function Home() {
               />
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
-              <Features features={fe2} info="Curated specialized for India's Leaders" />
+              <Features
+                features={fe2}
+                info="Curated specialized for India's Leaders"
+              />
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
               <Features features={fe3} info="Personalized reading experience" />
-              
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
               <Features features={fe3} info="One of a kind knowledge portal" />
@@ -241,7 +244,6 @@ export default function Home() {
                 info="Content written by subject matter experts"
               />
             </div>
-            
           </div>
         </div>
       </div>
@@ -259,21 +261,21 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center items-center">
-          <div className="  mt-2 lg:w-[420px] w-[320px] px-8 lg:pt-0 pt-8">
-            <Image src={summarry}/>
-          </div>
+            <div className="  mt-2 lg:w-[420px] w-[320px] px-8 lg:pt-0 pt-8">
+              <Image src={summarry} />
+            </div>
           </div>
         </div>
         <div
           className="container py-4 mx-auto lg:flex lg:h-128 lg:py-16 items-center justify-center  md:flex"
           id="mission"
         >
-          <div className="flex items-center lg:w-[580px] w-[320px] px-8 lg:pt-0 pt-6">
+          <div className="flex items-center lg:w-[420px] w-[320px] px-8 lg:pt-0 pt-8">
             <Image src={audio} />
           </div>
           <div className="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
             <div className="max-w-lg">
-              <h1 className="xl:text-4xl md:text-3xl text-[26px]  xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center sm:px-0 px-4">
+              <h1 className="xl:text-4xl md:text-3xl text-[26px]  xl:leading-relaxed lg:leading-relaxed font-semibold text-green-500 uppercase text-center sm:px-0 px-4 sm:pt-0 pt-4">
                 Real world examples to enhance learning
               </h1>
               <p className="mt-4 text-black xl:text-xl md:text-lg xl:leading-[197%] lg:leading-[197%] sm:leading-[197%] md:leading-[197%] xl:text-left md:text-center text-center sm:px-0 px-8 font-medium">
@@ -309,14 +311,14 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="flex justify-center items-center text-bold pt-8 pb-2 px-10">
+      <div className="flex justify-center items-center text-bold pt-10 pb-2 px-10">
         <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
       </div>
       <div>
-        <div className="p-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className=" rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow tte">
+        <div className="p-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="p-4 rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow tte">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
@@ -331,91 +333,89 @@ export default function Home() {
                     Month after month, year after year, Ideopedia has been
                     mailing thousands of printed copies of its synopses to its
                     readers with the goal to increase the awareness of the
-                    people.Selfless service at its best so that our country
+                    people. Selfless service at its best so that our country
                     benefits.
                   </span>
                 </div>
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={test}/>
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr Suresh Prabhu
                   </h1>
                   <div className="text-[14px] font-medium text-gray-500">
-                    FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
+                    FORMER MINISTER OF COMMERCE & INDUSTRY, GOVERNMENT OF INDIA
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="py-6 rounded-md flex items-center justify-center bg-white dropshadow tte">
+          <div className="p-4 rounded-md flex items-center justify-center bg-white dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
                   <span className="text-white lg:text-xl md:text-lg text-sm font-semibold text-center">
-                    Selfless service at its best so that our country benefits
+                    I applaud Ideopedia for the stellar work!
                   </span>
                 </div>
               </div>
               <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
-                    Month after month, year after year, Ideopedia has been
-                    mailing thousands of printed copies of its synopses to its
-                    readers with the goal to increase the awareness of the
-                    people.Selfless service at its best so that our country
-                    benefits.
+                    As an Indian, and a constant seeker of knowledge I truly
+                    applaud Ideopedia for the stellar work they are doing in
+                    sharing such incredible knowledge with our country.
                   </span>
                 </div>
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={testflu} />
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">
-                    Mr Suresh Prabhu
+                    Mr Rajiv Kumar
                   </h1>
                   <div className="text-[14px] font-medium text-gray-500">
-                    FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
+                    VICE CHAIRMAN, NITI AAYOG
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className=" rounded-md flex items-center justify-center bg-white dropshadow tte">
+          <div className=" p-4 rounded-md flex items-center justify-center bg-white dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
                   <span className="text-white lg:text-xl md:text-lg text-sm font-semibold text-center">
-                    Selfless service at its best so that our country benefits
+                    My gratitude to Ideopedia's founders for the gift of
+                    knowledge
                   </span>
                 </div>
               </div>
               <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
-                    Month after month, year after year, Ideopedia has been
-                    mailing thousands of printed copies of its synopses to its
-                    readers with the goal to increase the awareness of the
-                    people.Selfless service at its best so that our country
-                    benefits.
+                    I look forward to reading Ideopedia's synopsis as their
+                    choice of books, topics and content are interesting and
+                    value adding. My gratitude to Ideopedia's founders for
+                    sharing the precious gift of knowledge.
                   </span>
                 </div>
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={test} />
+                  <Image src={testfl} />
                 </div>
                 <div className="pl-5">
                   <h1 className="lg:text-lg md:text-lg text-base font-semibold">
-                    Mr Suresh Prabhu
+                    Mr S Ramadorai
                   </h1>
                   <div className="text-[14px] font-medium text-gray-500">
-                    FORMER MINISTER OF COMMERCE & INDUSTRY GOVERNMENT OF INDIA
+                    FORMER CEO, TATA CONSULTANCY SERVICES
                   </div>
                 </div>
               </div>
@@ -425,7 +425,7 @@ export default function Home() {
       </div>
       <div className="p-4 flex lg:justify-end justify-center items-end ">
         <div className="border-[2px] border-green-500 cursor-pointer rounded-md px-1">
-          <Link href="/testimonials">
+          <Link href="/testimonials#readers">
             <div className="p-1 flex justify-center items-center border-green-500">
               <div className="text-green-500 text-[18px]">Read more</div>
               <div className="pt-2 px-1">

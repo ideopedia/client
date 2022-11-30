@@ -41,7 +41,7 @@ function Footer() {
               <br />
               <ul>
                 <li className="py-1 foottext hover:text-green-500">
-                  <Link href="/about#about_hero">What is Ideopedia ?</Link>
+                  <Link href="/about">What is Ideopedia ?</Link>
                 </li>
                 <li className="py-1 foottext hover:text-green-500">
                   <Link href="/about#mission">Mission</Link>
@@ -69,7 +69,7 @@ function Footer() {
                   <Link href="/teams#bod">Board of Directors</Link>
                 </li>
                 <li className="py-1 foottext hover:text-green-500">
-                  <Link href="/teams#bod">Founders</Link>
+                  <Link href="/teams#bod1">Founders</Link>
                 </li>
                 {/* <li className="py-1 foottext hover:text-green-500">
                   <Link href="/teams#bod">Advisors</Link>

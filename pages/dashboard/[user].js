@@ -117,12 +117,13 @@ const Dashboard = () => {
           </div>
           <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center ">
             <div className="xl:text-xl lg:text-lg md:text-lg font-medium pb-4 sm:pl-4 text-gray-500">
-              <Link href={`/profile/${favo.user}`}>complete Your profile</Link>
+              <Link href={`/profile/${favo.user}`}>Complete your profile</Link>
             </div>
           </div>
-          <div className="flex xl:justify-center lg:justify-center md:justify-center sm:justify-center p-4">
-            <div className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium pb-4">
-              {hr < 12 ? "Good Morning" : "Good Evening"}, Hon.{data[0].Name}
+          <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center  py-4 px-6">
+            <div className=" flex items-center sm:flex-row flex-col justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium pb-4">
+              <div>{hr < 12 ? "Good Morning" : "Good Evening"}, </div>
+              <div className="sm:ml-4 ml-0"> Hon. {data[0].Name}</div>
             </div>
           </div>
           <div className="flex xl:justify-center lg:justify-center md:justify-center sm:justify-center sm:p-4 sm:pb-9 ">
@@ -243,7 +244,7 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-xl font-medium">1ND</h1>
+                        <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-xl font-medium">1<span className=" lg:text-lg md:text-base text-[14px] font-medium">ST</span></h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -265,7 +266,7 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">2ND</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">2<span className="lg:text-lg md:text-base text-[14px] font-medium">ND</span></h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -287,7 +288,7 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">3RD</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">3<span className="lg:text-lg md:text-base text-[14px] font-medium">RD</span></h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -309,7 +310,7 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">4TH</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">4<span className="lg:text-lg md:text-base text-[14px] font-medium">TH</span></h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -331,7 +332,7 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">5TH</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">5<span className="lg:text-lg md:text-base text-[14px] font-medium">TH</span></h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
