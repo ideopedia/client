@@ -154,9 +154,17 @@ const Read = () => {
                     <div
                       className="p-2 RightIcons cursor-pointer"
                       onClick={function handleAudio() {
-                        router.push(
-                          `/audio/${ideo}?user=${userid}&book=${ideo}`
-                        );
+                        if(ideo === "10")
+                        {
+                          router.push(
+                            `/audio/11?user=${userid}&book=11`
+                          );
+                        }
+                        else{
+                          router.push(
+                            `/audio/${ideo}?user=${userid}&book=${ideo}`
+                          );
+                        }
                       }}
                     >
                       <Image src={sound} />
@@ -174,104 +182,7 @@ const Read = () => {
               <div className="pb-4 ">
                 <Image src={data.Ideo_image} width={1500} height={700} />
               </div>
-              <div>
-                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                    <div
-                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
-                      onClick={
-                        num3 !== 0
-                          ? function handleForward() {
-                              router.push(
-                                `/summary/${num2}${
-                                  num3 - 1
-                                }?user=${userid}&ideo=${num2}${num3 - 1}`
-                              );
-                            }
-                          : function handleForward() {
-                              router.push(
-                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
-                              );
-                            }
-                      }
-                    >
-                      <Image src={forward} />
-                    </div>
-                    <div className="rounded-md flex items-center justify-center progBar">
-                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                        <div
-                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{
-                            width: `${(data.Ideo_num / data.Total) * 100}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <div className="text-base pl-4 pb-3 perc">
-                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
-                      </div>
-                    </div>
-                    <div
-                      className="rounded-md flex  justify-end cursor-pointer"
-                      onClick={
-                        num3 === data.total-1
-                          ? function handleBackward() {
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3
-                                )}`
-                              );
-                            }
-                          : function handleBackward() {
-                              Axios.post("/api/UserCompleted/addCompleted", {
-                                name: card.Book_Name,
-                                image: card.Cover_image,
-                                author: card.Book_Author,
-                                percent:
-                                  Math.round(
-                                    (data.Ideo_num / data.Total) * 100
-                                  ) >= 80
-                                    ? 100
-                                    : Math.round(
-                                        (data.Ideo_num / data.Total) * 100
-                                      ),
-                                id: card.id,
-                                date: currentDate,
-                                User_Id: userid,
-                              }).then((data) => {
-                                setCompData(data.data);
-                              });
-                              Axios.post("/api/UserDashboard/updateDash", {
-                                Activity: [
-                                  4 * 8,
-                                  8 * 8,
-                                  12 * 8,
-                                  16 * 1,
-                                  7 * 5,
-                                  4 * 9,
-                                  10 * 6,
-                                ],
-                                User_Id: userid,
-                              }).then((val) => {
-                                console.log(val);
-                              });
-
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3 + 1
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3 + 1
-                                )}`
-                              );
-                            }
-                      }
-                    >
-                      <Image src={backward} />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div></div>
               {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
                 <div key={n}>
                   {dat.length > 2 ? (
@@ -384,12 +295,108 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
-              <div className="fixed bottom-5 right-3">
-                <Image
+              <div className="fixed bottom-0 w-[100%]">
+                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
+                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                    <div
+                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                      onClick={
+                        num3 !== 0
+                          ? function handleForward() {
+                              router.push(
+                                `/summary/${num2}${
+                                  num3 - 1
+                                }?user=${userid}&ideo=${num2}${num3 - 1}`
+                              );
+                            }
+                          : function handleForward() {
+                              router.push(
+                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
+                              );
+                            }
+                      }
+                    >
+                      <Image src={forward} />
+                    </div>
+                    <div className="rounded-md flex items-center justify-center progBar">
+                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div
+                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                          style={{
+                            width: `${(data.Ideo_num / data.Total) * 100}%`,
+                          }}
+                        ></div>
+                      </div>
+                      <div className="text-base pl-4 pb-3 perc">
+                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
+                      </div>
+                    </div>
+                    <div
+                      className="rounded-md flex  justify-end cursor-pointer"
+                      onClick={
+                        num3 === data.total - 1
+                          ? function handleBackward() {
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3
+                                )}`
+                              );
+                            }
+                          : function handleBackward() {
+                              Axios.post("/api/UserCompleted/addCompleted", {
+                                name: card.Book_Name,
+                                image: card.Cover_image,
+                                author: card.Book_Author,
+                                percent:
+                                  Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ) >= 80
+                                    ? 100
+                                    : Math.round(
+                                        (data.Ideo_num / data.Total) * 100
+                                      ),
+                                id: card.id,
+                                date: currentDate,
+                                User_Id: userid,
+                              }).then((data) => {
+                                setCompData(data.data);
+                              });
+                              Axios.post("/api/UserDashboard/updateDash", {
+                                Activity: [
+                                  4 * 8,
+                                  8 * 8,
+                                  12 * 8,
+                                  16 * 1,
+                                  7 * 5,
+                                  4 * 9,
+                                  10 * 6,
+                                ],
+                                User_Id: userid,
+                              }).then((val) => {
+                                console.log(val);
+                              });
+
+                              router.replace(
+                                `/summary/${String(num2)}${String(
+                                  num3 + 1
+                                )}?user=${userid}&ideo=${String(num2)}${String(
+                                  num3 + 1
+                                )}`
+                              );
+                            }
+                      }
+                    >
+                      <Image src={backward} />
+                    </div>
+                  </div>
+                </div>
+                {/* <Image
                   src={user_notes}
                   className="cursor-pointer"
                   onClick={() => setShowNotesModal(true)}
-                />
+                /> */}
                 {/* <button
                   className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
@@ -469,8 +476,8 @@ const Read = () => {
               </div>
               {showMod ? (
                 <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl ">
                       {/*content*/}
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
@@ -508,11 +515,20 @@ const Read = () => {
                                 <Image src={light} />
                               </div>
                             </div>
-                            <div className="p-4  rounded-md flex items-center justify-center">
-                              <div className="text-black text-base">Aa</div>
+                            <div className="w-full  rounded-md flex items-center justify-center">
+                              <div
+                                className="text-black text-base cursor-pointer"
+                                onClick={function handleSFont() {
+                                  rangeval > 1
+                                    ? setRangeval(rangeval - 0.1)
+                                    : 1;
+                                }}
+                              >
+                                Aa
+                              </div>
                               <div className="pl-3 pr-2">
                                 <input
-                                  className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
+                                  className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[200px] sm:w-[300px] md:w-[300px] lg:w-[300px]"
                                   type="range"
                                   min="1"
                                   max="1.4"
@@ -525,7 +541,16 @@ const Read = () => {
 
                                 {console.log(rangeval)}
                               </div>
-                              <div className="text-black text-2xl">Aa</div>
+                              <div
+                                className="text-black text-2xl cursor-pointer"
+                                onClick={function handleLFont() {
+                                  rangeval < 1.4
+                                    ? setRangeval(rangeval + 0.1)
+                                    : 1.4;
+                                }}
+                              >
+                                Aa
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -633,7 +658,14 @@ const Read = () => {
                     >
                       <Image src={darkfont} />
                     </div>
-                    <div className="p-2 RightIcons cursor-pointer">
+                    <div
+                      className="p-2 RightIcons cursor-pointer"
+                      onClick={function handleAudio() {
+                        router.push(
+                          `/audio/${ideo}?user=${userid}&book=${ideo}`
+                        );
+                      }}
+                    >
                       <Image src={darkad} />
                     </div>
                   </div>
@@ -649,84 +681,12 @@ const Read = () => {
               <div className="pb-4">
                 <Image src={data.Ideo_image} width={1500} height={700} />
               </div>
-              <div>
-                <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                    <div
-                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
-                      onClick={function handleForward() {
-                        router.push(
-                          `/summary/${num2}${
-                            num3 - 1
-                          }?user=${userid}&book=${num2}${num3 - 1}`
-                        );
-                      }}
-                    >
-                      <Image src={darkfor} />
-                    </div>
-                    <div className="rounded-md flex items-center justify-center progBar">
-                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                        <div
-                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{
-                            width: `${(data.Ideo_num / data.Total) * 100}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <div className="text-base text-white pl-4 pb-3 perc">
-                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
-                      </div>
-                    </div>
-                    <div
-                      className="rounded-md flex  justify-end cursor-pointer"
-                      onClick={function handleBackward() {
-                        Axios.post("/api/UserCompleted/addCompleted", {
-                          name: card.Book_Name,
-                          image: card.Cover_image,
-                          author: card.Book_Author,
-                          percent:
-                            Math.round((data.Ideo_num / data.Total) * 100) >= 80
-                              ? 100
-                              : Math.round((data.Ideo_num / data.Total) * 100),
-                          id: card.id,
-                          date: currentDate,
-                          User_Id: userid,
-                        }).then((data) => {
-                          setCompData(data.data);
-                        });
-                        Axios.post("/api/UserDashboard/updateDash", {
-                          Activity: [
-                            4 * 8,
-                            8 * 8,
-                            12 * 8,
-                            16 * 8,
-                            7 * 1,
-                            4 * 13,
-                            10 * 6,
-                          ],
-                          User_Id: userid,
-                        }).then((val) => {
-                          console.log(val);
-                        });
-                        router.replace(
-                          `/summary/${String(num2)}${String(
-                            num3 + 1
-                          )}?user=${userid}&ideo=${String(num2)}${String(
-                            num3 + 1
-                          )}`
-                        );
-                      }}
-                    >
-                      <Image src={darkb} />
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
                 <div key={n}>
                   {dat.length > 2 ? (
                     <div
-                      className="flex justify-center items-center  bg-neutral-300  font-bold p-4 text-white bg-black greyContent"
+                      className="flex justify-center items-center  bg-gray-900  font-bold p-4 text-white bg-black greyContent"
                       style={{
                         textAlign: "center",
                         fontSize: `${rangeval * 38}px`,
@@ -838,12 +798,88 @@ const Read = () => {
               ) : (
                 console.log("")
               )}
-              <div className="fixed bottom-5 right-3">
-                <Image
+              <div className="fixed bottom-0 w-[100%]">
+                <div>
+                  <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
+                    <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                      <div
+                        className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                        onClick={function handleForward() {
+                          router.push(
+                            `/summary/${num2}${
+                              num3 - 1
+                            }?user=${userid}&book=${num2}${num3 - 1}`
+                          );
+                        }}
+                      >
+                        <Image src={darkfor} />
+                      </div>
+                      <div className="rounded-md flex items-center justify-center progBar">
+                        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                          <div
+                            className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                            style={{
+                              width: `${(data.Ideo_num / data.Total) * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <div className="text-base text-white pl-4 pb-3 perc">
+                          {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
+                        </div>
+                      </div>
+                      <div
+                        className="flex  justify-end cursor-pointer ideoIcons pr-0 md:pr-5"
+                        onClick={function handleBackward() {
+                          Axios.post("/api/UserCompleted/addCompleted", {
+                            name: card.Book_Name,
+                            image: card.Cover_image,
+                            author: card.Book_Author,
+                            percent:
+                              Math.round((data.Ideo_num / data.Total) * 100) >=
+                              80
+                                ? 100
+                                : Math.round(
+                                    (data.Ideo_num / data.Total) * 100
+                                  ),
+                            id: card.id,
+                            date: currentDate,
+                            User_Id: userid,
+                          }).then((data) => {
+                            setCompData(data.data);
+                          });
+                          Axios.post("/api/UserDashboard/updateDash", {
+                            Activity: [
+                              4 * 8,
+                              8 * 8,
+                              12 * 8,
+                              16 * 8,
+                              7 * 1,
+                              4 * 13,
+                              10 * 6,
+                            ],
+                            User_Id: userid,
+                          }).then((val) => {
+                            console.log(val);
+                          });
+                          router.replace(
+                            `/summary/${String(num2)}${String(
+                              num3 + 1
+                            )}?user=${userid}&ideo=${String(num2)}${String(
+                              num3 + 1
+                            )}`
+                          );
+                        }}
+                      >
+                        <Image src={darkb} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* <Image
                   src={user_notes}
                   className="cursor-pointer"
                   onClick={() => setShowNotesModal(true)}
-                />
+                /> */}
                 {/* <button
                   className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
@@ -923,8 +959,8 @@ const Read = () => {
               </div>
               {showMod ? (
                 <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-20">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl">
                       {/*content*/}
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                         {/*header*/}
@@ -963,7 +999,16 @@ const Read = () => {
                               </div>
                             </div>
                             <div className="p-4  rounded-md flex items-center justify-center">
-                              <div className="text-white text-base">Aa</div>
+                              <div
+                                className="text-white text-base cursor-pointer"
+                                onClick={function handleSFont() {
+                                  rangeval > 1
+                                    ? setRangeval(rangeval - 0.1)
+                                    : 1;
+                                }}
+                              >
+                                Aa
+                              </div>
                               <div className="pl-3 pr-2">
                                 <input
                                   className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[300px]"
@@ -979,7 +1024,16 @@ const Read = () => {
 
                                 {console.log(rangeval)}
                               </div>
-                              <div className="text-white text-2xl">Aa</div>
+                              <div
+                                className="text-white text-2xl cursor-pointer "
+                                onClick={function handleSFont() {
+                                  rangeval < 1.4
+                                    ? setRangeval(rangeval + 0.1)
+                                    : 1.4;
+                                }}
+                              >
+                                Aa
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -991,8 +1045,8 @@ const Read = () => {
               ) : null}
               {showModal ? (
                 <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-20">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100%]">
                       {/*content*/}
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
                         {/*header*/}
