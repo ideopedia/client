@@ -17,6 +17,7 @@ import darkad from "../../public/darkaudio.svg";
 import darkb from "../../public/darkback.svg";
 import darkc from "../../public/darkconc.svg";
 import dark1 from "../../public/dark.svg";
+import Radium, { StyleRoot } from "radium";
 import light from "../../public/light.svg";
 import darkfor from "../../public/darkfor.svg";
 import darkfont from "../../public/darkfont.svg";
@@ -49,11 +50,36 @@ const Read = () => {
   var num = Number(ideo);
 
   const userid = user;
-
+  var fntsze = rangeval * 30;
   var num2 = Number(ideo ? ideo[0] : null);
   var num3 = Number(ideo ? ideo[1] : null);
   const d = new Date();
   const date = new Date();
+  const ft = {
+    "@media (min-width: 779px)": {
+      fontSize: rangeval * 34,
+    },
+    "@media (max-width: 780px)": {
+      fontSize: rangeval * 30,
+    },
+    "@media (max-width: 480px)": {
+      fontSize: rangeval * 24,
+    },
+    "@media (max-width: 340px)": {
+      fontSize: rangeval * 20,
+    },
+  };
+  const cnt = {
+    "@media (min-width: 779px)": {
+      fontSize: rangeval * 24,
+    },
+    "@media (max-width: 780px)": {
+      fontSize: rangeval * 20,
+    },
+    "@media (max-width: 480px)": {
+      fontSize: rangeval * 18,
+    },
+  };
 
   let day = date.getDate();
   let month = date.getMonth() + 1;
@@ -111,606 +137,507 @@ const Read = () => {
       {data && ideo ? (
         <div>
           {dark ? (
-            <div className="pb-9">
-              <ProgressBar />
-              {console.log(data)}
-              {console.log(card)}
-              {console.log(conten)}
-              <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
-                <div
-                  className=" rounded-md flex items-center justify-start cursor-pointer"
-                  onClick={function handleDesc() {
-                    router.push(`/desc/${num2}?user=${userid}&book=${num2}`);
-                  }}
-                >
-                  <div className="ideoIcons">
-                    <Image src={forward} width={30} height={30} />
-                  </div>
-                </div>
-                <div className=" rounded-md flex items-center justify-center">
-                  <div>
-                    <div
-                      className={ `text-black font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
-                       //ideo
-                    >
-                      {data.Ideo_title}
-                    </div>
-                  </div>
-                </div>
-                <div className="rounded-md flex items-center justify-end">
-                  <div>
-                    <div
-                      className="p-2 RightIcons cursor-pointer"
-                      onClick={() => setShowModal(true)}
-                    >
-                      <Image src={content} />
-                    </div>
-                    <div
-                      className="p-2   RightIcons cursor-pointer"
-                      onClick={() => setShowMod(true)}
-                    >
-                      <Image src={font} />
-                    </div>
-                    <div
-                      className="p-2 RightIcons cursor-pointer"
-                      onClick={function handleAudio() {
-                        if(ideo === "10")
-                        {
-                          router.push(
-                            `/audio/11?user=${userid}&book=11`
-                          );
-                        }
-                        else{
-                          router.push(
-                            `/audio/${ideo}?user=${userid}&book=${ideo}`
-                          );
-                        }
-                      }}
-                    >
-                      <Image src={sound} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
-              //heading
-              >
-                {data.Ideo}
-              </div>
-              <div className="pb-4 ">
-                <Image src={data.Ideo_image} width={1500} height={700} />
-              </div>
-              <div></div>
-              <div>
-                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                    <div
-                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
-                      onClick={
-                        num3 !== 0
-                          ? function handleForward() {
-                              router.push(
-                                `/summary/${num2}${
-                                  num3 - 1
-                                }?user=${userid}&ideo=${num2}${num3 - 1}`
-                              );
-                            }
-                          : function handleForward() {
-                              router.push(
-                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
-                              );
-                            }
-                      }
-                    >
-                      <Image src={forward} />
-                    </div>
-                    <div className="rounded-md flex items-center justify-center progBar">
-                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-400">
-                        <div
-                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{
-                            width: `${(data.Ideo_num / data.Total) * 100}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <div className="text-base pl-4 pb-3 perc">
-                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
-                      </div>
-                    </div>
-                    <div
-                      className="rounded-md flex  justify-end cursor-pointer"
-                      onClick={
-                        num3 === data.total-1
-                          ? function handleBackward() {
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3
-                                )}`
-                              );
-                            }
-                          : function handleBackward() {
-                              Axios.post("/api/UserCompleted/addCompleted", {
-                                name: card.Book_Name,
-                                image: card.Cover_image,
-                                author: card.Book_Author,
-                                percent:
-                                  Math.round(
-                                    (data.Ideo_num / data.Total) * 100
-                                  ) >= 80
-                                    ? 100
-                                    : Math.round(
-                                        (data.Ideo_num / data.Total) * 100
-                                      ),
-                                id: card.id,
-                                date: currentDate,
-                                User_Id: userid,
-                              }).then((data) => {
-                                setCompData(data.data);
-                              });
-                              Axios.post("/api/UserDashboard/updateDash", {
-                                Activity: [
-                                  4 * 8,
-                                  8 * 8,
-                                  12 * 8,
-                                  16 * 1,
-                                  7 * 5,
-                                  4 * 9,
-                                  10 * 6,
-                                ],
-                                User_Id: userid,
-                              }).then((val) => {
-                                console.log(val);
-                              });
-
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3 + 1
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3 + 1
-                                )}`
-                              );
-                            }
-                      }
-                    >
-                      <Image src={backward} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
-                <div key={n}>
-                  {dat.length > 2 ? (
-                    <div
-                      className={`flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
-
-                    >
-                      {dat}
-                    </div>
-                  ) : (
-                    console.log("")
-                  )}
-                  <div className="">
-                    <div className="py-4 px-6">
-                      {data.Book_Summary[0].Content[n].map((val, n) => (
-                        <div
-                          className={`text-black  py-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
-                          
-                          key={n}
-                        >
-                          {val}
-                        </div>
-                      ))}
-                      {data.Book_Summary[0].images[n][0].length > 2 ? (
-                        <div className="flex justify-center items-center px-4 py-16">
-                          <Image
-                            src={data.Book_Summary[0].images[n][0]}
-                            width={300}
-                            height={300}
-                          />
-                        </div>
-                      ) : (
-                        console.log(" ")
-                      )}
-
-                      {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                        <div className="flex justify-center items-center">
-                          <div className="mx-[auto]">
-                            <div className="text-left leftQuote">
-                              <Image src={startq} />
-                            </div>
-                            <div
-                              className={`text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}//quotes
-                            >
-                              {data.Book_Summary[0].Quotes[n]}
-                            </div>
-                            <div
-                              className="rightQuote"
-                              style={{
-                                display: "flex",
-                                justifyContent: "flex-end",
-                              }}
-                            >
-                              <Image src={endq} />
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        console.log("jd")
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-              {data.Ideo_Peaks.length > 1 ? (
-                <div>
+            <StyleRoot>
+              <div className="pb-9">
+                <ProgressBar />
+                {console.log(data)}
+                {console.log(card)}
+                {console.log(conten)}
+                <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
                   <div
-                    className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
-//ideopeaks
+                    className=" rounded-md flex items-center justify-start cursor-pointer"
+                    onClick={function handleDesc() {
+                      router.push(`/desc/${num2}?user=${userid}&book=${num2}`);
+                    }}
                   >
-                    Ideo Peaks
+                    <div className="ideoIcons">
+                      <Image src={forward} width={30} height={30} />
+                    </div>
                   </div>
-                  <div className="bg-green-100 sm:p-6 p-4">
+                  <div className=" rounded-md flex items-center justify-center">
+                    <div>
+                      <div
+                        className={`text-black font-semibold `}
+                        //ideo
+                      >
+                        <span style={ft}>{data.Ideo_title}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-md flex items-center justify-end">
+                    <div>
+                      <div
+                        className="p-2 RightIcons cursor-pointer"
+                        onClick={() => setShowModal(true)}
+                      >
+                        <Image src={content} />
+                      </div>
+                      <div
+                        className="p-2   RightIcons cursor-pointer"
+                        onClick={() => setShowMod(true)}
+                      >
+                        <Image src={font} />
+                      </div>
+                      <div
+                        className="p-2 RightIcons cursor-pointer"
+                        onClick={function handleAudio() {
+                          if (ideo === "10") {
+                            router.push(`/audio/11?user=${userid}&book=11`);
+                          } else {
+                            router.push(
+                              `/audio/${ideo}?user=${userid}&book=${ideo}`
+                            );
+                          }
+                        }}
+                      >
+                        <Image src={sound} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center `}
+                  style={ft}
+                  //heading
+                >
+                  {data.Ideo}
+                </div>
+                <div className="pb-4 ">
+                  <Image src={data.Ideo_image} width={1500} height={700} />
+                </div>
+                <div></div>
+
+                {data.Book_Summary[0].Ideo_Quest.map((dat, n) => (
+                  <div key={n}>
+                    {dat.length > 2 ? (
+                      <div
+                        className={`flex justify-center items-center  bg-neutral-300  font-semibold p-4  greyContent text-center `}
+                        style={ft}
+                      >
+                        {dat}
+                      </div>
+                    ) : (
+                      console.log("")
+                    )}
                     <div className="">
-                      {data.Ideo_Peaks.map((val, n) => (
-                        <div key={n}>
+                      <div className="py-4 px-6">
+                        {data.Book_Summary[0].Content[n].map((val, n) => (
                           <div
-                            style={{
-                              position: "absolute",
-                              marginTop: "0.7rem",
-                            }}
+                            className={`text-black  py-4 flex justify-center items-center leading-[197%] font-medium `}
+                            key={n}
+                            style={cnt}
                           >
-                            <Image src={bullet} width={40} height={40} />
+                            {val}
                           </div>
-                          <div className=" p-4 ml-8">
-                            <div className="pr-4">
-                              <div className={`font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}>
-                                {val.name}
+                        ))}
+                        {data.Book_Summary[0].images[n][0].length > 2 ? (
+                          <div className="flex justify-center items-center px-4 py-16">
+                            <Image
+                              src={data.Book_Summary[0].images[n][0]}
+                              width={300}
+                              height={300}
+                            />
+                          </div>
+                        ) : (
+                          console.log(" ")
+                        )}
+
+                        {data.Book_Summary[0].Quotes[n].length > 1 ? (
+                          <div className="flex justify-center items-center">
+                            <div className="mx-[auto]">
+                              <div className="text-left leftQuote">
+                                <Image src={startq} />
                               </div>
                               <div
-                                className={` text-green-500 font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}
-                          //action
+                                className={`text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium `}
+                                //quotes
+                                style={cnt}
                               >
-                                {val.quote}
+                                {data.Book_Summary[0].Quotes[n]}
+                              </div>
+                              <div
+                                className="rightQuote"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "flex-end",
+                                }}
+                              >
+                                <Image src={endq} />
                               </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        ) : (
+                          console.log("jd")
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) : (
-                console.log("")
-              )}
-              <div className="fixed bottom-0 w-[100%]">
-                <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
-                  <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
-                    <div
-                      className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
-                      onClick={
-                        num3 !== 0
-                          ? function handleForward() {
-                              router.push(
-                                `/summary/${num2}${
-                                  num3 - 1
-                                }?user=${userid}&ideo=${num2}${num3 - 1}`
-                              );
-                            }
-                          : function handleForward() {
-                              router.push(
-                                `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
-                              );
-                            }
-                      }
-                    >
-                      <Image src={forward} />
-                    </div>
-                    <div className="rounded-md flex items-center justify-center progBar">
-                      <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-                        <div
-                          className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
-                          style={{
-                            width: `${(data.Ideo_num / data.Total) * 100}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <div className="text-base pl-4 pb-3 perc">
-                        {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
-                      </div>
-                    </div>
-                    <div
-                      className="rounded-md flex  justify-end cursor-pointer"
-                      onClick={
-                        num3 === data.total - 1
-                          ? function handleBackward() {
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3
-                                )}`
-                              );
-                            }
-                          : function handleBackward() {
-                              Axios.post("/api/UserCompleted/addCompleted", {
-                                name: card.Book_Name,
-                                image: card.Cover_image,
-                                author: card.Book_Author,
-                                percent:
-                                  Math.round(
-                                    (data.Ideo_num / data.Total) * 100
-                                  ) >= 80
-                                    ? 100
-                                    : Math.round(
-                                        (data.Ideo_num / data.Total) * 100
-                                      ),
-                                id: card.id,
-                                date: currentDate,
-                                User_Id: userid,
-                              }).then((data) => {
-                                setCompData(data.data);
-                              });
-                              Axios.post("/api/UserDashboard/updateDash", {
-                                Activity: [
-                                  4 * 8,
-                                  8 * 8,
-                                  12 * 8,
-                                  16 * 1,
-                                  7 * 5,
-                                  4 * 9,
-                                  10 * 6,
-                                ],
-                                User_Id: userid,
-                              }).then((val) => {
-                                console.log(val);
-                              });
+                ))}
 
-                              router.replace(
-                                `/summary/${String(num2)}${String(
-                                  num3 + 1
-                                )}?user=${userid}&ideo=${String(num2)}${String(
-                                  num3 + 1
-                                )}`
-                              );
-                            }
-                      }
+                {data.Ideo_Peaks.length > 1 ? (
+                  <div>
+                    <div
+                      className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
+                      //ideopeaks
                     >
-                      <Image src={backward} />
+                      Ideo Peaks
+                    </div>
+                    <div className="bg-green-100 sm:p-6 p-4">
+                      <div className="">
+                        {data.Ideo_Peaks.map((val, n) => (
+                          <div key={n}>
+                            <div
+                              style={{
+                                position: "absolute",
+                                marginTop: "0.7rem",
+                              }}
+                            >
+                              <Image src={bullet} width={40} height={40} />
+                            </div>
+                            <div className=" p-4 ml-8">
+                              <div className="pr-4">
+                                <div className={`font-medium `} style={cnt}>
+                                  {val.name}
+                                </div>
+                                <div
+                                  className={` text-green-500 font-medium `}
+                                  style={cnt}
+                                  //action
+                                >
+                                  {val.quote}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-                {/* <Image
+                ) : (
+                  console.log("")
+                )}
+                <div className="fixed bottom-0 w-[100%]">
+                  <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
+                    <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
+                      <div
+                        className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                        onClick={
+                          num3 !== 0
+                            ? function handleForward() {
+                                router.push(
+                                  `/summary/${num2}${
+                                    num3 - 1
+                                  }?user=${userid}&ideo=${num2}${num3 - 1}`
+                                );
+                              }
+                            : function handleForward() {
+                                router.push(
+                                  `/summary/${num2}${num3}?user=${userid}&ideo=${num2}${num3}`
+                                );
+                              }
+                        }
+                      >
+                        <Image src={forward} />
+                      </div>
+                      <div className="rounded-md flex items-center justify-center progBar">
+                        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                          <div
+                            className="bg-green-600 h-1.5 rounded-full dark:bg-green-500 "
+                            style={{
+                              width: `${(data.Ideo_num / data.Total) * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <div className="text-base pl-4 pb-3 perc">
+                          {Math.round((data.Ideo_num / data.Total) * 100) + "%"}
+                        </div>
+                      </div>
+                      <div
+                        className="rounded-md flex  justify-end cursor-pointer"
+                        onClick={
+                          num3 === data.total - 1
+                            ? function handleBackward() {
+                                router.replace(
+                                  `/summary/${String(num2)}${String(
+                                    num3
+                                  )}?user=${userid}&ideo=${String(
+                                    num2
+                                  )}${String(num3)}`
+                                );
+                              }
+                            : function handleBackward() {
+                                Axios.post("/api/UserCompleted/addCompleted", {
+                                  name: card.Book_Name,
+                                  image: card.Cover_image,
+                                  author: card.Book_Author,
+                                  percent:
+                                    Math.round(
+                                      (data.Ideo_num / data.Total) * 100
+                                    ) >= 80
+                                      ? 100
+                                      : Math.round(
+                                          (data.Ideo_num / data.Total) * 100
+                                        ),
+                                  id: card.id,
+                                  date: currentDate,
+                                  User_Id: userid,
+                                }).then((data) => {
+                                  setCompData(data.data);
+                                });
+                                Axios.post("/api/UserDashboard/updateDash", {
+                                  Activity: [
+                                    4 * 8,
+                                    8 * 8,
+                                    12 * 8,
+                                    16 * 1,
+                                    7 * 5,
+                                    4 * 9,
+                                    10 * 6,
+                                  ],
+                                  User_Id: userid,
+                                }).then((val) => {
+                                  console.log(val);
+                                });
+
+                                router.replace(
+                                  `/summary/${String(num2)}${String(
+                                    num3 + 1
+                                  )}?user=${userid}&ideo=${String(
+                                    num2
+                                  )}${String(num3 + 1)}`
+                                );
+                              }
+                        }
+                      >
+                        <Image src={backward} />
+                      </div>
+                    </div>
+                  </div>
+                  {/* <Image
                   src={user_notes}
                   className="cursor-pointer"
                   onClick={() => setShowNotesModal(true)}
                 /> */}
-                {/* <button
+                  {/* <button
                   className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
                   
                 >
                   Notes
                 </button> */}
-                {showNotesModal ? (
+                  {showNotesModal ? (
+                    <>
+                      <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                          {/*content*/}
+                          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            {/*header*/}
+                            <div className=" p-5 border-b bg-yellow-300 border-solid border-slate-200 rounded-t">
+                              <div className="flex items-center justify-center text-xl font-bold ">
+                                {data.Ideo_title}
+                              </div>
+                              <div className="flex items-center justify-center  text-base text-black">
+                                {data.Ideo}
+                                <span
+                                  className=" ml-5 text-sm text-green-800 cursor-pointer"
+                                  onClick={function handleSavedNotes() {
+                                    router.push(`/notes/${userid}`);
+                                  }}
+                                >
+                                  Saved Notes
+                                </span>{" "}
+                              </div>
+                            </div>
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                              <textarea
+                                type="text"
+                                placeholder="Type here ....."
+                                className="focus:border-black"
+                                rows="10"
+                                cols="50"
+                                onChange={(e) => setNotes(e.target.value)}
+                              ></textarea>
+                            </div>
+                            {/*footer*/}
+                            <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                              <button
+                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={() => setShowNotesModal(false)}
+                              >
+                                Cancel
+                              </button>
+                              <button
+                                className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={function submitNotes() {
+                                  Axios.post("/api/UserNotes/addNotes", {
+                                    Book_Name: card.Book_Name,
+                                    Author: card.Book_Author,
+                                    Notes: notes,
+                                    Book_id: card.id,
+
+                                    User_Id: userid,
+                                  }).then((data) => {
+                                    setCompData(data.data);
+                                  });
+                                  setShowNotesModal(false);
+                                }}
+                              >
+                                Save
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                    </>
+                  ) : null}
+                </div>
+                {showMod ? (
                   <>
                     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                      <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                      <div className="relative w-auto my-6 mx-auto max-w-3xl ">
                         {/*content*/}
                         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                           {/*header*/}
-                          <div className=" p-5 border-b bg-yellow-300 border-solid border-slate-200 rounded-t">
-                            <div className="flex items-center justify-center text-xl font-bold ">
-                              {data.Ideo_title}
-                            </div>
-                            <div className="flex items-center justify-center  text-base text-black">
-                              {data.Ideo}
-                              <span
-                                className=" ml-5 text-sm text-green-800 cursor-pointer"
-                                onClick={function handleSavedNotes() {
-                                  router.push(`/notes/${userid}`);
-                                }}
+
+                          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                            <div className=" rounded-md flex items-center justify-end"></div>
+                            <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                              <div
+                                className="pr-5"
+                                onClick={() => setShowMod(false)}
                               >
-                                Saved Notes
-                              </span>{" "}
+                                <Image src={close} />
+                              </div>
                             </div>
                           </div>
+
                           {/*body*/}
                           <div className="relative p-6 flex-auto">
-                            <textarea
-                              type="text"
-                              placeholder="Type here ....."
-                              className="focus:border-black"
-                              rows="10"
-                              cols="50"
-                              onChange={(e) => setNotes(e.target.value)}
-                            ></textarea>
+                            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+                              <div className=" rounded-md flex items-center justify-center">
+                                <div
+                                  className="cursor-pointer"
+                                  onClick={function handleDark() {
+                                    setDark(false);
+                                  }}
+                                >
+                                  <Image src={dark1} />
+                                </div>
+                                <div
+                                  className="pl-9 cursor-pointer"
+                                  onClick={function handleDark() {
+                                    setDark(true);
+                                  }}
+                                >
+                                  <Image src={light} />
+                                </div>
+                              </div>
+                              <div className="w-full  rounded-md flex items-center justify-center">
+                                <div
+                                  className="text-black text-base cursor-pointer"
+                                  
+                                >
+                                  Aa
+                                </div>
+                                <div className="pl-3 pr-2">
+                                  <input
+                                    className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[200px] sm:w-[300px] md:w-[300px] lg:w-[300px]"
+                                    type="range"
+                                    min="1"
+                                    max="1.4"
+                                    value={rangeval}
+                                    step="0.1"
+                                    onChange={(event) =>
+                                      setRangeval(event.target.value)
+                                    }
+                                  />
+
+                                  {console.log(rangeval)}
+                                </div>
+                                <div
+                                  className="text-black text-2xl cursor-pointer"
+                                  
+                                >
+                                  Aa
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           {/*footer*/}
-                          <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                            <button
-                              className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                              type="button"
-                              onClick={() => setShowNotesModal(false)}
-                            >
-                              Cancel
-                            </button>
-                            <button
-                              className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                              type="button"
-                              onClick={function submitNotes() {
-                                Axios.post("/api/UserNotes/addNotes", {
-                                  Book_Name: card.Book_Name,
-                                  Author: card.Book_Author,
-                                  Notes: notes,
-                                  Book_id: card.id,
-
-                                  User_Id: userid,
-                                }).then((data) => {
-                                  setCompData(data.data);
-                                });
-                                setShowNotesModal(false);
-                              }}
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                  </>
+                ) : null}
+                {showModal ? (
+                  <>
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
+                      <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                          {/*header*/}
+
+                          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
+                            <div className=" rounded-md flex items-center justify-end">
+                              <span className="text-2xl ">Contents </span>
+                            </div>
+                            <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
+                              <div
+                                className="pr-5"
+                                onClick={() => setShowModal(false)}
+                              >
+                                <Image src={close} />
+                              </div>
+                            </div>
+                          </div>
+
+                          {/*body*/}
+                          <div className="relative p-6 flex-auto">
+                            <div
+                              className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
+                              id="read"
+                            >
+                              {conten.Ideos.map((idea, n) => (
+                                <div
+                                  className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
+                                  onClick={function handleTick() {
+                                    router.push(
+                                      `/summary/${idea.Ideo_id}?user=${userid}&ideo=${idea.Ideo_id}`
+                                    );
+                                  }}
+                                  key={n}
+                                >
+                                  <div className="p-2rounded-md flex items-center justify-center ">
+                                    <h1 className="text-sm lg:text-xl  ">
+                                      {idea.Ideo_num}
+                                    </h1>
+                                  </div>
+                                  <div className="p-2rounded-md flex items-center justify-start ">
+                                    <span className="text-sm lg:text-xl">
+                                      {idea.name}
+                                    </span>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {/*footer*/}
+                        </div>
+                      </div>
+                    </div>
                   </>
                 ) : null}
               </div>
-              {showMod ? (
-                <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl ">
-                      {/*content*/}
-                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        {/*header*/}
-
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div className=" rounded-md flex items-center justify-end"></div>
-                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
-                            <div
-                              className="pr-5"
-                              onClick={() => setShowMod(false)}
-                            >
-                              <Image src={close} />
-                            </div>
-                          </div>
-                        </div>
-
-                        {/*body*/}
-                        <div className="relative p-6 flex-auto">
-                          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 ">
-                            <div className=" rounded-md flex items-center justify-center">
-                              <div
-                                className="cursor-pointer"
-                                onClick={function handleDark() {
-                                  setDark(false);
-                                }}
-                              >
-                                <Image src={dark1} />
-                              </div>
-                              <div
-                                className="ml-9 cursor-pointer"
-                                onClick={function handleDark() {
-                                  setDark(true);
-                                }}
-                              >
-                                <Image src={light} />
-                              </div>
-                            </div>
-                            <div className="w-full  rounded-md flex items-center justify-center">
-                              <div
-                                className="text-black text-base cursor-pointer"
-                                onClick={function handleSFont() {
-                                  rangeval > 1
-                                    ? setRangeval(rangeval - 0.1)
-                                    : 1;
-                                }}
-                              >
-                                Aa
-                              </div>
-                              <div className="pl-3 pr-2">
-                                <input
-                                  className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-[200px] sm:w-[300px] md:w-[300px] lg:w-[300px]"
-                                  type="range"
-                                  min="1"
-                                  max="1.4"
-                                  value={rangeval}
-                                  step="0.1"
-                                  onChange={(event) =>
-                                    setRangeval(event.target.value)
-                                  }
-                                />
-
-                                {console.log(rangeval)}
-                              </div>
-                              <div
-                                className="text-black text-2xl cursor-pointer"
-                                onClick={function handleLFont() {
-                                  rangeval < 1.4
-                                    ? setRangeval(rangeval + 0.1)
-                                    : 1.4;
-                                }}
-                              >
-                                Aa
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {/*footer*/}
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ) : null}
-              {showModal ? (
-                <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none top-10">
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl h-[100vh]">
-                      {/*content*/}
-                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        {/*header*/}
-
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 pt-9">
-                          <div className=" rounded-md flex items-center justify-end">
-                            <span className="text-2xl ">Contents </span>
-                          </div>
-                          <div className="p-4  rounded-md flex items-center justify-end cursor-pointer">
-                            <div
-                              className="pr-5"
-                              onClick={() => setShowModal(false)}
-                            >
-                              <Image src={close} />
-                            </div>
-                          </div>
-                        </div>
-
-                        {/*body*/}
-                        <div className="relative p-6 flex-auto">
-                          <div
-                            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 pb-9 p-4"
-                            id="read"
-                          >
-                            {conten.Ideos.map((idea, n) => (
-                              <div
-                                className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 cursor-pointer bg-white "
-                                onClick={function handleTick() {
-                                  router.push(
-                                    `/summary/${idea.Ideo_id}?user=${userid}&ideo=${idea.Ideo_id}`
-                                  );
-                                }}
-                                key={n}
-                              >
-                                <div className="p-2rounded-md flex items-center justify-center ">
-                                  <h1 className="text-sm lg:text-xl  ">
-                                    {idea.Ideo_num}
-                                  </h1>
-                                </div>
-                                <div className="p-2rounded-md flex items-center justify-start ">
-                                  <span className="text-sm lg:text-xl">
-                                    {idea.name}
-                                  </span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        {/*footer*/}
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ) : null}
-            </div>
+            </StyleRoot>
           ) : (
             <div className="sm:p-4 pb-9 bg-black">
               <ProgressBar />
@@ -729,8 +656,11 @@ const Read = () => {
                 <div className=" rounded-md flex items-center justify-center">
                   <div>
                     <div
-                      className={`text-white font-semibold lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px]`}
-    
+                      className={`text-white font-semibold lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px]`}
                     >
                       {data.Ideo_title}
                     </div>
@@ -765,7 +695,9 @@ const Read = () => {
               </div>
 
               <div
-                className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
+                className={`flex justify-center items-center  text-green-500 font-semibold uppercase sm:pl-4 sm:pb-4  pb-6 sm:px-0 px-2 text-center lg:text-[${
+                  rangeval * 34
+                }px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
               >
                 {data.Ideo}
               </div>
@@ -777,8 +709,11 @@ const Read = () => {
                 <div key={n}>
                   {dat.length > 2 ? (
                     <div
-                      className={`flex justify-center items-center text-white bg-gray-900  font-semibold p-4  greyContent text-center lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] `}
-
+                      className={`flex justify-center items-center text-white bg-gray-900  font-semibold p-4  greyContent text-center lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
                     >
                       {dat}
                     </div>
@@ -789,7 +724,11 @@ const Read = () => {
                     <div className="py-4 px-6">
                       {data.Book_Summary[0].Content[n].map((val, n) => (
                         <div
-                          className={` text-white py-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`}
+                          className={` text-white py-4 flex justify-center items-center leading-[197%] font-medium lg:text-[${
+                            rangeval * 24
+                          }px] md:text-[${rangeval * 20}px] text-[${
+                            rangeval * 18
+                          }px]`}
                           key={n}
                         >
                           {val}
@@ -813,10 +752,7 @@ const Read = () => {
                             <div className="text-left leftQuote">
                               <Image src={startq} />
                             </div>
-                            <div
-                              className="text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]"
-                            
-                            >
+                            <div className="text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]">
                               {data.Book_Summary[0].Quotes[n]}
                             </div>
                             <div
@@ -840,10 +776,7 @@ const Read = () => {
 
               {data.Ideo_Peaks.length > 1 ? (
                 <div>
-                  <div
-                    className=" text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] "
-                
-                  >
+                  <div className=" text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${rangeval * 34}px] md:text-[${rangeval * 30}px] text-[${rangeval * 24}px] ">
                     Ideo Peaks
                   </div>
                   <div className="bg-black sm:p-6">
@@ -861,15 +794,20 @@ const Read = () => {
                           <div className=" p-4 ml-8">
                             <div className="pr-4">
                               <div
-                                className={` text-white font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px]`
-                                }
-
+                                className={` text-white font-medium lg:text-[${
+                                  rangeval * 24
+                                }px] md:text-[${rangeval * 20}px] text-[${
+                                  rangeval * 18
+                                }px]`}
                               >
                                 {val.name}
                               </div>
                               <div
-                                className={` text-green-500 font-medium lg:text-[${rangeval * 24}px] md:text-[${rangeval * 20}px] text-[${rangeval * 18}px] `}
-
+                                className={` text-green-500 font-medium lg:text-[${
+                                  rangeval * 24
+                                }px] md:text-[${rangeval * 20}px] text-[${
+                                  rangeval * 18
+                                }px] `}
                               >
                                 {val.quote}
                               </div>

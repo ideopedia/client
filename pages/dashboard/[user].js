@@ -4,6 +4,7 @@ import Card from "../../components/card";
 import Link from "next/link";
 import ProgressBar from "@ramonak/react-progress-bar";
 import task from "../../public/task.svg";
+import normal from "../../public/normal.png";
 import create from "../../public/create.svg";
 import red from "../../public/red.svg";
 import infu from "../../public/influencer1.svg";
@@ -85,11 +86,21 @@ const Dashboard = () => {
           <Navbar isLogedIn={true} userid={favo.user} />
 
           <div className="flex justify-start p-4">
-            <div className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] pb-4 font-medium">Welcome Back</div>
+            <div className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] pb-4 font-medium">
+              Welcome Back
+            </div>
           </div>
           <div className="flex  justify-center items-center p-4 ">
             <div className="">
-              <CircularProgressbarWithChildren
+              <div className="relative">
+                <Image
+                  src={data[0].Image}
+                  width={191}
+                  height={191}
+                  style={{ borderRadius: "50%", marginTop: "3px" }}
+                />
+              </div>
+              {/* <CircularProgressbarWithChildren
                 strokeWidth={3}
                 counterClockwise={true}
                 value={data[0].Profile_percent}
@@ -97,17 +108,17 @@ const Dashboard = () => {
                   pathColor: "#2CB67D",
                   trailColor: "#fff",
                 })}
-                className="w-[200px] h-[200px] flex justify-center items-center"
+                className="w-[200px] h-[200px]  "
               >
-                <div className=" inne pt-3 pl-2 pr-1">
-                  <Image
-                    src={data[0].Image}
-                    width={200}
-                    height={200}
-                    className="fixed  imgr"
-                  />
-                </div>
-              </CircularProgressbarWithChildren>
+              <div className="relative">
+                <Image
+                  src={data[0].Image}
+                  width={191}
+                  height={191}
+                  style={{ borderRadius: "50%", marginTop: "3px" }}
+                />
+              </div>
+              </CircularProgressbarWithChildren> */}
               <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
                 <span className="p-2 md:p-0 sm:p-5 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
                   {data[0].Profile_percent} %
@@ -138,7 +149,10 @@ const Dashboard = () => {
               )}
 
               <div className="sm:pt-3 sm:pr-0 pr-6">
-                <span className="sm:pl-2 sm:pb-2 pb-4 pt-20 xl:text-2xl lg:text-xl md:text-xl text-lg font-medium"> You are a {type} </span>
+                <span className="sm:pl-2 sm:pb-2 pb-4 pt-20 xl:text-2xl lg:text-xl md:text-xl text-lg font-medium">
+                  {" "}
+                  You are a {type}{" "}
+                </span>
                 <span className="sm:pl-2 sm:pr-2 text-green-500 xl:text-2xl lg:text-xl md:text-xl text-lg font-medium ">
                   {data[0].Read * 20} Points
                 </span>
@@ -224,8 +238,8 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className=" pt-8 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
-            <div className="p-4  rounded-md  items-center justify-start ">
+          <div className=" pt-8 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 ">
+            {/* <div className="p-4  rounded-md  items-center justify-start ">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-1 lg:gap-4">
                 <div className="pb-4 rounded-md  items-center justify-start xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium">
                   ACTIVITY
@@ -234,7 +248,7 @@ const Dashboard = () => {
                   <UserChart array={data[0].Activity} />  
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="p-4  rounded-md  items-center justify-center ">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 ">
                 <div className="rounded-md  items-center justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium">
@@ -248,16 +262,20 @@ const Dashboard = () => {
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
-                      <Image src={rank2} width={52} height={52}/>
+                      <Image src={rank2} width={52} height={52} />
                     </div>
                     <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">Nimi Martins</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
+                          Nimi Martins
+                        </h1>
                       </div>
                     </div>
                     <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium text-green-500 ">1000</h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium text-green-500 ">
+                          1000
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -274,12 +292,16 @@ const Dashboard = () => {
                     </div>
                     <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">Nimi Martins</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">
+                          Nimi Martins
+                        </h1>
                       </div>
                     </div>
                     <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">600</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">
+                          600
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -296,12 +318,16 @@ const Dashboard = () => {
                     </div>
                     <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">Nimi Martins</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">
+                          Nimi Martins
+                        </h1>
                       </div>
                     </div>
                     <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">500</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">
+                          500
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -318,12 +344,16 @@ const Dashboard = () => {
                     </div>
                     <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">Nimi Martins</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">
+                          Nimi Martins
+                        </h1>
                       </div>
                     </div>
                     <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">400</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">
+                          400
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -340,12 +370,16 @@ const Dashboard = () => {
                     </div>
                     <div className="  rounded-md flex items-center justify-start">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">Nimi Martins</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium">
+                          Nimi Martins
+                        </h1>
                       </div>
                     </div>
                     <div className="p-4  rounded-md flex items-center justify-center">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">300</h1>
+                        <h1 className="xl:text-2xl lg:text-xl md:text-xl text-base font-medium text-green-500 ">
+                          300
+                        </h1>
                       </div>
                     </div>
                   </div>

@@ -177,7 +177,7 @@ const Book = () => {
                         </div>
                         <Link
                           className=""
-                          href={`/desc/${num}?user=${user}&book=${num}`}
+                          href={`/summary/10?user=${user}&ideo=10`}
                         >
                           Read
                         </Link>

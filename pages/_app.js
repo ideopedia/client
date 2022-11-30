@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "swiper/css/bundle";
 import Script from "next/script";
 import { useRouter } from "next/router";
+import Radium, { StyleRoot } from "radium";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
@@ -21,7 +22,13 @@ function MyApp({ Component, pageProps }) {
           });
     `}
       </Script>
-      <Component className="font-poppins" key={router.asPath} {...pageProps} />
+      <StyleRoot>
+        <Component
+          className="font-poppins"
+          key={router.asPath}
+          {...pageProps}
+        />
+      </StyleRoot>
     </>
   );
 }
