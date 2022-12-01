@@ -64,7 +64,7 @@ const Dashboard = () => {
 
     return targetReached;
   };
-  const isBreakpoint = useMediaQuery(360);
+  const isBreakpoint = useMediaQuery(400);
   const router = useRouter();
   const favo = router.query;
   var day = new Date();
