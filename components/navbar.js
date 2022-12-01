@@ -16,10 +16,14 @@ export default function Navbar(props) {
         <div className="justify-between px-4  lg:items-center lg:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-1  md:py-1 lg:block">
-              <div href="/" className="cursor-pointer" onClick={function handleLogo(){
-                router.push("/")
-                setNavbar(false)
-              }} >
+              <div
+                href="/"
+                className="cursor-pointer"
+                onClick={function handleLogo() {
+                  router.push("/");
+                  setNavbar(false);
+                }}
+              >
                 <Image src={log} className="cursor-pointer" />
               </div>
               <div className="lg:hidden">
@@ -69,61 +73,110 @@ export default function Navbar(props) {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button
-                      className="dropbtn flex items-center justify-center"
-                      
-                    >
+                    <button className="dropbtn flex items-center justify-center">
                       Our Readers{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
                       </div>
                     </button>
                     <div className="dropdown-content">
-                      <Link href="/testimonials#readers">Testimonials</Link>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/testimonials#readers");
+                          setNavbar(false);
+                        }}
+                      >
+                        Testimonials
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button
-                      className="dropbtn flex items-center justify-center"
-                      
-                    >
+                    <button className="dropbtn flex items-center justify-center">
                       About Us{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
                       </div>
                     </button>
                     <div className="dropdown-content ">
-                      <Link href="/about">What is Ideopedia ?</Link>
-                      <Link href="/about#mission">Mission</Link>
-                      <Link href="/about#vission">Vision</Link>
-                      <Link href="/about#what">What we do ?</Link>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/about");
+                          setNavbar(false);
+                        }}
+                      >
+                        What is Ideopedia ?
+                      </div>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/about#mission");
+                          setNavbar(false);
+                        }}
+                      >
+                        Mission
+                      </div>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/about#vission");
+                          setNavbar(false);
+                        }}
+                      >
+                        Vision
+                      </div>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/about#what");
+                          setNavbar(false);
+                        }}
+                      >
+                        What we do ?
+                      </div>
                     </div>
                   </div>
                 </li>
                 {getCookie("user") ? (
                   <li className="text-black flex justify-center">
                     <div className="dropdown">
-                      <button
-                        className="dropbtn flex items-center justify-center"
-                       
-                      >
+                      <button className="dropbtn flex items-center justify-center">
                         My Account
                         <div className="mt-2 ml-2">
                           <Image src={drop} />
                         </div>
                       </button>
                       <div className="dropdown-content ">
-                        <Link href={`/dashboard/${getCookie("user")}`}>
+                        <div
+                          className="flex justify-center items-center py-2"
+                          onClick={function handleLogo() {
+                            router.push(`/dashboard/${getCookie("user")}`);
+                            setNavbar(false);
+                          }}
+                        >
                           Dashboard
-                        </Link>
-                        <Link href={`/read/${getCookie("user")}`}>
+                        </div>
+                        <div
+                          className="flex justify-center items-center py-2"
+                          onClick={function handleLogo() {
+                            router.push(`/read/${getCookie("user")}`);
+                            setNavbar(false);
+                          }}
+                        >
                           Read Ideos
-                        </Link>
-                        <Link href={`/mylib/${getCookie("user")}`}>
+                        </div>
+                        <div
+                          className="flex justify-center items-center py-2"
+                          onClick={function handleLogo() {
+                            router.push(`/mylib/${getCookie("user")}`);
+                            setNavbar(false);
+                          }}
+                        >
                           My Library
-                        </Link>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -131,52 +184,85 @@ export default function Navbar(props) {
 
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button
-                      className="dropbtn flex items-center justify-center"
-                      
-                    >
+                    <button className="dropbtn flex items-center justify-center">
                       Team{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
                       </div>
                     </button>
                     <div className="dropdown-content">
-                      <Link href="/teams#bod">Board of Directors</Link>
-                      <Link href="/teams#bod1">Founders</Link>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/teams#bod");
+                          setNavbar(false);
+                        }}
+                      >
+                        Board of Directors
+                      </div>
+                      <div
+                        className="flex justify-center items-center py-2"
+                        onClick={function handleLogo() {
+                          router.push("/teams#bod1");
+                          setNavbar(false);
+                        }}
+                      >
+                        Founders
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li className="text-black flex justify-center">
-                  <Link href="/contact">
+                  <div
+                    onClick={function handleLogo() {
+                      router.push("/contact");
+                      setNavbar(false);
+                    }}
+                  >
                     <a>Contact Us</a>
-                  </Link>
+                  </div>
                 </li>
                 {getCookie("user") ? (
                   <li className="text-white flex justify-center">
                     <div className="log">
-                      <button onClick={function handleLogout(){
-                        removeCookies('user')
-                        router.push("/")
-                      }} >Logout</button>
-                    </div> 
+                      <button
+                        onClick={function handleLogout() {
+                          removeCookies("user");
+                          router.push("/");
+                          setNavbar(false);
+                        }}
+                      >
+                        Logout
+                      </button>
+                    </div>
                   </li>
                 ) : (
                   <li className="text-white flex justify-center">
-                    <Link href="/login">
+                    <div
+                      onClick={function handleLogo() {
+                        router.push("/login");
+                        setNavbar(false);
+                      }}
+                    >
                       <div className="log">
                         <button>Login</button>
                       </div>
-                    </Link>
+                    </div>
                   </li>
                 )}
 
                 {getCookie("user") ? null : (
                   <li className="text-white flex justify-center">
-                    <Link href="/signup">
+                    <div
+                      onClick={function handleLogo() {
+                        router.push("/signup");
+                        setNavbar(false);
+                      }}
+                    >
                       <div className="sin">
                         <button>Signup</button>
                       </div>
-                    </Link>
+                    </div>
                   </li>
                 )}
               </ul>
