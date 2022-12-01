@@ -234,7 +234,7 @@ export default function Home() {
             </div>
             <div className="p-4  rounded-md flex items-center justify-center font-medium">
               <Features
-                features={fe1}
+                features={fe2}
                 info="Content available in multiple Indian languages"
               />
             </div>
