@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import task from "../../public/task.svg";
 import create from "../../public/create.svg";
-
+import { getCookie } from "cookies-next";
 import fav from "../../public/fav.svg";
 import recomend from "../../public/recomend.svg";
 import Axios from "axios";
@@ -96,11 +96,11 @@ const Read = () => {
                       read={val.read_time}
                       listen={val.listen_time}
                       b_id={val.id}
-                      u_id={favo.book}
+                      u_id={getCookie("user")}
                     />
                   </div>
                 ) : (
-                  <div className="" key={n} >
+                  <div className="" key={n}>
                     <div className="flex items-center   mt-9 " key={n}>
                       {data.map((val, n) => (
                         <div
@@ -135,7 +135,7 @@ const Read = () => {
                                 read={val.read_time}
                                 listen={val.listen_time}
                                 b_id={val.id}
-                                u_id={favo.book}
+                                u_id={getCookie("user")}
                               />
                             </div>
                           </div>

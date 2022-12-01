@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Loader from "../../components/loader";
 import Axios from "axios";
+import Navbar from "../../components/navbar";
+import BNavbar from "../../components/bgnavbar";
 import DarkAudio from "../../components/DarkAudio";
 import close from "../../public/close.svg";
 import dclose from "../../public/darkclose.svg";
@@ -60,6 +62,7 @@ const Listen = () => {
         <div>
           {dark ? (
             <div className="h-[100%]">
+              <Navbar />
               {console.log(data)}
               {console.log(conten)}
               <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 px-[1.7rem]">
@@ -115,7 +118,7 @@ const Listen = () => {
               <div className="flex justify-center items-center font-medium xl:text-4xl lg:text-3xl md:text-2xl text-[18px] text-center sm:px-6 sm:pb-10 px-4 pb-4">
                 {conten[0].Ideo_title}
               </div>
-              <div className="flex-column justify-center items-center pt-20 sm:pt-0 md:pt-0 lg:pt-0 xl:pt-0" >
+              <div className="flex-column justify-center items-center pt-20 sm:pt-0 md:pt-0 lg:pt-0 xl:pt-0">
                 <div className="pb-4 pt-4 flex justify-center items-center">
                   <Image src={conten[0].Ideo_image} width={1500} height={500} />
                 </div>
@@ -186,7 +189,8 @@ const Listen = () => {
               <br />
             </div>
           ) : (
-            <div className="bg-black">
+            <div className="bg-black h-[200%]">
+              <BNavbar />
               <div>
                 {console.log(data)}
                 {console.log(conten)}

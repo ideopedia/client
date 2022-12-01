@@ -12,6 +12,8 @@ export default async function updateSummary(req, res) {
     Ideo,
     Ideo_num,
     Total,
+    affliate,
+    video,
     Ideo_title,
     Ideo_image,
     Ideo_id,
@@ -29,6 +31,8 @@ export default async function updateSummary(req, res) {
       {
         $set: {
           id: id,
+          affliate: affliate,
+          video: video,
           Ideo_id: Ideo_id,
           Book_Name: Book_Name,
           Ideo: Ideo,

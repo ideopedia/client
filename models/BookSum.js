@@ -23,6 +23,8 @@ var bookSchema = new Schema({
       images: [[{ type: String }]],
     },
   ],
+  video: { type: String },
+  affliate: { type: String },
 });
 
 var Books = models.Books || model("Books", bookSchema);

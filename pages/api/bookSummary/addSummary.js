@@ -16,6 +16,8 @@ export default async function addSummary(req, res) {
     Ideo_image,
     Ideo_id,
     Book_Author,
+    affliate,
+    video,
 
     Ideo_Peaks,
 
@@ -29,6 +31,8 @@ export default async function addSummary(req, res) {
       Ideo,
       Ideo_num,
       Total,
+      affliate,
+      video,
       Ideo_title,
       Ideo_image,
       Ideo_id,

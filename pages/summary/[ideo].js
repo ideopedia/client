@@ -5,9 +5,16 @@ import Loader from "../../components/loader";
 import Axios from "axios";
 import bullet from "../../public/bullet.svg";
 import Image from "next/image";
+import BNavbar from "../../components/bgnavbar";
 import font from "../../public/font.svg";
+import YouTube from "react-youtube";
+import fd from "../../public/fd.svg";
+import gfd from "../../public/gfd.svg";
+import buy from "../../public/buy.svg";
+import gbuy from "../../public/gbuy.svg";
 import sound from "../../public/sound.svg";
 import close from "../../public/close.svg";
+import Navbar from "../../components/navbar";
 import dclose from "../../public/darkclose.svg";
 import ProgressBar from "../../components/progress";
 import user_notes from "../../public/user_notes.svg";
@@ -49,6 +56,13 @@ const Read = () => {
   console.log(router.query);
   var num = Number(ideo);
 
+  const opts = {
+    height: "auto",
+    width: "auto",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
   const userid = user;
   var fntsze = rangeval * 30;
   var num2 = Number(ideo ? ideo[0] : null);
@@ -138,7 +152,8 @@ const Read = () => {
         <div>
           {dark ? (
             <StyleRoot>
-              <div className="pb-9">
+              <div className="pb-20">
+                <Navbar />
                 <ProgressBar />
                 {console.log(data)}
                 {console.log(card)}
@@ -287,7 +302,7 @@ const Read = () => {
                     >
                       Ideo Peaks
                     </div>
-                    <div className="bg-green-100 sm:p-6 p-4">
+                    <div className="bg-green-100 sm:p-6 p-4 pb-7">
                       <div className="">
                         {data.Ideo_Peaks.map((val, n) => (
                           <div key={n}>
@@ -321,7 +336,66 @@ const Read = () => {
                 ) : (
                   console.log("")
                 )}
-                <div className="fixed bottom-0 w-[100%]">
+
+                {data.video ? (
+                  <div className="w-[100%] h-[500px]">
+                    <div
+                      className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
+                      //ideopeaks
+                    >
+                      Recommended Ted Talks
+                    </div>
+                    <div className="flex justify-center items-center pb-9">
+                      <div className="">
+                        <YouTube videoId={data.video} opts={opts} />
+                      </div>
+                    </div>
+
+                    <div
+                      className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
+                      //ideopeaks
+                    >
+                      Like This Summary?
+                    </div>
+                    <div className="flex justify-start items-center pl-5 pt-7">
+                      <div>
+                        <Image src={buy} width={30} height={30} />
+                      </div>
+                      <div
+                        className="pl-5 cursor-pointer"
+                        style={cnt}
+                        onClick={function handleTog() {
+                          router.push(`${data.affliate}`);
+                        }}
+                      >
+                        Buy Book On Amazon
+                      </div>
+                    </div>
+                    <div className="flex justify-start items-center pl-5 pt-7">
+                      <div>
+                        <Image src={fd} width={30} height={30} />
+                      </div>
+                      <div
+                        className="pl-5 cursor-pointer "
+                        style={cnt}
+                        nClick={function handleTog() {
+                          router.push("/contact");
+                        }}
+                      >
+                        Provide Feedback
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+                <div className="fixed -bottom-7 w-[100%]">
                   <div className="bg-white drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
                     <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                       <div
@@ -360,7 +434,7 @@ const Read = () => {
                       <div
                         className="rounded-md flex  justify-end cursor-pointer"
                         onClick={
-                          num3 === 7
+                          num3 === 8
                             ? function handleBackward() {
                                 router.replace(
                                   `/summary/${String(num2)}${String(
@@ -635,6 +709,7 @@ const Read = () => {
           ) : (
             <StyleRoot>
               <div className="sm:p-4 pb-9 bg-black">
+                <BNavbar />
                 <ProgressBar />
                 {console.log(data)}
                 <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 pb-1 sm:px-[1.7rem] px-[0.8rem]">
@@ -767,7 +842,7 @@ const Read = () => {
                     >
                       Ideo Peaks
                     </div>
-                    <div className="bg-black sm:p-6">
+                    <div className="bg-black sm:p-6 pb-7">
                       <div className="p-4">
                         {data.Ideo_Peaks.map((val, n) => (
                           <div key={n}>
@@ -803,7 +878,65 @@ const Read = () => {
                 ) : (
                   console.log("")
                 )}
-                <div className="fixed bottom-0 w-[100%]">
+                {data.video ? (
+                  <div className="w-[100%] h-[500px] p-4">
+                    <div
+                      className={` text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
+                      //ideopeaks
+                    >
+                      Recommended Ted Talks
+                    </div>
+                    <div className="flex justify-center items-center pb-9">
+                      <div className="">
+                        <YouTube videoId={data.video} opts={opts} />
+                      </div>
+                    </div>
+
+                    <div
+                      className={` text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                        rangeval * 34
+                      }px] md:text-[${rangeval * 30}px] text-[${
+                        rangeval * 24
+                      }px] `}
+                      //ideopeaks
+                    >
+                      Like This Summary?
+                    </div>
+                    <div className="flex justify-start items-center pl-5 pt-7">
+                      <div>
+                        <Image src={gbuy} width={30} height={30} />
+                      </div>
+                      <div
+                        className="pl-5 cursor-pointer text-white "
+                        style={cnt}
+                        onClick={function handleTog() {
+                          router.push(`${data.affliate}`);
+                        }}
+                      >
+                        Buy Book On Amazon
+                      </div>
+                    </div>
+                    <div className="flex justify-start items-center pl-5 pt-7">
+                      <div>
+                        <Image src={gfd} width={30} height={30} />
+                      </div>
+                      <div
+                        className="pl-5 cursor-pointer text-white "
+                        style={cnt}
+                        nClick={function handleTog() {
+                          router.push("/contact");
+                        }}
+                      >
+                        Provide Feedback
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+                <div className="fixed -bottom-7 w-[100%]">
                   <div>
                     <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
                       <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
@@ -844,7 +977,7 @@ const Read = () => {
                         <div
                           className="  flex cursor-pointer justify-end ideoIcons ml-[4rem]"
                           onClick={
-                            num3 === 7
+                            num3 === 8
                               ? function handleBackward() {
                                   router.replace(
                                     `/summary/${String(num2)}${String(
