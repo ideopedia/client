@@ -17,6 +17,9 @@ import read from "../../public/read_add.svg";
 import read_white from "../../public/read_white.svg";
 import light from "../../public/light.svg";
 import Audio from "../../components/Audio";
+import whad from "../../public/whitead.svg";
+import blad from "../../public/blackad.svg";
+
 
 const Listen = () => {
   const router = useRouter();
@@ -109,7 +112,7 @@ const Listen = () => {
                         setDark(false);
                       }}
                     >
-                      <Image src={light} />
+                      <Image src={whad} />
                     </div>
                   </div>
                 </div>
@@ -189,7 +192,7 @@ const Listen = () => {
               <br />
             </div>
           ) : (
-            <div className="bg-black h-[200%] sm:pb-0 pb-8">
+            <div className="bg-black h-screen">
               <BNavbar />
               <div>
                 {console.log(data)}
@@ -238,7 +241,7 @@ const Listen = () => {
                           setDark(true);
                         }}
                       >
-                        <Image src={light} />
+                        <Image src={blad} />
                       </div>
                     </div>
                   </div>

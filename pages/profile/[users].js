@@ -1,7 +1,13 @@
 import SideNavbar from "../../components/sidebar";
 import Image from "next/image";
 import prime from "../../public/prime.svg";
-import abou from "../../public/About.svg";
+import mail from "../../public/mail.svg";
+import birth from "../../public/birthday.svg";
+import city from "../../public/citybirth.svg";
+import spou from "../../public/spouse.svg";
+import adres from "../../public/address.svg";
+import phne from "../../public/phone.svg"
+import abou from "../../public/about.svg";
 import Navbar from "../../components/navbar";
 import Loader from "../../components/loader";
 import { useState, useEffect } from "react";
@@ -116,7 +122,7 @@ const Profile = () => {
                 <label>Email</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={mail} />
                   </i>
                 </div>
                 <input
@@ -129,7 +135,7 @@ const Profile = () => {
                 <label>Official Email</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={mail} />
                   </i>
                 </div>
                 <input
@@ -142,7 +148,7 @@ const Profile = () => {
                 <label>Phone</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={phne} />
                   </i>
                 </div>
                 <input
@@ -168,7 +174,7 @@ const Profile = () => {
                 <label>Birthday</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={birth} />
                   </i>
                 </div>
                 <input
@@ -181,7 +187,7 @@ const Profile = () => {
                 <label>City of Birth</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={city} />
                   </i>
                 </div>
                 <input
@@ -207,7 +213,7 @@ const Profile = () => {
                 <label>Spouse's Name</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={spou} />
                   </i>
                 </div>
                 <input
@@ -220,7 +226,7 @@ const Profile = () => {
                 <label>Current Address</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={adres} />
                   </i>
                 </div>
                 <input
@@ -234,7 +240,7 @@ const Profile = () => {
                 <label>Permanent Address</label>
                 <div>
                   <i className="ipSvg">
-                    <Image src={abou} />
+                    <Image src={adres} />
                   </i>
                 </div>
                 <input
