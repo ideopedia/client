@@ -259,7 +259,7 @@ const Read = () => {
                         )}
 
                         {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                          <div className="flex justify-center items-center">
+                          <div className="flex justify-center items-center pb-8">
                             <div className="mx-[auto]">
                               <div className="text-left leftQuote">
                                 <Image src={startq} />
@@ -799,7 +799,7 @@ const Read = () => {
                           </div>
                         ))}
                         {data.Book_Summary[0].images[n][0].length > 2 ? (
-                          <div className="flex justify-center items-center p-4">
+                          <div className="flex justify-center items-center px-4 py-16">
                             <Image
                               src={data.Book_Summary[0].images[n][0]}
                               width={300}
@@ -811,7 +811,7 @@ const Read = () => {
                         )}
 
                         {data.Book_Summary[0].Quotes[n].length > 1 ? (
-                          <div className="flex justify-center items-center">
+                          <div className="flex justify-center items-center pb-8">
                             <div className="mx-[auto]">
                               <div className="text-left leftQuote">
                                 <Image src={startq} />
