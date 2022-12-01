@@ -7,7 +7,6 @@ import city from "../../public/citybirth.svg";
 import spou from "../../public/spouse.svg";
 import adres from "../../public/address.svg";
 import phne from "../../public/phone.svg"
-import abou from "../../public/about.svg";
 import Navbar from "../../components/navbar";
 import Loader from "../../components/loader";
 import { useState, useEffect } from "react";
