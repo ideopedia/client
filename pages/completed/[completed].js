@@ -12,6 +12,7 @@ import Navbar from "../../components/navbar";
 import { useRouter } from "next/router";
 import Loader from "../../components/loader";
 import fav from "../../public/fav.svg";
+import Head from "next/head";
 import srch from "../../public/srch.svg";
 import bmark from "../../public/bmark.svg";
 import Image from "next/image";
