@@ -57,8 +57,8 @@ const Read = () => {
   var num = Number(ideo);
 
   const opts = {
-    height: "auto",
-    width: "auto",
+    height: "100%",
+    width: "100%",
     playerVars: {
       autoplay: 0,
     },
@@ -196,7 +196,7 @@ const Read = () => {
                       <div
                         className="p-2 RightIcons cursor-pointer"
                         onClick={function handleAudio() {
-                          if (ideo === "10") {
+                          if ((ideo === "10")|| (ideo === "18")) {
                             router.push(`/audio/11?user=${userid}&book=11`);
                           } else {
                             router.push(
@@ -349,11 +349,11 @@ const Read = () => {
                     >
                       Recommended Ted Talks
                     </div>
-                    <div className="flex justify-center items-center pb-9">
-                      <div className="">
+                    
+                      <div className="flex justify-center items-center">
                         <YouTube videoId={data.video} opts={opts} />
                       </div>
-                    </div>
+                    
 
                     <div
                       className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
@@ -747,9 +747,16 @@ const Read = () => {
                       <div
                         className="p-2 RightIcons cursor-pointer"
                         onClick={function handleAudio() {
-                          router.push(
-                            `/audio/${ideo}?user=${userid}&book=${ideo}`
-                          );
+                          if ((ideo === "10")|| (ideo === "18")){
+                            router.push(
+                              `/audio/11?user=${userid}&book=11`
+                            );
+                          }
+                          else{
+                            router.push(
+                              `/audio/${ideo}?user=${userid}&book=${ideo}`
+                            );
+                          }
                         }}
                       >
                         <Image src={darkad} />

@@ -88,7 +88,7 @@ const Listen = () => {
                 <div className="rounded-md flex items-center justify-end">
                   <div>
                     <div
-                      className="p-2 RightIcons cursor-pointer"
+                      className="flex justify-center items-center p-2 RightIcons cursor-pointer"
                       onClick={function handleModal() {
                         setshowModal(true);
                       }}
@@ -96,7 +96,7 @@ const Listen = () => {
                       <Image src={content} />
                     </div>
                     <div
-                      className="p-2   RightIcons cursor-pointer"
+                      className="flex justify-center items-center p-2  RightIcons cursor-pointer"
                       onClick={function handleRead() {
                         router.push(`/summary/11?user=${user}&ideo=11`);
                       }}
@@ -104,7 +104,7 @@ const Listen = () => {
                       <Image src={read} />
                     </div>
                     <div
-                      className=" RightIcons cursor-pointer"
+                      className="flex justify-center items-center p-2 RightIcons cursor-pointer"
                       onClick={function handleDark() {
                         setDark(false);
                       }}
@@ -189,7 +189,7 @@ const Listen = () => {
               <br />
             </div>
           ) : (
-            <div className="bg-black h-[200%]">
+            <div className="bg-black h-[200%] sm:pb-0 pb-8">
               <BNavbar />
               <div>
                 {console.log(data)}
@@ -209,7 +209,7 @@ const Listen = () => {
                   </div>
                   <div className=" rounded-md flex items-center justify-center">
                     <div>
-                      <div className=" text-white text-bold ideoHead">
+                      <div className=" text-white font-semibold ideoHead xl:text-4xl lg:text-3xl md:text-2xl text-[20px]">
                         {conten[0].Ideo_num}
                       </div>
                     </div>
@@ -217,7 +217,7 @@ const Listen = () => {
                   <div className="rounded-md flex items-center justify-end">
                     <div>
                       <div
-                        className="p-2 RightIcons cursor-pointer"
+                        className="flex justify-center items-center p-2 RightIcons cursor-pointer"
                         onClick={function handleModal() {
                           setshowModal(true);
                         }}
@@ -225,7 +225,7 @@ const Listen = () => {
                         <Image src={darkc} />
                       </div>
                       <div
-                        className="p-2   RightIcons cursor-pointer"
+                        className="flex justify-center items-center p-2  RightIcons cursor-pointer"
                         onClick={function handleRead() {
                           router.push(`/summary/11?user=${user}&book=11`);
                         }}
@@ -233,7 +233,7 @@ const Listen = () => {
                         <Image src={read_white} />
                       </div>
                       <div
-                        className=" RightIcons cursor-pointer"
+                        className="flex justify-center items-center p-2 RightIcons cursor-pointer"
                         onClick={function handleDark() {
                           setDark(true);
                         }}
@@ -244,11 +244,13 @@ const Listen = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-center items-center text-white">
+                <div className="text-white flex justify-center items-center font-medium xl:text-4xl lg:text-3xl md:text-2xl text-[18px] text-center sm:px-6 sm:pb-10 px-4 pb-4">
                   {conten[0].Ideo_title}
                 </div>
-                <div className="pb-4 pt-4">
+                <div className="flex-column justify-center items-center pt-20 sm:pt-0 md:pt-0 lg:pt-0 xl:pt-0">
+                <div className="pb-4 pt-4 flex justify-center items-center">
                   <Image src={conten[0].Ideo_image} width={1500} height={500} />
+                </div>
                 </div>
                 {/* <div className="flex justify-center items-center pt-2">
             <Image src={conten[0].Ideo_image} width={300} height={300} />
