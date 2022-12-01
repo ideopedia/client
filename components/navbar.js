@@ -73,7 +73,7 @@ export default function Navbar(props) {
               <ul className="items-center justify-center space-y-8 lg:flex md:space-x-6 lg:space-y-0">
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button className="dropbtn flex items-center justify-center">
+                    <button className="dropbtn flex items-center justify-center cursor-pointer">
                       Our Readers{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
@@ -81,7 +81,7 @@ export default function Navbar(props) {
                     </button>
                     <div className="dropdown-content">
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/testimonials#readers");
                           setNavbar(false);
@@ -94,7 +94,7 @@ export default function Navbar(props) {
                 </li>
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button className="dropbtn flex items-center justify-center">
+                    <button className="dropbtn flex items-center justify-center cursor-pointer">
                       About Us{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
@@ -102,7 +102,7 @@ export default function Navbar(props) {
                     </button>
                     <div className="dropdown-content ">
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/about");
                           setNavbar(false);
@@ -111,7 +111,7 @@ export default function Navbar(props) {
                         What is Ideopedia ?
                       </div>
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/about#mission");
                           setNavbar(false);
@@ -120,7 +120,7 @@ export default function Navbar(props) {
                         Mission
                       </div>
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/about#vission");
                           setNavbar(false);
@@ -129,7 +129,7 @@ export default function Navbar(props) {
                         Vision
                       </div>
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/about#what");
                           setNavbar(false);
@@ -143,7 +143,7 @@ export default function Navbar(props) {
                 {getCookie("user") ? (
                   <li className="text-black flex justify-center">
                     <div className="dropdown">
-                      <button className="dropbtn flex items-center justify-center">
+                      <button className="dropbtn flex items-center justify-center cursor-pointer">
                         My Account
                         <div className="mt-2 ml-2">
                           <Image src={drop} />
@@ -151,7 +151,7 @@ export default function Navbar(props) {
                       </button>
                       <div className="dropdown-content ">
                         <div
-                          className="flex justify-center items-center py-2"
+                          className="flex justify-center items-center py-2 cursor-pointer"
                           onClick={function handleLogo() {
                             router.push(`/dashboard/${getCookie("user")}`);
                             setNavbar(false);
@@ -160,7 +160,7 @@ export default function Navbar(props) {
                           Dashboard
                         </div>
                         <div
-                          className="flex justify-center items-center py-2"
+                          className="flex justify-center items-center py-2 cursor-pointer"
                           onClick={function handleLogo() {
                             router.push(`/read/${getCookie("user")}`);
                             setNavbar(false);
@@ -169,7 +169,7 @@ export default function Navbar(props) {
                           Read Ideos
                         </div>
                         <div
-                          className="flex justify-center items-center py-2"
+                          className="flex justify-center items-center py-2 cursor-pointer "
                           onClick={function handleLogo() {
                             router.push(`/mylib/${getCookie("user")}`);
                             setNavbar(false);
@@ -184,7 +184,7 @@ export default function Navbar(props) {
 
                 <li className="text-black flex justify-center">
                   <div className="dropdown">
-                    <button className="dropbtn flex items-center justify-center">
+                    <button className="dropbtn flex items-center justify-center cursor-pointer">
                       Team{" "}
                       <div className="mt-2 ml-2">
                         <Image src={drop} />
@@ -192,7 +192,7 @@ export default function Navbar(props) {
                     </button>
                     <div className="dropdown-content">
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/teams#bod");
                           setNavbar(false);
@@ -201,7 +201,7 @@ export default function Navbar(props) {
                         Board of Directors
                       </div>
                       <div
-                        className="flex justify-center items-center py-2"
+                        className="flex justify-center items-center py-2 cursor-pointer"
                         onClick={function handleLogo() {
                           router.push("/teams#bod1");
                           setNavbar(false);
@@ -212,7 +212,7 @@ export default function Navbar(props) {
                     </div>
                   </div>
                 </li>
-                <li className="text-black flex justify-center">
+                <li className="text-black flex justify-center cursor-pointer">
                   <div
                     onClick={function handleLogo() {
                       router.push("/contact");
@@ -223,7 +223,7 @@ export default function Navbar(props) {
                   </div>
                 </li>
                 {getCookie("user") ? (
-                  <li className="text-white flex justify-center">
+                  <li className="text-white flex justify-center cursor-pointer">
                     <div className="log">
                       <button
                         onClick={function handleLogout() {
@@ -237,7 +237,7 @@ export default function Navbar(props) {
                     </div>
                   </li>
                 ) : (
-                  <li className="text-white flex justify-center">
+                  <li className="text-white flex justify-center cursor-pointer">
                     <div
                       onClick={function handleLogo() {
                         router.push("/login");
@@ -252,7 +252,7 @@ export default function Navbar(props) {
                 )}
 
                 {getCookie("user") ? null : (
-                  <li className="text-white flex justify-center">
+                  <li className="text-white flex justify-center cursor-pointer">
                     <div
                       onClick={function handleLogo() {
                         router.push("/signup");
