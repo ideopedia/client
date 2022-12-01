@@ -5,7 +5,7 @@ import mail from "../../public/mail.svg";
 import birth from "../../public/birthday.svg";
 import city from "../../public/citybirth.svg";
 import spou from "../../public/spouse.svg";
-import adres from "../../public/address.svg";
+import adres from "../../public/Address.svg";
 import phne from "../../public/phone.svg"
 import Navbar from "../../components/navbar";
 import Loader from "../../components/loader";
