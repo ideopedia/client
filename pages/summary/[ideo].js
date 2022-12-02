@@ -196,7 +196,7 @@ const Read = () => {
                       <div
                         className="p-2 RightIcons cursor-pointer"
                         onClick={function handleAudio() {
-                          if ((ideo === "10")|| (ideo === "18")) {
+                          if (ideo === "10" || ideo === "18") {
                             router.push(`/audio/11?user=${userid}&book=11`);
                           } else {
                             router.push(
@@ -349,11 +349,10 @@ const Read = () => {
                     >
                       Recommended Ted Talks
                     </div>
-                    
-                      <div className="flex justify-center items-center">
-                        <YouTube videoId={data.video} opts={opts} />
-                      </div>
-                    
+
+                    <div className="flex justify-center items-center">
+                      <YouTube videoId={data.video} opts={opts} />
+                    </div>
 
                     <div
                       className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
@@ -616,7 +615,14 @@ const Read = () => {
                                 </div>
                               </div>
                               <div className="w-full  rounded-md flex items-center justify-center">
-                                <div className="text-black text-base cursor-pointer">
+                                <div
+                                  className="text-black text-base cursor-pointer"
+                                  onClick={function handleSFont() {
+                                    rangeval > 1
+                                      ? setRangeval(rangeval - 0.1)
+                                      : 1;
+                                  }}
+                                >
                                   Aa
                                 </div>
                                 <div className="pl-3 pr-2">
@@ -634,7 +640,14 @@ const Read = () => {
 
                                   {console.log(rangeval)}
                                 </div>
-                                <div className="text-black text-2xl cursor-pointer">
+                                <div
+                                  className="text-black text-2xl cursor-pointer"
+                                  onClick={function handleSFont() {
+                                    rangeval < 1.4
+                                      ? setRangeval(rangeval + 0.1)
+                                      : 1;
+                                  }}
+                                >
                                   Aa
                                 </div>
                               </div>
@@ -747,12 +760,9 @@ const Read = () => {
                       <div
                         className="p-2 RightIcons cursor-pointer"
                         onClick={function handleAudio() {
-                          if ((ideo === "10")|| (ideo === "18")){
-                            router.push(
-                              `/audio/11?user=${userid}&book=11`
-                            );
-                          }
-                          else{
+                          if (ideo === "10" || ideo === "18") {
+                            router.push(`/audio/11?user=${userid}&book=11`);
+                          } else {
                             router.push(
                               `/audio/${ideo}?user=${userid}&book=${ideo}`
                             );
@@ -1202,7 +1212,7 @@ const Read = () => {
                                   onClick={function handleSFont() {
                                     rangeval < 1.4
                                       ? setRangeval(rangeval + 0.1)
-                                      : 1.4;
+                                      : 1;
                                   }}
                                 >
                                   Aa
