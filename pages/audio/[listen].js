@@ -112,7 +112,7 @@ const Listen = () => {
                         setDark(false);
                       }}
                     >
-                      <Image src={whad} />
+                      <Image src={whad}/>
                     </div>
                   </div>
                 </div>

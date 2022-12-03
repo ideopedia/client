@@ -239,12 +239,12 @@ const Read = () => {
                       <div className="py-4 px-6">
                         {data.Book_Summary[0].Content[n].map((val, n) => (
                           <div
-                            className={`text-black  py-4 flex justify-center items-center leading-[197%] font-medium `}
+                            className={`text-black  py-4 px-10 flex justify-center items-center leading-[197%] font-medium `}
                             key={n}
                             style={cnt}
                           >
-                            {val}
-                          </div>
+                            {val} 
+                          </div> //summary
                         ))}
                         {data.Book_Summary[0].images[n][0].length > 2 ? (
                           <div className="flex justify-center items-center px-4 py-16">

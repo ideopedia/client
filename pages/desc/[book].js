@@ -343,7 +343,7 @@ const Book = () => {
           </div>
           <div className="benefits pt-[3rem] pb-[3rem]">
             <div className="benifits my-[2rem] sm:px-[3rem] px-[1rem]">
-              <h1 className="text-xl  lg:text-[34px] md:text-[26px] text-[24px] uppercase pb-[2rem] sm:text-left text-center font-medium">
+              <h1 className="lg:text-[34px] md:text-[26px] text-[24px] uppercase pb-[2rem] sm:text-left text-center font-medium">
                 benefits
               </h1>
               {data.benifits.map((val, n) => (
@@ -402,7 +402,7 @@ const Book = () => {
               >
                 {data.Ideos.map((idea, n) => (
                   <div
-                    className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-8 cursor-pointer bg-white drop-shadow-md"
+                    className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-4 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
                       router.push(
                         `/summary/${idea.Ideo_id}?user=${user}&ideo=${idea.Ideo_id}`
@@ -411,7 +411,7 @@ const Book = () => {
                     key={n}
                   >
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
-                      <h1 className="lg:text-[24px] md:text-[20px] text-[16px] font-medium">
+                      <h1 className="xl:text-[22px] lg:text-[20px] sm:text-[18px] text-[16px] font-medium">
                         {idea.Ideo_num}
                       </h1>
                     </div>

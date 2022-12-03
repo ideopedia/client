@@ -111,7 +111,7 @@ const Dashboard = () => {
         <div>
           <Navbar isLogedIn={true} userid={favo.user} />
 
-          <div className="flex justify-start p-4">
+          <div className="flex justify-center p-4">
             <div className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] pb-4 font-medium">
               Welcome Back
             </div>
@@ -162,14 +162,14 @@ const Dashboard = () => {
               <Link href={`/profile/${favo.user}`}>Complete your profile</Link>
             </div>
           </div>
-          <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center  py-4 px-6">
+          <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center  pt-4 pb-2 px-6">
             <div className=" flex items-center sm:flex-row flex-col justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium pb-4">
               <div>{hr < 12 ? "Good Morning" : "Good Evening"}, </div>
               <div className="sm:ml-4 ml-0"> Hon. {data[0].Name}</div>
             </div>
           </div>
           <div className="flex xl:justify-center lg:justify-center md:justify-center sm:justify-center sm:p-4 sm:pb-9 ">
-            <div className="xl:text-2xl lg:text-xl md:text-xl text-lg font-medium pt-4 flex">
+            <div className="xl:text-2xl lg:text-xl md:text-xl text-lg font-medium flex">
               {type === "Bronze Influencer" ? (
                 <div className="sm:px-0 sm:pt-0 px-5 pt-2">
                   {" "}
@@ -191,7 +191,7 @@ const Dashboard = () => {
                   onClick={function handleLink() {
                     router.push(`/points/${favo.user}`);
                   }}
-                  className=" pl-2 cursor-pointer xl:text-xl lg:text-lg md:text-lg text-base font-medium"
+                  className=" pl-2 cursor-pointer xl:text-xl lg:text-lg md:text-lg text-base font-medium text-gray-500"
                 >
                   Learn more
                 </span>
@@ -257,15 +257,15 @@ const Dashboard = () => {
               </div>
             </div>
           </div> */}
-          <div className="p-2 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:pt-0 pt-8 pb-8">
+          <div className="p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:pt-0 md:pt-10 md:pb-10 pt-8 pb-8">
             <div className="rounded-md flex items-center justify-center">
               <ReadBox amt={data[0].Read} />
             </div>
-            <div className=" rounded-md flex items-center justify-center">
-              <ShareBox amt={data[0].Share} />
-            </div>
             <div className="rounded-md flex items-center justify-center">
               <ChatBox amt={data[0].Feed} />
+            </div>
+            <div className=" rounded-md flex items-center justify-center">
+              <ShareBox amt={data[0].Share} />
             </div>
           </div>
 
@@ -282,7 +282,7 @@ const Dashboard = () => {
             </div> */}
             <div className="p-4  rounded-md  items-center justify-center ">
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8 ">
-                <div className="rounded-md  items-center justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium">
+                <div className="rounded-md  items-center justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium pl-2">
                   LEADERBOARD
                 </div>
                 <div className=" rounded-md items-center justify-center z-50 bg-green-100 drop-shadow-md">
