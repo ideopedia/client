@@ -243,7 +243,7 @@ const Read = () => {
                             key={n}
                             style={cnt}
                           >
-                            {val} 
+                            {val}
                           </div> //summary
                         ))}
                         {data.Book_Summary[0].images[n][0].length > 2 ? (
@@ -958,7 +958,7 @@ const Read = () => {
                     <div className="bg-black drop-shadow rounded-lg -mb-9 mb-[1.5rem]">
                       <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 p-4 ">
                         <div
-                          className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer"
+                          className=" rounded-md flex items-center justify-start ideoIcons cursor-pointer "
                           onClick={
                             num3 !== 0
                               ? function handleForward() {
@@ -975,7 +975,9 @@ const Read = () => {
                                 }
                           }
                         >
-                          <Image src={darkfor} />
+                          <div className="flex justify-start items-center w-[1.5rem] h-[1.5rem] md:w-auto md:h-auto lg:w-auto lg:h-auto xl:w-auto xl:h-auto ">
+                            <Image src={darkfor} />
+                          </div>
                         </div>
                         <div className="rounded-md flex items-center justify-center progBar">
                           <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
@@ -992,7 +994,7 @@ const Read = () => {
                           </div>
                         </div>
                         <div
-                          className="  flex cursor-pointer justify-end ideoIcons ml-[4rem]"
+                          className="  flex cursor-pointer justify-end items-center ideoIcons mr-0 lg:mr-[2rem] sm:mr-[2rem] xl:mr-[2rem] md:mr-[2rem]"
                           onClick={
                             num3 === 8
                               ? function handleBackward() {
@@ -1051,7 +1053,7 @@ const Read = () => {
                                 }
                           }
                         >
-                          <div className="flex justify-end items-center">
+                          <div className="flex justify-end items-center w-[1.5rem] h-[1.5rem] md:w-auto md:h-auto lg:w-auto lg:h-auto xl:w-auto xl:h-auto">
                             <Image src={darkb} />
                           </div>
                         </div>
@@ -1292,7 +1294,7 @@ const Read = () => {
         </div>
       ) : (
         <div>
-          <Loader />
+          {console.log("wait")}
         </div>
       )}
     </>

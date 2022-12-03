@@ -12,6 +12,7 @@ import drop from "../../public/dropdownlogo.svg";
 import darr from "../../public/downarr.svg";
 import arr from "../../public/leftarr.svg";
 import srch from "../../public/srch.svg";
+import Footer from "../../components/footer";
 import bronze from "../../public/bronze.svg";
 import gold from "../../public/gold.svg";
 import silver from "../../public/silver.svg";
@@ -172,9 +173,10 @@ const Points = () => {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       ) : (
-        <Loader />
+        console.log("wait")
       )}
     </div>
   );

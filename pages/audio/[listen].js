@@ -192,7 +192,7 @@ const Listen = () => {
               <br />
             </div>
           ) : (
-            <div className="bg-black h-screen">
+            <div className="bg-black h-[100%]">
               <BNavbar />
               <div>
                 {console.log(data)}
@@ -326,7 +326,7 @@ const Listen = () => {
           )}
         </div>
       ) : (
-        <Loader />
+        console.log("wait")
       )}
     </div>
   );

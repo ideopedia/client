@@ -8,6 +8,7 @@ import normal from "../../public/normal.png";
 import create from "../../public/create.svg";
 import red from "../../public/red.svg";
 import infu from "../../public/influencer1.svg";
+import Footer from "../../components/footer";
 import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
 import Navbar from "../../components/navbar";
 import cht from "../../public/cht.svg";
@@ -118,7 +119,7 @@ const Dashboard = () => {
           </div>
           <div className="flex  justify-center items-center p-4 ">
             <div className="">
-              {isBreakpoint ? (
+              {/* {isBreakpoint ? (
                 <div className="relative">
                   <Image
                     src={data[0].Image}
@@ -147,20 +148,28 @@ const Dashboard = () => {
                     />
                   </div>
                 </CircularProgressbarWithChildren>
-              )}
+              )} */}
 
               {/*  */}
-              <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
+              {/* <div className="flex justify-center items-center -mt-2 md:-mt-1 sm:-mt-0 ">
                 <span className="p-2 md:p-0 sm:p-2 bg-green-500 px-6 md:px-3 sm:px-1 rounded-md sm:text-base text-base">
                   {data[0].Profile_percent} %
                 </span>
+              </div> */}
+              <div className="relative">
+                <Image
+                  src={data[0].Image}
+                  width={191}
+                  height={191}
+                  style={{ borderRadius: "50%", marginTop: "3px" }}
+                />
               </div>
             </div>
           </div>
           <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center ">
-            <div className="xl:text-xl lg:text-lg md:text-lg font-medium pb-4 sm:pl-4 text-gray-500">
+            {/* <div className="xl:text-xl lg:text-lg md:text-lg font-medium pb-4 sm:pl-4 text-gray-500">
               <Link href={`/profile/${favo.user}`}>Complete your profile</Link>
-            </div>
+            </div> */}
           </div>
           <div className="flex xl:justify-center lg:justify-center md:justify-center justify-center  pt-4 pb-2 px-6">
             <div className=" flex items-center sm:flex-row flex-col justify-center xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-medium pb-4">
@@ -289,7 +298,12 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-xl font-medium">1<span className=" lg:text-lg md:text-base text-[14px] font-medium">ST</span></h1>
+                        <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-xl font-medium">
+                          1
+                          <span className=" lg:text-lg md:text-base text-[14px] font-medium">
+                            ST
+                          </span>
+                        </h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -315,7 +329,12 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">2<span className="lg:text-lg md:text-base text-[14px] font-medium">ND</span></h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
+                          2
+                          <span className="lg:text-lg md:text-base text-[14px] font-medium">
+                            ND
+                          </span>
+                        </h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -341,7 +360,12 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">3<span className="lg:text-lg md:text-base text-[14px] font-medium">RD</span></h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
+                          3
+                          <span className="lg:text-lg md:text-base text-[14px] font-medium">
+                            RD
+                          </span>
+                        </h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -367,7 +391,12 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">4<span className="lg:text-lg md:text-base text-[14px] font-medium">TH</span></h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
+                          4
+                          <span className="lg:text-lg md:text-base text-[14px] font-medium">
+                            TH
+                          </span>
+                        </h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -393,7 +422,12 @@ const Dashboard = () => {
                   <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 lg:gap-2">
                     <div className=" rounded-md flex items-center justify-end">
                       <div className="pt-1 pb-1">
-                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">5<span className="lg:text-lg md:text-base text-[14px] font-medium">TH</span></h1>
+                        <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
+                          5
+                          <span className="lg:text-lg md:text-base text-[14px] font-medium">
+                            TH
+                          </span>
+                        </h1>
                       </div>
                     </div>
                     <div className="  rounded-md flex items-center justify-center">
@@ -418,9 +452,10 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       ) : (
-        <Loader />
+        console.log("wait")
       )}
     </div>
   );

@@ -7,8 +7,10 @@ import create from "../../public/create.svg";
 import arr from "../../public/downarr.svg";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import Footer from "../../components/footer";
 import drop from "../../public/dropdownlogo.svg";
 import Navbar from "../../components/navbar";
+
 import { useRouter } from "next/router";
 import Loader from "../../components/loader";
 import fav from "../../public/fav.svg";
@@ -99,7 +101,7 @@ const Completed = () => {
             </div> */}
 
             <br />
-            <div className="dropdown pl-4">
+            <div className="dropdown px-0 md:px-5 lg:px-9">
               <button className="dropbtn flex items-center justify-center">
                 Sort By{" "}
                 <div className="mt-2 ml-2">
@@ -130,9 +132,10 @@ const Completed = () => {
             ))}
             {}
           </div>
+          <Footer />
         </div>
       ) : (
-        <Loader />
+        console.log("wait")
       )}
     </div>
   );

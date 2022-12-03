@@ -69,7 +69,7 @@ export default function ReadCard() {
             </Swiper>
           ) : (
             <div>
-              <Loader />
+            {console.log("wait")}
             </div>
           )}
         </div>

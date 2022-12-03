@@ -210,9 +210,9 @@
   }
 }
 @media screen and (max-width: 750px) {
-  .ideoIcons {
+  /* .ideoIcons {
     width: 1.5rem;
-  }
+  } */
   .progRight {
     padding: 0 3rem;
   }

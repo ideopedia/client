@@ -10,6 +10,7 @@ import { getCookie } from "cookies-next";
 import fav from "../../public/fav.svg";
 import recomend from "../../public/recomend.svg";
 import Axios from "axios";
+import Footer from "../../components/footer";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbar";
 import wtf from "../../public/wtf.svg";
@@ -147,10 +148,11 @@ const Read = () => {
               )}
             </div>
           </div>
+          <Footer />
         </div>
       ) : (
         <div className="load">
-          <Loader />
+          {console.log("wait")}
         </div>
       )}
     </div>

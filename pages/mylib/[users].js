@@ -6,6 +6,7 @@ import SideNavbar from "../../components/sidebar";
 import Card from "../../components/card";
 import CompletedCard from "../../components/CompletedCards";
 import Link from "next/link";
+
 import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import task from "../../public/newtask.svg";
@@ -20,6 +21,7 @@ import srch from "../../public/srch.svg";
 import bmark from "../../public/bmark.svg";
 
 import Image from "next/image";
+import Footer from "../../components/footer";
 const New = () => {
   const [data, setData] = useState(false);
   const [Recent, setRecent] = useState(false);
@@ -211,9 +213,10 @@ const New = () => {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       ) : (
-        <Loader />
+        console.log("wait")
       )}
     </div>
   );

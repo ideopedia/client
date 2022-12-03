@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Axios from "axios";
-
+import Footer from "../../components/footer";
 import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import bookicn from "../../public/bookicn.svg";
@@ -402,7 +402,7 @@ const Book = () => {
               >
                 {data.Ideos.map((idea, n) => (
                   <div
-                    className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 py-4 cursor-pointer bg-white drop-shadow-md"
+                    className="grid grid-cols-[20%_80%] gap-2 py-4 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
                       router.push(
                         `/summary/${idea.Ideo_id}?user=${user}&ideo=${idea.Ideo_id}`
@@ -421,13 +421,7 @@ const Book = () => {
                       </span>
                     </div>
 
-                    {tick ? (
-                      <div className="p-4 rounded-md flex items-center justify-center h-auto lg:h-20">
-                        <Image src={ok} width={25} height={25} />
-                      </div>
-                    ) : (
-                      console.log("error")
-                    )}
+                    
                   </div>
                 ))}
               </div>
@@ -454,10 +448,11 @@ const Book = () => {
               ))}
             </div>
           </div>
+          <Footer />
         </div>
       ) : (
         <div className="load">
-          <Loader />
+          {console.log("wait")}
         </div>
       )}
     </div>

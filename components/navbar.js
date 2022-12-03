@@ -223,26 +223,26 @@ export default function Navbar(props) {
                   </div>
                 </li>
                 {getCookie("user") ? (
-                  <li className="text-white flex justify-center cursor-pointer">
+                  <li className="text-white flex justify-center cursor-pointer"onClick={function handleLogout() {
+                    removeCookies("user");
+                    router.push("/");
+                    setNavbar(false);
+                  }}>
                     <div className="log">
                       <button
-                        onClick={function handleLogout() {
-                          removeCookies("user");
-                          router.push("/");
-                          setNavbar(false);
-                        }}
+                        
                       >
                         Logout
                       </button>
                     </div>
                   </li>
                 ) : (
-                  <li className="text-white flex justify-center cursor-pointer">
+                  <li className="text-white flex justify-center cursor-pointer"onClick={function handleLogo() {
+                    router.push("/login");
+                    setNavbar(false);
+                  }}>
                     <div
-                      onClick={function handleLogo() {
-                        router.push("/login");
-                        setNavbar(false);
-                      }}
+                      
                     >
                       <div className="log">
                         <button>Login</button>
@@ -252,12 +252,12 @@ export default function Navbar(props) {
                 )}
 
                 {getCookie("user") ? null : (
-                  <li className="text-white flex justify-center cursor-pointer">
+                  <li className="text-white flex justify-center cursor-pointer" onClick={function handleLogo() {
+                    router.push("/signup");
+                    setNavbar(false);
+                  }}>
                     <div
-                      onClick={function handleLogo() {
-                        router.push("/signup");
-                        setNavbar(false);
-                      }}
+                      
                     >
                       <div className="sin">
                         <button>Signup</button>
