@@ -320,34 +320,33 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="flex justify-center items-center text-bold pt-10 pb-2 px-10">
+      <div className="flex justify-center items-center text-bold pt-10 pb-6 px-10">
         <span className="flex items-center justify-center lg:text-4xl md:text-3xl text-[26px] font-semibold text-green-500 uppercase">
           TESTIMONALS
         </span>
       </div>
       <div>
         <div className="p-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:mx-4 mx-1">
-          <div className="p-4 rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow">
+          <div className="sm:p-6 p-4 rounded-md flex items-center justify-center bg-white dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-              <div className=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high1">
                   <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
                     I commend Ideopedia for this service to our nation!
                   </span>
                 </div>
               </div>
-              <div className="sm:p-4  rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto flex justify-center items-center">
+                  <span className=" text-black lg:text-lg md:text-lg text-[14px] text-center font-medium py-4">
                     Ideopedia is an incredible initiative. The synopses are
                     highly informative and they make for great short reads. They
-                    provide deep insights on relevant and timely subjects
-                    researched by the worlds leading thinkers, I commend
+                    provide deep insights on relevant, I commend
                     Ideopedia for this service to our nation.
                   </span>
                 </div>
               </div>
-              <div className="p-4 rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <div>
                   <Image src={test} />
                 </div>
@@ -355,25 +354,25 @@ export default function Home() {
                   <div className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr Jayant Sinha
                   </div>
-                  <div className="text-[14px] font-medium text-gray-500 uppercase">
+                  <div className="sm:text-[14px] text-[13px] font-medium text-gray-500 uppercase">
                     Former Minister of Civil Aviation
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="p-4 rounded-md flex items-center justify-center bg-white dropshadow">
+          <div className="sm:p-6 p-4 rounded-md flex items-center justify-center bg-white dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-              <div className=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
-                  <span className="text-white lg:text-xl md:text-lg text-sm font-semibold text-center">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high1">
+                  <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
                     I applaud Ideopedia for the stellar work!
                   </span>
                 </div>
               </div>
-              <div className="sm:p-4  rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto flex justify-center items-center">
+                  <span className=" text-black lg:text-lg md:text-lg text-[14px] text-center font-medium py-4">
                     Knowledge is among the most precious gifts in the world. As
                     an Indian, and a constant seeker of knowledge I truly
                     applaud Ideopedia for the stellar work they are doing in
@@ -381,7 +380,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="p-4 rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <div>
                   <Image src={testflu} />
                 </div>
@@ -389,26 +388,26 @@ export default function Home() {
                   <div className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr Rajiv Kumar
                   </div>
-                  <div className="text-[14px] font-medium text-gray-500">
+                  <div className="sm:text-[14px] text-[13px] font-medium text-gray-500">
                     VICE CHAIRMAN OF NITI AAYOG, INDIA
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className=" p-4 rounded-md flex items-center justify-center bg-white dropshadow">
+          <div className="sm:p-6 p-4 rounded-md flex items-center justify-center bg-white dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-              <div className=" p-4 rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
-                  <span className="text-white lg:text-xl md:text-lg text-sm font-semibold text-center">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto bg-green-500 flex justify-center items-center high1">
+                  <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
                     My gratitude to Ideopedia's founders for the gift of
                     knowledge
                   </span>
                 </div>
               </div>
-              <div className="sm:p-4  rounded-md flex items-center justify-center">
-                <div className="w-auto h-auto flex justify-center items-center high">
-                  <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
+              <div className="rounded-md flex items-center justify-center">
+                <div className="w-auto h-auto flex justify-center items-center ">
+                  <span className=" text-black lg:text-lg md:text-lg text-[14px] text-center font-medium py-4">
                     I look forward to reading Ideopedia's synopsis as their
                     choice of books, topics and content are interesting and
                     value adding. My gratitude to Ideopedia's founders for
@@ -416,7 +415,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="p-4 rounded-md flex items-center justify-center">
+              <div className="rounded-md flex items-center justify-center">
                 <div>
                   <Image src={testfl} />
                 </div>
@@ -424,7 +423,7 @@ export default function Home() {
                   <div className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr S Ramadorai
                   </div>
-                  <div className="text-[14px] font-medium text-gray-500">
+                  <div className="sm:text-[14px] text-[13px] font-medium text-gray-500 uppercase">
                     FORMER CEO, TATA CONSULTANCY SERVICES
                   </div>
                 </div>

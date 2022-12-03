@@ -271,7 +271,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="py-20" id="goal">
+        <div className="py-10" id="goal">
           <div className="flex justify-center items-center">
             <span className="xl:text-4xl lg:text-3xl md:text-3xl text-[26px] font-semibold text-green-500 text-center">
               INDIA'S ABUNDANT RESOURCES

@@ -3,6 +3,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestSlides from "./testSlides";
 import testslide1 from "../public/testslide1.svg"; // Import Swiper styles
+import testslide2 from "../public/testslide2.svg"; // Import Swiper styles
+import testslide3 from "../public/testslide3.svg"; // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -35,12 +37,12 @@ export default function SliderComponent() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <Image src={testslide1} />
+            <Image src={testslide2} />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <Image src={testslide1} />
+            <Image src={testslide3} />
           </div>
         </SwiperSlide>
       </Swiper>

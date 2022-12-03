@@ -53,7 +53,7 @@ const New = () => {
         }
       );
   };
-  const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+  const FormHeader = (props) => <h2 id="headerTitle" className="py-4">{props.title}</h2>;
   return (
     <div>
       <Navbar isLogedIn={false} />
@@ -61,14 +61,14 @@ const New = () => {
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <div className="flex items-center justify-center bg-green-500 h-screen">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-              <div className="pt-4 pl-4 pr-4 rounded-md flex items-center justify-center">
+              <div className="pl-4 pr-4 rounded-md flex items-center justify-center">
                 <Link href="https://g.page/thinkindia?share">
                   <a target="_blank">
                     <Image src={map} />
                   </a>
                 </Link>
               </div>
-            <div className="py-10">
+            <div className="py-2">
               <div className="rounded-md flex items-center justify-center cursor-pointer">
                 <span>
                   <Image src={mail} />
@@ -113,7 +113,7 @@ const New = () => {
 
           <div className="rounded-md flex items-center justify-center">
             <ToastContainer />
-            <div className="newloginContainer">
+            <div className="newloginContainer px-6 pb-2">
               <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="CONTACT US" />
               </div>

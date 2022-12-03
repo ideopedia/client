@@ -15,7 +15,7 @@ function Footer() {
       <div className="sm:pt-10  pb-4 footer">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-2 lg:gap-4 px-5">
           <div className="p-2  logo item sm:text-left text-center">
-            <div className="pt-20">
+            <div className="pt-2">
               <Image
                 src={logo}
                 width={120}
