@@ -83,7 +83,7 @@ const Favourites = () => {
             </div> */}
 
             <br />
-            <div className="dropdown px-0 md:px-5 lg:px-9">
+            <div className="dropdown px-2 md:px-5 lg:px-9">
               <button className="dropbtn flex items-center justify-center">
                 Sort By{" "}
                 <div className="mt-2 ml-2">
