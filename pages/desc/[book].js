@@ -353,9 +353,9 @@ const Book = () => {
                     image={val.image}
                     content={
                       val.benifits[0] +
-                      "." +
+                      +
                       val.benifits[1] +
-                      "." +
+                       +
                       val.benifits[1]
                     }
                   />
