@@ -402,7 +402,7 @@ const Book = () => {
               >
                 {data.Ideos.map((idea, n) => (
                   <div
-                    className="grid grid-cols-[20%_80%] gap-2 py-4 cursor-pointer bg-white drop-shadow-md"
+                    className="grid grid-cols-[30%_70%] gap-2 py-4 cursor-pointer bg-white drop-shadow-md"
                     onClick={function handleTick() {
                       router.push(
                         `/summary/${idea.Ideo_id}?user=${user}&ideo=${idea.Ideo_id}`
