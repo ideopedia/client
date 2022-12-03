@@ -10,7 +10,7 @@ export default function  DropdownComponent(props) {
   return (
     <Menu as="div" className="relative inline-block whiteBox">
       <div>
-        <Menu.Button className=" md:px-4 py-2 px-3 xl:text-[26px] lg:text-[24px] sm:text-[22px] text-[18px] font-medium drop-shadow-md text-green-500 bg-white    focus:outline-none  whiteBox">
+        <Menu.Button className="py-1 px-3 xl:text-[22px] lg:text-[20px] sm:text-[18px] text-[16px] font-medium drop-shadow-md text-green-500 bg-white    focus:outline-none  whiteBox">
           <div className="flex items-center justify-between py-[1rem] xl:px-[3rem]">
             <div className="rounded-md text-left">
               <span className="benifitsTopics">{props.name}</span>
@@ -66,7 +66,7 @@ export default function  DropdownComponent(props) {
                         </div>
                         <div className="rounded-md flex items-start justify-start">
                           {" "}
-                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 lg:text-left text-center sm:px-8 px-2"> {props.content}</span>
+                          <span className="xl:text-xl lg:text-lg md:text-lg xl:leading-[197%] lg:leading-[197%] md:leading-[197%] sm:leading-[197%] leading-[197%] font-medium pb-1 sm:px-8 px-2"> {props.content}</span>
                         </div>
                       </div>
                     </div>

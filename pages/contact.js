@@ -10,9 +10,9 @@ import facebook from "../public/facebook1.svg";
 import twitter from "../public/twitter2.svg";
 import telegram from "../public/telegram2.svg";
 import map from "../public/map.svg";
-import mail from "../public/mail.svg";
+import mail from "../public/contmail.svg";
 import emailjs from "@emailjs/browser";
-import location from "../public/location.svg";
+import location from "../public/contlocation.svg";
 const New = () => {
   const [user, setUser] = useState(null);
   const [email_Id, setEmail_Id] = useState(null);
@@ -57,9 +57,9 @@ const New = () => {
   return (
     <div>
       <Navbar isLogedIn={false} />
-      <div className="p-4">
+      <div className="">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <div className=" rounded-md flex items-center justify-center bg-green-500 h-screen">
+          <div className="flex items-center justify-center bg-green-500 h-screen">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div className="pt-4 pl-4 pr-4 rounded-md flex items-center justify-center">
                 <Link href="https://g.page/thinkindia?share">
@@ -68,6 +68,7 @@ const New = () => {
                   </a>
                 </Link>
               </div>
+            <div className="py-10">
               <div className="rounded-md flex items-center justify-center cursor-pointer">
                 <span>
                   <Image src={mail} />
@@ -77,7 +78,7 @@ const New = () => {
                   passHref={true}
                 >
                   <a target="_blank">
-                    <div className="pl-2 pb-1 text-white text-xl">
+                    <div className="pl-2 pb-1 text-white xl:text-xl md:text-[18px] text-[16px] font-medium">
                       info@ideopedia.org
                     </div>
                   </a>
@@ -89,12 +90,13 @@ const New = () => {
                 </span>
                 <Link href="https://g.page/thinkindia?share" passHref={true}>
                   <a target="_blank">
-                    <div className="pl-2 pb-1 text-white text-xl">
+                    <div className="pl-2 pb-1 text-white xl:text-xl md:text-[18px] text-[16px] font-medium">
                       info@ideopedia.org
                     </div>
                   </a>
                 </Link>
               </div>
+            </div>
               <div className="pt-9 rounded-md flex items-end justify-center">
                 <div className="m-2 fohv">
                   <Image src={facebook} />
@@ -109,7 +111,7 @@ const New = () => {
             </div>
           </div>
 
-          <div className="rounded-md flex items-center justify-center pb-9">
+          <div className="rounded-md flex items-center justify-center">
             <ToastContainer />
             <div className="newloginContainer">
               <div className="newLoginTop flex items-center justify-center">

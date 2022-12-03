@@ -692,7 +692,7 @@
   color: #2cb67d;
   font-size: 2rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #headerTitle {
     font-weight: 600;
     padding-top: 20px;

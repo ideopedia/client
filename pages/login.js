@@ -149,11 +149,11 @@ function Login() {
       <Navbar isLogedIn={false} />
       <section className="h-screen new">
         <div className="loginContainer">
-          <div className="pt-20">
+          <div className="xl:pt-20">
             <Image src={login} />
           </div>
           <ToastContainer />
-          <div className="newloginContainer lg:pt-16">
+          <div className="newloginContainer">
             <div className="newLoginTop flex items-center justify-center">
               <FormHeader title="LOGIN" />
             </div>

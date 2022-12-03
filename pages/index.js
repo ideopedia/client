@@ -38,8 +38,8 @@ import hover8 from "../public/hover8.svg";
 import Features from "../components/Features";
 import sampInf from "../public/infTest.svg";
 import Hero from "../components/hero";
-import testflu from "../public/testflu2.svg";
-import testfl from "../public/testflu3.svg";
+import testflu from "../public/testflu.svg";
+import testfl from "../public/testfl.svg";
 import InfluencerSliderleft from "../components/infuslide";
 import InfluencerSliderright from "../components/infuslideright";
 import { useState, useCallback, useEffect, useReducer } from "react";
@@ -108,8 +108,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
           <div className=" flex justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf1"})}
-              onMouseLeave={() => dispatchInf({type:"noth"}) }
+              onMouseEnter={() => dispatchInf({ type: "inf1" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf1 ? influencer1 : hover1}
               width={250}
               height={250}
@@ -118,8 +118,8 @@ export default function Home() {
 
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf2"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf2" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf2 ? influencer2 : hover2}
               width={250}
               height={250}
@@ -127,8 +127,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf3"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf3" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf3 ? influencer3 : hover3}
               width={250}
               height={250}
@@ -136,8 +136,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf4"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf4" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf4 ? influencer4 : hover4}
               width={250}
               height={250}
@@ -145,8 +145,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf5"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf5" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf5 ? influencer5 : hover5}
               width={250}
               height={250}
@@ -157,8 +157,8 @@ export default function Home() {
           <div className="p-4  rounded-md flex items-center justify-center"></div>
           <div className=" rounded-md flex items-center justify-center infPic ">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf6"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf6" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf6 ? influencer6 : hover6}
               width={250}
               height={250}
@@ -166,8 +166,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf7"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf7" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf7 ? influencer7 : hover7}
               width={250}
               height={250}
@@ -175,8 +175,8 @@ export default function Home() {
           </div>
           <div className="p-4  rounded-md flex items-center justify-center infPic">
             <Image
-              onMouseEnter={() => dispatchInf({type:"inf8"})}
-              onMouseLeave={() => dispatchInf({type:"noth"})}
+              onMouseEnter={() => dispatchInf({ type: "inf8" })}
+              onMouseLeave={() => dispatchInf({ type: "noth" })}
               src={!infState.inf8 ? influencer8 : hover8}
               width={250}
               height={250}
@@ -326,24 +326,22 @@ export default function Home() {
         </span>
       </div>
       <div>
-        <div className="p-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="p-4 rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow tte">
+        <div className="p-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:mx-4 mx-1">
+          <div className="p-4 rounded-md flex items-center justify-center bg-white md:py-5 py-5 dropshadow">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
                   <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
-                    Selfless service at its best so that our country benefits
+                    Ideopedia is a wonderful idea
                   </span>
                 </div>
               </div>
               <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
-                    Month after month, year after year, Ideopedia has been
-                    mailing thousands of printed copies of its synopses to its
-                    readers with the goal to increase the awareness of the
-                    people. Selfless service at its best so that our country
-                    benefits.
+                    Ideopedia is a wonderful idea. As they say "the person you
+                    will be in 5 years is based on the books you read today".
+                    Thanks to Ideopedia for adding to the books read today.
                   </span>
                 </div>
               </div>
@@ -352,11 +350,11 @@ export default function Home() {
                   <Image src={test} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">
-                    Mr Suresh Prabhu
-                  </h1>
-                  <div className="text-[14px] font-medium text-gray-500">
-                    FORMER MINISTER OF COMMERCE & INDUSTRY, GOVERNMENT OF INDIA
+                  <div className="lg:text-lg md:text-lg text-base font-semibold">
+                    Mr Gopalakrishnan
+                  </div>
+                  <div className="text-[14px] font-medium text-gray-500 uppercase">
+                    Executive Director, Tata Sons
                   </div>
                 </div>
               </div>
@@ -383,12 +381,12 @@ export default function Home() {
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={testflu} width={66} height={66} />
+                  <Image src={testflu} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">
+                  <div className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr Rajiv Kumar
-                  </h1>
+                  </div>
                   <div className="text-[14px] font-medium text-gray-500">
                     VICE CHAIRMAN OF NITI AAYOG, INDIA
                   </div>
@@ -418,12 +416,12 @@ export default function Home() {
               </div>
               <div className="p-4 rounded-md flex items-center justify-center">
                 <div>
-                  <Image src={testfl} width={66} height={66} />
+                  <Image src={testfl} />
                 </div>
                 <div className="pl-5">
-                  <h1 className="lg:text-lg md:text-lg text-base font-semibold">
+                  <div className="lg:text-lg md:text-lg text-base font-semibold">
                     Mr S Ramadorai
-                  </h1>
+                  </div>
                   <div className="text-[14px] font-medium text-gray-500">
                     FORMER CEO, TATA CONSULTANCY SERVICES
                   </div>
