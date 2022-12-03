@@ -332,7 +332,7 @@ export default function Home() {
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
                   <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
-                    Ideopedia is a wonderful idea
+                    Ideopedia is a wonderful idea!
                   </span>
                 </div>
               </div>
