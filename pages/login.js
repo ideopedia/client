@@ -5,7 +5,7 @@ import login from "../public/login.svg";
 import Image from "next/image";
 import eyeoff from "../public/eyeoff.svg";
 import eyeon from "../public/eyeon.svg";
-import { getCookie, setCookies, removeCookies,setCookie } from "cookies-next";
+import { getCookie, setCookies, removeCookies, setCookie } from "cookies-next";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Link from "next/link";
@@ -15,7 +15,7 @@ import { useReducer, useEffect, useState, useRef } from "react";
 
 function Login() {
   const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
-  console.log(getCookie('test'))
+  console.log(getCookie("test"));
   const classes =
     "border-2 border-gray-300 text-gray-900 text-base font-medium rounded-md   focus:ring-green-500 focus:border-green-500  block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 ";
   const emailRef = useRef();
@@ -54,7 +54,7 @@ function Login() {
       case "input":
         return {
           value: action.val,
-          isValid: action.val.includes("@") ,
+          isValid: action.val.includes("@"),
           // isValid: true,
         };
       case "validate":
@@ -108,11 +108,11 @@ function Login() {
         // console.log(data.data);
         // router.push(`/dashboard/${data.data.User_Id}`);
         if (data.data === null) {
-          console.log(data.data)
+          console.log(data.data);
           toastifyFailure();
         } else {
           console.log(data.data);
-          setCookie('user',data.data.User_Id,{ maxAge: 10000 })
+          setCookie("user", data.data.User_Id, { maxAge: 10000 });
           toastifySuccess();
           router.push(`/dashboard/${data.data.User_Id}`);
         }
@@ -145,122 +145,242 @@ function Login() {
     passValid ? " " : "focus:ring-red-500 focus:border-red-500"
   }`;
   return (
+    // <div>
+    //   <Navbar isLogedIn={false} />
+    //   <section className="h-screen new">
+    //     <div className="loginContainer">
+    //       <div className="xl:pt-20">
+    //         <Image src={login} />
+    //       </div>
+    //       <ToastContainer />
+    //       <div className="newloginContainer">
+    //         <div className="newLoginTop flex items-center justify-center">
+    //           <FormHeader title="LOGIN" />
+    //         </div>
+    //         <form className="newLoginForm" onSubmit={loginSubmitHandler}>
+    //           <label className="text-lg font-medium">Email</label>
+    //           <input
+    //             className={classes + emailClass}
+    //             type="email"
+    //             placeholder="Enter your email"
+    //             onChange={emailChangeHandler}
+    //             ref={emailRef}
+    //             onBlur={emailBlurHandler}
+    //             required={true}
+    //           />
+    //           {!emailValid && (
+    //             <p
+    //               style={{
+    //                 fontSize: "16px",
+    //                 position: "relative",
+    //                 bottom: "10px",
+    //                 left: "10px",
+    //                 color: "red",
+    //               }}
+    //             >
+    //               Enter a valid email
+    //             </p>
+    //           )}
+    //           <div className="flex justify-between pr-[1.5rem]">
+    //             <label className="text-lg font-medium">Password</label>
+    //             <p
+    //               style={{ position: "relative", top: "2.9rem" }}
+    //               className="cursor-pointer"
+    //               onClick={function handlePass() {
+    //                 pass === "password" ? setPass("text") : setPass("password");
+    //               }}
+    //             >
+    //               {pass === "password" ? (
+    //                 <Image src={eyeoff} />
+    //               ) : (
+    //                 <Image src={eyeon} />
+    //               )}
+    //             </p>
+    //           </div>
+
+    //           <input
+    //             className={classes + passClass}
+    //             type={pass}
+    //             placeholder="Enter your password"
+    //             onChange={passwordChangeHandler}
+    //             ref={passRef}
+    //             onBlur={passBlurHandler}
+    //             required={true}
+    //           />
+    //           {!passValid && (
+    //             <p
+    //               style={{
+    //                 fontSize: "16px",
+    //                 position: "relative",
+    //                 bottom: "10px",
+    //                 left: "10px",
+    //                 color: "red",
+    //               }}
+    //             >
+    //               Enter atleast 6 characters
+    //             </p>
+    //           )}
+    //           <div className="formBottom">
+    //             <label>
+    //               <input
+    //                 style={{ marginRight: "6px" }}
+    //                 className="form-check-input appearance-none h-4 w-4 border-2 border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+    //                 type="checkbox"
+    //                 value=""
+    //                 id="flexCheckDefault"
+    //               ></input>
+    //               <span className="text-base font-medium">Remember me</span>
+    //             </label>
+    //             <label
+    //               className="text-gray-500 text-base font-medium cursor-pointer"
+    //               onClick={function handleForgot() {
+    //                 router.push("/forgotPassword");
+    //               }}
+    //             >
+    //               Forgot password
+    //             </label>
+    //           </div>
+    //           <div id="button" className="row flex justify-center items-center">
+    //             <button
+    //               type="submit"
+    //               style={{ width: "40%" }}
+    //               // onClick={function handleClick() {
+    //               //   router.push("/read");
+    //               // }}
+    //             >
+    //               Login
+    //             </button>
+    //           </div>
+
+    //           <div className="signDesc" style={{ margin: "1.5rem auto" }}>
+    //             <p className="font-medium">
+    //               Don't have an account?{"    "}
+    //               <span className="text-green-500 font-medium">
+    //                 <Link href="/signup">Signup here</Link>
+    //               </span>
+    //             </p>
+    //           </div>
+    //         </form>
+    //       </div>
+    //     </div>
+    //   </section>
+    // </div>
     <div>
       <Navbar isLogedIn={false} />
       <section className="h-screen new">
-        <div className="loginContainer">
-          <div className="xl:pt-20">
-            <Image src={login} />
-          </div>
-          <ToastContainer />
-          <div className="newloginContainer">
-            <div className="newLoginTop flex items-center justify-center">
-              <FormHeader title="LOGIN" />
+        <div className="px-6 h-full text-gray-800">
+          <div className="flex xl:justify-center lg:justify-center justify-center items-center flex-wrap h-full g-6">
+            <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-8/12 md:w-9/12 mb-12 md:mb-0 new1">
+              <Image src={login} />
             </div>
-            <form className="newLoginForm" onSubmit={loginSubmitHandler}>
-              <label className="text-lg font-medium">Email</label>
-              <input
-                className={classes + emailClass}
-                type="email"
-                placeholder="Enter your email"
-                onChange={emailChangeHandler}
-                ref={emailRef}
-                onBlur={emailBlurHandler}
-                required={true}
-              />
-              {!emailValid && (
-                <p
-                  style={{
-                    fontSize: "16px",
-                    position: "relative",
-                    bottom: "10px",
-                    left: "10px",
-                    color: "red",
-                  }}
-                >
-                  Enter a valid email
-                </p>
-              )}
-              <div className="flex justify-between pr-[1.5rem]">
-                <label className="text-lg font-medium">Password</label>
-                <p
-                  style={{ position: "relative", top: "2.9rem" }}
-                  className="cursor-pointer"
-                  onClick={function handlePass() {
-                    pass === "password" ? setPass("text") : setPass("password");
-                  }}
-                >
-                  {pass === "password" ? (
-                    <Image src={eyeoff} />
-                  ) : (
-                    <Image src={eyeon} />
-                  )}
-                </p>
+            <div className="newloginContainer">
+              <div className="newLoginTop flex items-center justify-center">
+                <FormHeader title="LOGIN" />
               </div>
+              <ToastContainer />
+              <form className="newLoginForm" onSubmit={loginSubmitHandler}>
+                <label className="text-lg font-medium">Email</label>
+                <input
+                  className={classes + emailClass}
+                  type="email"
+                  placeholder="Enter your email"
+                  onChange={emailChangeHandler}
+                  ref={emailRef}
+                  onBlur={emailBlurHandler}
+                  required={true}
+                />
+                {!emailValid && (
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      position: "relative",
+                      bottom: "10px",
+                      left: "10px",
+                      color: "red",
+                    }}
+                  >
+                    Enter a valid email
+                  </p>
+                )}
+                <div className="flex justify-between pr-[1.5rem]">
+                  <label className="text-lg font-medium">Password</label>
+                  <p
+                    style={{ position: "relative", top: "2.9rem" }}
+                    className="cursor-pointer"
+                    onClick={function handlePass() {
+                      pass === "password"
+                        ? setPass("text")
+                        : setPass("password");
+                    }}
+                  >
+                    {pass === "password" ? (
+                      <Image src={eyeoff} />
+                    ) : (
+                      <Image src={eyeon} />
+                    )}
+                  </p>
+                </div>
+                <input
+                  className={classes + passClass}
+                  type={pass}
+                  placeholder="Enter your password"
+                  onChange={passwordChangeHandler}
+                  ref={passRef}
+                  onBlur={passBlurHandler}
+                  required={true}
+                />
+                {!passValid && (
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      position: "relative",
+                      bottom: "10px",
+                      left: "10px",
+                      color: "red",
+                    }}
+                  >
+                    Enter atleast 6 characters
+                  </p>
+                )}
+                <div className="formBottom">
+                  <label>
+                    <input
+                      style={{ marginRight: "6px" }}
+                      className="form-check-input appearance-none h-4 w-4 border-2 border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    ></input>
+                    <span className="text-base font-medium">Remember me</span>
+                  </label>
+                  <label
+                    className="text-gray-500 text-base font-medium cursor-pointer"
+                    onClick={function handleForgot() {
+                      router.push("/forgotPassword");
+                    }}
+                  >
+                    Forgot password
+                  </label>
+                </div>
+                <div
+                  id="button"
+                  className="row flex justify-center items-center"
+                >
+                  <button type="submit" style={{ width: "40%" }}>
+                    Login
+                  </button>
+                </div>
 
-              <input
-                className={classes + passClass}
-                type={pass}
-                placeholder="Enter your password"
-                onChange={passwordChangeHandler}
-                ref={passRef}
-                onBlur={passBlurHandler}
-                required={true}
-              />
-              {!passValid && (
-                <p
-                  style={{
-                    fontSize: "16px",
-                    position: "relative",
-                    bottom: "10px",
-                    left: "10px",
-                    color: "red",
-                  }}
-                >
-                  Enter atleast 6 characters
-                </p>
-              )}
-              <div className="formBottom">
-                <label>
-                  <input
-                    style={{ marginRight: "6px" }}
-                    className="form-check-input appearance-none h-4 w-4 border-2 border-gray-300 rounded-sm bg-white checked:bg-green-500 checked:border-green-500 focus-within:hidden transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  ></input>
-                  <span className="text-base font-medium">Remember me</span>
-                </label>
-                <label
-                  className="text-gray-500 text-base font-medium cursor-pointer"
-                  onClick={function handleForgot() {
-                    router.push("/forgotPassword");
-                  }}
-                >
-                  Forgot password
-                </label>
-              </div>
-              <div id="button" className="row flex justify-center items-center">
-                <button
-                  type="submit"
-                  style={{ width: "40%" }}
-                  // onClick={function handleClick() {
-                  //   router.push("/read");
-                  // }}
-                >
-                  Login
-                </button>
-              </div>
-
-              <div className="signDesc" style={{ margin: "1.5rem auto" }}>
-                <p className="font-medium">
-                  Don't have an account?{"    "}
-                  <span className="text-green-500 font-medium">
-                    <Link href="/signup">Signup here</Link>
-                  </span>
-                </p>
-              </div>
-            </form>
+                <div className="signDesc" style={{ margin: "1.5rem auto" }}>
+                  <p className="font-medium">
+                    Don't have an account?{"    "}
+                    <span className="text-green-500 font-medium">
+                      <Link href="/signup">Signup here</Link>
+                    </span>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

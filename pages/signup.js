@@ -188,14 +188,6 @@ function Signup() {
             <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-8/12 md:w-9/12 mb-12 md:mb-0 new1">
               <Image src={signupvector} />
             </div>
-            {/* <SignUp
-              title="Sign Up"
-              box={signUpList}
-              button="SIGNUP"
-              isAuth={true}
-              desc1="Already have an account?"
-              desc2="Login here"
-            /> */}
             <div className="newloginContainer">
               <div className="newLoginTop flex items-center justify-center">
                 <FormHeader title="SIGNUP" />
@@ -295,9 +287,6 @@ function Signup() {
                   <button
                     type="submit"
                     style={{ width: "40%" }}
-                    // onClick={function handleClick() {
-                    //   router.push("/read");
-                    // }}
                   >
                     Signup
                   </button>
@@ -313,49 +302,6 @@ function Signup() {
                 </div>
               </form>
             </div>
-            {/* <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
-              <FormHeader title="Sign up" className="bd1" />
-              <div>
-                <form>
-                  <div className="row">
-                    <label>Email</label>
-                    <input
-                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
-                      type="email"
-                      placeholder="Enter your email"
-                      onChange={(e) => setEmail_Id(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
-                    <label>Password</label>
-                    <input
-                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
-                      type="password"
-                      placeholder="Enter your password"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    />
-                  </div>
-                  <div className="row">
-                    <label>Invite Code</label>
-                    <input
-                      className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 "
-                      type="password"
-                      placeholder="Enter your Invite Code"
-                      onChange={(e) => setComponent_available(e.target.value)}
-                    />
-                  </div>
-
-                  <div id="button" className="row">
-                    <button type="submit">Sign up</button>
-                  </div>
-                </form>
-                <div className="row">
-                  <p>
-                    Already have an account? <span><Link href="/">Log in</Link></span>
-                  </p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
