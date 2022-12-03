@@ -332,16 +332,18 @@ export default function Home() {
               <div className=" p-4 rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto bg-green-500 flex justify-center items-center high">
                   <span className="text-white font-semibold lg:text-xl md:text-lg text-sm text-center">
-                    Ideopedia is a wonderful idea!
+                    I commend Ideopedia for this service to our nation!
                   </span>
                 </div>
               </div>
               <div className="sm:p-4  rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center high">
                   <span className="p-2 text-black lg:text-lg md:text-lg text-sm text-center font-medium">
-                    Ideopedia is a wonderful idea. As they say "the person you
-                    will be in 5 years is based on the books you read today".
-                    Thanks to Ideopedia for adding to the books read today.
+                    Ideopedia is an incredible initiative. The synopses are
+                    highly informative and they make for great short reads. They
+                    provide deep insights on relevant and timely subjects
+                    researched by the worlds leading thinkers, I commend
+                    Ideopedia for this service to our nation.
                   </span>
                 </div>
               </div>
@@ -351,10 +353,10 @@ export default function Home() {
                 </div>
                 <div className="pl-5">
                   <div className="lg:text-lg md:text-lg text-base font-semibold">
-                    Mr Gopalakrishnan
+                    Mr Jayant Sinha
                   </div>
                   <div className="text-[14px] font-medium text-gray-500 uppercase">
-                    Executive Director, Tata Sons
+                    Former Minister of Civil Aviation
                   </div>
                 </div>
               </div>

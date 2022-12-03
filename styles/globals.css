@@ -141,9 +141,9 @@
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 346px) {
+@media screen and (max-width: 380px) {
   .newLoginForm {
-    padding: 1rem;
+    padding: 0px;
   }
 }
 .newLoginForm input {
