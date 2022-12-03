@@ -56,8 +56,7 @@ function Footer() {
                 <li className="py-1 foottext hover:text-green-500">
                   <Link href="/contact">Contact us</Link>
                 </li>
-                <li className="py-1 foottext hover:text-green-500"> </li>
-              </ul>
+s              </ul>
             </div>
           </div>
           <div className="p-2  rounded-md flex sm:justify-start justify-center mb-5 sm:text-left text-center">
@@ -73,9 +72,9 @@ function Footer() {
                 </li>
                 {/* <li className="py-1 foottext hover:text-green-500">
                   <Link href="/teams#bod">Advisors</Link>
-                </li> */}
+                </li>
                 <li className="py-2 foottext hover:text-green-500"></li>
-                <li className="py-3 foottext"> </li>
+                <li className="py-3 foottext"> </li> */}
               </ul>
             </div>
           </div>
@@ -87,10 +86,10 @@ function Footer() {
                 <li className="py-1 foottext hover:text-green-500">
                   <Link href="/testimonials#readers">Testimonials</Link>
                 </li>
+                {/* <li className="py-3 foottext"></li>
                 <li className="py-3 foottext"></li>
                 <li className="py-3 foottext"></li>
-                <li className="py-3 foottext"></li>
-                <li className="py-3 foottext"> </li>
+                <li className="py-3 foottext"> </li> */}
               </ul>
             </div>
           </div>
