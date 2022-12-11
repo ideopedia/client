@@ -30,6 +30,7 @@ import aftertime from "../../public/timeafter.svg";
 import airpods from "../../public/airpods.svg";
 import DropdownComponent from "../../components/dropdown";
 import Image from "next/image";
+import { getCookie } from "cookies-next";
 import Link from "next/link";
 const Book = () => {
   const useMediaQuery = (width) => {
@@ -104,8 +105,8 @@ const Book = () => {
   console.log(arr);
 
   return (
-    <div>
-      {data ? (
+    <div onCopy={(e) => e.preventDefault()}>
+      {data && getCookie("user") ? (
         <div>
           <Navbar isLogedIn={true} user={user} />
           {console.log(data)}
@@ -352,11 +353,7 @@ const Book = () => {
                     name={n + 1 + ". " + val.name}
                     image={val.image}
                     content={
-                      val.benifits[0] +
-                      
-                      val.benifits[1] +
-                       
-                      val.benifits[1]
+                      val.benifits[0] + val.benifits[1] + val.benifits[1]
                     }
                   />
                 </div>
@@ -420,8 +417,6 @@ const Book = () => {
                         {idea.name}
                       </span>
                     </div>
-
-                    
                   </div>
                 ))}
               </div>
@@ -451,9 +446,7 @@ const Book = () => {
           <Footer />
         </div>
       ) : (
-        <div className="load">
-          {console.log("wait")}
-        </div>
+        <div className="load">{console.log("wait")}</div>
       )}
     </div>
   );

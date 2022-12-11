@@ -10,7 +10,7 @@ import Axios from "axios";
 import Footer from "../../components/footer";
 import drop from "../../public/dropdownlogo.svg";
 import Navbar from "../../components/navbar";
-
+import { getCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import Loader from "../../components/loader";
 import fav from "../../public/fav.svg";
@@ -51,7 +51,7 @@ const Completed = () => {
 
   return (
     <div>
-      {data ? (
+      {data && getCookie("user")  ? (
         <div className="">
           {/* <SideNavbar
             per={user[0].Profile_percent}

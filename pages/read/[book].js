@@ -57,7 +57,7 @@ const Read = () => {
   // }, []);
   return (
     <div>
-      {data && user ? (
+      {data && user && getCookie("user")  ? (
         <div className="">
           {/* <SideNavbar
             per={user[0].Profile_percent}

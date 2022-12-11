@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Axios from "axios";
+import acess from "../../public/access.jpg"
 import Loader from "../../components/loader";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +14,9 @@ import "swiper/css/pagination";
 import leftarr from "../../public/leftarrow.svg";
 import SummaryCard from "../../components/SummaryCard";
 import Image from "next/image";
+import { getCookie } from "cookies-next";
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 
 export default function ReadCard() {
   const [data, setData] = useState(false);
@@ -32,6 +36,7 @@ export default function ReadCard() {
   return (
     <>
       <div className="">
+        <Navbar />
         <div
           className="flex justify-start items-center pl-4 pr-4 pt-4 pb-1 cursor-pointer"
           onClick={function handleBack() {
@@ -40,9 +45,9 @@ export default function ReadCard() {
         >
           <Image src={leftarr} />
         </div>
-        <div className="">
+        <div className="pb-5 ">
           {console.log(data)}
-          {data ? (
+          {data && getCookie('user') ? (
             <Swiper
               effect={"cube"}
               grabCursor={true}
@@ -73,6 +78,7 @@ export default function ReadCard() {
             </div>
           )}
         </div>
+        <Footer />
       </div>
     </>
   );

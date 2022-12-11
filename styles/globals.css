@@ -1586,3 +1586,9 @@ input[type="checkbox"]:focus {
 .fohv:hover {
   background: #b7008f;
 }
+@media print{
+  .prnt{
+    display: none;
+    user-select: none;
+  }
+}

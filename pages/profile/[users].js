@@ -9,6 +9,7 @@ import adres from "../../public/Address.svg";
 import phne from "../../public/phone.svg"
 import Navbar from "../../components/navbar";
 import Loader from "../../components/loader";
+import { getCookie } from "cookies-next";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
@@ -97,7 +98,7 @@ const Profile = () => {
   // }, []);
   return (
     <div>
-      {data ? (
+      {data && getCookie("user")  ? (
         <div className="profile ">
           {/* <SideNavbar
             per={data[0].Profile_percent}

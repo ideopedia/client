@@ -6,7 +6,7 @@ import SideNavbar from "../../components/sidebar";
 import Card from "../../components/card";
 import CompletedCard from "../../components/CompletedCards";
 import Link from "next/link";
-
+import { getCookie } from "cookies-next";
 import Loader from "../../components/loader";
 import ReadCard from "../../components/readcard";
 import task from "../../public/newtask.svg";
@@ -67,7 +67,7 @@ const New = () => {
 
   return (
     <div>
-      {data ? (
+      {data && getCookie("user")  ? (
         <div className="">
           {/* <SideNavbar
             per={user[0].Profile_percent}

@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Loader from "../../components/loader";
 import Axios from "axios";
+import acess from "../../public/access.jpg"
 import Navbar from "../../components/navbar";
+import { getCookie } from "cookies-next";
 import BNavbar from "../../components/bgnavbar";
 import DarkAudio from "../../components/DarkAudio";
 import close from "../../public/close.svg";
@@ -61,7 +63,7 @@ const Listen = () => {
 
   return (
     <div>
-      {data && conten ? (
+      {data && conten && getCookie('user') ? (
         <div>
           {dark ? (
             <div className="h-[100%]">

@@ -8,6 +8,7 @@ import Image from "next/image";
 import BNavbar from "../../components/bgnavbar";
 import font from "../../public/font.svg";
 import YouTube from "react-youtube";
+import { getCookie } from "cookies-next";
 import fd from "../../public/fd.svg";
 import gfd from "../../public/gfd.svg";
 import buy from "../../public/buy.svg";
@@ -69,6 +70,18 @@ const Read = () => {
   var num3 = Number(ideo ? ideo[1] : null);
   const d = new Date();
   const date = new Date();
+  const prnt = {
+    "@media print": {
+      display: "none",
+    },
+  };
+  const saveHandler = (ev) => {
+    console.log(ev.key);
+    // if (ev.key === ctrl && ev.key === "s") {
+    //   e.preventDefault();
+    //   return false;
+    // }
+  };
   const ft = {
     "@media (min-width: 779px)": {
       fontSize: rangeval * 34,
@@ -148,8 +161,14 @@ const Read = () => {
 
   return (
     <>
-      {data && ideo ? (
-        <div>
+      {data && ideo && getCookie("user")  ? (
+        <div
+          onCopy={(e) => e.preventDefault()}
+          className="prnt"
+          onKeyDown={(e) => {
+            e.preventDefault();
+          }}
+        >
           {dark ? (
             <StyleRoot>
               <div className="pb-20">
@@ -1293,9 +1312,7 @@ const Read = () => {
           )}
         </div>
       ) : (
-        <div>
-          {console.log("wait")}
-        </div>
+        <div>{console.log("wait")}</div>
       )}
     </>
   );

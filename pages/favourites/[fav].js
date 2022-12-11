@@ -6,6 +6,7 @@ import task from "../../public/newtask.svg";
 import create from "../../public/create.svg";
 import arr from "../../public/downarr.svg";
 import { useState, useEffect } from "react";
+import { getCookie } from "cookies-next";
 import Axios from "axios";
 import Footer from "../../components/footer";
 import Navbar from "../../components/navbar";
@@ -39,7 +40,7 @@ const Favourites = () => {
   }, []);
   return (
     <div>
-      {data ? (
+      {data && getCookie("user") ? (
         <div className="">
           {/* <SideNavbar
             per={user[0].Profile_percent}

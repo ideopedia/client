@@ -12,6 +12,7 @@ import drop from "../../public/dropdownlogo.svg";
 import darr from "../../public/downarr.svg";
 import arr from "../../public/leftarr.svg";
 import srch from "../../public/srch.svg";
+import { getCookie } from "cookies-next";
 import Footer from "../../components/footer";
 import bronze from "../../public/bronze.svg";
 import gold from "../../public/gold.svg";
@@ -48,7 +49,7 @@ const Points = () => {
   }, []);
   return (
     <div>
-      {data ? (
+      {data && getCookie("user")  ? (
         <div>
           <Navbar isLogedIn={true} userid={data[0].User_Id} />
           <div className="p-2 font-medium">

@@ -108,7 +108,7 @@ const Dashboard = () => {
   // }
   return (
     <div>
-      {data ? (
+      {data && getCookie("user") ? (
         <div>
           <Navbar isLogedIn={true} userid={favo.user} />
 
@@ -301,7 +301,7 @@ const Dashboard = () => {
                         <h1 className="xl:text-4xl lg:text-3xl md:text-3xl text-xl font-medium">
                           1
                           <span className=" lg:text-lg md:text-base text-[14px] font-medium">
-                            ST
+                            st
                           </span>
                         </h1>
                       </div>
@@ -332,7 +332,7 @@ const Dashboard = () => {
                         <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
                           2
                           <span className="lg:text-lg md:text-base text-[14px] font-medium">
-                            ND
+                            nd
                           </span>
                         </h1>
                       </div>
@@ -363,7 +363,7 @@ const Dashboard = () => {
                         <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
                           3
                           <span className="lg:text-lg md:text-base text-[14px] font-medium">
-                            RD
+                            rd
                           </span>
                         </h1>
                       </div>
@@ -394,7 +394,7 @@ const Dashboard = () => {
                         <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
                           4
                           <span className="lg:text-lg md:text-base text-[14px] font-medium">
-                            TH
+                            th
                           </span>
                         </h1>
                       </div>
@@ -425,7 +425,7 @@ const Dashboard = () => {
                         <h1 className="xl:text-3xl lg:text-2xl md:text-2xl text-lg font-medium">
                           5
                           <span className="lg:text-lg md:text-base text-[14px] font-medium">
-                            TH
+                            th
                           </span>
                         </h1>
                       </div>

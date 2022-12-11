@@ -28,6 +28,7 @@ function MyApp({ Component, pageProps }) {
           });
     `}
       </Script>
+      
       <StyleRoot>
         <Component
           className="font-poppins"
