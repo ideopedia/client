@@ -90,7 +90,7 @@ const Listen = () => {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-md flex items-center justify-end">
+                <div className="rounded-md flex items-center justify-end -mr-4 md:-mr-1 lg:-mr-0 xl:-mr-0">
                   <div>
                     <div
                       className="flex justify-center items-center p-2 RightIcons cursor-pointer"
@@ -219,7 +219,7 @@ const Listen = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-md flex items-center justify-end">
+                  <div className="rounded-md flex items-center justify-end -mr-4 md:-mr-1 lg:-mr-0 xl:-mr-0">
                     <div>
                       <div
                         className="flex justify-center items-center p-2 RightIcons cursor-pointer"

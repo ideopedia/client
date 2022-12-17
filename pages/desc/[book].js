@@ -413,7 +413,7 @@ const Book = () => {
                       </h1>
                     </div>
                     <div className=" rounded-md flex items-center justify-center h-auto lg:h-20 text-center">
-                      <span className="lg:text-[24px] md:text-[20px] text-[16px] leading-relaxed font-medium">
+                      <span className="lg:text-[24px] md:text-[20px] text-[16px] leading-relaxed font-medium pr-3">
                         {idea.name}
                       </span>
                     </div>

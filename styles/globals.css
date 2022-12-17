@@ -200,8 +200,8 @@
   .rightQuote {
     height: 1.8rem;
   }
-  read .leftQuote {
-    width: 2rem;
+  .leftQuote {
+    height: 1.8rem;
   }
 }
 @media screen and (max-width: 750px) {

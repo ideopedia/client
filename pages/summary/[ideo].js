@@ -161,7 +161,7 @@ const Read = () => {
 
   return (
     <>
-      {data && ideo && getCookie("user")  ? (
+      {data && ideo && getCookie("user") ? (
         <div
           onCopy={(e) => e.preventDefault()}
           className="prnt"
@@ -198,7 +198,7 @@ const Read = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-md flex items-center justify-end">
+                  <div className="rounded-md flex items-center justify-end -mr-4 md:-mr-1 lg:-mr-0 xl:-mr-0">
                     <div>
                       <div
                         className="p-2 RightIcons cursor-pointer"
@@ -258,7 +258,7 @@ const Read = () => {
                       <div className="py-4 px-6">
                         {data.Book_Summary[0].Content[n].map((val, n) => (
                           <div
-                            className={`text-black  py-4 px-10 flex justify-center items-center leading-[197%] font-medium `}
+                            className={`text-black  py-4 px-4 md:px-10 lg:px-10 xl:px-10 flex justify-center items-center leading-[197%] font-medium `}
                             key={n}
                             style={cnt}
                           >
@@ -280,11 +280,20 @@ const Read = () => {
                         {data.Book_Summary[0].Quotes[n].length > 1 ? (
                           <div className="flex justify-center items-center pb-8">
                             <div className="mx-[auto]">
-                              <div className="text-left leftQuote">
+                              <div
+                                className="leftQuote"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "flex-start",
+                                }}
+                              >
                                 <Image src={startq} />
                               </div>
+                              {/* <div className="text-left leftQuote">
+                                <Image src={startq} />
+                              </div> */}
                               <div
-                                className={`text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium `}
+                                className={`text-green-500 px-4 md:px-10 lg:px-10 xl:px-10 text-center leading-[197%] font-medium `}
                                 //quotes
                                 style={cnt}
                               >
@@ -312,7 +321,7 @@ const Read = () => {
                 {data.Ideo_Peaks.length > 1 ? (
                   <div>
                     <div
-                      className={` text-black font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase lg:text-[${
+                      className={` text-black font-semibold sm:pl-4 sm:text-left text-center pb-[16px] uppercase lg:text-[${
                         rangeval * 34
                       }px] md:text-[${rangeval * 30}px] text-[${
                         rangeval * 24
@@ -820,7 +829,7 @@ const Read = () => {
                       <div className="py-4 px-6">
                         {data.Book_Summary[0].Content[n].map((val, n) => (
                           <div
-                            className={` text-white py-4 flex justify-center items-center leading-[197%] font-medium `}
+                            className={` text-white py-4 px-4 md:px-10 lg:px-10 xl:px-10 flex justify-center items-center leading-[197%] font-medium `}
                             style={cnt}
                             key={n}
                           >
@@ -842,9 +851,18 @@ const Read = () => {
                         {data.Book_Summary[0].Quotes[n].length > 1 ? (
                           <div className="flex justify-center items-center pb-8">
                             <div className="mx-[auto]">
-                              <div className="text-left leftQuote">
+                              <div
+                                className="leftQuote"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "flex-start",
+                                }}
+                              >
                                 <Image src={startq} />
                               </div>
+                              {/* <div className="text-left leftQuote">
+                                <Image src={startq} />
+                              </div> */}
                               <div
                                 className="text-green-500 sm:mx-[4rem] mx-[1rem] text-center leading-[197%] font-medium "
                                 style={cnt}
@@ -873,7 +891,7 @@ const Read = () => {
                 {data.Ideo_Peaks.length > 1 ? (
                   <div>
                     <div
-                      className=" text-white font-semibold sm:pl-4 sm:text-left text-center sm:pb-0 pb-5 uppercase  "
+                      className=" text-white font-semibold sm:pl-4 sm:text-left text-center pb-[16px] uppercase  "
                       style={ft}
                     >
                       Ideo Peaks
