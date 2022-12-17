@@ -275,7 +275,8 @@ function ForgotPassword() {
 
                 <div
                   id="button"
-                  className="row flex justify-center items-center"
+                  className="row flex justify-center items-center mb-10"
+                  
                 >
                   <button type="submit" style={{ width: "70%" }}>
                     Reset Password
