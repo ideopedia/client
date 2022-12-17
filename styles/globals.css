@@ -8,6 +8,9 @@
 .FormSec {
   margin-top: 1.5rem;
 }
+::selection {
+  background: #249a69;
+}
 /* .blt{
   position:sticky;
   z-index: -9 !important;
