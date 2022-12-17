@@ -154,16 +154,16 @@ function ForgotPassword() {
   }`;
   return (
     <div>
-      <Navbar  isLogedIn={false} />
+      <Navbar isLogedIn={false} />
       <section className="h-screen new">
         <div className="px-6 h-full text-gray-800">
-          <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-            <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-8/12 md:w-9/12 mb-12 md:mb-0 new1">
+          <div className="flex xl:justify-center lg:justify-center justify-center items-center flex-wrap h-full g-6">
+            <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-8/12 md:w-9/12 new1">
               <Image src={forgot_vector} />
             </div>
 
             <div className="newloginContainer">
-              <div className="newLoginTop" style={{ marginLeft: "-1.8rem" }}>
+              <div className="newLoginTop flex items-center justify-center py-5">
                 <FormHeader title="Reset Password" />
               </div>
               <form className="newLoginForm" onSubmit={loginSubmitHandler}>
@@ -272,11 +272,12 @@ function ForgotPassword() {
                     Password Doesn't Match
                   </p>
                 )}
+
                 <div
                   id="button"
                   className="row flex justify-center items-center"
                 >
-                  <button type="submit" style={{ width: "40%" }}>
+                  <button type="submit" style={{ width: "70%" }}>
                     Reset Password
                   </button>
                 </div>
