@@ -339,7 +339,7 @@ export default function Home() {
               <div className="rounded-md flex items-center justify-center">
                 <div className="w-auto h-auto flex justify-center items-center">
                   <span className=" text-black lg:text-lg md:text-lg text-[14px] text-center font-medium py-4">
-                    Ideopedia is an incredible initiative. The synopses are
+                     is an incredible initiative. The synopses are
                     highly informative and they make for great short reads. They
                     provide deep insights on relevant, I commend
                     Ideopedia for this service to our nation.
